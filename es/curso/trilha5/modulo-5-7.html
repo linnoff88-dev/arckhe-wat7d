@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>5.7 Build: landing page publicada | Tu Empleado Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'teal' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'teal');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.teal;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13, 148, 136, 0.12); }
+    html:not(.dark) .bg-teal-500\/10 { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .border-teal-500\/30 { border-color: rgba(13, 148, 136, 0.25); }
+    html:not(.dark) .hover\:bg-teal-500\/30:hover { background-color: rgba(13, 148, 136, 0.18); }
+    html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .hover\:text-teal-400:hover { color: #0d9488; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-900\/20 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .text-red-400 { color: #b91c1c; }
+    html:not(.dark) .bg-red-900\/20 { background-color: rgba(185, 28, 28, 0.08); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(185, 28, 28, 0.25); }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha5/modulo-5-7.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha5/modulo-5-7.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha5/modulo-5-7.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-7.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-7.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-7.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-teal-400 bg-teal-500/10" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-teal-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-teal-400" href="index.html">Trilha 5</a><span>/</span>
+<span class="text-teal-400">Módulo 5.7</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.7 · BUILD</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🚀 Build: landing page publicada</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        Llegó el momento de unir todo. En los módulos 5.1 a 5.6 entendiste por qué el resultado suele ser genérico, creaste una skill de diseño, aprendiste el ciclo de capturas de pantalla y sus límites, usaste referencias visuales de forma responsable y organizaste tu carpeta de marca. Este módulo es el proyecto: salir de aquí con una <strong class="text-teal-400">landing
+        page</strong> (una página de presentación de una sola página: la "vitrina" de un producto, servicio o idea) tuya, probada
+        en tu computadora y publicada de verdad.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">50</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Intermedio</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Build</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 5.7" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:5-7" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-1">1. El embudo de la ruta, convergiendo</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-2">2. Anatomía de una landing que funciona</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-3">3. Etapas 1-3: objetivo, marca, prompt inicial</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-4">4. Etapas 4-5: el ciclo y la revisión manual</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-5">5. Etapas 6-7: localhost y publicación</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-6">6. Errores comunes y checklist final</a></li>
+</ul>
+</nav>
+<article data-inema-module="5-7" data-inema-track="5" id="modulo-5-7">
+<!-- TÓPICO 1 -->
+<section class="mb-16" data-inema-topic="modulo-5-7#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🔀 El embudo del flujo, que converge en una única compilación</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t1-p1">
+        Vale la pena detenerse un segundo para ver el camino recorrido. En el módulo 5.1 viste el problema: pedir "haz un sitio bonito"
+        sin contexto da un resultado genérico — una calidad de ~40%. Del 5.2 al 5.6 fuiste cerrando esa brecha
+        pieza por pieza: una <strong class="text-teal-400">skill</strong> (conjunto de instrucciones fijas que le enseña al
+        <em>proceso</em> de diseño global (de construcción de interfaces), el <strong class="text-teal-400">ciclo de
+        capturas de pantalla</strong> (el agente construye → toma una captura de pantalla → compara → ajusta, repitiendo hasta que coincida con la
+        referencia), los límites de ese ciclo (lo que no puede ver por sí solo), cómo usar una referencia visual sin
+        copiar la marca de terceros y una carpeta de marca permanente con colores, fuentes y logo documentados.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t1-p2">
+        Este módulo no enseña ninguna pieza nueva: es el momento de <strong class="text-teal-400">usar las seis
+        juntas</strong>, en una landing page real, desde el primer prompt hasta el enlace en línea. Por eso es más
+        largo y más práctico que los anteriores: la teoría ya está explicada, ahora toca construir.
+      </p>
+<div class="rounded-2xl border border-teal-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Diagrama de embudo: seis módulos anteriores de la ruta (5.1 a 5.6) convergen, cada uno aporta una pieza, hasta un único punto de salida: la landing page publicada del módulo 5.7" class="w-full h-auto" role="img" viewbox="0 0 1000 320">
+<defs>
+<lineargradient id="m7-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2dd4bf"></stop><stop offset="1" stop-color="#0d9488"></stop></lineargradient>
+<filter height="180%" id="m7-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m7-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#2dd4bf" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m7-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m7-grid)" height="320" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" height="42" rx="9" stroke="#2dd4bf" stroke-width="1.4" width="220" x="30" y="15"></rect><text fill="#bfe6ff" font-size="11" text-anchor="middle" x="140" y="41">5.2 Skill de diseño</text>
+<rect fill="#0e1622" height="42" rx="9" stroke="#2dd4bf" stroke-width="1.4" width="220" x="30" y="65"></rect><text fill="#bfe6ff" font-size="11" text-anchor="middle" x="140" y="91">5.3 Ciclo de screenshot</text>
+<rect fill="#0e1622" height="42" rx="9" stroke="#2dd4bf" stroke-width="1.4" width="220" x="30" y="115"></rect><text fill="#bfe6ff" font-size="11" text-anchor="middle" x="140" y="141">5.4 Límites del ciclo</text>
+<rect fill="#0e1622" height="42" rx="9" stroke="#2dd4bf" stroke-width="1.4" width="220" x="30" y="165"></rect><text fill="#bfe6ff" font-size="11" text-anchor="middle" x="140" y="191">5.5 Referencia + rebranding</text>
+<rect fill="#0e1622" height="42" rx="9" stroke="#2dd4bf" stroke-width="1.4" width="220" x="30" y="215"></rect><text fill="#bfe6ff" font-size="11" text-anchor="middle" x="140" y="241">5.6 Carpeta de marca</text>
+<rect fill="#0e1622" height="42" rx="9" stroke="#2dd4bf" stroke-width="1.4" width="220" x="30" y="265"></rect><text fill="#bfe6ff" font-size="11" text-anchor="middle" x="140" y="291">5.1 Diagnóstico (40%)</text>
+<path d="M250,36 L600,150" marker-end="url(#m7-ah)" opacity="0.55" stroke="#38bdf8" stroke-width="1.4"></path>
+<path d="M250,86 L600,150" marker-end="url(#m7-ah)" opacity="0.55" stroke="#38bdf8" stroke-width="1.4"></path>
+<path d="M250,136 L600,150" marker-end="url(#m7-ah)" opacity="0.55" stroke="#38bdf8" stroke-width="1.4"></path>
+<path d="M250,186 L600,150" marker-end="url(#m7-ah)" opacity="0.55" stroke="#38bdf8" stroke-width="1.4"></path>
+<path d="M250,236 L600,150" marker-end="url(#m7-ah)" opacity="0.55" stroke="#38bdf8" stroke-width="1.4"></path>
+<path d="M250,286 L600,150" marker-end="url(#m7-ah)" opacity="0.55" stroke="#38bdf8" stroke-width="1.4"></path>
+<g class="wf-a"><rect fill="#0e1f1c" filter="url(#m7-glow)" height="90" rx="16" stroke="url(#m7-grad)" stroke-width="2.8" width="360" x="605" y="105"></rect>
+<text fill="#2dd4bf" font-size="16" font-weight="700" text-anchor="middle" x="785" y="140">5.7 — Landing publicada</text>
+<text fill="#9adfd6" font-size="11" text-anchor="middle" x="785" y="162">de un 40% genérico a ~60% sólido, con proceso</text>
+</g>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: los cinco módulos prácticos anteriores (más el diagnóstico del 5.1) alimentan este build: cada flecha representa una pieza que ya tienes lista para usar, no teoría nueva.</p>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">💡</span> Concepto principal</h3>
+<p class="text-neutral-300 mb-4">Este módulo no introduce ninguna técnica nueva: orquesta las seis anteriores en un solo flujo, desde cero hasta el enlace publicado.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>Si algún paso de abajo te parece extraño, es una señal para volver al módulo correspondiente antes de continuar.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>No hay problema en repetir una etapa (por ejemplo, ejecutar el ciclo de capturas de pantalla más de una vez): un build de verdad es iterativo.</span></li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-16" data-inema-topic="modulo-5-7#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🧩 Anatomía de una landing page que funciona</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t2-p1">
+<strong class="text-teal-400">¿Eres nuevo aquí?</strong> Una <strong class="text-teal-400">landing page</strong> ("página
+        de destino/aterrizaje") es una página web única, con un solo objetivo: lograr que el visitante entienda rápido qué
+        ofreces y realice una acción: comprar, registrarse o ponerse en contacto. Es diferente de un sitio completo
+        con varias páginas; la landing es concisa a propósito. Antes de construirla, ayuda saber qué compone una
+        landing eficaz, para que puedas reconocer si el resultado del agente va por buen camino o solo es "bonito por fuera".
+      </p>
+<div class="space-y-4 mb-6">
+<div class="bg-dark-800 rounded-xl p-5 border border-dark-600 flex items-start gap-4">
+<span class="text-teal-400 font-bold text-lg flex-shrink-0">Hero</span>
+<p class="text-neutral-300 text-sm">La primera parte visible de la pantalla: un título contundente, una frase de apoyo y el botón principal. En 3 segundos, el visitante debe entender «qué es esto» y «qué gano yo».</p>
+</div>
+<div class="bg-dark-800 rounded-xl p-5 border border-dark-600 flex items-start gap-4">
+<span class="text-teal-400 font-bold text-lg flex-shrink-0">Beneficios</span>
+<p class="text-neutral-300 text-sm">Una sección justo debajo que muestra de 3 a 5 razones concretas para confiar/comprar: no recursos técnicos, sino beneficios (lo que cambia para quien la usa).</p>
+</div>
+<div class="bg-dark-800 rounded-xl p-5 border border-dark-600 flex items-start gap-4">
+<span class="text-teal-400 font-bold text-lg flex-shrink-0">CTA</span>
+<p class="text-neutral-300 text-sm"><strong class="text-teal-400">CTA</strong> (del inglés <em>llamada a la acción</em>, «llamada a la acción») es el botón o enlace que lleva al visitante a actuar: «Empieza ahora», «Contáctanos». Una buena landing repite el CTA principal en al menos 2 puntos de la página (arriba y al final).</p>
+</div>
+<div class="bg-dark-800 rounded-xl p-5 border border-dark-600 flex items-start gap-4">
+<span class="text-teal-400 font-bold text-lg flex-shrink-0">Pie de página</span>
+<p class="text-neutral-300 text-sm">Información de contacto y confianza (dirección, redes, año): pequeña, pero presente. Una landing sin pie de página da la impresión de estar incompleta.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Landing que funciona</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Un único objetivo claro por página: no intenta vender tres cosas al mismo tiempo</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>CTA visible sin tener que desplazarte mucho, repetido al final</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Carga rápido — pocas imágenes pesadas, sin animaciones excesivas</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Landing que no funciona</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Un hero genérico como "Bienvenido a nuestro sitio" sin decir qué es</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>CTA escondido allá abajo o ningún CTA claro</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Texto genérico de placeholder («lorem ipsum» o frases vagas como «somos los mejores»)</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Usa esta lista de 4 secciones como checklist visual mientras revisas el resultado del agente: si puedes señalar rápidamente dónde están el hero, los beneficios, el CTA y el pie de página, la estructura está bien, aunque el acabado visual todavía necesite ajustes en el ciclo de capturas de pantalla (etapa 4, a continuación).</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-16" data-inema-topic="modulo-5-7#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🎯 Etapas 1-3: objetivo, carpeta de marca y prompt inicial</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t3-p1">
+        La implementación completa tiene 7 etapas. Las tres primeras son de preparación: sin ellas, el agente parte de cero
+        y el resultado vuelve a ser genérico, exactamente el problema del módulo 5.1.
+      </p>
+<div class="rounded-2xl border border-teal-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Timeline de las 7 etapas del build: definir el objetivo, reunir la carpeta de marca, escribir el prompt inicial, ejecutar el ciclo de capturas de pantalla, revisar manualmente, probar en localhost y publicar" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<defs>
+<lineargradient id="m7b-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#2dd4bf"></stop><stop offset="1" stop-color="#0d9488"></stop></lineargradient>
+</defs>
+<g font-family="Inter,sans-serif">
+<line opacity="0.55" stroke="url(#m7b-grad)" stroke-width="3" x1="60" x2="940" y1="100" y2="100"></line>
+<g>
+<circle cx="90" cy="100" fill="#0e1f1c" r="14" stroke="#2dd4bf" stroke-width="2.5"></circle><text fill="#2dd4bf" font-size="12" font-weight="700" text-anchor="middle" x="90" y="105">1</text>
+<text fill="#bfe6ff" font-size="11" font-weight="600" text-anchor="middle" x="90" y="65">Objetivo</text>
+</g>
+<g>
+<circle cx="230" cy="100" fill="#0e1f1c" r="14" stroke="#2dd4bf" stroke-width="2.5"></circle><text fill="#2dd4bf" font-size="12" font-weight="700" text-anchor="middle" x="230" y="105">2</text>
+<text fill="#bfe6ff" font-size="11" font-weight="600" text-anchor="middle" x="230" y="130">brand_assets</text>
+</g>
+<g>
+<circle cx="370" cy="100" fill="#0e1f1c" r="14" stroke="#2dd4bf" stroke-width="2.5"></circle><text fill="#2dd4bf" font-size="12" font-weight="700" text-anchor="middle" x="370" y="105">3</text>
+<text fill="#bfe6ff" font-size="11" font-weight="600" text-anchor="middle" x="370" y="65">Prompt inicial</text>
+</g>
+<g class="wf-a">
+<circle cx="510" cy="100" fill="#0e1f1c" r="16" stroke="#38bdf8" stroke-width="3"></circle><text fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle" x="510" y="106">4</text>
+<text fill="#9ad6ff" font-size="11" font-weight="600" text-anchor="middle" x="510" y="130">Bucle de screenshot</text>
+</g>
+<g>
+<circle cx="650" cy="100" fill="#0e1f1c" r="14" stroke="#2dd4bf" stroke-width="2.5"></circle><text fill="#2dd4bf" font-size="12" font-weight="700" text-anchor="middle" x="650" y="105">5</text>
+<text fill="#bfe6ff" font-size="11" font-weight="600" text-anchor="middle" x="650" y="65">Revisión manual</text>
+</g>
+<g>
+<circle cx="790" cy="100" fill="#0e1f1c" r="14" stroke="#2dd4bf" stroke-width="2.5"></circle><text fill="#bfe6ff" font-size="11" font-weight="600" text-anchor="middle" x="790" y="130">Localhost</text>
+<text fill="#2dd4bf" font-size="12" font-weight="700" text-anchor="middle" x="790" y="105">6</text>
+</g>
+<g class="wf-a">
+<circle cx="920" cy="100" fill="#0e1f1c" r="16" stroke="url(#m7b-grad)" stroke-width="3"></circle><text fill="#2dd4bf" font-size="13" font-weight="700" text-anchor="middle" x="920" y="106">7</text>
+<text fill="#bfe6ff" font-size="11" font-weight="600" text-anchor="middle" x="920" y="65">Publicar</text>
+</g>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: las 7 etapas en orden — la 4 (bucle de screenshot) es donde se gasta la mayor parte del tiempo, iterando; la 7 se conecta directamente con el módulo 5.8.</p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Define el objetivo de la landing</h4>
+<p class="text-neutral-300 text-sm">Antes de abrir el agente, escribe una sola frase: qué vende/anuncia/presenta y para quién. Ej.: "landing para captar interesados en un curso de cocina para principiantes". Sin eso, el agente llena el vacío con algo genérico.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Reúne (o crea) la carpeta brand_assets</h4>
+<p class="text-neutral-300 text-sm">Si ya tienes una del módulo 5.6, solo tienes que indicarla. Si no, usa el prompt del 5.6 para crear una antes de seguir: saltarse este paso es la causa más común de obtener un resultado sin identidad.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Escribe el prompt inicial, con la skill de diseño activa</h4>
+<p class="text-neutral-300 text-sm">El prompt reúne el objetivo + la carpeta de marca + la estructura de la sección anterior (hero/beneficios/CTA/pie de página) en un solo pedido. Mira el bloque copy-run de abajo.</p>
+</div>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-semibold text-teal-400 uppercase tracking-wide">Objetivo</span>
+<span class="text-xs text-neutral-500">copia y pega en Claude Code — etapa 3</span>
+</div>
+<p class="text-neutral-300 text-sm mb-4">Pedir la primera versión de la landing, con la skill de diseño (5.2) activa y la carpeta de marca (5.6) como fuente de verdad, ya con la estructura hero/beneficios/CTA/pie de página.</p>
+<pre class="bg-dark-900 rounded-lg p-4 text-sm text-neutral-200 overflow-x-auto font-mono">Use a skill de design pra construir uma landing page (index.html, self-contained)
+pra &lt;descrição do objetivo: ex. "captar interessados num curso de culinária
+pra iniciantes"&gt;.
+
+Antes de escrever qualquer CSS, leia brand_assets/cores.md e
+brand_assets/tipografia.md e siga exatamente a paleta e a fonte de lá.
+
+Estrutura obrigatória:
+1. Hero: título direto dizendo o que é + frase de apoio + botão CTA
+   "&lt;texto do seu CTA principal&gt;"
+2. Seção de benefícios: 3 a 4 cards com ícone + benefício concreto (não
+   recurso técnico)
+3. Seção de CTA reforçado, no meio ou perto do fim da página
+4. Rodapé simples com &lt;contato/redes/ano&gt;
+
+Depois de gerar, tire um screenshot e me mostre — vamos rodar o laço de
+ajuste até bater com o padrão da marca.</pre>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3 flex items-center"><span class="mr-2">✅</span> Cómo verificar</h3>
+<p class="text-neutral-300">La primera captura de pantalla ya debe usar los colores exactos de <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">cores.md</code> (no una aproximación) y tener las 4 secciones presentes. Si falta alguna, es señal de que el agente se saltó parte del prompt: pídele que lo revise antes de pasar a la etapa 4.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-16" data-inema-topic="modulo-5-7#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🔁 Etapas 4-5: el bucle de capturas de pantalla y la revisión manual</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t4-p1">
+<strong class="text-teal-400">¿Eres nuevo aquí?</strong> O <strong class="text-teal-400">ciclo de capturas de pantalla</strong>
+        (que se explica en detalle en el módulo 5.3) consiste en que el agente ejecute un ciclo: construir → tomar una captura de pantalla → comparar con lo
+        que pediste (o con una referencia) → ajustar lo que no coincide → tomar otra captura → repetir. Es lo que
+        convierte «supuse que quedó bien» en «vi que quedó bien».
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t4-p2">
+        Ejecuta este ciclo varias veces seguidas: normalmente, 2 a 4 rondas bastan para resolver la mayoría de los ajustes
+        de espaciado, alineación y contraste. En cada ronda, pide algo específico: «el botón del hero está demasiado
+        pequeño, auméntalo», «el espacio entre las tarjetas de beneficios está muy apretado». Las solicitudes vagas como
+        «mejóralo» generan ajustes aleatorios.
+      </p>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Ronda típica:</strong> captura de pantalla → señalas 1-3 problemas concretos → el agente ajusta solo esos puntos → nueva captura de pantalla.</li>
+<li><strong>Cuándo detenerse:</strong> cuando la captura coincide con lo que tenías en mente y las 4 secciones del tema 2 están presentes y claras.</li>
+</ul>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t4-p3">
+        Al llegar a la etapa 5, es hora de ser honestos: incluso después del bucle, hay cosas que él <strong class="text-teal-400">no
+        lo obtiene por su cuenta</strong> — exactamente lo que advirtió el módulo 5.4. El ritmo de una animación (¿demasiado rápida? ¿demasiado
+        lenta?), el gusto personal de "el espaciado aquí parece un poco grande, pero no sé decir por qué" y el acabado
+        fino de la última etapa. Esa revisión te corresponde a ti, con tus propios ojos, abriendo la página de verdad — no solo mirando
+        una captura estática.
+      </p>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Sé realista con tus expectativas: si sigues todo el proceso, el resultado será mucho más sólido que el genérico del módulo 5.1: pasará de «~40%» a cerca de «~60%» de acabado profesional. Pero no llegará al 100%: el ajuste fino según tus gustos, el timing de la animación y el último pulido siguen siendo tarea tuya. No es una falla del proceso; es lo que queda para que tú decidas.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-16" data-inema-topic="modulo-5-7#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🖥️ Etapas 6-7: probar en localhost antes de publicar</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t5-p1">
+<strong class="text-teal-400">¿Eres nuevo aquí?</strong> <strong class="text-teal-400">Localhost</strong> ("host
+        local") es ver la página funcionando en tu propia computadora, sin que todavía esté publicada en internet; generalmente
+        en una dirección como <code class="text-xs bg-dark-800 px-1 py-0.5 rounded">http://localhost:3000</code> que solo
+        tú (en tu máquina) puedes abrir. Es el ensayo antes del estreno: navegas, haces clic en los enlaces y pruebas en
+        la pantalla del celular y de la computadora, todo sin que nadie de afuera lo vea todavía.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t5-p2">
+        Este paso no es opcional. Una captura siempre está un poco «congelada» — no muestra si se rompió un enlace, si
+        el menú no se abre en el celular o si el CTA realmente se puede pulsar. Pídele al agente que ejecute la página localmente
+        y ábrela tú mismo; prueba al menos que los enlaces funcionen, que el diseño no se rompa en una pantalla estrecha (celular)
+        y que el CTA principal realmente lleve a algún lugar (aunque por ahora sea solo un enlace temporal).
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Prueba completa en localhost</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Se abrió en una pantalla de celular estrecha, no solo en un monitor grande</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Hiciste clic en cada enlace o botón para confirmar que responde</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Volviste a cargar la página desde cero (no solo miraste el resultado ya cargado)</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ "Lo probé" solo con mirar la captura</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Solo vio la captura de pantalla del bucle, nunca abrió la página de verdad</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>No probó la página en una pantalla estrecha: el diseño puede fallar en el celular sin avisar</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Fue directo a publicación sin pasar por localhost ni una sola vez</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-semibold text-teal-400 uppercase tracking-wide">Objetivo</span>
+<span class="text-xs text-neutral-500">copia y pega en Claude Code — etapa 6</span>
+</div>
+<p class="text-neutral-300 text-sm mb-4">Pedirle al agente que ejecute la landing localmente y te dé la dirección para que la abras y la pruebes con tus propios ojos.</p>
+<pre class="bg-dark-900 rounded-lg p-4 text-sm text-neutral-200 overflow-x-auto font-mono">Suba esta landing page em localhost pra eu testar antes de publicar.
+Me diga o endereço exato pra eu abrir no navegador.
+
+Depois que eu confirmar que testei, some as próximas etapas (deploy/
+publicação) — vamos seguir isso no próximo módulo, com calma.</pre>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3 flex items-center"><span class="mr-2">✅</span> Cómo verificar</h3>
+<p class="text-neutral-300">Lograste abrir la dirección local en el navegador, ver la página completa (sin que aparezca una pantalla en blanco) y hacer clic en al menos 2 elementos interactivos (un enlace o un botón) para confirmar que responden.</p>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t5-p3">
+        Con la prueba local aprobada, el paso 7 es <strong class="text-teal-400">publicar</strong> ("deploy" — poner
+        la página en línea, en una dirección accesible para cualquier persona en internet, no solo en tu computadora). Las reglas
+        detalladas para hacerlo bien — qué nunca automatizar por tu cuenta, cuándo pedir confirmación, las
+        precauciones con el alojamiento — son todo el tema del próximo módulo, el 5.8. Aquí, el hito que importa es: tu
+        landing está lista y probada, esperando solo la etapa formal de publicación.
+      </p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-16" data-inema-topic="modulo-5-7#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🧯 Errores comunes del build y checklist de publicación</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t6-p1">
+        Al cerrar la build, vale la pena hacer un repaso de los errores más comunes de quienes hacen este proceso por primera vez y de la lista de verificación que evita cada uno antes de que sigas al módulo 5.8.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Build bien guiado</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Objetivo escrito antes de abrir el agente, no decidido «a mitad del prompt»</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Carpeta de marca existente y señalada explícitamente en el prompt inicial</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Al menos 2 rondas del ciclo de capturas de pantalla antes de considerarlo listo</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Probado de verdad en localhost, en dos anchos de pantalla</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Build apresurado</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Se saltó la carpeta de marca: «vamos a ver qué sale»</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Aceptó el primer resultado del ciclo sin ninguna ronda de ajustes</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Publicó directamente desde la captura, sin abrir localhost ni una vez</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Esperó a que estuviera 100% terminado antes de cerrar — un build nunca queda «perfecto», queda lo suficientemente bien</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-8">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">📋</span> Lista de verificación antes de considerar que el build está listo</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>☐ El objetivo de la landing está escrito y claro (qué vende/presenta y para quién)</li>
+<li>☐ Carpeta <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">brand_assets/</code> existe y se consultó en el prompt</li>
+<li>☐ Están presentes las 4 secciones básicas: hero, beneficios, CTA, pie de página</li>
+<li>☐ Se ejecutaron al menos 2 rondas del ciclo de capturas de pantalla</li>
+<li>☐ Tú mismo lo abriste en localhost y probaste los enlaces y la pantalla estrecha</li>
+<li>☐ Eres honesto contigo: sabes que quedó ~60%, no 100% — y está bien</li>
+</ul>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-5-7#q1">
+<p class="font-medium mb-4">Verificación rápida (opcional): ¿por qué probar en localhost antes de publicar, si el ciclo de capturas de pantalla ya mostró la página funcionando?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">No hace falta: si la captura se ve bien, la página está lista.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Una captura de pantalla es una imagen fija — no muestra enlaces rotos, pantallas estrechas ni botones que realmente no responden.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Localhost es solo una formalidad sin función real.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-5-7#q1', {
+              answer: 1,
+              explain: { 0: 'O print esconde justamente o que o teste real revela — releia o tópico 5.', 1: 'Isso mesmo: interação real só se confirma abrindo a página de verdade.', 2: 'Tem função real: pegar quebras que o print não mostra.' }
+            });
+          }
+        });
+      </script>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6 mb-6 mt-8">
+<h3 class="text-lg font-semibold text-teal-400 mb-3 flex items-center"><span class="mr-2">📝</span> Ejercicio</h3>
+<p class="text-neutral-300">Publica tu propia landing page: elige un objetivo real (puede ser ficticio, como un producto imaginario; lo importante es practicar todo el proceso), sigue las 7 etapas de este módulo de principio a fin y llega hasta la prueba aprobada en localhost. Guarda el enlace del repositorio o la carpeta del proyecto: lo usarás directamente en el módulo 5.8 para completar la publicación.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-teal-900/40 via-dark-800 to-dark-800 rounded-xl border border-teal-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Las 7 etapas:</strong><span class="text-neutral-400"> objetivo → carpeta de marca → prompt inicial → bucle de capturas de pantalla → revisión manual → localhost → publicar.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Anatomía de la landing:</strong><span class="text-neutral-400"> hero, beneficios, CTA (repetido), pie de página.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Honestidad del resultado:</strong><span class="text-neutral-400"> el proceso pasa de ~40% genérico a ~60% sólido — no al 100%, y está bien.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Localhost es obligatorio:</strong><span class="text-neutral-400"> una captura de pantalla no sustituye probar la página de verdad antes de publicarla.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-teal-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">5.8 — Reglas de publicación: cómo hacer el deploy final correctamente, con cuidado y sin acciones automáticas arriesgadas.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-5-6.html">← Módulo anterior</a>
+<a class="flex-1 text-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors" href="modulo-5-8.html">Próximo módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

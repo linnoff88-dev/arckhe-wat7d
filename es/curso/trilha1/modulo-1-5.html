@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>1.5 Build: automatización de newsletter | Tu Empleado Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"], section[id^="modulo-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5, 150, 105, 0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5, 150, 105, 0.18); }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .group:hover .group-hover\:text-emerald-400 { color: #059669; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+      .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha1/modulo-1-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha1/modulo-1-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha1/modulo-1-5.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../../curso/trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../../curso/trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../../curso/trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../../curso/trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1-5</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1-5</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">📰 Build: automatización de newsletter</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        Investigación, redacción y envío, de principio a fin. La primera creación completa del curso: workflow escrito, prompt listo para copiar y ejecutar, y un camino claro hasta la automatización publicada.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">35</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Práctico</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Build</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 1-5" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:1-5" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. El objetivo</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. Diseñando el flujo de trabajo</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. Copy-run: el prompt</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Probando y revisando</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. Errores comunes</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. Publicar/programar</a></li>
+</ul>
+</nav>
+<article data-inema-module="1-5" data-inema-track="1" id="modulo-1-5">
+<section class="mb-16" data-inema-topic="modulo-1-5#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🎯 El objetivo: investigación → redacción → envío</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t1-p1">
+        Llegó la hora de aplicar los cuatro módulos anteriores en un build de principio a fin: una automatización de
+        <strong class="text-emerald-400">newsletter</strong> (un correo electrónico periódico con novedades sobre un tema) que
+        investiga un asunto, redacta un borrador y prepara el envío. Es un ejemplo lo bastante pequeño para caber
+        en una sesión, pero lo bastante completo para practicar workflow, agente y tools juntos.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t1-p2">
+<strong class="text-emerald-400">¿Eres nuevo aquí?</strong> <strong class="text-emerald-400">Borrador</strong> es la
+        versión de trabajo de un texto: no es el producto final, sino el material que alguien (tú) todavía va a revisar
+        antes de considerarlo listo. En este build, el agente nunca entrega un correo electrónico «definitivo»: siempre entrega
+        un borrador, porque eso es lo que indica el workflow del tema 2. La diferencia entre «el agente escribió un
+        correo electrónico» y «el agente escribió un borrador de correo electrónico» parece pequeña, pero es lo que separa un build seguro de
+        uno que envía algo equivocado a personas reales.
+      </p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">💡</span> Concepto principal</h3>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Investigación: buscar 3-5 novedades recientes sobre un tema.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Redacción: convertirlo en un texto corto, con un tono definido.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Envío: preparar (o enviar) el correo electrónico final.</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por qué este build y no otro</h3>
+<p class="text-neutral-300 mb-2">
+          Una newsletter combina los tres problemas que aparecen en casi toda automatización de texto: buscar información
+          más allá de lo que el agente ya sabe (investigación), transformar información sin procesar en algo que alguien quiera leer
+          (redacción) y realizar una acción que tiene consecuencias reales fuera de la computadora (envío). Si logras
+          construir esto de forma segura, el mismo patrón sirve para informes semanales, resúmenes de ventas, boletines
+          internos de equipo, cualquier cosa con el formato "reunir datos → escribir → entregar".
+        </p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-5#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📋 Diseñando el workflow (la receta)</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t2-p1">
+        Antes de pedirle cualquier cosa al agente, escribe la receta, aunque sea en un borrador sencillo. Así evitas
+        precisamente el primer error común del módulo 1.4 (receta vaga). Un buen workflow para este build:
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/60 p-4 mb-6 overflow-hidden">
+<pre class="text-xs sm:text-sm text-emerald-200 overflow-x-auto"><code>## Workflow: newsletter semanal sobre &lt;seu tema aqui&gt;
+1. Buscar 3 a 5 novidades da última semana sobre o tema
+2. Para cada uma, escrever 2-3 frases resumindo (tom direto, sem jargão)
+3. Montar um e-mail com título + as novidades numeradas
+4. Salvar como rascunho em "newsletter/rascunho-AAAA-MM-DD.md"
+5. Não enviar de verdade sem eu revisar e aprovar antes</code></pre>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro de cada línea</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Línea 1 (cantidad):</strong> "3 a 5" no es un número al azar: es lo bastante pequeño para que el agente investigue de verdad cada elemento (en vez de inventar para cumplir la cuota) y lo bastante grande para parecer un boletín, no una publicación aislada.</li>
+<li><strong>Línea 2 (tamaño del resumen):</strong> "2-3 frases" existe porque, sin un límite, el agente tiende a copiar párrafos enteros de la fuente, lo que además de ser largo puede convertirse en una copia directa de texto de terceros.</li>
+<li><strong>Línea 4 (dónde guardar):</strong> una ruta de archivo fija y predecible («newsletter/rascunho-...») facilita revisar siempre en el mismo lugar, en vez de buscar dónde decidió guardar el agente.</li>
+<li><strong>El paso 5 es intencional:</strong> un «freno» que impide el envío automático antes de tu revisión — práctica recomendada para la primera versión de cualquier automatización nueva.</li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Escribe el workflow en un archivo real (p. ej.: <code class="text-emerald-300">newsletter/workflow.md</code>) en lugar de solo pegarlo en el chat. Así permanece disponible entre sesiones y puedes indicarle al agente que lo use ("sigue el workflow.md") sin tener que volver a escribirlo todo.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-5#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">▶️ Copy-run: el prompt listo para Claude Code</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t3-p1">
+        Con el workflow escrito, el siguiente paso es pegar en Claude Code una solicitud que haga referencia a esta receta.
+        Abajo tienes un prompt completo, listo para copiar, pegar y ejecutar —ajusta solo lo que está marcado.
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/60 p-4 mb-2 overflow-hidden">
+<p class="text-xs text-neutral-500 mb-2"><strong class="text-emerald-400">Objetivo:</strong> generar el primer borrador del boletín siguiendo el workflow anterior.</p>
+<pre class="text-xs sm:text-sm text-emerald-200 overflow-x-auto"><code>Crie uma pasta "newsletter/" se ainda não existir.
+
+Siga este workflow para montar o rascunho de uma newsletter sobre
+<isto "automação="" com="" ex.="" ia="" negócios"="" para="" pequenos="" seu="" tema,="" troca:="" voce="">:
+
+1. Busque de 3 a 5 novidades reais e recentes sobre o tema (últimos 7 dias)
+2. Para cada uma, escreva 2-3 frases resumindo em tom direto, sem jargão
+3. Monte um e-mail com título chamativo + as novidades numeradas
+4. Salve como "newsletter/rascunho-<isto aaaa-mm-dd="" data="" de="" hoje="" troca:="" voce="">.md"
+5. NÃO envie nada de verdade — pare aqui e me mostre o rascunho para eu revisar
+
+Ao terminar, me diga quais fontes você usou para cada novidade.</isto></isto></code></pre>
+</div>
+<p class="text-xs text-neutral-500 mt-2 mb-6"><strong>Cómo verificar:</strong> comprueba si se creó el archivo "newsletter/rascunho-....md", si tiene entre 3 y 5 elementos y si las fuentes citadas realmente existen (abre al menos un enlace).</p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Mira por dentro: lo que hace el agente en esos segundos</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Leyendo:</strong> el agente usa una herramienta de búsqueda en la web (search) para encontrar páginas reales sobre el tema: no está «recordando» nada, sino consultando fuentes en vivo, tal como lo harías tú en una pestaña del navegador.</li>
+<li><strong>Decidiendo:</strong> elige cuáles 3-5 resultados parecen más recientes y relevantes, y decide cómo resumir cada uno en 2-3 frases sin perder el hecho principal —esa es la parte "creativa" del trabajo, y es donde más vale la pena revisar después.</li>
+<li><strong>Grabando:</strong> crea la carpeta "newsletter/" (si no existe) y guarda un archivo Markdown con la fecha en el nombre —Markdown (extensión .md) es un formato de texto simple con marcas ligeras (# para título, - para lista) que se puede abrir con cualquier editor de texto.</li>
+<li><strong>Costando:</strong> esta tarea consume algunas búsquedas en la web y un puñado de tokens de lectura y escritura; en tu plan de Claude Code, es una fracción de lo que cabe en una sesión normal. No es motivo de preocupación para un build de este tamaño.</li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Prompt específico</h4>
+<p class="text-neutral-300 text-sm">Indica el tema, la cantidad, el tono, dónde guardar y que no debe enviarlo realmente. El agente no tiene que adivinar nada.</p>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ "Escribe un buen boletín"</h4>
+<p class="text-neutral-300 text-sm">Sin tema, sin cantidad, sin destino del archivo — el agente decide todo por ti, y «bueno» no es un criterio verificable.</p>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-5#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🔁 Probando y revisando el resultado</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t4-p1">
+        Ejecuta el prompt del tema anterior y lee con atención el borrador generado: esta es la fase de construcción del
+        módulo 1.3, en la que vale la pena que el agente vuelva a intentarlo hasta acertar. Si el tono no encaja o alguna novedad
+        parece inventada (puede pasar; siempre revisa las fuentes), es hora de aplicar una autocorrección guiada por
+        ti: da comentarios específicos y pide que rehaga solo la parte que falló.
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/60 p-4 mb-2 overflow-hidden">
+<p class="text-xs text-neutral-500 mb-2"><strong class="text-emerald-400">Objetivo:</strong> corregir un elemento específico del borrador sin rehacer todo.</p>
+<pre class="text-xs sm:text-sm text-emerald-200 overflow-x-auto"><code>O item 2 do rascunho está com tom formal demais e a fonte não parece
+confiável. Reescreva só o item 2: tom mais direto, e busque uma fonte
+diferente e mais recente. Mantenha os outros itens como estão.</code></pre>
+</div>
+<p class="text-xs text-neutral-500 mt-2 mb-6"><strong>Cómo verificar:</strong> vuelve a abrir el archivo y confirma que solo cambió el elemento 2, que el tono es coherente con los demás y que la nueva fuente se puede verificar.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t4-p2">
+        Observa que este ciclo — ejecutar, leer, corregir un punto específico, volver a ejecutar — es exactamente la secuencia
+        que sigue todo este build, desde cero hasta el borrador final. Puedes visualizar las etapas por las que acabas
+        de pasar (y volverás a pasar si revisas más de una vez):
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-2 overflow-hidden">
+<svg aria-label="Timeline de las etapas de construcción de este build: escribir el workflow, ejecutar el prompt copy-run, revisar el borrador generado, corregir puntos específicos con comentarios directos y repetir la revisión hasta que el borrador esté listo para el siguiente paso humano" class="w-full h-auto" role="img" viewbox="0 0 1000 170">
+<defs>
+<lineargradient id="m15t-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#38bdf8"></stop></lineargradient>
+<marker id="m15t-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#34d399"></path></marker>
+</defs>
+<line marker-end="url(#m15t-ah)" stroke="url(#m15t-grad)" stroke-width="2.5" x1="60" x2="940" y1="85" y2="85"></line>
+<g font-family="Inter,sans-serif" text-anchor="middle">
+<circle class="wf-a" cx="90" cy="85" fill="#34d399" r="9"></circle>
+<text fill="#6ee7b7" font-size="11" font-weight="700" x="90" y="55">1. Flujo de trabajo</text>
+<text fill="#9ca3af" font-size="9.5" x="90" y="115">escrito (tema 2)</text>
+<circle class="wf-a" cx="300" cy="85" fill="#34d399" r="9"></circle>
+<text fill="#6ee7b7" font-size="11" font-weight="700" x="300" y="55">2. Ejecutar prompt</text>
+<text fill="#9ca3af" font-size="9.5" x="300" y="115">copy-run (tema 3)</text>
+<circle class="wf-a" cx="510" cy="85" fill="#38bdf8" r="9"></circle>
+<text fill="#bfe6ff" font-size="11" font-weight="700" x="510" y="55">3. Revisar borrador</text>
+<text fill="#9ca3af" font-size="9.5" x="510" y="115">leer todo, verificar las fuentes</text>
+<circle class="wf-a" cx="720" cy="85" fill="#38bdf8" r="9"></circle>
+<text fill="#bfe6ff" font-size="11" font-weight="700" x="720" y="55">4. Corregir el punto</text>
+<text fill="#9ca3af" font-size="9.5" x="720" y="115">feedback específico</text>
+<circle class="wf-a" cx="910" cy="85" fill="#34d399" r="9"></circle>
+<text fill="#6ee7b7" font-size="11" font-weight="700" x="910" y="55">5. Repetir</text>
+<text fill="#9ca3af" font-size="9.5" x="910" y="115">hasta que apruebes</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: las etapas 3 y 4 forman un bucle — vuelves a ellas tantas veces como necesites antes de considerar que el borrador está listo. No hay un número correcto de vueltas; lo que importa es que "esté lo bastante bien para que yo lo apruebe".</p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-5#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">⚠️ Errores comunes de este build</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t5-p1">
+        Este build específico suele tropezar con los mismos tres puntos del módulo 1.4; conviene repasarlos antes de intentarlo.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Pedir sin instrucciones</h4>
+<p class="text-neutral-300 text-sm">"Hazme un boletín" — sin tema, sin cantidad de elementos ni lugar donde guardarlo. El agente tendrá que adivinarlo todo y probablemente se equivocará.</p>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Receta vaga</h4>
+<p class="text-neutral-300 text-sm">"Busca buenas novedades sobre IA" — "buenas" e "IA" (un tema enorme) sin delimitar no dan una orientación lo bastante clara.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Tool sin clave</h4>
+<p class="text-neutral-300 text-sm">Si el paso 5 evoluciona a «enviar de verdad» (fuera de esta versión inicial), necesitarás una herramienta de correo electrónico configurada con credenciales; sin ella, el agente se detiene en ese paso. Esto se explica en profundidad en la Trilha 2 (MCP) y la Trilha 4 (Secretos).
+          <strong class="text-red-300">¿Eres nuevo aquí?</strong> <strong class="text-red-300">Credencial</strong> es la clave o contraseña que autoriza a una herramienta a actuar en tu nombre; sin ella, el agente puede saber qué hacer, pero no tiene permiso para hacerlo.</p>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Fuente inventada</h4>
+<p class="text-neutral-300 text-sm">El agente menciona una "novedad" sin haber buscado nada realmente, o generaliza algo que leyó en otro contexto como si fuera una noticia reciente sobre tu tema. Es el mismo riesgo de alucinación del módulo 1.3; la defensa siempre es la misma: abres el enlace y lo compruebas antes de aprobar.</p>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-5#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🚀 Publicar / programar: qué sigue</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t6-p1">
+        Lo que construiste aquí funciona dentro de Claude Code, bajo tu supervisión: la fase de construcción del módulo
+        1.3. Para convertirlo en un boletín que se envíe solo cada semana, sin que abras Claude Code manualmente, faltan
+        dos piezas que este curso cubre en las próximas rutas: darle al agente una herramienta real para enviar correos
+        electrónicos (Ruta 2, MCP) y hacer que el workflow se ejecute en un horario fijo, publicado (Ruta 4 y Ruta 6, sobre
+        deploy y programación).
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-2 overflow-hidden">
+<svg aria-label="Desde la creación manual de hoy hasta el boletín publicado: primero darle a la herramienta la capacidad de enviar correos electrónicos (Ruta 2), después publicar y programar el workflow (Rutas 4 y 6) para que se ejecute solo cada semana" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<defs>
+<lineargradient id="m15-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#059669"></stop></lineargradient>
+<filter height="180%" id="m15-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m15-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#34d399" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m15-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#34d399"></path></marker>
+</defs>
+<rect fill="url(#m15-grid)" height="200" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" filter="url(#m15-glow)" height="70" rx="12" stroke="url(#m15-grad)" stroke-width="2.5" width="230" x="30" y="70"></rect>
+<text fill="#6ee7b7" font-size="13" font-weight="700" text-anchor="middle" x="145" y="98">Hoy: borrador manual</text>
+<text fill="#a7f3d0" font-size="10" text-anchor="middle" x="145" y="118">ejecutas y revisas</text>
+<path d="M260,105 L340,105" marker-end="url(#m15-ah)" opacity="0.75" stroke="#34d399" stroke-width="1.8"></path>
+<rect fill="#0e1622" height="70" rx="12" stroke="#38bdf8" stroke-width="2" width="230" x="345" y="70"></rect>
+<text fill="#bfe6ff" font-size="13" font-weight="700" text-anchor="middle" x="460" y="98">Trilha 2: herramienta de correo electrónico</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="460" y="118">MCP conecta el envío real</text>
+<path d="M575,105 L645,105" marker-end="url(#m15-ah)" opacity="0.75" stroke="#34d399" stroke-width="1.8"></path>
+<rect fill="#0e1622" height="70" rx="12" stroke="#38bdf8" stroke-width="2" width="320" x="650" y="70"></rect>
+<text fill="#bfe6ff" font-size="13" font-weight="700" text-anchor="middle" x="810" y="98">Trilhas 4 y 6: publicar y programar</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="810" y="118">se ejecuta por sí sola, cada semana, sin que tengas que abrir nada</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: el borrador manual de hoy es el primer escalón; las siguientes trilhas agregan la herramienta de envío real y la programación que te saca del camino crítico.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t6-p2">
+<strong class="text-emerald-400">¿Eres nuevo aquí?</strong> <strong class="text-emerald-400">Programación</strong>
+        significa configurar la computadora (o un servidor) para que ejecute esta automatización sola, en un horario fijo,
+        sin que nadie abra Claude Code manualmente, como un despertador para las tareas. Hasta entonces, el build de hoy ya
+        es útil tal como está: cada vez que quieras un newsletter nuevo, abres Claude Code y ejecutas el mismo
+        prompt del tema 3. Es trabajo manual, pero mucho más rápido que escribir desde cero.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Build de hoy: tú aprietas el gatillo</h4>
+<p class="text-neutral-300 text-sm">Abres Claude Code, ejecutas el prompt, revisas y apruebas. No ocurre nada si no estás presente en ese momento.</p>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+<h4 class="font-bold text-sky-400 mb-4">→ Build futuro: el disparador es el reloj</h4>
+<p class="text-neutral-300 text-sm">Con Trilha 2 (herramienta de envío) y Trilhas 4/6 (deploy y programación), la misma receta se ejecuta sola cada semana —pero el freno de revisión del paso 5 puede seguir existiendo, si quieres.</p>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Guarda el workflow que escribiste en este módulo: podrás reutilizarlo casi sin cambios cuando llegue el momento de publicar, en la Ruta 4.</p>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-1-5#q1">
+<p class="font-medium mb-4">Verificación rápida (opcional): ¿por qué el paso 5 del workflow ("no enviar sin revisión") es una buena práctica?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Porque el agente no sabe enviar correos electrónicos.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Porque es un freno de seguridad para que revises antes de cualquier envío real, especialmente en un build nuevo.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Porque el envío de correos electrónicos siempre está prohibido en Claude Code.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-1-5#q1', {
+              answer: 1,
+              explain: { 0: 'Não é sobre capacidade — é sobre prudência num build novo.', 1: 'Exato: revisar antes de agir de verdade é a prática mais segura em automações novas.', 2: 'Envio de e-mail é possível com a ferramenta certa (Trilha 2) — o freio aqui é só prudência.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">De principio a fin:</strong><span class="text-neutral-400"> investigación → redacción → borrador listo, con el workflow escrito antes de pedirlo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Prompt copy-run:</strong><span class="text-neutral-400"> listo para pegar en Claude Code, con objetivo y cómo verificarlo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Autocorrección guiada:</strong><span class="text-neutral-400"> el feedback específico corrige un elemento sin rehacerlo todo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Próximo paso:</strong><span class="text-neutral-400"> darle la herramienta de correo electrónico real (Trilha 2) y publicar/programar (Trilhas 4 e 6).</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Próxima ruta:</h3>
+<p class="text-neutral-300">Trilha 2 — MCP: dándole manos al agente</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la ruta</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="../trilha2/index.html">Próxima ruta: MCP →</a>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) { exp.classList.remove('active'); exp.previousElementSibling && exp.previousElementSibling.setAttribute && exp.previousElementSibling.setAttribute('aria-expanded','false'); }
+      });
+      explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', explanation.classList.contains('active') ? 'true' : 'false');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

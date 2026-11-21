@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>1.1 Las tres partes | Tu Empleado Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"], section[id^="modulo-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5, 150, 105, 0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5, 150, 105, 0.18); }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .group:hover .group-hover\:text-emerald-400 { color: #059669; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+      .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha1/modulo-1-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha1/modulo-1-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha1/modulo-1-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../../curso/trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../../curso/trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../../curso/trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../../curso/trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1-1</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1-1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🍳 Las tres partes</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        Workflow, Agent, Tools: la receta, el cocinero y los ingredientes. Entender esta separación es la base de todo lo demás del curso.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">22</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Principiante</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Teoría</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 1-1" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:1-1" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. La cocina</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. W: Workflow</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. A: Agent</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. T: Tools</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. Por qué separar</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. Sin workflow</a></li>
+</ul>
+</nav>
+<article data-inema-module="1-1" data-inema-track="1" id="modulo-1-1">
+<section class="mb-16" data-inema-topic="modulo-1-1#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🍳 La cocina: receta, cocinero, ingredientes</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t1-p1">
+<strong class="text-emerald-400">¿Eres nuevo aquí?</strong> <strong class="text-emerald-400">WAT</strong> es la sigla que da nombre a
+        este curso: <strong class="text-emerald-400">W</strong>orkflow + <strong class="text-emerald-400">A</strong>gent +
+        <strong class="text-emerald-400">T</strong>ools. Tres piezas que, juntas, transforman un pedido en portugués en una
+        tarea ejecutada de verdad. Para fijar el modelo mental, piensa en una cocina profesional.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t1-p2">
+        Una buena cocina tiene tres cosas separadas: la <strong class="text-emerald-400">receta</strong> (el paso a paso escrito),
+        el <strong class="text-emerald-400">cocinero</strong> (quien lee la receta, decide los ajustes y corrige el sazón) y los
+        <strong class="text-emerald-400">ingredientes y electrodomésticos</strong> (lo que existe físicamente para convertirse en un plato).
+        Quita cualquiera de las tres y la cocina deja de funcionar — o se convierte en otra cosa.
+      </p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">💡</span> Concepto principal</h3>
+<p class="text-neutral-300 mb-4">WAT = Workflow (receta) + Agent (cocinero) + Tools (ingredientes/electrodomésticos). Las tres piezas cumplen funciones diferentes y no se sustituyen entre sí.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>La receta no se cocina sola: hace falta alguien que la lea y la ejecute.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>El cocinero sin ingredientes solo sabe explicar el plato, no prepararlo.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Los ingredientes sin receta ni cocinero son solo una despensa sin uso.</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">📋 Receta</div><div class="text-xs text-neutral-400 mt-1">Workflow</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">👨‍🍳 Cocinero</div><div class="text-xs text-neutral-400 mt-1">Agent</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">🥕 Ingredientes</div><div class="text-xs text-neutral-400 mt-1">Tools</div></div>
+</div>
+<p class="text-neutral-300 mt-6 mb-6 leading-relaxed" data-inema-block="m1-1-t1-p3">
+        La analogía sirve para cualquier tarea repetitiva, no solo para la cocina. Tomemos un ejemplo muy distinto al de
+        la newsletter: organizar los recibos del mes para la rendición de cuentas. La <strong class="text-emerald-400">receta</strong>
+        (workflow) dice "toma los recibos de la carpeta 'financiero', sepáralos por categoría, suma cada una y genera una
+        hoja de cálculo con el resumen". El <strong class="text-emerald-400">cocinero</strong> (agent) decide en qué categoría entra un
+        recibo ambiguo («¿transporte o comida?») y detecta si un archivo llegó dañado. Los
+        <strong class="text-emerald-400">ingredientes</strong> (tools) son el lector de PDF/imagen que extrae el valor
+        y la herramienta de hojas de cálculo que guarda el resumen. Ninguna de las tres piezas, por sí sola, organiza recibos.
+      </p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Ver por dentro: qué ocurre cuando el cocinero lee la receta</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Qué se lee:</strong> el texto del workflow (y, si existe, el CLAUDE.md del proyecto) forma parte de lo que el agente "sabe" en esa ejecución: consume parte de la cuota de tokens.</li>
+<li><strong>Qué se decide:</strong> en cada paso, qué herramienta llamar y con qué datos — esa elección no se guarda de forma predeterminada, se vuelve a hacer en cada ejecución.</li>
+<li><strong>Dónde queda registrado:</strong> solo el resultado final (archivo, hoja de cálculo, correo enviado). El «razonamiento» intermedio normalmente no se guarda, a menos que pidas un registro.</li>
+<li><strong>Cuánto cuesta:</strong> cada paso y cada herramienta que se invoca consume tokens; un workflow claro y breve cuesta menos que un agente que "adivina" desde cero.</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-1#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📋 W de Workflow: la receta en markdown</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t2-p1">
+<strong class="text-emerald-400">¿Eres nuevo aquí?</strong> <strong class="text-emerald-400">Workflow</strong> aquí es simplemente
+        la receta escrita: una secuencia de pasos en texto simple (frecuentemente en
+        <strong class="text-emerald-400">markdown</strong> — una forma de dar formato al texto con títulos y listas, sin código complicado)
+        que indica qué hacer, en qué orden y qué revisar en cada etapa.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t2-p2">
+        Un buen workflow no necesita prever cada excepción: solo necesita ser <em>lo bastante claro</em> para que quien lo lea
+        (el agente) sepa qué hacer en el camino normal y reconozca cuando algo se salga de lo previsto. Es diferente de un
+        programa de computadora tradicional: no son instrucciones rígidas línea por línea, sino orientaciones que alguien capaz
+        de interpretar (el agente) seguirá con criterio.
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/60 p-4 mb-6 overflow-hidden">
+<p class="text-xs text-neutral-500 mb-2">Ejemplo de workflow breve, en markdown:</p>
+<pre class="text-xs sm:text-sm text-emerald-200 overflow-x-auto"><code>## Workflow: relatório semanal
+1. Ler os números de vendas da planilha "vendas.csv"
+2. Somar por categoria
+3. Escrever um resumo de 3 parágrafos
+4. Salvar como "relatorio-semana.md"
+5. Se algum número parecer errado (negativo, vazio), avisar antes de salvar</code></pre>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Markdown:</strong> formato de texto simple (títulos con <code>#</code>, listas numeradas): el mismo tipo de archivo que CLAUDE.md, que viste en la Trilha 0.</li>
+<li><strong>Paso a paso, no código:</strong> el workflow se lee en portugués, no es un lenguaje de programación.</li>
+</ul>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t2-p3">
+        Otro ejemplo breve, fuera del mundo del correo electrónico: un workflow para programar publicaciones en redes sociales podría
+        decir «lee los textos de la carpeta 'posts-da-semana', genera una imagen de portada para cada uno, publica uno por día
+        a las 9h y avisa si algún texto supera los 280 caracteres». La receta no explica <em>cómo</em> generar la imagen
+        o <em>cómo</em> publicar — ese es el trabajo de las tools. Solo indica el orden, la excepción y cuándo detenerse.
+      </p>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Error común: receta vaga</h3>
+<p class="text-neutral-300">Un workflow del tipo "encárgate de mis finanzas" no es una receta, es un deseo. El agente llenará los
+        vacíos con sus propias suposiciones, que pueden no coincidir con lo que tenías en mente. Prefiere "lee los
+        recibos de la carpeta X, sepáralos en Y categorías, ignora los valores inferiores a R$5" a una frase genérica: cuanto más
+        concreta sea la receta, menos tendrá que adivinar quien cocina.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-1#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">👨‍🍳 La A de Agent: quien lee, decide y corrige</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t3-p1">
+        O <strong class="text-emerald-400">agent</strong> (agente) es Claude Code, el cocinero de nuestra analogía. Lee el
+        workflow, interpreta cada paso, decide qué herramienta usar para ejecutarlo, revisa el resultado y ajusta el
+        rumbo si algo no coincide con lo esperado. Es la pieza que aporta <em>criterio</em> al proceso: sin ella, la receta
+        se queda en el papel.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t3-p2">
+        Esto es diferente de un script tradicional (un programa fijo que solo repite los mismos pasos sin entender lo
+        que está haciendo). El agente <em>entiende</em> la intención del paso "sumar por categoría", aunque la hoja de cálculo
+        venga con una columna más o con un nombre diferente al esperado — se adapta dentro de lo razonable.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Lo que el agente hace bien</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Interpreta pasos escritos en lenguaje natural</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Elige qué herramienta usar en cada paso</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Nota cuando un resultado parece incorrecto e intenta de nuevo</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Lo que el agente NO hace por sí solo</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Adivinar una receta que nunca se escribió</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Usar una herramienta que no existe o para la que no tienes permiso</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Leer tu mente para saber qué significa «bueno» sin que lo digas</span></li>
+</ul>
+</div>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t3-p3">
+<strong class="text-emerald-400">Error común: el agente "inventa" una ruta.</strong> Imagina un workflow de atención al cliente que dice "responde las consultas sobre pedidos usando los datos del sistema", pero nunca dice
+        <em>dónde</em> ni está el sistema ni qué hacer si no se encuentra el pedido. Sin esta información, el agente
+        puede improvisar —responder con una suposición— porque recibió la instrucción de resolver el problema, y «no sé»
+        rara vez es la primera opción que intenta. No es que el agente «mienta»: está llenando un vacío que la
+        receta dejó abierto. La corrección siempre está en el workflow: di «si no encuentras el pedido, detente y pregunta».
+      </p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-1#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🥕 T de Tools: quién hace el trabajo de verdad</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t4-p1">
+<strong class="text-emerald-400">Tools</strong> (herramientas) son los ingredientes y electrodomésticos: las cosas que
+        realmente <em>hacen</em> el trabajo cuando el cocinero las acciona: abrir un archivo, ejecutar un comando, enviar
+        un correo electrónico, buscar algo en internet, llamar a una API (una puerta de comunicación que un sitio o servicio deja
+        abierta para que los programas se comuniquen entre sí, sin necesitar una pantalla). Sin ellas, el agente solo tendría opiniones,
+        no capacidad de actuar.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t4-p2">
+        Una herramienta sin workflow es prácticamente inútil: tener un horno encendido no hace que el pastel se hornee solo: alguien
+        (el agente, siguiendo la receta) tiene que poner la masa ahí en el momento y a la temperatura adecuados. Por
+        eso las Rutas 2 (MCP) y 4 (Deploy) de este curso están dedicadas por completo a proporcionar y conectar herramientas,
+        pero solo cobran sentido junto con un workflow que indique cuándo usarlas.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">📁</div><div class="text-xs text-neutral-400 mt-1">Leer/escribir un archivo</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">🌐</div><div class="text-xs text-neutral-400 mt-1">Buscar en la web</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">✉️</div><div class="text-xs text-neutral-400 mt-1">Enviar correo electrónico</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">🔌</div><div class="text-xs text-neutral-400 mt-1">Llamar a una API</div></div>
+</div>
+<p class="text-neutral-300 mt-6 mb-6 leading-relaxed" data-inema-block="m1-1-t4-p3">
+<strong class="text-emerald-400">Error común: falta la clave de la herramienta.</strong> Muchas herramientas requieren una
+        <strong class="text-emerald-400">clave de API</strong> (contraseña larga que te identifica ante el servicio —
+        Gmail, Google Calendar, una base de datos) configurada antes de funcionar. Sin ella, la herramienta queda
+        bloqueada: el agente intenta usarla, recibe un error de acceso denegado y se detiene ahí. Conviene comprobarlo antes de cualquier
+        nueva automatización: ¿existe la clave, está en el lugar correcto y sigue siendo válida? “Herramienta instalada” y “herramienta
+        autorizada para actuar” son cosas diferentes — las Trilhas 2 y 4 muestran cómo guardar las claves de forma segura.
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-2 overflow-hidden">
+<svg aria-label="Diagrama que muestra al agente intentando activar tres herramientas: una con una clave de API válida se ejecuta con normalidad, otra sin clave queda bloqueada y devuelve un error de acceso denegado" class="w-full h-auto" role="img" viewbox="0 0 1000 220">
+<defs>
+<lineargradient id="m11-grad2" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#059669"></stop></lineargradient>
+<filter height="180%" id="m11-glow2" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m11-grid2" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#34d399" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m11-ah2" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+<marker id="m11-ahr" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#f87171"></path></marker>
+</defs>
+<rect fill="url(#m11-grid2)" height="220" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<g class="wf-a"><rect fill="#0e1622" height="80" rx="14" stroke="#38bdf8" stroke-width="2.5" width="180" x="30" y="70"></rect>
+<text fill="#bfe6ff" font-size="14" font-weight="700" text-anchor="middle" x="120" y="105">👨‍🍳 Agent</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="120" y="125">intenta activar tools</text>
+</g>
+<path d="M210,95 L340,60" marker-end="url(#m11-ah2)" opacity="0.8" stroke="#38bdf8" stroke-width="1.8"></path>
+<path d="M210,110 L340,150" marker-end="url(#m11-ahr)" opacity="0.85" stroke="#f87171" stroke-width="1.8"></path>
+<rect fill="#0e1622" filter="url(#m11-glow2)" height="70" rx="12" stroke="url(#m11-grad2)" stroke-width="2.5" width="260" x="345" y="20"></rect>
+<text fill="#6ee7b7" font-size="13" font-weight="700" text-anchor="middle" x="475" y="48">🔑 Tool con clave válida</text>
+<text fill="#a7f3d0" font-size="10" text-anchor="middle" x="475" y="68">ejecuta y devuelve el resultado</text>
+<rect fill="#0e1622" height="70" rx="12" stroke="#f87171" stroke-width="2.5" width="260" x="345" y="115"></rect>
+<text fill="#fca5a5" font-size="13" font-weight="700" text-anchor="middle" x="475" y="143">🔒 Herramienta sin clave</text>
+<text fill="#fca5a5" font-size="10" text-anchor="middle" x="475" y="163">bloqueada — error de acceso denegado</text>
+<path d="M605,55 L740,55" marker-end="url(#m11-ah2)" opacity="0.7" stroke="#34d399" stroke-width="1.8"></path>
+<text fill="#a7f3d0" font-size="11" text-anchor="middle" x="820" y="60">✓ trabajo hecho</text>
+<path d="M605,150 L740,150" marker-end="url(#m11-ahr)" opacity="0.75" stroke="#f87171" stroke-width="1.8"></path>
+<text fill="#fca5a5" font-size="11" text-anchor="middle" x="820" y="155">✗ La ejecución se detiene</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: el mismo intento del agente, dos destinos distintos: la herramienta con la clave configurada completa el trabajo; la que no tiene clave bloquea la ejecución hasta que alguien corrija la configuración.</p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-1#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🔗 Por qué separar las tres piezas</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t5-p1">
+        Separar workflow, agente y tools no es un capricho técnico: es lo que hace que el sistema sea lo suficientemente predecible para confiar en él
+        y lo suficientemente flexible para ser útil. El workflow guarda el <em>intención</em> (qué hacer), el
+        agente guarda el <em>criterio</em> (cómo interpretar y ajustar), y las tools guardan la <em>capacidad</em>
+        (lo que es físicamente posible hacer en la computadora o en internet).
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-2 overflow-hidden">
+<svg aria-label="Diagrama de las tres partes de WAT: el Workflow (receta escrita) alimenta al Agent (cocinero que decide), que activa las Tools (ingredientes y electrodomésticos) para producir el resultado final" class="w-full h-auto" role="img" viewbox="0 0 1000 260">
+<defs>
+<lineargradient id="m11-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#059669"></stop></lineargradient>
+<filter height="180%" id="m11-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m11-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#34d399" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m11-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#34d399"></path></marker>
+<marker id="m11-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m11-grid)" height="260" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" filter="url(#m11-glow)" height="80" rx="14" stroke="url(#m11-grad)" stroke-width="2.5" width="220" x="30" y="90"></rect>
+<text fill="#6ee7b7" font-size="15" font-weight="700" text-anchor="middle" x="140" y="122">📋 Workflow</text>
+<text fill="#a7f3d0" font-size="11" text-anchor="middle" x="140" y="145">la receta escrita</text>
+<path d="M250,130 L340,130" marker-end="url(#m11-ah)" opacity="0.75" stroke="#34d399" stroke-width="1.8"></path>
+<g class="wf-a"><rect fill="#0e1622" height="120" rx="14" stroke="#38bdf8" stroke-width="2.5" width="240" x="345" y="70"></rect>
+<text fill="#bfe6ff" font-size="15" font-weight="700" text-anchor="middle" x="465" y="100">👨‍🍳 Agent</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="465" y="122">lee · decide · ejecuta</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="465" y="140">observa · corrige</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="465" y="158">repite hasta terminar</text>
+</g>
+<path d="M585,130 L675,130" marker-end="url(#m11-ah)" opacity="0.75" stroke="#34d399" stroke-width="1.8"></path>
+<rect fill="#0e1622" filter="url(#m11-glow)" height="80" rx="14" stroke="url(#m11-grad)" stroke-width="2.5" width="220" x="680" y="90"></rect>
+<text fill="#6ee7b7" font-size="15" font-weight="700" text-anchor="middle" x="790" y="122">🥕 Tools</text>
+<text fill="#a7f3d0" font-size="11" text-anchor="middle" x="790" y="145">el trabajo de verdad</text>
+<path d="M790,170 C790,225 465,225 465,190" marker-end="url(#m11-ahc)" opacity="0.55" stroke="#38bdf8" stroke-width="1.8"></path>
+<text fill="#9ad6ff" font-size="11" text-anchor="middle" x="627" y="245">resultado observado → el agente decide el siguiente paso</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: la receta entra por la izquierda, el agente interpreta y activa las herramientas a la derecha, y el resultado vuelve en ciclo para que el agente decida el siguiente paso — ese es el bucle que detalla el módulo 1.2.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t5-p2">
+        Para ver las tres piezas en acción de principio a fin, sigue una solicitud real de clasificación de correos electrónicos de clientes: un escenario muy distinto del boletín que aparece más adelante en la ruta:
+      </p>
+<ol class="relative border-l-2 border-emerald-500/30 pl-6 space-y-6 mb-6">
+<li class="relative"><span class="absolute -left-[31px] w-4 h-4 rounded-full bg-emerald-500 border-2 border-dark-900"></span>
+<strong class="text-emerald-400">1. La receta existe</strong>
+<p class="text-neutral-400 text-sm mt-1">El workflow dice: «lee los correos nuevos, clasifícalos en consulta/reclamo/felicitación, responde las consultas sencillas y deriva los reclamos a una persona».</p>
+</li>
+<li class="relative"><span class="absolute -left-[31px] w-4 h-4 rounded-full bg-emerald-500 border-2 border-dark-900"></span>
+<strong class="text-emerald-400">2. El agente lee y clasifica</strong>
+<p class="text-neutral-400 text-sm mt-1">Abre la bandeja de entrada (mediante una tool), lee cada correo y decide la categoría: ese juicio le corresponde al agente; el workflow solo proporcionó las categorías posibles.</p>
+</li>
+<li class="relative"><span class="absolute -left-[31px] w-4 h-4 rounded-full bg-emerald-500 border-2 border-dark-900"></span>
+<strong class="text-emerald-400">3. Las tools actúan</strong>
+<p class="text-neutral-400 text-sm mt-1">Para una consulta sencilla, la tool de correo electrónico envía la respuesta estándar. Para una queja, otra tool se la remite a una persona y la marca como "prioridad".</p>
+</li>
+<li class="relative"><span class="absolute -left-[31px] w-4 h-4 rounded-full bg-emerald-500 border-2 border-dark-900"></span>
+<strong class="text-emerald-400">4. Se observa el resultado</strong>
+<p class="text-neutral-400 text-sm mt-1">El agente comprueba que el envío se haya confirmado antes de seguir con el siguiente; si falla, lo intenta de nuevo o registra el error.</p>
+</li>
+<li class="relative"><span class="absolute -left-[31px] w-4 h-4 rounded-full bg-emerald-500 border-2 border-dark-900"></span>
+<strong class="text-emerald-400">5. Fin del ciclo</strong>
+<p class="text-neutral-400 text-sm mt-1">Sin nuevos correos, el agente se detiene e informa un resumen: cuántos respondió y cuántos reenvió.</p>
+</li>
+</ol>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-1#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">⚖️ Agente sin workflow, herramienta sin workflow</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t6-p1">
+        Dos combinaciones fallidas explican por qué las tres piezas deben estar juntas. Un <strong class="text-emerald-400">agente
+        sin workflow</strong> todavía funciona, pero resulta caro e impredecible: con cada solicitud reinventa el proceso desde cero,
+        sin aprender de la última vez, y puede tomar caminos distintos en ejecuciones similares. Una
+        <strong class="text-emerald-400">tool sin workflow</strong> es prácticamente inútil por sí sola: una herramienta para enviar
+        correos no decide por su cuenta cuándo ni a quién enviar algo.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Agente sin instrucciones</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Reinventa el proceso en cada solicitud: consume muchos tokens (la «moneda» de costo del agente, vista en la Trilha 0)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>El resultado varía de una ejecución a otra</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Tool sin receta ni cocinero</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Queda detenida: la API de correo no decide por sí sola cuándo enviar</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sin contexto de «por qué» usarla ahora</span></li>
+</ul>
+</div>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t6-p2">
+        Ejemplo de un agente sin workflow: pedir "organiza mi agenda" sin dar detalles. En una ejecución prioriza
+        las reuniones de trabajo; en otra, los compromisos personales: no hay una receta que fije el criterio. Por otro lado, una
+        tool sin workflow sería una herramienta de programación de publicaciones perfectamente configurada, con una clave válida,
+        pero sin instrucciones sobre qué publicar y cuándo: está disponible, pero inactiva. Ambas situaciones refuerzan la misma
+        lección: el workflow es lo que convierte la capacidad aislada en un resultado confiable.
+      </p>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Antes de pedir cualquier automatización, escribe al menos 3-4 líneas de workflow, aunque sea informal. Es la inversión que más tiempo y tokens ahorra en el resto de la ruta.</p>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-1-1#q1">
+<p class="font-medium mb-4">Verificación rápida (opcional): ¿qué ocurre cuando falta el workflow?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">El agente deja de funcionar por completo.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">El agente reinventa el proceso cada vez, gastando más y variando el resultado.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">No cambia nada; el workflow es solo documentación opcional.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-1-1#q1', {
+              answer: 1,
+              explain: { 0: 'Ele ainda funciona, só que pior — sem previsibilidade.', 1: 'Isso mesmo: sem receita, cada execução vira uma reinvenção cara.', 2: 'O workflow muda muito o resultado — releia o tópico 6.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">WAT:</strong><span class="text-neutral-400"> Workflow (receta) + Agent (cocinero) + Tools (ingredientes/electrodomésticos).</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Roles distintos:</strong><span class="text-neutral-400"> intención, criterio y capacidad: ninguno sustituye a los demás.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Agente sin workflow:</strong><span class="text-neutral-400"> costoso y errático: reinventa el proceso cada vez.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Tool sin workflow:</strong><span class="text-neutral-400"> prácticamente inútil — no sabe cuándo actuar.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">1.2 — El ciclo real de ejecución, paso a paso</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la ruta</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-2.html">Próximo módulo →</a>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) { exp.classList.remove('active'); exp.previousElementSibling && exp.previousElementSibling.setAttribute && exp.previousElementSibling.setAttribute('aria-expanded','false'); }
+      });
+      explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', explanation.classList.contains('active') ? 'true' : 'false');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

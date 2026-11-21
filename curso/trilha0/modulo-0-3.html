@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>0.3 Anatomia de um projeto | Seu Funcionário Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37, 99, 235, 0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37, 99, 235, 0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37, 99, 235, 0.25); }
+    html:not(.dark) .hover\:bg-blue-500\/30:hover { background-color: rgba(37, 99, 235, 0.18); }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37, 99, 235, 0.08); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha0/modulo-0-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha0/modulo-0-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha0/modulo-0-3.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-0-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha0/modulo-0-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha0/modulo-0-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Pular para o conteúdo</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparação</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Minha jornada</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../../index.html">Início</a><span>/</span>
+<a class="hover:text-blue-400" href="index.html">Trilha 0</a><span>/</span>
+<span class="text-blue-400">Módulo 0.3</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 0.3</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">📁 Anatomia de um projeto</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">O que é uma pasta de projeto, o que é um repositório, e o que o Claude Code cria por baixo dos panos — a organização que sustenta tudo o que vem depois.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">25</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Iniciante</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Teoria</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progresso do módulo 0.3" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:0-3" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Seção <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. Pasta de projeto</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. O que é repositório</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. Estrutura típica</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. Local vs. nuvem</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. Criar o primeiro projeto</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. Erros comuns de organização</a></li>
+</ul>
+</nav>
+<article data-inema-module="0-3" data-inema-track="0" id="modulo-0-3">
+<section class="mb-16" data-inema-topic="modulo-0-3#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">📦 Pasta de projeto: a "casa" de cada automação</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t1-p1">
+<strong class="text-blue-400">Novo aqui?</strong> <strong class="text-blue-400">Pasta</strong> (também chamada de
+        "diretório") é o espaço no seu computador onde arquivos ficam guardados juntos — o mesmo ícone amarelo que você
+        já clica no Explorador de Arquivos ou no Finder. Uma <strong class="text-blue-400">pasta de projeto</strong> é
+        uma pasta comum, dedicada a um único projeto — nada de mágico, só organização. O agente só enxerga o que está
+        dentro da pasta que você abriu com <code>claude</code>; misturar vários projetos numa pasta só confunde o
+        contexto dele, porque ele passa a ler arquivos de automações diferentes como se fossem parte da mesma conversa.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t1-p2">
+        Pense na pasta de projeto como uma gaveta de arquivo físico: cada gaveta guarda os papéis de um assunto só.
+        Se você jogar contratos, receitas e fotos na mesma gaveta, até achar o que precisa vira trabalho — o mesmo
+        acontece quando o agente tenta entender um projeto bagunçado. Uma automação por pasta é a regra que evita
+        esse tipo de confusão desde o primeiro dia.
+      </p>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">•</span><span>Um projeto = uma pasta = um contexto.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">•</span><span>Cada automação do curso vive na sua própria pasta.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">•</span><span>O agente só vê o que está dentro da pasta aberta — nada de fora dela.</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica Prática</h3>
+<p class="text-neutral-300">Escolha um lugar fixo no seu computador pra guardar todas as pastas de projeto do curso — por exemplo, uma pasta chamada "projetos" dentro dos Documentos. Assim você nunca perde o caminho de volta.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-0-3#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🗄️ O que é um repositório</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t2-p1">
+<strong class="text-blue-400">Novo aqui?</strong> Um <strong class="text-blue-400">repositório</strong> (ou "repo")
+        é uma pasta de projeto com um histórico de versões guardado por uma ferramenta chamada <strong class="text-blue-400">git</strong>.
+        Cada mudança relevante fica registrada, com data e descrição — como um "salvar como" automático que nunca
+        apaga a versão anterior.
+      </p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>git:</strong> o programa que grava o histórico.</li>
+<li><strong>Repositório:</strong> a pasta + esse histórico.</li>
+<li><strong>Commit:</strong> um "ponto salvo" no histórico.</li>
+</ul>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t2-p2">
+        Não é obrigatório ter um repositório desde o primeiro projeto — muita automação simples do começo do curso
+        roda numa pasta comum, sem git nenhum. Mas assim que o projeto ganha valor (uma automação que você usa toda
+        semana, por exemplo), vale a pena transformar a pasta em repositório: se um arquivo quebrar ou um comando
+        apagar algo por engano, dá pra voltar pra uma versão anterior salva no histórico.
+      </p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>git:</strong> o programa que grava o histórico.</li>
+<li><strong>Repositório:</strong> a pasta + esse histórico.</li>
+<li><strong>Commit:</strong> um "ponto salvo" no histórico.</li>
+<li><strong>Pasta oculta <code>.git/</code>:</strong> onde o histórico fica guardado, dentro da própria pasta do projeto — some se você apagar essa pasta oculta.</li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica Prática</h3>
+<p class="text-neutral-300">É esse histórico versionado que vai permitir "publicar" a automação na nuvem — assunto detalhado na Trilha 4. Sem repositório, não tem o que publicar: é o git que empacota as mudanças pra enviar.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-0-3#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🏗️ Estrutura típica de um projeto do Claude Code</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t3-p1">
+        Ao trabalhar num projeto, alguns nomes de pasta e arquivo aparecem sempre — reconhecer eles evita confusão.
+        <strong class="text-blue-400">Novo aqui?</strong> <strong class="text-blue-400">Arquivo</strong> é qualquer
+        documento individual dentro de uma pasta (um texto, uma imagem, um código); pastas podem conter outras
+        pastas dentro delas, formando uma "árvore". Um nome começando com ponto, como <code>.claude</code> ou
+        <code>.git</code>, é uma pasta <strong class="text-blue-400">oculta</strong> — o sistema operacional esconde
+        ela por padrão porque é área de configuração, não de conteúdo do dia a dia, mas ela está lá o tempo todo.
+      </p>
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Estrutura de pastas de um projeto: a pasta raiz contém o CLAUDE.md, a pasta oculta .claude com skills e preferências, e as pastas de código-fonte e configuração" class="w-full h-auto" role="img" viewbox="0 0 1000 220">
+<defs>
+<lineargradient id="m3-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
+<filter height="180%" id="m3-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m3-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#60a5fa" opacity="0.12" r="1.3"></circle></pattern>
+</defs>
+<rect fill="url(#m3-grid)" height="220" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" filter="url(#m3-glow)" height="160" rx="16" stroke="url(#m3-grad)" stroke-width="2.5" width="340" x="40" y="30"></rect>
+<text fill="#60a5fa" font-size="15" font-weight="700" text-anchor="middle" x="210" y="58">meu-projeto/  (pasta raiz)</text>
+<rect fill="#1e293b" height="28" rx="6" stroke="#38bdf8" stroke-width="1.5" width="300" x="60" y="72"></rect><text fill="#bfe6ff" font-size="12" x="70" y="90">📄 CLAUDE.md</text>
+<rect fill="#1e293b" height="28" rx="6" stroke="#38bdf8" stroke-width="1.5" width="300" x="60" y="106"></rect><text fill="#bfe6ff" font-size="12" x="70" y="124">📁 .claude/  (skills, preferências)</text>
+<rect fill="#1e293b" height="28" rx="6" stroke="#38bdf8" stroke-width="1.5" width="300" x="60" y="140"></rect><text fill="#bfe6ff" font-size="12" x="70" y="158">📁 src/  (código do projeto)</text>
+<rect fill="#0e1622" height="160" opacity="0.85" rx="16" stroke="#38bdf8" stroke-width="2" width="520" x="440" y="30"></rect>
+<text fill="#9ad6ff" font-size="14" font-weight="600" text-anchor="middle" x="700" y="58">O que cada um faz</text>
+<text fill="#d1d5db" font-size="12" x="460" y="88">CLAUDE.md → regras fixas, lidas toda sessão (módulo 0.4)</text>
+<text fill="#d1d5db" font-size="12" x="460" y="114">.claude/ → skills e configurações específicas do projeto</text>
+<text fill="#d1d5db" font-size="12" x="460" y="140">src/ ou outras pastas → seu código, textos, dados</text>
+<text fill="#d1d5db" font-size="12" x="460" y="166">.git/ (oculta) → histórico de versões, se for um repo</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Legenda: a pasta raiz do projeto guarda o CLAUDE.md, a pasta `.claude/` com skills, e as pastas de código — cada uma com um papel fixo que se repete em todo projeto do curso.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t3-p2">
+        Essa estrutura se repete em praticamente todo projeto que você vai construir no curso — por isso vale
+        memorizar os quatro nomes. O CLAUDE.md é o único arquivo que o agente sempre lê no começo de cada sessão
+        (módulo 0.4 explica isso a fundo); a pasta <code>.claude/</code> é onde ficam as "skills" — processos
+        ensinados ao agente, tema da Trilha 3; e as pastas de código variam de projeto pra projeto, mas o nome
+        <code>src/</code> (de "source", fonte em inglês) é o mais comum.
+      </p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-0-3#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🖥️ O que fica na sua máquina vs. o que sobe pra nuvem</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t4-p1">
+        Os arquivos do projeto moram no seu computador o tempo todo. Só o texto da conversa — e trechos de arquivo
+        que o agente precisa ler pra responder — viaja até o modelo de IA na nuvem para gerar cada resposta.
+        Nada fica "publicado" ou visível pra outras pessoas só por você ter conversado sobre isso.
+      </p>
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Diagrama mostrando que os arquivos do projeto ficam guardados no computador local, e apenas o texto da conversa e trechos necessários de arquivo viajam até a nuvem para o modelo de IA gerar cada resposta" class="w-full h-auto" role="img" viewbox="0 0 1000 190">
+<defs>
+<lineargradient id="m3b-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#38bdf8"></stop><stop offset="1" stop-color="#60a5fa"></stop></lineargradient>
+<filter height="180%" id="m3b-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+</defs>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" filter="url(#m3b-glow)" height="110" rx="16" stroke="#34d399" stroke-width="2.5" width="280" x="30" y="40"></rect>
+<text fill="#6ee7b7" font-size="15" font-weight="700" text-anchor="middle" x="170" y="70">🖥️ Seu computador</text>
+<text fill="#d1d5db" font-size="12" text-anchor="middle" x="170" y="98">Todos os arquivos</text>
+<text fill="#d1d5db" font-size="12" text-anchor="middle" x="170" y="120">Histórico do git</text>
+<path class="wf-a" d="M320 95 L620 95" fill="none" marker-end="url(#m3b-arrow)" stroke="url(#m3b-grad)" stroke-width="3"></path>
+<text fill="#9ad6ff" font-size="11" text-anchor="middle" x="470" y="80">só texto + trechos necessários</text>
+<defs><marker id="m3b-arrow" markerheight="10" markerwidth="10" orient="auto" refx="8" refy="3"><path d="M0,0 L8,3 L0,6 Z" fill="#60a5fa"></path></marker></defs>
+<rect fill="#0e1622" filter="url(#m3b-glow)" height="110" rx="16" stroke="#38bdf8" stroke-width="2.5" width="330" x="640" y="40"></rect>
+<text fill="#9ad6ff" font-size="15" font-weight="700" text-anchor="middle" x="805" y="70">☁️ Modelo de IA (nuvem)</text>
+<text fill="#d1d5db" font-size="12" text-anchor="middle" x="805" y="98">Texto da mensagem</text>
+<text fill="#d1d5db" font-size="12" text-anchor="middle" x="805" y="120">Gera a resposta e devolve</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Legenda: os arquivos nunca saem do seu computador por conta própria — só o texto da conversa e os trechos de arquivo necessários pra responder viajam até o modelo, a cada pergunta.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t4-p2">
+<strong class="text-blue-400">Ver por dentro:</strong> quando você pede pra ler um arquivo, o Claude Code
+        manda o conteúdo desse arquivo (ou o pedaço relevante) junto da sua mensagem pro modelo de IA processar —
+        é assim que ele "enxerga" o que está na pasta. Isso tem custo: quanto mais texto viaja, mais caro fica o uso
+        (se você usa um plano pago por uso) e mais devagar a resposta chega. Por isso projetos organizados, sem
+        arquivos gigantes ou irrelevantes na pasta, deixam o agente mais rápido e mais barato de usar.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Fica na sua máquina</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Todos os arquivos do projeto</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>O histórico do git, se houver</span></li>
+</ul>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">☁️ Viaja pra nuvem</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-blue-400">☁</span><span>O texto da sua mensagem</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">☁</span><span>Trechos de arquivo necessários pra responder</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica Prática</h3>
+<p class="text-neutral-300">Se um arquivo tem dado sensível (senha, chave de API, documento pessoal), não deixe ele solto na pasta do projeto sem necessidade — o módulo 0.6 (Permissões e segurança) ensina como proteger isso.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-0-3#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🆕 Criar seu primeiro projeto, passo a passo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t5-p1">
+        É o ritual que você vai repetir em toda automação nova do curso: criar a pasta, entrar nela, abrir o agente.
+        <strong class="text-blue-400">Novo aqui?</strong> <strong class="text-blue-400">Terminal</strong> é a janela
+        de texto onde você digita comandos em vez de clicar em ícones — no Windows costuma se chamar "Prompt de
+        Comando" ou "PowerShell"; no Mac e Linux, "Terminal". <strong class="text-blue-400">Comando</strong> é a
+        instrução que você digita e confirma com Enter; o computador executa ela na hora.
+      </p>
+<div class="bg-dark-900 rounded-xl border border-dark-600 p-5 mb-2 font-mono text-sm overflow-x-auto">
+<div class="text-neutral-500 mb-2"># No terminal:</div>
+<div class="text-emerald-400">mkdir <span class="text-amber-300">&lt;nome-do-projeto&gt;</span></div>
+<div class="text-emerald-400">cd <span class="text-amber-300">&lt;nome-do-projeto&gt;</span></div>
+<div class="text-emerald-400">claude</div>
+</div>
+<p class="text-xs text-neutral-500 mb-6"><strong>Objetivo:</strong> ter um projeto novo, vazio, pronto pra receber o CLAUDE.md do módulo 0.4. <strong>Como verificar:</strong> rodando <code>ls</code> (ou <code>dir</code>) você vê a pasta nova vazia — e o Claude Code abriu sem erro dentro dela.</p>
+<div class="bg-dark-800/60 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-sm font-semibold text-neutral-400 mb-4 uppercase tracking-wide">Linha do tempo do ritual</h3>
+<ol class="space-y-4">
+<li class="flex items-start space-x-3"><span class="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold shrink-0 mt-0.5">1</span><div><strong class="text-neutral-100">mkdir</strong><span class="text-neutral-400"> — cria a pasta nova, vazia, com o nome que você escolher.</span></div></li>
+<li class="flex items-start space-x-3"><span class="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold shrink-0 mt-0.5">2</span><div><strong class="text-neutral-100">cd</strong><span class="text-neutral-400"> — "entra" nessa pasta; a partir daqui, todo comando roda dentro dela.</span></div></li>
+<li class="flex items-start space-x-3"><span class="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold shrink-0 mt-0.5">3</span><div><strong class="text-neutral-100">claude</strong><span class="text-neutral-400"> — abre o agente já apontado pra essa pasta; a partir daí, tudo que ele lê ou escreve fica dentro dela.</span></div></li>
+</ol>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t5-p2">
+        Repare que <code>mkdir</code> e <code>cd</code> precisam do nome exato da pasta — se você digitar um nome
+        diferente entre os dois comandos, o <code>cd</code> vai falhar. Não tem problema esquecer ou errar: o
+        terminal avisa com uma mensagem quando o comando não funciona, e basta digitar de novo.
+      </p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-0-3#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🧭 Erros comuns de organização</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t6-p1">
+        Dois erros aparecem sempre no começo — e os dois têm solução simples.
+      </p>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atenção</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Misturar projetos numa pasta só:</strong> confunde o CLAUDE.md e o contexto — sempre um projeto por pasta.</li>
+<li><strong>Abrir o agente na pasta errada</strong> (ex.: na pasta raiz de usuários): dá acesso a arquivos de fora do escopo. Confira com <code>ls</code>/<code>dir</code> antes de rodar <code>claude</code>.</li>
+</ul>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t6-p2">
+        Além desses dois, alguns tropeços concretos aparecem no primeiro dia de quem nunca usou terminal —
+        nenhum deles é grave, mas travam quem não sabe o que está acontecendo.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Tropeço comum</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Fechei o terminal sem querer" — a sessão do agente naquela janela some.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"<code>cd</code> deu erro: pasta não encontrada" — geralmente o nome foi digitado diferente do <code>mkdir</code>.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Não sei em que pasta estou" — perdeu a referência depois de vários <code>cd</code>.</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ O que fazer</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Sem problema: abra o terminal de novo, use <code>cd</code> pra voltar à pasta do projeto e rode <code>claude</code> outra vez.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Confira o nome exato da pasta com <code>ls</code> (ou <code>dir</code> no Windows) antes de repetir o <code>cd</code>.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Digite <code>pwd</code> (ou veja o caminho mostrado no início da linha) pra saber sempre onde você está.</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica Prática</h3>
+<p class="text-neutral-300">Fechar o terminal não apaga nada do projeto — os arquivos continuam na pasta exatamente como estavam. O que se perde é só a conversa daquela sessão do agente; o trabalho salvo em arquivo fica intacto.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+</article>
+<section class="mb-12">
+<div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do Módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Pasta de projeto:</strong><span class="text-neutral-400"> uma pasta comum, dedicada a um projeto — sem misturar.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Repositório:</strong><span class="text-neutral-400"> pasta + histórico de versões via git.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Estrutura:</strong><span class="text-neutral-400"> CLAUDE.md, .claude/, código — cada um com um papel.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Local × nuvem:</strong><span class="text-neutral-400"> arquivos ficam na sua máquina; só o texto necessário viaja.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-blue-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">0.4 — O CLAUDE.md como cérebro do projeto</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-0-2.html">← Módulo anterior</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-0-4.html">Próximo Módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

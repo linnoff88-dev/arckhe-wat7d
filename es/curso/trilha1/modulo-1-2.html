@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>1.2 El ciclo real de ejecución | Tu Empleado Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"], section[id^="modulo-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5, 150, 105, 0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5, 150, 105, 0.18); }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .group:hover .group-hover\:text-emerald-400 { color: #059669; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+      .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha1/modulo-1-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha1/modulo-1-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha1/modulo-1-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../../curso/trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../../curso/trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../../curso/trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../../curso/trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1-2</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1-2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🔄 El ciclo real de ejecución</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        Leer, decidir, ejecutar, observar, repetir. El ciclo paso a paso que transforma una receta escrita en trabajo hecho.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">22</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Principiante</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Teoría</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 1-2" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:1-2" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. El ciclo de 5 pasos</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. Leer el flujo de trabajo</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. Decidir la tool</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Ejecutar/observar</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. El loop continúa</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. Cuando termina</a></li>
+</ul>
+</nav>
+<article data-inema-module="1-2" data-inema-track="1" id="modulo-1-2">
+<section class="mb-16" data-inema-topic="modulo-1-2#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🔄 El ciclo en 5 pasos</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t1-p1">
+<strong class="text-emerald-400">¿Eres nuevo aquí?</strong> O <strong class="text-emerald-400">ciclo de ejecución</strong> es la
+        secuencia que el agente repite varias veces durante una sesión: leer el paso del workflow, elegir una
+        herramienta, ejecutarla, revisar el resultado y decidir qué hacer después. No es un paso único: es un
+        <strong class="text-emerald-400">loop</strong> (bucle, repetición: la misma secuencia se ejecuta una y otra vez)
+        que continúa hasta que la tarea esté completa.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t1-p1b">
+        En el módulo 1.1 viste la analogía de la cocina: la receta (workflow), el cocinero (agente), los utensilios (tools). Allí quedó quieta, como una foto del plato terminado. Este módulo es la película: el cocinero lee el siguiente paso, toma el cuchillo adecuado, corta, prueba el resultado y solo entonces pasa la página. Es ese «leer → decidir → actuar → probar → repetir» lo que convierte una receta estática en trabajo de verdad: un informe listo, un boletín enviado, un lote de facturas organizado.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t1-p1c">
+        Cada vuelta completa del loop se llama <strong class="text-emerald-400">iteración</strong>. Una tarea
+        sencilla lleva 3 o 4; organizar un mes de facturas puede llevar decenas: el agente decide en cada
+        vuelta si ya terminó.
+      </p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Leer el siguiente paso del workflow</h4>
+<p class="text-neutral-300 text-sm">El agente identifica dónde se quedó en la receta y qué sigue.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Decidir qué tool llamar</h4>
+<p class="text-neutral-300 text-sm">Entre las herramientas disponibles, elige la que resuelve ese paso específico.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Ejecutar</h4>
+<p class="text-neutral-300 text-sm">La herramienta se ejecuta de verdad — se lee el archivo y se ejecuta el comando.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">4</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Observar el resultado</h4>
+<p class="text-neutral-300 text-sm">El agente lee lo que recibió: ¿salió bien?, ¿hubo un error?, ¿coincide el número?</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">5</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Decidir el siguiente paso</h4>
+<p class="text-neutral-300 text-sm">Continúa con el siguiente elemento del workflow, vuelve a intentarlo o avisa que necesita ayuda.</p>
+</div>
+</div>
+</div>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-4 sm:p-5 mb-2 overflow-x-auto">
+<div class="flex items-stretch min-w-[640px]">
+<div class="flex-1 text-center">
+<div class="w-10 h-10 mx-auto rounded-full bg-emerald-500/20 border-2 border-emerald-400 flex items-center justify-center text-emerald-400 font-bold text-sm">1</div>
+<p class="text-xs text-neutral-400 mt-2">Leer</p>
+</div>
+<div class="flex-1 flex items-center"><div class="w-full h-0.5 bg-emerald-500/40"></div></div>
+<div class="flex-1 text-center">
+<div class="w-10 h-10 mx-auto rounded-full bg-emerald-500/20 border-2 border-emerald-400 flex items-center justify-center text-emerald-400 font-bold text-sm">2</div>
+<p class="text-xs text-neutral-400 mt-2">Decidir tool</p>
+</div>
+<div class="flex-1 flex items-center"><div class="w-full h-0.5 bg-emerald-500/40"></div></div>
+<div class="flex-1 text-center">
+<div class="w-10 h-10 mx-auto rounded-full bg-emerald-500/20 border-2 border-emerald-400 flex items-center justify-center text-emerald-400 font-bold text-sm">3</div>
+<p class="text-xs text-neutral-400 mt-2">Ejecutar</p>
+</div>
+<div class="flex-1 flex items-center"><div class="w-full h-0.5 bg-emerald-500/40"></div></div>
+<div class="flex-1 text-center">
+<div class="w-10 h-10 mx-auto rounded-full bg-emerald-500/20 border-2 border-emerald-400 flex items-center justify-center text-emerald-400 font-bold text-sm">4</div>
+<p class="text-xs text-neutral-400 mt-2">Observar</p>
+</div>
+<div class="flex-1 flex items-center"><div class="w-full h-0.5 bg-sky-400/40"></div></div>
+<div class="flex-1 text-center">
+<div class="w-10 h-10 mx-auto rounded-full bg-sky-500/20 border-2 border-sky-400 flex items-center justify-center text-sky-400 font-bold text-sm">5</div>
+<p class="text-xs text-neutral-400 mt-2">Decidir siguiente</p>
+</div>
+</div>
+</div>
+<p class="text-xs text-neutral-500 mb-6">Leyenda: esta línea de tiempo es UNA iteración del loop: una vuelta completa. El paso 5 apunta de vuelta al paso 1 (no dibujado aquí) porque el ciclo se reinicia hasta que termina el workflow.</p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-2#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📖 Leer el workflow: dónde está el agente</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t2-p1">
+        Cada vez que el ciclo vuelve a empezar, el agente necesita saber «en qué punto de la receta estoy». En una sesión de
+        Claude Code esto normalmente ocurre dentro de una sola conversación: el historial de la conversación cumple la función
+        de memoria a corto plazo y recuerda lo que ya se hizo. En cambio, en un workflow guardado en un archivo (lo que vamos a
+        practicar en el módulo 1.5), el paso actual puede quedar explícito en el propio texto o inferirse de lo que ya
+        existe en el disco; por ejemplo, si el archivo «relatorio-semana.md» ya existe, el paso 4 ya se cumplió.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t2-p2">
+<strong class="text-emerald-400">¿Eres nuevo aquí?</strong> <strong class="text-emerald-400">Contexto</strong> es
+        todo lo que el agente «ve» al tomar una decisión: la conversación hasta ese momento, los archivos que ya leyó, CLAUDE.md y el
+        resultado de las herramientas que ya ejecutó. Piensa en el contexto como la mesa de trabajo del cocinero: solo usa lo que
+        tiene sobre ella en ese momento; un ingrediente en un armario cerrado (un archivo que nunca abrió)
+        simplemente no existe para él. Ese contexto tiene un costo, medido en
+        <strong class="text-emerald-400">tokens</strong> — fragmentos de texto que el modelo procesa en cada turno.
+        Cuantas más cosas haya "sobre la mesa", más tokens se gastan solo en revisar todo antes de decidir.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t2-p4">
+        Ejemplo: en un workflow para "responder correos de clientes", en cada iteración el agente lee el siguiente correo
+        (el "dónde estoy"), decide si responde con una plantilla o escala el caso a una persona, ejecuta y observa si el
+        envío se realizó correctamente. El "estado" es solo cuántos correos ya se procesaron.
+      </p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Estado:</strong> "en qué punto de la tarea estoy" — lo que ya se hizo y lo que falta.</li>
+<li><strong>Contexto:</strong> todo lo que el agente «ve» en ese momento — conversación, archivos, CLAUDE.md.</li>
+<li><strong>Tokens:</strong> el costo de lo que está en el contexto: más texto leído o generado, más tokens gastados.</li>
+<li><strong>Dónde queda registrado:</strong> en la conversación o en el disco, en archivos que el workflow consulta en cada ciclo.</li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">¿La tarea es demasiado lenta o costosa? Revisa qué entra en el contexto en cada vuelta: es común que el agente vuelva a leer el mismo archivo enorme en cada iteración, cuando bastaba con leerlo una vez.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-2#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🧭 Decidir qué tool llamar</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t3-p1">
+        Esta es la parte más «inteligente» del ciclo: dado el paso actual y la lista de herramientas disponibles, el
+        agente elige la que mejor resuelve esa tarea. Si el paso es «sumar por categoría», puede elegir ejecutar un
+        script de cálculo en vez de intentar sumar manualmente. Si el paso es «publicar en el sitio», elige la
+        herramienta de deploy (tema de la Trilha 4), no una de correo electrónico.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t3-p2">
+        Esta elección depende directamente de qué herramientas se pusieron a disposición del agente — por eso las
+        Trilhas 2 (MCP) y 3 (Skills) de este curso enseñan a conectar herramientas: cuanto más claro sea el menú
+        de opciones, mejor será la elección.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t3-p3">
+        Otro ejemplo: en un «informe semanal de ventas», el paso «sumar la facturación por vendedor» tiene dos
+        herramientas candidatas: un script que suma o fórmulas manuales. Un agente bien configurado elige el
+        script, más rápido y determinista, si está disponible. Si no, se las arregla, lo que nos lleva al error más común.
+      </p>
+<div class="rounded-xl border border-red-500/30 bg-red-900/10 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Errores comunes en esta etapa</h3>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li><strong class="text-red-400">Receta vaga:</strong> "organiza las facturas" sin criterios — el agente elige uno por su cuenta y puede no ser el que querías.</li>
+<li><strong class="text-red-400">Falta la clave de la herramienta:</strong> muchas herramientas requieren una <strong>API key</strong> (contraseña que autoriza el uso). Sin ella, la herramienta no funciona.</li>
+<li><strong class="text-red-400">El agente "inventa" un paso (alucina):</strong> sin una herramienta clara, a veces describe una acción como realizada sin haberla ejecutado de verdad; por eso comprobar el resultado (tema 4) importa tanto como elegir la herramienta.</li>
+</ul>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Paso</div><div class="text-xs text-neutral-400 mt-1">Qué hacer</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Menú</div><div class="text-xs text-neutral-400 mt-1">Tools disponibles</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Elección</div><div class="text-xs text-neutral-400 mt-1">La más adecuada</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Activación</div><div class="text-xs text-neutral-400 mt-1">Ejecución real</div></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Paso bien redactado</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>"Suma la facturación de la hoja de cálculo vendas.csv, agrupada por vendedor"</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Indica qué herramienta preferir cuando hay más de una opción</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Paso vago</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Organiza las ventas" — ¿cómo las organizas? ¿En qué?</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Deja que el agente adivine cuál es la herramienta adecuada</span></li>
+</ul>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-2#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">👀 Ejecutar y observar el resultado</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t4-p1">
+        Después de ejecutar, el agente no sigue a ciegas con el siguiente paso: <em>lee</em> lo que
+        devolvió la herramienta. Un comando puede devolver un error, un archivo vacío, un número fuera de lo esperado o exactamente lo
+        que debería. Leer ese resultado activa la autocorrección, que se explica en profundidad en el módulo 1.3.
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-2 overflow-hidden">
+<svg aria-label="El bucle del agente: elige la herramienta, la ejecuta, observa el resultado y decide el siguiente paso — si el resultado salió mal, vuelve a intentarlo antes de continuar" class="w-full h-auto" role="img" viewbox="0 0 1000 220">
+<defs>
+<lineargradient id="m12-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#059669"></stop></lineargradient>
+<filter height="180%" id="m12-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m12-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#34d399" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m12-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#34d399"></path></marker>
+<marker id="m12-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m12-grid)" height="220" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<g class="wf-a"><rect fill="#0e1622" height="60" rx="12" stroke="#38bdf8" stroke-width="2" width="150" x="40" y="80"></rect>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="115" y="107">Elige la herramienta</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="115" y="124">paso actual</text></g>
+<path d="M190,110 L260,110" marker-end="url(#m12-ah)" opacity="0.75" stroke="#34d399" stroke-width="1.8"></path>
+<g class="wf-a"><rect fill="#0e1622" filter="url(#m12-glow)" height="60" rx="12" stroke="url(#m12-grad)" stroke-width="2.5" width="150" x="265" y="80"></rect>
+<text fill="#6ee7b7" font-size="12" font-weight="700" text-anchor="middle" x="340" y="107">Ejecuta</text>
+<text fill="#a7f3d0" font-size="10" text-anchor="middle" x="340" y="124">de verdad</text></g>
+<path d="M415,110 L485,110" marker-end="url(#m12-ah)" opacity="0.75" stroke="#34d399" stroke-width="1.8"></path>
+<g class="wf-a"><rect fill="#0e1622" height="60" rx="12" stroke="#38bdf8" stroke-width="2" width="150" x="490" y="80"></rect>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="565" y="107">Observa</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="565" y="124">¿funcionó?</text></g>
+<path d="M640,110 L710,110" marker-end="url(#m12-ah)" opacity="0.75" stroke="#34d399" stroke-width="1.8"></path>
+<rect fill="#0e1622" filter="url(#m12-glow)" height="60" rx="12" stroke="url(#m12-grad)" stroke-width="2.5" width="230" x="715" y="80"></rect>
+<text fill="#6ee7b7" font-size="12" font-weight="700" text-anchor="middle" x="830" y="107">Próximo paso</text>
+<text fill="#a7f3d0" font-size="10" text-anchor="middle" x="830" y="124">o corrige y repite</text>
+<path d="M830,140 C830,180 340,180 340,145" marker-end="url(#m12-ahc)" opacity="0.55" stroke="#38bdf8" stroke-dasharray="4 3" stroke-width="1.8"></path>
+<text fill="#9ad6ff" font-size="11" text-anchor="middle" x="585" y="196">si el resultado salió mal, vuelve y prueba de nuevo</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: el loop avanza de izquierda a derecha en cada paso del workflow; la flecha punteada de regreso muestra la autocorrección: el agente repite un paso que no salió como esperaba.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t4-p2">
+        "Observar" no es opcional ni automático: es una decisión activa de detenerse y leer el resultado antes de continuar.
+        En el ejemplo del boletín informativo (módulo 1.5), después de "enviar correo electrónico", el agente comprueba si apareció "éxito" o un
+        código de error. Con las facturas, después de mover un archivo comprueba si realmente está en la carpeta; no
+        da por hecho que salió bien solo porque el comando "se ejecutó sin trabarse".
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t4-p3">
+        Esta lectura tiene tres resultados: (1) coincide con lo esperado, sigue adelante; (2) aparece un error claro, el agente
+        intenta corregirlo o te avisa; o (3) el resultado es ambiguo — ni correcto ni claramente incorrecto — y ahí es donde
+        entra el análisis profundo del módulo 1.3 sobre autocorrección.
+      </p>
+<div class="rounded-xl border border-emerald-500/30 bg-dark-800/60 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">📋</span> Copia y ejecuta: un mini-workflow para ver el ciclo en vivo</h3>
+<p class="text-neutral-300 text-sm mb-3"><strong>Objetivo:</strong> ver las 5 etapas en acción en una tarea pequeña, sin herramientas externas.</p>
+<div class="bg-dark-900 rounded-xl border border-dark-600 p-4 mb-3 overflow-x-auto">
+<pre class="text-sm text-neutral-300 font-mono leading-relaxed"><code>1. Leia a pasta atual e liste os arquivos .txt que existem.
+2. Para cada arquivo .txt encontrado, conte quantas linhas ele tem.
+3. Crie um arquivo resumo.md com o nome de cada arquivo e sua contagem de linhas.
+4. Confira se resumo.md foi criado e se o número de linhas listadas bate com os arquivos originais.</code></pre>
+</div>
+<p class="text-neutral-300 text-sm mb-2"><strong>Cómo verificar:</strong> abre <code class="text-neutral-400">resumo.md</code> después. Si cada línea coincide con un archivo real y su conteo es correcto, las 5 etapas se ejecutaron correctamente en cada archivo procesado.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-2#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🔁 El bucle continúa hasta terminar (o bloquearse)</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t5-p1">
+        El ciclo se repite paso a paso hasta que termina el workflow. En cada vuelta, el agente también decide si necesita
+        repetir el paso actual (por ejemplo, si un comando falló por un motivo temporal) o si debe detenerse y pedirte
+        ayuda (por ejemplo, si falta una contraseña que solo tú tienes). Este segundo caso —detenerse y avisar— es
+        tan importante como ejecutar: un buen agente sabe reconocer cuándo no debe seguir por su cuenta.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t5-p2">
+<strong class="text-emerald-400">¿Eres nuevo aquí?</strong> Este momento de decisión — evaluar si seguir, repetir o
+        detenerse según el resultado observado — es lo que llamamos <strong class="text-emerald-400">razonamiento</strong>
+        del agente. Sin él, el ciclo sería solo una secuencia ciega de comandos, incapaz de reaccionar ante imprevistos.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t5-p3">
+        En el ejemplo de los correos electrónicos: un ciclo saludable vuelve a intentar «enviar» solo si la falla es temporal y se detiene después de 2-3 intentos para escalar el caso contigo. Un ciclo atascado insiste con el mismo error decenas de veces sin obtener un resultado nuevo.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Bucle saludable</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Cada paso hace avanzar la tarea de verdad</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Los errores temporales se corrigen en 1-2 intentos</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Termina con un resultado o una solicitud de ayuda clara</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Bucle bloqueado</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Repite el mismo error varias veces sin cambiar de estrategia</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Consume tokens (costo) sin avanzar</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Señal de que el workflow o el permiso necesita ajustes — módulo 1.4</span></li>
+</ul>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-2#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🏁 Cuándo termina realmente el ciclo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t6-p1">
+        El ciclo termina de tres maneras: (1) el workflow llegó al último paso y todo salió bien: éxito; (2) el agente
+        identificó que falta algo que solo tú puedes proporcionar y se detuvo para preguntar; o (3) se quedó atascado repitiendo y es hora
+        de que intervengas. Reconocer cuál de las tres está ocurriendo es el tema central del módulo 1.4.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t6-p2">
+        Vale la pena reforzar la diferencia entre los finales 2 y 3 — parecidos a primera vista, ambos terminan sin el
+        resultado listo. En el final 2 (pausa por decisión), el agente sabe qué falta y hace una pregunta específica,
+        como "necesito la clave de la API de Gmail — ¿dónde la encuentro?". En el final 3 (bloqueo), ya no sabe qué más
+        intentar y repite algo que ya demostró no funcionar — entonces la solución es que ajustes el workflow, no responder.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t6-p3">
+        En el ejemplo de las facturas: hay éxito cuando todas están en las carpetas correctas y hay un resumen por categoría; hay una pausa por decisión cuando el agente encuentra una factura sin una categoría clara y pregunta dónde clasificarla; hay un bloqueo cuando intenta abrir repetidamente un PDF dañado sin conseguirlo: es hora de que revises el archivo manualmente.
+      </p>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Al revisar el trabajo de un agente, pregunta siempre: «¿terminó con éxito, en pausa o bloqueado?». Si no puedes responder mirando solo su último mensaje, es señal de que el workflow debería terminar con un resumen más claro de lo ocurrido.</p>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Concepto principal</h3>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Éxito: llegaste al final del workflow con el resultado esperado.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Pausa por decisión: se detuvo para preguntarte algo que solo tú sabes.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Bloqueo: repite sin avanzar — es hora de revisar el workflow.</span></li>
+</ul>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-1-2#q1">
+<p class="font-medium mb-4">Verificación rápida (opcional): ¿qué hace el agente después de ejecutar una herramienta?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Continúa directamente al siguiente paso, sin revisar nada.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Observa el resultado y decide el siguiente paso según lo que veas.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Cierra la sesión automáticamente.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-1-2#q1', {
+              answer: 1,
+              explain: { 0: 'Sem observar o resultado não haveria auto-correção — releia o tópico 4.', 1: 'Exato: observar o resultado é o que guia o próximo passo.', 2: 'A sessão só encerra quando o workflow termina ou trava.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">5 pasos:</strong><span class="text-neutral-400"> leer → elegir herramienta → ejecutar → observar → decidir el siguiente paso.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Estado y contexto:</strong><span class="text-neutral-400"> el agente sabe «dónde está» por la conversación y los archivos que ya existen.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Loop saludable × bloqueado:</strong><span class="text-neutral-400"> repetir corrigiendo es normal; repetir sin cambiar nada es una señal de alerta.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Tres finales posibles:</strong><span class="text-neutral-400"> éxito, pausa para preguntar o bloqueo.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">1.3 — Autocorrección: verdad y marketing</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la ruta</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-3.html">Próximo módulo →</a>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) { exp.classList.remove('active'); exp.previousElementSibling && exp.previousElementSibling.setAttribute && exp.previousElementSibling.setAttribute('aria-expanded','false'); }
+      });
+      explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', explanation.classList.contains('active') ? 'true' : 'false');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

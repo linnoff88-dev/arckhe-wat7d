@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>5.6 Pasta de marca | Seu Funcionário Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'teal' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'teal');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.teal;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13, 148, 136, 0.12); }
+    html:not(.dark) .bg-teal-500\/10 { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .border-teal-500\/30 { border-color: rgba(13, 148, 136, 0.25); }
+    html:not(.dark) .hover\:bg-teal-500\/30:hover { background-color: rgba(13, 148, 136, 0.18); }
+    html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .hover\:text-teal-400:hover { color: #0d9488; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-900\/20 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .text-red-400 { color: #b91c1c; }
+    html:not(.dark) .bg-red-900\/20 { background-color: rgba(185, 28, 28, 0.08); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(185, 28, 28, 0.25); }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha5/modulo-5-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha5/modulo-5-6.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha5/modulo-5-6.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-5-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha5/modulo-5-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha5/modulo-5-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Pular para o conteúdo</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparação</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-teal-400 bg-teal-500/10" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Minha jornada</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-teal-400" href="../../index.html">Início</a><span>/</span>
+<a class="hover:text-teal-400" href="index.html">Trilha 5</a><span>/</span>
+<span class="text-teal-400">Módulo 5.6</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.6</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🗂️ Pasta de marca: o agente para de perguntar "qual é a cor mesmo?"</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        No módulo 5.5 você deu uma referência visual pontual, uma vez, pra um rebranding. Este módulo é sobre
+        parar de repetir essa história a cada conversa nova: uma pasta única, dentro do próprio projeto, com
+        tudo que define a identidade visual — pronta pro agente consultar sozinho, sempre que for construir algo.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Intermediário</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Prática</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progresso do módulo 5.6" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:5-6" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Seção <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-1">1. O manual de marca, agora digital</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-2">2. A pasta que alimenta vários front-ends</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-3">3. A estrutura de arquivos por dentro</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-4">4. Criando a pasta com o agente</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-5">5. Skill de design + pasta de marca, juntas</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-6">6. Manter atualizada (o erro mais comum)</a></li>
+</ul>
+</nav>
+<article data-inema-module="5-6" data-inema-track="5" id="modulo-5-6">
+<!-- TÓPICO 1 -->
+<section class="mb-16" data-inema-topic="modulo-5-6#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">📘 O manual de marca, agora digital</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t1-p1">
+<strong class="text-teal-400">Novo aqui?</strong> Uma <strong class="text-teal-400">pasta de marca</strong>
+        (em inglês, <code class="text-xs bg-dark-800 px-1 py-0.5 rounded">brand_assets</code> — "ativos de marca") é só
+        um <strong class="text-teal-400">diretório</strong> (uma pasta, dentro do projeto no seu computador) onde
+        ficam guardados, num só lugar, os arquivos que definem a identidade visual: o logo em suas variações, as
+        cores oficiais, as fontes escolhidas, e às vezes até exemplos de como a marca "fala". Pense numa gráfica
+        antiga: toda empresa séria tinha um manual de identidade visual, um caderno grosso com o logo em vetor,
+        a paleta com os códigos exatos de tinta, e regras de uso — pra ninguém inventar um verde diferente num
+        panfleto. A pasta de marca é esse mesmo caderno, só que em arquivos, e sempre à mão do seu agente.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t1-p2">
+        A diferença que importa aqui: o manual físico ficava numa gaveta, e alguém precisava ir buscar, folhear
+        e copiar à mão. A pasta de marca fica dentro do projeto — o mesmo lugar onde o Claude Code já está
+        trabalhando. Quando você pede "cria uma página de contato nova", o agente pode simplesmente <em>abrir
+        essa pasta e ler</em>, sem você precisar reexplicar "usa o azul #0d9488, a fonte é Inter, o logo tá em tal
+        lugar" pela enésima vez.
+      </p>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
+<p class="text-neutral-300 mb-4">Pasta de marca = material bruto e permanente da identidade visual, guardado dentro do projeto, pronto pra qualquer agente consultar sem depender da sua memória.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>Sem ela: você reexplica a marca a cada conversa nova — e às vezes esquece um detalhe.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>Com ela: o agente lê os arquivos e já sabe. Sua parte vira só revisar o resultado.</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">Logo</div><div class="text-xs text-neutral-400 mt-1">Cor, branco, ícone</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">Cores</div><div class="text-xs text-neutral-400 mt-1">Códigos hex</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">Fontes</div><div class="text-xs text-neutral-400 mt-1">Tipografia</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">Tom de voz</div><div class="text-xs text-neutral-400 mt-1">Como a marca fala</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-16" data-inema-topic="modulo-5-6#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🌐 Uma fonte central, vários front-ends alimentados</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t2-p1">
+<strong class="text-teal-400">Novo aqui?</strong> <strong class="text-teal-400">Front-end</strong> é a parte
+        de um site ou app que aparece na tela — o que o visitante vê e clica. Se você constrói várias páginas ao
+        longo do tempo (uma landing, um dashboard interno, um cardápio digital), cada uma é um front-end diferente,
+        mas todas deveriam <em>parecer da mesma marca</em>. Sem uma fonte única, cada front-end acaba puxando a cor
+        de um jeito, o logo de outro, e o resultado é uma "família" que não se parece nada entre si.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t2-p2">
+        A pasta de marca resolve isso virando a <strong class="text-teal-400">única fonte de verdade</strong>: toda
+        vez que um agente vai construir um front-end novo, ele consulta essa mesma pasta antes de escrever qualquer
+        CSS. O diagrama abaixo mostra essa relação — uma pasta central, vários projetos puxando dela.
+      </p>
+<div class="rounded-2xl border border-teal-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Diagrama: a pasta brand_assets no centro, com setas saindo para quatro front-ends diferentes — landing page, dashboard, cardápio e app interno — todos puxando a mesma identidade visual em vez de reinventá-la cada vez" class="w-full h-auto" role="img" viewbox="0 0 1000 300">
+<defs>
+<lineargradient id="m6-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2dd4bf"></stop><stop offset="1" stop-color="#0d9488"></stop></lineargradient>
+<filter height="180%" id="m6-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m6-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#2dd4bf" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m6-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#2dd4bf"></path></marker>
+<marker id="m6-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m6-grid)" height="300" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1f1c" filter="url(#m6-glow)" height="70" rx="14" stroke="url(#m6-grad)" stroke-width="2.5" width="200" x="400" y="115"></rect>
+<text fill="#2dd4bf" font-size="14" font-weight="700" text-anchor="middle" x="500" y="145">brand_assets/</text>
+<text fill="#9adfd6" font-size="10" text-anchor="middle" x="500" y="163">logo · cores · fontes</text>
+<path d="M470,115 L280,60" marker-end="url(#m6-ahc)" opacity="0.65" stroke="#38bdf8" stroke-width="1.6"></path>
+<path d="M530,115 L720,60" marker-end="url(#m6-ahc)" opacity="0.65" stroke="#38bdf8" stroke-width="1.6"></path>
+<path d="M470,185 L280,240" marker-end="url(#m6-ahc)" opacity="0.65" stroke="#38bdf8" stroke-width="1.6"></path>
+<path d="M530,185 L720,240" marker-end="url(#m6-ahc)" opacity="0.65" stroke="#38bdf8" stroke-width="1.6"></path>
+<g class="wf-a"><rect fill="#0e1622" height="55" rx="10" stroke="#2dd4bf" stroke-width="1.6" width="170" x="120" y="25"></rect><text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="205" y="49">Landing page</text><text fill="#9ad6ff" font-size="9" text-anchor="middle" x="205" y="65">módulo 5.7</text></g>
+<g class="wf-a"><rect fill="#0e1622" height="55" rx="10" stroke="#2dd4bf" stroke-width="1.6" width="170" x="710" y="25"></rect><text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="795" y="49">Dashboard interno</text><text fill="#9ad6ff" font-size="9" text-anchor="middle" x="795" y="65">outro projeto</text></g>
+<g class="wf-a"><rect fill="#0e1622" height="55" rx="10" stroke="#2dd4bf" stroke-width="1.6" width="170" x="120" y="225"></rect><text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="205" y="249">Cardápio digital</text><text fill="#9ad6ff" font-size="9" text-anchor="middle" x="205" y="265">outro projeto</text></g>
+<g class="wf-a"><rect fill="#0e1622" height="55" rx="10" stroke="#2dd4bf" stroke-width="1.6" width="170" x="710" y="225"></rect><text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="795" y="249">App interno</text><text fill="#9ad6ff" font-size="9" text-anchor="middle" x="795" y="265">outro projeto</text></g>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Legenda: a pasta fica no centro, permanente. Cada front-end novo puxa dela em vez de reinventar a identidade — o resultado visual fica consistente entre projetos diferentes, não só dentro de um só.</p>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Consistência:</strong> a mesma cor exata, o mesmo logo, em toda página que você constrói — sem depender de você lembrar o código hex de cabeça.</li>
+<li><strong>Poupar retrabalho:</strong> o agente não perde tempo "adivinhando" a marca a partir de uma captura de tela antiga; ele lê o arquivo certo.</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-16" data-inema-topic="modulo-5-6#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🗃️ A estrutura de arquivos, por dentro</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t3-p1">
+        Não existe uma regra única e obrigatória de nomes de pasta — o que importa é a organização, não o nome
+        exato. Mas uma estrutura simples e testada, que funciona bem pro agente entender de cara, é essa árvore
+        de pastas. Cada subpasta cuida de UM tipo de ativo, e um arquivo de texto (Markdown ou JSON) documenta
+        as decisões que não dá pra "ver" só olhando o arquivo — como o código hex exato de cada cor.
+      </p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6 font-mono text-sm overflow-x-auto">
+<div class="flex items-center justify-between mb-3">
+<span class="text-neutral-500 text-xs uppercase tracking-wide">Estrutura típica</span>
+<span class="text-neutral-500 text-xs">árvore de pastas</span>
+</div>
+<pre class="text-neutral-300 leading-relaxed"><span class="text-teal-400">meu-projeto/</span>
+├── <span class="text-teal-400">brand_assets/</span>
+│   ├── <span class="text-teal-400">logo/</span>
+│   │   ├── logo-cor.svg          <span class="text-neutral-500"># versão colorida, uso padrão</span>
+│   │   ├── logo-branco.svg       <span class="text-neutral-500"># pra fundos escuros/fotos</span>
+│   │   ├── logo-preto.svg        <span class="text-neutral-500"># pra fundos muito claros</span>
+│   │   └── icone.svg             <span class="text-neutral-500"># só o símbolo, sem o nome</span>
+│   ├── <span class="text-teal-400">fontes/</span>
+│   │   ├── Inter-Regular.woff2
+│   │   └── Inter-Bold.woff2
+│   ├── cores.md                  <span class="text-neutral-500"># paleta com códigos hex + quando usar cada uma</span>
+│   ├── tipografia.md             <span class="text-neutral-500"># qual fonte, quais tamanhos, quais pesos</span>
+│   └── tom-de-voz.md             <span class="text-neutral-500"># exemplos de frases "no estilo da marca"</span>
+└── <span class="text-neutral-500">index.html, src/, etc. (o resto do projeto)</span></pre>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t3-p2">
+<strong class="text-teal-400">Novo aqui?</strong> <strong class="text-teal-400">Hex</strong> é o código de
+        seis caracteres que representa uma cor exata (tipo <code class="text-xs bg-dark-800 px-1 py-0.5 rounded">#0d9488</code>) —
+        sem ele, "azul-esverdeado" pode virar cinco tons diferentes dependendo de quem olha. O arquivo
+        <code class="text-xs bg-dark-800 px-1 py-0.5 rounded">cores.md</code> existe exatamente pra fixar esse
+        número, uma vez, pra sempre. O mesmo vale pra <strong class="text-teal-400">tipografia</strong> — o conjunto
+        de decisões sobre qual fonte usar, em que tamanho e peso (fino, normal, negrito) em cada situação.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ cores.md bem escrito</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Nome + hex + quando usar: "Teal principal #0d9488 — botões e links de destaque"</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Inclui as variações claras/escuras já calculadas, prontas pra copiar</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Diz o que NÃO usar (ex.: "nunca ambar como texto sobre fundo claro")</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ cores.md mal escrito</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Só o nome vago: "azul da marca" — sem código, cada projeto usa um azul diferente</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Cor certa só numa captura de tela antiga, nunca escrita em texto</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sem contexto de uso — o agente não sabe se é cor de fundo ou de texto</span></li>
+</ul>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-16" data-inema-topic="modulo-5-6#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🛠️ Criando a pasta com o agente</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t4-p1">
+        Você não precisa montar essa estrutura na mão. Dá pra pedir pro próprio agente criar a pasta e já
+        documentar as decisões, a partir de um logo que você já tem (ou de uma referência visual, como no módulo
+        5.5). O objetivo aqui: sair desse tópico com uma <code class="text-xs bg-dark-800 px-1 py-0.5 rounded">brand_assets/</code>
+        de verdade no seu projeto, não só a teoria.
+      </p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Junte o que você já tem</h4>
+<p class="text-neutral-300 text-sm">Um arquivo de logo (mesmo que só em PNG), uma referência de cor de outro site seu, ou até um print do Instagram da marca. Não precisa ser perfeito — o agente ajuda a organizar a partir disso.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Peça a criação com o prompt abaixo</h4>
+<p class="text-neutral-300 text-sm">O agente cria as pastas, extrai as cores do logo (ou usa as que você passar) e já escreve o <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">cores.md</code> com os hex certos.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Confira antes de seguir</h4>
+<p class="text-neutral-300 text-sm">Abra <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">brand_assets/cores.md</code> e confirme que os hex batem com sua marca de verdade — se o agente "chutou" uma cor por falta de referência, corrija ali mesmo.</p>
+</div>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-semibold text-teal-400 uppercase tracking-wide">Objetivo</span>
+<span class="text-xs text-neutral-500">copie e cole no Claude Code</span>
+</div>
+<p class="text-neutral-300 text-sm mb-4">Criar a pasta <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">brand_assets/</code> completa, com logo organizado, paleta documentada com hex, e a fonte definida — a partir de um logo/referência que você já tem no projeto.</p>
+<pre class="bg-dark-900 rounded-lg p-4 text-sm text-neutral-200 overflow-x-auto font-mono">Cria uma pasta brand_assets/ na raiz deste projeto pra guardar nossa identidade
+visual. Meu logo original está em &lt;caminho/do/logo-original.png&gt;.
+
+Faça o seguinte:
+1. Crie brand_assets/logo/ e salve dentro: uma versão colorida (logo-cor),
+   uma em branco pra fundo escuro (logo-branco) e o ícone isolado (icone).
+2. Extraia as 2-3 cores principais do logo, documente em brand_assets/cores.md
+   com nome + código hex + para que serve cada uma (ex.: "cor de destaque:
+   botões e links").
+3. Em brand_assets/tipografia.md, registre a fonte &lt;nome da fonte que
+   você usa&gt; com os tamanhos padrão de título e texto.
+4. Não invente nada que não vier do logo/referência — se faltar informação,
+   me pergunte em vez de chutar.</pre>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3 flex items-center"><span class="mr-2">✅</span> Como verificar</h3>
+<p class="text-neutral-300">Depois de rodar, abra a pasta <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">brand_assets/</code> no explorador de arquivos: os 4 arquivos de logo devem existir de verdade (não vazios), e <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">cores.md</code> deve ter códigos hex reais (começando com <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">#</code>), não descrições vagas tipo "azul claro".</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-16" data-inema-topic="modulo-5-6#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🔗 Skill de design + pasta de marca, juntas</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t5-p1">
+        Vale conectar isso ao que você já viu na trilha. No módulo 5.2 você criou uma <strong class="text-teal-400">skill</strong>
+        de design global — um conjunto de instruções fixas que ensina o agente <em>como</em> construir uma interface
+        (o processo: quais componentes usar, como estruturar o CSS). No 5.5, você deu uma referência visual pontual
+        pra um rebranding específico. A pasta de marca é diferente das duas: ela é o <strong class="text-teal-400">material
+        bruto e permanente</strong> — o "o quê", não o "como".
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t5-p2">
+        Juntas, as três coisas se completam: a skill sabe o processo, a pasta de marca guarda os dados fixos da
+        identidade, e uma referência pontual (5.5) resolve um caso específico quando necessário. Quando você pede
+        "constrói uma página nova seguindo nossa skill de design", o ideal é que essa skill já saiba <em>olhar</em>
+        pra <code class="text-xs bg-dark-800 px-1 py-0.5 rounded">brand_assets/</code> antes de decidir cores e fontes
+        — em vez de reinventar em cada chamada.
+      </p>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span><strong>Skill de design (5.2):</strong> o processo — como construir.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span><strong>Pasta de marca (5.6):</strong> os dados — o que usar (cor, fonte, logo).</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span><strong>Referência visual (5.5):</strong> um ajuste pontual — quando um caso específico pede algo diferente do padrão.</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica Prática</h3>
+<p class="text-neutral-300">Na sua skill de design (do 5.2), acrescente uma linha simples: "antes de decidir cores/fontes, leia <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">brand_assets/cores.md</code> e <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">tipografia.md</code> se existirem". Isso conecta as duas peças sem precisar reescrever nada toda vez.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-16" data-inema-topic="modulo-5-6#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">⚠️ Manter atualizada: o erro mais comum</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t6-p1">
+        Uma pasta de marca só vale o que ela tem de <em>atual</em>. O erro mais frequente não é criar errado —
+        é criar uma vez, esquecer, e deixar a marca real evoluir sem atualizar os arquivos. Seis meses depois,
+        você trocou a cor principal num site novo mas <code class="text-xs bg-dark-800 px-1 py-0.5 rounded">cores.md</code>
+        ainda tem a cor antiga, e o próximo projeto sai com a cor errada — porque o agente confiou no arquivo, não
+        em você lembrar de avisar.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Prática saudável</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Toda mudança de marca (nova cor, novo logo) atualiza <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">brand_assets/</code> no mesmo dia</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Um único lugar guarda os ativos — todos os projetos apontam pra ele (ou copiam dele)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Pede pro agente "confira se brand_assets bate com o site em produção" de vez em quando</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Armadilha comum</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Pasta criada uma vez, nunca mais tocada — vira um retrato antigo da marca</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ativos de marca espalhados: um logo no Google Drive, outro num e-mail, outro só na memória de alguém</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Cada projeto novo redescobre a marca do zero, olhando pro site anterior "de olho"</span></li>
+</ul>
+</div>
+</div>
+<p class="text-neutral-300 mb-4 font-semibold">Checklist antes de considerar sua pasta de marca pronta:</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 divide-y divide-dark-600 mb-6">
+<div class="p-4 flex items-start space-x-3"><span class="text-teal-400 mt-0.5">☐</span><span class="text-neutral-300">Logo em pelo menos 3 variações (cor, branco, ícone isolado)</span></div>
+<div class="p-4 flex items-start space-x-3"><span class="text-teal-400 mt-0.5">☐</span><span class="text-neutral-300"><code class="text-xs bg-dark-900 px-1 py-0.5 rounded">cores.md</code> com códigos hex reais e "quando usar cada uma"</span></div>
+<div class="p-4 flex items-start space-x-3"><span class="text-teal-400 mt-0.5">☐</span><span class="text-neutral-300">Fonte principal registrada (nome + tamanhos padrão)</span></div>
+<div class="p-4 flex items-start space-x-3"><span class="text-teal-400 mt-0.5">☐</span><span class="text-neutral-300">Pasta dentro do próprio projeto — não num serviço externo que o agente não acessa sozinho</span></div>
+<div class="p-4 flex items-start space-x-3"><span class="text-teal-400 mt-0.5">☐</span><span class="text-neutral-300">Skill de design (5.2) sabe consultar essa pasta antes de decidir cor/fonte</span></div>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">📝</span> Exercício</h3>
+<p class="text-neutral-300">Se você já tem algum logo ou site publicado (mesmo pessoal), crie agora a pasta <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">brand_assets/</code> nele usando o prompt do tópico 4. Se ainda não tem nada de marca definido, escolha uma cor e uma fonte que gostaria de usar daqui pra frente, e documente do mesmo jeito — é mais fácil manter consistência desde o início do que corrigir depois.</p>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-5-6#q1">
+<p class="font-medium mb-4">Checagem rápida (opcional): qual é o papel principal da pasta de marca, comparado com a skill de design do módulo 5.2?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Ela substitui a skill de design — não precisa mais das duas.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Ela guarda o material bruto e permanente (logo, cores, fontes); a skill sabe o processo de como usar isso.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Ela só serve pra guardar backups de arquivos, sem ligação com o design.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-5-6#q1', {
+              answer: 1,
+              explain: { 0: 'As duas continuam necessárias — elas resolvem coisas diferentes.', 1: 'Isso mesmo: dados fixos numa, processo na outra — se completam.', 2: 'Ela tem ligação direta com o design: é o material que o design consulta.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-teal-900/40 via-dark-800 to-dark-800 rounded-xl border border-teal-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do Módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Pasta de marca:</strong><span class="text-neutral-400"> um diretório único com logo, cores (hex) e fontes, consultável pelo agente a qualquer momento.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Fonte central:</strong><span class="text-neutral-400"> vários front-ends puxam da mesma pasta em vez de reinventar a marca a cada projeto.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Estrutura típica:</strong><span class="text-neutral-400"> logo/, fontes/, cores.md, tipografia.md, tom-de-voz.md.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Conexão com 5.2/5.5:</strong><span class="text-neutral-400"> a pasta guarda o "o quê"; a skill de design sabe o "como"; a referência pontual resolve casos específicos.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Manter atualizada:</strong><span class="text-neutral-400"> o maior risco não é criar errado, é deixar a pasta ficar desatualizada.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-teal-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">5.7 — Build: construindo e publicando uma landing page de verdade, já usando sua pasta de marca</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-5-5.html">← Módulo Anterior</a>
+<a class="flex-1 text-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors" href="modulo-5-7.html">Próximo Módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>2.6 Vários agentes em paralelo | Seu Funcionário Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    {
+      "n": "0",
+      "title": "Preparação: seu ambiente",
+      "modules": [
+        {
+          "id": "0-1",
+          "title": "O que é um agente de código",
+          "topics": 6,
+          "href": "curso/trilha0/modulo-0-1.html"
+        },
+        {
+          "id": "0-2",
+          "title": "Instalação sem medo",
+          "topics": 6,
+          "href": "curso/trilha0/modulo-0-2.html"
+        },
+        {
+          "id": "0-3",
+          "title": "Anatomia de um projeto",
+          "topics": 6,
+          "href": "curso/trilha0/modulo-0-3.html"
+        },
+        {
+          "id": "0-4",
+          "title": "O CLAUDE.md como cérebro",
+          "topics": 6,
+          "href": "curso/trilha0/modulo-0-4.html"
+        },
+        {
+          "id": "0-5",
+          "title": "Modo plano",
+          "topics": 6,
+          "href": "curso/trilha0/modulo-0-5.html"
+        },
+        {
+          "id": "0-6",
+          "title": "Permissões e segurança",
+          "topics": 6,
+          "href": "curso/trilha0/modulo-0-6.html"
+        }
+      ]
+    },
+    {
+      "n": "1",
+      "title": "O framework WAT",
+      "modules": [
+        {
+          "id": "1-1",
+          "title": "Os três pedaços",
+          "topics": 6,
+          "href": "curso/trilha1/modulo-1-1.html"
+        },
+        {
+          "id": "1-2",
+          "title": "O ciclo real de execução",
+          "topics": 6,
+          "href": "curso/trilha1/modulo-1-2.html"
+        },
+        {
+          "id": "1-3",
+          "title": "Auto-correção: verdade e marketing",
+          "topics": 6,
+          "href": "curso/trilha1/modulo-1-3.html"
+        },
+        {
+          "id": "1-4",
+          "title": "Onde o WAT falha",
+          "topics": 6,
+          "href": "curso/trilha1/modulo-1-4.html"
+        },
+        {
+          "id": "1-5",
+          "title": "Build: automação de newsletter",
+          "topics": 6,
+          "href": "curso/trilha1/modulo-1-5.html"
+        }
+      ]
+    },
+    {
+      "n": "2",
+      "title": "MCP: dando mãos ao agente",
+      "modules": [
+        {
+          "id": "2-1",
+          "title": "O protocolo em linguagem humana",
+          "topics": 6,
+          "href": "curso/trilha2/modulo-2-1.html"
+        },
+        {
+          "id": "2-2",
+          "title": "Anatomia de um servidor MCP",
+          "topics": 6,
+          "href": "curso/trilha2/modulo-2-2.html"
+        },
+        {
+          "id": "2-3",
+          "title": "Instalar e autenticar",
+          "topics": 6,
+          "href": "curso/trilha2/modulo-2-3.html"
+        },
+        {
+          "id": "2-4",
+          "title": "O padrão cheat sheet",
+          "topics": 6,
+          "href": "curso/trilha2/modulo-2-4.html"
+        },
+        {
+          "id": "2-5",
+          "title": "Build: scraping para CSV",
+          "topics": 6,
+          "href": "curso/trilha2/modulo-2-5.html"
+        },
+        {
+          "id": "2-6",
+          "title": "Vários agentes em paralelo",
+          "topics": 6,
+          "href": "curso/trilha2/modulo-2-6.html"
+        }
+      ]
+    },
+    {
+      "n": "3",
+      "title": "Skills: ensinando um processo",
+      "modules": [
+        {
+          "id": "3-1",
+          "title": "Anatomia de uma skill",
+          "topics": 6,
+          "href": "curso/trilha3/modulo-3-1.html"
+        },
+        {
+          "id": "3-2",
+          "title": "Carregamento progressivo em 3 níveis",
+          "topics": 6,
+          "href": "curso/trilha3/modulo-3-2.html"
+        },
+        {
+          "id": "3-3",
+          "title": "O framework de 6 passos",
+          "topics": 6,
+          "href": "curso/trilha3/modulo-3-3.html"
+        },
+        {
+          "id": "3-4",
+          "title": "A descrição é o gatilho",
+          "topics": 6,
+          "href": "curso/trilha3/modulo-3-4.html"
+        },
+        {
+          "id": "3-5",
+          "title": "Projeto vs. global",
+          "topics": 6,
+          "href": "curso/trilha3/modulo-3-5.html"
+        },
+        {
+          "id": "3-6",
+          "title": "Build: sua primeira skill",
+          "topics": 6,
+          "href": "curso/trilha3/modulo-3-6.html"
+        },
+        {
+          "id": "3-7",
+          "title": "Otimização",
+          "topics": 6,
+          "href": "curso/trilha3/modulo-3-7.html"
+        }
+      ]
+    },
+    {
+      "n": "4",
+      "title": "Deploy: sair do seu laptop",
+      "modules": [
+        {
+          "id": "4-1",
+          "title": "Por que local não basta",
+          "topics": 6,
+          "href": "curso/trilha4/modulo-4-1.html"
+        },
+        {
+          "id": "4-2",
+          "title": "O pipeline em 4 estações",
+          "topics": 6,
+          "href": "curso/trilha4/modulo-4-2.html"
+        },
+        {
+          "id": "4-3",
+          "title": "Teste vs. produção",
+          "topics": 6,
+          "href": "curso/trilha4/modulo-4-3.html"
+        },
+        {
+          "id": "4-4",
+          "title": "Segredos",
+          "topics": 6,
+          "href": "curso/trilha4/modulo-4-4.html"
+        },
+        {
+          "id": "4-5",
+          "title": "Retentativas e filas",
+          "topics": 6,
+          "href": "curso/trilha4/modulo-4-5.html"
+        },
+        {
+          "id": "4-6",
+          "title": "Build: automação agendada",
+          "topics": 6,
+          "href": "curso/trilha4/modulo-4-6.html"
+        },
+        {
+          "id": "4-7",
+          "title": "Observabilidade",
+          "topics": 6,
+          "href": "curso/trilha4/modulo-4-7.html"
+        }
+      ]
+    },
+    {
+      "n": "5",
+      "title": "Interfaces: o agente que enxerga",
+      "modules": [
+        {
+          "id": "5-1",
+          "title": "Por que o padrão sai genérico",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-1.html"
+        },
+        {
+          "id": "5-2",
+          "title": "Skill de design global",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-2.html"
+        },
+        {
+          "id": "5-3",
+          "title": "O laço de screenshot",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-3.html"
+        },
+        {
+          "id": "5-4",
+          "title": "Limites do laço",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-4.html"
+        },
+        {
+          "id": "5-5",
+          "title": "Referência visual e rebranding",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-5.html"
+        },
+        {
+          "id": "5-6",
+          "title": "Pasta de marca",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-6.html"
+        },
+        {
+          "id": "5-7",
+          "title": "Build: landing page publicada",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-7.html"
+        },
+        {
+          "id": "5-8",
+          "title": "Regras de publicação",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-8.html"
+        }
+      ]
+    },
+    {
+      "n": "6",
+      "title": "Tempo: agendamento e loops",
+      "modules": [
+        {
+          "id": "6-1",
+          "title": "Agora, neste projeto, ou toda semana?",
+          "topics": 6,
+          "href": "curso/trilha6/modulo-6-1.html"
+        },
+        {
+          "id": "6-2",
+          "title": "Tarefas agendadas a fundo",
+          "topics": 6,
+          "href": "curso/trilha6/modulo-6-2.html"
+        },
+        {
+          "id": "6-3",
+          "title": "Loops a fundo",
+          "topics": 6,
+          "href": "curso/trilha6/modulo-6-3.html"
+        },
+        {
+          "id": "6-4",
+          "title": "A rotina que aprende",
+          "topics": 6,
+          "href": "curso/trilha6/modulo-6-4.html"
+        },
+        {
+          "id": "6-5",
+          "title": "Determinismo",
+          "topics": 6,
+          "href": "curso/trilha6/modulo-6-5.html"
+        },
+        {
+          "id": "6-6",
+          "title": "Notificações e permissões restritivas",
+          "topics": 6,
+          "href": "curso/trilha6/modulo-6-6.html"
+        },
+        {
+          "id": "6-7",
+          "title": "Build: rotina matinal",
+          "topics": 6,
+          "href": "curso/trilha6/modulo-6-7.html"
+        }
+      ]
+    },
+    {
+      "n": "7",
+      "title": "Capstone: seu assistente executivo",
+      "modules": [
+        {
+          "id": "7-1",
+          "title": "Fase 1 — Casa",
+          "topics": 6,
+          "href": "curso/trilha7/modulo-7-1.html"
+        },
+        {
+          "id": "7-2",
+          "title": "Fase 2 — Vida",
+          "topics": 6,
+          "href": "curso/trilha7/modulo-7-2.html"
+        },
+        {
+          "id": "7-3",
+          "title": "Fase 3 — Mãos",
+          "topics": 6,
+          "href": "curso/trilha7/modulo-7-3.html"
+        },
+        {
+          "id": "7-4",
+          "title": "Fase 4 — Crescimento",
+          "topics": 6,
+          "href": "curso/trilha7/modulo-7-4.html"
+        },
+        {
+          "id": "7-5",
+          "title": "Backup e versionamento",
+          "topics": 6,
+          "href": "curso/trilha7/modulo-7-5.html"
+        },
+        {
+          "id": "7-6",
+          "title": "Capstone: entrega final",
+          "topics": 6,
+          "href": "curso/trilha7/modulo-7-6.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; } .dark body { background-color: #111827; } .topic-explanation { display: none; } .topic-explanation.active { display: block; }
+    section[id^="topico-"], section[id^="modulo-"] { scroll-margin-top: 5rem; }
+    html:not(.dark) body { background-color: #f8fafc; } html:not(.dark) .bg-dark-900 { background-color: #ffffff; } html:not(.dark) .bg-dark-800 { background-color: #f9fafb; } html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; } html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; } html:not(.dark) .text-neutral-300 { color: #4b5563; } html:not(.dark) .text-neutral-400 { color: #6b7280; } html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; } html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; } html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37, 99, 235, 0.12); } html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37, 99, 235, 0.08); } html:not(.dark) .border-blue-500\/30 { border-color: rgba(37, 99, 235, 0.25); }
+    html:not(.dark) .hover\:bg-blue-500\/30:hover { background-color: rgba(37, 99, 235, 0.18); } html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37, 99, 235, 0.08); } html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; } html:not(.dark) .group:hover .group-hover\:text-blue-400 { color: #2563eb; }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; } html:not(.dark) .text-primary { color: #a16207; } html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); } html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; } html:not(.dark) .text-yellow-400 { color: #a16207; } html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; } html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; } html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+    .dark .border-dark-600 { border-color: #374151; } .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s} .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha2/modulo-2-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha2/modulo-2-6.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha2/modulo-2-6.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Pular para o conteúdo</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparação</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../../curso/trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../../curso/trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../../curso/trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../../curso/trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Minha jornada</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../../index.html">Início</a><span>/</span>
+<a class="hover:text-blue-400" href="index.html">Trilha 2</a><span>/</span>
+<span class="text-blue-400">Módulo 2.6</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.6</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🧵 Vários agentes em paralelo</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Quando uma tarefa se divide em pedaços independentes, várias sessões do Claude Code rodando ao mesmo tempo cortam o tempo total — com um cuidado: nunca dois agentes escrevendo no mesmo arquivo.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Iniciante</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Prática</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progresso do módulo 2.6" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:2-6" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Seção <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. Por que dividir</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. Uma pasta por agente</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. O risco: mesmo arquivo</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. Dividindo o build em três</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. O custo de paralelo</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. Juntando os resultados</a></li>
+</ul>
+</nav>
+<article data-inema-module="2-6" data-inema-track="2" id="modulo-2-6">
+<section class="mb-16" data-inema-topic="modulo-2-6#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🍕 Por que dividir em vários agentes</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t1-p1"><strong class="text-blue-400">Novo aqui?</strong> Rodar vários agentes <strong class="text-blue-400">em paralelo</strong> significa abrir mais de uma sessão do Claude Code ao mesmo tempo, cada uma trabalhando numa parte diferente da tarefa. Em vez de pedir "scrape os 3 sites, um de cada vez" e esperar cada um terminar, você pede os três ao mesmo tempo, em três janelas — o tempo total cai pra perto do tempo do mais lento, não da soma de todos.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t1-p2">Vale separar dois jeitos de trabalhar que já apareceram nos módulos anteriores. <strong class="text-blue-400">Sequencial</strong> é um pedido depois do outro, na mesma sessão — o agente termina a tarefa A, só então começa a B. <strong class="text-blue-400">Paralelo</strong> é abrir sessões separadas que trabalham ao mesmo tempo, cada uma na sua tarefa. Nenhum dos dois é "melhor" em geral — a pergunta certa é se as tarefas dependem uma da outra. Se a tarefa B precisa do resultado da tarefa A, elas têm que ser sequenciais, por definição — não tem como paralelizar o que depende de algo que ainda não existe.</p>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
+<p class="text-neutral-300">É a mesma lógica de dividir uma faxina grande entre três pessoas em vez de uma só — cada uma cuida de um cômodo, e a casa fica pronta mais rápido. Mas se um cômodo depende do outro estar limpo primeiro (por exemplo, tirar a poeira antes de passar pano), aí não dá pra paralelizar essa parte — alguém tem que esperar.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Boa hora pra paralelo</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Extrair dados de 3 sites diferentes, sem relação entre eles</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Cada agente escreve num arquivo de saída próprio</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Tarefas independentes e com prazo apertado</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Má hora pra paralelo</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>A tarefa 2 precisa do resultado da tarefa 1 pra começar</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>As tarefas mexeriam no mesmo arquivo</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Tarefa única e simples, que já roda rápido sozinha</span></li>
+</ul>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-2-6#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🗂️ Uma pasta (ou aba) por agente</h2>
+</div>
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Um pedido grande se divide em três sessões independentes do Claude Code, cada uma numa pasta ou aba própria, rodando ao mesmo tempo, e os resultados se juntam no final" class="w-full h-auto" role="img" viewbox="0 0 1000 260">
+<defs><lineargradient id="m26-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient><marker id="m26-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker><pattern height="32" id="m26-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#60a5fa" opacity="0.12" r="1.3"></circle></pattern></defs>
+<rect fill="url(#m26-grid)" height="260" width="1000" x="0" y="0"></rect>
+<text fill="#93c5fd" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="500" y="24">um pedido grande, três agentes em paralelo</text>
+<g font-family="Inter,sans-serif">
+<rect fill="#1e293b" height="46" rx="10" stroke="#4b5563" stroke-width="2" width="160" x="420" y="45"></rect><text fill="#e5e7eb" font-size="12" text-anchor="middle" x="500" y="73">Você: 1 pedido grande</text>
+<path d="M460,91 L220,140" marker-end="url(#m26-ah)" opacity="0.85" stroke="#60a5fa" stroke-width="1.6"></path><path d="M500,91 L500,140" marker-end="url(#m26-ah)" opacity="0.85" stroke="#60a5fa" stroke-width="1.6"></path><path d="M540,91 L780,140" marker-end="url(#m26-ah)" opacity="0.85" stroke="#60a5fa" stroke-width="1.6"></path>
+<g class="wf-a"><rect fill="#1e293b" height="70" rx="10" stroke="#38bdf8" stroke-width="2" width="200" x="120" y="145"></rect><text fill="#60a5fa" font-size="11" text-anchor="middle" x="220" y="172">Agente 1</text><text fill="#9ad6ff" font-size="9" text-anchor="middle" x="220" y="192">pasta/aba A</text></g>
+<g class="wf-a"><rect fill="#1e293b" height="70" rx="10" stroke="#38bdf8" stroke-width="2" width="200" x="400" y="145"></rect><text fill="#60a5fa" font-size="11" text-anchor="middle" x="500" y="172">Agente 2</text><text fill="#9ad6ff" font-size="9" text-anchor="middle" x="500" y="192">pasta/aba B</text></g>
+<g class="wf-a"><rect fill="#1e293b" height="70" rx="10" stroke="#38bdf8" stroke-width="2" width="200" x="680" y="145"></rect><text fill="#60a5fa" font-size="11" text-anchor="middle" x="780" y="172">Agente 3</text><text fill="#9ad6ff" font-size="9" text-anchor="middle" x="780" y="192">pasta/aba C</text></g>
+<path d="M220,215 L470,240" marker-end="url(#m26-ah)" opacity="0.7" stroke="#38bdf8" stroke-width="1.4"></path><path d="M500,215 L500,240" marker-end="url(#m26-ah)" opacity="0.7" stroke="#38bdf8" stroke-width="1.4"></path><path d="M780,215 L530,240" marker-end="url(#m26-ah)" opacity="0.7" stroke="#38bdf8" stroke-width="1.4"></path>
+<text fill="#93c5fd" font-size="10" text-anchor="middle" x="500" y="250">resultados se juntam no final</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 mb-8">Legenda: um pedido grande pode virar três tarefas independentes rodando ao mesmo tempo, cada uma numa pasta ou aba de terminal própria — os resultados se juntam quando todas terminarem, em vez de esperar uma de cada vez.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t2-p1"><strong class="text-blue-400">Novo aqui?</strong> Uma <strong class="text-blue-400">sessão</strong> é uma conversa aberta com o Claude Code — cada vez que você digita <code>claude</code> num terminal, nasce uma sessão nova, com sua própria memória do que foi pedido ali dentro. Cada sessão do Claude Code roda isolada dentro de uma pasta de projeto ou aba de terminal. Pra rodar em paralelo sem um agente atrapalhar o outro, abra abas de terminal separadas (ou pastas separadas, se cada tarefa mexe em arquivos diferentes) e inicie um <code>claude</code> em cada uma.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t2-p2">Isso importa porque sessões diferentes não "conversam" entre si — o que o Agente 1 descobriu não aparece automaticamente pro Agente 2. Se um passo depende de informação que outro agente gerou, essa informação precisa virar um arquivo (o CSV, um texto) que o outro agente possa ler depois. É por isso que, no build do módulo 2.5, cada aba grava seu próprio arquivo de saída em vez de tentar "avisar" a outra sessão.</p>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica prática</h3>
+<p class="text-neutral-300">Nomeie as abas do terminal com o nome do site ou da tarefa (a maioria dos terminais deixa renomear a aba com um clique duplo no título). Com três abas abertas ao mesmo tempo, é fácil esquecer qual está fazendo o quê — um nome claro evita ficar clicando pra descobrir.</p>
+</div>
+<p class="text-xs text-neutral-500 mb-6"><strong>Objetivo:</strong> três sessões independentes rodando de verdade ao mesmo tempo. <strong>Como verificar:</strong> abra o gerenciador de abas do seu terminal e confirme que há 3 abas ativas, cada uma com uma conversa diferente em andamento.</p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-2-6#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">⚠️ O risco: dois agentes escrevendo no mesmo arquivo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t3-p1">O maior cuidado em paralelismo é evitar que dois agentes editem o <strong class="text-blue-400">mesmo arquivo</strong> ao mesmo tempo — um pode sobrescrever o trabalho do outro sem avisar. Divida a tarefa de um jeito que cada agente tenha seu próprio arquivo de saída (ex.: <code>produtos-site-a.csv</code>, <code>produtos-site-b.csv</code>) e só depois una os resultados.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t3-p2"><strong class="text-blue-400">Ver por dentro:</strong> não existe nenhum mecanismo automático que impeça dois agentes de gravar no mesmo arquivo — cada sessão simplesmente escreve o arquivo inteiro de novo quando termina, como se fosse a única no mundo. Se as duas sessões escrevem <code>produtos.csv</code> por cima uma da outra, quem grava por último "vence", e o trabalho da outra sessão some sem nenhum aviso de erro. Não é um bug do Claude Code — é assim que qualquer programa que reescreve um arquivo se comporta. A proteção é sempre sua: nomes de arquivo diferentes por agente.</p>
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Dois agentes gravando no mesmo arquivo produtos.csv ao mesmo tempo: o segundo a terminar sobrescreve o trabalho do primeiro, que se perde sem aviso" class="w-full h-auto" role="img" viewbox="0 0 1000 220">
+<defs><filter height="180%" id="m26t3-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter><pattern height="32" id="m26t3-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#60a5fa" opacity="0.12" r="1.3"></circle></pattern><marker id="m26t3-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#f87171"></path></marker></defs>
+<rect fill="url(#m26t3-grid)" height="220" width="1000" x="0" y="0"></rect>
+<text fill="#93c5fd" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="500" y="24">risco: mesmo arquivo, dois agentes</text>
+<g font-family="Inter,sans-serif">
+<rect fill="#1e293b" height="60" rx="10" stroke="#38bdf8" stroke-width="2" width="200" x="60" y="60"></rect><text fill="#60a5fa" font-size="12" text-anchor="middle" x="160" y="86">Agente 1</text><text fill="#9ad6ff" font-size="9" text-anchor="middle" x="160" y="104">grava às 14:02:01</text>
+<rect fill="#1e293b" height="60" rx="10" stroke="#38bdf8" stroke-width="2" width="200" x="60" y="140"></rect><text fill="#60a5fa" font-size="12" text-anchor="middle" x="160" y="166">Agente 2</text><text fill="#9ad6ff" font-size="9" text-anchor="middle" x="160" y="184">grava às 14:02:03</text>
+<path d="M260,90 L560,100" marker-end="url(#m26t3-ah)" opacity="0.8" stroke="#f87171" stroke-width="1.8"></path><path d="M260,170 L560,110" marker-end="url(#m26t3-ah)" opacity="0.8" stroke="#f87171" stroke-width="1.8"></path>
+<g filter="url(#m26t3-glow)"><rect fill="#2a0f16" height="60" rx="12" stroke="#f87171" stroke-width="2.5" width="220" x="560" y="75"></rect></g>
+<text fill="#fca5a5" font-size="12" font-weight="600" text-anchor="middle" x="670" y="100">produtos.csv</text><text fill="#fecaca" font-size="9" text-anchor="middle" x="670" y="119">só o Agente 2 sobra — Agente 1 se perde</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 mb-8">Legenda: quando dois agentes escrevem o mesmo arquivo, não há mesclagem automática — o que grava por último apaga o que veio antes, sem aviso de erro. Por isso cada agente precisa de um arquivo de saída próprio.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Fazer</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Cada agente grava num arquivo de saída próprio</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Unir os arquivos só depois que todos terminarem</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Evitar</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Dois agentes editando produtos.csv ao mesmo tempo</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Compartilhar o mesmo CLAUDE.md sendo reescrito por dois agentes juntos</span></li>
+</ul>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-2-6#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🧩 Dividindo o build de scraping em três</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t4-p1">Pegando o build do módulo 2.5: se você precisa dos preços de três sites diferentes, essa é a divisão perfeita pra paralelismo — cada site é totalmente independente do outro.</p>
+<div class="bg-dark-900 rounded-xl border border-dark-600 p-5 mb-2 font-mono text-sm overflow-x-auto">
+<div class="text-neutral-500 mb-2"># Aba 1:</div>
+<div class="text-emerald-400">Extraia nome e preço dos produtos de <span class="text-amber-300">&lt;site-a.com&gt;</span> em produtos-a.csv</div>
+<div class="text-neutral-500 mt-3 mb-2"># Aba 2:</div>
+<div class="text-emerald-400">Extraia nome e preço dos produtos de <span class="text-amber-300">&lt;site-b.com&gt;</span> em produtos-b.csv</div>
+<div class="text-neutral-500 mt-3 mb-2"># Aba 3:</div>
+<div class="text-emerald-400">Extraia nome e preço dos produtos de <span class="text-amber-300">&lt;site-c.com&gt;</span> em produtos-c.csv</div>
+</div>
+<p class="text-xs text-neutral-500 mb-6"><strong>Objetivo:</strong> três CSVs prontos ao mesmo tempo, em vez de um atrás do outro. <strong>Como verificar:</strong> os três arquivos existem e cada um tem linhas de dados reais — depois é só juntar (ou pedir pro agente juntar) num CSV final.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t4-p2">Rodar três scrapes ao mesmo tempo não muda a responsabilidade de cada um: continue respeitando os termos de uso do site, não sobrecarregando o servidor com pedidos em excesso e evitando coletar dados pessoais sem necessidade — as mesmas regras do módulo 2.5, só que agora valendo pras três abas ao mesmo tempo. Rodar em paralelo multiplica a chance de um site perceber tráfego incomum e bloquear, então é ainda mais importante não abusar.</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold text-neutral-200 mb-4 flex items-center"><span class="mr-2">🛠️</span> Erros comuns rodando em paralelo</h3>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li><strong class="text-red-400">Uma das três abas trava ou dá site que bloqueia scraping:</strong> não espere — deixe as outras duas continuarem e resolva só aquela aba (troque de estratégia ou pule o site problemático). Uma falha isolada não deve derrubar as outras.</li>
+<li><strong class="text-red-400">Resultado vazio num dos CSVs:</strong> normalmente o site mudou de estrutura ou bloqueou aquela sessão especificamente. Rode de novo só essa aba, sozinha, antes de suspeitar de erro no pedido.</li>
+<li><strong class="text-red-400">Chave inválida se o site exigir API:</strong> se algum dos três sites tiver uma API oficial com chave, confira se a chave foi colada certa antes de abrir as três abas — descobrir isso só numa das três, no meio da corrida, custa tempo dobrado.</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-2-6#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">💰 O custo de rodar em paralelo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t5-p1"><strong class="text-blue-400">Novo aqui?</strong> <strong class="text-blue-400">Token</strong> é a unidade que mede o quanto o agente "leu e escreveu" numa conversa — cada palavra ou pedaço de palavra processado conta como tokens, e é isso que gera custo. Cada sessão paralela consome tokens de forma independente — três agentes rodando ao mesmo tempo custam, aproximadamente, a soma do que cada um custaria sozinho (não é "de graça" só porque roda em paralelo). O ganho é de <strong class="text-blue-400">tempo</strong>, não de custo. Vale a pena quando a urgência compensa, não sempre.</p>
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Comparação de custo: rodar 1 agente sozinho, 3 agentes em sequência e 3 agentes em paralelo consomem o mesmo total de tokens, mas o tempo gasto é bem diferente" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<defs><pattern height="32" id="m26t5-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#60a5fa" opacity="0.12" r="1.3"></circle></pattern><filter height="180%" id="m26t5-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter></defs>
+<rect fill="url(#m26t5-grid)" height="200" width="1000" x="0" y="0"></rect>
+<text fill="#93c5fd" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="500" y="24">mesmo custo em tokens, tempo bem diferente</text>
+<g font-family="Inter,sans-serif" font-size="11">
+<text fill="#d4d4d4" text-anchor="middle" x="150" y="55">3 sequenciais</text><rect fill="#1e293b" height="26" rx="6" stroke="#60a5fa" stroke-width="2" width="160" x="70" y="65"></rect><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="150" y="83">tokens: 3x • tempo: 3x</text>
+<text fill="#d4d4d4" text-anchor="middle" x="500" y="55">3 em paralelo</text><rect fill="#1e293b" height="26" rx="6" stroke="#60a5fa" stroke-width="2" width="160" x="420" y="65"></rect><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="500" y="83">tokens: 3x • tempo: ~1x</text>
+<text fill="#d4d4d4" text-anchor="middle" x="850" y="55">1 sozinho</text><rect fill="#1e293b" height="26" rx="6" stroke="#60a5fa" stroke-width="2" width="160" x="770" y="65"></rect><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="850" y="83">tokens: 1x • tempo: 1x</text>
+</g>
+<g filter="url(#m26t5-glow)"><rect fill="#0e1622" height="55" rx="12" stroke="#3b82f6" stroke-width="2.5" width="340" x="330" y="115"></rect></g>
+<text fill="#93c5fd" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="500" y="138">paralelo economiza tempo, não tokens</text>
+<text fill="#bfdbfe" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="500" y="156">o total gasto é o mesmo de rodar tudo em sequência</text>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 mb-8">Legenda: rodar 3 tarefas em sequência ou em paralelo consome, no total, a mesma quantidade de tokens — a diferença é só o tempo de relógio que você espera. Paralelo não é mais barato, é mais rápido.</p>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atenção</h3>
+<p class="text-neutral-300">Não abra 10 agentes "só porque dá" — cada um consome tokens de verdade. Reserve o paralelismo pra tarefas que realmente se beneficiam de rodar ao mesmo tempo.</p>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica prática</h3>
+<p class="text-neutral-300">Se seu plano tiver algum tipo de limite de uso (por exemplo, um teto diário ou mensal de mensagens), abrir várias sessões ao mesmo tempo consome esse limite mais rápido. Antes de paralelizar uma tarefa grande, dê uma olhada em quanto do seu limite já foi usado no dia — evita ficar sem agente no meio de um trabalho importante.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-2-6#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🔗 Juntando os resultados no final</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t6-p1">Depois que os três agentes terminarem, um último pedido — numa única sessão — junta os arquivos separados num resultado final. É o mesmo princípio de "buscar" separado de "gravar" que a Trilha 4 (Deploy) vai aprofundar: cada pedaço roda isolado, e a junção acontece num passo só, fácil de repetir se algo falhar no meio.</p>
+<div class="mb-8">
+<h3 class="text-sm font-semibold text-neutral-400 mb-4 uppercase tracking-wide">Linha do tempo de um build em paralelo</h3>
+<div class="space-y-4">
+<div class="flex items-start space-x-4"><div class="flex flex-col items-center"><span class="w-3 h-3 rounded-full bg-blue-400"></span><span class="w-0.5 h-10 bg-dark-600"></span></div><div><strong class="text-blue-400">1. Abrir 3 abas</strong><p class="text-neutral-400 text-sm">uma sessão do Claude Code por site, cada uma com seu pedido.</p></div></div>
+<div class="flex items-start space-x-4"><div class="flex flex-col items-center"><span class="w-3 h-3 rounded-full bg-blue-400"></span><span class="w-0.5 h-10 bg-dark-600"></span></div><div><strong class="text-blue-400">2. As três rodam ao mesmo tempo</strong><p class="text-neutral-400 text-sm">nenhuma espera a outra; cada uma grava seu próprio CSV conforme avança.</p></div></div>
+<div class="flex items-start space-x-4"><div class="flex flex-col items-center"><span class="w-3 h-3 rounded-full bg-blue-400"></span><span class="w-0.5 h-10 bg-dark-600"></span></div><div><strong class="text-blue-400">3. Conferir cada CSV</strong><p class="text-neutral-400 text-sm">olhar rapidamente se nenhuma das três terminou com resultado vazio ou bloqueio antes de seguir.</p></div></div>
+<div class="flex items-start space-x-4"><div class="flex flex-col items-center"><span class="w-3 h-3 rounded-full bg-blue-400"></span></div><div><strong class="text-blue-400">4. Unir num CSV final</strong><p class="text-neutral-400 text-sm">um último pedido, numa sessão nova, junta os três arquivos num resultado consolidado.</p></div></div>
+</div>
+</div>
+<div class="bg-dark-900 rounded-xl border border-dark-600 p-5 mb-2 font-mono text-sm overflow-x-auto">
+<div class="text-neutral-500 mb-2"># Numa aba nova, depois que as 3 terminarem:</div>
+<div class="text-emerald-400">Junte produtos-a.csv, produtos-b.csv e produtos-c.csv num único</div>
+<div class="text-emerald-400">arquivo produtos-final.csv, mantendo as colunas nome e preço.</div>
+</div>
+<p class="text-xs text-neutral-500 mb-6"><strong>Objetivo:</strong> um único CSV final consolidado. <strong>Como verificar:</strong> o número de linhas de <code>produtos-final.csv</code> bate com a soma das linhas dos três arquivos originais.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t6-p2">Com isso fecha a Trilha 2. Você saiu de "o que é um servidor MCP" (2.1) até rodar múltiplos agentes buscando dados reais em paralelo e juntando tudo num CSV final (2.6) — passando por instalar e autenticar servidores de verdade (2.3), guardar comandos num cheat sheet pra não reaprender do zero (2.4) e construir um scraper funcional (2.5). O fio que amarra os seis módulos é sempre o mesmo: dar ao agente uma ferramenta externa — seja um servidor MCP, seja o próprio navegador — e tratar erro, chave e limite de uso como parte normal do trabalho, não como exceção. Na Trilha 3, o próximo passo é ensinar o agente a repetir um processo inteiro, de ponta a ponta, sem você precisar reexplicar cada etapa: isso é uma <em>skill</em>.</p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+</article>
+<section class="mb-12">
+<div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do Módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Paralelo:</strong><span class="text-neutral-400"> várias sessões do Claude Code, cada uma numa pasta/aba própria, rodando juntas.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Regra de ouro:</strong><span class="text-neutral-400"> nunca dois agentes escrevendo no mesmo arquivo ao mesmo tempo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Custo:</strong><span class="text-neutral-400"> soma dos tokens de cada sessão — o ganho é de tempo, não de dinheiro.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Junção:</strong><span class="text-neutral-400"> um último passo, numa sessão só, une os resultados separados.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-blue-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">Trilha 3 — Skills: ensinando um processo</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-2-5.html">← Módulo anterior</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="../trilha3/index.html">Próximo Módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) { exp.classList.remove('active'); exp.previousElementSibling && exp.previousElementSibling.setAttribute && exp.previousElementSibling.setAttribute('aria-expanded','false'); }
+      });
+      explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', explanation.classList.contains('active') ? 'true' : 'false');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

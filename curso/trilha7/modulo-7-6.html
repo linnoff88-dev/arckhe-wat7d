@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>7.6 Capstone: entrega final | Seu Funcionário Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5, 150, 105, 0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5, 150, 105, 0.18); }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha7/modulo-7-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha7/modulo-7-6.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha7/modulo-7-6.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-7-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha7/modulo-7-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha7/modulo-7-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Pular para o conteúdo</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparação</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Minha jornada</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Início</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 7</a><span>/</span>
+<span class="text-emerald-400">Módulo 7.6</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 7.6 · ÚLTIMO MÓDULO DO CURSO</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🏁 Capstone: entrega final</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        Você já tem a casa (7.1), os arquivos de contexto da entrevista (7.2), a primeira skill com MCP e
+        agendamento (7.3), o ritmo de crescimento (7.4) e o backup versionado (7.5). Este módulo fecha tudo
+        num checklist de entrega, define o que separa um assistente de verdade de um chatbot comum, e encerra
+        os 7 dias do curso.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Capstone</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Entrega</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progresso do módulo 7.6" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:7-6" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Seção <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. Checklist de entrega</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. Auto-avaliação com Claude Code</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. A diferença real de um chatbot</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Erros de entrega comuns</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. O que você construiu em 7 dias</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. Caminhos depois do curso</a></li>
+</ul>
+</nav>
+<article data-inema-module="7-6" data-inema-track="7" id="modulo-7-6">
+<section class="mb-16" data-inema-topic="modulo-7-6#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">✅ O checklist de entrega do capstone</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-6-t1-p1">
+<strong class="text-emerald-400">Novo aqui?</strong> <strong class="text-emerald-400">Capstone</strong> é o
+        projeto final de um curso, o que junta tudo que você aprendeu num único entregável. Aqui, o capstone é o
+        seu <strong class="text-emerald-400">assistente executivo</strong> — a estrutura de pastas, arquivos de
+        contexto, skills, MCPs e rotinas que você construiu ao longo da Trilha 7.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-6-t1-p2">
+        A entrega não é "terminei de assistir os módulos". É um conjunto de <strong class="text-emerald-400">critérios
+        verificáveis</strong> — coisas que você consegue apontar e mostrar, não descrever de forma vaga. Cada item
+        abaixo corresponde a um módulo anterior desta trilha.
+      </p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">📋</span> Critérios de avaliação do capstone</h3>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">1.</span><span><strong class="text-white">Estrutura de pastas completa</strong> — a "casa" do assistente (módulo 7.1) existe e está organizada, não é uma pasta solta com arquivos aleatórios.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">2.</span><span><strong class="text-white">CLAUDE.md enxuto que aponta</strong> — não tenta explicar tudo, indica onde encontrar cada coisa (arquivos de contexto, skills, rotinas).</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">3.</span><span><strong class="text-white">Arquivos de contexto preenchidos com informação real e específica</strong> — o seu negócio, o seu time, as suas manias de verdade (módulo 7.2), nunca placeholder genérico.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">4.</span><span><strong class="text-white">Ao menos uma skill funcionando de ponta a ponta</strong> — você pediu, ela rodou, o resultado saiu certo (módulo 7.3).</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">5.</span><span><strong class="text-white">Ao menos um MCP conectado</strong> — o assistente tem uma "mão" a mais além do terminal puro (módulo 7.3, e a Trilha 2 inteira).</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">6.</span><span><strong class="text-white">Alguma rotina agendada rodando</strong> — não precisa ser complexa, mas precisa disparar sozinha (módulo 7.3, base na Trilha 6).</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">7.</span><span><strong class="text-white">Backup configurado</strong> — se o disco morrer amanhã, o assistente sobrevive (módulo 7.5).</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica Prática</h3>
+<p class="text-neutral-300">Imprima (ou copie) esses 7 itens numa lista simples e vá marcando enquanto revisa seu projeto. Não precisa de nota, precisa de "sim" ou "não" honesto em cada linha — é isso que o tópico 2 automatiza.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-6#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🔍 Peça pro próprio Claude Code se auto-avaliar</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-6-t2-p1">
+        A forma mais honesta de checar os 7 critérios do tópico 1 é pedir para o próprio assistente ler a sua
+        pasta e comparar com a lista. Ele não tem ego nem vontade de "passar" — só olha o que existe e aponta o
+        que falta.
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900 overflow-hidden mb-3">
+<div class="flex items-center justify-between px-4 py-2 bg-dark-800 border-b border-dark-600">
+<span class="text-xs text-neutral-400 font-mono">prompt · auto-avaliação do capstone</span>
+<span class="text-xs text-emerald-400">copiar e colar no Claude Code</span>
+</div>
+<pre class="p-4 text-sm text-emerald-300 overflow-x-auto"><code>Você é um avaliador externo do meu assistente executivo. Leia a
+estrutura de pastas deste projeto (comece pelo CLAUDE.md) e responda,
+item por item, com SIM ou NÃO + evidência concreta (arquivo/caminho):
+
+1. Existe estrutura de pastas organizada (não solta)?
+2. O CLAUDE.md é enxuto e aponta pra onde encontrar cada coisa?
+3. Os arquivos de contexto têm informação real e específica de
+   &lt;seu-negócio&gt;, não texto genérico de exemplo?
+4. Existe pelo menos uma skill funcionando de ponta a ponta?
+5. Existe pelo menos um MCP conectado e configurado?
+6. Existe alguma rotina agendada configurada?
+7. Existe backup/versionamento configurado (git ou equivalente)?
+
+No fim, liste os itens que faltam e sugira, para cada um, o menor
+próximo passo possível para resolver.</code></pre>
+</div>
+<p class="text-xs text-neutral-500 mb-6"><strong class="text-emerald-400">Objetivo:</strong> obter um relatório objetivo item-a-item, com evidência, não uma opinião vaga. <strong class="text-emerald-400">Como verificar:</strong> confira se cada "SIM" veio com um caminho de arquivo real que você consegue abrir — se a resposta for genérica sem apontar arquivo, peça para ele reler a pasta com mais cuidado.</p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Por que funciona:</strong> o agente tem acesso de leitura ao seu projeto — ele consegue abrir cada arquivo mencionado e checar se o conteúdo é real ou placeholder, coisa que um checklist estático não faz.</li>
+<li><strong>Repita depois:</strong> essa auto-avaliação não é só para a entrega — rode de novo em 30 dias para ver se o assistente cresceu (liga direto com o módulo 7.4, o ritmo de crescimento).</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-6#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🆚 A diferença real para um chatbot comum</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-6-t3-p1">
+<strong class="text-emerald-400">Novo aqui?</strong> Um <strong class="text-emerald-400">chatbot</strong> comum
+        (o ChatGPT numa aba nova, por exemplo) é uma folha em branco toda vez que você abre. O que você construiu
+        nesta trilha não é isso — é um assistente com memória e mãos. A diferença é concreta, em três eixos.
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Comparação em três eixos: contexto do projeto, ações de verdade e conhecimento que persiste entre sessões — o chatbot comum começa do zero em cada um, o assistente executivo mantém tudo" class="w-full h-auto" role="img" viewbox="0 0 1000 300">
+<defs>
+<lineargradient id="m6-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#059669"></stop></lineargradient>
+<filter height="180%" id="m6-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m6-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#34d399" opacity="0.12" r="1.3"></circle></pattern>
+</defs>
+<rect fill="url(#m6-grid)" height="300" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<text fill="#6ee7b7" font-size="14" font-weight="700" x="30" y="35">Chatbot comum</text>
+<rect fill="#0e1622" height="60" rx="10" stroke="#38bdf8" stroke-width="1.5" width="290" x="30" y="50"></rect>
+<text fill="#9ad6ff" font-size="12" text-anchor="middle" x="175" y="76">Contexto: começa do zero</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="175" y="94">explica quem você é toda vez</text>
+<rect fill="#0e1622" height="60" rx="10" stroke="#38bdf8" stroke-width="1.5" width="290" x="30" y="120"></rect>
+<text fill="#9ad6ff" font-size="12" text-anchor="middle" x="175" y="146">Ações: só responde texto</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="175" y="164">você executa o resto na mão</text>
+<rect fill="#0e1622" height="60" rx="10" stroke="#38bdf8" stroke-width="1.5" width="290" x="30" y="190"></rect>
+<text fill="#9ad6ff" font-size="12" text-anchor="middle" x="175" y="216">Memória: some ao fechar a aba</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="175" y="234">decisão de ontem não vale hoje</text>
+<text fill="#34d399" font-size="22" font-weight="800" text-anchor="middle" x="500" y="150">VS</text>
+<text fill="#6ee7b7" font-size="14" font-weight="700" x="680" y="35">Seu assistente executivo</text>
+<g class="wf-a"><rect fill="#0e1622" filter="url(#m6-glow)" height="60" rx="10" stroke="url(#m6-grad)" stroke-width="2.5" width="290" x="680" y="50"></rect>
+<text fill="#a7f3d0" font-size="12" font-weight="600" text-anchor="middle" x="825" y="76">Contexto: já sabe quem você é</text>
+<text fill="#a7f3d0" font-size="10" text-anchor="middle" x="825" y="94">negócio, time, manias — lidos do disco</text>
+</g>
+<g class="wf-a"><rect fill="#0e1622" filter="url(#m6-glow)" height="60" rx="10" stroke="url(#m6-grad)" stroke-width="2.5" width="290" x="680" y="120"></rect>
+<text fill="#a7f3d0" font-size="12" font-weight="600" text-anchor="middle" x="825" y="146">Ações: manda mensagem, roda tarefa</text>
+<text fill="#a7f3d0" font-size="10" text-anchor="middle" x="825" y="164">skills + MCPs executando de verdade</text>
+</g>
+<g class="wf-a"><rect fill="#0e1622" filter="url(#m6-glow)" height="60" rx="10" stroke="url(#m6-grad)" stroke-width="2.5" width="290" x="680" y="190"></rect>
+<text fill="#a7f3d0" font-size="12" font-weight="600" text-anchor="middle" x="825" y="216">Memória: persiste entre sessões</text>
+<text fill="#a7f3d0" font-size="10" text-anchor="middle" x="825" y="234">o que foi decidido ontem ainda vale</text>
+</g>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Legenda: os três eixos empilhados à esquerda mostram o chatbot comum reiniciando do zero em cada dimensão; à direita, o assistente que você construiu carrega contexto, executa ações reais e mantém memória entre sessões — o brilho verde marca a diferença real.</p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Contexto do projeto</h4>
+<p class="text-neutral-300 text-sm">O assistente sabe quem você é, o seu negócio, o seu time — porque leu os arquivos de contexto que você preencheu no módulo 7.2. Um chatbot novo, sem isso, começa do zero toda vez.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Ações de verdade</h4>
+<p class="text-neutral-300 text-sm">O assistente FAZ coisas — manda mensagem, roda tarefa, edita arquivo — usando as skills e MCPs conectados (módulo 7.3). Não só responde texto: o resultado sai da tela e entra no mundo real.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Conhecimento que persiste</h4>
+<p class="text-neutral-300 text-sm">O que foi decidido ontem ainda vale hoje — sem você reexplicar. Isso é a "casa" (7.1) + o backup (7.5) trabalhando juntos: o estado do assistente sobrevive ao fechar da sessão.</p>
+</div>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-6#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">⚠️ Erros comuns na hora de entregar</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-6-t4-p1">
+        Depois de acompanhar muita gente fechando este capstone, dois erros aparecem sempre. Um é sobre
+        <strong class="text-emerald-400">o que</strong> você entrega; o outro é sobre <strong class="text-emerald-400">quando</strong>
+        você considera o trabalho terminado.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Entrega com evidências reais</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Print da estrutura de pastas real, com nomes de arquivo visíveis</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Trecho de um arquivo de contexto preenchido com dado específico seu</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Log ou vídeo curto da skill rodando de ponta a ponta</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Entrega vaga, sem exemplos concretos</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Configurei tudo certinho" sem mostrar nada</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Arquivo de contexto ainda com o texto de exemplo do template</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Afirma que a skill "funciona" mas nunca rodou de verdade</span></li>
+</ul>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Entender que é um projeto vivo</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Entrega hoje, mas já sabe que vai voltar em 2 semanas pra adicionar algo</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Trata a auto-avaliação do tópico 2 como rotina, não evento único</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Achar que terminou</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Entrega o capstone e nunca mais abre a pasta</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Trata "passou no checklist" como ponto final, não como ponto de partida</span></li>
+</ul>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-6#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🎓 O que você construiu em 7 dias</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-6-t5-p1">
+        Antes de olhar pra frente, vale parar e ver o caminho inteiro. Sete trilhas, cada uma somando uma
+        capacidade nova, até chegar no assistente que você tem hoje rodando.
+      </p>
+<div class="relative pl-8 border-l-2 border-emerald-500/30 space-y-6 mb-6">
+<div class="relative"><div class="absolute -left-[41px] w-5 h-5 rounded-full bg-emerald-500 border-4 border-dark-900"></div>
+<div class="bg-dark-800 rounded-xl p-4 border border-dark-600"><span class="text-xs text-emerald-400 font-semibold">T0 — Preparação</span><p class="text-neutral-300 text-sm mt-1">Instalou o Claude Code, montou a pasta do projeto, escreveu o primeiro CLAUDE.md e aprendeu as regras de segurança.</p></div>
+</div>
+<div class="relative"><div class="absolute -left-[41px] w-5 h-5 rounded-full bg-emerald-500 border-4 border-dark-900"></div>
+<div class="bg-dark-800 rounded-xl p-4 border border-dark-600"><span class="text-xs text-emerald-400 font-semibold">T1 — Framework WAT</span><p class="text-neutral-300 text-sm mt-1">Entendeu o ciclo real de execução (Write-Act-Test), onde ele falha e construiu a primeira automação de verdade.</p></div>
+</div>
+<div class="relative"><div class="absolute -left-[41px] w-5 h-5 rounded-full bg-emerald-500 border-4 border-dark-900"></div>
+<div class="bg-dark-800 rounded-xl p-4 border border-dark-600"><span class="text-xs text-emerald-400 font-semibold">T2 — MCP</span><p class="text-neutral-300 text-sm mt-1">Deu "mãos" ao agente: instalou e autenticou servidores MCP, aprendeu o padrão cheat sheet.</p></div>
+</div>
+<div class="relative"><div class="absolute -left-[41px] w-5 h-5 rounded-full bg-emerald-500 border-4 border-dark-900"></div>
+<div class="bg-dark-800 rounded-xl p-4 border border-dark-600"><span class="text-xs text-emerald-400 font-semibold">T3 — Skills</span><p class="text-neutral-300 text-sm mt-1">Aprendeu a ensinar um processo repetível ao agente, com carregamento progressivo e a própria skill como gatilho.</p></div>
+</div>
+<div class="relative"><div class="absolute -left-[41px] w-5 h-5 rounded-full bg-emerald-500 border-4 border-dark-900"></div>
+<div class="bg-dark-800 rounded-xl p-4 border border-dark-600"><span class="text-xs text-emerald-400 font-semibold">T4 — Deploy</span><p class="text-neutral-300 text-sm mt-1">Tirou o assistente do laptop: pipeline, segredos, retentativas e observabilidade em produção.</p></div>
+</div>
+<div class="relative"><div class="absolute -left-[41px] w-5 h-5 rounded-full bg-emerald-500 border-4 border-dark-900"></div>
+<div class="bg-dark-800 rounded-xl p-4 border border-dark-600"><span class="text-xs text-emerald-400 font-semibold">T5 — Interfaces</span><p class="text-neutral-300 text-sm mt-1">Deu ao agente a capacidade de enxergar o próprio trabalho — laço de screenshot, referência visual, landing publicada.</p></div>
+</div>
+<div class="relative"><div class="absolute -left-[41px] w-5 h-5 rounded-full bg-emerald-500 border-4 border-dark-900"></div>
+<div class="bg-dark-800 rounded-xl p-4 border border-dark-600"><span class="text-xs text-emerald-400 font-semibold">T6 — Tempo</span><p class="text-neutral-300 text-sm mt-1">Ensinou o assistente a agir sem você pedir: agendamento, loops, rotina que aprende, notificações.</p></div>
+</div>
+<div class="relative"><div class="absolute -left-[41px] w-5 h-5 rounded-full bg-emerald-500 border-4 border-dark-900 ring-4 ring-emerald-500/30"></div>
+<div class="bg-emerald-900/20 rounded-xl p-4 border border-emerald-500/40"><span class="text-xs text-emerald-400 font-semibold">T7 — Capstone (você está aqui)</span><p class="text-neutral-300 text-sm mt-1">Juntou tudo isso num único assistente executivo: casa, vida, mãos, crescimento, backup, e agora a entrega final.</p></div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Conceito Principal</h3>
+<p class="text-neutral-300">Nenhuma trilha, sozinha, faz um assistente executivo. É a soma — ambiente + framework + ferramentas + processos + produção + interface + tempo — que transforma um chatbot numa pessoa digital que trabalha por você.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-6#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🛤️ Caminhos para seguir depois do curso</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-6-t6-p1">
+        Terminar o curso não é terminar o projeto — é o ponto em que o assistente passa a existir de verdade e
+        pode crescer sozinho, no seu ritmo. Quatro caminhos concretos pra seguir a partir daqui.
+      </p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Adicione mais skills, aos poucos</h4>
+<p class="text-neutral-300 text-sm">Não tente criar 10 skills na primeira semana. Use o ritmo de crescimento do módulo 7.4: uma skill nova sempre que notar um processo repetitivo pela terceira vez.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Explore mais MCPs</h4>
+<p class="text-neutral-300 text-sm">Cada MCP novo é uma "mão" a mais. Volte na Trilha 2 sempre que precisar conectar uma ferramenta nova ao assistente.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Aprofunde as automações da Trilha 6</h4>
+<p class="text-neutral-300 text-sm">Rotinas agendadas e loops são a diferença entre um assistente que espera você chamar e um que já trabalhou quando você acorda.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">4</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Fique perto da comunidade</h4>
+<p class="text-neutral-300 text-sm">O <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> segue publicando cursos e trilhas novas — é o lugar pra continuar aprendendo depois deste capstone.</p>
+</div>
+</div>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atenção</h3>
+<p class="text-neutral-300">Não tente resolver tudo de uma vez. O assistente que você construiu nestes 7 dias já é útil hoje — o próximo passo é usá-lo de verdade, não empilhar mais features antes de rodar o que já existe.</p>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-7-6#q1">
+<p class="font-medium mb-4">Checagem rápida (opcional): o que separa de fato o seu assistente executivo de um chatbot comum?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Ele responde mais rápido que o chatbot comum.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Ele tem contexto do seu projeto, executa ações reais e mantém memória entre sessões.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Não há diferença prática — os dois fazem a mesma coisa.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-7-6#q1', {
+              answer: 1,
+              explain: { 0: 'Velocidade de resposta não é o critério — releia o tópico 3.', 1: 'Isso mesmo: contexto + ações reais + memória persistente são os três eixos que fazem a diferença.', 2: 'Há, sim, uma diferença enorme — volte no tópico 3 para revisar os três eixos.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🏆</span> Resumo do Módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Checklist de entrega:</strong><span class="text-neutral-400"> 7 critérios verificáveis, do módulo 7.1 ao 7.5.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Auto-avaliação:</strong><span class="text-neutral-400"> peça ao próprio Claude Code para checar item a item com evidência.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Chatbot × assistente:</strong><span class="text-neutral-400"> contexto do projeto, ações de verdade, memória que persiste.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">7 dias, 8 trilhas:</strong><span class="text-neutral-400"> preparação → framework → mãos → processos → produção → interface → tempo → capstone.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Você chegou ao fim do curso.</h3>
+<p class="text-neutral-300">Seu Funcionário Digital não termina aqui — ele continua no seu terminal, todos os dias. Volte ao <a class="text-sky-400 hover:text-sky-300" href="../../index.html">início</a> sempre que quiser revisar uma trilha, e siga a comunidade em <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a>.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-7-5.html">← Módulo Anterior</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="index.html">Voltar para Trilha 7 →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

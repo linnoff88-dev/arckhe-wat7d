@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>1.3 Autocorrección: verdad y marketing | Tu Empleado Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"], section[id^="modulo-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5, 150, 105, 0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5, 150, 105, 0.18); }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .group:hover .group-hover\:text-emerald-400 { color: #059669; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+      .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha1/modulo-1-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha1/modulo-1-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha1/modulo-1-3.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../../curso/trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../../curso/trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../../curso/trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../../curso/trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1-3</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1-3</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🎭 Autocorrección: verdad y marketing</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        El agente intenta, se equivoca y corrige, pero solo mientras estás construyendo. Después de publicar, se convierte en automatización tradicional. La diferencia entre ambos cambia todo.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">24</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Principiante</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Teoría</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 1-3" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:1-3" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. El mito</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. Durante la construcción</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. Después de publicar</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Dónde está el límite</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. Por qué el marketing exagera</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. Qué esperar</a></li>
+</ul>
+</nav>
+<article data-inema-module="1-3" data-inema-track="1" id="modulo-1-3">
+<section class="mb-16" data-inema-topic="modulo-1-3#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🎭 El mito de «piensa por sí solo para siempre»</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t1-p1">
+<strong class="text-emerald-400">¿Eres nuevo aquí?</strong> <strong class="text-emerald-400">Autocorrección</strong> es la
+        capacidad del agente para detectar un error e intentarlo de nuevo con un ajuste, sin que tengas que decirle exactamente
+        qué corregir. Es real, pero a menudo se presenta (en videos y anuncios de productos) como algo más grande
+        de lo que es: la idea de una IA que «piensa por su cuenta para siempre» y lo corrige todo, todo el tiempo y sin límites.
+        Este módulo separa los hechos técnicos de la exageración de marketing.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t1-p2">
+        La verdad tiene una línea divisoria muy clara: hay una fase en la que el agente realmente intenta, se equivoca y corrige
+        de forma flexible, y una fase siguiente en la que empieza a comportarse como cualquier automatización
+        tradicional, siguiendo un script fijo. Confundir las dos fases es el origen de la mayoría de las expectativas
+        incumplidas sobre la «IA que se cuida sola».
+      </p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">💡</span> Concepto principal</h3>
+<p class="text-neutral-300 mb-4">La autocorrección tiene un lugar y un momento: ocurre DURANTE la creación, bajo tu control. Después de publicar, el comportamiento queda fijo.</p>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t1-p3">
+        ¿Por qué convence tanto esa exageración? Porque la demostración más impresionante que existe es justamente ver al agente equivocarse y recuperarse por sí solo, en vivo, frente a ti. Es un efecto casi mágico —y es real, lo que hace fácil generalizar demasiado a partir de él. El error no está en creer que la autocorrección existe; está en creer que es una propiedad permanente del sistema publicado, cuando en realidad es una propiedad de la
+        <strong class="text-emerald-400">sesión de trabajo</strong> (el período en que Claude Code está abierto,
+        funcionando, con un agente activo que lee tus mensajes y decide los siguientes pasos).
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t1-p4">
+        Piensa en dos situaciones cotidianas de alguien que usa este curso. En la <strong>primera</strong>, estás creando
+        un workflow que descarga facturas de un portal y las organiza en una hoja de cálculo; el portal cambia el texto de un botón
+        de «Baixar» a «Download» en medio de la prueba, el agente intenta usar el texto anterior, falla, lee el error, vuelve a intentarlo
+        con el texto nuevo y sigue adelante: todo esto en segundos, mientras tú observas. En la <strong>segundo</strong>, ese
+        mismo workflow ya está publicado y se ejecuta cada madrugada, sin que nadie lo supervise; meses
+        después, el portal vuelve a cambiar y el workflow simplemente deja de funcionar, sin avisar, sin intentar un texto alternativo, sin «arreglárselas».
+        Las dos situaciones implican el mismo tipo de cambio. El resultado es opuesto porque el contexto es opuesto.
+      </p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-3#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🔨 Durante la construcción: lo intenta, falla, corrige</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t2-p1">
+        Mientras estás creando algo en Claude Code —como en los módulos «Build» de este curso—, el agente está, de hecho, en un modo flexible: intenta un paso, si hay un error lee el mensaje, ajusta el enfoque y vuelve a intentarlo. Esto puede ocurrir varias veces en la misma sesión hasta que el resultado quede bien. Esta fase es la que alimenta la fama de la «IA que se corrige sola» y, en este contexto, es verdad.
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/60 p-4 mb-6 overflow-hidden">
+<p class="text-xs text-neutral-500 mb-2">Ejemplo de lo que sucede "por debajo" durante la construcción:</p>
+<pre class="text-xs sm:text-sm text-emerald-200 overflow-x-auto"><code>1ª tentativa: comando falha (arquivo não encontrado)
+   → agente lê o erro, percebe o nome do arquivo estava errado
+2ª tentativa: corrige o nome, comando roda
+   → resultado bate com o esperado
+   → segue para o próximo passo</code></pre>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Ensayo-error-corrección:</strong> el mismo ciclo del módulo 1.2, pero centrado en recuperarse de un error específico.</li>
+<li><strong>Con tú al mando:</strong> esta fase todavía es supervisada: estás ahí, mirando y con la posibilidad de interrumpir.</li>
+<li><strong>Costo por intento:</strong> cada nuevo intento consume tiempo de procesamiento (y, si usas una API paga, dinero); por eso el agente no lo intenta infinitas veces: se detiene cuando el resultado coincide o cuando parece que quedó atrapado en un bucle.</li>
+<li><strong>Tú eres el límite de seguridad:</strong> si los intentos empiezan a ir por un camino equivocado (por ejemplo, borrando archivos que no debería), eres tú, presente en la sesión, quien interrumpe. Una vez publicado, ese freno humano en tiempo real deja de existir.</li>
+</ul>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t2-p2">
+        Un ejemplo real de autocorrección que salva el día, todavía durante la construcción: imagina que le pides al
+        agente que monte una automatización que lee correos de un proveedor y extrae el valor de la factura. En el primer
+        intento, trata de abrir el correo más reciente y falla, porque ese correo en particular no tenía
+        una factura adjunta (solo era un aviso de entrega). Lee el error, se da cuenta de que el filtro tomaba cualquier
+        correo del proveedor en vez de solo los que tienen un archivo PDF adjunto, ajusta el filtro y vuelve a intentarlo — esta vez funciona.
+        Ocurrió en segundos, sin que tuvieras que explicar el problema. Ese tipo de recuperación en vivo
+        es 100% real — y es exactamente lo que este tema te enseña a reconocer.
+      </p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-3#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">📦 Después de publicar: se convierte en automatización tradicional</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t3-p1">
+        Cuando el workflow está listo y lo pones a funcionar solo —programado o activado por un disparador,
+        sin Claude Code interactivo abierto (tema de las Trilhas 4 y 6)—, el comportamiento cambia. Deja
+        de «pensar» libremente y pasa a ejecutar el workflow establecido, exactamente como cualquier automatización tradicional
+        (como una macro o un script programado): sigue los pasos escritos, sin inventar otros nuevos.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t3-p2">
+        Esto es una buena noticia, no una limitación: tú <em>quiere</em> previsibilidad en una automatización que se ejecuta todos los días
+        a las 7h sin que nadie la supervise. Una automatización de producción que "pensara por sí sola" y cambiara su comportamiento
+        cada vez sería, en la práctica, demasiado imprevisible para confiar en ella.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Fijo</div><div class="text-xs text-neutral-400 mt-1">Sigue el workflow guardado</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Por sí solo</div><div class="text-xs text-neutral-400 mt-1">Sin que estés observando</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Repetible</div><div class="text-xs text-neutral-400 mt-1">El mismo resultado esperado</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Previsible</div><div class="text-xs text-neutral-400 mt-1">La idea es esa</div></div>
+</div>
+<p class="text-neutral-300 mt-6 mb-6 leading-relaxed" data-inema-block="m1-3-t3-p3">
+<strong class="text-emerald-400">¿Eres nuevo aquí?</strong> <strong class="text-emerald-400">Workflow</strong> aquí
+        significa la secuencia de pasos que el agente escribió y probó durante la construcción: el "guion" que
+        sigue después. Publicar no cambia el guion; publicar solo saca al actor (el agente que piensa en tiempo real)
+        de escena y deja que el guion se ejecute solo, punto por punto, como una grabación.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t3-p4">
+        Un ejemplo concreto del otro lado de la moneda: esa misma automatización de correo de un proveedor, ya publicada
+        y funcionando todos los lunes por la mañana. Tres meses después, el proveedor cambia su sistema de correo y el
+        asunto de los mensajes empieza a llegar en otro formato. El workflow publicado no va a «darse cuenta» ni a ajustarse
+        como lo hizo durante la construcción — simplemente no encontrará ningún correo que coincida con el patrón
+        guardado, y o bien fallará en silencio (sin procesar nada ni avisar) o generará un error que solo alguien
+        que revise los logs (el registro de lo que hizo la automatización) notará. Esto no es un bug del sistema — es el
+        comportamiento esperado de una automatización fija. La autocorrección «se gastó» durante la construcción; en producción,
+        simplemente ya no está ahí para actuar.
+      </p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-3#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">📊 Dónde está la línea: construcción × producción</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t4-p1">
+        La línea divisoria no tiene que ver con «qué tan inteligente es el agente» — tiene que ver con <em>dónde</em> está en ejecución. Dentro
+        de Claude Code, interactivo, contigo presente: modo flexible. Publicado y programado (el tema de las Rutas
+        4 y 6): modo fijo. La tabla de abajo resume directamente la diferencia.
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-2 overflow-hidden">
+<svg aria-label="Durante la construcción en Claude Code, el agente prueba, se equivoca y corrige con el usuario presente; después de publicar, sigue el workflow definido sin desviarse, como cualquier automatización tradicional" class="w-full h-auto" role="img" viewbox="0 0 1000 220">
+<defs>
+<lineargradient id="m13-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#059669"></stop></lineargradient>
+<filter height="180%" id="m13-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m13-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#34d399" opacity="0.12" r="1.3"></circle></pattern>
+</defs>
+<rect fill="url(#m13-grid)" height="220" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" filter="url(#m13-glow)" height="160" rx="16" stroke="url(#m13-grad)" stroke-width="2.5" width="440" x="30" y="30"></rect>
+<text fill="#6ee7b7" font-size="15" font-weight="700" text-anchor="middle" x="250" y="58">🔨 Construcción (Claude Code)</text>
+<text fill="#a7f3d0" font-size="12" text-anchor="middle" x="250" y="86">intenta → se equivoca → lee el error → corrige</text>
+<text fill="#a7f3d0" font-size="12" text-anchor="middle" x="250" y="108">flexible, estás presente</text>
+<text fill="#6ee7b7" font-size="12" font-weight="600" text-anchor="middle" x="250" y="140">no determinista</text>
+<text fill="#9ad6ff" font-size="11" text-anchor="middle" x="250" y="164">(el resultado puede variar entre intentos)</text>
+<rect fill="#0e1622" height="160" rx="16" stroke="#38bdf8" stroke-width="2.5" width="440" x="530" y="30"></rect>
+<text fill="#bfe6ff" font-size="15" font-weight="700" text-anchor="middle" x="750" y="58">📦 Producción (programada)</text>
+<text fill="#9ad6ff" font-size="12" text-anchor="middle" x="750" y="86">sigue el workflow fijado</text>
+<text fill="#9ad6ff" font-size="12" text-anchor="middle" x="750" y="108">solo, sin supervisión directa</text>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="750" y="140">determinístico</text>
+<text fill="#9ad6ff" font-size="11" text-anchor="middle" x="750" y="164">(el mismo paso a paso cada vez)</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: a la izquierda, la fase de construcción, en la que el agente ajusta su propio camino; a la derecha, la fase de producción, en la que repite el workflow guardado sin desviarse: la línea entre ambas es la publicación.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t4-p2">
+        Al poner las tres fases en una línea de tiempo —construcción, publicación, producción— es más fácil identificar,
+        en cualquiera de tus proyectos, en qué punto exacto el juicio en tiempo real del agente deja de actuar. Es esa
+        transición, y no una caída de «inteligencia», la que cambia el comportamiento.
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-2 overflow-hidden">
+<svg aria-label="Línea de tiempo con tres hitos: construcción, cuando el agente supervisa y corrige en tiempo real; publicación, el instante en que se fija el workflow; y producción, cuando la automatización se ejecuta sola siguiendo el guion guardado, sin más decisiones en tiempo real" class="w-full h-auto" role="img" viewbox="0 0 900 260">
+<defs>
+<lineargradient id="m13-tl-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#34d399"></stop><stop offset="0.5" stop-color="#38bdf8"></stop><stop offset="1" stop-color="#38bdf8"></stop></lineargradient>
+<filter height="180%" id="m13-tl-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.6"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m13-tl-ah" markerheight="10" markerwidth="10" orient="auto" refx="7" refy="5"><path d="M0,0 L9,5 L0,10 L2.6,5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="#0e1622" height="260" width="900" x="0" y="0"></rect>
+<line marker-end="url(#m13-tl-ah)" stroke="url(#m13-tl-grad)" stroke-width="3" x1="70" x2="830" y1="130" y2="130"></line>
+<circle cx="150" cy="130" fill="#0e1622" filter="url(#m13-tl-glow)" r="14" stroke="#34d399" stroke-width="3"></circle>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="15" font-weight="700" text-anchor="middle" x="150" y="80">🔨 Construcción</text>
+<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="150" y="100">el agente supervisa</text>
+<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="150" y="165">intenta, se equivoca, corrige</text>
+<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="150" y="182">contigo presente</text>
+<circle cx="450" cy="130" fill="#0e1622" filter="url(#m13-tl-glow)" r="14" stroke="#38bdf8" stroke-width="3"></circle>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="15" font-weight="700" text-anchor="middle" x="450" y="80">📌 Publicación</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="450" y="100">el instante en que el</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="450" y="165">el workflow está fijado —</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="450" y="182">la línea divisoria real</text>
+<circle cx="750" cy="130" fill="#0e1622" filter="url(#m13-tl-glow)" r="14" stroke="#38bdf8" stroke-width="3"></circle>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="15" font-weight="700" text-anchor="middle" x="750" y="80">📦 Producción</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="750" y="100">se ejecuta por sí sola</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="750" y="165">sin criterio</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="750" y="182">en tiempo real</text>
+<text fill="#64748b" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="450" y="235">la autocorrección existe solo antes de la publicación — nunca después</text>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: la flecha avanza desde la construcción (verde, flexible) hasta la producción (cian, fija), pasando por el hito de publicación. No existe una cuarta fase en la que el agente "vuelve a pensar por su cuenta" sin que vuelvas a abrir Claude Code.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Antes de la publicación</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>El agente lee los errores y ajusta el enfoque por su cuenta</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Estás presente, puedes interrumpir y redirigir</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>El resultado puede variar entre intentos hasta que aciertes</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Después de la publicación</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Un error nuevo no se convierte en "intento 2": se registra como falla</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Nadie está mirando en tiempo real para interrumpir</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>El mismo paso a paso se repite hasta que vuelvas y lo edites</span></li>
+</ul>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-3#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">📣 Por qué el marketing exagera</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t5-p1">
+        Los videos y materiales de venta suelen mostrar solo la fase de construcción —la parte más impresionante, con el agente corrigiendo errores en el momento— y dar a entender que esto continúa indefinidamente después de publicado. No es mentira sobre lo que ocurrió en la demostración; es una generalización exagerada sobre lo que pasa después. Entender esta diferencia evita dos frustraciones comunes: creer que una automatización publicada va a «cuidarse sola» para siempre o desconfiar de todo el curso cuando eso no sucede.
+      </p>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atención</h3>
+<p class="text-neutral-300">Una automatización publicada que empieza a fallar (por ejemplo, porque un sitio cambió de estructura) NO se corregirá sola: fallará de la misma manera cada vez hasta que alguien (tú, en Claude Code) vuelva y ajuste el workflow. Esto es esperable, no un defecto.</p>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t5-p2">
+        Quienes están empezando suelen caer en tres trampas mentales, y vale la pena nombrar cada una:
+      </p>
+<div class="space-y-4 mb-6">
+<div class="bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Error 1 — "Lo corrigió una vez, así que está garantizado para siempre"</h4>
+<p class="text-neutral-300 text-sm">Ver al agente recuperarse de un error durante la construcción no es evidencia de que vaya a recuperarse del <em>próximo</em> error, en producción, por sí solo. Cada corrección durante la construcción se hizo contigo presente: ninguna de ellas «queda guardada» como una habilidad permanente del workflow publicado.</p>
+</div>
+<div class="bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Error 2 — Publicar sin probar la ruta de error</h4>
+<p class="text-neutral-300 text-sm">Es común probar solo el «camino feliz» (cuando todo sale bien) antes de publicar y nunca probar qué ocurre cuando falta un dato, un sitio está fuera de servicio o un archivo no existe. En producción, sin autocorrección, justamente ese camino de error decide si la automatización falla bien (avisándote) o falla mal (bloqueándose o borrando algo en silencio).</p>
+</div>
+<div class="bg-dark-800 rounded-xl p-5 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Error 3 — Creer que ya no hace falta comprobar después de publicar</h4>
+<p class="text-neutral-300 text-sm">Como la fase de construcción fue tan «inteligente», es tentador tratar la automatización publicada como si siguiera cuidándose sola. No es así: la revisión periódica (Trilha 4, observabilidad) reemplaza, en producción, el juicio en tiempo real que existía durante la construcción.</p>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Antes de publicar cualquier workflow, provoca al menos un error a propósito (borra un dato, desconecta el Wi-Fi, indica un archivo que no existe) y observa qué sucede. Si se queda bloqueado sin avisar, ajusta el workflow para que te notifique, mientras todavía estás en la fase en que puedes corregirlo fácilmente.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-3#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🎯 Qué esperar en la práctica</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t6-p1">
+        En la práctica, usa la fase de construcción para hacer que el workflow sea robusto: ahí vale la pena probar
+        variaciones y casos límite, y dejar que el agente itere hasta acertar. Después de publicarlo, monitorea (Ruta 4,
+        módulo de observabilidad) para saber cuándo algo cambió fuera y el workflow necesita mantenimiento, pero
+        no esperes que se corrija automáticamente en ese momento.
+      </p>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Trata la fase de construcción como el "entrenamiento" y la publicación como la "prueba". Dedica tiempo de sobra a probar en el entrenamiento: ahí la autocorrección trabaja a tu favor gratis.</p>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-3-t6-p2">
+        Una forma sencilla de fijar este hábito: cada vez que termines de construir un workflow y antes de publicarlo,
+        pídele al propio agente que enumere, por escrito, «qué puede salir mal aquí en producción y qué pasa en
+        cada caso». No necesitas saber programar para entender la respuesta — solo decidir si cada
+        escenario que enumera es aceptable (el workflow se detiene y te avisa) o peligroso (el workflow continúa y hace algo
+        mal en silencio). Si haces esta solicitud mientras el agente aún te supervisa en la sesión, esta es la última
+        oportunidad para que la autocorrección real actúe a tu favor antes de la publicación.
+      </p>
+<div class="rounded-xl border border-dark-600 bg-dark-900/60 p-4 mb-6 overflow-hidden">
+<p class="text-xs text-neutral-500 mb-2">Pídele esto al agente antes de publicar (copia y pega):</p>
+<pre class="text-xs sm:text-sm text-emerald-200 overflow-x-auto"><code>Antes de eu publicar este workflow, liste os pontos onde ele pode
+falhar em produção (site fora do ar, dado faltando, formato mudou)
+e diga, para cada um, se o workflow para com um aviso claro
+ou continua rodando de um jeito que pode causar erro silencioso.</code></pre>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-1-3#q1">
+<p class="font-medium mb-4">Cuando una automatización publicada y programada falla, va a...</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Corregirse automáticamente, como hacía durante la construcción.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Repetir el mismo workflow fijado y fallar de la misma manera hasta que lo ajustes.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Dejar de existir.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-1-3#q1', {
+              answer: 1,
+              explain: { 0: 'Isso só acontece durante a construção, no Claude Code interativo.', 1: 'Correto: em produção o comportamento é fixo e determinístico.', 2: 'Ela continua rodando, só que falhando repetidamente até você intervir.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Dos fases:</strong><span class="text-neutral-400"> construcción (flexible) × producción (fija): la publicación es la línea divisoria.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Verdad:</strong><span class="text-neutral-400"> la autocorrección sí ocurre, pero solo durante la construcción y contigo presente.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Marketing:</strong><span class="text-neutral-400"> generaliza demasiado cuando implica que esto continúa para siempre.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">En la práctica:</strong><span class="text-neutral-400"> prueba bastante durante la construcción; monitorea (no esperes que se autocorrija) en producción.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">1.4 — Dónde falla WAT (y cómo notarlo)</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la ruta</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-4.html">Próximo módulo →</a>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) { exp.classList.remove('active'); exp.previousElementSibling && exp.previousElementSibling.setAttribute && exp.previousElementSibling.setAttribute('aria-expanded','false'); }
+      });
+      explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', explanation.classList.contains('active') ? 'true' : 'false');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

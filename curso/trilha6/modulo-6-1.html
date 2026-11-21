@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>6.1 Agora, neste projeto, ou toda semana? | Seu Funcionário Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-rose-400 { color: #9f1239; }
+    html:not(.dark) .bg-rose-500\/20 { background-color: rgba(225, 29, 72, 0.12); }
+    html:not(.dark) .bg-rose-500\/10 { background-color: rgba(225, 29, 72, 0.08); }
+    html:not(.dark) .border-rose-500\/30 { border-color: rgba(225, 29, 72, 0.25); }
+    html:not(.dark) .hover\:bg-rose-500\/30:hover { background-color: rgba(225, 29, 72, 0.18); }
+    html:not(.dark) .hover\:bg-rose-500\/10:hover { background-color: rgba(225, 29, 72, 0.08); }
+    html:not(.dark) .hover\:text-rose-400:hover { color: #9f1239; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    table.inema-table { border-collapse: collapse; width: 100%; }
+    table.inema-table th, table.inema-table td { border: 1px solid #374151; padding: 0.75rem 1rem; text-align: left; vertical-align: top; font-size: 0.9rem; }
+    html:not(.dark) table.inema-table th, html:not(.dark) table.inema-table td { border-color: #d1d5db; }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha6/modulo-6-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha6/modulo-6-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha6/modulo-6-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-6-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha6/modulo-6-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha6/modulo-6-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Pular para o conteúdo</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparação</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Minha jornada</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-rose-400" href="../../index.html">Início</a><span>/</span>
+<a class="hover:text-rose-400" href="index.html">Trilha 6</a><span>/</span>
+<span class="text-rose-400">Módulo 6.1</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">⏰ Agora, neste projeto, ou toda semana?</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        Até aqui você mandou seu funcionário digital fazer coisas quando <em>você</em> pedia. Agora entra o eixo tempo:
+        o trabalho passa a acontecer sozinho, no horário certo. Existem duas ferramentas para isso — elas se parecem
+        muito e servem para coisas bem diferentes. Este módulo fixa a diferença de uma vez.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">25</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">Iniciante</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">Fundamento</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progresso do módulo 6.1" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:6-1" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Seção <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-1">1. Duas ferramentas parecidas</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-2">2. O que é tarefa agendada</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-3">3. O que é um loop</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-4">4. A tabela que decide</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-5">5. A árvore de decisão</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-6">6. O mapa da Trilha 6</a></li>
+</ul>
+</nav>
+<article data-inema-module="6-1" data-inema-track="6" id="modulo-6-1">
+<!-- ============ TÓPICO 1 ============ -->
+<section class="mb-16" data-inema-topic="modulo-6-1#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🎯 Duas ferramentas parecidas, resultados bem diferentes</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t1-p1">
+        Nas trilhas anteriores tudo começava com você. Você abria o programa, escrevia o pedido, esperava, olhava o
+        resultado. Chamamos isso de trabalho <strong class="text-rose-400">sob demanda</strong>: acontece porque alguém
+        pediu, na hora em que pediu. Funciona muito bem — até o dia em que a mesma tarefa precisa acontecer toda
+        manhã, sem falta, inclusive na manhã em que você esqueceu.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t1-p2">
+        É aí que entra o eixo que dá nome a esta trilha: o <strong class="text-rose-400">tempo</strong>. A pergunta deixa
+        de ser só "o que eu quero que ele faça?" e passa a ser também "<em>quando</em> e <em>com que frequência</em> isso
+        deve rodar sozinho?". Existem duas respostas possíveis, e elas têm nome: <strong class="text-rose-400">tarefa
+        agendada</strong> e <strong class="text-rose-400">loop</strong>.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t1-p3">
+        Aqui mora a armadilha do módulo. As duas fazem o mesmo tipo de coisa — repetir trabalho sem você mandar de
+        novo — e por isso muita gente escolhe a errada e depois acha que "a automação não funciona". Não é a automação:
+        é a escolha. Uma delas foi feita para rotinas que atravessam meses; a outra, para acompanhar algo que está
+        acontecendo <em>agora</em> e termina em poucos dias.
+      </p>
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
+<p class="text-neutral-300 mb-4">
+          A escolha entre as duas ferramentas não é técnica, é de calendário. Pergunte: isso acaba esta semana, ou vai
+          continuar acontecendo daqui a três meses?
+        </p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-1">•</span><span><strong>Vai continuar acontecendo:</strong> tarefa agendada.</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-1">•</span><span><strong>Acaba junto com o assunto de agora:</strong> loop.</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-rose-400 font-bold text-lg">Sob demanda</div><div class="text-xs text-neutral-400 mt-1">Trilhas 0 a 5</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-rose-400 font-bold text-lg">Tempo</div><div class="text-xs text-neutral-400 mt-1">O eixo novo aqui</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-rose-400 font-bold text-lg">2</div><div class="text-xs text-neutral-400 mt-1">Ferramentas</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-rose-400 font-bold text-lg">1</div><div class="text-xs text-neutral-400 mt-1">Pergunta que decide</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- ============ TÓPICO 2 ============ -->
+<section class="mb-16" data-inema-topic="modulo-6-1#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📅 O que é uma tarefa agendada</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t2-p1">
+<strong class="text-rose-400">Novo aqui?</strong> Uma <strong class="text-rose-400">tarefa agendada</strong>
+        (em inglês, <em>scheduled task</em>) é uma instrução que você escreve uma única vez e o computador executa
+        sozinho, num horário e numa frequência que você definiu — todo dia às 8h, toda sexta às 18h, todo dia 1º do mês.
+        Você não abre nada, não clica em nada, não lembra de nada. Chega a hora, ela roda.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t2-p2">
+        A analogia mais honesta é a do despertador. Você configura uma vez, guarda o aparelho na gaveta da cabeça e
+        ele toca todo dia no horário — inclusive nos dias em que você jurou que ia acordar sozinho. A tarefa agendada
+        é o despertador do seu funcionário digital: ela não pergunta se hoje dá, ela só roda.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t2-p3">
+        Duas características importam desde já, e as duas voltam com força no módulo 6.2. A primeira: cada execução
+        começa do zero, como se fosse a primeira vez — a tarefa não lembra do que fez ontem. A segunda: ela não tem
+        prazo de validade. Configurou, ela fica lá, rodando semana após semana, até você desligar.
+      </p>
+<div class="bg-rose-900/20 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Frequência:</strong> de quanto em quanto tempo roda — diária, semanal, mensal.</li>
+<li><strong>Sessão:</strong> uma "conversa" com o agente, do início ao fim. Cada disparo da tarefa agendada abre uma sessão nova, limpa, sem memória da anterior.</li>
+<li><strong>Duração:</strong> indefinida. Não expira sozinha.</li>
+</ul>
+</div>
+<div class="rounded-2xl border border-rose-500/30 bg-dark-900/40 p-3 sm:p-4 mb-3 overflow-hidden">
+<svg aria-label="Linha do tempo de uma semana: sete marcos de segunda a domingo, cada um com um disparo automático às 8 da manhã. No sábado o computador estava desligado e o disparo é recuperado mais tarde, quando a máquina volta a ligar." class="w-full h-auto" role="img" viewbox="0 0 1000 230">
+<defs>
+<lineargradient id="m61a-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fb7185"></stop><stop offset="1" stop-color="#e11d48"></stop></lineargradient>
+<filter height="180%" id="m61a-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m61a-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#fb7185" opacity="0.12" r="1.3"></circle></pattern>
+</defs>
+<rect fill="url(#m61a-grid)" height="230" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<line opacity="0.5" stroke="#fb7185" stroke-width="2" x1="50" x2="950" y1="130" y2="130"></line>
+<g>
+<circle class="wf-a" cx="110" cy="130" fill="#0e1622" filter="url(#m61a-glow)" r="11" stroke="url(#m61a-grad)" stroke-width="3"></circle>
+<text fill="#fda4af" font-size="11" font-weight="600" text-anchor="middle" x="110" y="165">Seg</text>
+<text fill="#38bdf8" font-size="10" text-anchor="middle" x="110" y="105">08:00</text>
+</g>
+<g>
+<circle class="wf-a" cx="230" cy="130" fill="#0e1622" filter="url(#m61a-glow)" r="11" stroke="url(#m61a-grad)" stroke-width="3"></circle>
+<text fill="#fda4af" font-size="11" font-weight="600" text-anchor="middle" x="230" y="165">Ter</text>
+<text fill="#38bdf8" font-size="10" text-anchor="middle" x="230" y="105">08:00</text>
+</g>
+<g>
+<circle class="wf-a" cx="350" cy="130" fill="#0e1622" filter="url(#m61a-glow)" r="11" stroke="url(#m61a-grad)" stroke-width="3"></circle>
+<text fill="#fda4af" font-size="11" font-weight="600" text-anchor="middle" x="350" y="165">Qua</text>
+<text fill="#38bdf8" font-size="10" text-anchor="middle" x="350" y="105">08:00</text>
+</g>
+<g>
+<circle cx="470" cy="130" fill="#0e1622" r="11" stroke="url(#m61a-grad)" stroke-width="3"></circle>
+<text fill="#fda4af" font-size="11" font-weight="600" text-anchor="middle" x="470" y="165">Qui</text>
+<text fill="#38bdf8" font-size="10" text-anchor="middle" x="470" y="105">08:00</text>
+</g>
+<g>
+<circle cx="590" cy="130" fill="#0e1622" r="11" stroke="url(#m61a-grad)" stroke-width="3"></circle>
+<text fill="#fda4af" font-size="11" font-weight="600" text-anchor="middle" x="590" y="165">Sex</text>
+<text fill="#38bdf8" font-size="10" text-anchor="middle" x="590" y="105">08:00</text>
+</g>
+<g>
+<circle cx="710" cy="130" fill="#0e1622" r="11" stroke="#64748b" stroke-dasharray="4 3" stroke-width="3"></circle>
+<text fill="#94a3b8" font-size="11" font-weight="600" text-anchor="middle" x="710" y="165">Sáb</text>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="710" y="105">PC desligado</text>
+<path d="M710,143 C740,185 790,185 815,150" fill="none" stroke="#38bdf8" stroke-dasharray="5 4" stroke-width="2"></path>
+<text fill="#7dd3fc" font-size="10" text-anchor="middle" x="775" y="200">recupera ao ligar</text>
+</g>
+<g>
+<circle cx="830" cy="130" fill="#0e1622" filter="url(#m61a-glow)" r="11" stroke="url(#m61a-grad)" stroke-width="3"></circle>
+<text fill="#fda4af" font-size="11" font-weight="600" text-anchor="middle" x="830" y="165">Dom</text>
+<text fill="#38bdf8" font-size="10" text-anchor="middle" x="830" y="105">08:00</text>
+</g>
+<text fill="#fb7185" font-size="15" font-weight="700" text-anchor="middle" x="500" y="40">Uma tarefa agendada diária, ao longo de uma semana</text>
+<text fill="#94a3b8" font-size="11" text-anchor="middle" x="500" y="60">você configurou uma vez, na segunda-feira</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 mb-6">Legenda: repare que os círculos rosa são idênticos — cada dia é uma execução nova e independente, sem ligação com a anterior. O único ponto diferente é o sábado, tracejado: o computador estava desligado, e a seta ciano mostra a execução sendo recuperada depois. Esse detalhe é o assunto do módulo 6.2.</p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- ============ TÓPICO 3 ============ -->
+<section class="mb-16" data-inema-topic="modulo-6-1#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🔁 O que é um loop</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t3-p1">
+<strong class="text-rose-400">Novo aqui?</strong> Um <strong class="text-rose-400">loop</strong> (lê-se "lúpi",
+        e significa "laço" em inglês) é uma <strong class="text-rose-400">sessão</strong> — uma conversa aberta com o
+        agente — que se repete de tempos em tempos enquanto continua viva. A cada volta, o agente faz de novo o que você
+        pediu: checa se algo mudou, tenta de novo, ajusta. E, diferente da tarefa agendada, ele <em>lembra</em> de tudo
+        o que já viu nas voltas anteriores, porque nunca saiu da mesma conversa.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t3-p2">
+        A analogia aqui é o vigia noturno. Ele não vai embora e volta amanhã: ele fica no prédio a noite inteira, dando
+        a mesma ronda de meia em meia hora. Na terceira ronda ele já sabe que a porta dos fundos rangeu na primeira —
+        esse acúmulo é a vantagem do loop. Quando o turno acaba, ele vai para casa e a memória da noite vai junto.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t3-p3">
+        E o turno realmente acaba. Um loop não é feito para durar para sempre: ele expira em poucos dias — na prática,
+        cerca de três. Se a sessão fechar antes disso (você fecha a janela, o programa é encerrado), o loop simplesmente
+        morre ali, sem tentar voltar depois. Isso não é defeito: é o desenho da ferramenta. Loop existe para acompanhar
+        algo que está em andamento <em>agora</em>, não para carregar uma rotina de vida inteira.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Quando usar tarefa agendada</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>"Todo dia de manhã, me resuma o que chegou na caixa de entrada."</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>"Toda sexta às 18h, gere o relatório da semana."</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>"Todo dia 1º, faça a cópia de segurança dos meus arquivos."</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Qualquer coisa que você quer que continue acontecendo em março do ano que vem.</span></li>
+</ul>
+</div>
+<div class="bg-rose-900/20 rounded-xl border border-rose-500/30 p-6">
+<h4 class="font-bold text-rose-400 mb-4">✓ Quando usar loop</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400">✓</span><span>"Fique de olho neste site e me avise assim que o preço cair."</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400">✓</span><span>"Continue tentando arrumar isso até parar de dar erro."</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400">✓</span><span>"Acompanhe esta entrega até ela sair para rota."</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400">✓</span><span>Qualquer coisa que acaba junto com o assunto desta semana.</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica Prática</h3>
+<p class="text-neutral-300">
+          Se você se pegar pensando "vou deixar esse loop rodando pra sempre", pare. Esse "pra sempre" é o sinal mais
+          claro de que o caso é de tarefa agendada. Loop que você não pretende encerrar é loop escolhido errado.
+        </p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- ============ TÓPICO 4 ============ -->
+<section class="mb-16" data-inema-topic="modulo-6-1#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">📊 A tabela que decide</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t4-p1">
+        Esta é a peça central da trilha inteira. São cinco linhas de comparação — e cada uma delas, sozinha, já é capaz
+        de decidir a escolha por você. Se você guardar só uma coisa deste módulo, guarde esta tabela.
+      </p>
+<div class="overflow-x-auto rounded-xl border border-rose-500/30 mb-4">
+<table class="inema-table">
+<caption class="sr-only">Comparação entre tarefa agendada e loop em cinco critérios</caption>
+<thead>
+<tr class="bg-rose-500/20">
+<th class="text-rose-400 font-bold" scope="col"></th>
+<th class="text-rose-400 font-bold" scope="col">Tarefa agendada</th>
+<th class="text-rose-400 font-bold" scope="col">Loop</th>
+</tr>
+</thead>
+<tbody class="text-neutral-300">
+<tr>
+<th class="text-neutral-100 font-semibold" scope="row">Onde roda</th>
+<td>No aplicativo de computador (o app desktop)</td>
+<td>Em qualquer lugar: terminal, editor de código, app desktop</td>
+</tr>
+<tr>
+<th class="text-neutral-100 font-semibold" scope="row">Memória</th>
+<td>Sessão nova a cada execução — não lembra da anterior</td>
+<td>Mantém o contexto: é sempre a mesma sessão</td>
+</tr>
+<tr>
+<th class="text-neutral-100 font-semibold" scope="row">Duração</th>
+<td>Indefinida — diária, semanal ou mensal, sem prazo para acabar</td>
+<td>Expira em cerca de 3 dias</td>
+</tr>
+<tr>
+<th class="text-neutral-100 font-semibold" scope="row">Se o PC ficou desligado</th>
+<td>Recupera as execuções perdidas quando a máquina volta</td>
+<td>O loop morre se a sessão fechar</td>
+</tr>
+<tr>
+<th class="text-neutral-100 font-semibold" scope="row">Serve para</th>
+<td>Rotina de todo dia, toda semana, todo mês</td>
+<td>Acompanhar algo que está acontecendo agora</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="text-xs text-neutral-500 mb-6">Legenda: leia de cima para baixo, não da esquerda para a direita. Cada linha é uma pergunta que você faz sobre o seu caso — e a coluna que responder melhor ganha.</p>
+<p class="text-neutral-300 mb-4 leading-relaxed" data-inema-block="m6-1-t4-p2">
+<strong class="text-rose-400">Onde roda.</strong> <strong class="text-rose-400">Novo aqui?</strong> O
+        <strong class="text-rose-400">app desktop</strong> é o programa com janelas, ícones e botões que você instala e
+        abre com dois cliques — como o seu navegador ou o editor de textos. Ele é diferente do
+        <strong class="text-rose-400">terminal</strong>, aquela tela preta onde você digita comandos em vez de clicar. A
+        tarefa agendada mora no app desktop, porque é ele que fica de olho no relógio. O loop não tem essa exigência:
+        roda onde a sessão estiver aberta.
+      </p>
+<p class="text-neutral-300 mb-4 leading-relaxed" data-inema-block="m6-1-t4-p3">
+<strong class="text-rose-400">Memória.</strong> Esta é a linha que mais causa frustração em quem escolhe errado.
+        A tarefa agendada acorda amnésica todo dia: o que ela sabe é só o que está escrito na instrução que você deixou
+        pronta. Já o loop carrega tudo — na quinta volta ele ainda sabe o que viu na primeira. Se o seu caso depende de
+        "compare com o que você viu ontem", a tarefa agendada pura não dá conta sozinha (e o módulo 6.4 mostra o truque
+        que resolve isso).
+      </p>
+<p class="text-neutral-300 mb-4 leading-relaxed" data-inema-block="m6-1-t4-p4">
+<strong class="text-rose-400">Duração.</strong> Uma é maratona, a outra é corrida de 100 metros. A tarefa
+        agendada não tem linha de chegada: você configura e ela roda até você mandar parar. O loop tem prazo curto e
+        conhecido — uns três dias — e isso é uma proteção, não um limite chato: evita que uma sessão esquecida fique
+        consumindo recurso por meses.
+      </p>
+<p class="text-neutral-300 mb-4 leading-relaxed" data-inema-block="m6-1-t4-p5">
+<strong class="text-rose-400">Se o PC ficou desligado.</strong> Aqui a diferença é dramática. A tarefa agendada
+        percebe que perdeu o horário e roda assim que a máquina volta — nada se perde, só atrasa. O loop não tem essa
+        rede de proteção: sessão fechada é loop encerrado, ponto final. Ninguém vai retomar por você.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t4-p6">
+<strong class="text-rose-400">Serve para.</strong> É o resumo das quatro linhas anteriores. Rotina que
+        atravessa o calendário: agendada. Vigilância de algo que está no ar agora: loop.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Sinais de que é tarefa agendada</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Você consegue dizer o horário exato ("às 8h").</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>A instrução é a mesma toda vez, palavra por palavra.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Se um dia falhar, dá para rodar depois sem problema.</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Sinais de que agendada é a escolha errada</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Você precisa reagir em minutos, não no horário marcado.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>O que fazer agora depende do que aconteceu há 10 minutos.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>O assunto acaba nesta semana e nunca mais volta.</span></li>
+</ul>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- ============ TÓPICO 5 ============ -->
+<section class="mb-16" data-inema-topic="modulo-6-1#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🌳 A árvore de decisão</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t5-p1">
+        Cinco linhas de tabela são muito para lembrar às sete da manhã. Por isso o curso condensa tudo numa única
+        pergunta, e é essa pergunta que dá nome ao módulo: <strong class="text-rose-400">"preciso disso agora, neste
+        projeto, ou toda semana?"</strong>. Três respostas possíveis, três caminhos diferentes.
+      </p>
+<div class="rounded-2xl border border-rose-500/30 bg-dark-900/40 p-3 sm:p-4 mb-3 overflow-hidden">
+<svg aria-label="Árvore de decisão: da pergunta central saem três ramos. Agora leva a fazer o pedido direto, sob demanda. Neste projeto, enquanto durar, leva ao loop. Toda semana, para sempre, leva à tarefa agendada." class="w-full h-auto" role="img" viewbox="0 0 1000 340">
+<defs>
+<lineargradient id="m61b-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fb7185"></stop><stop offset="1" stop-color="#e11d48"></stop></lineargradient>
+<filter height="180%" id="m61b-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="2"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m61b-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#fb7185" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m61b-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#fb7185"></path></marker>
+<marker id="m61b-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m61b-grid)" height="340" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" filter="url(#m61b-glow)" height="70" rx="16" stroke="url(#m61b-grad)" stroke-width="3" width="380" x="310" y="24"></rect>
+<text fill="#fb7185" font-size="15" font-weight="700" text-anchor="middle" x="500" y="52">Preciso disso agora,</text>
+<text fill="#fb7185" font-size="15" font-weight="700" text-anchor="middle" x="500" y="74">neste projeto, ou toda semana?</text>
+<path d="M400,94 L180,150" marker-end="url(#m61b-ahc)" opacity="0.75" stroke="#38bdf8" stroke-width="2"></path>
+<path d="M500,94 L500,150" marker-end="url(#m61b-ah)" opacity="0.75" stroke="#fb7185" stroke-width="2"></path>
+<path d="M600,94 L820,150" marker-end="url(#m61b-ah)" opacity="0.75" stroke="#fb7185" stroke-width="2"></path>
+<text fill="#7dd3fc" font-size="11" font-weight="600" text-anchor="middle" x="255" y="126">"agora"</text>
+<text fill="#fda4af" font-size="11" font-weight="600" text-anchor="middle" x="530" y="130">"neste projeto"</text>
+<text fill="#fda4af" font-size="11" font-weight="600" text-anchor="middle" x="745" y="126">"toda semana"</text>
+<rect fill="#0e1622" height="110" rx="14" stroke="#38bdf8" stroke-width="2.5" width="240" x="60" y="158"></rect>
+<text fill="#bfe6ff" font-size="14" font-weight="700" text-anchor="middle" x="180" y="188">Pedido direto</text>
+<text fill="#9ad6ff" font-size="11" text-anchor="middle" x="180" y="212">você escreve, ele faz</text>
+<text fill="#9ad6ff" font-size="11" text-anchor="middle" x="180" y="232">acaba na mesma hora</text>
+<text fill="#64748b" font-size="10" text-anchor="middle" x="180" y="254">(trilhas 0 a 5)</text>
+<rect fill="#0e1622" filter="url(#m61b-glow)" height="110" rx="14" stroke="url(#m61b-grad)" stroke-width="2.5" width="240" x="380" y="158"></rect>
+<text fill="#fb7185" font-size="14" font-weight="700" text-anchor="middle" x="500" y="188">Loop</text>
+<text fill="#fda4af" font-size="11" text-anchor="middle" x="500" y="212">mesma sessão, com memória</text>
+<text fill="#fda4af" font-size="11" text-anchor="middle" x="500" y="232">expira em ~3 dias</text>
+<text fill="#64748b" font-size="10" text-anchor="middle" x="500" y="254">(módulo 6.3)</text>
+<rect fill="#0e1622" filter="url(#m61b-glow)" height="110" rx="14" stroke="url(#m61b-grad)" stroke-width="2.5" width="240" x="700" y="158"></rect>
+<text fill="#fb7185" font-size="14" font-weight="700" text-anchor="middle" x="820" y="188">Tarefa agendada</text>
+<text fill="#fda4af" font-size="11" text-anchor="middle" x="820" y="212">sessão nova a cada vez</text>
+<text fill="#fda4af" font-size="11" text-anchor="middle" x="820" y="232">sem prazo para acabar</text>
+<text fill="#64748b" font-size="10" text-anchor="middle" x="820" y="254">(módulo 6.2)</text>
+<text fill="#94a3b8" font-size="11" text-anchor="middle" x="500" y="308">Na dúvida entre os dois da direita: pergunte se isso ainda vai existir daqui a três meses.</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 mb-6">Legenda: o ramo ciano à esquerda é o que você já domina — pedido direto, sem tempo envolvido. Os dois ramos rosa são os novos. Repare que eles só se diferenciam por uma coisa: se o assunto tem fim próximo (loop) ou não tem fim (agendada).</p>
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Conceito Principal</h3>
+<p class="text-neutral-300 mb-4">
+          A árvore tem três ramos porque o pedido direto continua sendo resposta válida. Automatizar não é obrigatório:
+          se você faz aquilo duas vezes por ano, escrever o pedido na hora dá menos trabalho que configurar rotina.
+        </p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-1">•</span><span><strong>Agora</strong> → pedido direto. Sem tempo envolvido.</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-1">•</span><span><strong>Neste projeto</strong> → loop. Tem começo e fim próximos.</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-1">•</span><span><strong>Toda semana</strong> → tarefa agendada. Não tem fim previsto.</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atenção</h3>
+<p class="text-neutral-300">
+          O erro mais comum de quem começa é montar um loop para uma rotina permanente — parece funcionar, e três dias
+          depois some sem aviso. Você só descobre quando percebe que faz uma semana que não recebe o relatório.
+          Se é rotina, é agendada.
+        </p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- ============ TÓPICO 6 ============ -->
+<section class="mb-16" data-inema-topic="modulo-6-1#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🗺️ O mapa da Trilha 6</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t6-p1">
+        Com o modelo mental fixado, o resto da trilha desce ao detalhe de cada ferramenta e depois junta tudo numa
+        rotina que você vai usar de verdade, todo dia.
+      </p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center"><span class="text-rose-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">6.2 — Tarefas agendadas a fundo</h4>
+<p class="text-neutral-300 text-sm">Onde ela mora, como criar, as três frequências, o que significa "sessão nova a cada vez" e como as execuções perdidas são recuperadas.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center"><span class="text-rose-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">6.3 — Loops a fundo</h4>
+<p class="text-neutral-300 text-sm">Como iniciar, como encerrar de propósito, e o que fazer quando o prazo de três dias se aproxima.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center"><span class="text-rose-400 font-bold">4</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">6.4 — A rotina que aprende</h4>
+<p class="text-neutral-300 text-sm">O truque que devolve memória à tarefa agendada: um arquivo de status que a execução de hoje lê e a de amanhã encontra pronto.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center"><span class="text-rose-400 font-bold">5</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">6.5 — Determinismo</h4>
+<p class="text-neutral-300 text-sm">Por que rotina boa é rotina previsível, e como escrever instruções que dão o mesmo resultado toda vez.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center"><span class="text-rose-400 font-bold">6</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">6.6 — Notificações e permissões restritivas</h4>
+<p class="text-neutral-300 text-sm">Como ser avisado sem ser incomodado, e por que rotina que roda sozinha merece a coleira mais curta de todas.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center"><span class="text-rose-400 font-bold">7</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">6.7 — Build: rotina matinal</h4>
+<p class="text-neutral-300 text-sm">Você monta, do zero, a rotina que te espera pronta todo dia quando você senta na cadeira.</p>
+</div>
+</div>
+</div>
+<div class="bg-rose-900/20 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>6.2 e 6.3</strong> aprofundam cada ferramenta separadamente.</li>
+<li><strong>6.4 e 6.5</strong> resolvem os dois pontos fracos: falta de memória e falta de previsibilidade.</li>
+<li><strong>6.6 e 6.7</strong> fecham com segurança e com o build que você leva para a vida.</li>
+</ul>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-6-1#q1">
+<p class="font-medium mb-4">Checagem rápida (opcional): você quer um resumo dos seus compromissos toda manhã, indefinidamente. Qual ferramenta?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Um loop, porque ele se repete sozinho.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Uma tarefa agendada diária.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Um pedido direto, escrito todo dia de manhã.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-6-1#q1', {
+              answer: 1,
+              explain: {
+                0: 'O loop também se repete, mas expira em ~3 dias — "indefinidamente" elimina essa opção.',
+                1: 'Isso mesmo: rotina sem prazo para acabar é sempre tarefa agendada.',
+                2: 'Funciona, mas depende de você lembrar todo dia — é exatamente o que a trilha vem eliminar.'
+              }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-rose-900/40 via-dark-800 to-dark-800 rounded-xl border border-rose-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do Módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">O eixo novo é o tempo:</strong><span class="text-neutral-400"> a pergunta deixa de ser só "o quê" e passa a incluir "quando e com que frequência".</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Tarefa agendada:</strong><span class="text-neutral-400"> roda sozinha em horário fixo, sessão nova a cada vez, sem prazo para acabar, recupera execuções perdidas.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Loop:</strong><span class="text-neutral-400"> mesma sessão se repetindo com memória acumulada, expira em ~3 dias, morre se a sessão fechar.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">A pergunta que decide:</strong><span class="text-neutral-400"> agora, neste projeto, ou toda semana?</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-rose-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">6.2 — Tarefas agendadas a fundo: onde criar, frequências, sessão nova e recuperação</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Voltar para Trilha</a>
+<a class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors" href="modulo-6-2.html">Próximo Módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>5.1 Why the default looks generic | Your Digital Employee</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'teal' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'teal');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.teal;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13, 148, 136, 0.12); }
+    html:not(.dark) .bg-teal-500\/10 { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .border-teal-500\/30 { border-color: rgba(13, 148, 136, 0.25); }
+    html:not(.dark) .hover\:bg-teal-500\/30:hover { background-color: rgba(13, 148, 136, 0.18); }
+    html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .hover\:text-teal-400:hover { color: #0d9488; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha5/modulo-5-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha5/modulo-5-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha5/modulo-5-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-5-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha5/modulo-5-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Skip to content</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparation</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-teal-400 bg-teal-500/10" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Time</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>My journey</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-teal-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-teal-400" href="index.html">Track 5</a><span>/</span>
+<span class="text-teal-400">Module 5.1</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">MODULE 5.1</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4">🎨 Why the default looks generic</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        Ask an agent to "make a website" without any other details and you'll always get the same look: white background,
+        rounded blue button, everything centered. It's not a failure; it's the math of training showing through.
+        Understanding why this happens is what justifies the next three modules in the learning path.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">6</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">22</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Beginner</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Theory</div><div class="text-xs text-neutral-400">Type</div></div>
+</div>
+<div aria-label="Progress for module 5.1" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:5-1" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-1">1. The AI smell</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-2">2. Why the average wins</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-3">3. No reference, no criteria</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-4">4. Before and after, side by side</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-5">5. Ask for it yourself and see</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-6">6. The solution comes in two parts</a></li>
+</ul>
+</nav>
+<article data-inema-module="5-1" data-inema-track="5" id="modulo-5-1">
+<section class="mb-16" data-inema-topic="modulo-5-1#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">👃 The “AI smell” everyone recognizes</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t1-p1">
+<strong class="text-teal-400">New here?</strong> <strong class="text-teal-400">Front end</strong> it’s the part of a
+        website or app that a person sees and interacts with on screen—buttons, colors, text, layout. It’s different from the
+        “back end,” the engine behind it (database, business rules) that no one sees directly.
+        When this module talks about “the website the agent produces,” it means the front end.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t1-p2">
+        You’ve probably seen this before: a white or very light gray background, a large centered heading, a
+        blue button with rounded corners labeled “Get Started” or “Learn more,” generic icons, system
+        fonts. No matter what the site is about—a cake recipe, a résumé, a clothing store—the default
+        result from an AI agent without visual instructions tends to have the SAME look. People who
+        work with AI have a nickname for this: <strong class="text-teal-400">"AI feel"</strong> (in the original English,
+        "AI slop" or "AI smell") — the look that gives away at first glance that no one has worked on it.
+      </p>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">💡</span> Main Concept</h3>
+<p class="text-neutral-300 mb-4">The generic pattern isn’t an isolated bug — it’s a set of repeated visual decisions, always the same, because they come from the same source: the average of what the model has already seen.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>White background or `#f8fafc`, centered card with a soft shadow.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>Blue button (almost always the same shade of blue), rounded, "Get Started".</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>System default font (Inter, Arial, or the one that comes with the framework).</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">White</div><div class="text-xs text-neutral-400 mt-1">Default background</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">Blue</div><div class="text-xs text-neutral-400 mt-1">Default button</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">Center</div><div class="text-xs text-neutral-400 mt-1">Standard layout</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">System</div><div class="text-xs text-neutral-400 mt-1">Default font</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-5-1#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📊 Why the statistical average wins</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t2-p1">
+<strong class="text-teal-400">New here?</strong> One <strong class="text-teal-400">AI model</strong> (the
+        “brain” that interprets your request and generates the result) was built using a process called
+        <strong class="text-teal-400">training</strong>: showed it millions of real examples — in this
+        case, millions of front-end pages written by people around the world — and it learned the
+        patterns that appear most often in those examples. It didn't "memorize" a specific site; it learned
+        statistically what tends to come after what.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t2-p2">
+        This has a direct consequence: when you ask for something vague ("make a beautiful website"), the model
+        has no basis for choosing—so it converges on the most likely answer, which is the <strong class="text-teal-400">statistical average</strong> everything it has ever seen. And the average across millions of
+        frontend sites tends toward the same thing: blue (the most widely used color for CTA buttons worldwide),
+        white (the safest and most common background), system font (the one that always works without configuring
+        anything). It’s not model laziness—it’s probability doing exactly what it was
+        trained to do.
+      </p>
+<div class="rounded-2xl border border-teal-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Diagram comparing a vague request that falls back on the statistical average of the training data, resulting in a generic website, with a request guided by a visual reference, resulting in a website with its own identity" class="w-full h-auto" role="img" viewbox="0 0 1000 260">
+<defs>
+<lineargradient id="m51-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2dd4bf"></stop><stop offset="1" stop-color="#0d9488"></stop></lineargradient>
+<filter height="180%" id="m51-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m51-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#2dd4bf" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m51-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#2dd4bf"></path></marker>
+<marker id="m51-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m51-grid)" height="260" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<text fill="#5eead4" font-size="13" font-weight="700" x="40" y="30">"Build a website" (without a reference)</text>
+<rect fill="#0e1f1c" height="55" rx="12" stroke="#38bdf8" stroke-width="2" width="170" x="30" y="45"></rect>
+<text fill="#bff2ea" font-size="12" text-anchor="middle" x="115" y="77">Vague request</text>
+<path d="M200,72 L280,72" marker-end="url(#m51-ah)" opacity="0.7" stroke="#2dd4bf" stroke-width="1.8"></path>
+<rect fill="#0e1f1c" filter="url(#m51-glow)" height="90" rx="14" stroke="url(#m51-grad)" stroke-width="2.5" width="190" x="285" y="30"></rect>
+<text fill="#2dd4bf" font-size="13" font-weight="700" text-anchor="middle" x="380" y="55">Millions of</text>
+<text fill="#2dd4bf" font-size="13" font-weight="700" text-anchor="middle" x="380" y="72">examples seen</text>
+<text fill="#7fd8ce" font-size="10" text-anchor="middle" x="380" y="98">(training)</text>
+<path d="M475,72 L555,72" marker-end="url(#m51-ahc)" opacity="0.6" stroke="#38bdf8" stroke-width="1.8"></path>
+<g class="wf-a"><rect fill="#0e1f1c" height="55" rx="12" stroke="#38bdf8" stroke-width="2" width="220" x="560" y="45"></rect>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="670" y="68">Statistical average</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="670" y="85">the most likely "safe" option</text>
+</g>
+<path d="M780,72 L850,72" marker-end="url(#m51-ah)" opacity="0.7" stroke="#2dd4bf" stroke-width="1.8"></path>
+<rect fill="#1a2e1f" height="55" rx="12" stroke="#f87171" stroke-width="2" width="120" x="855" y="45"></rect>
+<text fill="#fca5a5" font-size="12" font-weight="700" text-anchor="middle" x="915" y="68">Generic</text>
+<text fill="#fda4a4" font-size="10" text-anchor="middle" x="915" y="85">"AI feel"</text>
+<text fill="#5eead4" font-size="13" font-weight="700" x="40" y="165">"Build a website using this reference" (guided)</text>
+<rect fill="#0e1f1c" height="55" rx="12" stroke="#38bdf8" stroke-width="2" width="170" x="30" y="180"></rect>
+<text fill="#bff2ea" font-size="12" text-anchor="middle" x="115" y="203">Request +</text>
+<text fill="#bff2ea" font-size="11" text-anchor="middle" x="115" y="220">colors/examples</text>
+<path d="M200,207 L280,207" marker-end="url(#m51-ah)" opacity="0.7" stroke="#2dd4bf" stroke-width="1.8"></path>
+<g class="wf-a"><rect fill="#0e1f1c" filter="url(#m51-glow)" height="55" rx="12" stroke="url(#m51-grad)" stroke-width="2.5" width="220" x="285" y="180"></rect>
+<text fill="#5eead4" font-size="12" font-weight="700" text-anchor="middle" x="395" y="203">Filled in the blanks</text>
+<text fill="#a7f3ea" font-size="10" text-anchor="middle" x="395" y="220">with your reference</text>
+</g>
+<path d="M505,207 L580,207" marker-end="url(#m51-ahc)" opacity="0.6" stroke="#38bdf8" stroke-width="1.8"></path>
+<rect fill="#0e1f1c" filter="url(#m51-glow)" height="55" rx="12" stroke="#4ade80" stroke-width="2.5" width="180" x="585" y="180"></rect>
+<text fill="#86efac" font-size="12" font-weight="700" text-anchor="middle" x="675" y="203">Distinct identity</text>
+<text fill="#bbf7d0" font-size="10" text-anchor="middle" x="675" y="220">recognizes the brand</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Caption: above, the vague request falls toward the average of everything the model has seen and comes out generic; below, a visual reference fills in the gaps with your style instead of the average — that’s the difference modules 5.2 and 5.5 will teach you to build.</p>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Inside</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Training:</strong> the process by which the model learned, by looking at millions of examples, what tends to go with what.</li>
+<li><strong>Converge toward the average:</strong> when specific instructions are missing, the model chooses the statistically most likely answer—the “most commonly seen” one, not the “most right for you” one.</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-5-1#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">👁️ Without a reference or criteria for what to look for</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t3-p1">
+        There’s a second cause, just as important as the first: the agent that <strong class="text-teal-400">write</strong>
+        a website’s code doesn’t necessarily <strong class="text-teal-400">see</strong> the result. A
+        <strong class="text-teal-400">prompt</strong> (the text request you type to the agent) describes
+        what you want in words—but text isn’t an image. Unless someone makes the agent take a
+        screenshot and look at it the way a designer would, it’s working “blind”: writing
+        technically correct HTML and CSS, but without checking whether it looks good, balanced, and has the
+        right personality.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t3-p2">
+        Put the two causes together and you understand the whole problem: (1) without a brand reference, colors, or a visual example, the model fills in the gaps with what is statistically “safe” in its training data; (2) without someone — or something — pushing for a critical look at the result, nothing corrects that first instinct. Together, the two causes explain the “AI smell” — and both have a solution, which is exactly the rest of this track.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ What addresses cause 1 (lack of reference)</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Provide brand colors, fonts, and concrete examples in the request</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>One <strong>design skill</strong> (fixed style rules, saved and reused)—the topic of module 5.2</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>A brand folder with a ready-to-use visual identity — module 5.6</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ What DOESN'T solve any of this</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ask again using the same vague wording and expect something different</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ask for something "more creative" or "prettier" without giving a concrete reference</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Switching AI models, thinking another “brain” will solve everything on its own</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical Tip</h3>
+<p class="text-neutral-300">Think of it this way: you wouldn’t judge a room’s decor with your eyes closed. Without someone making it “look,” the agent is decorating with its eyes closed. Module 5.3 teaches you exactly how to open those eyes—the loop of taking a screenshot, looking, and correcting.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-5-1#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🖼️ Before and after, side by side</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t4-p1">
+        To make this concrete, look at the same task — "create a landing page for a neighborhood bakery" —
+        requested in two different ways. The text below describes what each request would produce, point by
+        point, exactly as a designer would describe two wireframes (simplified layout sketches,
+        without final details) placed side by side.
+      </p>
+<div class="rounded-2xl border border-teal-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Visual comparison of two bakery landing pages: on the left, the generic version with no reference, a white background, a standard blue button, and a generic cake icon; on the right, the guided version with the brand’s terracotta and cream palette, serif typography, and a real product photo" class="w-full h-auto" role="img" viewbox="0 0 1000 300">
+<defs>
+<lineargradient id="m51t4-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2dd4bf"></stop><stop offset="1" stop-color="#0d9488"></stop></lineargradient>
+<filter height="180%" id="m51t4-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+</defs>
+<g font-family="Inter,sans-serif">
+<text fill="#f87171" font-size="14" font-weight="700" text-anchor="middle" x="230" y="28">✗ Without a reference (generic)</text>
+<rect fill="#fafafa" height="230" rx="10" stroke="#f87171" stroke-width="2" width="380" x="40" y="42"></rect>
+<rect fill="#cbd5e1" height="18" rx="4" width="320" x="70" y="65"></rect>
+<rect fill="#e2e8f0" height="10" rx="3" width="200" x="130" y="95"></rect>
+<rect fill="#3b82f6" height="34" rx="17" width="160" x="150" y="130"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="230" y="152">Get Started</text>
+<circle cx="230" cy="220" fill="#e2e8f0" r="30"></circle>
+<text fill="#94a3b8" font-size="18" text-anchor="middle" x="230" y="228">🎂</text>
+<text fill="#5eead4" font-size="14" font-weight="700" text-anchor="middle" x="770" y="28">✓ With a reference (guided)</text>
+<rect fill="#fbe7d4" filter="url(#m51t4-glow)" height="230" rx="10" stroke="url(#m51t4-grad)" stroke-width="2.5" width="380" x="580" y="42"></rect>
+<rect fill="#7c4a2d" height="20" rx="2" width="320" x="610" y="65"></rect>
+<rect fill="#a8674a" height="10" rx="2" width="200" x="670" y="98"></rect>
+<rect fill="#c2410c" height="34" rx="4" width="160" x="690" y="132"></rect>
+<text fill="#fff7ed" font-size="11" font-weight="600" text-anchor="middle" x="770" y="154">Reserve your bread</text>
+<rect fill="#e7c9a8" height="60" rx="6" stroke="#7c4a2d" stroke-width="1.5" width="110" x="715" y="192"></rect>
+<text fill="#7c4a2d" font-size="10" text-anchor="middle" x="770" y="228">real photo of the bread</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Caption: same task, two results. On the left, without a reference color, font, or photo, the model falls back to the average (blue, rounded, generic icon). On the right, with the bakery’s terracotta and cream palette and a real product photo included in the request, the result starts with its own identity — no need for “more creativity,” just more information.</p>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">📋</span> What changed, point by point</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Color:</strong> default CTA blue → terracotta and cream, the bakery’s real colors.</li>
+<li><strong>Button:</strong> Generic, rounded-off "Get Started" → "Reserve your bread," using the business's verb.</li>
+<li><strong>Image:</strong> cake emoji icon → real product photo (reference provided in the request).</li>
+<li><strong>Typography:</strong> system default font → a choice that fits the brand’s "handcrafted" tone.</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-5-1#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🧪 Ask for it yourself and watch the pattern emerge</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t5-p1">
+        The best way to internalize this module is to experience the phenomenon firsthand once, before
+        learning how to avoid it. <strong class="text-teal-400">Objective:</strong> confirm, in your own
+        Claude Code, that a vague front-end request really follows the generic pattern described above — with no
+        style, color, or brand instructions.
+      </p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5 mb-2 font-mono text-sm overflow-x-auto">
+<div class="flex items-center justify-between mb-3">
+<span class="text-neutral-500 text-xs">terminal — Claude Code</span>
+<span class="text-teal-400 text-xs">copy and paste</span>
+</div>
+<pre class="text-neutral-200 whitespace-pre-wrap">Create an HTML/CSS landing page for <isto "uma="" consultoria="" descreva="" ex.="" financeira"="" negócio="" qualquer,="" troca:="" um="" voce=""><br/>with a contact form and a testimonials section. Don't give me any colors, fonts, or<br/>style reference — choose the look yourself.</isto></pre>
+</div>
+<p class="text-neutral-400 text-sm mb-6">Typical result: white/light gray background, centered bold title, rounded blue button labeled something like “Get Started” or “Contact us,” testimonial cards that all look identical, system font. If your result matches this description—as it does in the vast majority of cases—you’ve just reproduced the phenomenon covered in this module.</p>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3 flex items-center"><span class="mr-2">✅</span> How to verify</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>Open the generated HTML file in a browser (double-click it).</li>
+<li>Check: is the button's blue close to <code class="bg-dark-700 px-1.5 py-0.5 rounded text-teal-300">#2563eb</code> or <code class="bg-dark-700 px-1.5 py-0.5 rounded text-teal-300">#3b82f6</code>? Is the background white or very light gray? Is the entire layout centered in a single column?</li>
+<li>If the answer is yes to all three, you’ve confirmed the pattern—and you already have the “before” that modules 5.2 and 5.3 will teach you to turn into an “after.”</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Attention</h3>
+<p class="text-neutral-300">Don’t ask the agent to “improve the design” now without any reference—it’ll probably just replace one generic design with another. The real fix requires the tools from the next two modules, not more insistence.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-5-1#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🗺️ The solution comes in two parts</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t6-p1">
+        You’ve just seen the two causes of the problem: no visual reference and no automatic way to “look” at the result.
+        The next two modules tackle exactly these causes,
+        in that order.
+      </p>
+<div class="mb-6">
+<div class="flex items-start space-x-4 mb-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">5.2 — Global design skill</h4>
+<p class="text-neutral-300 text-sm">Addresses cause 1: you record a set of style rules (palette, typography, principles) once, and the agent consults them every time—instead of guessing, it checks the reference.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4 mb-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">5.3 — The screenshot loop</h4>
+<p class="text-neutral-300 text-sm">Addresses cause 2: the agent learns to take a screenshot of its own page, “look” at it, and compare it with what’s expected, making corrections before handing it over to you—the missing aesthetic judgment.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">From 5.4 onward</h4>
+<p class="text-neutral-300 text-sm">Limits of the loop, a real brand reference, a brand folder, and the final build: a landing page published from start to finish.</p>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Main Concept</h3>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>The right tool and the right process bring the result close to professional quality—but not without final human judgment.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>The skill (5.2) handles the input; the screenshot loop (5.3) handles the output. Together, they complete the cycle.</span></li>
+</ul>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-5-1#q1">
+<p class="font-medium mb-4">Quick check (optional): Why does a vague front-end request tend to produce the same look every time?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Because the AI model is bad at design, and there’s no fixing that.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Because without a reference, the model converges on the statistical average of its training data, and nothing makes it “look” at the result.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Because all the websites in the world already looked alike before AI existed.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-5-1#q1', {
+              answer: 1,
+              explain: { 0: 'Não é falta de capacidade — é ausência de referência e de critério de checagem. Releia o tópico 2 e 3.', 1: 'Exatamente: sem referência ele cai na média, e sem checagem visual ninguém corrige.', 2: 'O padrão vem do treino do modelo, não de uma tendência histórica do design.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-teal-900/40 via-dark-800 to-dark-800 rounded-xl border border-teal-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">AI smell:</strong><span class="text-neutral-400"> white background, rounded blue button, centered layout — the visual signature of a request without instructions.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Cause 1:</strong><span class="text-neutral-400"> without a reference, the model converges on the statistical average of what it saw during training.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Cause 2:</strong><span class="text-neutral-400"> the agent writes code without "seeing" the result, unless someone makes it take a look.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Solution:</strong><span class="text-neutral-400"> the design skill (5.2) handles the input; the screenshot loop (5.3) handles the output.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-teal-400 mb-2">Next module:</h3>
+<p class="text-neutral-300">5.2 — Global design skill: recording the style rules the agent will always refer to</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Track</a>
+<a class="flex-1 text-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors" href="modulo-5-2.html">Next Module →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

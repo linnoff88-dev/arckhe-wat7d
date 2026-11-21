@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>4.2 O pipeline em 4 estações | Seu Funcionário Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'amber' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"], section[id^="modulo-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    /* acento da trilha: Amber */
+    html:not(.dark) .text-amber-400 { color: #92400e; }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(217, 119, 6, 0.12); }
+    html:not(.dark) .bg-amber-500\/10 { background-color: rgba(217, 119, 6, 0.08); }
+    html:not(.dark) .border-amber-500\/30 { border-color: rgba(217, 119, 6, 0.25); }
+    html:not(.dark) .hover\:bg-amber-500\/30:hover { background-color: rgba(217, 119, 6, 0.18); }
+    html:not(.dark) .hover\:bg-amber-500\/10:hover { background-color: rgba(217, 119, 6, 0.08); }
+    html:not(.dark) .hover\:text-amber-400:hover { color: #92400e; }
+    html:not(.dark) .group:hover .group-hover\:text-amber-400 { color: #92400e; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+      .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha4/modulo-4-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha4/modulo-4-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha4/modulo-4-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-4-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha4/modulo-4-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha4/modulo-4-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Pular para o conteúdo</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparação</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-amber-400 bg-amber-500/10" href="index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Minha jornada</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-amber-400" href="../../index.html">Início</a><span>/</span>
+<a class="hover:text-amber-400" href="index.html">Trilha 4</a><span>/</span>
+<span class="text-amber-400">Módulo 4.2</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MÓDULO 4.2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🚉 O pipeline em 4 estações</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        No módulo passado você entendeu por que "rodar no seu laptop" não é o mesmo que "rodar 24/7".
+        Agora vem a pergunta prática: como o código sai da sua máquina e chega até um servidor que nunca
+        dorme? A resposta é um trajeto de quatro paradas — e você não precisa dirigir nenhuma delas
+        sozinho, só saber o que acontece em cada uma.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">Intermediário</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">Teoria + prática</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progresso do módulo 4.2" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:4-2" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Seção <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-1">1. As 4 estações, de cima</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-2">2. Estação 1 — Claude Code escreve</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-3">3. Estação 2 — o git leva pro repositório</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-4">4. Estação 3 — Trigger.dev roda na nuvem</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-5">5. Estação 4 — você lê o log</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-6">6. Construa: sua primeira task</a></li>
+</ul>
+</nav>
+<article data-inema-module="4-2" data-inema-track="4" id="modulo-4-2">
+<!-- TÓPICO 1 — Entender -->
+<section class="mb-16" data-inema-topic="modulo-4-2#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🗺️ As 4 estações, vistas de cima</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-2-t1-p1">
+        Pensa numa esteira de produção com quatro postos de trabalho. Em cada um, alguém (ou alguma coisa)
+        faz uma parte do trabalho e passa adiante. Ninguém no posto 3 precisa saber fazer o trabalho do
+        posto 1 — só precisa saber receber o que chegou e continuar. É exatamente assim que uma automação
+        sai do "só funciona no meu computador" e vira algo que roda sozinho, 24 horas por dia.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-2-t1-p2">
+<strong class="text-amber-400">Novo aqui?</strong> <strong class="text-amber-400">Pipeline</strong> é esse nome
+        chique pra "esteira": uma sequência de etapas automáticas, uma alimentando a próxima, do jeito que você
+        pediu pão numa padaria e a massa passa por sova, fermentação e forno sem você tocar em nada no meio.
+      </p>
+<div class="rounded-2xl border border-amber-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="As 4 estações do pipeline: Claude Code escreve o código, o git leva esse código pro repositório no GitHub, o Trigger.dev puxa o repositório e executa na nuvem, e você lê o resultado no log" class="w-full h-auto" role="img" viewbox="0 0 1000 260">
+<defs>
+<lineargradient id="m2-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fbbf24"></stop><stop offset="1" stop-color="#d97706"></stop></lineargradient>
+<filter height="180%" id="m2-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m2-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#fbbf24" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m2-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#fbbf24"></path></marker>
+<marker id="m2-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m2-grid)" height="260" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" filter="url(#m2-glow)" height="80" rx="14" stroke="url(#m2-grad)" stroke-width="2.5" width="200" x="20" y="90"></rect>
+<text fill="#fcd34d" font-size="13" font-weight="700" text-anchor="middle" x="120" y="122">1. Claude Code</text>
+<text fill="#fde68a" font-size="10" text-anchor="middle" x="120" y="140">escreve o TypeScript</text>
+<text fill="#9ca3af" font-size="9" text-anchor="middle" x="120" y="156">(você só descreve a tarefa)</text>
+<path d="M220,130 L280,130" marker-end="url(#m2-ah)" opacity="0.75" stroke="#fbbf24" stroke-width="1.8"></path>
+<rect fill="#0e1622" height="80" rx="14" stroke="#38bdf8" stroke-width="2" width="180" x="285" y="90"></rect>
+<text fill="#bfe6ff" font-size="13" font-weight="700" text-anchor="middle" x="375" y="122">2. git</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="375" y="140">leva pro GitHub</text>
+<text fill="#9ca3af" font-size="9" text-anchor="middle" x="375" y="156">(o repositório na nuvem)</text>
+<path d="M465,130 L525,130" marker-end="url(#m2-ahc)" opacity="0.75" stroke="#38bdf8" stroke-width="1.8"></path>
+<g class="wf-a"><rect fill="#0e1622" filter="url(#m2-glow)" height="80" rx="14" stroke="url(#m2-grad)" stroke-width="2.5" width="200" x="530" y="90"></rect>
+<text fill="#fcd34d" font-size="13" font-weight="700" text-anchor="middle" x="630" y="118">3. Trigger.dev</text>
+<text fill="#fde68a" font-size="10" text-anchor="middle" x="630" y="136">puxa e roda na nuvem</text>
+<text fill="#9ca3af" font-size="9" text-anchor="middle" x="630" y="152">(o servidor que nunca desliga)</text>
+</g>
+<path d="M730,130 L790,130" marker-end="url(#m2-ah)" opacity="0.75" stroke="#fbbf24" stroke-width="1.8"></path>
+<rect fill="#0e1622" filter="url(#m2-glow)" height="80" rx="14" stroke="#38bdf8" stroke-width="2.5" width="185" x="795" y="90"></rect>
+<text fill="#93c5fd" font-size="13" font-weight="700" text-anchor="middle" x="887" y="118">4. Você lê o log</text>
+<text fill="#bfe6ff" font-size="10" text-anchor="middle" x="887" y="136">confere se deu certo</text>
+<text fill="#9ca3af" font-size="9" text-anchor="middle" x="887" y="152">(sem precisar ler código)</text>
+<text fill="#6b7280" font-size="11" text-anchor="middle" x="500" y="220">Você participa das estações 1 e 4. As estações 2 e 3 acontecem sozinhas.</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Legenda: repare que você só entra em cena no começo (pedir a tarefa) e no fim (ler o resultado) — as duas estações do meio, git e Trigger.dev, funcionam sem você precisar apertar nenhum botão extra.</p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
+<p class="text-neutral-300 mb-2">Você não precisa saber TypeScript. Você precisa saber ler o log.</p>
+<p class="text-neutral-400 text-sm">Guarda essa frase — ela é o fio condutor deste módulo inteiro e reaparece nos próximos módulos da trilha.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 2 — Estação 1 -->
+<section class="mb-16" data-inema-topic="modulo-4-2#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">✍️ Estação 1 — Claude Code escreve o código</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-2-t2-p1">
+        Tudo começa com você descrevendo, em português, o que quer que aconteça sozinho — "todo dia às 8h,
+        busca a cotação do dólar e me manda por e-mail". O Claude Code traduz esse pedido para
+        <strong class="text-amber-400">TypeScript</strong>. <strong class="text-amber-400">Novo aqui?</strong>
+<strong class="text-amber-400"> TypeScript</strong> é uma linguagem de programação — um jeito de escrever
+        instruções que o computador entende, parecido com uma receita de cozinha bem detalhada, mas em código.
+        Você não escreve essa receita. O agente escreve. Sua parte é descrever o prato que quer, provar o
+        resultado, e pedir ajustes se precisar.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-2-t2-p2">
+        Isso muda completamente o que você precisa aprender. Programadores profissionais passam anos
+        estudando sintaxe de linguagens como TypeScript. Você não vai fazer isso — e não precisa. O que você
+        vai desenvolver é a habilidade de descrever bem o que quer e de reconhecer se o resultado final
+        (o comportamento da automação, não o código por trás) está certo.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Seu papel na Estação 1</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Descrever a tarefa com clareza: o que roda, quando, e o que fazer com o resultado</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Ler o resumo em português que o agente te dá depois de escrever o código</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Testar o comportamento — não a sintaxe</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ O que NÃO é seu papel</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Decorar sintaxe de TypeScript ou de qualquer linguagem</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Abrir o código e "corrigir" uma linha na mão sem entender o resto</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Julgar se o código está "bonito" — o que importa é se funciona</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica Prática</h3>
+<p class="text-neutral-300">Lembra do <strong>modo plano</strong> do módulo 0.5 — pedir pro agente mostrar o passo a passo antes de agir? Aqui ele importa mais do que em qualquer trilha anterior. Um bug numa automação local no seu computador é chato; um bug numa automação em produção pode mandar um e-mail duplicado pra um cliente ou repetir uma cobrança. Vale revisar o plano antes de deixar rodar sozinho.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 3 — Estação 2 -->
+<section class="mb-16" data-inema-topic="modulo-4-2#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">📦 Estação 2 — o git leva o código pro repositório</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-2-t3-p1">
+<strong class="text-amber-400">Novo aqui?</strong> <strong class="text-amber-400">git</strong> é um programa
+        que guarda um histórico de todas as versões do seu código, como se cada alteração fosse salva numa
+        foto separada — dá pra voltar no tempo se algo quebrar. Quando o Claude Code termina de escrever a
+        automação, ele usa o git para "empacotar" essa versão e enviar para um lugar central: o
+        <strong class="text-amber-400">repositório</strong>. <strong class="text-amber-400">Repositório</strong> é
+        essa pasta guardada na nuvem que centraliza o código e o histórico dele — no nosso caso, hospedado no
+        <strong class="text-amber-400">GitHub</strong>, o serviço mais usado do mundo para isso.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-2-t3-p2">
+        Por que essa estação existe? Porque o seu computador não é o lugar onde a automação vai morar. O
+        GitHub funciona como um armário compartilhado: o código sai do seu laptop, entra nesse armário, e
+        fica disponível para qualquer serviço autorizado — no nosso caso, o Trigger.dev — vir buscar.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ O que sobe pro repositório</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>O código da automação em si (a "receita")</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>A configuração de como e quando ela deve rodar</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>O histórico de versões, para voltar atrás se precisar</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ O que NUNCA sobe</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Senhas e chaves de API — isso é assunto do módulo 4.4 (Segredos)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Dados pessoais de clientes ou informação sensível</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Arquivos temporários ou de teste que só fazem sentido no seu computador</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-amber-900/20 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>commit:</strong> uma "foto" de uma versão do código, com uma mensagem curta explicando o que mudou.</li>
+<li><strong>push:</strong> o ato de enviar essas fotos do seu computador para o repositório no GitHub.</li>
+<li>O Claude Code faz o commit e o push por você quando você aprova a mudança — normalmente você só confirma.</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 4 — Estação 3 (timeline) -->
+<section class="mb-16" data-inema-topic="modulo-4-2#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">☁️ Estação 3 — Trigger.dev puxa o código e roda na nuvem</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-2-t4-p1">
+<strong class="text-amber-400">Novo aqui?</strong> <strong class="text-amber-400">Trigger.dev</strong> é a
+        <strong class="text-amber-400">plataforma de execução</strong> que usamos neste curso: um serviço na nuvem
+        que "escuta" o repositório, percebe quando chegou código novo, pega esse código e roda ele num
+        computador que nunca é desligado — não é o seu laptop, é um servidor da empresa Trigger.dev, ligado
+        24 horas por dia. É essa troca de endereço (do seu laptop para um servidor sempre ligado) que faz a
+        automação virar de fato "automática".
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-2-t4-p2">
+        Vale a pena ver o passo a passo dessa estação em detalhe, porque é a parte mais "mágica" do pipeline
+        — e entender a sequência tira o mistério.
+      </p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">O Trigger.dev nota que o repositório mudou</h4>
+<p class="text-neutral-300 text-sm">Assim que o push da Estação 2 chega no GitHub, o Trigger.dev é avisado — sem você precisar avisar manualmente.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Ele baixa e "monta" essa versão do código</h4>
+<p class="text-neutral-300 text-sm">Prepara o ambiente na nuvem para que o código consiga rodar exatamente como foi escrito.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">A tarefa (a "task") fica registrada e pronta</h4>
+<p class="text-neutral-300 text-sm">A partir daqui, ela pode ser disparada na hora marcada (um <em>cron</em>, agendamento, assunto da trilha 6) ou por um evento — como uma tarefa numa agenda que já foi anotada.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">4</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Chegou a hora, ela roda — mesmo com seu laptop desligado</h4>
+<p class="text-neutral-300 text-sm">É este o ponto do módulo 4.1 concretizado: o servidor do Trigger.dev nunca desliga, então a automação nunca para.</p>
+</div>
+</div>
+</div>
+<div class="bg-amber-900/20 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<p class="text-neutral-300"><strong>Deploy</strong> é o nome que se dá pra esse ato de publicar uma versão do código pra rodar de verdade num ambiente que não é o seu. Quando alguém diz "fiz o deploy da automação", quer dizer que ela saiu do estágio "só existe no meu computador" e passou a existir no Trigger.dev, pronta pra rodar sozinha.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 5 — Estação 4 -->
+<section class="mb-16" data-inema-topic="modulo-4-2#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">📋 Estação 4 — você lê o log (e é só isso que você precisa saber)</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-2-t5-p1">
+<strong class="text-amber-400">Novo aqui?</strong> <strong class="text-amber-400">Log</strong> é a lista de
+        eventos que a automação foi registrando enquanto rodava — tipo um diário de bordo. "Comecei",
+        "busquei o dado X", "consegui", "enviei o e-mail", "terminei" — ou, se algo deu errado, a linha exata
+        onde travou e por quê. O Trigger.dev mostra esse log num <strong class="text-amber-400">painel</strong>
+        (também chamado de <strong class="text-amber-400">dashboard</strong>) na internet — uma tela com a lista
+        de todas as vezes que sua automação rodou, com um sinal verde (deu certo) ou vermelho (deu problema)
+        do lado de cada execução.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-2-t5-p2">
+        Isso é o coração deste módulo: você não precisa entender o TypeScript por trás da automação para
+        saber se ela funcionou. Você abre o painel, olha o log em português (ou em inglês simples, tipo
+        "task completed"), e confere: rodou na hora certa? Fez o que devia? Se algo deu errado, o log
+        geralmente já te diz onde — e no módulo 4.7 (Observabilidade) você vai aprender a ler esses sinais
+        com calma, incluindo os casos mais confusos.
+      </p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span>Ler código = trabalho do programador. Ler resultado = seu trabalho.</span></li>
+<li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span>Um log limpo, com "sucesso" em verde, é sua confirmação de que a automação está de pé — sem precisar abrir uma linha de código.</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atenção</h3>
+<p class="text-neutral-300">Não confunda "rodou sem erro" com "fez a coisa certa". O log te diz se o código travou ou não — mas conferir se o e-mail chegou, se a planilha foi preenchida direito, isso ainda é uma checagem sua, pelo menos nas primeiras semanas de uma automação nova.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 6 — Construir + Consolidar -->
+<section class="mb-16" data-inema-topic="modulo-4-2#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🧪 Construa: peça sua primeira task ao Claude Code</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-2-t6-p1">
+<strong class="text-amber-400">Novo aqui?</strong> <strong class="text-amber-400">task</strong> é como o
+        Trigger.dev chama cada automação individual — uma unidade de trabalho com um nome, um gatilho (quando
+        ela roda) e um código por trás. Chegou a hora de ver o pipeline inteiro em ação com o exemplo mais
+        simples possível: uma task que não faz nada arriscado, só prova que a esteira funciona de ponta a
+        ponta.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-2-t6-p2">
+<strong>Objetivo:</strong> pedir ao Claude Code para criar uma task de teste do Trigger.dev que
+        busca a hora atual e imprime uma mensagem no log — sem enviar e-mail, sem mexer em nenhum dado real.
+        É o "alô, mundo" do deploy: se essa task aparecer com sucesso no painel, as quatro estações do
+        pipeline estão funcionando.
+      </p>
+<div class="bg-dark-900 rounded-lg p-4 overflow-hidden text-sm mb-2">
+<pre class="overflow-x-auto"><code>Cria uma task simples do Trigger.dev pra mim, só pra eu testar o pipeline
+de deploy. Ela deve:
+
+1. Se chamar "teste-pipeline"
+2. Não precisar de nenhum gatilho automático por enquanto — só rodar quando
+   eu disparar manualmente pelo painel do Trigger.dev
+3. Buscar a hora atual e imprimir no log uma mensagem tipo:
+   "Task rodou às <hora atual="">. Pipeline funcionando!"
+4. Não mexer em nenhum arquivo, e-mail ou dado real — é só um teste
+
+Depois de escrever o código, me explica em português o que você fez,
+faz o commit e o push pro repositório, e me diz exatamente onde no painel
+do Trigger.dev eu vou ver essa task pra poder disparar ela manualmente
+e conferir o log.
+
+(Se precisar de alguma chave de API pra configurar o projeto do
+Trigger.dev, não escreve ela no código — me avisa que eu cadastro
+separadamente. Minha chave de teste é SUA_CHAVE_AQUI, só como referência,
+não deve aparecer em nenhum arquivo.)</hora></code></pre>
+</div>
+<p class="text-neutral-400 text-sm mb-6"><strong>Como verificar:</strong> depois que o agente terminar, abra o painel (dashboard) do Trigger.dev no navegador. Procure a task "teste-pipeline" na lista — ela deve aparecer registrada, mesmo sem ter rodado ainda. Dispare ela manualmente (normalmente um botão "Run" ou "Test") e acompanhe o log em tempo real: se aparecer a linha com a hora e a mensagem "Pipeline funcionando!" e o status ficar verde, as quatro estações passaram no teste. Se aparecer vermelho, copie a mensagem de erro do log e cole de volta pro Claude Code — ele lê o próprio log tão bem quanto você vai aprender a ler.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Sinal de que deu certo</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Task aparece listada no painel do Trigger.dev</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Log mostra a mensagem esperada e o horário certo</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Status da execução fica verde/"Completed"</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Sinal de que algo travou</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Task não aparece no painel — provavelmente o push (Estação 2) não completou</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Status vermelho/"Failed" — cole o log de erro pro agente ler</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Log vazio — geralmente falta a task ter sido "reconhecida" pela plataforma; peça ao agente pra checar a configuração</span></li>
+</ul>
+</div>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-4-2#q1">
+<p class="font-medium mb-4">Checagem rápida (opcional): em qual das 4 estações fica seu trabalho para confirmar se a automação funcionou?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Na Estação 2, revisando cada commit feito pelo git.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Na Estação 4, lendo o log no painel do Trigger.dev.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Na Estação 1, revisando linha por linha o TypeScript.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-4-2#q1', {
+              answer: 1,
+              explain: { 0: 'O git só versiona o código — não te diz se a automação funcionou de fato.', 1: 'Isso mesmo: o log da Estação 4 é onde você confirma o resultado, sem precisar ler código.', 2: 'Ler TypeScript linha por linha não é necessário — o objetivo do módulo é justamente evitar isso.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-amber-900/40 via-dark-800 to-dark-800 rounded-xl border border-amber-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do Módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">4 estações:</strong><span class="text-neutral-400"> Claude Code escreve o código (TypeScript) → git leva pro repositório no GitHub → Trigger.dev puxa e roda na nuvem → você lê o log.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Você não escreve código:</strong><span class="text-neutral-400"> o agente escreve, você descreve a tarefa e revisa o resultado.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Ler o log é a habilidade central:</strong><span class="text-neutral-400"> saber se deu certo sem precisar entender TypeScript.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-white">Deploy = publicar de verdade:</strong><span class="text-neutral-400"> sai do seu laptop, passa a existir no Trigger.dev, roda sozinho.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-amber-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">4.3 — Teste vs. produção</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Voltar para Trilha</a>
+<a class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors" href="modulo-4-3.html">Próximo Módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

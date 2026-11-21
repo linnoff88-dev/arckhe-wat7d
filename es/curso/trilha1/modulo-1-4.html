@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>1.4 Dónde falla WAT | Tu Empleado Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"], section[id^="modulo-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5, 150, 105, 0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5, 150, 105, 0.18); }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .group:hover .group-hover\:text-emerald-400 { color: #059669; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+      .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha1/modulo-1-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha1/modulo-1-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha1/modulo-1-4.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../../curso/trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../../curso/trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../../curso/trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../../curso/trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1-4</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1-4</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🚧 Dónde falla el WAT</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        Receta vaga, tool sin clave, agente sin contexto, workflow ambiguo. Cuatro causas explican casi todas las fallas, y cada una tiene su propia solución.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">26</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Principiante</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Teoría</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 1-4" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:1-4" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. Receta vaga</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. Tool sin clave</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. Falta contexto</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Workflow ambiguo</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. Señales de alerta</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. Checklist</a></li>
+</ul>
+</nav>
+<article data-inema-module="1-4" data-inema-track="1" id="modulo-1-4">
+<section class="mb-16" data-inema-topic="modulo-1-4#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🌫️ Receta imprecisa</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t1-p1">
+<strong class="text-emerald-400">¿Eres nuevo aquí?</strong> Un workflow (la receta) es <strong class="text-emerald-400">vago</strong>
+        cuando no dice lo suficiente para que el agente decida sin adivinar — por ejemplo, «organiza los archivos» sin
+        decir por qué organizarlos, con qué criterio ni dónde guardar el resultado. Una receta vaga es la causa más común de
+        fallas en WAT: no es que el agente «no entendió», sino que la receta no dijo lo suficiente.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t1-p2">
+        Un ejemplo cotidiano: pides «haz un resumen de las ventas del mes para que lo mande al grupo de WhatsApp de la
+        tienda». Parece claro, pero está lleno de vacíos — ¿resumen de qué exactamente (total, por producto, por
+        vendedor)? ¿De dónde salen los datos (la hoja de cálculo de ayer, la de hoy, un sistema)? ¿Cuántas filas puede
+        tener el resumen? El agente no puede rechazar la tarea, así que <strong class="text-emerald-400">completa cada
+        espacio en blanco con la suposición más razonable que encuentres</strong> — y "razonable para él" rara vez coincide con
+        "lo que tenías en mente". El resultado queda genérico: un párrafo correcto sobre números, pero sin el
+        enfoque que querías.
+      </p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Mira por dentro: lo que hace el agente cuando falta un detalle</h3>
+<p class="text-neutral-300 text-sm mb-2">Ante una instrucción incompleta, el agente sigue un camino predecible — y eso es lo que genera el resultado genérico:</p>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li><strong class="text-emerald-400">1. Lee la solicitud</strong> e identifica qué falta para ejecutarla (formato, fuente, criterio, destino).</li>
+<li><strong class="text-emerald-400">2. Elige la suposición más común</strong> — la interpretación más común en pedidos parecidos, no tu interpretación específica.</li>
+<li><strong class="text-emerald-400">3. Ejecútalo con esta suposición</strong> y entrega algo técnicamente correcto, pero genérico.</li>
+<li><strong class="text-emerald-400">4. No avisa</strong> que eligió, porque, desde su punto de vista, ya llenó el vacío y completó la tarea.</li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Vago</h4>
+<p class="text-neutral-300 text-sm">"Organiza estos informes para mí."</p>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Claro</h4>
+<p class="text-neutral-300 text-sm">"Cambia el nombre de los archivos de la carpeta 'relatorios/' al formato AAAA-MM-relatorio.pdf, según la fecha que aparece en el nombre actual. Si algún nombre no tiene fecha, déjalo de lado y avísame al final."</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Vago</h4>
+<p class="text-neutral-300 text-sm">"Haz un resumen de las ventas del mes para el grupo."</p>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Claro</h4>
+<p class="text-neutral-300 text-sm">"Usa la hoja de cálculo 'vendas-agosto.xlsx', pestaña 'resumo'. Trae el total del mes, los 3 productos más vendidos y la comparación con julio. Máximo 5 líneas, lenguaje sencillo para el grupo de WhatsApp."</p>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Antes de escribir la receta, pregúntate: «si le diera este texto a una persona nueva en prácticas que nunca ha visto mi negocio, ¿sabría exactamente qué hacer?». Si la respuesta es «solo si lo adivina», la receta todavía es vaga.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-4#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🔑 Herramienta sin clave ni permiso</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t2-p1">
+<strong class="text-emerald-400">¿Eres nuevo aquí?</strong> Muchas herramientas exigen una <strong class="text-emerald-400">clave
+        de API</strong> (una contraseña específica que autoriza el uso de un servicio, como enviar correos o publicar en un
+        sitio) para funcionar. Si la clave no está configurada o el agente no tiene permiso para usar esa
+        herramienta (la Ruta 0 ya trató los permisos), el paso del workflow que depende de ella simplemente no se puede
+        ejecutar, por más clara que esté el resto de la receta.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t2-p2">
+        Este es un error que es fácil confundir con «el agente no sabe hacer esto»: en realidad, sabe exactamente
+        qué hacer, solo que no tiene la llave de la puerta. La solución nunca es reescribir el workflow — es configurar la
+        credencial que falta (tema que se profundiza en la Trilha 4, módulo de Secretos).
+      </p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Clave de API:</strong> una contraseña específica del servicio, distinta de tu contraseña personal; cada herramienta externa puede pedir una.</li>
+<li><strong>Permiso:</strong> el límite que tú mismo defines para lo que el agente puede hacer por su cuenta.</li>
+</ul>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t2-p3">
+        Ejemplo real: pides "envía un correo al cliente para avisarle que el pedido fue enviado". Si la herramienta
+        de correo electrónico (por ejemplo, un servidor MCP de Gmail —tema de la Trilha 2—) nunca recibió la clave de acceso a
+        tu cuenta, el agente llega al paso de enviar y se detiene ahí: el mensaje ya está escrito, pero no se envía. Es
+        distinto de un error de ejecución: el agente no "lo intentó y falló"; identificó que la puerta está
+        cerrada y, si está bien construido, se detiene y te avisa en vez de inventar que lo envió.
+      </p>
+<div class="rounded-xl border border-red-500/30 bg-red-900/10 p-5 mb-6">
+<h4 class="font-bold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Modo de falla distinto: el agente «inventa» una ruta</h4>
+<p class="text-neutral-300 text-sm">Una variación peligrosa de la falta de acceso es la <strong class="text-emerald-400">alucinación</strong> — cuando el agente, al no encontrar el archivo, la carpeta o el comando correcto, <strong class="text-emerald-400">inventa</strong> una ruta parecida en vez de decir «no encontré». Ejemplo: pides que ejecute «el script de cierre de caja» y no existe ningún archivo con ese nombre exacto — en vez de detenerse y preguntar, un agente mal orientado puede asumir que <code class="text-neutral-400">fechamento.py</code> es el archivo correcto (no lo es) y ejecutarlo de todos modos, generando un resultado que parece correcto, pero no es lo que pediste.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-4#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🧩 Agente sin suficiente contexto</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t3-p1">
+        A veces el workflow está claro y la herramienta tiene permiso, pero el agente sigue equivocándose porque falta
+        <strong class="text-emerald-400">contexto</strong> — información de contexto que necesitaría para tomar la
+        decisión correcta. Ejemplo: pedir "escribe un resumen con el tono de la empresa" sin haberle mostrado nunca ejemplos de ese
+        tono. El CLAUDE.md (visto en la Trilha 0) existe precisamente para mantener ese contexto de forma
+        persistente, sin tener que repetirlo en cada pedido.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Ejemplos</div><div class="text-xs text-neutral-400 mt-1">De cómo se ve algo «bueno»</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Reglas</div><div class="text-xs text-neutral-400 mt-1">De lo que nunca hay que hacer</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Nombres</div><div class="text-xs text-neutral-400 mt-1">Los archivos y carpetas correctos</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">CLAUDE.md</div><div class="text-xs text-neutral-400 mt-1">Dónde está todo esto</div></div>
+</div>
+<p class="text-neutral-300 my-6 leading-relaxed" data-inema-block="m1-4-t3-p2">
+        La falta de contexto también se manifiesta de una forma más costosa: cuando el agente entra en un
+        <strong class="text-emerald-400">loop</strong> — un ciclo que se repite sin llegar nunca al final, porque
+        no tiene información suficiente para saber cuándo detenerse. Imagina un workflow que diga "revisa este texto hasta que quede
+        bien", sin ningún criterio para definir qué significa "bien". En cada turno el agente lo revisa de nuevo, encuentra algo que ajustar (siempre
+        encuentra algo) y vuelve a revisarlo; sin un criterio para detenerse, el ciclo puede continuar durante decenas de turnos. Cada
+        turno consume <strong class="text-emerald-400">tokens</strong> (la unidad que mide cuánto «lee»
+        y «escribe» el modelo —y lo que determina el costo de cada ejecución), así que un loop mal diseñado no es solo una pérdida de
+        tiempo: es un costo real que aumenta sin control, a veces por un workflow que parecía inofensivo.
+      </p>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Todo workflow que incluya «repite hasta...» necesita un criterio de detención objetivo (un número de rondas, una condición verificable), no una meta subjetiva como «hasta que quede bien». Sin eso, podrías terminar pagando por un ciclo que nunca acabaría por sí solo.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-4#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">❓ Workflow ambiguo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t4-p1">
+        A diferencia de «vago» (al que le faltan detalles), un workflow <strong class="text-emerald-400">ambiguo</strong> hay
+        demasiados detalles que se contradicen o permiten más de una interpretación razonable. Ejemplo: «envía el informe al
+        cliente antes del viernes, priorizando la calidad» y, tres líneas después, «no dediques más de 10 minutos a revisarlo»
+        —las dos instrucciones compiten entre sí, y el agente puede elegir cualquiera.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t4-p2">
+        La diferencia práctica entre algo vago y algo ambiguo importa porque la solución es opuesta. Una receta vaga se resuelve
+        <strong class="text-emerald-400"> agregando</strong> detalle. Un workflow ambiguo se resuelve
+        <strong class="text-emerald-400"> eliminando</strong> la contradicción — decidiendo cuál de las instrucciones
+        en conflicto tiene más peso y dejándolo por escrito, no implícito.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Workflow mal hecho</h4>
+<p class="text-neutral-300 text-sm">"Responde todos los correos del día prestando total atención a cada uno. Ah, y deja la bandeja de entrada vacía antes del mediodía."</p>
+<p class="text-neutral-400 text-xs mt-3">Dos metas en competencia: máxima calidad vs. plazo ajustado. El agente decide por su cuenta cuál priorizar y puede cambiar de opinión en cada ejecución.</p>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Workflow bien redactado</h4>
+<p class="text-neutral-300 text-sm">"Antes del mediodía, responde tantos correos simples (1-2 líneas) como puedas. Deja marcados como pendientes los correos complejos para que yo los revise; no intentes resolverlos rápido."</p>
+<p class="text-neutral-400 text-xs mt-3">La prioridad queda explícita: velocidad en las tareas sencillas, sin sacrificar la calidad en las complejas, porque estas quedan fuera de plazo.</p>
+</div>
+</div>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-2 overflow-hidden">
+<svg aria-label="Cuatro puntos donde WAT suele fallar: receta vaga, tool sin clave, agente sin contexto y workflow ambiguo; cada uno requiere una solución distinta" class="w-full h-auto" role="img" viewbox="0 0 1000 220">
+<defs>
+<lineargradient id="m14-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f87171"></stop><stop offset="1" stop-color="#dc2626"></stop></lineargradient>
+<filter height="180%" id="m14-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m14-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#34d399" opacity="0.12" r="1.3"></circle></pattern>
+</defs>
+<rect fill="url(#m14-grid)" height="220" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" filter="url(#m14-glow)" height="160" rx="14" stroke="#f87171" stroke-width="2" width="215" x="30" y="30"></rect>
+<text fill="#fca5a5" font-size="13" font-weight="700" text-anchor="middle" x="137" y="60">🌫️ Receta imprecisa</text>
+<text fill="#fecaca" font-size="10" text-anchor="middle" x="137" y="90">falta un detalle</text>
+<text fill="#34d399" font-size="10" font-weight="600" text-anchor="middle" x="137" y="150">reparación:</text>
+<text fill="#a7f3d0" font-size="10" text-anchor="middle" x="137" y="168">reescribir con más claridad</text>
+<rect fill="#0e1622" filter="url(#m14-glow)" height="160" rx="14" stroke="#f87171" stroke-width="2" width="215" x="265" y="30"></rect>
+<text fill="#fca5a5" font-size="13" font-weight="700" text-anchor="middle" x="372" y="60">🔑 Tool sin clave</text>
+<text fill="#fecaca" font-size="10" text-anchor="middle" x="372" y="90">falta permiso/API key</text>
+<text fill="#34d399" font-size="10" font-weight="600" text-anchor="middle" x="372" y="150">reparación:</text>
+<text fill="#a7f3d0" font-size="10" text-anchor="middle" x="372" y="168">configurar credencial</text>
+<rect fill="#0e1622" filter="url(#m14-glow)" height="160" rx="14" stroke="#f87171" stroke-width="2" width="215" x="500" y="30"></rect>
+<text fill="#fca5a5" font-size="13" font-weight="700" text-anchor="middle" x="607" y="60">🧩 Falta contexto</text>
+<text fill="#fecaca" font-size="10" text-anchor="middle" x="607" y="90">el agente no conoce el estándar</text>
+<text fill="#34d399" font-size="10" font-weight="600" text-anchor="middle" x="607" y="150">reparación:</text>
+<text fill="#a7f3d0" font-size="10" text-anchor="middle" x="607" y="168">enriquecer el CLAUDE.md</text>
+<rect fill="#0e1622" filter="url(#m14-glow)" height="160" rx="14" stroke="#f87171" stroke-width="2" width="235" x="735" y="30"></rect>
+<text fill="#fca5a5" font-size="13" font-weight="700" text-anchor="middle" x="852" y="60">❓ Workflow ambiguo</text>
+<text fill="#fecaca" font-size="10" text-anchor="middle" x="852" y="90">las instrucciones se contradicen</text>
+<text fill="#34d399" font-size="10" font-weight="600" text-anchor="middle" x="852" y="150">reparación:</text>
+<text fill="#a7f3d0" font-size="10" text-anchor="middle" x="852" y="168">definir una prioridad clara</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: los cuatro puntos de falla más comunes de WAT, junto con la solución específica para cada uno: ninguno se resuelve de la misma manera.</p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-4#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🚨 Cómo darte cuenta: las señales de alerta</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t5-p1">
+        Cada tipo de falla deja una pista diferente en el comportamiento del agente. Aprender a leer esas pistas evita
+        «pelearte» con el agente sin entender por qué no acierta.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t5-p2">
+        Si piensas en el ciclo de WAT (visto en el módulo 1.2: el agente lee el workflow, decide el siguiente paso, usa una
+        tool, repite), la falla casi siempre aparece al principio de ese ciclo — al leer el workflow o al tomar la decisión
+        — y tú solo la notas al final, como un resultado incorrecto, un costo alto o tiempo perdido. El diagrama
+        de abajo muestra el recorrido:
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-2 overflow-hidden">
+<svg aria-label="Árbol de decisión que muestra dónde se produce la falla en el ciclo de WAT: un workflow vago o ambiguo lleva a un agente sin criterios claros, lo que lleva a una decisión equivocada, que lleva a usar mal una tool o a no usarla; y el resultado final aparece como una respuesta genérica, un costo alto en tokens o tiempo perdido" class="w-full h-auto" role="img" viewbox="0 0 1000 260">
+<defs>
+<lineargradient id="m14t5-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#059669"></stop></lineargradient>
+<filter height="180%" id="m14t5-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m14t5-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1a14" filter="url(#m14t5-glow)" height="80" rx="12" stroke="url(#m14t5-grad)" stroke-width="2" width="180" x="20" y="90"></rect>
+<text fill="#6ee7b7" font-size="12" font-weight="700" text-anchor="middle" x="110" y="122">Workflow vago</text>
+<text fill="#6ee7b7" font-size="12" font-weight="700" text-anchor="middle" x="110" y="140">o ambiguo</text>
+<text fill="#a7f3d0" font-size="9" text-anchor="middle" x="110" y="158">la receta no decide</text>
+<path d="M200,130 L250,130" marker-end="url(#m14t5-ah)" stroke="#38bdf8" stroke-width="1.8"></path>
+<rect fill="#0e1622" height="80" rx="12" stroke="#38bdf8" stroke-width="2" width="180" x="254" y="90"></rect>
+<text fill="#9ad6ff" font-size="12" font-weight="700" text-anchor="middle" x="344" y="122">Agente sin</text>
+<text fill="#9ad6ff" font-size="12" font-weight="700" text-anchor="middle" x="344" y="140">criterio claro</text>
+<text fill="#bfe6ff" font-size="9" text-anchor="middle" x="344" y="158">necesita llenar el vacío</text>
+<path d="M434,130 L484,130" marker-end="url(#m14t5-ah)" stroke="#38bdf8" stroke-width="1.8"></path>
+<rect fill="#0e1622" height="80" rx="12" stroke="#38bdf8" stroke-width="2" width="180" x="488" y="90"></rect>
+<text fill="#9ad6ff" font-size="12" font-weight="700" text-anchor="middle" x="578" y="122">Decisión equivocada</text>
+<text fill="#9ad6ff" font-size="12" font-weight="700" text-anchor="middle" x="578" y="140">o incompleta</text>
+<text fill="#bfe6ff" font-size="9" text-anchor="middle" x="578" y="158">suposición que no coincide</text>
+<path d="M668,130 L718,130" marker-end="url(#m14t5-ah)" stroke="#38bdf8" stroke-width="1.8"></path>
+<rect fill="#0e1a14" filter="url(#m14t5-glow)" height="80" rx="12" stroke="url(#m14t5-grad)" stroke-width="2" width="180" x="722" y="90"></rect>
+<text fill="#6ee7b7" font-size="12" font-weight="700" text-anchor="middle" x="812" y="122">Tool mal utilizada</text>
+<text fill="#6ee7b7" font-size="12" font-weight="700" text-anchor="middle" x="812" y="140">o no utilizada</text>
+<text fill="#a7f3d0" font-size="9" text-anchor="middle" x="812" y="158">ejecuta el paso equivocado</text>
+<path d="M812,170 L812,196" marker-end="url(#m14t5-ah)" opacity="0.8" stroke="#f87171" stroke-width="1.6"></path>
+<rect fill="#1a0e0e" height="48" rx="10" stroke="#f87171" stroke-dasharray="4 4" stroke-width="1.5" width="300" x="662" y="200"></rect>
+<text fill="#fca5a5" font-size="11" text-anchor="middle" x="812" y="228">resultado genérico · costo en tokens · tiempo perdido</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: la falla casi nunca empieza en la herramienta — aparece antes, en el workflow o en la decisión del agente, y solo se hace visible al final como un mal resultado, un costo alto o tiempo perdido.</p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Hace algo razonable, pero distinto de lo que querías</h4>
+<p class="text-neutral-300 text-sm">Señal de una receta vaga — completó el vacío con una suposición razonable, pero no era la tuya.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Se detiene y pide una contraseña o credencial</h4>
+<p class="text-neutral-300 text-sm">Señal de una tool sin clave — identificó correctamente el bloqueo y está pidiendo ayuda.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">El resultado «se sale del patrón» de la casa</h4>
+<p class="text-neutral-300 text-sm">Señal de contexto insuficiente — no tenía ejemplos del patrón esperado.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">4</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Varía: lo hace de una manera en una sesión y de otra en la siguiente</h4>
+<p class="text-neutral-300 text-sm">Señal de ambigüedad — el workflow permite más de una interpretación válida.</p>
+</div>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-1-4#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">✅ Lista de verificación de reparación</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t6-p1">
+        Ante un resultado que no salió como esperabas, recorre esta lista de verificación antes de culpar al agente: en
+        la gran mayoría de los casos, la solución está en una de estas cuatro líneas.
+      </p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">✅</span> Lista de verificación rápida</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>☐ ¿La receta indica claramente qué hacer, con qué y dónde guardar el resultado?</li>
+<li>☐ ¿Todas las herramientas que necesita el paso tienen la clave o los permisos configurados?</li>
+<li>☐ ¿El agente tiene suficientes ejemplos o reglas (CLAUDE.md) sobre el estándar esperado?</li>
+<li>☐ ¿Hay dos instrucciones del workflow que compiten entre sí?</li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Guarda esta lista de verificación: vuelve completa en el módulo 1.5 (Build), cuando revises por qué la automatización del boletín no salió como esperabas en el primer intento.</p>
+</div>
+<div class="bg-dark-900 rounded-xl border border-dark-600 p-4 mb-2 overflow-x-auto">
+<p class="text-xs text-neutral-500 mb-2">Copia esta lista de verificación antes de ejecutar cualquier workflow nuevo; pégala en un bloc de notas y ve marcando cada punto:</p>
+<pre class="text-sm text-neutral-300 font-mono leading-relaxed"><code>[ ] O QUE fazer está escrito (não só "organize", "resuma", "revise")
+[ ] COM QUE dados/arquivos trabalhar está nomeado (caminho ou fonte exata)
+[ ] ONDE salvar ou entregar o resultado está definido
+[ ] Toda ferramenta usada no workflow tem chave/permissão já testada
+[ ] O CLAUDE.md tem exemplo do padrão esperado (se o resultado exige "tom" ou "estilo")
+[ ] Não há duas instruções competindo (prazo vs. qualidade, rapidez vs. cuidado)
+[ ] Se existe "repita até...", há um critério de parada objetivo (não subjetivo)</code></pre>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t6-p2">
+<strong class="text-emerald-400">Cómo verificar:</strong> ejecuta el workflow una vez con un caso pequeño y económico
+        antes de confiar en él a escala. Si el resultado coincide con lo que esperabas sin necesidad de ajustes, probablemente los
+        siete puntos anteriores están cubiertos. Si no coincide, vuelve a la lista de verificación y busca qué línea quedó
+        sin marcar: ahí está el defecto, no en la «capacidad» del agente.
+      </p>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-1-4#q1">
+<p class="font-medium mb-4">Verificación rápida (opcional): el agente se detiene y pide una contraseña específica de un servicio. ¿Cuál es la causa más probable?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Receta vaga.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Tool sin clave o permiso configurado.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Workflow ambiguo.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-1-4#q1', {
+              answer: 1,
+              explain: { 0: 'Receita vaga costuma gerar uma suposição errada, não um pedido de senha.', 1: 'Correto: pedir credencial é o sinal claro de tool sem chave.', 2: 'Ambiguidade costuma gerar oscilação de comportamento, não pedido de senha.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">4 causas comunes:</strong><span class="text-neutral-400"> receta vaga, herramienta sin clave, agente sin contexto, workflow ambiguo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Cada una tiene una pista:</strong><span class="text-neutral-400"> resultado diferente, solicitud de contraseña, se sale del patrón o fluctúa entre sesiones.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Cada una tiene una solución específica:</strong><span class="text-neutral-400"> reescribir, configurar, enriquecer el CLAUDE.md o eliminar ambigüedades.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Lista de verificación de 4 preguntas:</strong><span class="text-neutral-400"> recórrelo antes de culpar al agente.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">1.5 — Build: automatización de newsletter</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la ruta</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-5.html">Próximo módulo →</a>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) { exp.classList.remove('active'); exp.previousElementSibling && exp.previousElementSibling.setAttribute && exp.previousElementSibling.setAttribute('aria-expanded','false'); }
+      });
+      explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', explanation.classList.contains('active') ? 'true' : 'false');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

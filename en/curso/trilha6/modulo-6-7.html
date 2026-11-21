@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>6.7 Build: Morning Routine | Your Digital Employee</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'rose' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'rose');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.rose;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-rose-400 { color: #9f1239; }
+    html:not(.dark) .bg-rose-500\/20 { background-color: rgba(225, 29, 72, 0.12); }
+    html:not(.dark) .bg-rose-500\/10 { background-color: rgba(225, 29, 72, 0.08); }
+    html:not(.dark) .border-rose-500\/30 { border-color: rgba(225, 29, 72, 0.25); }
+    html:not(.dark) .hover\:bg-rose-500\/30:hover { background-color: rgba(225, 29, 72, 0.18); }
+    html:not(.dark) .hover\:bg-rose-500\/10:hover { background-color: rgba(225, 29, 72, 0.08); }
+    html:not(.dark) .hover\:text-rose-400:hover { color: #9f1239; }
+    html:not(.dark) .hover\:text-rose-300:hover { color: #9f1239; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha6/modulo-6-7.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha6/modulo-6-7.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha6/modulo-6-7.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-7.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-6-7.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha6/modulo-6-7.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Skip to content</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparation</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Time</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>My journey</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-rose-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-rose-400" href="index.html">Track 6</a><span>/</span>
+<span class="text-rose-400">Module 6.7</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">MODULE 6.7 · BUILD</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🌅 Build: morning routine that improves itself</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        This is the hands-on module that closes Track 6: you’ll build, from end to end, a routine that runs
+        every morning, reads what it learned yesterday, decides what to prioritize today, notifies you — and rewrites its own
+        history so tomorrow goes even better. Everything that came before (scheduled task, status file,
+        determinism, notification, restrictive permissions) comes into play here.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">6</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">40</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">Intermediate</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">Build</div><div class="text-xs text-neutral-400">Type</div></div>
+</div>
+<div aria-label="Progress for module 6.7" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:6-7" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-1">1. What we're going to build</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-2">2. The status file</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-3">3. Create the scheduled task</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-4">4. Notifications and permissions</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-5">5. First run</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-6">6. Help it learn + checklist</a></li>
+</ul>
+</nav>
+<article data-inema-module="6-7" data-inema-track="6" id="modulo-6-7">
+<!-- TÓPICO 1 -->
+<section class="mb-16" data-inema-topic="modulo-6-7#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🎯 What we’ll build</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t1-p1">
+        The morning routine is a <strong class="text-rose-400">scheduled task</strong> (the one that runs automatically
+        at a set time, without you having to open anything — covered in depth in module 6.2) that runs every morning,
+        for example at <strong class="text-rose-400">7h</strong>. When it runs, the agent checks what matters for
+        your day — important emails, calendar appointments, or a summary of news/data you're interested in —
+        and leaves a <strong class="text-rose-400">summary ready</strong> for you to read as soon as you wake up, without having to
+        hunt for information in three different places.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t1-p2">
+        The interesting part isn’t just "running every morning" — any alarm clock can do that. What makes this routine
+        a <strong class="text-rose-400">A real build</strong> is that it <strong class="text-rose-400">improves
+        on its own</strong>: uses the status file (the same pattern as module 6.4, "the routine that learns") to remember
+        what it showed yesterday and avoid repeating it, and to adjust what it prioritizes based on what you found useful.
+      </p>
+<div class="rounded-2xl border border-rose-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Complete Build workflow: starts in the morning, reads the status file, decides what to prioritize, runs the check, notifies you, and rewrites the status for tomorrow" class="w-full h-auto" role="img" viewbox="0 0 1000 300">
+<defs>
+<lineargradient id="m7-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fb7185"></stop><stop offset="1" stop-color="#e11d48"></stop></lineargradient>
+<filter height="180%" id="m7-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m7-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#fb7185" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m7-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#fb7185"></path></marker>
+<marker id="m7-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m7-grid)" height="300" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" height="56" rx="12" stroke="#fb7185" stroke-width="2" width="150" x="20" y="30"></rect>
+<text fill="#ffd7de" font-size="12" font-weight="700" text-anchor="middle" x="95" y="55">⏰ 7 a.m. triggers</text>
+<text fill="#ffb3c0" font-size="10" text-anchor="middle" x="95" y="72">scheduled task</text>
+<path d="M170,58 L220,58" marker-end="url(#m7-ah)" opacity="0.75" stroke="#fb7185" stroke-width="1.8"></path>
+<rect fill="#0e1622" height="56" rx="12" stroke="#38bdf8" stroke-width="2" width="150" x="225" y="30"></rect>
+<text fill="#bfe6ff" font-size="12" font-weight="700" text-anchor="middle" x="300" y="55">📄 Read status</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="300" y="72">what I’ve already shown</text>
+<path d="M375,58 L425,58" marker-end="url(#m7-ahc)" opacity="0.65" stroke="#38bdf8" stroke-width="1.8"></path>
+<rect fill="#1f0a10" filter="url(#m7-glow)" height="76" rx="14" stroke="url(#m7-grad)" stroke-width="2.5" width="160" x="430" y="20"></rect>
+<text fill="#fb7185" font-size="12" font-weight="700" text-anchor="middle" x="510" y="45">🧭 Decide what</text>
+<text fill="#fb7185" font-size="12" font-weight="700" text-anchor="middle" x="510" y="61">prioritize today</text>
+<text fill="#ffb3c0" font-size="9" text-anchor="middle" x="510" y="80">based on yesterday</text>
+<path d="M590,58 L640,58" marker-end="url(#m7-ah)" opacity="0.75" stroke="#fb7185" stroke-width="1.8"></path>
+<g class="wf-a"><rect fill="#0e1622" height="56" rx="12" stroke="#fb7185" stroke-width="2" width="150" x="645" y="30"></rect>
+<text fill="#ffd7de" font-size="12" font-weight="700" text-anchor="middle" x="720" y="55">⚙️ Runs</text>
+<text fill="#ffb3c0" font-size="10" text-anchor="middle" x="720" y="72">checks email/calendar</text>
+</g>
+<path d="M795,58 L845,58" marker-end="url(#m7-ahc)" opacity="0.65" stroke="#38bdf8" stroke-width="1.8"></path>
+<rect fill="#0e1622" filter="url(#m7-glow)" height="56" rx="12" stroke="#38bdf8" stroke-width="2.5" width="130" x="850" y="30"></rect>
+<text fill="#9ad6ff" font-size="12" font-weight="700" text-anchor="middle" x="915" y="55">🔔 Notifications</text>
+<text fill="#bfe6ff" font-size="10" text-anchor="middle" x="915" y="72">summary ready</text>
+<path d="M915,86 L915,140 L300,140 L300,90" fill="none" marker-end="url(#m7-ah)" opacity="0.55" stroke="#fb7185" stroke-dasharray="5 4" stroke-width="1.6"></path>
+<rect fill="#0e1622" height="60" rx="12" stroke="url(#m7-grad)" stroke-width="2" width="340" x="330" y="160"></rect>
+<text fill="#fb7185" font-size="13" font-weight="700" text-anchor="middle" x="500" y="185">↺ Rewrites the status file</text>
+<text fill="#ffb3c0" font-size="10" text-anchor="middle" x="500" y="203">tomorrow, it already knows what it did today</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Caption: the cycle closes in a loop — the routine doesn’t just run; it records what it did so the next run can start smarter, without repeating what you’ve already seen.</p>
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center"><span class="mr-2">💡</span> Main Concept</h3>
+<p class="text-neutral-300 mb-4">A complete morning routine has 4 parts you already know separately — here they come together:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-1">•</span><span><strong>Trigger:</strong> scheduled task at 7 a.m. (module 6.2).</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-1">•</span><span><strong>Memory:</strong> status file that learns (module 6.4).</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-1">•</span><span><strong>Security:</strong> restrictive permissions, never delete (module 6.6).</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-1">•</span><span><strong>Delivery:</strong> notification with the summary ready (module 6.6).</span></li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="mb-16" data-inema-topic="modulo-6-7#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📄 Design the routine status file</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t2-p1">
+<strong class="text-rose-400">New here?</strong> O <strong class="text-rose-400">status file</strong>
+        is a plain text file (format <strong class="text-rose-400">JSON</strong> — an organized way to
+        store information in "key: value" pairs, easy for both you and the agent to read) that keeps track of what
+        happened in recent runs. It's the routine's "short-term memory" — without it, every morning would be
+        the first morning all over again.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t2-p2">
+        Three things this file needs to store: <strong class="text-rose-400">last run</strong> (date and
+        time, to know how much time has passed), <strong class="text-rose-400">what has already been shown</strong> (so it doesn’t
+        repeat the same email or news story two days in a row), and <strong class="text-rose-400">learned
+        preferences</strong> (what you tend to ignore and what you tend to pay attention to).
+      </p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden mb-6">
+<div class="flex items-center justify-between px-4 py-2 bg-dark-700 border-b border-dark-600">
+<span class="text-xs font-semibold text-neutral-400">COPY-RUN · create the status file</span>
+<span class="text-xs text-rose-400">Prompt for Claude Code</span>
+</div>
+<div class="p-4">
+<p class="text-sm text-neutral-400 mb-3"><strong class="text-neutral-200">Objective:</strong> asking the agent to create the file <code class="text-rose-400">rotina-matinal-status.json</code> with the initial structure, inside your project folder.</p>
+<pre class="bg-dark-900 rounded-lg p-4 overflow-x-auto text-sm text-neutral-200 mb-3"><code>Crie o arquivo rotina-matinal-status.json na raiz deste projeto com esta estrutura inicial:
+
+{
+  "ultima_execucao": null,
+  "mostrado_recentemente": [],
+  "preferencias_aprendidas": {
+    "prioriza": ["<isto cliente="" do="" e-mails="" ex.="" principal="" troca:="" voce="">"],
+    "ignora": []
+  },
+  "fontes": ["<isto agenda,="" de="" e-mail,="" ex.="" noticias="" resumo="" troca:="" voce="">"]
+}
+
+Depois de criar, me explique em 2 frases o que cada campo vai guardar.</isto></isto></code></pre>
+<p class="text-sm text-neutral-400"><strong class="text-neutral-200">How to verify:</strong> open the created file—it should exist in the project root, contain valid JSON (with no syntax errors), and have the 4 fields above.</p>
+</div>
+</div>
+<div class="bg-rose-900/20 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Inside</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>"mostra...recentemente":</strong> a short list (the last 3–5 days) — prevents repetition without turning into a huge file.</li>
+<li><strong>"learned_preferences":</strong> the field that topic 6 on this page will teach you to update automatically.</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="mb-16" data-inema-topic="modulo-6-7#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">⏰ Step by step: create the scheduled task</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t3-p1">
+        With the status file ready, the next step is the trigger: the <strong class="text-rose-400">scheduled
+        task</strong> itself. It needs a time (e.g., 7 a.m.), a frequency (every day, or only
+        weekdays), and a clear instruction for what to do when it triggers — including an explicit request to read and
+        update the status file.
+      </p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center"><span class="text-rose-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Choose the time and frequency</h4>
+<p class="text-neutral-300 text-sm">7 a.m. every day (or just Monday through Friday, if you prefer to keep it separate from your personal life). Review module 6.2 if you want a refresher on how scheduling works under the hood.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center"><span class="text-rose-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Write the complete instruction</h4>
+<p class="text-neutral-300 text-sm">“Check my email” isn’t enough — the instruction needs to say what to read, what to prioritize, and where to save the result. See the copy-run block below.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center"><span class="text-rose-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Save it and confirm the schedule</h4>
+<p class="text-neutral-300 text-sm">The scheduling tool confirms the next run — note the expected date/time so you can check later.</p>
+</div>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden mb-6">
+<div class="flex items-center justify-between px-4 py-2 bg-dark-700 border-b border-dark-600">
+<span class="text-xs font-semibold text-neutral-400">COPY-RUN · create the scheduled task</span>
+<span class="text-xs text-rose-400">Prompt for Claude Code</span>
+</div>
+<div class="p-4">
+<p class="text-sm text-neutral-400 mb-3"><strong class="text-neutral-200">Objective:</strong> requesting the scheduled task itself, pointing to the status file and the selected sources.</p>
+<pre class="bg-dark-900 rounded-lg p-4 overflow-x-auto text-sm text-neutral-200 mb-3"><code>Agende uma tarefa recorrente todo dia às 07:00 (<isto dia="" dias="" ou="" todo="" troca:="" uteis="" voce="">)
+chamada "rotina-matinal". Quando ela rodar, ela deve:
+
+1. Ler rotina-matinal-status.json
+2. Checar <isto agenda,="" cliente="" de="" do="" e-mails="" etc="" eventos="" hoje="" lidos="" na="" nao="" troca:="" voce="" x,="">
+3. Ignorar tudo que já esteja em "mostrado_recentemente"
+4. Priorizar de acordo com "preferencias_aprendidas"
+5. Escrever um resumo curto (até 8 linhas) em resumo-do-dia.md
+6. Atualizar rotina-matinal-status.json com a nova execução
+
+Antes de salvar a tarefa agendada, me mostre o texto final da instrução pra eu revisar.</isto></isto></code></pre>
+<p class="text-sm text-neutral-400"><strong class="text-neutral-200">How to verify:</strong> ask the agent to list the active scheduled tasks — "rotina-matinal" should appear with the correct time. Also confirm that it showed you the instructions before saving (it should not act without that confirmation).</p>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="mb-16" data-inema-topic="modulo-6-7#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🔔 Step by step: notifications and restrictive permissions</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t4-p1">
+<strong class="text-rose-400">New here?</strong> <strong class="text-rose-400">Restrictive permission</strong>
+        (covered in depth in module 6.6) means giving the agent only the access needed for the task — in this case, reading
+        email/calendar and writing to the summary file, but <strong class="text-rose-400">never delete anything</strong>.
+        A routine that runs on its own every day needs this safeguard: if one day it "misunderstands" what to do, the
+        worst-case scenario is a bad summary — never a lost file.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t4-p2">
+        A <strong class="text-rose-400">notification</strong> it’s how you find out that the routine ran—without
+        having to open the terminal every morning. It could be an email, a message on your phone, or simply the
+        file <code class="text-rose-400">resumo-do-dia.md</code> waiting for you in the folder — the important thing is that the
+        notification reaches you in a way you'll actually see.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Secure configuration</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Permission to read email/calendar, write only to the summary file and status</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>No permission to delete files or automatically send messages on your behalf</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>The notification arrives even if the check doesn’t find much (“it’s quiet today”)</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Risky configuration</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Grant full access to the inbox "so you don't have to configure it again"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Let the agent delete “read” emails to keep the inbox clean</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Routine runs silently without any notification — you only find out if you open it manually</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden mb-6">
+<div class="flex items-center justify-between px-4 py-2 bg-dark-700 border-b border-dark-600">
+<span class="text-xs font-semibold text-neutral-400">COPY-RUN · lock down permissions and turn on notifications</span>
+<span class="text-xs text-rose-400">Prompt for Claude Code</span>
+</div>
+<div class="p-4">
+<p class="text-sm text-neutral-400 mb-3"><strong class="text-neutral-200">Objective:</strong> restrict what the "rotina-matinal" task can do and make sure you receive a notification when it finishes.</p>
+<pre class="bg-dark-900 rounded-lg p-4 overflow-x-auto text-sm text-neutral-200 mb-3"><code>Ajuste a tarefa agendada "rotina-matinal" para rodar com permissões restritivas:
+
+- Permitido: ler e-mail/agenda, escrever em resumo-do-dia.md e rotina-matinal-status.json
+- Proibido: apagar ou mover qualquer arquivo, enviar e-mail/mensagem em meu nome
+
+Ao final da execução, envie uma notificação para <isto canal="" email="" ou="" preferido="" seu="" troca:="" voce="">
+com o título "Resumo de hoje pronto" e o conteúdo de resumo-do-dia.md.
+Se não houver nada relevante, envie mesmo assim avisando "sem novidades hoje".</isto></code></pre>
+<p class="text-sm text-neutral-400"><strong class="text-neutral-200">How to verify:</strong> ask the agent to list the permissions configured for this task — "delete file" and "send on your behalf" should not appear as allowed. Confirm the notification destination too.</p>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical Tip</h3>
+<p class="text-neutral-300">Start with a simple notification (a local file) before connecting external channels like email or a phone—this way, you can validate the summary before “publishing” it somewhere else.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="mb-16" data-inema-topic="modulo-6-7#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">✅ Run the first execution and verify</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t5-p1">
+        Don’t wait until tomorrow morning to find out if it worked. Ask the agent to <strong class="text-rose-400">
+        run the task now, once, manually</strong> — most scheduling tools have an “run now” option
+        for testing without waiting for the scheduled time. That’s more useful than any theory: you’ll see the actual result
+        in minutes.
+      </p>
+<div class="rounded-2xl border border-rose-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Timeline of a week in operation: Monday triggers and creates the status, Tuesday uses Monday’s status to avoid repeating work, and so on through Friday, when the summary is already shorter and more focused" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<defs>
+<lineargradient id="m7t-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#fb7185"></stop><stop offset="1" stop-color="#38bdf8"></stop></lineargradient>
+</defs>
+<g font-family="Inter,sans-serif">
+<line opacity="0.6" stroke="url(#m7t-grad)" stroke-width="2.5" x1="60" x2="940" y1="100" y2="100"></line>
+<g>
+<circle cx="100" cy="100" fill="#fb7185" r="9"></circle>
+<text fill="#fb7185" font-size="12" font-weight="700" text-anchor="middle" x="100" y="70">Monday</text>
+<text fill="#9ca3af" font-size="10" text-anchor="middle" x="100" y="130">1st status created</text>
+</g>
+<g>
+<circle cx="320" cy="100" fill="#fb7185" r="9"></circle>
+<text fill="#fb7185" font-size="12" font-weight="700" text-anchor="middle" x="320" y="70">Tuesday</text>
+<text fill="#9ca3af" font-size="10" text-anchor="middle" x="320" y="130">doesn't repeat Monday's</text>
+</g>
+<g>
+<circle cx="540" cy="100" fill="#e11d48" r="9"></circle>
+<text fill="#e11d48" font-size="12" font-weight="700" text-anchor="middle" x="540" y="70">Wednesday</text>
+<text fill="#9ca3af" font-size="10" text-anchor="middle" x="540" y="130">note saying you ignore X</text>
+</g>
+<g>
+<circle cx="760" cy="100" fill="#38bdf8" r="9"></circle>
+<text fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle" x="760" y="70">Thursday</text>
+<text fill="#9ca3af" font-size="10" text-anchor="middle" x="760" y="130">stop showing X</text>
+</g>
+<g>
+<circle cx="920" cy="100" fill="#38bdf8" filter="url(#m7-glow)" r="10"></circle>
+<text fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle" x="920" y="70">Friday</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="920" y="130">concise, accurate summary</text>
+</g>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Caption: each day, the routine gets a little more precise — not because the model “got smarter,” but because the status file has accumulated more signals about what you use and what you ignore.</p>
+<div class="bg-rose-900/20 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center"><span class="mr-2">📋</span> First-run verification checklist</h3>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400">1.</span><span>Open <code class="text-rose-400">resumo-do-dia.md</code> — does the content make sense and is it short enough to read in 1 minute?</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400">2.</span><span>Open <code class="text-rose-400">rotina-matinal-status.json</code> — was the "ultima_execucao" field updated with the actual time?</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400">3.</span><span>Check "mostrado_recentemente"—did today's summary items make it into the list?</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400">4.</span><span>Did the notification arrive in the right channel (email/phone/file)?</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400">5.</span><span>No files were deleted or moved — only created or updated?</span></li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="mb-16" data-inema-topic="modulo-6-7#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🧠 Make the routine learn + common mistakes + final exercise</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t6-p1">
+        “Learning” here isn’t magic—it’s the same cycle as Module 6.4: every time it runs, the agent checks the sources and also looks at whether you engaged with what it showed you yesterday (e.g., you never open the news section, but always read the agenda section). Based on that, it updates <code class="text-rose-400">preferencias_aprendidas</code>
+        — add to "prioritize" the things you use; add to "ignore" the things you never touch. In practice, after
+        a week the summary gets shorter and more relevant, without you needing to reconfigure anything.
+      </p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden mb-6">
+<div class="flex items-center justify-between px-4 py-2 bg-dark-700 border-b border-dark-600">
+<span class="text-xs font-semibold text-neutral-400">COPY-RUN · teach the routine to adjust priorities</span>
+<span class="text-xs text-rose-400">Prompt for Claude Code</span>
+</div>
+<div class="p-4">
+<p class="text-sm text-neutral-400 mb-3"><strong class="text-neutral-200">Objective:</strong> add the learning rule to the scheduled task instructions so it can keep the status file up to date with what you use and ignore.</p>
+<pre class="bg-dark-900 rounded-lg p-4 overflow-x-auto text-sm text-neutral-200 mb-3"><code>Atualize a instrução da tarefa "rotina-matinal" para incluir esta regra de aprendizado:
+
+Antes de montar o resumo de hoje, leia "preferencias_aprendidas" em rotina-matinal-status.json.
+Depois de montar, se uma seção (ex.: <isto agenda,="" e-mail="" notícias,="" troca:="" voce="">) não recebeu
+nenhuma interação nos últimos 5 dias, adicione essa seção em "ignora" e reduza o espaço dela
+no próximo resumo. Se uma seção for consistentemente a mais lida, adicione em "prioriza" e
+mostre-a primeiro. Sempre registre essa decisão em "mostrado_recentemente" com a data.</isto></code></pre>
+<p class="text-sm text-neutral-400"><strong class="text-neutral-200">How to verify:</strong> after a few days, compare the "preferencias_aprendidas" from the beginning of the week with the one from the end — it should have changed based on what you actually used.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Ready to keep running on its own</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Ran it manually at least once, and the result made sense</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Restrictive permissions confirmed (no deleting, no sending on your behalf)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>The notification arrives in the channel you actually check</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Common mistakes when setting up this Build</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Too vague an instruction ("let me know about important things") — the agent doesn't know what's "important" without the status file to guide it</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Forget to test manually before trusting the scheduled time</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Let “mostrado_recentemente” grow without limit — it becomes a huge, slow file</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical Tip</h3>
+<p class="text-neutral-300">Review the routine summary every week, not just every morning — a weekly look reveals patterns that a single day doesn’t (e.g., “this section hasn’t had anything relevant in 5 days; is it worth keeping?”).</p>
+</div>
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Final Exercise</h3>
+<p class="text-neutral-300">Add one more information source to your morning routine (e.g., the weather forecast, a quote for something you follow, or a second email). Ask the agent to update the task instructions and the "sources" field in the status file — then run it manually again to check that the new source appears in the summary without breaking anything else.</p>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-6-7#q1">
+<p class="font-medium mb-4">Quick check (optional): what makes this routine “improve itself” over time?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">The AI model gets smarter over time.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">The status file accumulates what you use and ignore, and the instruction uses that to adjust priorities.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">It doesn’t improve—it just runs the same way every day.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-6-7#q1', {
+              answer: 1,
+              explain: { 0: 'O modelo em si não muda — o que muda é o dado guardado no arquivo de status.', 1: 'Isso mesmo: memória de status + instrução que lê essa memória é o que gera a melhora.', 2: 'Ela melhora sim, mas só porque o status guarda sinal — releia o tópico 6.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-rose-900/40 via-dark-800 to-dark-800 rounded-xl border border-rose-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Overview:</strong><span class="text-neutral-400"> scheduled task + status file + restrictive permissions + notification, together.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Status file:</strong><span class="text-neutral-400"> stores the last run, what has already been shown, and learned preferences.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Scheduled task:</strong><span class="text-neutral-400"> time, frequency, and complete instructions for reading and updating the status.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Security and delivery:</strong><span class="text-neutral-400"> only the permissions needed, never delete, and notifications in a channel you check.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Continuous learning:</strong><span class="text-neutral-400"> the instruction reads and rewrites preferences each time it runs — that’s what makes it improve on its own.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-rose-400 mb-2">Next learning path:</h3>
+<p class="text-neutral-300">Track 7 — Capstone: your executive assistant. Time to bring everything you’ve learned together in a complete final project.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Track</a>
+<a class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors" href="../trilha7/index.html">Go to Track 7 →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

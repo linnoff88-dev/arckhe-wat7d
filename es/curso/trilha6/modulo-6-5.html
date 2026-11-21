@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>6.5 Determinismo | Tu Empleado Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'rose' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'rose');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.rose;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-rose-400 { color: #9f1239; }
+    html:not(.dark) .bg-rose-500\/20 { background-color: rgba(225, 29, 72, 0.12); }
+    html:not(.dark) .bg-rose-500\/10 { background-color: rgba(225, 29, 72, 0.08); }
+    html:not(.dark) .border-rose-500\/30 { border-color: rgba(225, 29, 72, 0.25); }
+    html:not(.dark) .hover\:bg-rose-500\/30:hover { background-color: rgba(225, 29, 72, 0.18); }
+    html:not(.dark) .hover\:bg-rose-500\/10:hover { background-color: rgba(225, 29, 72, 0.08); }
+    html:not(.dark) .hover\:text-rose-400:hover { color: #9f1239; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha6/modulo-6-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha6/modulo-6-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha6/modulo-6-5.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha6/modulo-6-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-6-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-rose-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-rose-400" href="index.html">Trilha 6</a><span>/</span>
+<span class="text-rose-400">Módulo 6.5</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">MÓDULO 6.5</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🎯 Determinismo</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        No toda tarea programada necesita un agente «pensando» cada vez. En este módulo aprendes cuándo conviene fijar el comportamiento en una secuencia fija, más rápida, más barata y sin sorpresas.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">25</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">Intermedio</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">Teoría + práctica</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 6.5" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:6-5" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-1">1. Qué es el determinismo</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-2">2. Por qué a veces tú QUIERES esto</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-3">3. Qué es un script</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-4">4. Escribir una vez, ejecutar siempre</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-5">5. Copy-run: script + tarea</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-6">6. Cuándo NO usar un script fijo</a></li>
+</ul>
+</nav>
+<article data-inema-module="6-5" data-inema-track="6" id="modulo-6-5">
+<section class="mb-16" data-inema-topic="modulo-6-5#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🔁 Qué es el determinismo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-5-t1-p1">
+<strong class="text-rose-400">¿Eres nuevo aquí?</strong> <strong class="text-rose-400">Determinismo</strong> quiere decir hacer
+        lo mismo, de la misma manera, cada vez — sin «decidir» nada durante el proceso. Es la diferencia entre una
+        receta de pastel (siempre los mismos pasos, en el mismo orden) y un cocinero experimentado (que prueba, ajusta el sazón,
+        cambia de plan si falta un ingrediente). Los dos pueden hacer un buen pastel, pero uno es predecible y el otro es flexible.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-5-t1-p2">
+        En los módulos anteriores de esta ruta viste al agente «pensando»: lee el contexto, decide qué herramienta usar,
+        evalúa el resultado y ajusta el siguiente paso; así es como la rutina que aprende (módulo 6.4) mejora por sí sola
+        con el tiempo. El determinismo es lo contrario, a propósito: una secuencia fija de acciones que no cambia,
+        no interpreta ni «piensa»: solo ejecuta.
+      </p>
+<div class="rounded-2xl border border-rose-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Comparación lado a lado: el agente que razona sigue un ciclo de decidir, actuar, revisar y ajustar en cada paso; el script determinista sigue una secuencia fija de pasos numerados, siempre en el mismo orden, sin tomar decisiones en el proceso" class="w-full h-auto" role="img" viewbox="0 0 1000 260">
+<defs>
+<lineargradient id="m65t1-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fb7185"></stop><stop offset="1" stop-color="#e11d48"></stop></lineargradient>
+<filter height="180%" id="m65t1-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m65t1-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#fb7185" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m65t1-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#fb7185"></path></marker>
+<marker id="m65t1-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m65t1-grid)" height="260" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<text fill="#fda4af" font-size="13" font-weight="700" text-anchor="middle" x="240" y="30">AGENTE PENSANDO (ciclo)</text>
+<circle cx="130" cy="120" fill="#0e1622" r="42" stroke="#38bdf8" stroke-width="2"></circle><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="130" y="117">decidir</text><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="130" y="130">qué</text>
+<circle class="wf-a" cx="240" cy="60" fill="#0e1622" r="42" stroke="#38bdf8" stroke-width="2"></circle><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="240" y="57">actuar</text>
+<circle cx="350" cy="120" fill="#0e1622" r="42" stroke="#38bdf8" stroke-width="2"></circle><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="350" y="117">verificar</text><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="350" y="130">resultado</text>
+<circle cx="240" cy="180" fill="#0e1622" r="42" stroke="#38bdf8" stroke-width="2"></circle><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="240" y="177">ajustar</text><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="240" y="190">el plan</text>
+<path d="M165,100 Q200,75 210,68" fill="none" marker-end="url(#m65t1-ahc)" opacity="0.7" stroke="#38bdf8" stroke-width="1.6"></path>
+<path d="M275,72 Q320,90 335,100" fill="none" marker-end="url(#m65t1-ahc)" opacity="0.7" stroke="#38bdf8" stroke-width="1.6"></path>
+<path d="M340,150 Q300,175 275,178" fill="none" marker-end="url(#m65t1-ahc)" opacity="0.7" stroke="#38bdf8" stroke-width="1.6"></path>
+<path d="M205,178 Q165,150 145,150" fill="none" marker-end="url(#m65t1-ahc)" opacity="0.7" stroke="#38bdf8" stroke-width="1.6"></path>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="240" y="235">vuelve al inicio — reevalúa siempre</text>
+<line stroke="#374151" stroke-dasharray="4 4" stroke-width="1.5" x1="480" x2="480" y1="20" y2="245"></line>
+<text fill="#fda4af" font-size="13" font-weight="700" text-anchor="middle" x="740" y="30">SCRIPT DETERMINÍSTICO (secuencia fija)</text>
+<rect fill="#0e1622" filter="url(#m65t1-glow)" height="50" rx="10" stroke="url(#m65t1-grad)" stroke-width="2" width="120" x="530" y="90"></rect><text fill="#ffe4e6" font-size="12" font-weight="700" text-anchor="middle" x="590" y="120">1. leer datos</text>
+<path d="M650,115 L695,115" marker-end="url(#m65t1-ah)" stroke="#fb7185" stroke-width="1.8"></path>
+<rect fill="#0e1622" filter="url(#m65t1-glow)" height="50" rx="10" stroke="url(#m65t1-grad)" stroke-width="2" width="120" x="700" y="90"></rect><text fill="#ffe4e6" font-size="12" font-weight="700" text-anchor="middle" x="760" y="120">2. calcular</text>
+<path d="M820,115 L865,115" marker-end="url(#m65t1-ah)" stroke="#fb7185" stroke-width="1.8"></path>
+<rect fill="#0e1622" filter="url(#m65t1-glow)" height="50" rx="10" stroke="url(#m65t1-grad)" stroke-width="2" width="110" x="870" y="90"></rect><text fill="#ffe4e6" font-size="12" font-weight="700" text-anchor="middle" x="925" y="120">3. guardar</text>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="740" y="180">siempre en este orden, nunca decide nada diferente</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: a la izquierda, el agente «pensando» gira en un ciclo de decisión en cada paso (útil cuando la tarea varía). A la derecha, el script determinista sigue una línea recta y fija de pasos numerados, sin ciclos ni decisiones intermedias.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-rose-400 font-bold text-lg">Fijo</div><div class="text-xs text-neutral-400 mt-1">Siempre el mismo orden</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-rose-400 font-bold text-lg">Sin criterio</div><div class="text-xs text-neutral-400 mt-1">No interpreta nada</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-rose-400 font-bold text-lg">Previsible</div><div class="text-xs text-neutral-400 mt-1">Resultado esperado</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-rose-400 font-bold text-lg">Contrario</div><div class="text-xs text-neutral-400 mt-1">Del agente «pensando»</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-6-5#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">✅ Por qué a veces QUIERES determinismo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-5-t2-p1">
+        Parece extraño pedirle menos "inteligencia" a un agente, pero tiene mucho sentido para un tipo específico de
+        tarea: <strong class="text-rose-400">repetitiva y bien definida</strong>. Si todos los días a las 7h necesitas
+        exportar un informe, cambiar el nombre de los archivos del día anterior y enviarlo por correo, esa tarea no cambia de
+        formato. No necesita «criterio», sino confiabilidad y rapidez.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-5-t2-p2">
+        Un agente que «piensa» cada vez consume más tokens (la unidad de texto procesado que determina el costo, que viste en
+        el módulo 0.1) y tarda más, porque vuelve a evaluar el contexto desde cero en cada ejecución. Un script fijo se salta esa
+        etapa: ya sabe exactamente qué hacer.
+      </p>
+<div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center"><span class="mr-2">💡</span> Concepto principal</h3>
+<p class="text-neutral-300 mb-4">Tarea repetitiva y predecible → script determinista. Tarea que cambia de contexto → agente que piensa.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-1">•</span><span>Más rápido: sin la etapa de «evaluar qué hacer».</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-1">•</span><span>Más barato: menos tokens gastados por ejecución.</span></li>
+<li class="flex items-start space-x-2"><span class="text-rose-400 mt-1">•</span><span>Más confiable: el resultado no varía de un día a otro.</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Buena candidata para un script fijo</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Copia de seguridad diaria de una carpeta específica</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Generar un informe con el mismo formato cada semana</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Renombrar archivos siguiendo un patrón fijo</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Mala candidata (necesita un agente que piense)</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Responder correos electrónicos con contenido diferente cada día</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Decidir la prioridad entre tareas que cambian de peso</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Investigar por qué algo se rompió (la causa varía)</span></li>
+</ul>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-6-5#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">📜 Qué es un script</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-5-t3-p1">
+<strong class="text-rose-400">¿Eres nuevo aquí?</strong> Uno <strong class="text-rose-400">script</strong> es una lista
+        fija de instrucciones que la computadora ejecuta en orden, una tras otra, sin interpretar ni decidir nada:
+        es la receta del ejemplo anterior, solo que escrita en código en vez de en portugués. A diferencia del agente,
+        que «lee» la situación y elige qué hacer, el script solo obedece exactamente lo que está escrito, siempre de la
+        misma manera.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-5-t3-p2">
+        La parte buena: quien escribe el script puede ser el propio agente. Tiene la capacidad de «pensar» una vez, armar
+        la secuencia correcta de pasos y guardarla en un archivo. A partir de ahí, quien lo ejecuta ya no necesita pensar —
+        solo ejecuta el archivo.
+      </p>
+<div class="bg-rose-900/20 rounded-xl border border-rose-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Script:</strong> archivo de código con pasos fijos — sin "pensar", solo ejecutar.</li>
+<li><strong>Quién escribe:</strong> el agente, una vez, usando su razonamiento para armar la secuencia correcta.</li>
+<li><strong>Quién ejecuta después:</strong> la tarea programada ejecuta solo el script, sin que necesites volver a usar el agente.</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-6-5#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">✍️ Escribir una vez, ejecutar siempre</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-5-t4-p1">
+        Aquí está la clave que distingue una tarea programada cara de una barata: en vez de pedirle a la tarea programada
+        que «piense» cada vez que se ejecuta, le pides al agente <strong class="text-rose-400">escribir el script una sola vez</strong>
+        — y a partir de ahí la tarea programada solo ejecuta ese script. La parte "inteligente" (escribir, revisar, ajustar
+        el script) queda separada y se hace rara vez; la parte "repetitiva" (ejecutarlo todos los días) queda rápida y barata.
+      </p>
+<div class="rounded-2xl border border-rose-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Flujo en dos etapas: primero el agente piensa una vez y escribe el script; después, todos los días, la tarea programada solo ejecuta ese script listo, sin volver a pensar" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
+<defs>
+<lineargradient id="m65t4-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fb7185"></stop><stop offset="1" stop-color="#e11d48"></stop></lineargradient>
+<filter height="180%" id="m65t4-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m65t4-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#fb7185" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m65t4-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#fb7185"></path></marker>
+<marker id="m65t4-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m65t4-grid)" height="240" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<text fill="#fda4af" font-size="12" font-weight="700" text-anchor="middle" x="180" y="30">ETAPA 1 — POCO FRECUENTE</text>
+<rect fill="#1f1604" fill-opacity="0" filter="url(#m65t4-glow)" height="90" rx="14" stroke="url(#m65t4-grad)" stroke-width="2.5" width="180" x="30" y="55"></rect>
+<text fill="#ffe4e6" font-size="14" font-weight="700" text-anchor="middle" x="120" y="90">El agente piensa</text>
+<text fill="#fda4af" font-size="11" text-anchor="middle" x="120" y="108">escribe el script</text>
+<text fill="#fda4af" font-size="10" text-anchor="middle" x="120" y="124">(una vez)</text>
+<path d="M212,100 L280,100" marker-end="url(#m65t4-ah)" stroke="#fb7185" stroke-width="1.8"></path>
+<rect fill="#0e1622" height="70" rx="12" stroke="#38bdf8" stroke-width="2" width="160" x="285" y="65"></rect>
+<text fill="#bfe6ff" font-size="13" font-weight="600" text-anchor="middle" x="365" y="95">script.sh</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="365" y="112">listo y guardado</text>
+<line stroke="#374151" stroke-dasharray="4 4" stroke-width="1.5" x1="490" x2="490" y1="20" y2="220"></line>
+<text fill="#fda4af" font-size="12" font-weight="700" text-anchor="middle" x="740" y="30">ETAPA 2 — TODOS LOS DÍAS</text>
+<rect fill="#0e1622" height="60" rx="10" stroke="#38bdf8" stroke-width="1.5" width="140" x="530" y="65"></rect><text fill="#9ad6ff" font-size="11" text-anchor="middle" x="600" y="99">tarea programada</text>
+<path d="M672,95 L715,95" marker-end="url(#m65t4-ahc)" stroke="#38bdf8" stroke-width="1.8"></path>
+<g class="wf-a"><rect fill="#0e1622" height="60" rx="10" stroke="#38bdf8" stroke-width="2" width="140" x="720" y="65"></rect><text fill="#bfe6ff" font-size="11" font-weight="600" text-anchor="middle" x="790" y="90">ejecuta script.sh</text><text fill="#9ad6ff" font-size="9" text-anchor="middle" x="790" y="107">sin pensar</text></g>
+<path d="M862,95 L905,95" marker-end="url(#m65t4-ah)" stroke="#fb7185" stroke-width="1.8"></path>
+<rect fill="#0e1622" filter="url(#m65t4-glow)" height="60" rx="10" stroke="url(#m65t4-grad)" stroke-width="2" width="60" x="910" y="65"></rect><text fill="#ffe4e6" font-size="18" text-anchor="middle" x="940" y="99">✓</text>
+<text fill="#94a3b8" font-size="10" text-anchor="middle" x="790" y="170">rápido, barato, se repite todos los días sin volver a gastar «razonamiento»</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: a la izquierda, el agente piensa y escribe el script UNA vez. A la derecha, la tarea programada ejecuta ese script listo TODOS los días: rápido, sin gastar tokens para «pensar» de nuevo en cada ejecución.</p>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Si tu tarea programada se ejecuta todos los días y nunca cambia de formato, pregúntale al agente: «¿Esto podría convertirse en un script fijo?». La mayoría de las veces, la respuesta es sí, y el ahorro de tiempo y costo es inmediato.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-6-5#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">⌨️ Copy-run: pide el script y la tarea que solo se ejecuta</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-5-t5-p1">
+<strong class="text-rose-400">Objetivo:</strong> pedirle al agente que escriba un script sencillo para una tarea repetitiva tuya y configure una tarea programada que ejecute solo ese script de ahora en adelante — sin volver a «pensar» en cada ejecución.
+      </p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5 mb-4 font-mono text-sm overflow-x-auto">
+<pre class="text-neutral-300 whitespace-pre-wrap">Quero transformar a tarefa "&lt;descreva a tarefa repetitiva, ex: exportar o relatório de vendas
+do dia anterior e salvar em /relatorios&gt;" num script determinístico.
+
+1. Escreva um script simples (bash ou python, o que fizer mais sentido) que execute exatamente
+   essa tarefa, sempre da mesma forma.
+2. Teste o script uma vez rodando manualmente e me mostre o resultado.
+3. Configure uma tarefa agendada para rodar ESSE SCRIPT (não o agente pensando) no horário
+   "&lt;defina o horário, ex: todo dia às 7h&gt;".
+4. Explique em uma frase por que isso fica mais rápido e barato do que o agente decidir tudo
+   de novo a cada execução.</pre>
+</div>
+<p class="text-neutral-400 text-sm mb-6"><strong class="text-rose-400">Cómo verificar:</strong> ejecuta manualmente la tarea programada una vez y comprueba que llama al script (no abre una sesión nueva «pensando»); el tiempo de ejecución debe ser mucho más corto que una sesión normal del agente.</p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-6-5#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🧭 Cuándo NO usar un script fijo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-5-t6-p1">
+        El determinismo es excelente hasta que tu tarea necesita evaluar un contexto que cambia. Si la
+        decisión correcta hoy es distinta de la correcta mañana —porque depende de algo variable (el volumen de
+        correos electrónicos, el contenido de un documento, una condición externa)—, un script fijo fallará porque no sabe
+        adaptarse. En ese caso, vuelve a valer la pena que el agente «piense» (como se vio en el módulo 6.4).
+      </p>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atención</h3>
+<p class="text-neutral-300">No fuerces el determinismo en una tarea que varía de forma natural. Un script «rígido» que intenta cubrir todos los casos posibles se vuelve enorme, difícil de mantener y aun así falla en el primer escenario que no se había previsto. Si la tarea cambia, deja que el agente piense.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Usa un script determinista cuando...</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>La secuencia de pasos siempre es la misma</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>No hay ninguna decisión que tomar, solo ejecutar</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>La velocidad y el costo importan más que la flexibilidad</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Mantén al agente pensando cuando...</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Cada ejecución depende de un contexto diferente</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>La tarea necesita «juzgar» qué es importante</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Los errores inesperados requieren investigación, no repetición</span></li>
+</ul>
+</div>
+</div>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center"><span class="text-rose-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Pregunta: ¿la tarea cambia de formato?</h4>
+<p class="text-neutral-300 text-sm">Si la respuesta es «no, siempre es igual», un script fijo es el camino.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center"><span class="text-rose-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Pregunta: ¿hay una decisión real que tomar?</h4>
+<p class="text-neutral-300 text-sm">Si es así y esa decisión varía, deja que el agente siga pensando (módulo 6.4).</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center"><span class="text-rose-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Si dudas, empieza pensando y migra después</h4>
+<p class="text-neutral-300 text-sm">Ejecuta varias veces como agente mientras piensas; si notas que los pasos siempre se repiten igual, entonces sí conviértelo en un script.</p>
+</div>
+</div>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-6-5#q1">
+<p class="font-medium mb-4">Verificación rápida (opcional): ¿qué tarea es la MEJOR candidata para convertirse en un script determinista?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Responder correos electrónicos de clientes con preguntas diferentes cada día.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Exportar el mismo informe, en el mismo formato, todos los días a las 7h.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Investigar por qué un sistema dejó de funcionar anoche.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-6-5#q1', {
+              answer: 1,
+              explain: { 0: 'Isso varia todo dia — precisa de agente pensando, não script fixo.', 1: 'Isso mesmo: formato sempre igual é o cenário perfeito para determinismo.', 2: 'Investigação exige julgamento a cada caso — não é candidata a script fixo.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-rose-900/40 via-dark-800 to-dark-800 rounded-xl border border-rose-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Determinismo:</strong><span class="text-neutral-400"> secuencia fija, sin decidir nada en el medio.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Cuándo conviene usar:</strong><span class="text-neutral-400"> tareas repetitivas y bien definidas: más rápidas y económicas.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Script:</strong><span class="text-neutral-400"> lista fija de instrucciones, escrita una vez por el agente, que se ejecuta siempre igual.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-rose-400 mt-1">✓</span><div><strong class="text-white">Cuándo NO usar:</strong><span class="text-neutral-400"> el contexto varía → vuelve a valer la pena que el agente piense.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-rose-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">6.6 — Notificaciones y permisos restrictivos: cómo saber que la tarea terminó y cómo proteger tus archivos.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la ruta</a>
+<a class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors" href="modulo-6-6.html">Próximo módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

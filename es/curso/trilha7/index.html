@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>Ruta 7 — Capstone: tu asistente ejecutivo | Tu Empleado Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro';
+          else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark');
+      else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr);
+      else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system'
+        ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+        : (p.font === 'leitura'
+          ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif'
+          : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = {
+        emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66],
+        amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60]
+      };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + '');
+      s.setProperty('--accent-s', a[1] + '%');
+      s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"], section[id^="modulo-"] { scroll-margin-top: 5rem; }
+
+    /* Light mode overrides - OBRIGATORIO (Parte 1) */
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    /* Parte 2 - acento da trilha (Emerald) */
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5, 150, 105, 0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5, 150, 105, 0.18); }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .group:hover .group-hover\:text-emerald-400 { color: #059669; }
+
+    /* Parte 3 - remove gradientes e cores especiais */
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+
+    /* Parte 4 - nav */
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    /* Parte 5 - bordas suavizadas no dark */
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+      .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha7/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha7/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha7/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha7/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha7/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
+<!-- NAVIGATION -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span>
+<span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- CONTEUDO -->
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12" id="conteudo">
+<!-- HEADER -->
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-10">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">RUTA 7 · CAPSTONE</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🏛️ Capstone: tu asistente ejecutivo</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-6">
+        Esta última ruta no enseña una herramienta nueva. Reúne todo lo que aprendiste en las
+        Rutas 0 a 6 —entorno, framework WAT, MCPs, skills, deploy, interfaces y programación—
+        en un único proyecto vivo: tu propio asistente ejecutivo digital. No es un build de un
+        día: es una <strong class="text-neutral-200">casa que construyes en cuatro fases</strong> y que sigue viviendo contigo después de que termina el curso.
+      </p>
+<img alt="Ilustración de una casa digital con cuatro habitaciones que representan las cuatro fases del asistente ejecutivo: contexto, entrevista, primera skill y ritmo de crecimiento" class="w-full h-auto rounded-xl border border-dark-600 mb-8" src="../assets/img/hero-trilha7.png"/>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-2 overflow-hidden">
+<svg aria-label="Las cuatro fases del capstone forman una casa: Casa es la base con las carpetas, Vida es la entrevista que llena esas carpetas de contexto real, Manos es la primera skill que demuestra su valor y Crecimiento es el ritmo que hace que la casa evolucione mes tras mes" class="w-full h-auto" role="img" viewbox="0 0 1000 260">
+<defs>
+<lineargradient id="t7hero-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#059669"></stop></lineargradient>
+<filter height="180%" id="t7hero-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="t7hero-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#34d399" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="t7hero-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#34d399"></path></marker>
+<marker id="t7hero-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#t7hero-grid)" height="260" width="1000" x="0" y="0"></rect>
+<text fill="#a7f3d0" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="500" y="26">el hogar del asistente ejecutivo — cuatro fases, un proyecto vivo</text>
+<!-- roof -->
+<path d="M500,45 L120,140 L880,140 Z" fill="#0e1622" filter="url(#t7hero-glow)" stroke="url(#t7hero-grad)" stroke-width="2.5"></path>
+<text fill="#6ee7b7" font-size="15" font-weight="700" text-anchor="middle" x="500" y="105">🏠 tu casa de contexto</text>
+<g font-family="Inter,sans-serif">
+<g class="wf-a">
+<rect fill="#1e293b" height="90" rx="12" stroke="#38bdf8" stroke-width="2" width="180" x="90" y="150"></rect>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="180" y="176">1. Casa</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="180" y="194">carpetas + CLAUDE.md</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="180" y="210">que apunta, no infla</text>
+</g>
+<path d="M270,195 L318,195" marker-end="url(#t7hero-ah)" opacity="0.7" stroke="#34d399" stroke-width="1.8"></path>
+<g class="wf-a">
+<rect fill="#1e293b" height="90" rx="12" stroke="#38bdf8" stroke-width="2" width="180" x="322" y="150"></rect>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="412" y="176">2. Vida</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="412" y="194">entrevista estructurada</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="412" y="210">llena la casa de contexto</text>
+</g>
+<path d="M502,195 L550,195" marker-end="url(#t7hero-ah)" opacity="0.7" stroke="#34d399" stroke-width="1.8"></path>
+<g class="wf-a">
+<rect fill="#1e293b" height="90" rx="12" stroke="#38bdf8" stroke-width="2" width="180" x="554" y="150"></rect>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="644" y="176">3. Manos</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="644" y="194">1.ª skill + MCPs de</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="644" y="210">calendario/tareas</text>
+</g>
+<path d="M734,195 L782,195" marker-end="url(#t7hero-ah)" opacity="0.7" stroke="#34d399" stroke-width="1.8"></path>
+<g class="wf-a">
+<rect fill="#1e293b" height="90" rx="12" stroke="#38bdf8" stroke-width="2" width="130" x="786" y="150"></rect>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="851" y="176">4. Crece</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="851" y="194">ritmo mensual</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="851" y="210">+ copia de seguridad</text>
+</g>
+<path d="M851,240 C851,258 180,258 180,240" marker-end="url(#t7hero-ahc)" opacity="0.55" stroke="#38bdf8" stroke-width="1.8"></path>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 mt-2">Leyenda: el techo es la casa de contexto que construyes. Las cuatro salas de abajo son las fases: cada una se construye sobre la anterior, y la flecha punteada muestra que Crecimiento siempre vuelve a alimentar la Casa (las nuevas decisiones se convierten en nuevo contexto).</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">6</div>
+<div class="text-xs text-neutral-400">Módulos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">36</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">~4h</div>
+<div class="text-xs text-neutral-400">Duración</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-emerald-400">Capstone</div>
+<div class="text-xs text-neutral-400">Nivel</div>
+</div>
+</div>
+<div aria-label="Progreso de la ruta 7" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="trilha:7" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1">
+<span data-inema-meter-frac="">0 de 36</span>
+<span data-inema-meter-pct="">0%</span>
+</div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<!-- MAPA DA TRILHA -->
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Mapa de la ruta</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-emerald-500/30 p-5 transition-all" href="#modulo-7-1">
+<div class="flex items-center justify-between mb-2">
+<span class="text-emerald-400 font-bold text-sm">7.1</span>
+<span class="text-xs text-neutral-500">~40 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-emerald-400 transition-colors">🏠 Fase 1 — Casa</h3>
+<p class="text-xs text-neutral-400">La base que señala, sin inflarse</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-emerald-500/30 p-5 transition-all" href="#modulo-7-2">
+<div class="flex items-center justify-between mb-2">
+<span class="text-emerald-400 font-bold text-sm">7.2</span>
+<span class="text-xs text-neutral-500">~45 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-emerald-400 transition-colors">🎙️ Fase 2 — Vida</h3>
+<p class="text-xs text-neutral-400">La entrevista que no se puede apresurar</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-emerald-500/30 p-5 transition-all" href="#modulo-7-3">
+<div class="flex items-center justify-between mb-2">
+<span class="text-emerald-400 font-bold text-sm">7.3</span>
+<span class="text-xs text-neutral-500">~40 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-emerald-400 transition-colors">🖐️ Fase 3 — Manos</h3>
+<p class="text-xs text-neutral-400">La primera skill que demuestra su valor</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-emerald-500/30 p-5 transition-all" href="#modulo-7-4">
+<div class="flex items-center justify-between mb-2">
+<span class="text-emerald-400 font-bold text-sm">7.4</span>
+<span class="text-xs text-neutral-500">~35 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-emerald-400 transition-colors">📈 Fase 4 — Crecimiento</h3>
+<p class="text-xs text-neutral-400">El ritmo que hace evolucionar la casa</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-emerald-500/30 p-5 transition-all" href="#modulo-7-5">
+<div class="flex items-center justify-between mb-2">
+<span class="text-emerald-400 font-bold text-sm">7.5</span>
+<span class="text-xs text-neutral-500">~30 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-emerald-400 transition-colors">💾 Copia de seguridad y control de versiones</h3>
+<p class="text-xs text-neutral-400">La casa no puede derrumbarse por un accidente</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-emerald-500/30 p-5 transition-all" href="#modulo-7-6">
+<div class="flex items-center justify-between mb-2">
+<span class="text-emerald-400 font-bold text-sm">7.6</span>
+<span class="text-xs text-neutral-500">~50 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-emerald-400 transition-colors">🏁 Capstone: entrega final</h3>
+<p class="text-xs text-neutral-400">Entregas, evalúas y sigues adelante</p>
+</a>
+</div>
+</section>
+<h2 class="text-2xl font-bold mb-6">Contenido detallado</h2>
+<!-- MODULO 7.1 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="7-1" data-inema-track="7" id="modulo-7-1">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-emerald-400 font-bold">7.1</span>
+<span class="text-xs text-neutral-500">~40 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🏠 Fase 1 — Casa: la carpeta dedicada de tu asistente</h3>
+<p class="text-neutral-400 text-sm">Antes de cualquier entrevista o skill, tu asistente necesita una dirección fija: una carpeta organizada, con un CLAUDE.md que señala el camino en vez de volverse enorme.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-7-1-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">📦</span>
+<div><span class="font-medium">Por qué no es "solo otro proyecto"</span><span class="text-neutral-500 text-sm ml-2">- el asistente vive por separado</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-1-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El asistente ejecutivo está en una carpeta propia, separada de los proyectos de trabajo, porque su memoria trata sobre <em>tú</em>, no sobre un código específico.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Mezclar todo en una sola carpeta hace que el contexto se vuelva confuso y que el agente pierda la distinción entre «tu vida» y «tu proyecto X».</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Carpeta dedicada, contexto personal vs. contexto del proyecto.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-1-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🗂️</span>
+<div><span class="font-medium">Las seis habitaciones de la casa</span><span class="text-neutral-500 text-sm ml-2">- la estructura de carpetas</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-1-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Seis carpetas fijas: <code>contexto/</code>, <code>regras-e-skills/</code>, <code>projetos/</code>, <code>registro-de-decisoes/</code>, <code>referencias/</code> e <code>arquivo/</code> — cada una con un rol único y sin superposiciones.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Una estructura fija evita tener que preguntar "¿dónde guardo esto?" cada vez: tú (y el agente) siempre saben dónde buscar.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Separación por función, previsibilidad de ubicación.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-1-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🧠</span>
+<div><span class="font-medium">CLAUDE.md que indica, no se extiende</span><span class="text-neutral-500 text-sm ml-2">- índice, no depósito</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-1-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El CLAUDE.md de esta casa es breve: un índice que dice "lee contexto/negocio.md para saber sobre la empresa", en vez de pegar todo dentro de él.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Un CLAUDE.md enorme tarda en cargarse y es difícil de mantener: señalar dónde está la información sigue el mismo principio de la Ruta 0.4, ahora aplicado a toda la casa.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Archivo índice, carga bajo demanda, lo conciso supera a lo gigante.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-1-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">📌</span>
+<div><span class="font-medium">Qué va en cada carpeta</span><span class="text-neutral-500 text-sm ml-2">- ejemplos concretos</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-1-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm"><code>contexto/</code> guarda quién eres y el negocio; <code>regras-e-skills/</code>, lo que el agente puede hacer por su cuenta; <code>projetos/</code>, lo que está en curso; <code>registro-de-decisoes/</code>, el historial del «por qué»; <code>referencias/</code>, material complementario; <code>arquivo/</code>, lo que ya pasó.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Sin un ejemplo concreto, la estructura queda abstracta — ver qué va en cada carpeta elimina todas las dudas cuando creas la tuya.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Correspondencia función → carpeta.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-1-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🏗️</span>
+<div><span class="font-medium">Copy-run: crear el espacio</span><span class="text-neutral-500 text-sm ml-2">- comando listo</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-1-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un prompt listo para que Claude Code cree las seis carpetas y el CLAUDE.md-índice de una sola vez, en la carpeta que elijas.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el primer paso práctico de la ruta: sin él, no hay dónde guardar el resultado de la Fase 2.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ejemplo de copy-run, verificación del resultado.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-1-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">➡️</span>
+<div><span class="font-medium">Casa lista, ¿y ahora qué?</span><span class="text-neutral-500 text-sm ml-2">- rumbo a la Fase 2</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-1-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Con todo vacío pero organizado, el siguiente paso es llenarlo <code>contexto/</code> de verdad: eso es lo que hace la Fase 2 (Vida).</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Una casa vacía no ayuda a nadie: el valor real llega cuando tiene contexto real dentro.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Estructura frente a contenido, transición de fase.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-7-1')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors" href="modulo-7-1.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 7.2 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="7-2" data-inema-track="7" id="modulo-7-2">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-emerald-400 font-bold">7.2</span>
+<span class="text-xs text-neutral-500">~45 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🎙️ Fase 2 — Vida: la entrevista que genera los archivos de contexto</h3>
+<p class="text-neutral-400 text-sm">El paso más importante de toda la ruta y el único que no debes apurar: una entrevista estructurada con el propio agente que llena el espacio con contexto real.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-7-2-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🐢</span>
+<div><span class="font-medium">Por qué no apresurarse</span><span class="text-neutral-500 text-sm ml-2">- el paso más importante</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-2-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un contexto superficial («soy emprendedor, tengo una empresa») genera respuestas genéricas; un contexto profundo (cómo decides, qué delegas, cómo prefieres que te avisen) genera un asistente que parece conocerte de verdad.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es la diferencia entre un asistente de adorno y uno que realmente te ahorra tiempo.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Profundidad del contexto, garbage in garbage out.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-2-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🙋</span>
+<div><span class="font-medium">Bloque 1: quién eres</span><span class="text-neutral-500 text-sm ml-2">- papel, rutina, objetivos</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-2-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Preguntas sobre tu rol, tu rutina de trabajo y lo que intentas lograr: se convierte <code>contexto/quem-e-voce.md</code>.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Todo el resto de la entrevista se basa en este bloque; sin él, el asistente no sabe para quién está trabajando.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Perfil, rutina, objetivos.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-2-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🏢</span>
+<div><span class="font-medium">Bloque 2: negocio y equipo</span><span class="text-neutral-500 text-sm ml-2">- lo que necesita saber para ayudar</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-2-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Lo que hace tu empresa, quiénes forman el equipo, quién toma cada decisión: se convierte en <code>contexto/negocio.md</code> e <code>contexto/time.md</code>.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Sin esto, el asistente no distingue una decisión tuya de una decisión que debe pasar por otra persona.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Estructura organizativa, responsable de la decisión.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-2-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🎯</span>
+<div><span class="font-medium">Bloque 3: prioridades y qué delegar</span><span class="text-neutral-500 text-sm ml-2">- la pregunta más valiosa</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-2-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Qué quieres quitarte primero de encima y qué nunca quieres delegar, pase lo que pase: se convierte en <code>contexto/prioridades.md</code>.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es esta lista la que orienta la elección de la primera skill en la Fase 3: sin una prioridad clara, construyes la skill equivocada.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Qué delegar y qué nunca automatizar.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-2-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">💬</span>
+<div><span class="font-medium">Bloque 4: preferencias de comunicación</span><span class="text-neutral-500 text-sm ml-2">- cómo te avisa</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-2-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Tono directo o detallado, cuándo avisar y cuándo no molestar: se convierte en <code>contexto/comunicacao.md</code>, el mismo tipo de regla vista en la Trilha 6.6.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Si un asistente te interrumpe de la manera equivocada y en el momento equivocado, lo desactivas rápidamente, aunque técnicamente funcione bien.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Tono de comunicación, ventana de notificación.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-2-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🎤</span>
+<div><span class="font-medium">Copy-run: ejecutando la entrevista</span><span class="text-neutral-500 text-sm ml-2">- prompt listo</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-2-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un prompt listo que le pide al agente que guíe la entrevista pregunta por pregunta y guarde las respuestas en los archivos correctos al final.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el ejercicio que realmente llena la casa: si no lo ejecutas, los archivos quedan vacíos.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ejemplo de copy-run, verificación (leer los .md generados).</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-7-2')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors" href="modulo-7-2.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 7.3 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="7-3" data-inema-track="7" id="modulo-7-3">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-emerald-400 font-bold">7.3</span>
+<span class="text-xs text-neutral-500">~40 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🖐️ Fase 3 — Manos: la primera skill que demuestra su valor</h3>
+<p class="text-neutral-400 text-sm">El contexto guardado sin acción no sirve de nada. Aquí tu asistente adquiere su primera skill de verdad, más MCPs de calendario y tareas, y programa el loop que creaste en la Trilha 6.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-7-3-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🏆</span>
+<div><span class="font-medium">Cómo elegir la skill correcta</span><span class="text-neutral-500 text-sm ml-2">- usar las prioridades de la Fase 2</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-3-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Tomar la lista de <code>contexto/prioridades.md</code> y elegir la tarea recurrente que más tiempo te consume hoy, no la más fácil de automatizar.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Una primera skill que resuelve algo que sientes todos los días genera confianza para continuar; una trivial se convierte en un simple ejercicio sin uso real.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Recurrencia, problema real, beneficio rápido.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-3-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🧩</span>
+<div><span class="font-medium">Construyendo con el framework de 6 pasos</span><span class="text-neutral-500 text-sm ml-2">- reutilizar la Ruta 3</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-3-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Aplicar directamente el framework de 6 pasos de la Trilha 3.3 para convertir la tarea elegida en una skill en <code>regras-e-skills/</code>.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Ya sabes hacerlo: el capstone es justamente el lugar donde esa habilidad vuelve a aparecer, ahora con un propósito real.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Reutilización del framework, skill del proyecto vs. global.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-3-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">📅</span>
+<div><span class="font-medium">MCP de calendario</span><span class="text-neutral-500 text-sm ml-2">- él ve tu agenda</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-3-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Instalar y autenticar un MCP (protocolo que le da "manos" al agente, visto en el curso 2) que lee y crea eventos en el calendario.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Un asistente ejecutivo que no puede ver tu agenda es decorativo: necesita saber cuándo estás disponible y cuándo no.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">MCP de calendario, autenticación, permiso de lectura/escritura.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-3-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">✅</span>
+<div><span class="font-medium">MCP de tareas</span><span class="text-neutral-500 text-sm ml-2">- sabe qué está pendiente</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-3-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un segundo MCP conectado a tu gestor de tareas (o un archivo simple <code>projetos/tarefas.md</code>, si no usas una app externa).</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Junto con el calendario, le da al asistente una visión completa de "qué hacer" y "cuándo hacerlo": la base de cualquier asistente ejecutivo real.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">MCP de tareas, fuente única de pendientes.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-3-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">⏰</span>
+<div><span class="font-medium">Programando con la Ruta 6</span><span class="text-neutral-500 text-sm ml-2">- reutilizar la rutina matutina</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-3-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Reutilizar directamente la rutina programada de la Trilha 6.7 para ejecutar la nueva skill en un horario fijo, sin que tengas que iniciarla manualmente.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es lo que transforma una skill manual en un asistente que trabaja solo: el corazón del «empleado digital».</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Reutilización de la programación, ejecución autónoma.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-3-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🧪</span>
+<div><span class="font-medium">Copy-run: primera ejecución real</span><span class="text-neutral-500 text-sm ml-2">- prompt + verificación</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-3-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un prompt listo que activa la skill nueva por primera vez y pide un resumen de lo que hizo — tu comprobación de que «funcionó de verdad».</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Ver el trabajo en acción es lo que marca la diferencia entre "leí sobre esto" y "construí esto".</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ejemplo de copy-run, prueba de valor.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-7-3')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors" href="modulo-7-3.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 7.4 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="7-4" data-inema-track="7" id="modulo-7-4">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-emerald-400 font-bold">7.4</span>
+<span class="text-xs text-neutral-500">~35 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">📈 Fase 4 — Crecimiento: el ritmo que hace evolucionar la casa</h3>
+<p class="text-neutral-400 text-sm">El trabajo con un asistente no termina el día en que queda listo. Aquí estableces el ritmo mensual/trimestral que mantiene actualizado el contexto y la memoria permanente.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-7-4-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🌱</span>
+<div><span class="font-medium">Proyecto en marcha, no una construcción de un día</span><span class="text-neutral-500 text-sm ml-2">- la mentalidad de la Fase 4</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-4-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Tu vida cambia, tu negocio cambia: el contexto que escribiste en la Fase 2 queda desactualizado si nadie lo revisa. La Fase 4 es el hábito que lo evita.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Un asistente con contexto desactualizado empieza a dar respuestas incorrectas sin avisar: empeora en silencio, no se rompe.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Contexto vivo, obsolescencia silenciosa.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-4-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🗓️</span>
+<div><span class="font-medium">Ritmo mensual: revisión del contexto</span><span class="text-neutral-500 text-sm ml-2">- 15 minutos al mes</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-4-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Una lista breve: qué cambió en el negocio, en el equipo, en las prioridades — y actualizar los archivos de <code>contexto/</code> correspondientes.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">15 minutos al mes es poco; dejar que se acumulen 6 meses de cambios sin registrar es caro de corregir después.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Lista de verificación de revisión, frecuencia fija.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-4-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">📆</span>
+<div><span class="font-medium">Ritmo trimestral: qué ampliar</span><span class="text-neutral-500 text-sm ml-2">- nueva skill, nuevo MCP</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-4-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Cada tres meses, volver a mirar <code>contexto/prioridades.md</code> y decidir: ¿se puede crear otra skill? ¿Conectar otro MCP?</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">La casa crece habitación por habitación: intentar ampliarlo todo de una vez va en contra del espíritu de las trilhas anteriores.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Crecimiento incremental, priorización recurrente.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-4-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">📜</span>
+<div><span class="font-medium">Registro de decisiones</span><span class="text-neutral-500 text-sm ml-2">- el "por qué" que no se pierde</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-4-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Cada vez que tomas una decisión importante con ayuda del asistente, una línea breve va a <code>registro-de-decisoes/</code>: fecha, decisión, motivo.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Meses después, «¿por qué decidimos esto?» se convierte en una búsqueda de 10 segundos en vez de un misterio.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Registro append-only, historial consultable.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-4-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🧬</span>
+<div><span class="font-medium">Memoria permanente</span><span class="text-neutral-500 text-sm ml-2">- lo que persiste entre sesiones</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-4-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">A diferencia de un chatbot que lo olvida todo en cada nueva conversación, los archivos de la casa son la memoria permanente de tu asistente — sobrevive de una sesión a otra.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es esta memoria persistente la que distingue a un asistente ejecutivo de un chatbot genérico: el tema central del módulo 7.6.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Memoria persistente vs. memoria de sesión.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-4-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">📋</span>
+<div><span class="font-medium">Copy-run: la lista de verificación mensual</span><span class="text-neutral-500 text-sm ml-2">- prompt de revisión</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-4-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un prompt listo que le pide al agente que revise todo el espacio y señale lo que parece desactualizado — tu revisión mensual guiada.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Tener el prompt listo reduce la fricción que te haría saltarte el ritmo mensual en el ajetreo del día a día.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ejemplo de copy-run, revisión asistida.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-7-4')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors" href="modulo-7-4.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 7.5 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="7-5" data-inema-track="7" id="modulo-7-5">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-emerald-400 font-bold">7.5</span>
+<span class="text-xs text-neutral-500">~30 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">💾 Copia de seguridad y control de versiones: la casa no puede derrumbarse</h3>
+<p class="text-neutral-400 text-sm">Meses de contexto acumulados en una sola laptop son un accidente a punto de ocurrir. Aquí proteges tu entorno con control de versiones y copias de seguridad reales.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-7-5-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">⚠️</span>
+<div><span class="font-medium">El riesgo de tener una sola laptop</span><span class="text-neutral-500 text-sm ml-2">- meses de contexto en un solo lugar</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-5-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Si la carpeta de tu casa solo existe en tu computadora, un disco duro que se daña o un café derramado puede borrar meses de entrevistas, decisiones y ajustes.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">El contexto es el activo más valioso de todo este recorrido; protegerlo es tan importante como crearlo.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Punto único de falla, activo digital.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-5-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">📚</span>
+<div><span class="font-medium">Git como diario de la casa</span><span class="text-neutral-500 text-sm ml-2">- cada cambio se convierte en un registro</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-5-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-neutral-300 text-sm"><span class="text-emerald-400 font-semibold">¿Eres nuevo aquí?</span> Git es un programa que guarda el historial de todas las versiones de una carpeta: cada cambio queda registrado con fecha, sin borrar el anterior.</span></div>
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Convertir la carpeta de casa en un repositorio Git, con un commit en cada revisión mensual — el mismo Git que se usa en el deploy de la Trilha 4.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Además de una copia de seguridad, obtienes un historial: puedes ver exactamente qué cambió en cada revisión.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Git, commit, historial de versiones.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-5-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🔒</span>
+<div><span class="font-medium">Repositorio privado</span><span class="text-neutral-500 text-sm ml-2">- nunca público</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-5-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La casa contiene datos personales y de negocio; el repositorio remoto (GitHub, GitLab o similar) tiene que ser <strong class="text-neutral-200">privado</strong>, siempre.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Publicar por error una carpeta con contexto personal expone información sensible que no se puede recuperar.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Repositorio privado, dato sensible, secreto (recuerda la Trilha 4.4).</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-5-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🔁</span>
+<div><span class="font-medium">Copia de seguridad automática en la Trilha 6</span><span class="text-neutral-500 text-sm ml-2">- commit programado</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-5-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Una rutina programada (Trilha 6.2) que hace commit y push automáticamente cada semana, incluso si olvidas hacerlo manualmente.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">La copia de seguridad que depende de que alguien se acuerde falla; la copia programada no depende de que nadie se acuerde.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Automatización de copias de seguridad, programación, resiliencia.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-5-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">↩️</span>
+<div><span class="font-medium">Recuperación de un error</span><span class="text-neutral-500 text-sm ml-2">- volver a una versión anterior</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-5-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Si una entrevista o una skill nueva desordena un archivo, el historial de Git permite volver a una versión anterior con un comando sencillo.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Saber que puedes deshacer los cambios reduce el miedo a experimentar con la casa.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Reversión, checkpoint, seguridad para experimentar.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-5-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🛡️</span>
+<div><span class="font-medium">Copy-run: configurar el repositorio</span><span class="text-neutral-500 text-sm ml-2">- prompt listo</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-5-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un prompt listo que inicializa Git en la carpeta de inicio, crea el repositorio remoto privado y hace el primer commit.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Deja la casa protegida antes de seguir con el capstone final del módulo 7.6.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ejemplo de copy-run, verificación mediante <code>git log</code>.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-7-5')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors" href="modulo-7-5.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 7.6 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="7-6" data-inema-track="7" id="modulo-7-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-emerald-400 font-bold">7.6</span>
+<span class="text-xs text-neutral-500">~50 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🏁 Capstone: entrega final y qué lo diferencia de un chatbot</h3>
+<p class="text-neutral-400 text-sm">El cierre de todo el curso: los criterios de evaluación de tu capstone, la diferencia real entre esto y cualquier chatbot, y lo que construiste en los últimos 7 días.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-7-6-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">📦</span>
+<div><span class="font-medium">Qué compone la entrega final</span><span class="text-neutral-500 text-sm ml-2">- hogar + vida + manos + crecimiento</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-6-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La carpeta completa de la casa, con contexto real (no un ejemplo ficticio), al menos una skill funcionando, MCP conectados y el repositorio con respaldo — las cuatro fases juntas.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Ver la lista completa de lo que significa "listo" evita cerrar el capstone con una fase a medias.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Lista de verificación de entrega, integración de las cuatro fases.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-6-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">📐</span>
+<div><span class="font-medium">Criterios de evaluación</span><span class="text-neutral-500 text-sm ml-2">- cómo saber si quedó bien</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-6-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Cuatro preguntas: ¿el contexto es específico (no genérico)? ¿La skill resolvió un problema real? ¿La programación se está ejecutando sola? ¿Existe el respaldo?</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Sin un criterio objetivo, es difícil saber si el capstone terminó o si todavía falta algo esencial.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Criterio de evaluación, autoevaluación guiada.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-6-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🤖</span>
+<div><span class="font-medium">La diferencia real con un chatbot</span><span class="text-neutral-500 text-sm ml-2">- contexto, acciones, memoria</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-6-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Tres diferencias concretas: (1) el contexto de tu proyecto: sabe quién eres sin que tengas que volver a explicarlo; (2) acciones reales: edita, agenda y ejecuta comandos, no solo describe; (3) memoria que persiste entre sesiones: la casa no olvida.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Cierra el círculo que quedó abierto en la Ruta 0.1 («agente ≠ chatbot»), ahora con un ejemplo concreto que tú mismo construiste.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Contexto persistente, acción real, memoria entre sesiones.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-6-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🎉</span>
+<div><span class="font-medium">Lo que construiste en 7 días</span><span class="text-neutral-500 text-sm ml-2">- mirando hacia atrás</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-6-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un entorno configurado (T0), el framework WAT internalizado (T1), herramientas a través de MCP (T2), skills propias (T3), deploy fuera de la laptop (T4), interfaces publicadas (T5), programación y loops (T6), y ahora un asistente que reúne todo eso (T7).</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Nombrar lo que se construyó refuerza que no fue teoría suelta: fueron siete capacidades reales, apiladas.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Retrospectiva, capacidades acumuladas.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-6-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🧭</span>
+<div><span class="font-medium">Caminos para seguir después</span><span class="text-neutral-500 text-sm ml-2">- el curso termina, el proyecto no</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-6-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Tres caminos posibles: profundizar en una ruta específica que te resultó superficial, agregar una skill más por mes en la Fase 4 o compartir lo que aprendiste enseñándole a otra persona.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Terminar el curso sin un siguiente paso hace que el ritmo se pierda; nombrar opciones concretas mantiene el proyecto realmente vivo.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Continuidad, profundización, enseñanza como refuerzo.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-7-6-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🏆</span>
+<div><span class="font-medium">Copy-run: la autoevaluación final</span><span class="text-neutral-500 text-sm ml-2">- prompt de cierre</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-7-6-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-emerald-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un prompt listo que le pide al propio asistente que aplique los cuatro criterios de evaluación a tu espacio e indique qué falta, si falta algo.</p></div>
+<div><span class="text-emerald-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el ejercicio de cierre de todo el curso: la prueba final de que el asistente se entiende a sí mismo.</p></div>
+<div><span class="text-emerald-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ejemplo de copy-run, autoevaluación, cierre del curso.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-7-6')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors" href="modulo-7-6.html">Ver completo</a>
+</div>
+</article>
+<!-- ENCERRAMENTO DO CURSO -->
+<section class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl py-10 px-6 sm:px-10 border border-dark-600 mt-4 mb-4">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">FIN DEL CURSO</span>
+<h2 class="text-2xl sm:text-3xl font-bold mb-4">🎓 Lo que construiste en 7 días</h2>
+<p class="text-neutral-300 max-w-3xl mb-6">
+        No hiciste un curso de «prompts listos». Montaste un entorno de trabajo, entendiste el
+        ciclo real de un agente de código, le diste manos con MCP, le enseñaste procesos con skills,
+        sacaste todo de la laptop con deploy, le diste ojos con interfaces y ritmo con programación, y ahora
+        tienes un asistente ejecutivo que lleva tu contexto de una sesión a otra. Eso es lo que diferencia
+        a un «empleado digital» de un chatbot: contexto de tu proyecto, acciones reales y memoria persistente.
+      </p>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+<div class="text-sm font-semibold text-emerald-400 mb-1">🔍 Profundizar</div>
+<p class="text-xs text-neutral-400">Vuelve a una trilha que te haya resultado superficial y repite el ejercicio copy-run con más calma.</p>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+<div class="text-sm font-semibold text-emerald-400 mb-1">🌱 Expandir</div>
+<p class="text-xs text-neutral-400">Usa el ritmo trimestral de la Fase 4 para agregar una nueva skill o MCP en cada ciclo.</p>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 border border-dark-600">
+<div class="text-sm font-semibold text-emerald-400 mb-1">🤝 Enseñar</div>
+<p class="text-xs text-neutral-400">Mostrarle a otra persona tu entorno de contexto es la mejor forma de fijar lo que aprendiste.</p>
+</div>
+</div>
+</section>
+<!-- NAVEGACAO -->
+<div class="flex flex-col sm:flex-row gap-4 mt-12">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../trilha6/index.html">← Ruta anterior: Tiempo</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="../../index.html">Volver al curso →</a>
+</div>
+</main>
+<!-- MODAIS -->
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-7-1" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">7.1</span><span class="font-semibold">Fase 1 — Casa</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-7-1.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-7-2" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">7.2</span><span class="font-semibold">Fase 2 — Vida</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-7-2.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-7-3" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">7.3</span><span class="font-semibold">Fase 3 — Manos</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-7-3.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-7-4" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">7.4</span><span class="font-semibold">Fase 4 — Crecimiento</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-7-4.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-7-5" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">7.5</span><span class="font-semibold">Copia de seguridad y control de versiones</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-7-5.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-7-6" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">7.6</span><span class="font-semibold">Capstone: entrega final</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-7-6.html"></iframe>
+</div>
+</div>
+<!-- FOOTER -->
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Tu Empleado Digital — INEMA.CLUB 2026</p>
+</div>
+</footer>
+<!-- SCRIPTS -->
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) { exp.classList.remove('active'); exp.previousElementSibling && exp.previousElementSibling.setAttribute && exp.previousElementSibling.setAttribute('aria-expanded','false'); }
+      });
+      explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', explanation.classList.contains('active') ? 'true' : 'false');
+    }
+
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else {
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+    }
+    function closeModal() {
+      document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden'));
+      document.body.style.overflow = 'auto';
+    }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init({ autoResume: true });
+    }
+  </script>
+</body>
+</html>

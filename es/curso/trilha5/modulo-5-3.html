@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>5.3 El ciclo de screenshots | Tu Empleado Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'teal' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'teal');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.teal;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13, 148, 136, 0.12); }
+    html:not(.dark) .bg-teal-500\/10 { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .border-teal-500\/30 { border-color: rgba(13, 148, 136, 0.25); }
+    html:not(.dark) .hover\:bg-teal-500\/30:hover { background-color: rgba(13, 148, 136, 0.18); }
+    html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .hover\:text-teal-400:hover { color: #0d9488; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @keyframes wf-spin { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+      .wf-spin { animation: wf-spin 18s linear infinite; transform-origin: center; }
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha5/modulo-5-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha5/modulo-5-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha5/modulo-5-3.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-teal-400 bg-teal-500/10" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-teal-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-teal-400" href="index.html">Trilha 5</a><span>/</span>
+<span class="text-teal-400">Módulo 5.3</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.3 — LO MÁS IMPORTANTE DE LA TRAYECTORIA</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4">📸 El bucle de capturas de pantalla</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        Este es el mecanismo que hace que el agente deje de ser ciego. Por sí solo, solo ve texto y código;
+        con el loop de capturas de pantalla, empieza a ver su propia pantalla, compararla con lo que pediste y
+        corregirse sin que tengas que señalar cada detalle.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Intermedio</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Práctica</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 5.3" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:5-3" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-1">1. Por qué "ver" lo cambia todo</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-2">2. Las 5 etapas del bucle</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-3">3. Lo que cambia en cada vuelta</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-4">4. Pidiendo el bucle en la práctica</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-5">5. Errores que rompen el ciclo</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-6">6. Checklist y ejercicio</a></li>
+</ul>
+</nav>
+<article data-inema-module="5-3" data-inema-track="5" id="modulo-5-3">
+<!-- TÓPICO 1 — ENTENDER -->
+<section class="mb-16" data-inema-topic="modulo-5-3#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">👁️ Por qué "ver" tu propio trabajo lo cambia todo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-3-t1-p1">
+        En el módulo 5.1 viste por qué el front-end de un agente queda «genérico»: escribe el código mirando solo el código, nunca el resultado. Es como pintar un cuadro con los ojos vendados: sabes que moviste el pincel, pero no sabes si acertaste con el color, el trazo o la proporción. El código puede ser sintácticamente perfecto y, aun así, la página renderizada (lo que aparece realmente en la pantalla cuando el navegador dibuja el HTML/CSS) puede verse fea, estar rota o no ser lo que pediste.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-3-t1-p2">
+<strong class="text-teal-400">¿Eres nuevo aquí?</strong> <strong class="text-teal-400">Renderizar</strong> es el proceso
+        por el que el navegador transforma código (HTML, CSS, JavaScript) en píxeles en la pantalla: es la diferencia entre «leer la receta»
+        y «probar el plato terminado». Un agente que solo lee la receta nunca sabe si el plato quedó bien.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-3-t1-p3">
+        El ciclo de capturas de pantalla resuelve exactamente eso: le da al agente una forma de «probar el plato». Escribe el
+        código, mira el resultado renderizado mediante una captura de pantalla, lo compara con lo que se pidió y
+        lo corrige. Sin este ciclo, el agente entrega el primer intento y reza. Con él, el agente itera —repite
+        el ciclo varias veces— hasta que el resultado coincide con el objetivo. Esta es, por sí sola, la mayor palanca para
+        mejorar la calidad visual que existe en este curso.
+      </p>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">💡</span> Concepto principal</h3>
+<p class="text-neutral-300 mb-4">Sin el ciclo, el agente está ciego a su propio resultado visual — solo ve texto y código. Con el ciclo, adquiere un sentido nuevo: la capacidad de recibir feedback sobre lo que produjo.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>Ciego: escribe código → entrega → descubres el defecto después.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>Con visión: escribe código → ve el resultado → lo corrige antes de entregártelo.</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Sin el ciclo</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>El botón desalineado solo aparece cuando abres la página</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Color de fondo incorrecto, texto ilegible: el agente «no lo sabía»</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Cada corrección se convierte en una nueva ronda de conversación contigo</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Con el bucle</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>El agente ya vio el botón torcido y lo ajustó antes de avisarte</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>El contraste, el espaciado y la alineación ya están corregidos</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Solo participas en la revisión final, no en la búsqueda de defectos obvios</span></li>
+</ul>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 2 — ENTENDER: SVG circular -->
+<section class="mb-16" data-inema-topic="modulo-5-3#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🔄 Las 5 etapas del bucle, en círculo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-3-t2-p1">
+        El bucle tiene cinco etapas que se repiten en círculo — no es una línea recta que termina, es una rueda que
+        gira hasta que el resultado queda bien. Cada vuelta completa es una <strong class="text-teal-400">iteración</strong>
+        (una repetición del mismo proceso, intentando mejorar un poco cada vez).
+      </p>
+<div class="rounded-2xl border border-teal-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Diagrama circular del ciclo de captura de pantalla con cinco etapas en secuencia: escribe el código, inicia el servidor local, captura la pantalla, compara con el objetivo, corrige el código — y la flecha vuelve de la etapa 5 a la etapa 1, cerrando el círculo hasta que el resultado coincida" class="w-full h-auto" role="img" viewbox="0 0 760 620">
+<defs>
+<lineargradient id="m3-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2dd4bf"></stop><stop offset="1" stop-color="#0d9488"></stop></lineargradient>
+<filter height="220%" id="m3-glow" width="220%" x="-60%" y="-60%"><fegaussianblur result="b" stddeviation="2.4"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m3-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#2dd4bf" opacity="0.10" r="1.3"></circle></pattern>
+<marker id="m3-ah" markerheight="10" markerwidth="10" orient="auto" refx="7" refy="5"><path d="M0,0 L9,5 L0,10 L2.6,5 Z" fill="#2dd4bf"></path></marker>
+<marker id="m3-ahc" markerheight="10" markerwidth="10" orient="auto" refx="7" refy="5"><path d="M0,0 L9,5 L0,10 L2.6,5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m3-grid)" height="620" width="760" x="0" y="0"></rect>
+<g class="wf-spin" opacity="0.5">
+<circle cx="380" cy="300" fill="none" r="215" stroke="#0d9488" stroke-dasharray="2 10" stroke-width="1"></circle>
+</g>
+<circle cx="380" cy="300" fill="none" opacity="0.35" r="180" stroke="#38bdf8" stroke-dasharray="4 6" stroke-width="1.5"></circle>
+<!-- estágio 1: topo -->
+<g class="wf-a">
+<circle cx="380" cy="90" fill="#0e1622" filter="url(#m3-glow)" r="66" stroke="url(#m3-grad)" stroke-width="2.5"></circle>
+<text fill="#5eead4" font-size="20" font-weight="700" text-anchor="middle" x="380" y="80">1</text>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="380" y="100">Escribe</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="380" y="115">el código</text>
+</g>
+<!-- estágio 2: direita superior -->
+<g class="wf-a">
+<circle cx="601" cy="230" fill="#0e1622" filter="url(#m3-glow)" r="66" stroke="url(#m3-grad)" stroke-width="2.5"></circle>
+<text fill="#5eead4" font-size="20" font-weight="700" text-anchor="middle" x="601" y="220">2</text>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="601" y="240">Se inicia</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="601" y="255">servidor local</text>
+</g>
+<!-- estágio 3: direita inferior -->
+<g class="wf-a">
+<circle cx="519" cy="470" fill="#0e1622" filter="url(#m3-glow)" r="66" stroke="url(#m3-grad)" stroke-width="2.5"></circle>
+<text fill="#5eead4" font-size="20" font-weight="700" text-anchor="middle" x="519" y="460">3</text>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="519" y="480">Captura</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="519" y="495">la captura de pantalla</text>
+</g>
+<!-- estágio 4: esquerda inferior -->
+<g class="wf-a">
+<circle cx="241" cy="470" fill="#0e1622" filter="url(#m3-glow)" r="66" stroke="url(#m3-grad)" stroke-width="2.5"></circle>
+<text fill="#5eead4" font-size="20" font-weight="700" text-anchor="middle" x="241" y="460">4</text>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="241" y="480">Compara</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="241" y="495">con el objetivo</text>
+</g>
+<!-- estágio 5: esquerda superior -->
+<g class="wf-a">
+<circle cx="159" cy="230" fill="#0e1622" filter="url(#m3-glow)" r="66" stroke="url(#m3-grad)" stroke-width="2.5"></circle>
+<text fill="#5eead4" font-size="20" font-weight="700" text-anchor="middle" x="159" y="220">5</text>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="159" y="240">Corrige</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="159" y="255">el código</text>
+</g>
+<!-- setas conectando o círculo 1→2→3→4→5→1 -->
+<path d="M436,120 C 500,150 560,175 585,168" fill="none" marker-end="url(#m3-ah)" opacity="0.8" stroke="#2dd4bf" stroke-width="2"></path>
+<path d="M583,292 C 570,350 550,395 540,408" fill="none" marker-end="url(#m3-ah)" opacity="0.8" stroke="#2dd4bf" stroke-width="2"></path>
+<path d="M453,485 C 390,505 330,505 285,489" fill="none" marker-end="url(#m3-ah)" opacity="0.8" stroke="#2dd4bf" stroke-width="2"></path>
+<path d="M199,412 C 175,375 165,320 160,298" fill="none" marker-end="url(#m3-ah)" opacity="0.8" stroke="#2dd4bf" stroke-width="2"></path>
+<path d="M180,172 C 230,140 290,120 328,113" fill="none" marker-end="url(#m3-ahc)" opacity="0.9" stroke="#38bdf8" stroke-width="2.4"></path>
+<!-- centro: bate ou não -->
+<circle cx="380" cy="300" fill="#0e1622" r="82" stroke="#38bdf8" stroke-dasharray="1 0" stroke-width="2"></circle>
+<text fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle" x="380" y="288">Coincidió con</text>
+<text fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle" x="380" y="305">¿el objetivo?</text>
+<text fill="#93c5fd" font-size="10" text-anchor="middle" x="380" y="325">no → vuelve a girar</text>
+<text fill="#5eead4" font-size="10" font-weight="600" text-anchor="middle" x="380" y="340">sí → entrega</text>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: el loop siempre sigue el mismo orden: escribe, inicia el servidor, captura, compara, corrige; y vuelve al inicio (flecha cian) hasta que la pregunta «¿coincide con el objetivo?» del centro recibe un sí. Cada vuelta completa es una iteración.</p>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro de cada etapa</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>1. Escribe:</strong> el agente genera o ajusta el HTML/CSS/JS del front-end.</li>
+<li><strong>2. Inicia el servidor local:</strong> un programa que se ejecuta en tu propia computadora y muestra la página como si fuera un sitio web, pero solo tú (y el agente) pueden verla en una dirección como <code class="text-teal-300">localhost:3000</code>.</li>
+<li><strong>3. Captura:</strong> toma una captura de pantalla (una imagen exacta de lo que está en pantalla en ese instante) usando automatización del navegador —un programa que controla el navegador sin que toques el mouse, abre la página y «presiona el botón» para tomar la captura por sí solo.</li>
+<li><strong>4. Compara:</strong> mira la captura de pantalla junto a lo que se pidió —la referencia, el objetivo, la marca— y señala las diferencias.</li>
+<li><strong>5. Corrige:</strong> ajusta el código según lo que vio que estaba mal, y el ciclo vuelve a la etapa 1.</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 3 — VER POR DENTRO -->
+<section class="mb-16" data-inema-topic="modulo-5-3#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🔬 Mira por dentro: qué cambia en cada vuelta</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-3-t3-p1">
+        En la primera vuelta del ciclo, el agente suele acertar con la estructura general: los bloques están en el lugar correcto,
+        el texto está ahí, pero falla en detalles que solo se perciben visualmente: poco espacio, mal contraste,
+        elementos «pegados» entre sí. Es exactamente el tipo de error que pasa desapercibido al leer solo el código,
+        pero salta a la vista en una captura de pantalla.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-3-t3-p2">
+        En la segunda y tercera vueltas, el agente ya está corrigiendo detalles: la alineación del botón, el tamaño
+        de la fuente en el celular (lo que cambia cuando la pantalla es más pequeña, llamado <strong class="text-teal-400">adaptable</strong>,
+        cuando el diseño se adapta al tamaño de la pantalla), el color al pasar el cursor (el efecto visual cuando el mouse pasa por
+        encima de un botón). Ese pulido incremental —pequeñas correcciones, repetidas— es lo que separa un resultado
+        «genérico» de uno «casi profesional».
+      </p>
+<div class="rounded-xl border border-dark-600 overflow-hidden mb-6">
+<div class="grid grid-cols-1 sm:grid-cols-2">
+<div class="p-6 bg-red-900/10 border-b sm:border-b-0 sm:border-r border-dark-600">
+<h4 class="font-bold text-red-400 mb-3">Antes (vuelta 1)</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li>• El botón "Suscribirse" queda cortado en el borde derecho del celular</li>
+<li>• Texto blanco sobre fondo amarillo claro (ilegible)</li>
+<li>• El título y el párrafo están pegados, sin espacio</li>
+</ul>
+</div>
+<div class="p-6 bg-emerald-900/10">
+<h4 class="font-bold text-emerald-400 mb-3">Después (vuelta 3)</h4>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li>• El botón queda dentro del margen, con espacio a los lados</li>
+<li>• Contraste ajustado: texto oscuro sobre fondo claro</li>
+<li>• Espaciado entre el título y el párrafo, diseño que «respira»</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Pide siempre al menos dos vueltas completas del ciclo antes de darlo por listo. La primera resuelve lo obvio; en la segunda el resultado pasa de "funciona" a "parece profesional".</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 4 — CONSTRUIR: timeline + copy-run -->
+<section class="mb-16" data-inema-topic="modulo-5-3#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🛠️ Construir: pedir el bucle en la práctica</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-3-t4-p1">
+        En la práctica, no necesitas «enseñarle» a Claude Code a iniciar un servidor y tomar capturas de pantalla: ya tiene
+        esa capacidad cuando se lo pides. Tu trabajo es formular la solicitud de manera que exija el ciclo completo: dale el
+        objetivo visual (la referencia), pídele explícitamente que inicie el servidor, capture, compare y corrija,
+        y que repita hasta igualarlo.
+      </p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Define el objetivo visual</h4>
+<p class="text-neutral-300 text-sm">Describe cómo debe verse la página o señala una referencia (captura de pantalla, sitio, imagen de la marca; se profundiza en el módulo 5.5).</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Pide el ciclo explícitamente</h4>
+<p class="text-neutral-300 text-sm">"Inicia un servidor local, toma una captura de pantalla, compárala con el objetivo y corrígela" — sin esa instrucción clara, el agente puede pasar directamente a la entrega sin verificarlo visualmente.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Exige repetir hasta acertar</h4>
+<p class="text-neutral-300 text-sm">Pídele que repita el ciclo hasta que el resultado coincida con el objetivo; no aceptes la primera captura como "listo".</p>
+</div>
+</div>
+</div>
+<div class="rounded-2xl border border-teal-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Timeline lineal del ciclo de capturas de pantalla: escribir, iniciar el servidor, capturar, comparar, corregir y una flecha cian de vuelta al inicio que indica la repetición hasta que el resultado coincida con el objetivo" class="w-full h-auto" role="img" viewbox="0 0 1000 150">
+<defs>
+<lineargradient id="m3-tl-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#2dd4bf"></stop><stop offset="1" stop-color="#0d9488"></stop></lineargradient>
+<marker id="m3-tl-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#2dd4bf"></path></marker>
+<marker id="m3-tl-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<line stroke="url(#m3-tl-grad)" stroke-width="3" x1="60" x2="940" y1="75" y2="75"></line>
+<g font-family="Inter,sans-serif">
+<g class="wf-a"><circle cx="90" cy="75" fill="#0e1622" r="14" stroke="#2dd4bf" stroke-width="2.5"></circle><text fill="#5eead4" font-size="12" font-weight="700" text-anchor="middle" x="90" y="80">1</text></g>
+<text fill="#bfe6ff" font-size="11" text-anchor="middle" x="90" y="110">Escribe</text>
+<g class="wf-a"><circle cx="300" cy="75" fill="#0e1622" r="14" stroke="#2dd4bf" stroke-width="2.5"></circle><text fill="#5eead4" font-size="12" font-weight="700" text-anchor="middle" x="300" y="80">2</text></g>
+<text fill="#bfe6ff" font-size="11" text-anchor="middle" x="300" y="110">Inicia el servidor</text>
+<g class="wf-a"><circle cx="500" cy="75" fill="#0e1622" r="14" stroke="#2dd4bf" stroke-width="2.5"></circle><text fill="#5eead4" font-size="12" font-weight="700" text-anchor="middle" x="500" y="80">3</text></g>
+<text fill="#bfe6ff" font-size="11" text-anchor="middle" x="500" y="110">Captura</text>
+<g class="wf-a"><circle cx="700" cy="75" fill="#0e1622" r="14" stroke="#2dd4bf" stroke-width="2.5"></circle><text fill="#5eead4" font-size="12" font-weight="700" text-anchor="middle" x="700" y="80">4</text></g>
+<text fill="#bfe6ff" font-size="11" text-anchor="middle" x="700" y="110">Compara</text>
+<g class="wf-a"><circle cx="900" cy="75" fill="#0e1622" r="14" stroke="#2dd4bf" stroke-width="2.5"></circle><text fill="#5eead4" font-size="12" font-weight="700" text-anchor="middle" x="900" y="80">5</text></g>
+<text fill="#bfe6ff" font-size="11" text-anchor="middle" x="900" y="110">Corrige</text>
+<path d="M900,45 C 700,-15 300,-15 90,45" fill="none" marker-end="url(#m3-tl-ahc)" opacity="0.85" stroke="#38bdf8" stroke-width="2"></path>
+<text fill="#93c5fd" font-size="10" text-anchor="middle" x="500" y="15">repite hasta que coincida con el objetivo</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: la misma secuencia del diagrama circular, ahora en una línea de tiempo: el arco cian de arriba muestra la repetición que vuelve a la etapa 1.</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3 flex items-center"><span class="mr-2">📋</span> Bloque copy-run: pedir el ciclo completo</h3>
+<p class="text-neutral-300 text-sm mb-3"><strong>Objetivo:</strong> hacer que el agente construya una página y se autocorrija visualmente antes de entregártela, usando el ciclo completo.</p>
+<pre class="bg-dark-900 rounded-lg p-4 overflow-x-auto text-sm text-teal-300 border border-dark-700"><code>Crie a página &lt;nome-da-pagina.html&gt; com &lt;descrição do que ela deve ter — seções, textos, botões&gt;.
+
+Depois de escrever o código:
+1. Suba um servidor local nesta pasta (ex.: porta &lt;3000&gt;).
+2. Abra a página e tire um screenshot da tela cheia.
+3. Compare o screenshot com este objetivo: &lt;descreva o visual esperado,
+   ou aponte a referência/imagem/marca a seguir&gt;.
+4. Se houver diferença (cor, espaçamento, alinhamento, texto cortado),
+   corrija o código.
+5. Tire um novo screenshot e repita os passos 3-4 até o resultado bater
+   com o objetivo. Não pare na primeira tentativa.
+
+Ao final, me mostre o último screenshot e liste o que foi corrigido em cada volta.</code></pre>
+<p class="text-neutral-400 text-xs mt-3"><strong>Cómo verificar:</strong> pídele al agente que indique cuántas vueltas dio del ciclo y qué corrigió en cada una. Si dice «solo una vuelta, quedó bien a la primera», desconfía — pídele que muestre la captura de pantalla del primer y del último intento lado a lado.</p>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<p class="text-neutral-300"><strong class="text-teal-400">Automatización del navegador:</strong> un programa que abre y controla el navegador por sí solo: hace clic, desplaza la página, toma capturas de pantalla, sin que una persona tenga que tocar el mouse. Es la «mano» que permite al agente capturar su propio resultado visual.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 5 — CONSOLIDAR: erros comuns -->
+<section class="mb-16" data-inema-topic="modulo-5-3#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">⚠️ Errores comunes que rompen el bucle</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-3-t5-p1">
+        El ciclo de capturas de pantalla solo funciona si lo alimentas bien. Los errores más comunes no son técnicos:
+        tienen que ver con cómo haces el pedido. Mira los dos que aparecen con más frecuencia.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Error 1: objetivo vago</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Hazlo bonito" no le da al agente nada con qué comparar</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sin una referencia visual clara, la comparación se vuelve una opinión del propio agente</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Resultado: «cree» que acertó, pero tú no estás de acuerdo al ver</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Corrección</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Describe los colores, los textos, las secciones y el comportamiento esperado</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Remite a una captura o un sitio de referencia cuando exista (módulo 5.5)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Cuanto más concreto sea el objetivo, más precisa será la comparación</span></li>
+</ul>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Error 2: creer que una pasada basta</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Pedir "toma una captura de pantalla y muéstramela" — sin pedir la comparación y la corrección</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Aceptar la primera captura como lista sin revisar los detalles</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Queda a mitad de camino: lo viste, pero no lo corregiste</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Corrección</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Pide explícitamente "repite hasta que coincida"; no "toma una captura de pantalla"</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Exige al menos 2 vueltas antes de considerar que está listo (tema 3)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Pide el historial de las correcciones hechas en cada vuelta como prueba</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atención</h3>
+<p class="text-neutral-300">Este loop tiene límites: no sustituye tu criterio final ni lo resuelve todo por sí solo. Los límites concretos (lo que NO puede ver y cuándo dejar de insistir) son el tema completo del próximo módulo, 5.4.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- TÓPICO 6 — CHECKLIST + EXERCÍCIO -->
+<section class="mb-16" data-inema-topic="modulo-5-3#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">✅ Lista de verificación y ejercicio</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-3-t6-p1">
+        Antes de considerar «lista» cualquier página del agente, repasa la lista de verificación de abajo. Resume los
+        cinco pasos del ciclo en forma de comprobación práctica.
+      </p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">☑️</span> Lista de verificación del ciclo de capturas de pantalla</h3>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">☐</span><span>Di un objetivo visual concreto (no «hazlo bonito»)</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">☐</span><span>Pedí explícitamente que iniciara el servidor local y capturara la pantalla</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">☐</span><span>Pedí explícitamente la comparación entre la captura de pantalla y el objetivo</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">☐</span><span>Exigí al menos 2 vueltas del bucle, no una sola pasada</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">☐</span><span>Pedí el historial de lo que se corrigió en cada vuelta</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">☐</span><span>Revisé yo mismo el resultado final antes de aprobarlo</span></li>
+</ul>
+</div>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Ejercicio</h3>
+<p class="text-neutral-300 mb-3">Elige una página sencilla (puede ser una landing de una sola línea, como una "tarjeta de presentación digital"). Pídele a Claude Code, usando el bloque copy-run del tema 4, que:</p>
+<ol class="list-decimal list-inside space-y-2 text-neutral-300 ml-2">
+<li>Crea la página con al menos 3 secciones (encabezado, parte central y pie de página).</li>
+<li>Ejecuta el ciclo completo —escribir, iniciar el servidor, capturar, comparar, corregir— al menos 2 veces.</li>
+<li>Muéstrame la captura de pantalla del primer y del último intento.</li>
+<li>Enumera, en texto, qué cambió entre las dos.</li>
+</ol>
+<p class="text-neutral-400 text-xs mt-4">Si el agente pasa directamente a «listo» sin mostrarte las dos capturas, el ciclo no se ejecutó de verdad. Pídeselo de nuevo con más claridad.</p>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-5-3#q1">
+<p class="font-medium mb-4">Verificación rápida (opcional): ¿por qué el agente es "ciego" sin el ciclo de screenshot?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Porque no sabe escribir código bonito.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Porque, sin capturar y comparar la pantalla renderizada, solo ve texto y código: nunca el resultado visual real.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Porque no tiene acceso a internet.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-5-3#q1', {
+              answer: 1,
+              explain: { 0: 'Não é sobre escrever bonito — é sobre nunca ver o resultado.', 1: 'Isso mesmo: sem screenshot, ele não tem como comparar o que produziu com o que foi pedido.', 2: 'Acesso à internet não é o ponto aqui — releia o tópico 1.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-teal-900/40 via-dark-800 to-dark-800 rounded-xl border border-teal-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">El bucle tiene 5 etapas:</strong><span class="text-neutral-400"> escribe, inicia el servidor local, captura, compara, corrige y repite.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Es lo que le da visión al agente:</strong><span class="text-neutral-400"> sin capturar la pantalla, solo ve código, nunca el resultado.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Un objetivo claro es obligatorio:</strong><span class="text-neutral-400"> sin una referencia concreta, la comparación se convierte en una opinión del propio agente.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Una pasada no es suficiente:</strong><span class="text-neutral-400"> exige al menos 2 vueltas antes de considerarlo listo.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-teal-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">5.4 — Límites del ciclo: lo que no puede ver y cuándo dejar de insistir</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-5-2.html">← Módulo anterior</a>
+<a class="flex-1 text-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors" href="modulo-5-4.html">Próximo módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>0.1 Qué es un agente de código | Tu empleado digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37, 99, 235, 0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37, 99, 235, 0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37, 99, 235, 0.25); }
+    html:not(.dark) .hover\:bg-blue-500\/30:hover { background-color: rgba(37, 99, 235, 0.18); }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37, 99, 235, 0.08); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha0/modulo-0-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha0/modulo-0-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha0/modulo-0-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha0/modulo-0-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha0/modulo-0-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-0-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-blue-400" href="index.html">Trilha 0</a><span>/</span>
+<span class="text-blue-400">Módulo 0.1</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 0.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🤖 Qué es un agente de código y por qué no es un chatbot</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        Antes de instalar cualquier cosa, necesitas entender lo que estás a punto de obtener: un empleado
+        que ejecuta, no un espejo que responde. Este módulo establece el modelo mental que sostiene todo el curso.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">25</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Principiante</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Teoría</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 0.1" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:0-1" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. Chatbot: solo responde</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. El agente: toma la herramienta</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. La analogía del empleado</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. Claude Code, en concreto</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. El costo de una sesión</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. El mapa de la trilha</a></li>
+</ul>
+</nav>
+<article data-inema-module="0-1" data-inema-track="0" id="modulo-0-1">
+<section class="mb-16" data-inema-topic="modulo-0-1#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">💬 El chatbot solo responde</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-1-t1-p1">
+<strong class="text-blue-400">¿Eres nuevo aquí?</strong> Uno <strong class="text-blue-400">chatbot</strong> es un programa que conversa: tú
+        escribes una pregunta y te devuelve una respuesta en texto. Eso es todo. Piensa en un mostrador de información: la persona que atiende
+        te explica dónde está la sala, pero no va a abrirte la puerta.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-1-t1-p2">
+        Herramientas como ChatGPT en el modo predeterminado funcionan así: son excelentes para explicar, resumir y traducir, pero el resultado queda <em>en la pantalla</em>. Si quieres que algo ocurra de verdad en tu computadora (crear un archivo,
+        enviar un correo, publicar un sitio), el chatbot por sí solo no puede hacerlo.
+      </p>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">💡</span> Concepto principal</h3>
+<p class="text-neutral-300 mb-4">Chatbot = entrada de texto, salida de texto. Nada cambia fuera de la ventana de conversación.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">•</span><span>Preguntas «¿cómo hago un resumen de ventas?» y te explica los pasos.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">•</span><span>Todavía tienes que abrir la hoja de cálculo, copiar, pegar y calcular a mano.</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-blue-400 font-bold text-lg">Conversación</div><div class="text-xs text-neutral-400 mt-1">Qué hace</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-blue-400 font-bold text-lg">Explicar</div><div class="text-xs text-neutral-400 mt-1">Dónde destaca</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-blue-400 font-bold text-lg">Ninguna</div><div class="text-xs text-neutral-400 mt-1">Acción real</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-blue-400 font-bold text-lg">Tú</div><div class="text-xs text-neutral-400 mt-1">Ejecuta el resto</div></div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold text-neutral-200 mb-3 flex items-center"><span class="mr-2">🔎</span> Ver por dentro</h3>
+<p class="text-neutral-300 text-sm leading-relaxed" data-inema-block="m0-1-t1-p3">
+          Cuando conversas con un chatbot puro, nada cambia en tu computadora: el texto que genera vive solo
+          dentro de la ventana de conversación, en un servidor distante. No se crea ningún archivo en tu carpeta, no se ejecuta ningún
+          comando ni se envía ningún correo electrónico. Por eso, después de recibir una buena respuesta, todavía tienes que
+          hacer el trabajo manual de copiar, pegar y aplicar eso en algún lugar real: el chatbot te dio el
+          mapa, pero no recorrió el camino.
+        </p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-0-1#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🛠️ El agente toma la herramienta y hace el trabajo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-1-t2-p1">
+        Uno <strong class="text-blue-400">agente de código</strong> es diferente: tiene acceso a <strong class="text-blue-400">herramientas</strong> —
+        cosas que ejecuta por su cuenta, como abrir un archivo, ejecutar un comando en la terminal (el cuadro de texto que da
+        órdenes directamente a la computadora; encontrarás más información en el módulo 0.2) o buscar información en internet. Decide
+        qué herramienta usar, la usa, revisa el resultado y ajusta si algo salió mal.
+      </p>
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Flujo del agente de código: recibe la solicitud, elige la herramienta adecuada del cajón, la ejecuta de verdad y vuelve con el resultado listo para que el usuario lo revise" class="w-full h-auto" role="img" viewbox="0 0 1000 220">
+<defs>
+<lineargradient id="m1-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
+<filter height="180%" id="m1-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m1-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#60a5fa" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m1-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#60a5fa"></path></marker>
+<marker id="m1-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m1-grid)" height="220" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" height="60" rx="12" stroke="#38bdf8" stroke-width="2" width="150" x="30" y="80"></rect>
+<text fill="#bfe6ff" font-size="13" font-weight="600" text-anchor="middle" x="105" y="107">Pides</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="105" y="124">"organiza esto"</text>
+<path d="M180,110 L250,110" marker-end="url(#m1-ah)" opacity="0.7" stroke="#60a5fa" stroke-width="1.8"></path>
+<rect fill="#1f1604" fill-opacity="0" filter="url(#m1-glow)" height="160" rx="14" stroke="url(#m1-grad)" stroke-width="2.5" width="180" x="255" y="30"></rect>
+<text fill="#60a5fa" font-size="14" font-weight="700" text-anchor="middle" x="345" y="55">Cajón de</text>
+<text fill="#60a5fa" font-size="14" font-weight="700" text-anchor="middle" x="345" y="72">herramientas</text>
+<rect fill="#0e1622" height="26" rx="6" stroke="#38bdf8" stroke-width="1.5" width="140" x="275" y="86"></rect><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="345" y="103">leer archivo</text>
+<rect fill="#0e1622" height="26" rx="6" stroke="#38bdf8" stroke-width="1.5" width="140" x="275" y="118"></rect><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="345" y="135">ejecutar comando</text>
+<rect fill="#0e1622" height="26" rx="6" stroke="#38bdf8" stroke-width="1.5" width="140" x="275" y="150"></rect><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="345" y="167">buscar en la web</text>
+<path d="M435,110 L520,110" marker-end="url(#m1-ah)" opacity="0.7" stroke="#60a5fa" stroke-width="1.8"></path>
+<g class="wf-a"><rect fill="#0e1622" height="60" rx="12" stroke="#38bdf8" stroke-width="2" width="160" x="525" y="80"></rect>
+<text fill="#bfe6ff" font-size="13" font-weight="600" text-anchor="middle" x="605" y="107">Ejecuta</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="605" y="124">de verdad</text>
+</g>
+<path d="M685,110 L760,110" marker-end="url(#m1-ahc)" opacity="0.6" stroke="#38bdf8" stroke-width="1.8"></path>
+<rect fill="#0e1622" filter="url(#m1-glow)" height="60" rx="12" stroke="#60a5fa" stroke-width="2.5" width="200" x="765" y="80"></rect>
+<text fill="#60a5fa" font-size="13" font-weight="700" text-anchor="middle" x="865" y="107">Resultado listo</text>
+<text fill="#93c5fd" font-size="10" text-anchor="middle" x="865" y="124">revisas y apruebas</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: el pedido entra por la izquierda, el agente elige la herramienta correcta en el «cajón», la ejecuta y te devuelve algo ya hecho, no solo una explicación.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Herramienta (tool):</strong> una acción concreta que el agente puede ejecutar por sí solo: leer, escribir, ejecutar, buscar.</li>
+<li><strong>Ciclo:</strong> pensar → elegir herramienta → usar → comprobar el resultado → repetir hasta terminar.</li>
+</ul>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold text-neutral-200 mb-3 flex items-center"><span class="mr-2">⚠️</span> Error común de principiante</h3>
+<p class="text-neutral-300 text-sm leading-relaxed" data-inema-block="m0-1-t2-p2">
+          La primera vez que el agente pide permiso para ejecutar un comando o modificar un archivo, mucha gente
+          se asusta y cancela todo, pensando que algo se rompió. No se rompió: esa pausa es el propio agente
+          consultándote antes de actuar, exactamente el comportamiento que queremos (ver módulo 0.6). El
+          tropiezo real es lo contrario: aprobar todo en «modo automático» sin entender qué se está pidiendo.
+          Lee la línea de la solicitud antes de aprobar: es rápido y evita retrabajo.
+        </p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-0-1#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🏢 La analogía del empleado</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-1-t3-p1">
+        Piensa en Claude Code como un <strong class="text-blue-400">empleado nuevo</strong>, muy capaz y muy rápido, pero que
+        todavía no conoce las costumbres de la casa. Le das la tarea («organiza estos informes»), decide cómo hacerla
+        (abre la carpeta, lee los archivos, crea la hoja de cálculo), la ejecuta y vuelve para mostrarte lo que hizo. Al principio
+        supervisas de cerca; con el tiempo, confías más, exactamente como con un empleado de verdad.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Empleado bien orientado</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Recibe instrucciones claras y el contexto que necesita (el CLAUDE.md del módulo 0.4)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Muestra el plan antes de actuar en tareas grandes</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Avisar cuando algo salió distinto de lo esperado</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Empleado sin supervisión</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Recibe una orden vaga («resuelve eso») y adivina el resto</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ejecuta cambios grandes sin avisarte antes</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Nadie revisa el resultado antes de publicarlo</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Trata las primeras semanas como un período de prueba: pide tareas pequeñas, revisa lo que hace y solo después confíale tareas más grandes. Ese es exactamente el tema que cierra la trilha, en el módulo 0.6.</p>
+</div>
+<div class="mb-6">
+<h3 class="text-lg font-semibold text-neutral-200 mb-4">La curva de confianza, en tres fases</h3>
+<ol class="relative border-l border-dark-600 ml-3 space-y-6">
+<li class="ml-6">
+<span class="absolute -left-3 flex items-center justify-center w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold">1</span>
+<p class="text-neutral-300 text-sm"><strong class="text-white">Semana 1 — cerca:</strong> tareas pequeñas y aisladas (renombrar archivos, resumir un texto), lees todo antes de aceptar.</p>
+</li>
+<li class="ml-6">
+<span class="absolute -left-3 flex items-center justify-center w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold">2</span>
+<p class="text-neutral-300 text-sm"><strong class="text-white">Semanas 2-4 — supervisión ligera:</strong> tareas con más pasos (organizar una carpeta completa), revisas el plan, pero no cada línea.</p>
+</li>
+<li class="ml-6">
+<span class="absolute -left-3 flex items-center justify-center w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold">3</span>
+<p class="text-neutral-300 text-sm"><strong class="text-white">Después — delegación real:</strong> rutinas que se ejecutan por sí solas en horarios fijos (ruta 6), con los permisos ya calibrados.</p>
+</li>
+</ol>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-0-1#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🖥️ Qué es Claude Code, concretamente</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-1-t4-p1">
+<strong class="text-blue-400">¿Eres nuevo aquí?</strong> Uno <strong class="text-blue-400">modelo de IA</strong> es el «cerebro»:
+        el programa entrenado para entender el lenguaje y decidir qué hacer (es el mismo tipo de tecnología que está detrás de
+        ChatGPT). El <strong class="text-blue-400">Claude Code</strong> es un programa que se ejecuta en tu terminal y conecta
+        ese cerebro con herramientas reales en tu computadora: lee y escribe archivos, ejecuta comandos, y solo hace eso
+        dentro de la <strong class="text-blue-400">permiso</strong> que le concedas: tú decides cuánto puede actuar por su cuenta.
+      </p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Abres la terminal en una carpeta</h4>
+<p class="text-neutral-300 text-sm">El programa pasa a «ver» solo lo que está dentro de esa carpeta: el proyecto (módulo 0.3).</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Escribes lo que quieres en portugués</h4>
+<p class="text-neutral-300 text-sm">Sin sintaxis especial — una frase normal, como se lo pedirías a un colega.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Actúa y muestra el resultado</h4>
+<p class="text-neutral-300 text-sm">Dentro de los límites de permisos que definiste (se explica en profundidad en el módulo 0.6).</p>
+</div>
+</div>
+</div>
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="La carpeta que abres en la terminal se convierte en el mundo del agente: dentro de ella puede leer y escribir libremente; fuera de ella, nada; internet solo entra cuando una herramienta específica lo solicita" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<defs>
+<lineargradient id="m4-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
+<filter height="180%" id="m4-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m4-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#60a5fa" opacity="0.12" r="1.3"></circle></pattern>
+</defs>
+<rect fill="url(#m4-grid)" height="200" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" fill-opacity="0.4" filter="url(#m4-glow)" height="140" rx="16" stroke="url(#m4-grad)" stroke-dasharray="6 4" stroke-width="2.5" width="560" x="30" y="30"></rect>
+<text fill="#60a5fa" font-size="14" font-weight="700" x="55" y="55">📁 tu carpeta del proyecto</text>
+<rect fill="#0e1622" height="70" rx="8" stroke="#38bdf8" stroke-width="1.5" width="140" x="55" y="70"></rect>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="125" y="98">lee y escribe</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="125" y="114">archivos aquí</text>
+<rect fill="#0e1622" height="70" rx="8" stroke="#38bdf8" stroke-width="1.5" width="140" x="215" y="70"></rect>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="285" y="98">ejecuta comandos</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="285" y="114">solo dentro de ella</text>
+<rect fill="#0e1622" height="70" rx="8" stroke="#38bdf8" stroke-width="1.5" width="185" x="375" y="70"></rect>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="467" y="98">nada sale de aquí</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="467" y="114">sin tu permiso</text>
+<text fill="#4b5563" font-size="30" text-anchor="middle" x="800" y="90">🌐</text>
+<text fill="#6b7280" font-size="11" text-anchor="middle" x="800" y="120">resto de la computadora</text>
+<text fill="#6b7280" font-size="11" text-anchor="middle" x="800" y="136">e internet: fuera de alcance</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: la carpeta que abres es el límite del agente. Solo se busca en la web si se usa una herramienta específica de búsqueda — y aun así, dentro de lo que permitas.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🔎</span> Mira por dentro: lo que va a internet y lo que se queda en tu PC</h3>
+<p class="text-neutral-300 text-sm leading-relaxed" data-inema-block="m0-1-t4-p2">
+          Tus archivos están en tu computadora: abrir, leer y escribir dentro de la carpeta del proyecto no envía
+          nada afuera. Lo que viaja hasta los servidores del proveedor del modelo es el <strong class="text-blue-400">texto de la conversación</strong>:
+          tu instrucción y los fragmentos de archivo que el agente necesita "consultar" para responder. Así es como el
+          cerebro (el modelo de IA) procesa la solicitud y decide qué hacer: el procesamiento pesado no ocurre
+          en tu notebook.
+        </p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-0-1#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">💰 El costo de una sesión, en la práctica</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-1-t5-p1">
+<strong class="text-blue-400">¿Eres nuevo aquí?</strong> <strong class="text-blue-400">Token</strong> es la unidad que mide
+        «cuánto texto» se procesó: más o menos, un fragmento de palabra. Cada mensaje tuyo y cada respuesta del
+        agente consume tokens, y eso es lo que determina el costo.
+      </p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> Estimación didáctica (no es una factura fija)</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Tarea pequeña</strong> (cambiar nombres de archivos, escribir un texto breve): unos pocos centavos.</li>
+<li><strong>Sesión de automatización típica</strong> (como los de los Builds de este curso): entre R$ 0,50 y R$ 3,00.</li>
+<li><strong>Sesión larga y compleja</strong> (muchas idas y vueltas, mucho código): puede superar los R$ 10.</li>
+</ul>
+<p class="text-neutral-400 text-xs mt-4">Números aproximados: varían según el plan y el modelo. La idea aquí no es memorizar los precios, sino perder el miedo a «voy a gastar una fortuna sin saberlo».</p>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atención</h3>
+<p class="text-neutral-300">Las sesiones que se quedan "conversando en círculos" (el agente que intenta y falla repetidas veces) consumen más tokens de lo normal. Si lo notas, detente, revisa el pedido e inicia una sesión nueva: sale más barato que insistir.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Uso consciente</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Pide una cosa a la vez y comprueba el resultado antes de seguir</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Cierra la sesión cuando termina la tarea, en vez de dejarla abierta «por si acaso»</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Uso desperdiciado</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Pide lo mismo de distintas maneras, esperando que "lo capte" de alguna forma</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Pega archivos gigantes completos cuando solo necesitaba un fragmento pequeño</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold text-neutral-200 mb-3 flex items-center"><span class="mr-2">⚠️</span> Confusión común: plan fijo × cobro por uso</h3>
+<p class="text-neutral-300 text-sm leading-relaxed" data-inema-block="m0-1-t5-p2">
+          Mucha gente mezcla dos cosas diferentes: existen <strong class="text-blue-400">planes de suscripción</strong>
+          (un valor mensual fijo, con un límite de uso incluido) y existe <strong class="text-blue-400">cobro por
+          consumo de tokens</strong> (pagas solo por lo que usas, sin mensualidad). El número que aparece arriba es el
+          consumo en tokens; cuánto se traduce en un costo real depende de cuál de los dos modelos elegiste. No
+          hay una única respuesta: aquí lo importante es entender la unidad, no memorizar un precio.
+        </p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-0-1#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🗺️ El mapa de la Trilha 0</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-1-t6-p1">
+        Con el modelo mental fijado, el resto de la trilha es 100 % práctico: instalar sin miedo (0.2), entender la carpeta del
+        proyecto (0.3), escribir tu primer CLAUDE.md (0.4), aprender el modo plan (0.5) y cerrar con las reglas
+        de seguridad que se aplican a todo el curso (0.6).
+      </p>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Concepto principal</h3>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">•</span><span>0.2 instala → 0.3 organiza → 0.4 orienta → 0.5 revisa → 0.6 protege.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">•</span><span>Cada módulo se basa en el anterior: no te saltes ninguno.</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300 text-sm" data-inema-block="m0-1-t6-p2">
+          Si solo guardas una frase de este módulo, que sea esta: un agente de código es un empleado que
+          <em>hace</em>, no un chatbot que <em>explica</em>. Cada decisión de diseño del resto del curso:
+          permisos, CLAUDE.md, modo de plan, existe para que ese «hacer» sea seguro y predecible. Cuando un
+          concepto nuevo te resulte confuso más adelante, vuelve aquí y pregúntate: ¿esto ayuda al agente a actuar
+          mejor o a actuar con más seguridad? Casi siempre es una de las dos cosas.
+        </p>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-0-1#q1">
+<p class="font-medium mb-4">Verificación rápida (opcional): ¿cuál es la diferencia principal entre un chatbot y un agente de código?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">El chatbot responde más rápido.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">El agente ejecuta acciones reales; el chatbot solo devuelve texto.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">No hay ninguna diferencia práctica entre los dos.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-0-1#q1', {
+              answer: 1,
+              explain: { 0: 'Velocidade não é o ponto — é a capacidade de agir.', 1: 'Isso mesmo: agir de verdade é a diferença.', 2: 'Há, sim, uma diferença prática grande — releia o tópico 1 e 2.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Chatbot × agente:</strong><span class="text-neutral-400"> uno responde, el otro ejecuta de verdad.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Analogía del empleado:</strong><span class="text-neutral-400"> delegar con supervisión creciente.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Claude Code:</strong><span class="text-neutral-400"> programa de terminal, conectado a un modelo de IA, que actúa dentro de tus permisos.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Costo:</strong><span class="text-neutral-400"> de unos centavos a unos pocos reales por sesión típica: es una estimación, no una factura fija.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-blue-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">0.2 — Instalación en Windows/Mac/Linux, terminal sin miedo</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la ruta</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-0-2.html">Próximo módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

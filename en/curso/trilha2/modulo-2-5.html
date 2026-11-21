@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>2.5 Build: scraping to CSV | Your Digital Employee</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    {
+      "n": "0",
+      "title": "Preparação: seu ambiente",
+      "modules": [
+        {
+          "id": "0-1",
+          "title": "O que é um agente de código",
+          "topics": 6,
+          "href": "curso/trilha0/modulo-0-1.html"
+        },
+        {
+          "id": "0-2",
+          "title": "Instalação sem medo",
+          "topics": 6,
+          "href": "curso/trilha0/modulo-0-2.html"
+        },
+        {
+          "id": "0-3",
+          "title": "Anatomia de um projeto",
+          "topics": 6,
+          "href": "curso/trilha0/modulo-0-3.html"
+        },
+        {
+          "id": "0-4",
+          "title": "O CLAUDE.md como cérebro",
+          "topics": 6,
+          "href": "curso/trilha0/modulo-0-4.html"
+        },
+        {
+          "id": "0-5",
+          "title": "Modo plano",
+          "topics": 6,
+          "href": "curso/trilha0/modulo-0-5.html"
+        },
+        {
+          "id": "0-6",
+          "title": "Permissões e segurança",
+          "topics": 6,
+          "href": "curso/trilha0/modulo-0-6.html"
+        }
+      ]
+    },
+    {
+      "n": "1",
+      "title": "O framework WAT",
+      "modules": [
+        {
+          "id": "1-1",
+          "title": "Os três pedaços",
+          "topics": 6,
+          "href": "curso/trilha1/modulo-1-1.html"
+        },
+        {
+          "id": "1-2",
+          "title": "O ciclo real de execução",
+          "topics": 6,
+          "href": "curso/trilha1/modulo-1-2.html"
+        },
+        {
+          "id": "1-3",
+          "title": "Auto-correção: verdade e marketing",
+          "topics": 6,
+          "href": "curso/trilha1/modulo-1-3.html"
+        },
+        {
+          "id": "1-4",
+          "title": "Onde o WAT falha",
+          "topics": 6,
+          "href": "curso/trilha1/modulo-1-4.html"
+        },
+        {
+          "id": "1-5",
+          "title": "Build: automação de newsletter",
+          "topics": 6,
+          "href": "curso/trilha1/modulo-1-5.html"
+        }
+      ]
+    },
+    {
+      "n": "2",
+      "title": "MCP: dando mãos ao agente",
+      "modules": [
+        {
+          "id": "2-1",
+          "title": "O protocolo em linguagem humana",
+          "topics": 6,
+          "href": "curso/trilha2/modulo-2-1.html"
+        },
+        {
+          "id": "2-2",
+          "title": "Anatomia de um servidor MCP",
+          "topics": 6,
+          "href": "curso/trilha2/modulo-2-2.html"
+        },
+        {
+          "id": "2-3",
+          "title": "Instalar e autenticar",
+          "topics": 6,
+          "href": "curso/trilha2/modulo-2-3.html"
+        },
+        {
+          "id": "2-4",
+          "title": "O padrão cheat sheet",
+          "topics": 6,
+          "href": "curso/trilha2/modulo-2-4.html"
+        },
+        {
+          "id": "2-5",
+          "title": "Build: scraping para CSV",
+          "topics": 6,
+          "href": "curso/trilha2/modulo-2-5.html"
+        },
+        {
+          "id": "2-6",
+          "title": "Vários agentes em paralelo",
+          "topics": 6,
+          "href": "curso/trilha2/modulo-2-6.html"
+        }
+      ]
+    },
+    {
+      "n": "3",
+      "title": "Skills: ensinando um processo",
+      "modules": [
+        {
+          "id": "3-1",
+          "title": "Anatomia de uma skill",
+          "topics": 6,
+          "href": "curso/trilha3/modulo-3-1.html"
+        },
+        {
+          "id": "3-2",
+          "title": "Carregamento progressivo em 3 níveis",
+          "topics": 6,
+          "href": "curso/trilha3/modulo-3-2.html"
+        },
+        {
+          "id": "3-3",
+          "title": "O framework de 6 passos",
+          "topics": 6,
+          "href": "curso/trilha3/modulo-3-3.html"
+        },
+        {
+          "id": "3-4",
+          "title": "A descrição é o gatilho",
+          "topics": 6,
+          "href": "curso/trilha3/modulo-3-4.html"
+        },
+        {
+          "id": "3-5",
+          "title": "Projeto vs. global",
+          "topics": 6,
+          "href": "curso/trilha3/modulo-3-5.html"
+        },
+        {
+          "id": "3-6",
+          "title": "Build: sua primeira skill",
+          "topics": 6,
+          "href": "curso/trilha3/modulo-3-6.html"
+        },
+        {
+          "id": "3-7",
+          "title": "Otimização",
+          "topics": 6,
+          "href": "curso/trilha3/modulo-3-7.html"
+        }
+      ]
+    },
+    {
+      "n": "4",
+      "title": "Deploy: sair do seu laptop",
+      "modules": [
+        {
+          "id": "4-1",
+          "title": "Por que local não basta",
+          "topics": 6,
+          "href": "curso/trilha4/modulo-4-1.html"
+        },
+        {
+          "id": "4-2",
+          "title": "O pipeline em 4 estações",
+          "topics": 6,
+          "href": "curso/trilha4/modulo-4-2.html"
+        },
+        {
+          "id": "4-3",
+          "title": "Teste vs. produção",
+          "topics": 6,
+          "href": "curso/trilha4/modulo-4-3.html"
+        },
+        {
+          "id": "4-4",
+          "title": "Segredos",
+          "topics": 6,
+          "href": "curso/trilha4/modulo-4-4.html"
+        },
+        {
+          "id": "4-5",
+          "title": "Retentativas e filas",
+          "topics": 6,
+          "href": "curso/trilha4/modulo-4-5.html"
+        },
+        {
+          "id": "4-6",
+          "title": "Build: automação agendada",
+          "topics": 6,
+          "href": "curso/trilha4/modulo-4-6.html"
+        },
+        {
+          "id": "4-7",
+          "title": "Observabilidade",
+          "topics": 6,
+          "href": "curso/trilha4/modulo-4-7.html"
+        }
+      ]
+    },
+    {
+      "n": "5",
+      "title": "Interfaces: o agente que enxerga",
+      "modules": [
+        {
+          "id": "5-1",
+          "title": "Por que o padrão sai genérico",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-1.html"
+        },
+        {
+          "id": "5-2",
+          "title": "Skill de design global",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-2.html"
+        },
+        {
+          "id": "5-3",
+          "title": "O laço de screenshot",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-3.html"
+        },
+        {
+          "id": "5-4",
+          "title": "Limites do laço",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-4.html"
+        },
+        {
+          "id": "5-5",
+          "title": "Referência visual e rebranding",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-5.html"
+        },
+        {
+          "id": "5-6",
+          "title": "Pasta de marca",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-6.html"
+        },
+        {
+          "id": "5-7",
+          "title": "Build: landing page publicada",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-7.html"
+        },
+        {
+          "id": "5-8",
+          "title": "Regras de publicação",
+          "topics": 6,
+          "href": "curso/trilha5/modulo-5-8.html"
+        }
+      ]
+    },
+    {
+      "n": "6",
+      "title": "Tempo: agendamento e loops",
+      "modules": [
+        {
+          "id": "6-1",
+          "title": "Agora, neste projeto, ou toda semana?",
+          "topics": 6,
+          "href": "curso/trilha6/modulo-6-1.html"
+        },
+        {
+          "id": "6-2",
+          "title": "Tarefas agendadas a fundo",
+          "topics": 6,
+          "href": "curso/trilha6/modulo-6-2.html"
+        },
+        {
+          "id": "6-3",
+          "title": "Loops a fundo",
+          "topics": 6,
+          "href": "curso/trilha6/modulo-6-3.html"
+        },
+        {
+          "id": "6-4",
+          "title": "A rotina que aprende",
+          "topics": 6,
+          "href": "curso/trilha6/modulo-6-4.html"
+        },
+        {
+          "id": "6-5",
+          "title": "Determinismo",
+          "topics": 6,
+          "href": "curso/trilha6/modulo-6-5.html"
+        },
+        {
+          "id": "6-6",
+          "title": "Notificações e permissões restritivas",
+          "topics": 6,
+          "href": "curso/trilha6/modulo-6-6.html"
+        },
+        {
+          "id": "6-7",
+          "title": "Build: rotina matinal",
+          "topics": 6,
+          "href": "curso/trilha6/modulo-6-7.html"
+        }
+      ]
+    },
+    {
+      "n": "7",
+      "title": "Capstone: seu assistente executivo",
+      "modules": [
+        {
+          "id": "7-1",
+          "title": "Fase 1 — Casa",
+          "topics": 6,
+          "href": "curso/trilha7/modulo-7-1.html"
+        },
+        {
+          "id": "7-2",
+          "title": "Fase 2 — Vida",
+          "topics": 6,
+          "href": "curso/trilha7/modulo-7-2.html"
+        },
+        {
+          "id": "7-3",
+          "title": "Fase 3 — Mãos",
+          "topics": 6,
+          "href": "curso/trilha7/modulo-7-3.html"
+        },
+        {
+          "id": "7-4",
+          "title": "Fase 4 — Crescimento",
+          "topics": 6,
+          "href": "curso/trilha7/modulo-7-4.html"
+        },
+        {
+          "id": "7-5",
+          "title": "Backup e versionamento",
+          "topics": 6,
+          "href": "curso/trilha7/modulo-7-5.html"
+        },
+        {
+          "id": "7-6",
+          "title": "Capstone: entrega final",
+          "topics": 6,
+          "href": "curso/trilha7/modulo-7-6.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"], section[id^="modulo-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37, 99, 235, 0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37, 99, 235, 0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37, 99, 235, 0.25); }
+    html:not(.dark) .hover\:bg-blue-500\/30:hover { background-color: rgba(37, 99, 235, 0.18); }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37, 99, 235, 0.08); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .group:hover .group-hover\:text-blue-400 { color: #2563eb; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+      .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
+    }
+    
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha2/modulo-2-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha2/modulo-2-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha2/modulo-2-5.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Skip to content</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparation</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../../curso/trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../../curso/trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../../curso/trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../../curso/trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Time</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>My journey</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-blue-400" href="index.html">Track 2</a><span>/</span>
+<span class="text-blue-400">Module 2.5</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MODULE 2.5</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🕷️ Build: scraping to CSV</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">The track’s real build: take a public website and return a structured CSV. You’ll see all four Firecrawl operations side by side and what to do when extract comes back empty-handed.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">45</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Beginner</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Build</div><div class="text-xs text-neutral-400">Type</div></div>
+</div>
+<div aria-label="Module 2.5 progress" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:2-5" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. The end-to-end build</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. scrape × map × crawl × extract</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. Step by step</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. When extract returns empty</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. Scraping limits and etiquette</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. Repeating this on another site</a></li>
+</ul>
+</nav>
+<article data-inema-module="2-5" data-inema-track="2" id="modulo-2-5">
+<section class="mb-16" data-inema-topic="modulo-2-5#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🎯 The build: from a public website to a structured CSV</h2>
+</div>
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="The build flow: website on the internet, Firecrawl MCP server extracts the data, the agent organizes it and saves a CSV file ready to open in a spreadsheet" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<defs>
+<lineargradient id="m25-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
+<marker id="m25-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+<pattern height="32" id="m25-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#60a5fa" opacity="0.12" r="1.3"></circle></pattern>
+</defs>
+<rect fill="url(#m25-grid)" height="200" width="1000" x="0" y="0"></rect>
+<text fill="#93c5fd" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="500" y="24">site → Firecrawl → agent → CSV</text>
+<g font-family="Inter,sans-serif">
+<rect fill="#1e293b" height="90" rx="12" stroke="#4b5563" stroke-width="2" width="180" x="30" y="55"></rect>
+<text fill="#e5e7eb" font-size="12" text-anchor="middle" x="120" y="90">🌐 Website</text>
+<text fill="#9ca3af" font-size="9" text-anchor="middle" x="120" y="112">public page</text>
+<path d="M215,100 L275,100" marker-end="url(#m25-ah)" stroke="#60a5fa" stroke-width="2"></path>
+<g class="wf-a"><rect fill="#1e293b" height="90" rx="12" stroke="#38bdf8" stroke-width="2" width="180" x="280" y="55"></rect>
+<text fill="#60a5fa" font-size="12" text-anchor="middle" x="370" y="90">🔥 Firecrawl</text>
+<text fill="#9ad6ff" font-size="9" text-anchor="middle" x="370" y="112">MCP server</text>
+</g>
+<path d="M465,100 L525,100" marker-end="url(#m25-ah)" stroke="#60a5fa" stroke-width="2"></path>
+<g class="wf-a"><rect fill="#1e293b" height="90" rx="12" stroke="#38bdf8" stroke-width="2" width="180" x="530" y="55"></rect>
+<text fill="#60a5fa" font-size="12" text-anchor="middle" x="620" y="90">🤖 Agent</text>
+<text fill="#9ad6ff" font-size="9" text-anchor="middle" x="620" y="112">organize the data</text>
+</g>
+<path d="M715,100 L775,100" marker-end="url(#m25-ah)" stroke="#60a5fa" stroke-width="2"></path>
+<rect fill="#0e1622" height="90" rx="12" stroke="url(#m25-grad)" stroke-width="2.5" width="190" x="780" y="55"></rect>
+<text fill="#93c5fd" font-size="12" text-anchor="middle" x="875" y="90">📊 CSV</text>
+<text fill="#bfe6ff" font-size="9" text-anchor="middle" x="875" y="112">ready for the spreadsheet</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 mb-8">Caption: the complete build process — Firecrawl brings in the site’s raw content, the agent organizes what matters, and saves a CSV that opens directly in a spreadsheet.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-5-t1-p1">
+<strong class="text-blue-400">New here?</strong> <strong class="text-blue-400">Scraping</strong> is the technical term for "automatically extracting information from a web page." <strong class="text-blue-400">CSV</strong> is a simple spreadsheet file (Comma-Separated Values) that any spreadsheet app can open directly. In this build, you'll ask the agent to read a public page and deliver its data organized in a table — without you touching any scraping code.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-5-t1-p2">
+        This is the hands-on module of Track 2: so far, you’ve learned what the MCP protocol is (2.1), how
+        an MCP server is organized internally (2.2), how to install and authenticate one (2.3), and how to keep permanent instructions
+        in a cheat sheet (2.4). Now all of that becomes a concrete result — a data file you
+        can open and show someone. This kind of tangible deliverable is what separates “I learned about MCP” from “I used
+        MCP to solve a real problem.”
+      </p>
+<div class="relative pl-8 border-l-2 border-blue-500/30 space-y-6 mb-8">
+<div class="relative">
+<div class="absolute -left-[41px] w-5 h-5 rounded-full bg-blue-500 border-4 border-dark-900"></div>
+<h4 class="font-semibold text-white mb-1">Step 1 — MCP server connected</h4>
+<p class="text-neutral-300 text-sm">Firecrawl is already installed and authenticated (that was module 2.3) — without it, none of the commands in this build will work.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] w-5 h-5 rounded-full bg-blue-500 border-4 border-dark-900"></div>
+<h4 class="font-semibold text-white mb-1">Step 2 — You describe the request</h4>
+<p class="text-neutral-300 text-sm">A paragraph in Portuguese: which site, which fields, what file name. The agent translates that into technical calls.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] w-5 h-5 rounded-full bg-blue-500 border-4 border-dark-900"></div>
+<h4 class="font-semibold text-white mb-1">Step 3 — The agent runs it and organizes things</h4>
+<p class="text-neutral-300 text-sm">It chooses between map/crawl/extract, handles errors along the way, and builds the table.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] w-5 h-5 rounded-full bg-blue-500 border-4 border-dark-900"></div>
+<h4 class="font-semibold text-white mb-1">Step 4 — You check the CSV</h4>
+<p class="text-neutral-300 text-sm">Open it in a spreadsheet and check that the columns make sense and no data is missing.</p>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🔍</span> See inside</h3>
+<p class="text-neutral-300">Between your request and the finished CSV, what gets sent are calls from the agent to
+        the Firecrawl MCP server—each requests an operation (scrape, map, crawl, or extract) and receives text
+        or structured data in <strong class="text-blue-400">JSON</strong> (a way to organize data in
+        “field: value” pairs, like a form). The <strong class="text-blue-400">API key</strong>
+        (the password that identifies your account on Firecrawl) is stored locally; it never appears on screen or travels
+        through the request as text — only the agent and the MCP server exchange it behind the scenes. And yes: each call has a
+        small cost under your Firecrawl plan, so focused requests (a few pages, specific fields)
+        cost less than "bring back everything you find."</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-2-5#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📊 Firecrawl's four operations, side by side</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-5-t2-p1">
+<strong class="text-blue-400">New here?</strong> O <strong class="text-blue-400">Firecrawl</strong> is the MCP server this build uses to read websites. It offers four operations with very different purposes — knowing which one to request (or letting the module 2.4 cheat sheet guide the agent) helps avoid vague requests and empty results.
+      </p>
+<div class="overflow-x-auto mb-6">
+<table class="w-full text-sm border-collapse">
+<thead>
+<tr class="bg-dark-700 text-left">
+<th class="p-3 border border-dark-600 text-blue-400">Operation</th>
+<th class="p-3 border border-dark-600 text-blue-400">What it does</th>
+<th class="p-3 border border-dark-600 text-blue-400">When to use</th>
+<th class="p-3 border border-dark-600 text-blue-400">Example request</th>
+</tr>
+</thead>
+<tbody class="text-neutral-300">
+<tr class="bg-dark-800">
+<td class="p-3 border border-dark-600 font-semibold">scrape</td>
+<td class="p-3 border border-dark-600">Brings the content from <strong>one</strong> just one page.</td>
+<td class="p-3 border border-dark-600">You already know the exact address.</td>
+<td class="p-3 border border-dark-600">"Get the text from this page"</td>
+</tr>
+<tr class="bg-dark-800/60">
+<td class="p-3 border border-dark-600 font-semibold">map</td>
+<td class="p-3 border border-dark-600">List <strong>all addresses</strong> (URLs) from a site, without bringing in the content.</td>
+<td class="p-3 border border-dark-600">You want to see the site map before deciding what to download.</td>
+<td class="p-3 border border-dark-600">"List all the pages on this site"</td>
+</tr>
+<tr class="bg-dark-800">
+<td class="p-3 border border-dark-600 font-semibold">crawl</td>
+<td class="p-3 border border-dark-600">Goes through <strong>multiple pages</strong> and brings in the contents of each one.</td>
+<td class="p-3 border border-dark-600">You want the entire site (or one of its sections).</td>
+<td class="p-3 border border-dark-600">"Download the content of the entire blog"</td>
+</tr>
+<tr class="bg-dark-800/60">
+<td class="p-3 border border-dark-600 font-semibold">extract</td>
+<td class="p-3 border border-dark-600">Brings <strong>only the fields</strong> that you asked for, already organized (price, name, date...).</td>
+<td class="p-3 border border-dark-600">You want specific data, not the entire text.</td>
+<td class="p-3 border border-dark-600">"Extract the name and price of each product"</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical Tip</h3>
+<p class="text-neutral-300">For this build, you’ll combine <code>map</code> (find the product pages)
+        with <code>extract</code> (extract the name and price from each one) — it’s the most common combination for turning them into a CSV.</p>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-5-t2-p2">
+        A common mistake beginners make is asking <code>crawl</code> when you actually meant <code>extract</code>
+        — the result is full of loose text, difficult to organize into columns. If your end goal is a
+        <strong class="text-blue-400">table</strong> (rows and columns, like a CSV), start by thinking about
+        <code>extract</code>; if the goal is to "read the content" without a fixed structure, <code>crawl</code> or
+        <code>scrape</code> are enough.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Well-described request</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>"Extract the name, price, and category of each product on the store page"</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Specifies the website, the fields, and the output file name</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Vague request</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Get the data from that site"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Doesn’t specify which fields or what format you want for the result</span></li>
+</ul>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-2-5#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🗂️ Step by step: from request to CSV</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-5-t3-p1">
+        With the Firecrawl MCP server already running (module 2.3), the entire build comes down to a well-written request—the agent chooses between map/crawl/extract based on what you asked for.
+      </p>
+<div class="bg-dark-900 rounded-xl border border-dark-600 p-5 mb-2 font-mono text-sm overflow-x-auto">
+<div class="text-neutral-500 mb-2"># Paste into the conversation with Claude Code:</div>
+<div class="text-emerald-400">Map the site’s product pages <span class="text-amber-300">&lt;https://exemplo.com/loja&gt;</span>,</div>
+<div class="text-emerald-400">extract the name, price, and category of each product, and save everything to a file</div>
+<div class="text-emerald-400">produtos.csv with these three columns.</div>
+</div>
+<p class="text-xs text-neutral-500 mb-6"><strong>Objective:</strong> generate a CSV with real data extracted from the site. <strong>How to verify:</strong> open <code>produtos.csv</code> in a spreadsheet (Excel, Google Sheets, LibreOffice) and confirm that every row has a name, price, and category filled in — without too many empty cells.</p>
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Anatomy of a request written in Portuguese: which site, which fields, and which output file, going into the agent and turning into three technical calls to Firecrawl" class="w-full h-auto" role="img" viewbox="0 0 1000 210">
+<defs>
+<lineargradient id="m25c-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
+<filter height="180%" id="m25c-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m25c-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+<pattern height="32" id="m25c-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#60a5fa" opacity="0.12" r="1.3"></circle></pattern>
+</defs>
+<rect fill="url(#m25c-grid)" height="210" width="1000" x="0" y="0"></rect>
+<text fill="#93c5fd" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="500" y="24">a request in Portuguese becomes three technical calls</text>
+<g filter="url(#m25c-glow)"><rect fill="#0e1622" height="110" rx="14" stroke="url(#m25c-grad)" stroke-width="2.5" width="230" x="40" y="60"></rect></g>
+<text fill="#93c5fd" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="155" y="95">your request</text>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="155" y="117">site + fields +</text>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="155" y="133">file name</text>
+<path d="M275,115 L335,115" marker-end="url(#m25c-ah)" stroke="#60a5fa" stroke-width="2"></path>
+<g font-family="Inter,sans-serif" font-size="12" font-weight="600">
+<g class="wf-a"><rect fill="#0e1b26" height="34" rx="9" stroke="#38bdf8" stroke-width="2" width="200" x="340" y="60"></rect><text fill="#bfe6ff" text-anchor="middle" x="440" y="82">map(url)</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="34" rx="9" stroke="#38bdf8" stroke-width="2" width="200" x="340" y="98"></rect><text fill="#bfe6ff" text-anchor="middle" x="440" y="120">extract(fields)</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="34" rx="9" stroke="#38bdf8" stroke-width="2" width="200" x="340" y="136"></rect><text fill="#bfe6ff" text-anchor="middle" x="440" y="158">salvar(csv)</text></g>
+</g>
+<path d="M545,115 L605,115" marker-end="url(#m25c-ah)" stroke="#60a5fa" stroke-width="2"></path>
+<rect fill="#1e293b" height="110" rx="14" stroke="#4b5563" stroke-width="2" width="350" x="610" y="60"></rect>
+<text fill="#e5e7eb" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="785" y="95">📊 produtos.csv</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="785" y="118">name, price, category</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="10" text-anchor="middle" x="785" y="136">one line per product</text>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 mb-8">Caption: you never write the three technical calls—you only describe the result you want. The agent is the one that translates the request into <code>map</code>, <code>extract</code> and saving the file.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-5-t3-p2">
+        Two errors can block this step before it even begins: <strong class="text-blue-400">invalid or expired
+        API key</strong> — Firecrawl responds with an authentication error, and the agent can't even
+        try; the fix is to revisit module 2.3 and reauthenticate. And <strong class="text-blue-400">address entered
+        incorrectly</strong> — a <code>https://</code> missing or a domain with a typo will cause the first
+        call to fail before any scraping happens. Check the pasted address before running it.
+      </p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-2-5#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🕳️ When extract comes back empty</h2>
+</div>
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Decision workflow when extract returns empty: the agent tries again with a simpler schema; otherwise, it switches to raw scrape and organizes the results manually, reporting failure only if both attempts come up empty" class="w-full h-auto" role="img" viewbox="0 0 1000 210">
+<defs>
+<marker id="m25e-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+<pattern height="32" id="m25e-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#60a5fa" opacity="0.12" r="1.3"></circle></pattern>
+</defs>
+<rect fill="url(#m25e-grid)" height="210" width="1000" x="0" y="0"></rect>
+<text fill="#93c5fd" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="500" y="24">extract returned empty — now what?</text>
+<g font-family="Inter,sans-serif">
+<rect fill="#1e293b" height="100" rx="12" stroke="#f87171" stroke-width="2" width="200" x="40" y="55"></rect>
+<text fill="#fca5a5" font-size="12" text-anchor="middle" x="140" y="90">extract() = []</text>
+<text fill="#fca5a5" font-size="9" text-anchor="middle" x="140" y="112">no data came back</text>
+<path d="M245,105 L305,105" marker-end="url(#m25e-ah)" stroke="#60a5fa" stroke-width="2"></path>
+<g class="wf-a"><rect fill="#1e293b" height="100" rx="12" stroke="#38bdf8" stroke-width="2" width="200" x="310" y="55"></rect>
+<text fill="#60a5fa" font-size="12" text-anchor="middle" x="410" y="82">1. simple diagram</text>
+<text fill="#9ad6ff" font-size="9" text-anchor="middle" x="410" y="104">fewer fields,</text>
+<text fill="#9ad6ff" font-size="9" text-anchor="middle" x="410" y="120">try again</text>
+</g>
+<path d="M515,105 L575,105" marker-end="url(#m25e-ah)" stroke="#60a5fa" stroke-width="2"></path>
+<g class="wf-a"><rect fill="#1e293b" height="100" rx="12" stroke="#38bdf8" stroke-width="2" width="200" x="580" y="55"></rect>
+<text fill="#60a5fa" font-size="12" text-anchor="middle" x="680" y="82">2. falls back to scraping</text>
+<text fill="#9ad6ff" font-size="9" text-anchor="middle" x="680" y="104">raw text,</text>
+<text fill="#9ad6ff" font-size="9" text-anchor="middle" x="680" y="120">organize manually</text>
+</g>
+<path d="M785,105 L845,105" marker-end="url(#m25e-ah)" stroke="#60a5fa" stroke-width="2"></path>
+<rect fill="#1e293b" height="100" rx="12" stroke="#facc15" stroke-width="2" width="120" x="850" y="55"></rect>
+<text fill="#facc15" font-size="11" text-anchor="middle" x="910" y="90">3. only then</text>
+<text fill="#facc15" font-size="11" text-anchor="middle" x="910" y="108">reports a failure</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 mb-8">Caption: the agent doesn’t give up at the first “I couldn’t find anything” — it tries a simpler approach, then falls back to a raw scrape to organize manually, and reports a real failure only if neither attempt works. It’s the self-correction from Track 1, now applied to scraping.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-5-t4-p1">
+        Sometimes the <code>extract</code> returns an empty list — the page may have a different structure than
+        expected, or the requested fields may not exist in that form. This is exactly where Trilha 1's self-correction
+        comes into play: a good agent doesn't give up at the first "nothing found" — it simplifies the request
+        (fewer fields), tries again, and if that still doesn't work, falls back to <code>scrape</code> raw and manually organizes the
+        data from the complete text.
+      </p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Inside</h3>
+<p class="text-neutral-300">You can ask for this explicitly: "if extract doesn’t return anything, try
+        simplifying the fields and, if it still fails, use scrape and organize the data yourself from the text." This
+        becomes a permanent instruction if you save it in the cheat sheet for module 2.4.</p>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-5-t4-p2">
+        An empty list isn’t the only way a build can fail — two other common errors show up along the way.
+        One <strong class="text-blue-400">site that blocks scraping</strong> returns an error response (sometimes
+        called "403" or "access denied") instead of content — in that case, insisting won't help; the site
+        simply doesn't allow this kind of automated access, and the right thing is to check whether it offers its own
+        public API or give up on that source. And one <strong class="text-blue-400">usage limit exceeded</strong>
+        (your monthly Firecrawl plan allowance) makes every new request fail until the next cycle — the agent
+        usually mentions this in the error response; if it happens in the middle of a large crawl, that's a sign you should have
+        asked for fewer pages at once.
+      </p>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-2-5#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">⚖️ Scraping limits, costs, and ethics</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-5-t5-p1">
+<strong class="text-blue-400">New here?</strong> Each Firecrawl call uses up part of your quota (a monthly usage limit
+        on your plan), and some sites prohibit scraping in their terms of service or in a file called
+        <code>robots.txt</code>. Before running a large crawl, check whether the site allows it and avoid requesting more volume
+        than you actually need.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Do</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Ask only for the pages you actually need</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Check whether the site allows scraping before running a large crawl</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Avoid</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Crawl the entire site "just to see"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ignore blocking or limit-exceeded warnings</span></li>
+</ul>
+</div>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-5-t5-p2">
+        O <code>robots.txt</code> is a simple file that websites publish at the root of the address (something like
+        <code>exemplo.com/robots.txt</code>) saying what automated bots can and can’t access —
+        Firecrawl usually follows these rules on its own, but it’s useful to know they exist, because they explain why
+        sometimes part of a site returns nothing. If the data you want involves
+        <strong class="text-blue-400">personal information</strong> from third parties (names, email addresses, phone numbers of
+        individuals), handle it with the same care you’d give any other sensitive data: ask yourself whether you really
+        need that field before including it in the CSV, and never redistribute this type of data unnecessarily.
+      </p>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical Tip</h3>
+<p class="text-neutral-300">If you have a large crawl coming up, start with a small request (5–10 pages)
+        to check that the CSV format is what you want—only then scale up to the full volume. Fixing a
+        small request is quick; redoing a huge crawl because of a wrong field isn’t.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-2-5#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🗓️ Repeating the build on another site</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-5-t6-p1">
+        Once the MCP server and cheat sheet are ready, repeating this build on another site just means changing the
+        address and the desired fields in the request — the rest of the workflow (map → extract → CSV, with a fallback to scrape) is already taught. This is the kind of work that's worth truly automating — a topic Track 4 (Deploy) will
+        take further.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-5-t6-p2">
+<strong class="text-blue-400">New here?</strong> "Automate" here means letting that same routine run
+        on its own, without you needing to copy and paste the request again — for example, generating the updated CSV every Monday
+        morning. This module gives you the manual, on-demand build; Track 4 teaches you how to put that same request on a
+        fixed schedule, running on a server without depending on your laptop being on. Think of this module as the prototype that
+        proves the request works — only after it’s been validated is it worth investing time in truly automating it.
+      </p>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical Tip</h3>
+<p class="text-neutral-300">Save the request from step 3 in a notes file — next time, you only need to change the
+        website address and the fields, without rewriting everything from scratch.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+</button>
+</div>
+</section>
+</article>
+<section class="mb-12">
+<div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Module Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">scrape:</strong><span class="text-neutral-400"> 1 page. map: lists URLs. crawl: multiple pages. extract: organized fields.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Build:</strong><span class="text-neutral-400"> map + extract is the most common combination for turning data into CSV.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Empty Extract:</strong><span class="text-neutral-400"> simplify the schema, then fall back to raw scraping — only then report a failure.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Education:</strong><span class="text-neutral-400"> respect quotas and robots.txt; request only the volume you need.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-blue-400 mb-2">Next module:</h3>
+<p class="text-neutral-300">2.6 — Multiple agents in parallel</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-2-4.html">← Previous module</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-6.html">Next Module →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) { exp.classList.remove('active'); exp.previousElementSibling && exp.previousElementSibling.setAttribute && exp.previousElementSibling.setAttribute('aria-expanded','false'); }
+      });
+      explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', explanation.classList.contains('active') ? 'true' : 'false');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

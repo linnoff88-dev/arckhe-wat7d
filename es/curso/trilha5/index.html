@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>Ruta 5 — Interfaces: el agente que ve | Tu Empleado Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'teal' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro';
+          else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark');
+      else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr);
+      else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'teal');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system'
+        ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+        : (p.font === 'leitura'
+          ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif'
+          : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = {
+        emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66],
+        amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60]
+      };
+      var a = ACC[p.accent] || ACC.teal;
+      s.setProperty('--accent-h', a[0] + '');
+      s.setProperty('--accent-s', a[1] + '%');
+      s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"], section[id^="modulo-"] { scroll-margin-top: 5rem; }
+
+    /* Light mode overrides - OBRIGATORIO (Parte 1) */
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    /* Parte 2 - acento da trilha (Teal) */
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13, 148, 136, 0.12); }
+    html:not(.dark) .bg-teal-500\/10 { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .border-teal-500\/30 { border-color: rgba(13, 148, 136, 0.25); }
+    html:not(.dark) .hover\:bg-teal-500\/30:hover { background-color: rgba(13, 148, 136, 0.18); }
+    html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .hover\:text-teal-400:hover { color: #0d9488; }
+    html:not(.dark) .group:hover .group-hover\:text-teal-400 { color: #0d9488; }
+
+    /* Parte 3 - remove gradientes e cores especiais */
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+
+    /* Parte 4 - nav */
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    /* Parte 5 - bordas suavizadas no dark */
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+      .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha5/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha5/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha5/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
+<!-- NAVIGATION -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span>
+<span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-teal-400 bg-teal-500/10" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- CONTEUDO -->
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12" id="conteudo">
+<!-- HEADER -->
+<header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-10">
+<span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">RUTA 5</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🖼️ Interfaces: el agente que ve</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-6">
+        Por sí solo, el agente escribe <strong>front-end</strong> (la parte visual de un sitio — lo que
+        el usuario ve y donde hace clic) genérica: recuadros grises, fuente predeterminada, «aspecto de IA». Pero tiene una
+        ventaja que ningún diseñador humano tiene gratis: puede <strong>ver</strong> el propio
+        trabajo, quitar un <strong>screenshot</strong> (una captura de pantalla) y comparar con lo que debería
+        aparecer. Con una <em>skill</em> de diseño y ese ciclo de verificación visual, pasa del 0% y
+        se acerca al 60% del camino hacia lo «profesional». Los <strong>El 40% final es tuyo</strong> —
+        gusto, criterio y ajustes precisos que solo una persona puede decidir.
+      </p>
+<img alt="Interfaz futurista en tonos teal y cian que muestra un monitor con una página web comparada con una captura de pantalla de referencia, simbolizando al agente que verifica visualmente su propio trabajo" class="w-full h-auto rounded-xl border border-dark-600 mb-8" src="../assets/img/hero-trilha5.png"/>
+<div class="rounded-2xl border border-teal-500/30 bg-dark-900/40 p-3 sm:p-4 mb-2 overflow-hidden">
+<svg aria-label="El ciclo de capturas de pantalla tiene cinco etapas en círculo: el agente escribe el código, inicia un servidor local para probarlo, captura una imagen de la pantalla, compara esa imagen con lo esperado y corrige lo que está mal; luego vuelve al inicio hasta que el resultado quede bien" class="w-full h-auto" role="img" viewbox="0 0 1000 320">
+<defs>
+<lineargradient id="t5hero-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2dd4bf"></stop><stop offset="1" stop-color="#0d9488"></stop></lineargradient>
+<filter height="180%" id="t5hero-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="t5hero-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#2dd4bf" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="t5hero-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#2dd4bf"></path></marker>
+<marker id="t5hero-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#t5hero-grid)" height="320" width="1000" x="0" y="0"></rect>
+<text fill="#5eead4" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="500" y="26">el ciclo de capturas de pantalla</text>
+<g font-family="Inter,sans-serif">
+<!-- circle layout: center 500,175 radius 118 -->
+<circle cx="500" cy="175" fill="none" opacity="0.6" r="118" stroke="#134e4a" stroke-dasharray="3 5" stroke-width="1.5"></circle>
+<!-- stage 1: top -->
+<g class="wf-a">
+<circle cx="500" cy="57" fill="#0e1622" filter="url(#t5hero-glow)" r="46" stroke="url(#t5hero-grad)" stroke-width="2.5"></circle>
+<text fill="#5eead4" font-size="20" text-anchor="middle" x="500" y="52">✍️</text>
+<text fill="#99f6e4" font-size="10" font-weight="600" text-anchor="middle" x="500" y="70">1. Escribe</text>
+</g>
+<!-- stage 2: right-top -->
+<g class="wf-a">
+<circle cx="612" cy="130" fill="#0e1622" filter="url(#t5hero-glow)" r="46" stroke="url(#t5hero-grad)" stroke-width="2.5"></circle>
+<text fill="#5eead4" font-size="20" text-anchor="middle" x="612" y="125">🖥️</text>
+<text fill="#99f6e4" font-size="10" font-weight="600" text-anchor="middle" x="612" y="143">2. Inicia el servidor</text>
+</g>
+<!-- stage 3: right-bottom -->
+<g class="wf-a">
+<circle cx="570" cy="255" fill="#0e1622" filter="url(#t5hero-glow)" r="46" stroke="url(#t5hero-grad)" stroke-width="2.5"></circle>
+<text fill="#5eead4" font-size="20" text-anchor="middle" x="570" y="250">📸</text>
+<text fill="#99f6e4" font-size="10" font-weight="600" text-anchor="middle" x="570" y="268">3. Captura</text>
+</g>
+<!-- stage 4: left-bottom -->
+<g class="wf-a">
+<circle cx="430" cy="255" fill="#0e1622" filter="url(#t5hero-glow)" r="46" stroke="url(#t5hero-grad)" stroke-width="2.5"></circle>
+<text fill="#5eead4" font-size="20" text-anchor="middle" x="430" y="250">🔍</text>
+<text fill="#99f6e4" font-size="10" font-weight="600" text-anchor="middle" x="430" y="268">4. Compara</text>
+</g>
+<!-- stage 5: left-top -->
+<g class="wf-a">
+<circle cx="388" cy="130" fill="#0e1622" filter="url(#t5hero-glow)" r="46" stroke="url(#t5hero-grad)" stroke-width="2.5"></circle>
+<text fill="#5eead4" font-size="20" text-anchor="middle" x="388" y="125">🛠️</text>
+<text fill="#99f6e4" font-size="10" font-weight="600" text-anchor="middle" x="388" y="143">5. Corrige</text>
+</g>
+<!-- arrows connecting the loop -->
+<path d="M540,68 C575,78 600,100 606,112" fill="none" marker-end="url(#t5hero-ah)" opacity="0.7" stroke="#2dd4bf" stroke-width="1.8"></path>
+<path d="M604,168 C598,200 585,222 578,232" fill="none" marker-end="url(#t5hero-ah)" opacity="0.7" stroke="#2dd4bf" stroke-width="1.8"></path>
+<path d="M524,264 C500,268 478,268 476,264" fill="none" marker-end="url(#t5hero-ah)" opacity="0.7" stroke="#2dd4bf" stroke-width="1.8"></path>
+<path d="M406,224 C395,200 388,178 388,176" fill="none" marker-end="url(#t5hero-ah)" opacity="0.7" stroke="#2dd4bf" stroke-width="1.8"></path>
+<path d="M400,90 C425,72 460,62 462,60" fill="none" marker-end="url(#t5hero-ahc)" opacity="0.6" stroke="#38bdf8" stroke-width="1.8"></path>
+<text fill="#2dd4bf" font-size="11" font-weight="700" text-anchor="middle" x="500" y="180">¿es lo suficientemente bueno?</text>
+<text fill="#5eead4" font-size="9" text-anchor="middle" x="500" y="196">si no, el ciclo vuelve a ejecutarse</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 mt-2">Leyenda: el agente escribe el código de la página, sube un <strong>servidor local</strong> (el programa que muestra la página solo en tu computadora, antes de publicarla) para probar, toma una <strong>screenshot</strong>, compara con la referencia esperada y corrige lo que quedó mal, repitiendo el ciclo hasta que el resultado sea suficientemente bueno. Ese es el «loop» que acerca el front-end genérico al nivel profesional.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-teal-400">8</div>
+<div class="text-xs text-neutral-400">Módulos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-teal-400">48</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-teal-400">~4h</div>
+<div class="text-xs text-neutral-400">Duración</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-teal-400">Intermedio</div>
+<div class="text-xs text-neutral-400">Nivel</div>
+</div>
+</div>
+<div aria-label="Progreso de la ruta 5" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="trilha:5" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1">
+<span data-inema-meter-frac="">0 de 48</span>
+<span data-inema-meter-pct="">0%</span>
+</div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<!-- MAPA DA TRILHA -->
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Mapa de la ruta</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-teal-500/30 p-5 transition-all" href="#modulo-5-1">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold text-sm">5.1</span>
+<span class="text-xs text-neutral-500">~25 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-teal-400 transition-colors">😐 Por qué el resultado predeterminado sale genérico</h3>
+<p class="text-xs text-neutral-400">La caja gris no es un accidente</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-teal-500/30 p-5 transition-all" href="#modulo-5-2">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold text-sm">5.2</span>
+<span class="text-xs text-neutral-500">~30 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-teal-400 transition-colors">🎨 Skill de diseño global</h3>
+<p class="text-xs text-neutral-400">Enseñarle tu gusto una sola vez</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-teal-500/30 p-5 transition-all" href="#modulo-5-3">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold text-sm">5.3</span>
+<span class="text-xs text-neutral-500">~35 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-teal-400 transition-colors">📸 El bucle de capturas de pantalla</h3>
+<p class="text-xs text-neutral-400">El agente que se ve en el espejo</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-teal-500/30 p-5 transition-all" href="#modulo-5-4">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold text-sm">5.4</span>
+<span class="text-xs text-neutral-500">~25 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-teal-400 transition-colors">🚧 Límites del bucle</h3>
+<p class="text-xs text-neutral-400">El 40% que queda a tu cargo</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-teal-500/30 p-5 transition-all" href="#modulo-5-5">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold text-sm">5.5</span>
+<span class="text-xs text-neutral-500">~30 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-teal-400 transition-colors">🖼️ Referencia visual y rebranding</h3>
+<p class="text-xs text-neutral-400">Mostrar en lugar de describir</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-teal-500/30 p-5 transition-all" href="#modulo-5-6">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold text-sm">5.6</span>
+<span class="text-xs text-neutral-500">~25 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-teal-400 transition-colors">🗂️ Carpeta de marca</h3>
+<p class="text-xs text-neutral-400">Logo, color y fuente en un solo lugar</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-teal-500/30 p-5 transition-all" href="#modulo-5-7">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold text-sm">5.7</span>
+<span class="text-xs text-neutral-500">~40 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-teal-400 transition-colors">🚀 Build: landing page publicada</h3>
+<p class="text-xs text-neutral-400">De cero a estar en línea, de verdad</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-teal-500/30 p-5 transition-all" href="#modulo-5-8">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold text-sm">5.8</span>
+<span class="text-xs text-neutral-500">~25 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-teal-400 transition-colors">🔒 Reglas de publicación</h3>
+<p class="text-xs text-neutral-400">Nada se publica sin tu aprobación</p>
+</a>
+</div>
+</section>
+<h2 class="text-2xl font-bold mb-6">Contenido detallado</h2>
+<!-- MODULO 5.1 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="5-1" data-inema-track="5" id="modulo-5-1">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold">5.1</span>
+<span class="text-xs text-neutral-500">~25 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">😐 Por qué el resultado predeterminado sale genérico</h3>
+<p class="text-neutral-400 text-sm">Sin instrucciones, el agente elige el camino más común — y lo más común es aburrido. Entiende por qué pasa antes de intentar corregirlo.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-5-1-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🖼️</span>
+<div><span class="font-medium">El front-end es lo que ve el usuario</span><span class="text-neutral-500 text-sm ml-2">- definiendo el término</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-1-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">"¿Nuevo por aquí? El front-end es la parte visual de un sitio o una app: los botones, colores, textos y diseño que aparecen en pantalla. Lo opuesto es el back-end, que se ejecuta oculto en el servidor." El agente escribe ambos, pero el front-end es lo primero que evalúa el cliente/usuario.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Sin este término claro, el resto de la ruta («skill de diseño», «screenshot») no tiene sentido — el front-end es el objetivo de todo lo que viene después.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Front-end, back-end, lo que el usuario ve frente a lo que se ejecuta detrás.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-1-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">📊</span>
+<div><span class="font-medium">El modelo aprendió del promedio</span><span class="text-neutral-500 text-sm ml-2">- por qué queda con «aspecto de IA»</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-1-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El agente aprendió viendo millones de páginas en internet. Sin una dirección específica, reproduce el patrón más frecuente, que tiende al promedio, no a lo excepcional.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Entender la causa evita la frustración: no es que «el agente sea malo para el diseño», sino que «necesita orientación, como alguien que acaba de empezar».</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Regresión a la media, falta de dirección, «apariencia de IA» como síntoma.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-1-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🔲</span>
+<div><span class="font-medium">Los síntomas clásicos</span><span class="text-neutral-500 text-sm ml-2">- reconocer el problema</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-1-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Gris claro sobre gris oscuro, sombras genéricas, esquinas demasiado redondeadas, íconos de cohetes y estrellas por todas partes, degradado morado y azul: la «firma visual» que cualquiera reconoce de lejos como hecha por IA sin curaduría.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Saber reconocer el síntoma te ayuda a pedir una corrección específica en vez de «hazlo más bonito» (lo que no ayuda al agente a decidir nada).</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Patrones reconocibles, comentarios específicos frente a vagos.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-1-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">👁️</span>
+<div><span class="font-medium">El agente no «ve» por defecto</span><span class="text-neutral-500 text-sm ml-2">- escribe código a ciegas</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-1-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Por defecto, el agente lee y escribe texto (código); no abre la página en el navegador para "mirar" el resultado, a menos que tú —o una herramienta adicional— lo pidas explícitamente.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Esta es la brecha que cierran los módulos 5.2 y 5.3: darle al agente instrucciones de estilo (skill de diseño) y visión (ciclo de screenshots).</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Escribir código a ciegas, sin feedback visual de forma predeterminada.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-1-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">📈</span>
+<div><span class="font-medium">La escala «40% → 60%»</span><span class="text-neutral-500 text-sm ml-2">- la promesa honesta de esta ruta</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-1-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Sin nada, el resultado llega aproximadamente al 40% del camino hacia «parece profesional». Con una skill de diseño + un ciclo de screenshot, se acerca al 60%. El 40% final requiere criterio humano — no es un bug que haya que corregir, es tu trabajo.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Una expectativa realista evita dos trampas: rendirse pronto («no se puede hacer bien») o confiar demasiado («el agente lo resuelve solo»).</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ganancia parcialmente automatizable, límite estructural, papel del criterio humano.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-1-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🗺️</span>
+<div><span class="font-medium">El mapa de la Trilha 5</span><span class="text-neutral-500 text-sm ml-2">- lo que sigue</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-1-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Skill de diseño → ciclo de capturas de pantalla → límites del ciclo → referencia visual/rebranding → carpeta de marca → build de landing page publicada → reglas de publicación.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Ver el camino completo ayuda a entender por qué existe cada módulo antes de llegar a él.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Progresión: formar el gusto, dar visión, probar límites, aplicar la marca, publicar con reglas.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-5-1')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-colors" href="modulo-5-1.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 5.2 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="5-2" data-inema-track="5" id="modulo-5-2">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold">5.2</span>
+<span class="text-xs text-neutral-500">~30 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🎨 Skill de diseño global</h3>
+<p class="text-neutral-400 text-sm">Enséñale tus preferencias una sola vez, en una skill, y el agente las aplicará en cada proyecto siguiente, sin que tengas que repetir la misma instrucción en cada conversación.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-5-2-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🧩</span>
+<div><span class="font-medium">Skill como memoria de gusto</span><span class="text-neutral-500 text-sm ml-2">- concepto heredado de la Trilha 3</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-2-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Una <em>skill</em> es un archivo de instrucciones que el agente carga cuando el pedido coincide con ellas (se ve en la Ruta 3). Una skill de diseño guarda tus preferencias visuales para todos los proyectos de front-end.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Sin esto, vuelves a escribir «usa colores sobrios, tipografía limpia» en cada conversación nueva — la skill elimina esa repetición.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Skill, reutilización entre proyectos, memoria de preferencias.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-2-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">📐</span>
+<div><span class="font-medium">Qué poner dentro de la skill</span><span class="text-neutral-500 text-sm ml-2">- paleta, tipografía, espaciado</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-2-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Paleta de colores preferida, fuentes aprobadas, reglas de espaciado ("nunca juntes elementos sin dejar espacio"), tono visual (sobrio, divertido, corporativo) y qué evitar (degradado morado-azul, ícono de cohete).</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Cuanto más concreta sea la instrucción, menos probable será que el agente vuelva al promedio genérico del módulo 5.1.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Paleta, tipografía, espaciado, lista de "cosas que no hay que hacer".</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-2-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🌐</span>
+<div><span class="font-medium">Global vs. por proyecto</span><span class="text-neutral-500 text-sm ml-2">- dónde está la skill</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-2-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Una skill de diseño «global» está en una carpeta que sirve para todos tus proyectos; una «de proyecto» está solo dentro de ese repositorio específico (tema que se estudia a fondo en Trilha 3.5).</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Tu gusto personal (la tipografía que te gusta, por ejemplo) es global; la marca de un cliente específico corresponde a cada proyecto.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Alcance global, alcance del proyecto, cuándo usar cada uno.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-2-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">💻</span>
+<div><span class="font-medium">Copy-run: crear tu skill de diseño</span><span class="text-neutral-500 text-sm ml-2">- prompt listo</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-2-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Objetivo: generar el archivo de skill con tus preferencias de diseño. Bloque para copiar: <code>"Crie uma skill global chamada 'meu-design' com estas preferências: paleta &lt;suas cores&gt;, fonte &lt;sua fonte&gt;, tom &lt;sóbrio/divertido&gt;. Evite gradiente genérico e ícones de foguete."</code> Cómo verificar: pídele al agente que enumere el contenido del archivo de skill creado y comprueba que coincida con lo que pediste.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el ejemplo práctico que reúne la teoría de los temas anteriores en un resultado que puedes usar hoy mismo.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Prompt para crear una skill, verificación del archivo generado.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-2-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🔄</span>
+<div><span class="font-medium">Perfeccionando la skill con el tiempo</span><span class="text-neutral-500 text-sm ml-2">- ella mejora con el uso</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-2-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Cada vez que corriges algo que salió mal, conviene volver a la skill y agregar esa regla; por ejemplo: «nunca uses este color de fondo con este texto».</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">La skill mejora proyecto a proyecto; sin ese hábito, repites siempre el mismo error.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Iteración, aprendizaje acumulado, edición incremental.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-2-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">➡️</span>
+<div><span class="font-medium">Una skill no basta por sí sola</span><span class="text-neutral-500 text-sm ml-2">- puente al módulo 5.3</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-2-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La skill da instrucciones sobre el estilo, pero el agente sigue escribiendo a ciegas: no ve el resultado. Falta el paso de verificación visual, tema del próximo módulo.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Entender esta brecha evita pensar que la skill lo resuelve todo: es la mitad de la solución.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Instrucción y verificación, las dos partes de la solución.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-5-2')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-colors" href="modulo-5-2.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 5.3 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="5-3" data-inema-track="5" id="modulo-5-3">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold">5.3</span>
+<span class="text-xs text-neutral-500">~35 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">📸 El bucle de capturas de pantalla</h3>
+<p class="text-neutral-400 text-sm">El paso que le da ojos al agente: escribir, iniciar el servidor local, capturar la imagen de la pantalla, comparar y corregir — en ciclo, hasta que quede bien.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-5-3-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🖥️</span>
+<div><span class="font-medium">Servidor local, en una frase</span><span class="text-neutral-500 text-sm ml-2">- definiendo el término</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-3-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Uno <strong>servidor local</strong> es un pequeño programa que muestra la página solo en tu computadora (una dirección tipo <code>localhost</code>) — como un ensayo antes de publicar de verdad para todo el mundo.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el primer paso del ciclo: si no levantas este servidor, no hay una página que fotografiar.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Servidor local, <code>localhost</code>, entorno de ensayo.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-3-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">📷</span>
+<div><span class="font-medium">Captura de pantalla: la cámara del agente</span><span class="text-neutral-500 text-sm ml-2">- definiendo el término</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-3-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Uno <strong>screenshot</strong> es una captura de la pantalla en ese instante. Con la herramienta adecuada (un navegador automatizado), el propio agente toma esa captura de la página que acaba de construir.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es esta captura la que transforma «escribir código a ciegas» (módulo 5.1) en «ver el resultado antes de entregártelo».</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Captura de pantalla, navegador automatizado, feedback visual.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-3-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">⚖️</span>
+<div><span class="font-medium">Comparar con un objetivo</span><span class="text-neutral-500 text-sm ml-2">- ¿contra qué?</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-3-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El agente compara la captura de pantalla con un "objetivo": puede ser la skill de diseño (módulo 5.2), una imagen de referencia (módulo 5.5) o una checklist descriptiva ("texto legible, botones alineados, espacio entre secciones").</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Sin un objetivo claro, «comparar» se convierte en una opinión vaga — el objetivo es lo que hace que la corrección sea objetiva.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Objetivo de comparación, criterio objetivo, lista de verificación visual.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-3-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🔁</span>
+<div><span class="font-medium">El ciclo se repite hasta que quede bien</span><span class="text-neutral-500 text-sm ml-2">- corregir y volver a probar</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-3-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Después de corregir, el agente vuelve a iniciar el servidor, toma otra captura de pantalla, vuelve a comparar y repite hasta cumplir el criterio o agotar un número razonable de intentos.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Esta repetición es lo que diferencia un resultado de «primer intento, sin revisión» de uno «verificado antes de entregártelo».</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Iteración, ciclo de cerrar-probar-corregir, límite de intentos.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-3-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">💻</span>
+<div><span class="font-medium">Copy-run: pedir el ciclo completo</span><span class="text-neutral-500 text-sm ml-2">- prompt listo</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-3-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Objetivo: hacer que el agente construya y verifique visualmente una página por su cuenta. Bloque para copiar: <code>"Crie uma landing page para &lt;seu produto&gt;. Suba um servidor local, tire um screenshot, compare com a skill de design e corrija até ficar consistente antes de me mostrar."</code> Cómo verificar: pídele al agente que te envíe (o describa) la captura de pantalla final y comprueba que coincida con lo solicitado.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el momento en que la teoría de los módulos 5.1/5.2 se convierte en acción: el ciclo se ejecuta de principio a fin.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Prompt del ciclo completo, verificación del resultado entregado.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-3-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">📈</span>
+<div><span class="font-medium">El aumento real: del 40% a cerca del 60%</span><span class="text-neutral-500 text-sm ml-2">- lo que cambia el bucle</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-3-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Skill (gusto) + ciclo (visión) juntos corrigen errores evidentes: texto cortado, botón fuera de lugar, poco contraste; pero por sí solos no deciden si algo «es bonito» de verdad.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Prepara para el módulo 5.4, que detalla exactamente qué no resuelve el lazo.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Errores graves vs. criterio fino, ganancia automatizable.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-5-3')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-colors" href="modulo-5-3.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 5.4 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="5-4" data-inema-track="5" id="modulo-5-4">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold">5.4</span>
+<span class="text-xs text-neutral-500">~25 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🚧 Límites del bucle</h3>
+<p class="text-neutral-400 text-sm">El ciclo de capturas de pantalla no es magia: detecta errores técnicos, no preferencias. El 40% final te corresponde a ti, y conviene saber exactamente dónde está el límite.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-5-4-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">✅</span>
+<div><span class="font-medium">Qué detecta bien el ciclo</span><span class="text-neutral-500 text-sm ml-2">- errores objetivos</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-4-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Texto cortado de la caja, elementos superpuestos, botón sin espacio para hacer clic, contraste de color que dificulta la lectura: cosas que se pueden verificar de forma objetiva en la imagen.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Conocer la fuerza del loop evita que lo descartes: sí resuelve una gran parte de los errores molestos.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Error objetivo, verificable mediante una regla, ruptura estructural.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-4-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">❌</span>
+<div><span class="font-medium">Qué no detecta el ciclo</span><span class="text-neutral-500 text-sm ml-2">- gusto subjetivo</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-4-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">"¿Este color combina con la marca?", "¿este espaciado se ve elegante o vacío?", "¿este texto suena confiable?": preguntas de gusto que dependen del contexto, el público y la sensibilidad humana.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es exactamente la parte que te queda — los «40% finales» mencionados en el módulo 5.1, aquí explicados de verdad.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Juicio subjetivo, contexto de marca, sensibilidad humana.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-4-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🔂</span>
+<div><span class="font-medium">El riesgo de un bucle infinito</span><span class="text-neutral-500 text-sm ml-2">- límite de intentos</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-4-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Sin un objetivo claro (módulo 5.3), el agente puede entrar en un ciclo intentando satisfacer un criterio vago y no detenerse nunca — por eso siempre conviene acordar un número máximo de intentos.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Evita gastar tiempo y dinero innecesariamente en un loop que nunca converge.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Loop sin criterio de detención, límite de intentos, costo.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-4-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">📱</span>
+<div><span class="font-medium">Una captura de pantalla no representa todos los tamaños de pantalla</span><span class="text-neutral-500 text-sm ml-2">- límite técnico</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-4-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Una página puede verse bien en el tamaño de pantalla probado y fallar en un celular o en una pantalla grande: el ciclo solo verifica lo que realmente se capturó.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Lleva a pedir explícitamente capturas de pantalla en más de un tamaño cuando el resultado realmente importa.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Diseño adaptable, varios tamaños de pantalla, cobertura de pruebas.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-4-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🎯</span>
+<div><span class="font-medium">Tu papel: el veredicto final</span><span class="text-neutral-500 text-sm ml-2">- tú apruebas, no el agente</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-4-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Incluso después de que el ciclo se ejecute y «apruebe» su propio resultado, el veredicto de «está listo para publicar» sigue siendo tuyo: el agente reduce el trabajo, no sustituye la decisión final.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Cierra el criterio honesto de la ruta: la automatización ayuda, pero no te quita la responsabilidad de revisar el resultado tú mismo antes de publicarlo (conexión directa con el módulo 5.8).</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Aprobación humana final, automatización para reducir el esfuerzo, no para sustituir el criterio.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-4-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🖼️</span>
+<div><span class="font-medium">Completar el gusto con una referencia</span><span class="text-neutral-500 text-sm ml-2">- puente al módulo 5.5</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-4-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Una forma de reducir la subjetividad del módulo 5.4 es mostrar, en lugar de describir, lo que quieres: dándole al agente una imagen de referencia.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el enlace al siguiente módulo, que enseña exactamente esta técnica.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Mostrar vs. describir, imagen de referencia.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-5-4')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-colors" href="modulo-5-4.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 5.5 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="5-5" data-inema-track="5" id="modulo-5-5">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold">5.5</span>
+<span class="text-xs text-neutral-500">~30 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🖼️ Referencia visual y rebranding</h3>
+<p class="text-neutral-400 text-sm">Una imagen vale más que un párrafo de instrucciones: muestra lo que quieres y usa el mismo recurso para cambiar el aspecto de algo que ya está listo.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-5-5-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🖼️</span>
+<div><span class="font-medium">Por qué mostrar funciona mejor que describir</span><span class="text-neutral-500 text-sm ml-2">- el problema de la palabra vaga</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-5-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">"Estilo minimalista y elegante" significa cosas diferentes para cada persona; una imagen de referencia elimina esa ambigüedad de una vez.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es la forma más rápida de reducir la distancia entre lo que imaginas y lo que entrega el agente.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ambigüedad del lenguaje, referencia visual como ancla.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-5-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">📎</span>
+<div><span class="font-medium">Cómo adjuntar una imagen a la solicitud</span><span class="text-neutral-500 text-sm ml-2">- mecánica práctica</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-5-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La mayoría de los agentes de código acepta imágenes adjuntas en la conversación o la ruta de un archivo PNG/JPG guardado en el proyecto — el agente «lee» la imagen junto con el texto de la solicitud.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Sin conocer el mecanismo, la técnica de «mostrar» se queda en teoría.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Adjuntar imagen, ruta del archivo, lectura multimodal.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-5-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🎨</span>
+<div><span class="font-medium">Dónde encontrar buenas referencias</span><span class="text-neutral-500 text-sm ml-2">- sitios y competidores</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-5-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Sitios de galerías de diseño, un competidor que admiras o incluso una captura de tu propio material anterior: cualquier imagen real que refleje el estilo que buscas.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Tener un repertorio de referencias listas acelera cualquier pedido de diseño futuro.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Colección de referencias, selección personal.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-5-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🔄</span>
+<div><span class="font-medium">Cambio de marca: renovar la apariencia de lo que ya existe</span><span class="text-neutral-500 text-sm ml-2">- misma técnica, otro uso</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-5-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">"Rebranding" es actualizar la identidad visual de algo que ya existe. La misma referencia visual sirve aquí: muestra la nueva dirección y pide que la apliquen sobre lo que ya está listo.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Rara vez empiezas desde cero: la mayoría de las veces estás actualizando algo que ya existe.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Cambio de marca, actualización sobre una base existente.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-5-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">💻</span>
+<div><span class="font-medium">Copy-run: solicitud con referencia adjunta</span><span class="text-neutral-500 text-sm ml-2">- prompt listo</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-5-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Objetivo: guiar el resultado con una imagen en vez de solo palabras. Bloque para copiar: <code>"Anexei uma imagem de referência (&lt;caminho da imagem&gt;). Recrie o layout dessa referência para &lt;seu conteúdo&gt;, mantendo a mesma sensação visual — cores, espaçamento e tom."</code> Cómo verificar: compara lado a lado la captura de pantalla final con la referencia adjunta.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es la aplicación directa de la técnica «mostrar en lugar de describir» con un resultado verificable.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Prompt con adjunto, comparación lado a lado.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-5-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">⚠️</span>
+<div><span class="font-medium">Cuidado con los derechos de autor</span><span class="text-neutral-500 text-sm ml-2">- referencia de estilo, no copia</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-5-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Una referencia de estilo («esta vibra visual») es diferente de copiar contenido, logotipo o identidad de otra marca. Pedir que se inspire en algo es diferente de pedir que lo clone.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Te protege de un problema legal y ético antes de publicar cualquier cosa.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Inspiración frente a copia, identidad de terceros.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-5-5')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-colors" href="modulo-5-5.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 5.6 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="5-6" data-inema-track="5" id="modulo-5-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold">5.6</span>
+<span class="text-xs text-neutral-500">~25 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🗂️ Carpeta de marca</h3>
+<p class="text-neutral-400 text-sm">Un lugar único con logo, colores y tipografías que el agente consulta siempre — para que tu identidad visual no se pierda de un proyecto a otro.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-5-6-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🗂️</span>
+<div><span class="font-medium">Qué es una carpeta de marca</span><span class="text-neutral-500 text-sm ml-2">- definiendo el término</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-6-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Una carpeta dentro del proyecto (o global) con los archivos del logo, la paleta de colores exacta y las fuentes utilizadas: la única fuente de verdad de tu identidad visual.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Sin ella, cada proyecto nuevo reinventa (mal) el logo o el color de la marca de memoria.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Fuente única de verdad, activos de marca, coherencia.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-6-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🎨</span>
+<div><span class="font-medium">Colores en código, no en la memoria</span><span class="text-neutral-500 text-sm ml-2">- hexadecimal exacto</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-6-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Guardar el código exacto del color (tipo <code>#0d9488</code>) en lugar de "ese verde azulado"; el agente usa el valor correcto sin adivinar.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Un color «casi correcto» rompe la consistencia de la marca de forma sutil, pero visible para quien la conoce.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Código hexadecimal de color, precisión vs. aproximación.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-6-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🔤</span>
+<div><span class="font-medium">Fuentes y variaciones del logo</span><span class="text-neutral-500 text-sm ml-2">- el resto del kit</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-6-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Nombre exacto de la fuente (y dónde descargarla), además de las versiones del logo (con fondo claro, oscuro y solo el ícono), listas para usar sin tener que recrearlas.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Evita que el agente «invente» una fuente parecida o distorsione el logo al intentar recrearlo desde cero.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Nombre exacto de la fuente, variaciones del logo listas para usar.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-6-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🔗</span>
+<div><span class="font-medium">Vincular la carpeta de marca con la skill de diseño</span><span class="text-neutral-500 text-sm ml-2">- combinando 5.2 y 5.6</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-6-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La skill de diseño (módulo 5.2) puede apuntar directamente a la carpeta de marca. Así, el gusto personal (skill) y la identidad específica de un cliente (carpeta) trabajan juntos sin conflicto.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Cierra la arquitectura: la skill global indica el «cómo hacerlo» y la carpeta de marca, el «con qué».</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Skill que hace referencia a una carpeta, separación entre gustos e identidad.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-6-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">💻</span>
+<div><span class="font-medium">Copy-run: armar la carpeta de marca</span><span class="text-neutral-500 text-sm ml-2">- prompt listo</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-6-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Objetivo: organizar tus recursos de marca en un único lugar de consulta. Bloque para copiar: <code>"Crie a pasta 'marca/' com um arquivo marca.md listando: cor primária &lt;hex&gt;, cor secundária &lt;hex&gt;, fonte principal &lt;nome&gt;, e onde estão os arquivos do logo."</code> Cómo verificar: abre el archivo generado y comprueba que todos los valores coincidan con los tuyos.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Transforma la teoría de los temas anteriores en una carpeta que usarás en el próximo módulo de build.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Archivo <code>marca.md</code>, verificación de valores.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-6-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">➡️</span>
+<div><span class="font-medium">Listo para crear la ruta</span><span class="text-neutral-500 text-sm ml-2">- puente al módulo 5.7</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-6-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Con una skill de diseño, un ciclo de screenshots, una referencia visual y una carpeta de marca listos, tienes todo para construir y publicar una landing page de verdad.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Marca la transición de la teoría al proyecto práctico que cierra la ruta.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Herramientas listas, transición a la build.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-5-6')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-colors" href="modulo-5-6.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 5.7 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="5-7" data-inema-track="5" id="modulo-5-7">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold">5.7</span>
+<span class="text-xs text-neutral-500">~40 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🚀 Build: landing page publicada</h3>
+<p class="text-neutral-400 text-sm">El proyecto práctico de la ruta: combinar skill, ciclo de capturas de pantalla, referencia y carpeta de marca para construir y publicar una landing page real.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-5-7-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🎯</span>
+<div><span class="font-medium">Definiendo el alcance de la landing page</span><span class="text-neutral-500 text-sm ml-2">- lo que necesita tener</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-7-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">"Landing page" es una página única de presentación (para un producto, servicio o proyecto personal): las secciones típicas son encabezado, qué es, cómo funciona y una llamada a la acción.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Definir el alcance antes de pedirlo evita idas y vueltas: el agente sabe exactamente el tamaño del proyecto.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Landing page, secciones típicas, alcance definido.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-7-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🧩</span>
+<div><span class="font-medium">Reunir los insumos antes de pedir</span><span class="text-neutral-500 text-sm ml-2">- skill + marca + referencia</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-7-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Antes de pedir el build, comprueba que la skill de diseño (5.2) esté activa, que la carpeta de marca (5.6) esté lista y que tengas a mano una referencia visual (5.5), si quieres.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Juntar los insumos antes evita pedir el build "a medias" y tener que corregirlo después.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Lista de verificación de insumos, preparación antes del pedido.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-7-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">💻</span>
+<div><span class="font-medium">Copy-run: solicitud completa de build</span><span class="text-neutral-500 text-sm ml-2">- prompt listo</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-7-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Objetivo: construir toda la landing page en un único pedido bien formulado. Bloque para copiar: <code>"Usando a pasta 'marca/' e a skill de design, crie uma landing page para &lt;seu produto/projeto&gt; com seções: topo, o que é, como funciona, chamada para ação. Suba servidor local, tire screenshot, compare com a skill e corrija antes de me mostrar."</code> Cómo verificar: revisa la captura de pantalla final y comprueba que estén las 4 secciones y que se haya aplicado la marca.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el ejercicio que reúne todo lo que la ruta enseñó hasta ahora en un resultado tangible.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Pedido completo, verificación con una lista de secciones.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-7-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">👀</span>
+<div><span class="font-medium">Tu revisión del 40 % final</span><span class="text-neutral-500 text-sm ml-2">- aplicando el módulo 5.4</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-7-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Después de que el agente apruebe su propio ciclo, es tu turno: revisa el resultado con atención y pide ajustes específicos según tus preferencias (no «mejóralo», sino «este color de fondo se ve demasiado pesado»).</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es la aplicación práctica del límite explicado en el módulo 5.4: el juicio fino es tuyo.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Comentarios específicos, revisión humana final.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-7-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🌐</span>
+<div><span class="font-medium">Publicar de verdad</span><span class="text-neutral-500 text-sm ml-2">- del servidor local al mundo</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-7-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm"><strong>Deploy</strong> es el proceso de sacar la página del «ensayo» en el servidor local y ponerla en línea, con una dirección accesible para cualquiera; tema que se profundiza en la Ruta 4.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">La landing page solo cumple su función cuando alguien de fuera puede acceder a ella.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Deploy, dirección pública, conexión con la Trilha 4.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-7-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🏁</span>
+<div><span class="font-medium">Criterio de «terminado»</span><span class="text-neutral-500 text-sm ml-2">- cuándo dejar de modificar</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-7-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La implementación está lista cuando está en línea, no tiene errores visuales graves, tiene la marca aplicada y tú —no el agente— confirmas que está bien.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Sin un criterio para detenerse, el perfeccionismo paraliza el proyecto — y el módulo 5.8 detalla las reglas antes de publicar de verdad.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Criterio de finalización, evitar el perfeccionismo paralizante.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-5-7')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-colors" href="modulo-5-7.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 5.8 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="5-8" data-inema-track="5" id="modulo-5-8">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-teal-400 font-bold">5.8</span>
+<span class="text-xs text-neutral-500">~25 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🔒 Reglas de publicación</h3>
+<p class="text-neutral-400 text-sm">En la práctica, publicar es irreversible: alguien de afuera puede verlo. Cierra la ruta con las reglas que garantizan que nada se publique sin tu OK explícito.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-5-8-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🚫</span>
+<div><span class="font-medium">Publicar no es realmente reversible</span><span class="text-neutral-500 text-sm ml-2">- por qué la cautela</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-8-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Aunque puedas borrar una página después, alguien ya pudo haberla visto, guardado o compartido; publicar es, en la práctica, una acción irreversible.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Justifica por qué esta ruta termina con reglas explícitas en vez de dejarlo al sentido común.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Acción de una sola vía, cautela antes de lo irreversible.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-8-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">✍️</span>
+<div><span class="font-medium">Regla en el CLAUDE.md, no en la memoria</span><span class="text-neutral-500 text-sm ml-2">- lo escrito prevalece sobre lo recordado</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-8-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La misma técnica del Recorrido 0.4: escribir «nada se publica sin mi aprobación explícita» en el CLAUDE.md del proyecto para que el agente lo lea siempre, en cada sesión nueva.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Una regla dicha una vez se pierde; una regla escrita se lee en cada conversación nueva.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Regla persistente, CLAUDE.md, aprobación explícita.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-8-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">✅</span>
+<div><span class="font-medium">Lista de verificación antes de decir "sí"</span><span class="text-neutral-500 text-sm ml-2">- lo que debes revisar de verdad</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-8-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Antes de aprobar: revisa la captura final, comprueba la ortografía y los enlaces, confirma que no aparezcan datos personales o sensibles por error y prueba en al menos otro tamaño de pantalla.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Una checklist objetiva evita aprobar algo a simple vista y con prisa.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Lista de verificación de revisión, datos sensibles, varios tamaños.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-8-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🔑</span>
+<div><span class="font-medium">Nunca dejes claves o secretos a la vista</span><span class="text-neutral-500 text-sm ml-2">- conexión con la Trilha 4.4</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-8-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Confirma que no haya quedado visible ninguna contraseña, clave de API o información privada en el código de la página publicada (tema de "Secretos", Trilha 4.4).</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Una página bonita con un secreto filtrado es peor que una página fea sin filtraciones: la revisión de seguridad va antes que la estética.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Filtración de secretos, prioridad sobre la estética, conexión con la Ruta 4.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-8-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">💻</span>
+<div><span class="font-medium">Copy-run: regla de publicación en CLAUDE.md</span><span class="text-neutral-500 text-sm ml-2">- prompt listo</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-8-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Objetivo: establecer permanentemente la regla de aprobación en el proyecto. Bloque para copiar: <code>"Adicione ao CLAUDE.md a seção: 'Publicação — nunca fazer deploy ou publicar qualquer página sem antes me mostrar o resultado e receber minha aprovação explícita.'"</code> Cómo verificar: abre el CLAUDE.md y confirma que la sección se agregó, palabra por palabra.</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el ejercicio final que deja establecida de forma permanente la regla más importante de la ruta.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Regla permanente en el archivo, verificación literal del texto.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-5-8-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">➡️</span>
+<div><span class="font-medium">Cierre de la Ruta 5</span><span class="text-neutral-500 text-sm ml-2">- rumbo a la Ruta 6</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-5-8-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-teal-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Con la interfaz visual construida, verificada y publicada con reglas claras, la Trilha 6 cambia el enfoque: de «lo que construye el agente» a «cuándo trabaja solo, sin que se lo pidas».</p></div>
+<div><span class="text-teal-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Cierra la ruta con claridad sobre el siguiente paso: programación y bucles.</p></div>
+<div><span class="text-teal-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Transición de trilha, de "construir" a "programar".</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-5-8')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-teal-600 hover:bg-teal-500 text-white rounded-lg transition-colors" href="modulo-5-8.html">Ver completo</a>
+</div>
+</article>
+<!-- NAVEGACAO -->
+<div class="flex flex-col sm:flex-row gap-4 mt-12">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../trilha4/index.html">← Ruta anterior: Deploy</a>
+<a class="flex-1 text-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors" href="../trilha6/index.html">Próxima ruta: Tiempo →</a>
+</div>
+</main>
+<!-- MODAIS -->
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-5-1" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-teal-400 font-bold">5.1</span><span class="font-semibold">Por qué el resultado predeterminado es genérico</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-5-1.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-5-2" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-teal-400 font-bold">5.2</span><span class="font-semibold">Skill de diseño global</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-5-2.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-5-3" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-teal-400 font-bold">5.3</span><span class="font-semibold">El ciclo de capturas de pantalla</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-5-3.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-5-4" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-teal-400 font-bold">5.4</span><span class="font-semibold">Límites del ciclo</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-5-4.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-5-5" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-teal-400 font-bold">5.5</span><span class="font-semibold">Referencia visual y rebranding</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-5-5.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-5-6" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-teal-400 font-bold">5.6</span><span class="font-semibold">Carpeta de marca</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-5-6.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-5-7" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-teal-400 font-bold">5.7</span><span class="font-semibold">Build: landing page publicada</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-5-7.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-5-8" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-teal-400 font-bold">5.8</span><span class="font-semibold">Reglas de publicación</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-5-8.html"></iframe>
+</div>
+</div>
+<!-- FOOTER -->
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Tu Empleado Digital — INEMA.CLUB 2026</p>
+</div>
+</footer>
+<!-- SCRIPTS -->
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) { exp.classList.remove('active'); exp.previousElementSibling && exp.previousElementSibling.setAttribute && exp.previousElementSibling.setAttribute('aria-expanded','false'); }
+      });
+      explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', explanation.classList.contains('active') ? 'true' : 'false');
+    }
+
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else {
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+    }
+    function closeModal() {
+      document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden'));
+      document.body.style.overflow = 'auto';
+    }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init({ autoResume: true });
+    }
+  </script>
+</body>
+</html>

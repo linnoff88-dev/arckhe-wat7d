@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>7.1 Fase 1 — Casa | Seu Funcionário Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5, 150, 105, 0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5, 150, 105, 0.18); }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha7/modulo-7-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha7/modulo-7-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha7/modulo-7-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-7-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha7/modulo-7-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha7/modulo-7-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Pular para o conteúdo</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparação</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Minha jornada</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Início</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 7</a><span>/</span>
+<span class="text-emerald-400">Módulo 7.1</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 7.1</span>
+<h1 class="text-2xl font-bold mb-4">🏠 Fase 1 — Casa: onde seu assistente digital mora</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        Antes de dar qualquer tarefa de verdade, seu assistente precisa de um endereço fixo: uma pasta
+        própria, organizada, com um arquivo de instruções que ele lê sozinho toda vez que abre o trabalho.
+        Este módulo constrói essa base — o alicerce sobre o qual as fases 2, 3 e 4 do capstone vão empilhar.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Iniciante</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Prático</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progresso do módulo 7.1" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:7-1" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Seção <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. Por que uma casa</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. O mapa da pasta</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. O CLAUDE.md como índice</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Passo a passo</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. Erros comuns e privacidade</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. Como a casa evolui</a></li>
+</ul>
+</nav>
+<article data-inema-module="7-1" data-inema-track="7" id="modulo-7-1">
+<section class="mb-16" data-inema-topic="modulo-7-1#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🏠 Por que seu assistente precisa de uma casa própria</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-1-t1-p1">
+<strong class="text-emerald-400">Novo aqui?</strong> Uma <strong class="text-emerald-400">pasta</strong> (também
+        chamada de diretório) é só uma "gaveta" dentro do seu computador onde arquivos ficam guardados juntos.
+        Uma pasta pode ter outras pastas dentro dela — como uma gaveta com divisórias. Ao longo do curso você
+        já usou pastas de projeto avulsas para cada Build. Agora é diferente: você vai criar UMA pasta fixa,
+        que vira o endereço permanente do seu assistente digital.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-1-t1-p2">
+        Pense assim: até aqui, o Claude Code foi uma ferramenta solta — você abria numa pasta, resolvia
+        uma coisa, fechava. A partir desta Trilha 7, ele vira um <strong class="text-emerald-400">funcionário
+        digital</strong> de verdade — e todo funcionário de verdade tem uma mesa fixa, com as próprias gavetas,
+        onde guarda o que precisa para trabalhar todo dia. Sem essa mesa, ele reaprende tudo do zero a cada
+        conversa; com ela, ele chega, lê o que está guardado ali e já sabe onde estava a última tarefa.
+      </p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
+<p class="text-neutral-300 mb-4">A "casa" é uma pasta única e permanente no seu computador — não uma pasta de projeto que você apaga depois. Ela guarda quem você é, como o assistente deve trabalhar, o que ele está fazendo agora e o histórico do que já foi decidido.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Sem casa: cada sessão começa do zero, você reexplica tudo de novo.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Com casa: o assistente abre a pasta, lê o CLAUDE.md (tópico 3) e já entende o contexto.</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Funcionário com mesa própria</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Tem um lugar fixo pra guardar contexto, decisões e material de apoio</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Consulta o histórico antes de repetir uma pergunta que você já respondeu</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Você sabe exatamente onde procurar o que ele já fez</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Ferramenta solta</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Cada conversa é uma pasta diferente, sem fio condutor</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Você reexplica quem é seu negócio toda vez que precisa de algo</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Nada fica registrado — decisões se perdem entre sessões</span></li>
+</ul>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-1#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🗂️ O mapa da pasta: seis gavetas com um papel cada</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-1-t2-p1">
+        Dentro da casa, você não joga tudo solto — separa em subpastas, cada uma com uma função clara. Seis
+        são suficientes para começar; nenhuma delas exige nada complexo, só disciplina de colocar cada coisa
+        no lugar certo:
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Mapa da pasta do assistente digital: a raiz meu-assistente contém o CLAUDE.md no topo e seis subpastas — contexto, regras-e-skills, projetos, registro-de-decisões, referências e arquivo — cada uma guardando um tipo diferente de material" class="w-full h-auto" role="img" viewbox="0 0 1000 480">
+<defs>
+<lineargradient id="m71-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#059669"></stop></lineargradient>
+<filter height="180%" id="m71-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m71-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#34d399" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m71-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#34d399"></path></marker>
+<marker id="m71-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m71-grid)" height="480" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1a14" filter="url(#m71-glow)" height="56" rx="12" stroke="url(#m71-grad)" stroke-width="2.5" width="240" x="380" y="20"></rect>
+<text fill="#6ee7b7" font-size="14" font-weight="700" text-anchor="middle" x="500" y="45">📁 meu-assistente/</text>
+<text fill="#a7f3d0" font-size="10" text-anchor="middle" x="500" y="64">a casa — pasta raiz</text>
+<path d="M500,76 L500,100" marker-end="url(#m71-ah)" opacity="0.7" stroke="#34d399" stroke-width="1.8"></path>
+<rect fill="#0e1622" height="40" rx="10" stroke="#38bdf8" stroke-width="2" width="240" x="380" y="104"></rect>
+<text fill="#9ad6ff" font-size="12" font-weight="600" text-anchor="middle" x="500" y="129">📄 CLAUDE.md — o índice</text>
+<path d="M500,144 L500,168" opacity="0.6" stroke="#34d399" stroke-width="1.6"></path>
+<path d="M500,168 L120,168" opacity="0.5" stroke="#34d399" stroke-width="1.4"></path>
+<path d="M500,168 L880,168" opacity="0.5" stroke="#34d399" stroke-width="1.4"></path>
+<path d="M120,168 L120,205" marker-end="url(#m71-ah)" opacity="0.5" stroke="#34d399" stroke-width="1.4"></path>
+<path d="M310,168 L310,205" marker-end="url(#m71-ah)" opacity="0.5" stroke="#34d399" stroke-width="1.4"></path>
+<path d="M500,168 L500,205" marker-end="url(#m71-ah)" opacity="0.5" stroke="#34d399" stroke-width="1.4"></path>
+<path d="M690,168 L690,205" marker-end="url(#m71-ah)" opacity="0.5" stroke="#34d399" stroke-width="1.4"></path>
+<path d="M880,168 L880,205" marker-end="url(#m71-ah)" opacity="0.5" stroke="#34d399" stroke-width="1.4"></path>
+<g class="wf-a">
+<rect fill="#0e1a14" height="70" rx="10" stroke="#34d399" stroke-width="2" width="180" x="30" y="208"></rect>
+<text fill="#6ee7b7" font-size="12" font-weight="600" text-anchor="middle" x="120" y="232">📁 contexto/</text>
+<text fill="#a7f3d0" font-size="9" text-anchor="middle" x="120" y="250">quem você é,</text>
+<text fill="#a7f3d0" font-size="9" text-anchor="middle" x="120" y="264">negócio, time</text>
+</g>
+<g class="wf-a">
+<rect fill="#0e1a14" height="70" rx="10" stroke="#34d399" stroke-width="2" width="180" x="220" y="208"></rect>
+<text fill="#6ee7b7" font-size="12" font-weight="600" text-anchor="middle" x="310" y="232">📁 regras-e-skills/</text>
+<text fill="#a7f3d0" font-size="9" text-anchor="middle" x="310" y="250">como ele deve</text>
+<text fill="#a7f3d0" font-size="9" text-anchor="middle" x="310" y="264">trabalhar</text>
+</g>
+<g class="wf-a">
+<rect fill="#0e1a14" height="70" rx="10" stroke="#34d399" stroke-width="2" width="180" x="410" y="208"></rect>
+<text fill="#6ee7b7" font-size="12" font-weight="600" text-anchor="middle" x="500" y="232">📁 projetos/</text>
+<text fill="#a7f3d0" font-size="9" text-anchor="middle" x="500" y="250">o que ele está</text>
+<text fill="#a7f3d0" font-size="9" text-anchor="middle" x="500" y="264">fazendo agora</text>
+</g>
+<g class="wf-a">
+<rect fill="#0e1a14" height="70" rx="10" stroke="#34d399" stroke-width="2" width="180" x="600" y="208"></rect>
+<text fill="#6ee7b7" font-size="11" font-weight="600" text-anchor="middle" x="690" y="228">📁 registro-de-</text>
+<text fill="#6ee7b7" font-size="11" font-weight="600" text-anchor="middle" x="690" y="242">decisões/</text>
+<text fill="#a7f3d0" font-size="9" text-anchor="middle" x="690" y="260">histórico do</text>
+<text fill="#a7f3d0" font-size="9" text-anchor="middle" x="690" y="272">"por quê"</text>
+</g>
+<g class="wf-a">
+<rect fill="#0e1a14" height="70" rx="10" stroke="#38bdf8" stroke-width="2" width="180" x="790" y="208"></rect>
+<text fill="#9ad6ff" font-size="12" font-weight="600" text-anchor="middle" x="880" y="232">📁 referências/</text>
+<text fill="#bfe6ff" font-size="9" text-anchor="middle" x="880" y="250">materiais de</text>
+<text fill="#bfe6ff" font-size="9" text-anchor="middle" x="880" y="264">apoio</text>
+</g>
+<path d="M880,278 L880,320" marker-end="url(#m71-ahc)" opacity="0.6" stroke="#38bdf8" stroke-width="1.6"></path>
+<rect fill="#0e1622" height="60" rx="10" stroke="#38bdf8" stroke-width="2" width="180" x="790" y="324"></rect>
+<text fill="#9ad6ff" font-size="12" font-weight="600" text-anchor="middle" x="880" y="349">📁 arquivo/</text>
+<text fill="#bfe6ff" font-size="9" text-anchor="middle" x="880" y="367">coisas antigas —</text>
+<text fill="#bfe6ff" font-size="9" text-anchor="middle" x="880" y="379">nunca deletar</text>
+<rect fill="#0e1622" height="46" rx="10" stroke="#374151" stroke-dasharray="4 4" stroke-width="1.5" width="880" x="60" y="410"></rect>
+<text fill="#94a3b8" font-size="11" text-anchor="middle" x="500" y="438">O CLAUDE.md fica no topo e APONTA para cada gaveta — não copia o conteúdo delas para dentro dele</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Legenda: a raiz da casa guarda um único arquivo de instruções (CLAUDE.md) e seis subpastas com papéis fixos — cada material tem uma gaveta certa, e o índice sabe onde cada uma fica.</p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro de cada gaveta</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li><strong class="text-emerald-400">contexto/</strong> — quem você é, o que seu negócio faz, quem é o time (ex.: <code class="text-neutral-400">negocio.md</code>, <code class="text-neutral-400">time.md</code>).</li>
+<li><strong class="text-emerald-400">regras-e-skills/</strong> — como o assistente deve se comportar: tom de voz, processos fixos, as skills que ele usa.</li>
+<li><strong class="text-emerald-400">projetos/</strong> — uma subpasta por projeto ativo, com o que está em andamento agora.</li>
+<li><strong class="text-emerald-400">registro-de-decisões/</strong> — um histórico datado do que foi decidido e por quê (evita "por que a gente fez assim mesmo?").</li>
+<li><strong class="text-emerald-400">referências/</strong> — materiais de apoio: planilhas modelo, links, PDFs, prints.</li>
+<li><strong class="text-emerald-400">arquivo/</strong> — <strong>Novo aqui?</strong> "Arquivar" é guardar algo que não está mais ativo, sem apagar — pode ser útil depois. Nunca deletar o que foi movido pra cá.</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-1#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">📇 O CLAUDE.md como índice, não como depósito</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-1-t3-p1">
+<strong class="text-emerald-400">Novo aqui?</strong> O <strong class="text-emerald-400">CLAUDE.md</strong> é
+        um <strong class="text-emerald-400">arquivo de instruções</strong> — um arquivo de texto simples que o
+        Claude Code lê automaticamente sempre que abre aquela pasta, sem você precisar pedir. É como deixar um
+        bilhete fixo na entrada da mesa do funcionário: "antes de começar, leia isto aqui".
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-1-t3-p2">
+        O erro mais comum é tratar o CLAUDE.md como depósito: colar tudo dentro dele — o histórico inteiro de
+        decisões, todos os detalhes do negócio, todas as regras. Ele cresce, cresce, e vira um arquivo gigante
+        que o assistente lê inteiro toda vez, gastando tempo e atenção em partes que não interessam para a
+        tarefa do momento. O jeito certo é o oposto: o CLAUDE.md fica <strong class="text-emerald-400">enxuto</strong> e
+        <strong class="text-emerald-400"> aponta</strong> para os arquivos certos dentro das subpastas — ele é
+        o índice do livro, não o livro inteiro.
+      </p>
+<div class="bg-dark-900 rounded-xl border border-dark-600 p-4 mb-2 overflow-x-auto">
+<pre class="text-sm text-neutral-300 font-mono leading-relaxed"><code># CLAUDE.md — meu-assistente/
+
+## Quem eu sou
+Ver `contexto/negocio.md` (o que a empresa faz) e `contexto/time.md` (quem é quem).
+
+## Como trabalhar
+- Tom de voz e regras fixas: `regras-e-skills/tom-de-voz.md`
+- Skills disponíveis: `regras-e-skills/skills.md`
+- Nunca publicar nada sem eu revisar antes (regra permanente)
+
+## O que está ativo agora
+Ver `projetos/` — cada subpasta é um projeto em andamento com seu próprio status.
+
+## Decisões importantes
+Antes de sugerir mudar algo já decidido, checar `registro-de-decisões/` —
+pode já ter sido discutido e descartado por um motivo.
+
+## Nunca fazer
+- Não colocar senha, chave de API ou dado de terceiro em nenhum arquivo desta pasta
+- Não apagar nada de `arquivo/` sem eu pedir</code></pre>
+</div>
+<p class="text-xs text-neutral-500 mb-6">Exemplo real e enxuto: menos de 20 linhas, e cada seção aponta para o arquivo certo em vez de conter o conteúdo inteiro.</p>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica Prática</h3>
+<p class="text-neutral-300">Regra prática: se uma seção do CLAUDE.md está passando de 5-6 linhas de conteúdo real (não contando links), é sinal de que aquele conteúdo devia virar um arquivo separado numa subpasta, com só uma linha de referência ficando no índice.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-1#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🧭 Passo a passo: construindo a casa na prática</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-1-t4-p1">
+        Você não precisa criar pasta por pasta na mão — é mais rápido (e mais confiável) pedir para o próprio
+        Claude Code montar a estrutura inteira de uma vez. Os passos abaixo mostram a ordem lógica, e o bloco
+        copy-run logo depois faz tudo automaticamente.
+      </p>
+<div class="space-y-6 mb-8">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Escolha o local e crie a pasta raiz</h4>
+<p class="text-neutral-300 text-sm">Um lugar fixo no seu computador, fora de pastas temporárias — ex.: dentro da pasta "Documentos", uma pasta chamada <code class="text-emerald-400">meu-assistente</code>.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Crie as seis subpastas do tópico 2</h4>
+<p class="text-neutral-300 text-sm">contexto, regras-e-skills, projetos, registro-de-decisões, referências, arquivo — todas vazias por enquanto, cada uma com um papel já definido.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Escreva o CLAUDE.md inicial</h4>
+<p class="text-neutral-300 text-sm">Enxuto, apontando para as subpastas — mesmo que elas ainda estejam quase vazias. Você preenche o conteúdo real na Fase 2 (módulo 7.2).</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">4</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Abra o Claude Code dentro dessa pasta e confira</h4>
+<p class="text-neutral-300 text-sm">Pergunte "o que você entende dessa pasta?" — se ele descrever corretamente a estrutura, o CLAUDE.md está sendo lido.</p>
+</div>
+</div>
+</div>
+<div class="bg-dark-900 rounded-xl border border-dark-600 p-4 mb-2 overflow-x-auto">
+<p class="text-emerald-400 text-xs font-semibold uppercase tracking-wide mb-2">Objetivo</p>
+<p class="text-neutral-300 text-sm mb-4">Pedir ao Claude Code para criar a pasta raiz, as seis subpastas e um CLAUDE.md inicial — tudo de uma vez, num único prompt.</p>
+<p class="text-emerald-400 text-xs font-semibold uppercase tracking-wide mb-2">Bloco copiável</p>
+<pre class="text-sm text-neutral-300 font-mono leading-relaxed"><code>Crie uma pasta chamada <meu-assistente> dentro de <caminho documentos="" ex.:="" onde="" quer,="" você="" ~="">.
+Dentro dela, crie estas seis subpastas vazias:
+contexto, regras-e-skills, projetos, registro-de-decisões, referências, arquivo.
+
+Depois, crie um arquivo CLAUDE.md na raiz dessa pasta com este conteúdo:
+um índice curto (menos de 25 linhas) que aponta para cada subpasta, explicando
+em uma linha o que cada uma guarda (use o texto do módulo 7.1 do curso
+"Seu Funcionário Digital" como referência de estilo — enxuto, sem detalhes
+que deveriam estar nos arquivos de dentro das subpastas). Inclua uma seção
+"Nunca fazer" avisando para nunca colocar senha, chave de API ou dado de
+terceiro em nenhum arquivo desta pasta.
+
+Ao final, me mostre a árvore de pastas criada.</caminho></meu-assistente></code></pre>
+<p class="text-emerald-400 text-xs font-semibold uppercase tracking-wide mt-4 mb-2">Como verificar</p>
+<p class="text-neutral-300 text-sm">Abra a pasta no seu explorador de arquivos (Finder/Explorador) e confira: uma pasta raiz, seis subpastas com os nomes certos, e um CLAUDE.md legível na raiz. Reabra o Claude Code ali e pergunte o que ele entende da pasta — a resposta deve citar a estrutura.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-1#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">⚠️ Erros comuns e o que nunca colocar na casa</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-1-t5-p1">
+        Dois erros derrubam a casa antes mesmo de ela ficar de pé: jogar tudo num arquivo só, e deixar o
+        CLAUDE.md inchar. Os dois têm a mesma raiz — preguiça de separar — e os dois pioram com o tempo, não
+        melhoram sozinhos.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Tudo num arquivo só</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Um único "notas.txt" com negócio, decisões e projetos misturados</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Difícil achar qualquer coisa depois de um mês</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>O assistente precisa ler tudo pra achar um detalhe pequeno</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Estrutura organizada</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Cada tipo de informação numa subpasta certa (tópico 2)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Achar algo é abrir a gaveta certa, não ler tudo</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>O assistente lê só o arquivo relevante para a tarefa</span></li>
+</ul>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ CLAUDE.md gigante</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>200 linhas com todo o histórico colado dentro</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Informação antiga e desatualizada some no meio do resto</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>O assistente perde tempo processando o que não interessa agora</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Enxuto e apontando</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Menos de 25 linhas, cada seção com um link para o arquivo certo</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Fácil revisar tudo de uma olhada</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>O assistente vai direto no arquivo que precisa para a tarefa</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">🔒</span> Privacidade — o que NUNCA vai na casa</h3>
+<p class="text-neutral-300 mb-3">A casa fica guardada localmente no seu computador (não é enviada para nenhum servidor por conta própria), mas isso não é motivo pra descuido. Nunca coloque em nenhum arquivo dessa pasta:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">•</span><span>Senhas ou chaves de API (de qualquer serviço)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">•</span><span>Dados pessoais de clientes ou de terceiros (CPF, e-mail, telefone sem consentimento)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">•</span><span>Números de cartão, contratos sigilosos, informações financeiras sensíveis</span></li>
+</ul>
+<p class="text-neutral-400 text-xs mt-4">Se um dia essa pasta for compartilhada, sincronizada num serviço de nuvem, ou versionada num repositório (Trilha 7, módulo 7.5), qualquer coisa sensível ali dentro vai junto.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-1#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">📈 Como a casa evolui — e o que vem a seguir</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-1-t6-p1">
+        A casa não nasce pronta — ela cresce junto com o uso. O que importa é que a estrutura das seis gavetas
+        segure esse crescimento sem virar bagunça, porque cada coisa nova já tem um lugar certo pra ir.
+      </p>
+<div class="relative pl-8 border-l-2 border-emerald-500/30 space-y-8 mb-8">
+<div class="relative">
+<div class="absolute -left-[41px] w-5 h-5 rounded-full bg-emerald-500 border-4 border-dark-900"></div>
+<h4 class="font-semibold text-white mb-1">Dia 1 — Casa criada</h4>
+<p class="text-neutral-300 text-sm">Seis subpastas quase vazias, CLAUDE.md enxuto apontando pra elas. Só o esqueleto (este módulo).</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] w-5 h-5 rounded-full bg-emerald-500 border-4 border-dark-900"></div>
+<h4 class="font-semibold text-white mb-1">Semana 1 — Contexto preenchido</h4>
+<p class="text-neutral-300 text-sm">contexto/ ganha os primeiros arquivos reais sobre o negócio e o time (módulo 7.2).</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] w-5 h-5 rounded-full bg-emerald-500 border-4 border-dark-900"></div>
+<h4 class="font-semibold text-white mb-1">Semana 2-3 — Projetos e mãos</h4>
+<p class="text-neutral-300 text-sm">projetos/ acumula subpastas ativas; regras-e-skills/ ganha as skills do módulo 7.3.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] w-5 h-5 rounded-full bg-emerald-500 border-4 border-dark-900"></div>
+<h4 class="font-semibold text-white mb-1">Mês 1 — Primeiras arquivadas</h4>
+<p class="text-neutral-300 text-sm">Projetos concluídos migram de projetos/ para arquivo/; registro-de-decisões/ já tem histórico útil.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[41px] w-5 h-5 rounded-full bg-emerald-500 border-4 border-dark-900"></div>
+<h4 class="font-semibold text-white mb-1">Mês 3+ — Casa madura</h4>
+<p class="text-neutral-300 text-sm">A estrutura se mantém a mesma — só o conteúdo dentro de cada gaveta cresceu. Isso é o sinal de que o desenho do módulo 7.1 funcionou.</p>
+</div>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Conceito Principal</h3>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>7.1 constrói a casa (aqui) → 7.2 preenche a vida (contexto de verdade) → 7.3 dá as mãos (skills) → 7.4 permite crescer.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>A estrutura de pastas não muda depois — só o conteúdo dentro dela.</span></li>
+</ul>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-7-1#q1">
+<p class="font-medium mb-4">Checagem rápida (opcional): qual é o papel certo do CLAUDE.md?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Guardar todo o histórico e contexto do negócio dentro dele.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Ser um índice enxuto que aponta para os arquivos certos nas subpastas.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Ficar vazio — o assistente não precisa dele.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-7-1#q1', {
+              answer: 1,
+              explain: { 0: 'É exatamente o erro do tópico 5 — isso incha o arquivo e derruba a organização.', 1: 'Isso mesmo: índice enxuto, apontando pras gavetas certas.', 2: 'Ele precisa existir e ser lido automaticamente — sem ele, a casa não tem "bilhete na entrada".' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do Módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Por que uma casa:</strong><span class="text-neutral-400"> pasta fixa e permanente, não uma pasta de projeto solta.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Seis gavetas:</strong><span class="text-neutral-400"> contexto, regras-e-skills, projetos, registro-de-decisões, referências, arquivo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">CLAUDE.md:</strong><span class="text-neutral-400"> índice enxuto que aponta para os arquivos certos — nunca depósito.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Privacidade:</strong><span class="text-neutral-400"> senha, chave de API e dado de terceiro nunca entram na pasta.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">7.2 — Fase 2: Vida, preenchendo contexto/ com quem você é de verdade</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Voltar para Trilha</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-7-2.html">Próximo Módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

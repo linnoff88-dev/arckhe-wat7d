@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>7.4 Fase 4 — Crecimiento | Tu Empleado Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5, 150, 105, 0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5, 150, 105, 0.18); }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @keyframes wf-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+      .wf-spin { animation: wf-spin 18s linear infinite; transform-origin: center; }
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha7/modulo-7-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha7/modulo-7-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha7/modulo-7-4.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha7/modulo-7-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha7/modulo-7-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-7-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 7</a><span>/</span>
+<span class="text-emerald-400">Módulo 7.4</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 7.4</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🌱 Fase 4 — Crecimiento: el ritmo que evita que el asistente se deteriore</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        Casa, Vida y Manos entregan un asistente que funciona hoy. La Fase 4 es diferente: no construye
+        nada nuevo, garantiza que lo que construiste siga siendo útil dentro de seis meses. Sin un ritmo de
+        mantenimiento, todo asistente se convierte en un museo de cómo era tu vida el día en que creaste el CLAUDE.md.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">28</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Intermedio</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Práctica</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 7.4" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:7-4" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. Por qué se deteriora</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. Ritmo mensual</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. Ritmo trimestral</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Registro de decisiones</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. Memoria permanente</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. La espiral de 4 fases</a></li>
+</ul>
+</nav>
+<article data-inema-module="7-4" data-inema-track="7" id="modulo-7-4">
+<section class="mb-16" data-inema-topic="modulo-7-4#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🥀 Por qué un asistente sin ritmo se marchita</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-4-t1-p1">
+<strong class="text-emerald-400">¿Eres nuevo aquí?</strong> "Echarse a perder" aquí no es una metáfora vacía: es lo que sucede
+        cuando el <strong class="text-emerald-400">contexto</strong> (los archivos que describen tu vida, tu negocio y
+        tus preferencias — creados en las Fases 1 y 2) dejan de actualizarse mientras la realidad que describen
+        sigue cambiando. El asistente no se equivoca porque esté mal hecho. Se equivoca porque responde basándose en una
+        imagen de un momento que ya pasó.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-4-t1-p2">
+        Piensa en todo lo que cambia en cualquier negocio o rutina en seis meses: las prioridades cambian de lugar, un cliente
+        importante pierde importancia y otro ocupa su lugar, un proceso que era manual se automatiza (quizás
+        incluso gracias a una skill que tú mismo creaste en la Fase 3), el equipo crece o se reduce. Si el CLAUDE.md y los
+        archivos de contexto siguen reflejando el día 1, el asistente sugerirá prioridades equivocadas, olvidará
+        a la gente nueva e insistirá en un proceso que ya descartaste.
+      </p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">💡</span> Concepto principal</h3>
+<p class="text-neutral-300 mb-4">Un asistente digital no «aprende por sí solo» fuera de las conversaciones: solo sabe lo que está escrito en los archivos de contexto y lo que se decidió antes. Sin un ritmo de revisión, esos archivos quedan congelados y el asistente trabaja con una versión antigua de ti.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>El negocio cambia de rumbo → el contexto desactualizado da recomendaciones equivocadas.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>El equipo cambia → el asistente menciona o involucra a personas que ya se fueron, o ignora a quienes se incorporaron.</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Se congela</div><div class="text-xs text-neutral-400 mt-1">Sin ritmo</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Sugiere algo incorrecto</div><div class="text-xs text-neutral-400 mt-1">Consecuencia</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Pierde la confianza</div><div class="text-xs text-neutral-400 mt-1">Consecuencia</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Ritmo</div><div class="text-xs text-neutral-400 mt-1">El antídoto</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-4#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📅 Ritmo mensual: la revisión rápida</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-4-t2-p1">
+        La revisión mensual es breve a propósito: 15 a 20 minutos, una vez al mes, en un día fijo del calendario (no
+        «cuando me acuerde», porque eso nunca pasa). El objetivo no es reescribir nada, sino hacerse tres preguntas:
+        qué cambió en el negocio desde la última revisión, qué cambió en el equipo y qué cambió en las prioridades de la semana
+        siguiente. Actualizas los archivos de contexto de la carpeta que creaste en la Fase 1 con esas respuestas.
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Flujo de la revisión mensual: respondes tres preguntas rápidas sobre el negocio, el equipo y las prioridades, y el asistente actualiza los archivos de contexto y ajusta las preferencias de comunicación" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<defs>
+<lineargradient id="m2-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
+<filter height="180%" id="m2-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m2-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#34d399" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m2-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#34d399"></path></marker>
+<marker id="m2-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m2-grid)" height="200" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" height="60" rx="12" stroke="#38bdf8" stroke-width="2" width="170" x="30" y="70"></rect>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="115" y="97">3 preguntas</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="115" y="114">negocio·equipo·prioridades</text>
+<path d="M200,100 L270,100" marker-end="url(#m2-ah)" opacity="0.7" stroke="#34d399" stroke-width="1.8"></path>
+<g class="wf-a"><rect fill="#0e1622" filter="url(#m2-glow)" height="80" rx="14" stroke="url(#m2-grad)" stroke-width="2.5" width="180" x="275" y="60"></rect>
+<text fill="#34d399" font-size="13" font-weight="700" text-anchor="middle" x="365" y="90">Actualiza</text>
+<text fill="#6ee7b7" font-size="10" text-anchor="middle" x="365" y="108">archivos de contexto</text>
+<text fill="#6ee7b7" font-size="10" text-anchor="middle" x="365" y="124">y preferencias</text>
+</g>
+<path d="M455,100 L525,100" marker-end="url(#m2-ahc)" opacity="0.6" stroke="#38bdf8" stroke-width="1.8"></path>
+<rect fill="#0e1622" height="60" rx="12" stroke="#34d399" stroke-width="2" width="200" x="530" y="70"></rect>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="630" y="97">Asistente actualizado</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="630" y="114">próximos 30 días</text>
+<path d="M730,100 L790,100" marker-end="url(#m2-ah)" opacity="0.5" stroke="#34d399" stroke-width="1.8"></path>
+<rect fill="#0e1622" height="48" rx="10" stroke="#38bdf8" stroke-dasharray="4 3" stroke-width="1.6" width="170" x="795" y="76"></rect>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="880" y="105">vuelve en 30 días</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: la revisión mensual es un ciclo corto — entran tres preguntas, los archivos de contexto salen actualizados y el reloj ya queda marcado para el próximo mes.</p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Qué cambió en el negocio:</strong> un cliente nuevo, un producto discontinuado, una meta cambiada.</li>
+<li><strong>Qué cambió en el equipo:</strong> quién entró, quién salió, quién cambió de función.</li>
+<li><strong>Qué cambió en las prioridades:</strong> lo que era urgente dejó de serlo, o al revés.</li>
+<li><strong>Preferencias de comunicación:</strong> ajustar el tono, el nivel de detalle y cuándo avisar antes de actuar: lo que notaste al usarlo durante el último mes.</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-4#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🗓️ Ritmo trimestral: la revisión más profunda</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-4-t3-p1">
+        Cada tres meses, la revisión cambia de nivel: ya no se trata de «qué cambió», sino de «qué está funcionando de verdad».
+        Tres preguntas guían esta conversación más larga (de 30 a 45 minutos): ¿la primera skill que creaste en la
+        Fase 3 demostró su valor o se convirtió en una pieza olvidada? ¿Hay algún proceso repetitivo nuevo que ya justifique
+        una segunda skill? Y entre los MCP conectados —las herramientas que le dan manos al agente (Trilha 2)—, ¿hay alguno
+        que esté inactivo, sin uso, solo ocupando espacio en la configuración?
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Revisión trimestral bien hecha</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Mides si la skill de la Fase 3 realmente te ahorró tiempo, no solo «parece buena»</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Los MCP sin uso se eliminan o se sustituyen; no se dejan por inercia</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Las nuevas skills solo se agregan cuando un proceso repetitivo real lo justifica</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Falta la revisión trimestral</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>La skill se queda ahí «porque costó mucho construirla», aunque no se use</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Los MCP se acumulan sin que nadie sepa cuáles siguen siendo útiles</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>El asistente crece en complejidad sin aumentar su utilidad</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Anota en el calendario la fecha de la próxima revisión trimestral al final de cada revisión: no dejes «dentro de tres meses» sin concretar; conviértelo en una fecha específica con un recordatorio.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-4#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">📝 Registro de decisiones: por qué anotar el «por qué»</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-4-t4-p1">
+<strong class="text-emerald-400">¿Eres nuevo aquí?</strong> Uno <strong class="text-emerald-400">registro de decisiones</strong>
+        es un archivo (o una carpeta de archivos) sencillo que guarda lo que se decidió y por qué, no lo que se hizo:
+        eso ya lo muestra el historial del trabajo, sino el razonamiento detrás. La Fase 1 ya te hizo crear la carpeta
+        <code class="bg-dark-700 px-2 py-0.5 rounded text-emerald-300">registro-de-decisões/</code> dentro del contexto de
+        tu asistente. La Fase 4 es donde ese hábito realmente da frutos.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-4-t4-p2">
+        Sin un registro, tú y el asistente repiten el mismo debate cada pocos meses: «¿por qué no usamos
+        ese proveedor más barato?» — una respuesta que ya se discutió y descartó hace seis meses, pero de la que
+        nadie recuerda el motivo. Con una línea registrada («descartamos al proveedor X en marzo porque el plazo de
+        entrega hacía inviable el SLA con los clientes»), el asistente cita el motivo de inmediato, sin reabrir la conversación.
+      </p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">La decisión en una frase</h4>
+<p class="text-neutral-300 text-sm">Lo que se decidió, sin rodeos: «este trimestre vamos a priorizar a los clientes recurrentes sobre los nuevos».</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">El porqué, en dos líneas</h4>
+<p class="text-neutral-300 text-sm">El motivo real, no el obvio — lo que te hizo inclinarte por un lado en vez del otro.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">La fecha</h4>
+<p class="text-neutral-300 text-sm">Las decisiones tienen vigencia: lo que tenía sentido en enero puede dejar de tenerlo en septiembre, y la fecha ayuda al asistente (y a ti) a saber si está desactualizada.</p>
+</div>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-4#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🧠 Memoria permanente: lo que lo diferencia de un chatbot</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-4-t5-p1">
+        Aquí es donde los ritmos mensual y trimestral se suman a algo mayor. Cada entrevista revisada mensualmente,
+        cada decisión registrada, cada skill nueva validada cada trimestre: nada de eso desaparece después de la conversación.
+        Todo queda escrito en el contexto del asistente, y la próxima conversación parte de ahí, no desde cero.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-4-t5-p2">
+        Es exactamente lo que distingue a un asistente construido con el framework WAT de un chatbot común: el chatbot
+        «lo olvida todo» cada vez que inicia una conversación nueva (el módulo 0.1 ya explicó esta diferencia entre chatbot y agente; aquí
+        vuelve a aparecer, a mayor escala). Tu asistente, en cambio, acumula. Después de un año con un ritmo
+        mensual y trimestral, conoce tu negocio mejor que un empleado recién contratado, porque todo lo
+        que pasó está registrado en algún lugar que puede leer.
+      </p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">📊</span> La acumulación, en la práctica</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Mes 1:</strong> archivos de contexto básicos, creados en la Fase 1 — retrato inicial.</li>
+<li><strong>Mes 6:</strong> 6 revisiones mensuales + 2 trimestrales + un puñado de decisiones registradas — el asistente ya entiende los patrones que se repiten.</li>
+<li><strong>Mes 12:</strong> un historial completo de un ciclo anual entero: estacionalidad, decisiones revisadas y confirmadas o revertidas, skills que demostraron su valor.</li>
+</ul>
+<p class="text-neutral-400 text-xs mt-4">Esto no es "IA que aprende sola": eres tú quien mantiene el registro al día, y el asistente lo lee cada vez que conversa contigo.</p>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atención</h3>
+<p class="text-neutral-300">Memoria permanente no significa un archivo infinito y desorganizado. Si la carpeta de contexto se convierte en un depósito de todo lo que ya se dijo, será difícil de usar — el propio ritmo trimestral también sirve para eliminar lo que ya no es relevante, no solo para agregar.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-4#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🌀 La espiral de 4 fases: por qué no es un círculo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-4-t6-p1">
+        Las cuatro fases del capstone — Casa (7.1), Vida (7.2), Manos (7.3) y Crecimiento (este módulo) — no terminan
+        aquí. Se repiten, pero nunca de la misma manera dos veces: cada vuelta parte de un contexto más rico que la
+        anterior, porque el ritmo de esta fase alimentó todo. Por eso el diagrama de abajo es una espiral, no un círculo
+        cerrado — el mismo camino, pero subiendo de nivel en cada ciclo.
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Espiral de crecimiento: las cuatro fases Casa, Vida, Manos y Crecimiento se repiten en ciclos cada vez más amplios; cada vuelta parte de un contexto más rico que la anterior y vuelve a una Vida revisada" class="w-full h-auto" role="img" viewbox="0 0 700 560">
+<defs>
+<lineargradient id="m6-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
+<filter height="200%" id="m6-glow" width="200%" x="-50%" y="-50%"><fegaussianblur result="b" stddeviation="2"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<marker id="m6-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<g font-family="Inter,sans-serif">
+<g class="wf-spin" opacity="0.35">
+<path d="M 350 60 A 200 200 0 1 1 349 60" fill="none" stroke="url(#m6-grad)" stroke-dasharray="3 6" stroke-width="1.5"></path>
+</g>
+<path d="M 350 100 A 160 160 0 1 1 210 460 A 90 90 0 1 1 350 340 A 45 45 0 1 1 300 280" fill="none" filter="url(#m6-glow)" marker-end="url(#m6-ah)" stroke="#38bdf8" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="350" cy="100" fill="#0e1622" filter="url(#m6-glow)" r="46" stroke="url(#m6-grad)" stroke-width="2.5"></circle>
+<text fill="#6ee7b7" font-size="13" font-weight="700" text-anchor="middle" x="350" y="96">🏠 Casa</text>
+<text fill="#9ad6ff" font-size="9" text-anchor="middle" x="350" y="113">7.1</text>
+<circle cx="560" cy="230" fill="#0e1622" filter="url(#m6-glow)" r="46" stroke="url(#m6-grad)" stroke-width="2.5"></circle>
+<text fill="#6ee7b7" font-size="13" font-weight="700" text-anchor="middle" x="560" y="226">🌐 Vida</text>
+<text fill="#9ad6ff" font-size="9" text-anchor="middle" x="560" y="243">7.2</text>
+<circle cx="210" cy="460" fill="#0e1622" filter="url(#m6-glow)" r="46" stroke="url(#m6-grad)" stroke-width="2.5"></circle>
+<text fill="#6ee7b7" font-size="13" font-weight="700" text-anchor="middle" x="210" y="456">✋ Manos</text>
+<text fill="#9ad6ff" font-size="9" text-anchor="middle" x="210" y="473">7.3</text>
+<circle cx="300" cy="280" fill="#0e1622" filter="url(#m6-glow)" r="40" stroke="#34d399" stroke-width="3"></circle>
+<text fill="#34d399" font-size="12" font-weight="800" text-anchor="middle" x="300" y="276">🌱 Crece</text>
+<text fill="#6ee7b7" font-size="9" text-anchor="middle" x="300" y="292">7.4</text>
+<text fill="#6b7280" font-size="11" text-anchor="middle" x="350" y="540">cada vuelta parte de más contexto → vuelve a una Vida (7.2) revisada</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: sigue la flecha cian desde el centro hacia afuera: Casa crea el esqueleto, Vida conecta con el mundo real, Mãos entrega la primera skill, Crescimento revisa todo y alimenta la siguiente vuelta, más grande, que comienza de nuevo en Vida con más contexto que antes.</p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Concepto principal</h3>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>No se trata de «terminar el capstone y seguir adelante»: se trata de entrar en un ciclo que se repite, con un asistente cada vez más afinado.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Los módulos 7.5 (respaldo y control de versiones) y 7.6 (entrega final) cierran la Trilha 7 al proteger este ciclo.</span></li>
+</ul>
+</div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-6 mb-6 font-mono text-sm overflow-x-auto">
+<p class="text-neutral-400 mb-2"># Objetivo: pedirle a Claude Code que dirija la revisión mensual: lee el contexto, pregunta qué cambió, actualiza los archivos</p>
+<pre class="text-emerald-300 whitespace-pre-wrap">Você é meu assistente executivo. Faça a revisão mensal do meu contexto:
+
+1. Leia todos os arquivos em `contexto/` e `registro-de-decisões/`.
+2. Resuma em 5 linhas o que você entende hoje sobre meu negócio,
+   meu time e minhas prioridades atuais.
+3. Me pergunte, uma de cada vez: "o que mudou no negócio desde a
+   última revisão?", "o que mudou no time?", "o que mudou nas
+   prioridades para os próximos 30 dias?".
+4. Com minhas respostas, proponha as edições nos arquivos de
+   contexto (mostre o antes/depois antes de aplicar).
+5. Se eu confirmar, aplique as edições e registre um resumo datado
+   em `registro-de-decisões/&lt;data&gt;-revisao-mensal.md`.
+
+&lt;troque "contexto/" e "registro-de-decisões/" pelos caminhos reais
+da sua pasta se forem diferentes&gt;</pre>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed">
+<strong class="text-emerald-400">Cómo verificar:</strong> después de ejecutar, abre los archivos de contexto y comprueba
+        si las respuestas que diste realmente se convirtieron en texto en ellos, y si el registro de decisiones recibió una nueva entrada
+        con la fecha de hoy. Si falta alguno de los dos, pídele al asistente que lo aplique de nuevo antes de cerrar la sesión.
+      </p>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-7-4#q1">
+<p class="font-medium mb-4">Verificación rápida (opcional): ¿cuál es la diferencia entre la frecuencia mensual y la trimestral?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">La revisión mensual actualiza lo que cambió; la trimestral evalúa si las skills y los MCP todavía valen la pena.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Son lo mismo, solo cambia la frecuencia.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">El plan trimestral sustituye al mensual después de tres meses.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-7-4#q1', {
+              answer: 0,
+              explain: { 0: 'Isso mesmo: o mensal é rápido e cobre mudanças; o trimestral é fundo e avalia o que construiu.', 1: 'A frequência muda, mas o foco também — releia os tópicos 2 e 3.', 2: 'Os dois ritmos coexistem — o trimestral não substitui o mensal, ele complementa.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+</article>
+<!-- CONTEÚDO DETALHADO -->
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Contenido detallado</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Errores que no debes cometer</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Fijar las fechas de revisión en el calendario, no confiar en la memoria</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Registrar decisiones en un archivo, con fecha y motivo</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Errores comunes</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Nunca revisar: el asistente queda desactualizado sin que nadie se dé cuenta hasta que ocurre un error grave</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Decidir «de cabeza» y nunca escribirlo: el mismo debate se repite cada trimestre</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">📈</span> Línea de tiempo del crecimiento</h3>
+<div class="space-y-4">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-16 text-right"><span class="text-emerald-400 font-bold text-sm">Mes 1</span></div>
+<div class="flex-1 border-l-2 border-emerald-500/30 pl-4 pb-4">
+<p class="text-neutral-300 text-sm">Contexto recién creado (Fase 1). El asistente responde bien a lo que describiste, pero todavía no ha visto ningún ciclo real.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-16 text-right"><span class="text-emerald-400 font-bold text-sm">Mes 3</span></div>
+<div class="flex-1 border-l-2 border-emerald-500/30 pl-4 pb-4">
+<p class="text-neutral-300 text-sm">Primera revisión trimestral. La primera skill de la Fase 3 ya mostró si vale la pena mantenerla, ampliarla o descartarla.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-16 text-right"><span class="text-emerald-400 font-bold text-sm">Mes 6</span></div>
+<div class="flex-1 border-l-2 border-emerald-500/30 pl-4">
+<p class="text-neutral-300 text-sm">Seis revisiones mensuales y dos trimestrales en el historial. El asistente ya reconoce patrones estacionales y menciona decisiones anteriores sin que tengas que volver a explicarlas.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Sin ritmo, se echa a perder:</strong><span class="text-neutral-400"> el contexto congelado empieza a sugerir cosas equivocadas a medida que cambia el negocio.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Mensual:</strong><span class="text-neutral-400"> revisión rápida — negocio, equipo, prioridades y preferencias de comunicación.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Trimestral:</strong><span class="text-neutral-400"> revisión profunda — lo que la skill demostró, si conviene otra skill y si algún MCP está inactivo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Registro de decisiones + memoria permanente:</strong><span class="text-neutral-400"> lo que separa este asistente de un chatbot que lo olvida todo en cada conversación.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">7.5 — Backup y control de versiones: protegiendo todo lo que acumuló la Fase 4</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la ruta</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-7-5.html">Próximo módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

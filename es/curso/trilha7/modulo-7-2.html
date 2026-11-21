@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>7.2 Fase 2 — Vida | Tu Empleado Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5, 150, 105, 0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5, 150, 105, 0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5, 150, 105, 0.18); }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5, 150, 105, 0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha7/modulo-7-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha7/modulo-7-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha7/modulo-7-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha7/modulo-7-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha7/modulo-7-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-7-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 7</a><span>/</span>
+<span class="text-emerald-400">Módulo 7.2</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 7.2 · FASE 2 DEL CAPSTONE</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🎙️ Fase 2 — Vida: la entrevista que se convierte en contexto</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        Este es el módulo más importante de todo el curso. No es el más difícil técnicamente: es el que decide
+        si el asistente que construiste en la Fase 1 se convierte en un empleado de verdad o se queda como un chatbot genérico
+        con un nombre bonito. Reserva tiempo, no te apresures.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">40</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Capstone</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Práctico</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 7.2" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:7-2" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. Por qué la entrevista importa más</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. Quién eres</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. El negocio y el equipo</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Prioridades y comunicación</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. Qué delegar (y el prompt listo)</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. La entrevista nunca termina</a></li>
+</ul>
+</nav>
+<article data-inema-module="7-2" data-inema-track="7" id="modulo-7-2">
+<section class="mb-16" data-inema-topic="modulo-7-2#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🧩 Por qué la entrevista importa más que cualquier técnica</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-2-t1-p1">
+<strong class="text-emerald-400">¿Eres nuevo aquí?</strong> Aquí «<strong class="text-emerald-400">contexto</strong>" no es
+        un archivo cualquiera: es el conjunto de información que el agente lee antes de actuar: quién eres, a qué se dedica tu
+        negocio, quién más participa en las decisiones y qué es urgente hoy. Sin esto, el agente no tiene de dónde sacar
+        un criterio: solo devuelve respuestas genéricas, del tipo que cualquier chatbot le da a cualquier persona.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-2-t1-p2">
+        En la Fase 1 (módulo 7.1) montaste la <strong class="text-emerald-400">casa</strong>: la carpeta, el <code>CLAUDE.md</code>
+        raíz, la estructura de directorios. Ese es el esqueleto: necesario, pero vacío. La Fase 2 es lo que llena esa
+        casa de gente: quién vive allí, qué hace cada persona, qué le importa a cada una. Es la diferencia entre entregarle
+        una oficina vacía a un empleado nuevo y sentarte con él media hora para explicarle cómo funciona realmente la empresa.
+      </p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">💡</span> Concepto principal</h3>
+<p class="text-neutral-300 mb-4">La técnica sin contexto produce un agente educado, pero inútil. El contexto sin técnica es un cuaderno de notas. Juntos son lo que marca la diferencia entre «responder preguntas» y «actuar por ti».</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Un agente sin contexto responde «depende de tu caso» a todo, porque no conoce tu caso.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Un agente con contexto real ya sabe que prefieres las reuniones cortas, que tu socia aprueba las compras de más de R$ 2 mil y que los viernes por la tarde no se envían mensajes urgentes.</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Escucha</div><div class="text-xs text-neutral-400 mt-1">Qué hace la entrevista</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Juicio</div><div class="text-xs text-neutral-400 mt-1">Qué le aporta al agente</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Acción</div><div class="text-xs text-neutral-400 mt-1">En qué se convierte</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Tú</div><div class="text-xs text-neutral-400 mt-1">Quién valida siempre</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-2#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🙋 Área 1 — Quién eres</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-2-t2-p1">
+        La primera área de la entrevista no trata sobre el negocio, sino sobre ti: tu rol, tu forma de trabajar, lo
+        que valoras. Un asistente que no sabe si eres el dueño que decide todo por su cuenta o un gerente que
+        responde ante otra persona se equivocará en el tono de cada recomendación que haga.
+      </p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Preguntas de ejemplo</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li><strong>Rol:</strong> "¿Tomas la decisión final en las cosas del día a día o hay alguien por encima de ti que debe aprobar?"</li>
+<li><strong>Estilo de trabajo:</strong> "¿Prefieres revisar cada paso antes de que actúe o ver el resultado terminado y corregirlo después?"</li>
+<li><strong>Valores:</strong> "¿Hay algo que NUNCA aceptarías que se hiciera en tu nombre, aunque técnicamente funcionara? (ej.: prometer un plazo que no se puede cumplir, hablar mal de un competidor)"</li>
+<li><strong>Rutina real:</strong> "¿A qué hora del día sueles tomar las decisiones importantes y a qué hora solo quieres que te dejen en paz?"</li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Las respuestas vagas del tipo "me gusta que las cosas estén bien hechas" no ayudan en nada. Pide un ejemplo concreto: "cuéntame una vez en que alguien hizo una tarea de forma incorrecta — ¿qué estaba mal exactamente?" La respuesta concreta es el material que el asistente realmente puede usar.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-2#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🏢 Área 2 y 3 — El negocio y el equipo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-2-t3-p1">
+        Después de ti, el asistente necesita entender qué hace que el negocio exista: qué vende, a quién y
+        cómo entra el dinero. No es una redacción institucional, sino una explicación práctica, como se la
+        explicarías a un sobrino de 15 años que nunca ha oído hablar de tu sector.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-2-t3-p2">
+        Y justo después viene el equipo: quién más participa en las decisiones y, sobre todo, quién decide qué. Esto
+        evita un error clásico: que el asistente «apruebe» en tu nombre algo que en realidad era decisión de otra
+        persona.
+      </p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Flujo de la entrevista: una pregunta específica genera una respuesta concreta, que se convierte en un archivo de contexto guardado en la carpeta contexto, lo que hace que el asistente sea más capaz en la próxima tarea" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
+<defs>
+<lineargradient id="m2-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#059669"></stop></lineargradient>
+<filter height="180%" id="m2-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m2-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#34d399" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m2-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#34d399"></path></marker>
+<marker id="m2-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m2-grid)" height="240" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" height="60" rx="12" stroke="#38bdf8" stroke-width="2" width="160" x="20" y="90"></rect>
+<text fill="#bdf5dd" font-size="12" font-weight="600" text-anchor="middle" x="100" y="117">Pregunta</text>
+<text fill="#9ad6ff" font-size="9" text-anchor="middle" x="100" y="134">"¿quién aprueba los gastos?"</text>
+<path d="M180,120 L250,120" marker-end="url(#m2-ah)" opacity="0.7" stroke="#34d399" stroke-width="1.8"></path>
+<rect fill="#0e1622" height="60" rx="12" stroke="#34d399" stroke-width="2" width="160" x="255" y="90"></rect>
+<text fill="#bdf5dd" font-size="12" font-weight="600" text-anchor="middle" x="335" y="117">Respuesta</text>
+<text fill="#6ee7b7" font-size="9" text-anchor="middle" x="335" y="134">"por encima de R$2k, mi socia"</text>
+<path d="M415,120 L485,120" marker-end="url(#m2-ah)" opacity="0.7" stroke="#34d399" stroke-width="1.8"></path>
+<rect fill="#0d1f18" filter="url(#m2-glow)" height="160" rx="14" stroke="url(#m2-grad)" stroke-width="2.5" width="180" x="490" y="30"></rect>
+<text fill="#34d399" font-size="13" font-weight="700" text-anchor="middle" x="580" y="55">contexto/</text>
+<rect fill="#0e1622" height="26" rx="6" stroke="#38bdf8" stroke-width="1.5" width="140" x="510" y="70"></rect><text fill="#9ad6ff" font-size="9" text-anchor="middle" x="580" y="87">quem-sou-eu.md</text>
+<rect fill="#0e1622" height="26" rx="6" stroke="#38bdf8" stroke-width="1.5" width="140" x="510" y="102"></rect><text fill="#9ad6ff" font-size="9" text-anchor="middle" x="580" y="119">negocio.md</text>
+<rect fill="#0e1622" height="26" rx="6" stroke="#38bdf8" stroke-width="1.5" width="140" x="510" y="134"></rect><text fill="#9ad6ff" font-size="9" text-anchor="middle" x="580" y="151">time-decisoes.md</text>
+<rect fill="#0e1622" height="16" opacity="0.6" rx="6" stroke="#38bdf8" stroke-width="1" width="140" x="510" y="166"></rect><text fill="#9ad6ff" font-size="8" text-anchor="middle" x="580" y="177">...</text>
+<path d="M670,110 L745,110" marker-end="url(#m2-ahc)" opacity="0.6" stroke="#38bdf8" stroke-width="1.8"></path>
+<g class="wf-a"><rect fill="#0e1622" filter="url(#m2-glow)" height="60" rx="12" stroke="#34d399" stroke-width="2.5" width="220" x="750" y="80"></rect>
+<text fill="#34d399" font-size="13" font-weight="700" text-anchor="middle" x="860" y="107">Asistente más capaz</text>
+<text fill="#6ee7b7" font-size="9" text-anchor="middle" x="860" y="124">ya sabe a quién escalarlo</text>
+</g>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: cada pregunta respondida de verdad se convierte en un archivo dentro de <code>contexto/</code>, y es este archivo —no la conversación que ya pasó— el que el agente vuelve a leer antes de cada tarea nueva.</p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Preguntas de ejemplo</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li><strong>El negocio:</strong> "Si tuviera que explicar tu negocio a alguien en una frase, ¿qué no puede faltar? ¿Y cómo entra el dinero: venta directa, suscripción, comisión?"</li>
+<li><strong>Para quién:</strong> "¿Quién es el cliente típico? ¿Puedes describir en dos o tres frases quién suele comprarte?"</li>
+<li><strong>El equipo:</strong> "Además de ti, ¿quién más participa en el día a día? ¿De qué se encarga cada persona?"</li>
+<li><strong>Quién decide qué:</strong> "¿Hay alguna decisión que solo tú tomas y nunca delegas? ¿Y alguna que decide otra persona, aunque tú estés al tanto?"</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-2#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">⏱️ Áreas 4 y 5 — Prioridades y comunicación</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-2-t4-p1">
+<strong class="text-emerald-400">¿Eres nuevo aquí?</strong> <strong class="text-emerald-400">Urgente</strong> e
+        <strong class="text-emerald-400"> importante</strong> no son lo mismo: urgente es lo que necesita una
+        respuesta hoy (un cliente enojado, una cuenta por vencer); importante es lo que cambia el rumbo del negocio, aunque no haya
+        prisa (planificar el próximo trimestre). Un asistente que confunde ambas cosas se convierte en una sirena de falsas alarmas,
+        o, peor aún, ignora lo que realmente merecía atención.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-2-t4-p2">
+        El área de comunicación define el «acento» del asistente: cuándo debe resumir en una línea y cuándo debe
+        dar detalles; si el tono es formal o informal; si envía un mensaje al final del día o solo cuando se lo pidas.
+      </p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Preguntas de ejemplo</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li><strong>Prioridades:</strong> "¿Qué está en llamas esta semana? ¿Y qué es importante, pero puede esperar un mes?"</li>
+<li><strong>Urgencia real:</strong> "¿Qué cosas de tu rutina realmente merecen interrumpirte en el momento y cuáles pueden esperar hasta el final del día?"</li>
+<li><strong>Tono:</strong> "Cuando lees un resumen, ¿prefieres que vaya directo al grano ('faltan 3 días, resuélvelo') o prefieres todo el contexto antes de la conclusión?"</li>
+<li><strong>Cuándo ser breve o detallado:</strong> "¿En qué tipo de temas solo quieres el resultado y en cuáles quieres ver todo el razonamiento antes de confiar?"</li>
+</ul>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Respuesta útil</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>"De verdad, solo es urgente cuando un cliente se queja o un pago vence hoy."</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>"Envíame un resumen de 3 líneas a las 18 h; si se trata de una decisión de dinero, avísame en el momento."</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Respuesta que no ayuda</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Todo es más o menos urgente, depende."</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Prefiero que use su criterio" (el criterio no se convierte en un archivo: se convierte en una suposición).</span></li>
+</ul>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-2#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🔐 Área 6 — Qué delegar y el prompt que guía la entrevista</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-2-t5-p1">
+        La última área es la más delicada: lo que puede hacer el asistente <strong class="text-emerald-400">solo</strong>,
+        y lo que necesita tu <strong class="text-emerald-400">aprobación</strong> antes de empezar a ejecutar. Esto
+        se conecta directamente con los permisos que ya configuraste en el módulo 0.6: aquí traduces esas reglas
+        técnicas al lenguaje de negocio: "puede responder correos simples por su cuenta, pero solo después de que yo apruebe los presupuestos superiores a R$ 500."
+      </p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Preguntas de ejemplo</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>"¿Qué tipo de tarea confiarías a ciegas, sin revisarla antes?"</li>
+<li>"¿Qué tipo de tarea NUNCA puede hacerse sin tu aprobación, aunque parezca obvio?"</li>
+<li>"¿Hay algún monto que sirva como límite (por encima de ese monto, siempre pedir aprobación)?"</li>
+</ul>
+</div>
+<p class="text-neutral-300 mb-4 leading-relaxed">
+        Ahora viene el bloque práctico de esta fase: un prompt completo, listo para pegar en Claude Code, para que él mismo
+        conduzca esta entrevista contigo —pregunta por pregunta, área por área— y guarde los archivos de
+        contexto en el lugar correcto.
+      </p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden mb-6">
+<div class="flex items-center justify-between px-4 py-2 bg-dark-700 border-b border-dark-600">
+<span class="text-xs font-mono text-neutral-400">Objetivo: generar los archivos de contexto guiando la entrevista</span>
+<span class="text-xs text-emerald-400 font-semibold">COPY-RUN</span>
+</div>
+<pre class="p-4 text-sm text-neutral-300 overflow-x-auto"><code>Você vai conduzir comigo uma entrevista estruturada para gerar os arquivos de
+contexto do meu assistente digital, dentro da pasta contexto/ do meu projeto
+<isto caminho="" do="" ex.="" meu-negocio="" projeto,="" troca:="" voce="" ~="">.
+
+Regras da conversa:
+- Faça UMA pergunta de cada vez. Espere minha resposta antes de seguir.
+- Se minha resposta ficar vaga ou genérica, peça um exemplo concreto antes
+  de continuar (ex.: "me dá um caso real que isso aconteceu").
+- Não invente nada que eu não te disse. Se eu não souber responder algo
+  agora, anote como "em aberto" e siga em frente.
+- Ao final de cada área, mostre um resumo do que você entendeu e pergunte
+  se está correto antes de salvar.
+
+Cubra estas 6 áreas, nesta ordem, uma pergunta por vez dentro de cada:
+
+1. QUEM SOU EU — meu papel, meu jeito de trabalhar, meus valores e o que eu
+   nunca aceitaria que fosse feito em meu nome.
+2. O NEGÓCIO — o que ele faz, para quem, como o dinheiro entra.
+3. O TIME — quem mais participa, quem decide o quê.
+4. PRIORIDADES — o que é urgente essa semana vs. o que é importante mas
+   pode esperar.
+5. COMUNICAÇÃO — tom, formalidade, quando eu quero resumo curto e quando
+   quero o detalhe todo.
+6. O QUE DELEGAR — o que você pode fazer sozinho, e o que precisa da minha
+   aprovação antes de agir (inclua uma linha de valor em dinheiro se eu
+   te der uma).
+
+Ao terminar cada área, salve um arquivo Markdown separado dentro de
+contexto/ (ex.: contexto/quem-sou-eu.md, contexto/negocio.md,
+contexto/time-decisoes.md, contexto/prioridades.md, contexto/comunicacao.md,
+contexto/delegacao.md). NÃO junte tudo em um arquivo único — arquivos
+separados por área facilitam eu revisar e atualizar cada um depois.
+
+Antes de escrever qualquer arquivo, me avise que vai escrever e mostre
+o conteúdo. NUNCA inclua senha, chave de API, token ou dado pessoal de
+terceiros nesses arquivos — se eu mencionar algo assim sem querer, avise
+e sugira remover.
+
+Comece pela área 1, pergunta 1.</isto></code></pre>
+</div>
+<p class="text-sm text-neutral-400 mb-6"><strong class="text-emerald-400">Cómo verificar:</strong> al final, abre la carpeta <code>contexto/</code> y verifica que existan 6 archivos separados (uno por área), cada uno con respuestas concretas —no genéricas— y sin datos sensibles.</p>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">🔒</span> Aviso de privacidad — obligatorio</h3>
+<p class="text-neutral-300 mb-3">Estos archivos están en una carpeta local de tu computadora — NO se suben a ningún lugar a menos que tú lo decidas (por ejemplo, si haces una copia de seguridad en la nube en el módulo 7.5). Aun así, nunca pongas en ellos:</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Contraseñas, claves de API, tokens de acceso — eso va en una variable de entorno (módulo 4.4), nunca en texto suelto.</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Datos personales de terceros sin consentimiento (CPF, dirección, salud de clientes o empleados), aunque parezca «solo un ejemplo».</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Cualquier cosa que no le mostrarías a un empleado nuevo el primer día.</span></li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-7-2#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🔁 La entrevista nunca "termina" del todo</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-2-t6-p1">
+        La primera ronda es la más larga: cubre las 6 áreas de una vez, con calma. Pero tu negocio cambia: se incorpora
+        gente nueva al equipo, las prioridades de un trimestre no son las del siguiente, te das cuenta de que delegaste demasiado
+        (o demasiado poco) una tarea. La entrevista vuelve en revisiones puntuales, no en maratones repetidas.
+      </p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Primera ronda — amplia</h4>
+<p class="text-neutral-300 text-sm">Las 6 áreas completas, con el prompt de este módulo. Reserva unos 40 minutos, sin prisa: aquí es donde nace la mayor parte del valor.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Primeras semanas — ajustes finos</h4>
+<p class="text-neutral-300 text-sm">En la práctica, notas que el resumen diario es demasiado largo o que el asistente pidió aprobación para algo que podía haber hecho por su cuenta. Vuelves al archivo de esa área específica y lo ajustas.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Hitos del negocio — revisión puntual</h4>
+<p class="text-neutral-300 text-sm">¿Contrataste a alguien, cambiaste de proveedor o empezó una temporada alta? Es hora de revisar <code>time-decisoes.md</code> o <code>prioridades.md</code> — no el archivo entero, solo el área que cambió.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">4</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Continuo — nunca "cerrado"</h4>
+<p class="text-neutral-300 text-sm">No existe una versión final. El contexto acompaña la vida del negocio: precisamente eso es lo que la Fase 5 (Backup y control de versiones, módulo 7.5) ayuda a mantener en orden con el tiempo.</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Entrevista bien hecha</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Respuestas concretas, con un ejemplo real ("el cliente X llamó para quejarse por un retraso")</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>6 archivos separados por área — fáciles de encontrar y actualizar</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Una explicación clara de qué necesita aprobación</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Entrevista apresurada</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Respuestas genéricas ("me gusta que todo esté organizado") sin ejemplos</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Un único archivo gigante que mezcla las 6 áreas</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ninguna regla de aprobación: por defecto, el asistente decide todo por sí solo</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Después de la primera ronda, vuelve a leer los 6 archivos en voz alta como si se los explicaras a un empleado de verdad. Si alguna frase suena extraña al decirla en voz alta, probablemente también sea demasiado vaga para el agente.</p>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-7-2#q1">
+<p class="font-medium mb-4">Verificación rápida (opcional): ¿por qué separar los archivos de contexto por área, en vez de usar un único archivo?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Porque un archivo único tarda más en cargar.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Porque cada área cambia a un ritmo diferente: separarlas facilita revisar y actualizar solo lo que cambió.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">No hace ninguna diferencia, es solo estética.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-7-2#q1', {
+              answer: 1,
+              explain: { 0: 'Velocidade de carregamento não é o motivo — o arquivo é texto simples.', 1: 'Isso mesmo: prioridades mudam toda semana, o negócio muda a cada trimestre — separar evita reescrever tudo por uma mudança pequena.', 2: 'Faz diferença real na hora de manter os arquivos atualizados ao longo do tempo.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">El contexto es lo que marca la diferencia entre ejecutar y solo conversar:</strong><span class="text-neutral-400"> sin él, el asistente es un chatbot genérico.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">6 áreas lo cubren todo:</strong><span class="text-neutral-400"> quién eres, negocio, equipo, prioridades, comunicación, qué delegar.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">El prompt copy-run guía la entrevista por ti</strong><span class="text-neutral-400"> y ya guarda los archivos separados en <code>contexto/</code>.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Nunca incluyas datos sensibles</strong><span class="text-neutral-400"> en estos archivos — se quedan en local, pero el cuidado depende de ti.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">La entrevista se repite para hacer ajustes puntuales,</strong><span class="text-neutral-400"> nunca «termina» del todo.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">7.3 — Fase 3: Manos, dándole al asistente las herramientas para actuar sobre el contexto que acaba de aprender.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la ruta</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-7-3.html">Próximo módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>5.5 Referência visual e rebranding | Seu Funcionário Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'teal' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'teal');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.teal;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13, 148, 136, 0.12); }
+    html:not(.dark) .bg-teal-500\/10 { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .border-teal-500\/30 { border-color: rgba(13, 148, 136, 0.25); }
+    html:not(.dark) .hover\:bg-teal-500\/30:hover { background-color: rgba(13, 148, 136, 0.18); }
+    html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .hover\:text-teal-400:hover { color: #0d9488; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha5/modulo-5-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha5/modulo-5-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha5/modulo-5-5.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-5-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha5/modulo-5-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha5/modulo-5-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Pular para o conteúdo</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparação</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-teal-400 bg-teal-500/10" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Minha jornada</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-teal-400" href="../../index.html">Início</a><span>/</span>
+<a class="hover:text-teal-400" href="index.html">Trilha 5</a><span>/</span>
+<span class="text-teal-400">Módulo 5.5</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.5</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🖼️ Referência visual e rebranding</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        Mostrar uma referência ao agente destrava o "site genérico" do módulo 5.1 mais rápido que qualquer prompt.
+        Mas referência tem regra: aprende layout, nunca copia marca. Este módulo ensina o filtro que separa
+        "inspirar-se" de "clonar" — e como dar as instruções certas pra sair com identidade própria.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Intermediário</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Prática</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progresso do módulo 5.5" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:5-5" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Seção <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-1">1. A revista de decoração</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-2">2. Inspirar-se × clonar</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-3">3. O que é rebranding</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-4">4. Dando a referência certa</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-5">5. Instruções de marca</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-6">6. Erros e checklist final</a></li>
+</ul>
+</nav>
+<article data-inema-module="5-5" data-inema-track="5" id="modulo-5-5">
+<section class="mb-16" data-inema-topic="modulo-5-5#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">📖 A revista de decoração, não a planta da casa do vizinho</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t1-p1">
+<strong class="text-teal-400">Novo aqui?</strong> <strong class="text-teal-400">Referência visual</strong> é mostrar
+        ao agente um site, um layout ou uma imagem já existente pra ele entender o estilo que você quer — não o conteúdo,
+        o <em>estilo</em>: onde ficam os blocos, o tamanho dos títulos, o clima geral (sóbrio, colorido, denso, arejado).
+        É a mesma coisa que um arquiteto faz folheando revista de decoração antes de projetar sua casa: ele não vai
+        copiar a casa da capa tijolo por tijolo — ele reúne "gostei dessa disposição de sala", "gostei desse tipo de
+        iluminação", e usa essas ideias pra desenhar uma casa nova, sua.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t1-p2">
+        O agente enxerga referência do mesmo jeito que enxerga qualquer coisa nesta trilha: por <strong class="text-teal-400">screenshot</strong>
+        (a captura de imagem da tela — módulo 5.3) ou por um link que ele acessa e analisa. A diferença do módulo 5.5
+        pro 5.3 é o que você faz com o que ele aprendeu: no 5.3 ele comparava o PRÓPRIO trabalho contra o design. Aqui
+        ele olha o trabalho de <em>outra pessoa</em> pra aprender um padrão de layout — e essa é uma linha que precisa
+        ficar clara desde já, porque é fácil escorregar de "aprender com" pra "copiar de".
+      </p>
+<div class="rounded-2xl border border-teal-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Fluxo de referência responsável: um site de referência entra no filtro de marca, que troca cores, tipografia e logo, e sai um site com layout parecido mas identidade própria" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
+<defs>
+<lineargradient id="m55-1-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2dd4bf"></stop><stop offset="1" stop-color="#0d9488"></stop></lineargradient>
+<filter height="180%" id="m55-1-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m55-1-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#2dd4bf" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m55-1-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#2dd4bf"></path></marker>
+<marker id="m55-1-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m55-1-grid)" height="240" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" height="70" rx="12" stroke="#38bdf8" stroke-width="2" width="170" x="30" y="85"></rect>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="115" y="112">Referência</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="115" y="129">site alheio (layout)</text>
+<path d="M200,120 L280,120" marker-end="url(#m55-1-ah)" opacity="0.7" stroke="#5eead4" stroke-width="1.8"></path>
+<rect fill="#08201c" filter="url(#m55-1-glow)" height="180" rx="14" stroke="url(#m55-1-grad)" stroke-width="2.5" width="190" x="285" y="30"></rect>
+<text fill="#2dd4bf" font-size="14" font-weight="700" text-anchor="middle" x="380" y="55">Filtro de marca</text>
+<rect fill="#0e1622" height="26" rx="6" stroke="#38bdf8" stroke-width="1.5" width="150" x="305" y="70"></rect><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="380" y="87">troca paleta (hex)</text>
+<rect fill="#0e1622" height="26" rx="6" stroke="#38bdf8" stroke-width="1.5" width="150" x="305" y="102"></rect><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="380" y="119">troca tipografia</text>
+<rect fill="#0e1622" height="26" rx="6" stroke="#38bdf8" stroke-width="1.5" width="150" x="305" y="134"></rect><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="380" y="151">troca logo</text>
+<rect fill="#0e1622" height="26" rx="6" stroke="#38bdf8" stroke-width="1.5" width="150" x="305" y="166"></rect><text fill="#9ad6ff" font-size="10" text-anchor="middle" x="380" y="183">troca tom de voz</text>
+<path d="M475,120 L570,120" marker-end="url(#m55-1-ah)" opacity="0.7" stroke="#5eead4" stroke-width="1.8"></path>
+<g class="wf-a"><rect fill="#0e1622" height="60" rx="12" stroke="#38bdf8" stroke-width="2" width="160" x="575" y="90"></rect>
+<text fill="#bfe6ff" font-size="13" font-weight="600" text-anchor="middle" x="655" y="117">Agente monta</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="655" y="134">layout novo</text>
+</g>
+<path d="M735,120 L810,120" marker-end="url(#m55-1-ahc)" opacity="0.6" stroke="#38bdf8" stroke-width="1.8"></path>
+<rect fill="#0e1622" filter="url(#m55-1-glow)" height="60" rx="12" stroke="#2dd4bf" stroke-width="2.5" width="155" x="815" y="90"></rect>
+<text fill="#2dd4bf" font-size="13" font-weight="700" text-anchor="middle" x="892" y="117">Site com DNA</text>
+<text fill="#7fe8db" font-size="10" text-anchor="middle" x="892" y="134">próprio, não clone</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Legenda: a referência entra pela esquerda só como fonte de layout; o "filtro de marca" no meio troca sistematicamente cor, fonte, logo e tom; o que sai à direita tem a mesma disposição, mas identidade nova.</p>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">💡</span> Conceito Principal</h3>
+<p class="text-neutral-300 mb-4">Referência visual = matéria-prima de layout. O que você constrói depois é seu — sempre passa pelo filtro de marca antes de publicar.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>Um arquiteto olha 20 revistas e não constrói nenhuma das 20 casas — constrói a 21ª.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>Sua referência pode ser um concorrente, um site que você admira, um exemplo de portfólio — desde que o resultado final não pareça o mesmo site.</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">Layout</div><div class="text-xs text-neutral-400 mt-1">O que você aprende</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">Estrutura</div><div class="text-xs text-neutral-400 mt-1">Disposição de blocos</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">Filtro</div><div class="text-xs text-neutral-400 mt-1">Sua marca por cima</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">DNA próprio</div><div class="text-xs text-neutral-400 mt-1">O que sai no fim</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-5-5#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">⚖️ Inspirar-se × clonar: a linha que não se cruza</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t2-p1">
+        Esta é a regra explícita da Trilha 5, e ela é séria: referência é pra <strong class="text-teal-400">aprender e depois
+        construir o próprio site com marca própria</strong> — nunca pra copiar um site alheio inteiro, com design, textos
+        e imagens de outra empresa. Copiar a identidade visual de uma marca de verdade (as cores exatas dela, o logo, os
+        textos, as fotos) pode ferir direitos de propriedade intelectual e, na prática, é enganar quem visitar seu site
+        achando que é outra empresa.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t2-p2">
+        A boa notícia: a linha entre os dois é simples de traçar quando você sabe o que olhar. <strong class="text-teal-400">Layout</strong>
+        (disposição das seções: hero grande, depois 3 cards, depois depoimentos), <strong class="text-teal-400">tipo de composição</strong>
+        (imagem à esquerda / texto à direita) e <strong class="text-teal-400">estrutura de navegação</strong> são padrões
+        de design amplamente usados — ninguém é "dono" da ideia de ter um menu no topo. Já <strong class="text-teal-400">cores
+        de marca</strong> (a paleta exata que identifica aquela empresa), <strong class="text-teal-400">logo</strong>,
+        <strong class="text-teal-400">textos originais</strong> e <strong class="text-teal-400">fotos/ilustrações</strong>
+        protegidas são ativos daquela marca especificamente — aí não se toca.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Inspirar-se (ok)</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Copiar a disposição: hero + 3 blocos + depoimentos + rodapé</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Usar o mesmo tipo de composição (imagem grande de fundo, texto centralizado)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Adotar o "clima" visual: minimalista, denso, colorido, corporativo</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Pegar a ideia de um recurso (carrossel, FAQ expansível) sem copiar o código-fonte protegido</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Clonar (não ok)</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Usar as cores de marca exatas de outra empresa (o hex específico dela)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Copiar o logo, mesmo "adaptado"</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Colar os textos originais dela (frases de efeito, descrições de produto)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Baixar e reusar as fotos/ilustrações protegidas do site de referência</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atenção</h3>
+<p class="text-neutral-300">Se ao terminar o site alguém que conhece a referência disser "isso é uma cópia de tal empresa", você cruzou a linha — mesmo que nenhum texto ou imagem tenha sido copiado literalmente. O teste é simples: o resultado tem que ter cara própria, não cara emprestada.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-5-5#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🎨 O que é rebranding, na prática do agente</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t3-p1">
+<strong class="text-teal-400">Novo aqui?</strong> <strong class="text-teal-400">Rebranding</strong>, aqui, é o
+        processo de pegar um layout de referência e trocar sistematicamente tudo que identifica a marca original pela
+        sua: cores, tipografia, logo e tom de voz. Não é "dar um jeitinho" — é uma troca completa e deliberada, ponto por
+        ponto, até nenhum traço de identidade alheia sobrar.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t3-p2">
+<strong class="text-teal-400">Novo aqui?</strong> <strong class="text-teal-400">Paleta de cores</strong> é o
+        conjunto de cores que representa sua marca (normalmente 1 cor principal + 1-2 de apoio + neutros). Cada cor tem
+        um <strong class="text-teal-400">hex</strong> — um código de 6 caracteres tipo <code class="bg-dark-700 px-1.5 py-0.5 rounded text-teal-300">#0d9488</code>
+        que identifica exatamente aquele tom, sem ambiguidade. É esse código que você passa pro agente — "azul" é vago,
+        <code class="bg-dark-700 px-1.5 py-0.5 rounded text-teal-300">#2563eb</code> é exato.
+      </p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Cor sai, hex entra</h4>
+<p class="text-neutral-300 text-sm">Todo elemento que usava a cor da referência (botões, links, fundos, ícones) passa a usar a sua paleta, cor por cor.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Tipografia troca de família</h4>
+<p class="text-neutral-300 text-sm">A fonte do título e do corpo de texto vira a sua — mesmo que o "peso visual" (título grande e ousado, texto discreto) continue parecido.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Logo e nome próprios entram no lugar</h4>
+<p class="text-neutral-300 text-sm">Onde a referência tinha o logo dela, entra o seu (feito no módulo 5.6, "Pasta de marca").</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">4</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Textos são escritos do zero, no seu tom</h4>
+<p class="text-neutral-300 text-sm">Nada de traduzir/parafrasear o texto da referência — cada frase do seu site é escrita pensando no seu negócio e no seu jeito de falar.</p>
+</div>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-5-5#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">📎 Dando a referência certa ao agente</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t4-p1">
+        A referência chega ao agente de duas formas: um <strong class="text-teal-400">link</strong> que ele acessa e
+        analisa (usando as mesmas ferramentas de navegador do módulo 5.3), ou uma <strong class="text-teal-400">captura
+        de tela</strong> que você anexa direto na conversa. Screenshot é mais confiável quando o site de referência tem
+        proteção contra acesso automatizado, ou quando você quer mostrar só um trecho específico (o hero, não o site
+        inteiro).
+      </p>
+<div class="rounded-2xl border border-teal-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Escada de três degraus: escolher a referência certa, apontar o que copiar, apontar o que não copiar" class="w-full h-auto" role="img" viewbox="0 0 1000 210">
+<defs>
+<lineargradient id="m55-4-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2dd4bf"></stop><stop offset="1" stop-color="#0d9488"></stop></lineargradient>
+<filter height="180%" id="m55-4-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.6"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m55-4-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#2dd4bf" opacity="0.1" r="1.3"></circle></pattern>
+</defs>
+<rect fill="url(#m55-4-grid)" height="210" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" height="55" rx="10" stroke="#38bdf8" stroke-width="2" width="260" x="40" y="130"></rect>
+<text fill="#bfe6ff" font-size="13" font-weight="700" text-anchor="middle" x="170" y="153">1. Escolha a referência</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="170" y="170">tipo de site parecido com o seu objetivo</text>
+<rect fill="#0e1622" filter="url(#m55-4-glow)" height="55" rx="10" stroke="url(#m55-4-grad)" stroke-width="2.5" width="260" x="370" y="80"></rect>
+<text fill="#2dd4bf" font-size="13" font-weight="700" text-anchor="middle" x="500" y="103">2. Aponte o que copiar</text>
+<text fill="#7fe8db" font-size="10" text-anchor="middle" x="500" y="120">"o layout do hero, o menu fixo"</text>
+<rect fill="#0e1622" filter="url(#m55-4-glow)" height="55" rx="10" stroke="#38bdf8" stroke-width="2.5" width="260" x="700" y="30"></rect>
+<text fill="#bfe6ff" font-size="13" font-weight="700" text-anchor="middle" x="830" y="53">3. Aponte o que NÃO</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="830" y="70">"cores, logo e textos são meus"</text>
+<path d="M170,130 L170,110 L370,110" fill="none" opacity="0.7" stroke="#5eead4" stroke-width="1.8"></path>
+<path d="M500,80 L500,60 L700,60" fill="none" opacity="0.7" stroke="#38bdf8" stroke-width="1.8"></path>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Legenda: a escada sobe em 3 degraus — escolher, apontar o que copiar, apontar explicitamente o que não copiar. Pular o degrau 3 é o erro mais comum (ver tópico 6).</p>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Referência boa:</strong> um site do mesmo TIPO de negócio ou objetivo que o seu — landing de serviço, portfólio, loja — não precisa ser do mesmo nicho exato.</li>
+<li><strong>Instrução de escopo:</strong> sempre diga em que PARTE olhar ("o cabeçalho e a seção de preços"), não "copie o site inteiro" — isso reduz a chance do agente puxar detalhes de marca junto.</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-5-5#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">📝 Instruções de marca: o prompt que faz o rebranding funcionar</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t5-p1">
+<strong class="text-teal-400">Novo aqui?</strong> <strong class="text-teal-400">Tom de voz da marca</strong> é
+        o jeito como sua empresa "fala" — formal ou descontraído, técnico ou simples, sério ou bem-humorado. Assim como
+        a paleta precisa de hex exato, o tom de voz precisa de descrição concreta ("direto e sem jargão, como explicando
+        pra um amigo" é melhor que "profissional").
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t5-p2">
+        Um prompt de rebranding completo tem 4 ingredientes: a referência (com escopo), a paleta em hex, o nome/logo da
+        marca, e o tom de voz. Falta um desses e o agente preenche a lacuna com o "genérico" do módulo 5.1 — ou pior,
+        com um traço da referência que deveria ter sido trocado.
+      </p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 overflow-hidden mb-6">
+<div class="bg-dark-700 px-4 py-2 flex items-center justify-between">
+<span class="text-xs text-neutral-400 font-mono">prompt · copiar e colar no Claude Code</span>
+<span class="text-xs text-teal-400">copy-run</span>
+</div>
+<div class="p-5">
+<p class="text-sm text-neutral-400 mb-3"><strong class="text-teal-400">Objetivo:</strong> pedir ao agente um rebranding completo, usando um site de referência só como fonte de layout e passando as 3 instruções de marca (paleta, nome/logo, tom).</p>
+<pre class="bg-dark-900 rounded-lg p-4 overflow-x-auto text-sm text-neutral-200 font-mono leading-relaxed">Anexei uma captura de tela do site &lt;referência.com&gt;. Quero que você use APENAS
+o layout dessa referência como inspiração: a disposição do cabeçalho fixo, o hero
+com título grande + botão, e a seção de 3 colunas com ícones logo abaixo.
+
+NÃO copie cores, logo, textos ou imagens da referência — construa a versão da
+minha marca do zero, com estes dados:
+
+- Nome da marca: &lt;Nome da Sua Empresa&gt;
+- Paleta: cor principal &lt;#0d9488&gt;, cor de apoio &lt;#38bdf8&gt;, fundo &lt;#0f172a&gt;
+- Tom de voz: &lt;direto e caloroso, como um consultor explicando pra um amigo,
+  sem jargão técnico&gt;
+- Textos: escreva do zero pro meu negócio de &lt;descreva seu negócio em 1 frase&gt;,
+  não traduza nem parafraseie nada da referência
+
+Ao terminar, tire um screenshot do resultado e me mostre lado a lado com a
+referência, apontando o que veio do layout e o que é 100% meu.</pre>
+<p class="text-sm text-neutral-400 mt-3"><strong class="text-teal-400">Como verificar:</strong> compare o resultado com a referência — se alguém que não conhece nenhum dos dois sites olhar o seu e não reconhecer a marca original, o rebranding funcionou. Confira também se cada hex da paleta foi realmente aplicado (não só a cor principal).</p>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica Prática</h3>
+<p class="text-neutral-300">Guarde esse bloco de "paleta + nome + tom" — ele é o esqueleto da "pasta de marca" que você vai formalizar no módulo 5.6, pra não precisar reescrever tudo isso a cada projeto novo.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-5-5#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🚫 Erros comuns e checklist final</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t6-p1">
+        Os dois erros que mais aparecem quando alguém começa a usar referência: primeiro, <strong class="text-teal-400">deixar
+        o agente copiar textos e imagens</strong> — pedir só "faça parecido com este site" sem dizer explicitamente que
+        textos/imagens/logo não entram na cópia, e o agente (que está tentando ser fiel ao pedido) reaproveita o que
+        encontrou. Segundo, <strong class="text-teal-400">esquecer de trocar a paleta</strong> — pedir o rebranding mas
+        não passar os hex, então o agente mantém tons parecidos com os da referência "porque combinavam com o layout".
+
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Prompt bem montado</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Diz "apenas o layout" e lista o que exatamente copiar</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Passa hex exatos da paleta, não nomes de cor vagos</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Pede textos escritos do zero pro seu negócio</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Pede confirmação visual comparando resultado × referência</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Prompt arriscado</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>"Faça igual a este site" sem nenhuma ressalva</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sem paleta em hex — o agente adivinha as cores</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sem pedir textos próprios — o agente reaproveita frases da referência</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sem revisão final comparando os dois lado a lado</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">✅</span> Checklist antes de publicar algo inspirado numa referência</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>☐ A paleta do resultado é a SUA, com hex conferidos — nenhuma cor "parecida" com a da referência ficou.</li>
+<li>☐ O logo e o nome são 100% seus (feitos ou trocados, não os da referência).</li>
+<li>☐ Todo texto foi escrito para o seu negócio — nenhuma frase é tradução/paráfrase da referência.</li>
+<li>☐ Nenhuma imagem/foto/ilustração da referência foi reaproveitada.</li>
+<li>☐ Você revisou lado a lado e confirmaria em voz alta: "isso é meu, inspirado em, não uma cópia".</li>
+</ul>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-5-5#q1">
+<p class="font-medium mb-4">Checagem rápida (opcional): o que é seguro reaproveitar de um site de referência?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">O layout e a disposição das seções.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">As cores exatas de marca da empresa de referência.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">O logo, adaptando levemente as cores.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-5-5#q1', {
+              answer: 0,
+              explain: { 0: 'Isso mesmo: layout e disposição são padrões de design, não propriedade exclusiva de ninguém.', 1: 'Cor de marca identifica aquela empresa especificamente — não se copia.', 2: '"Adaptar levemente" ainda é usar o logo alheio — não conta como próprio.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mt-8">
+<h3 class="text-lg font-semibold text-teal-400 mb-3 flex items-center"><span class="mr-2">🏋️</span> Exercício</h3>
+<p class="text-neutral-300 mb-3">Escolha um site que você admira (concorrente ou não). Tire um screenshot só do cabeçalho + hero. Monte o prompt de rebranding do tópico 5 usando esse screenshot, com uma paleta e nome fictícios (ou os seus, se já tiver). Rode no Claude Code e confira o resultado contra o checklist acima.</p>
+<p class="text-neutral-400 text-sm">Guarde o hex da paleta que você usou — ele volta no módulo 5.6, "Pasta de marca".</p>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-teal-900/40 via-dark-800 to-dark-800 rounded-xl border border-teal-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do Módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Referência visual:</strong><span class="text-neutral-400"> aprende layout, nunca copia marca — a analogia é a revista de decoração, não a planta da casa do vizinho.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Inspirar-se × clonar:</strong><span class="text-neutral-400"> layout e estrutura são livres; cor de marca, logo, textos e imagens de terceiros não se tocam.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Rebranding:</strong><span class="text-neutral-400"> trocar sistematicamente paleta (hex), tipografia, logo e tom de voz de uma referência de layout.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Prompt de rebranding:</strong><span class="text-neutral-400"> referência com escopo + paleta em hex + nome/logo + tom de voz — os 4 ingredientes que evitam o "clone sem querer".</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-teal-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">5.6 — Pasta de marca: formalizando paleta, tipografia, logo e tom de voz num único lugar que o agente sempre consulta</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Voltar para Trilha</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-5-4.html">← Módulo anterior</a>
+<a class="flex-1 text-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors" href="modulo-5-6.html">Próximo Módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

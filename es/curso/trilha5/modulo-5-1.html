@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>5.1 Por qué el resultado predeterminado es genérico | Tu Empleado Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'teal' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'teal');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66], amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60] };
+      var a = ACC[p.accent] || ACC.teal;
+      s.setProperty('--accent-h', a[0] + ''); s.setProperty('--accent-s', a[1] + '%'); s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-teal-400 { color: #0d9488; }
+    html:not(.dark) .bg-teal-500\/20 { background-color: rgba(13, 148, 136, 0.12); }
+    html:not(.dark) .bg-teal-500\/10 { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .border-teal-500\/30 { border-color: rgba(13, 148, 136, 0.25); }
+    html:not(.dark) .hover\:bg-teal-500\/30:hover { background-color: rgba(13, 148, 136, 0.18); }
+    html:not(.dark) .hover\:bg-teal-500\/10:hover { background-color: rgba(13, 148, 136, 0.08); }
+    html:not(.dark) .hover\:text-teal-400:hover { color: #0d9488; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha5/modulo-5-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha5/modulo-5-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha5/modulo-5-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-teal-400 bg-teal-500/10" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-teal-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-teal-400" href="index.html">Trilha 5</a><span>/</span>
+<span class="text-teal-400">Módulo 5.1</span>
+</div>
+</nav>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12" id="conteudo">
+<header class="bg-gradient-to-br from-teal-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-12">
+<span class="inline-block px-3 py-1 bg-teal-500/20 text-teal-400 text-xs font-semibold rounded-full mb-4">MÓDULO 5.1</span>
+<h1 class="text-2xl sm:text-4xl font-bold mb-4">🎨 Por qué el resultado predeterminado sale genérico</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">
+        Pídele a un agente que "haga un sitio web" sin darle nada más y siempre obtendrás el mismo aspecto: fondo blanco,
+        botón azul redondeado, todo centrado. No es un fallo, es la matemática del entrenamiento a la vista.
+        Entender por qué pasa esto es lo que justifica los tres módulos siguientes de la ruta.
+      </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">22</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Principiante</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Teoría</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+<div aria-label="Progreso del módulo 5.1" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:5-1" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<ul class="space-y-1 text-sm">
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-1">1. El olor a IA</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-2">2. Por qué gana el promedio</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-3">3. Sin referencia, no hay criterio</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-4">4. Antes y después, lado a lado</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-5">5. Pídelo tú mismo y observa</a></li>
+<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-6">6. La solución viene en dos partes</a></li>
+</ul>
+</nav>
+<article data-inema-module="5-1" data-inema-track="5" id="modulo-5-1">
+<section class="mb-16" data-inema-topic="modulo-5-1#topico-1" id="topico-1">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">👃 El "olor a IA" que todo el mundo reconoce</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t1-p1">
+<strong class="text-teal-400">¿Eres nuevo aquí?</strong> <strong class="text-teal-400">Front-end</strong> es la parte de un
+        sitio o una aplicación que la persona ve y toca en la pantalla: botones, colores, textos, diseño. Es diferente del
+        «back-end», que es el motor detrás de todo (base de datos, reglas de negocio) y que nadie ve directamente.
+        Cuando este módulo habla del «sitio que produce el agente», se refiere al front-end.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t1-p2">
+        Seguro que ya lo viste: fondo blanco o gris muy claro, un título grande y centrado, un botón
+        azul con esquinas redondeadas que dice "Get Started" o "Saiba mais", íconos genéricos, tipografía del
+        sistema. No importa de qué trate el sitio —una receta de pastel, un currículum, una tienda de ropa— el resultado
+        predeterminado de un agente de IA sin instrucciones visuales suele tener ESTA MISMA apariencia. Quienes trabajan con IA ya le
+        pusieron un apodo: <strong class="text-teal-400">"olor a IA"</strong> (en inglés,
+        «AI slop» o «AI smell»): el aspecto que delata a primera vista que nadie intervino.
+      </p>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">💡</span> Concepto principal</h3>
+<p class="text-neutral-300 mb-4">El patrón genérico no es un bug aislado — es un conjunto de decisiones visuales repetidas, siempre las mismas, porque provienen de la misma fuente: el promedio de lo que el modelo ya vio.</p>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>Fondo blanco o `#f8fafc`, tarjeta central con sombra suave.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>Botón azul (casi siempre del mismo tono de azul), redondeado, «Get Started».</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>Fuente predeterminada del sistema (Inter, Arial o la que el framework trae de fábrica).</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">Blanco</div><div class="text-xs text-neutral-400 mt-1">Fondo predeterminado</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">Azul</div><div class="text-xs text-neutral-400 mt-1">Botón predeterminado</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">Centro</div><div class="text-xs text-neutral-400 mt-1">Diseño estándar</div></div>
+<div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">Sistema</div><div class="text-xs text-neutral-400 mt-1">Fuente predeterminada</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-5-1#topico-2" id="topico-2">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">📊 Por qué gana el promedio estadístico</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t2-p1">
+<strong class="text-teal-400">¿Eres nuevo aquí?</strong> Uno <strong class="text-teal-400">modelo de IA</strong> (el
+        “cerebro” que interpreta tu pedido y genera el resultado) se construyó en un proceso llamado
+        <strong class="text-teal-400">entrenamiento</strong>: le mostraron millones de ejemplos reales; en este
+        caso, millones de páginas de front-end escritas por personas de todo el mundo, y aprendió los
+        patrones que más se repiten en esos ejemplos. No "memorizó" un sitio específico; aprendió
+        estadísticamente qué suele venir después de qué.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t2-p2">
+        Esto tiene una consecuencia directa: cuando pides algo vago ("haz un sitio web bonito"), el modelo no
+        tiene de dónde elegir, así que converge en la respuesta más probable, es decir, la <strong class="text-teal-400">promedio estadístico</strong> de todo lo que ya vio. Y el promedio de millones de
+        sitios de front-end tiende a lo mismo: azul (el color más usado en botones CTA en todo el mundo),
+        blanco (el fondo más seguro y común), fuente del sistema (la que siempre funciona sin configurar
+        nada). No es pereza del modelo: es la matemática de la probabilidad haciendo exactamente lo que fue
+        entrenado para hacer.
+      </p>
+<div class="rounded-2xl border border-teal-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Diagrama que compara una solicitud vaga que cae en el promedio estadístico del entrenamiento y da como resultado un sitio genérico, con una solicitud guiada por una referencia visual que da como resultado un sitio con identidad propia" class="w-full h-auto" role="img" viewbox="0 0 1000 260">
+<defs>
+<lineargradient id="m51-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2dd4bf"></stop><stop offset="1" stop-color="#0d9488"></stop></lineargradient>
+<filter height="180%" id="m51-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m51-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#2dd4bf" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="m51-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#2dd4bf"></path></marker>
+<marker id="m51-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m51-grid)" height="260" width="1000" x="0" y="0"></rect>
+<g font-family="Inter,sans-serif">
+<text fill="#5eead4" font-size="13" font-weight="700" x="40" y="30">"Crea un sitio" (sin referencia)</text>
+<rect fill="#0e1f1c" height="55" rx="12" stroke="#38bdf8" stroke-width="2" width="170" x="30" y="45"></rect>
+<text fill="#bff2ea" font-size="12" text-anchor="middle" x="115" y="77">Pedido vago</text>
+<path d="M200,72 L280,72" marker-end="url(#m51-ah)" opacity="0.7" stroke="#2dd4bf" stroke-width="1.8"></path>
+<rect fill="#0e1f1c" filter="url(#m51-glow)" height="90" rx="14" stroke="url(#m51-grad)" stroke-width="2.5" width="190" x="285" y="30"></rect>
+<text fill="#2dd4bf" font-size="13" font-weight="700" text-anchor="middle" x="380" y="55">Millones de</text>
+<text fill="#2dd4bf" font-size="13" font-weight="700" text-anchor="middle" x="380" y="72">ejemplos vistos</text>
+<text fill="#7fd8ce" font-size="10" text-anchor="middle" x="380" y="98">(capacitación)</text>
+<path d="M475,72 L555,72" marker-end="url(#m51-ahc)" opacity="0.6" stroke="#38bdf8" stroke-width="1.8"></path>
+<g class="wf-a"><rect fill="#0e1f1c" height="55" rx="12" stroke="#38bdf8" stroke-width="2" width="220" x="560" y="45"></rect>
+<text fill="#bfe6ff" font-size="12" font-weight="600" text-anchor="middle" x="670" y="68">Promedio estadístico</text>
+<text fill="#9ad6ff" font-size="10" text-anchor="middle" x="670" y="85">el «seguro» más probable</text>
+</g>
+<path d="M780,72 L850,72" marker-end="url(#m51-ah)" opacity="0.7" stroke="#2dd4bf" stroke-width="1.8"></path>
+<rect fill="#1a2e1f" height="55" rx="12" stroke="#f87171" stroke-width="2" width="120" x="855" y="45"></rect>
+<text fill="#fca5a5" font-size="12" font-weight="700" text-anchor="middle" x="915" y="68">Genérico</text>
+<text fill="#fda4a4" font-size="10" text-anchor="middle" x="915" y="85">"olor a IA"</text>
+<text fill="#5eead4" font-size="13" font-weight="700" x="40" y="165">"Crea un sitio con esta referencia" (guiado)</text>
+<rect fill="#0e1f1c" height="55" rx="12" stroke="#38bdf8" stroke-width="2" width="170" x="30" y="180"></rect>
+<text fill="#bff2ea" font-size="12" text-anchor="middle" x="115" y="203">Pedido +</text>
+<text fill="#bff2ea" font-size="11" text-anchor="middle" x="115" y="220">colores/ejemplos</text>
+<path d="M200,207 L280,207" marker-end="url(#m51-ah)" opacity="0.7" stroke="#2dd4bf" stroke-width="1.8"></path>
+<g class="wf-a"><rect fill="#0e1f1c" filter="url(#m51-glow)" height="55" rx="12" stroke="url(#m51-grad)" stroke-width="2.5" width="220" x="285" y="180"></rect>
+<text fill="#5eead4" font-size="12" font-weight="700" text-anchor="middle" x="395" y="203">Vacío completado</text>
+<text fill="#a7f3ea" font-size="10" text-anchor="middle" x="395" y="220">con tu referencia</text>
+</g>
+<path d="M505,207 L580,207" marker-end="url(#m51-ahc)" opacity="0.6" stroke="#38bdf8" stroke-width="1.8"></path>
+<rect fill="#0e1f1c" filter="url(#m51-glow)" height="55" rx="12" stroke="#4ade80" stroke-width="2.5" width="180" x="585" y="180"></rect>
+<text fill="#86efac" font-size="12" font-weight="700" text-anchor="middle" x="675" y="203">Identidad propia</text>
+<text fill="#bbf7d0" font-size="10" text-anchor="middle" x="675" y="220">reconoce la marca</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: arriba, el pedido vago cae en el promedio de todo lo que el modelo ya vio y da un resultado genérico; abajo, el mismo pedido con una referencia visual llena el vacío con tu estilo en lugar del promedio. Esa es la diferencia que los módulos 5.2 y 5.5 te enseñarán a construir.</p>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Capacitación:</strong> el proceso por el que el modelo aprendió, al observar millones de ejemplos, qué suele ir junto con qué.</li>
+<li><strong>Converger hacia el promedio:</strong> cuando falta una instrucción específica, el modelo elige la respuesta estadísticamente más probable: la «más vista», no la «más adecuada para ti».</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-5-1#topico-3" id="topico-3">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">👁️ Sin referencia y sin criterio para observar</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t3-p1">
+        Hay una segunda causa, tan importante como la primera: el agente que <strong class="text-teal-400">escribe</strong>
+        el código de un sitio no necesariamente <strong class="text-teal-400">ve</strong> el resultado. Uno
+        <strong class="text-teal-400">prompt</strong> (el pedido en texto que escribes para el agente) describe
+        lo que quieres con palabras, pero el texto no es una imagen. A menos que alguien obligue al agente a tomar una
+        captura de pantalla y mirarla como lo haría un diseñador, está trabajando “a ciegas”: escribiendo
+        HTML y CSS técnicamente correctos, pero sin comprobar si quedó bonito, equilibrado y con la
+        personalidad adecuada.
+      </p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t3-p2">
+        Junta las dos causas y entenderás el problema por completo: (1) sin una referencia de marca, colores o
+        ejemplo visual, el modelo llena los vacíos con lo que es estadísticamente "seguro" según los datos de
+        entrenamiento; (2) sin alguien —o algo— que fuerce una mirada crítica sobre el resultado, nada corrige ese
+        primer instinto. Las dos causas juntas explican el "aspecto de IA" —y ambas tienen solución,
+        que es justamente el resto de esta ruta.
+      </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Lo que resuelve la causa 1 (falta de referencia)</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Dar los colores de la marca, las fuentes y ejemplos concretos en el pedido</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Una <strong>skill de diseño</strong> (reglas fijas de estilo, guardadas y reutilizadas) — tema del módulo 5.2</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Una carpeta de marca con identidad visual lista: módulo 5.6</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Lo que NO resuelve nada de esto</h4>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Pedirlo de nuevo con las mismas palabras vagas, esperando algo diferente</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Pedir "más creativo" o "más bonito" sin dar ninguna referencia concreta</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Cambiar de modelo de IA pensando que otro «cerebro» lo resolverá por sí solo</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
+<p class="text-neutral-300">Piénsalo así: no juzgarías la decoración de una habitación con los ojos cerrados. Sin alguien que lo obligue a «mirar», el agente decora con los ojos cerrados. El módulo 5.3 enseña exactamente cómo abrir esos ojos — el ciclo de tomar una captura, mirarla y corregir.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-5-1#topico-4" id="topico-4">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🖼️ Antes y después, lado a lado</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t4-p1">
+        Para concretar esto, mira la misma tarea — "crear la landing page de una panadería de barrio" —
+        planteada de dos maneras diferentes. El texto de abajo describe lo que resultaría de cada pedido, punto por
+        punto, exactamente como un diseñador describiría dos wireframes (bocetos simplificados del diseño,
+        sin detalles finales) colocados uno al lado del otro.
+      </p>
+<div class="rounded-2xl border border-teal-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Comparación visual de dos páginas de inicio de una panadería: a la izquierda, la versión genérica sin referencias, con fondo blanco, botón azul estándar e ícono genérico de pastel; a la derecha, la versión guiada, con la paleta terracota y crema de la marca, tipografía serif y una foto real del producto" class="w-full h-auto" role="img" viewbox="0 0 1000 300">
+<defs>
+<lineargradient id="m51t4-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2dd4bf"></stop><stop offset="1" stop-color="#0d9488"></stop></lineargradient>
+<filter height="180%" id="m51t4-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+</defs>
+<g font-family="Inter,sans-serif">
+<text fill="#f87171" font-size="14" font-weight="700" text-anchor="middle" x="230" y="28">✗ Sin referencia (genérico)</text>
+<rect fill="#fafafa" height="230" rx="10" stroke="#f87171" stroke-width="2" width="380" x="40" y="42"></rect>
+<rect fill="#cbd5e1" height="18" rx="4" width="320" x="70" y="65"></rect>
+<rect fill="#e2e8f0" height="10" rx="3" width="200" x="130" y="95"></rect>
+<rect fill="#3b82f6" height="34" rx="17" width="160" x="150" y="130"></rect>
+<text fill="#ffffff" font-size="11" font-weight="600" text-anchor="middle" x="230" y="152">Get Started</text>
+<circle cx="230" cy="220" fill="#e2e8f0" r="30"></circle>
+<text fill="#94a3b8" font-size="18" text-anchor="middle" x="230" y="228">🎂</text>
+<text fill="#5eead4" font-size="14" font-weight="700" text-anchor="middle" x="770" y="28">✓ Con referencia (guiado)</text>
+<rect fill="#fbe7d4" filter="url(#m51t4-glow)" height="230" rx="10" stroke="url(#m51t4-grad)" stroke-width="2.5" width="380" x="580" y="42"></rect>
+<rect fill="#7c4a2d" height="20" rx="2" width="320" x="610" y="65"></rect>
+<rect fill="#a8674a" height="10" rx="2" width="200" x="670" y="98"></rect>
+<rect fill="#c2410c" height="34" rx="4" width="160" x="690" y="132"></rect>
+<text fill="#fff7ed" font-size="11" font-weight="600" text-anchor="middle" x="770" y="154">Reserva tu pan</text>
+<rect fill="#e7c9a8" height="60" rx="6" stroke="#7c4a2d" stroke-width="1.5" width="110" x="715" y="192"></rect>
+<text fill="#7c4a2d" font-size="10" text-anchor="middle" x="770" y="228">foto real del pan</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 -mt-3 mb-6">Leyenda: la misma tarea, dos resultados. A la izquierda, sin color, fuente ni foto de referencia, el modelo cae en el promedio (azul, redondeado, ícono genérico). A la derecha, con la paleta terracota y crema de la panadería y una foto real del producto incluidas en el pedido, el resultado ya nace con identidad: no hace falta «más creatividad», solo más información.</p>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">📋</span> Qué cambió, punto por punto</h3>
+<ul class="space-y-2 text-neutral-300">
+<li><strong>Color:</strong> azul estándar de CTA → terracota y crema, colores reales de la panadería.</li>
+<li><strong>Botón:</strong> "Get Started" genérico y redondeado → "Reserva tu pan", con el verbo del negocio.</li>
+<li><strong>Imagen:</strong> ícono de pastel emoji → foto real del producto (referencia indicada en el pedido).</li>
+<li><strong>Tipografía:</strong> fuente predeterminada del sistema → elección acorde con el tono "artesanal" de la marca.</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-5-1#topico-5" id="topico-5">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🧪 Pídelo tú mismo y observa cómo aparece el patrón</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t5-p1">
+        La mejor forma de interiorizar este módulo es experimentar el fenómeno por cuenta propia, una sola vez, antes
+        de aprender a evitarlo. <strong class="text-teal-400">Objetivo:</strong> confirmar, en tu propio
+        Claude Code, que una solicitud vaga de front-end realmente siga el patrón genérico descrito arriba, sin
+        ninguna instrucción de estilo, color o marca.
+      </p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-5 mb-2 font-mono text-sm overflow-x-auto">
+<div class="flex items-center justify-between mb-3">
+<span class="text-neutral-500 text-xs">terminal — Claude Code</span>
+<span class="text-teal-400 text-xs">copiar y pegar</span>
+</div>
+<pre class="text-neutral-200 whitespace-pre-wrap">Crea una landing page en HTML/CSS para <isto "uma="" consultoria="" descreva="" ex.="" financeira"="" negócio="" qualquer,="" troca:="" um="" voce=""><br/>con un formulario de contacto y una sección de testimonios. No me des ningún color, fuente o<br/>referencia de estilo — decide tú mismo el diseño visual.</isto></pre>
+</div>
+<p class="text-neutral-400 text-sm mb-6">Resultado típico: fondo blanco o gris claro, título centrado en negrita, botón azul redondeado con un texto como "Get Started" o "Fale conosco", tarjetas de testimonios idénticas entre sí, fuente del sistema. Si tu resultado coincide con esta descripción — como sucede en la gran mayoría de los casos — acabas de reproducir el fenómeno de este módulo.</p>
+<div class="bg-teal-900/20 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-3 flex items-center"><span class="mr-2">✅</span> Cómo verificar</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>Abre el archivo HTML generado en un navegador (haz doble clic en él).</li>
+<li>Verifica: el azul del botón es parecido a <code class="bg-dark-700 px-1.5 py-0.5 rounded text-teal-300">#2563eb</code> o <code class="bg-dark-700 px-1.5 py-0.5 rounded text-teal-300">#3b82f6</code>? ¿El fondo es blanco o gris muy claro? ¿El diseño está todo centrado en una sola columna?</li>
+<li>Si respondiste que sí a las tres, confirmaste el patrón y ya tienes a mano el «antes» que los módulos 5.2 y 5.3 te enseñarán a convertir en «después».</li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atención</h3>
+<p class="text-neutral-300">No le pidas al agente que «mejore el diseño» ahora, sin ninguna referencia: probablemente solo cambiará un diseño genérico por otro. La verdadera corrección requiere las herramientas de los próximos dos módulos, no insistir.</p>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<section class="mb-16" data-inema-topic="modulo-5-1#topico-6" id="topico-6">
+<div class="flex items-center space-x-4 mb-6">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🗺️ La solución viene en dos partes</h2>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-1-t6-p1">
+        Acabas de ver las dos causas del problema: falta de referencia visual y falta de un criterio
+        automático para "mirar" el resultado. Los dos módulos siguientes atacan exactamente esas dos causas,
+        en ese orden.
+      </p>
+<div class="mb-6">
+<div class="flex items-start space-x-4 mb-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">5.2 — Skill de diseño global</h4>
+<p class="text-neutral-300 text-sm">Ataca la causa 1: una vez, registras un conjunto de reglas de estilo (paleta, tipografía, principios) que el agente consulta siempre — en lugar de adivinar, consulta la referencia.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4 mb-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">5.3 — El ciclo de screenshot</h4>
+<p class="text-neutral-300 text-sm">Ataca la causa 2: el agente aprende a tomar una captura de su propia página, «mirarla» y compararla con lo esperado, y a corregirla antes de entregártela — el criterio estético que faltaba.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center"><span class="text-teal-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold text-white mb-2">Desde la versión 5.4</h4>
+<p class="text-neutral-300 text-sm">Límites del ciclo automático, una referencia de marca real, la carpeta de marca y el build final: una landing page publicada de principio a fin.</p>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-teal-900/30 to-dark-800 rounded-xl border border-teal-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Concepto principal</h3>
+<ul class="space-y-2 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>La herramienta y el proceso adecuados elevan el resultado a un nivel casi profesional, pero hace falta una revisión humana final.</span></li>
+<li class="flex items-start space-x-2"><span class="text-teal-400 mt-1">•</span><span>Skill (5.2) resuelve la entrada; el ciclo de capturas de pantalla (5.3) resuelve la salida. Juntos completan el ciclo.</span></li>
+</ul>
+</div>
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-5-1#q1">
+<p class="font-medium mb-4">Verificación rápida (opcional): ¿por qué un pedido vago de front-end tiende a salir siempre con el mismo aspecto?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Porque el modelo de IA es malo para el diseño y no hay nada que hacer.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Porque, sin una referencia, el modelo converge hacia el promedio estadístico de los datos de entrenamiento y nadie lo obliga a "mirar" el resultado.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Porque todos los sitios del mundo ya eran parecidos antes de que existiera la IA.</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          if (window.INEMA && INEMA.registerCheck) {
+            INEMA.registerCheck('modulo-5-1#q1', {
+              answer: 1,
+              explain: { 0: 'Não é falta de capacidade — é ausência de referência e de critério de checagem. Releia o tópico 2 e 3.', 1: 'Exatamente: sem referência ele cai na média, e sem checagem visual ninguém corrige.', 2: 'O padrão vem do treino do modelo, não de uma tendência histórica do design.' }
+            });
+          }
+        });
+      </script>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+</article>
+<!-- RESUMO -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-teal-900/40 via-dark-800 to-dark-800 rounded-xl border border-teal-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Señales de IA:</strong><span class="text-neutral-400"> fondo blanco, botón azul redondeado, diseño centrado: la identidad visual de una solicitud sin instrucciones.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Causa 1:</strong><span class="text-neutral-400"> sin una referencia, el modelo converge hacia el promedio estadístico de lo que vio durante el entrenamiento.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Causa 2:</strong><span class="text-neutral-400"> el agente escribe código sin «ver» el resultado, a menos que alguien lo obligue a revisarlo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-teal-400 mt-1">✓</span><div><strong class="text-white">Solución:</strong><span class="text-neutral-400"> skill de diseño (5.2) resuelve la entrada; el ciclo de capturas de pantalla (5.3) resuelve la salida.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-teal-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">5.2 — Skill de diseño global: registrando las reglas de estilo que el agente consultará siempre</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la ruta</a>
+<a class="flex-1 text-center px-6 py-3 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-500 transition-colors" href="modulo-5-2.html">Próximo módulo →</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else { themeToggleLightIcon.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden'); themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark'); localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+    function openModal(modalId) { const modal = document.getElementById(modalId); if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+  </script>
+</body>
+</html>

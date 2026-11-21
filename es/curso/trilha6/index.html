@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="wat7d" name="inema-course"/>
+<title>Ruta 6 — Tiempo: programación y loops | Tu Empleado Digital</title>
+<script data-inema-manifest="" type="application/json">
+{
+  "course": "wat7d",
+  "tracks": [
+    { "n": "0", "title": "Preparação: seu ambiente", "modules": [
+      { "id": "0-1", "title": "O que é um agente de código", "topics": 6, "href": "curso/trilha0/modulo-0-1.html" },
+      { "id": "0-2", "title": "Instalação sem medo", "topics": 6, "href": "curso/trilha0/modulo-0-2.html" },
+      { "id": "0-3", "title": "Anatomia de um projeto", "topics": 6, "href": "curso/trilha0/modulo-0-3.html" },
+      { "id": "0-4", "title": "O CLAUDE.md como cérebro", "topics": 6, "href": "curso/trilha0/modulo-0-4.html" },
+      { "id": "0-5", "title": "Modo plano", "topics": 6, "href": "curso/trilha0/modulo-0-5.html" },
+      { "id": "0-6", "title": "Permissões e segurança", "topics": 6, "href": "curso/trilha0/modulo-0-6.html" }
+    ]},
+    { "n": "1", "title": "O framework WAT", "modules": [
+      { "id": "1-1", "title": "Os três pedaços", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+      { "id": "1-2", "title": "O ciclo real de execução", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" },
+      { "id": "1-3", "title": "Auto-correção: verdade e marketing", "topics": 6, "href": "curso/trilha1/modulo-1-3.html" },
+      { "id": "1-4", "title": "Onde o WAT falha", "topics": 6, "href": "curso/trilha1/modulo-1-4.html" },
+      { "id": "1-5", "title": "Build: automação de newsletter", "topics": 6, "href": "curso/trilha1/modulo-1-5.html" }
+    ]},
+    { "n": "2", "title": "MCP: dando mãos ao agente", "modules": [
+      { "id": "2-1", "title": "O protocolo em linguagem humana", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+      { "id": "2-2", "title": "Anatomia de um servidor MCP", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" },
+      { "id": "2-3", "title": "Instalar e autenticar", "topics": 6, "href": "curso/trilha2/modulo-2-3.html" },
+      { "id": "2-4", "title": "O padrão cheat sheet", "topics": 6, "href": "curso/trilha2/modulo-2-4.html" },
+      { "id": "2-5", "title": "Build: scraping para CSV", "topics": 6, "href": "curso/trilha2/modulo-2-5.html" },
+      { "id": "2-6", "title": "Vários agentes em paralelo", "topics": 6, "href": "curso/trilha2/modulo-2-6.html" }
+    ]},
+    { "n": "3", "title": "Skills: ensinando um processo", "modules": [
+      { "id": "3-1", "title": "Anatomia de uma skill", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+      { "id": "3-2", "title": "Carregamento progressivo em 3 níveis", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" },
+      { "id": "3-3", "title": "O framework de 6 passos", "topics": 6, "href": "curso/trilha3/modulo-3-3.html" },
+      { "id": "3-4", "title": "A descrição é o gatilho", "topics": 6, "href": "curso/trilha3/modulo-3-4.html" },
+      { "id": "3-5", "title": "Projeto vs. global", "topics": 6, "href": "curso/trilha3/modulo-3-5.html" },
+      { "id": "3-6", "title": "Build: sua primeira skill", "topics": 6, "href": "curso/trilha3/modulo-3-6.html" },
+      { "id": "3-7", "title": "Otimização", "topics": 6, "href": "curso/trilha3/modulo-3-7.html" }
+    ]},
+    { "n": "4", "title": "Deploy: sair do seu laptop", "modules": [
+      { "id": "4-1", "title": "Por que local não basta", "topics": 6, "href": "curso/trilha4/modulo-4-1.html" },
+      { "id": "4-2", "title": "O pipeline em 4 estações", "topics": 6, "href": "curso/trilha4/modulo-4-2.html" },
+      { "id": "4-3", "title": "Teste vs. produção", "topics": 6, "href": "curso/trilha4/modulo-4-3.html" },
+      { "id": "4-4", "title": "Segredos", "topics": 6, "href": "curso/trilha4/modulo-4-4.html" },
+      { "id": "4-5", "title": "Retentativas e filas", "topics": 6, "href": "curso/trilha4/modulo-4-5.html" },
+      { "id": "4-6", "title": "Build: automação agendada", "topics": 6, "href": "curso/trilha4/modulo-4-6.html" },
+      { "id": "4-7", "title": "Observabilidade", "topics": 6, "href": "curso/trilha4/modulo-4-7.html" }
+    ]},
+    { "n": "5", "title": "Interfaces: o agente que enxerga", "modules": [
+      { "id": "5-1", "title": "Por que o padrão sai genérico", "topics": 6, "href": "curso/trilha5/modulo-5-1.html" },
+      { "id": "5-2", "title": "Skill de design global", "topics": 6, "href": "curso/trilha5/modulo-5-2.html" },
+      { "id": "5-3", "title": "O laço de screenshot", "topics": 6, "href": "curso/trilha5/modulo-5-3.html" },
+      { "id": "5-4", "title": "Limites do laço", "topics": 6, "href": "curso/trilha5/modulo-5-4.html" },
+      { "id": "5-5", "title": "Referência visual e rebranding", "topics": 6, "href": "curso/trilha5/modulo-5-5.html" },
+      { "id": "5-6", "title": "Pasta de marca", "topics": 6, "href": "curso/trilha5/modulo-5-6.html" },
+      { "id": "5-7", "title": "Build: landing page publicada", "topics": 6, "href": "curso/trilha5/modulo-5-7.html" },
+      { "id": "5-8", "title": "Regras de publicação", "topics": 6, "href": "curso/trilha5/modulo-5-8.html" }
+    ]},
+    { "n": "6", "title": "Tempo: agendamento e loops", "modules": [
+      { "id": "6-1", "title": "Agora, neste projeto, ou toda semana?", "topics": 6, "href": "curso/trilha6/modulo-6-1.html" },
+      { "id": "6-2", "title": "Tarefas agendadas a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-2.html" },
+      { "id": "6-3", "title": "Loops a fundo", "topics": 6, "href": "curso/trilha6/modulo-6-3.html" },
+      { "id": "6-4", "title": "A rotina que aprende", "topics": 6, "href": "curso/trilha6/modulo-6-4.html" },
+      { "id": "6-5", "title": "Determinismo", "topics": 6, "href": "curso/trilha6/modulo-6-5.html" },
+      { "id": "6-6", "title": "Notificações e permissões restritivas", "topics": 6, "href": "curso/trilha6/modulo-6-6.html" },
+      { "id": "6-7", "title": "Build: rotina matinal", "topics": 6, "href": "curso/trilha6/modulo-6-7.html" }
+    ]},
+    { "n": "7", "title": "Capstone: seu assistente executivo", "modules": [
+      { "id": "7-1", "title": "Fase 1 — Casa", "topics": 6, "href": "curso/trilha7/modulo-7-1.html" },
+      { "id": "7-2", "title": "Fase 2 — Vida", "topics": 6, "href": "curso/trilha7/modulo-7-2.html" },
+      { "id": "7-3", "title": "Fase 3 — Mãos", "topics": 6, "href": "curso/trilha7/modulo-7-3.html" },
+      { "id": "7-4", "title": "Fase 4 — Crescimento", "topics": 6, "href": "curso/trilha7/modulo-7-4.html" },
+      { "id": "7-5", "title": "Backup e versionamento", "topics": 6, "href": "curso/trilha7/modulo-7-5.html" },
+      { "id": "7-6", "title": "Capstone: entrega final", "topics": 6, "href": "curso/trilha7/modulo-7-6.html" }
+    ]}
+  ]
+}
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && typeof parsed === 'object') {
+            for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k];
+          }
+        } else {
+          var legacy = localStorage.getItem('theme');
+          if (legacy === 'light') p.theme = 'claro';
+          else if (legacy === 'dark') p.theme = 'inema-dark';
+        }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'claro':      { dark: false, attr: null,        cs: 'light' },
+        'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
+        'foco':       { dark: null,  attr: 'foco',      cs: null    },
+        'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark === true) html.classList.add('dark');
+      else if (t.dark === false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr);
+      else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style;
+      var scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font === 'system'
+        ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+        : (p.font === 'leitura'
+          ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif'
+          : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = {
+        emerald: [152, 76, 45], blue: [217, 91, 60], purple: [258, 90, 66],
+        amber: [38, 92, 50], teal: [174, 72, 41], rose: [350, 89, 60]
+      };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0] + '');
+      s.setProperty('--accent-s', a[1] + '%');
+      s.setProperty('--accent-l', a[2] + '%');
+      s.setProperty('--accent', 'hsl(' + a[0] + ' ' + a[1] + '% ' + a[2] + '%)');
+    } catch (err) {
+      try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme = 'dark'; } catch (e) {}
+    }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FACC15',
+            dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+          }
+        }
+      }
+    }
+  </script>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    section[id^="topico-"], section[id^="modulo-"] { scroll-margin-top: 5rem; }
+    article[id^="modulo-"] { scroll-margin-top: 5rem; }
+
+    /* Light mode overrides - OBRIGATORIO (Parte 1) */
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    /* Parte 2 - acento da trilha (Rose) */
+    html:not(.dark) .text-rose-400 { color: #9f1239; }
+    html:not(.dark) .bg-rose-500\/20 { background-color: rgba(225, 29, 72, 0.12); }
+    html:not(.dark) .bg-rose-500\/10 { background-color: rgba(225, 29, 72, 0.08); }
+    html:not(.dark) .border-rose-500\/30 { border-color: rgba(225, 29, 72, 0.25); }
+    html:not(.dark) .hover\:bg-rose-500\/30:hover { background-color: rgba(225, 29, 72, 0.18); }
+    html:not(.dark) .hover\:bg-rose-500\/10:hover { background-color: rgba(225, 29, 72, 0.08); }
+    html:not(.dark) .hover\:text-rose-400:hover { color: #9f1239; }
+    html:not(.dark) .group:hover .group-hover\:text-rose-400 { color: #9f1239; }
+    html:not(.dark) .bg-rose-600 { background-color: #9f1239; }
+    html:not(.dark) .hover\:bg-rose-500:hover { background-color: #881337; }
+
+    /* Parte 3 - remove gradientes e cores especiais */
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161, 98, 7, 0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161, 98, 7, 0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+
+    /* Parte 4 - nav */
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255, 255, 255, 0.95); }
+
+    /* Parte 5 - bordas suavizadas no dark */
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    table.t6-compare { border-collapse: collapse; width: 100%; }
+    table.t6-compare th, table.t6-compare td { border: 1px solid #374151; padding: 0.65rem 0.9rem; text-align: left; vertical-align: top; }
+    html:not(.dark) table.t6-compare th, html:not(.dark) table.t6-compare td { border-color: #d1d5db; }
+    table.t6-compare thead th { background: rgba(225, 29, 72, 0.15); color: #fb7185; font-weight: 700; }
+    html:not(.dark) table.t6-compare thead th { background: rgba(225, 29, 72, 0.1); color: #9f1239; }
+    table.t6-compare tbody th { background: rgba(255,255,255,0.02); font-weight: 600; color: #d1d5db; white-space: nowrap; }
+    html:not(.dark) table.t6-compare tbody th { color: #374151; }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+      .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
+    }
+  </style>
+<link href="https://inematds.github.io/wat7d/curso/trilha6/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha6/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha6/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha6/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
+<!-- NAVIGATION -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🤖</span>
+<span class="font-bold text-lg hidden sm:inline">WAT7D</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<span class="text-neutral-600">-</span>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Deploy</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
+<a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
+<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- CONTEUDO -->
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12" id="conteudo">
+<!-- HEADER -->
+<header class="bg-gradient-to-br from-rose-900/30 via-dark-800 to-dark-800 rounded-2xl py-12 px-6 sm:px-10 border border-dark-600 mb-10">
+<span class="inline-block px-3 py-1 bg-rose-500/20 text-rose-400 text-xs font-semibold rounded-full mb-4">RUTA 6</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">⏰ Tiempo: programación y ciclos</h1>
+<p class="text-lg text-neutral-400 max-w-3xl mb-6">
+        Hasta ahora pediste todo en el momento, mirando la pantalla. En esta ruta, tu empleado digital aprende a
+        trabajar sin que lo estés mirando: solo cada mañana o haciendo seguimiento de algo durante unos días mientras tú
+        haces otra cosa. Toda la ruta gira en torno a una pregunta sencilla: <strong class="text-rose-400">¿necesito esto
+        ahora, en este proyecto o todas las semanas?</strong> Responder esto correctamente evita dos dolores de cabeza — una automatización
+        que debería ejecutarse sola y no lo hace, y una automatización que se ejecuta sola y no debería hacerlo.
+      </p>
+<img alt="Ilustración de un reloj combinado con el símbolo de un bucle infinito, en tonos rosa y cian sobre fondo oscuro, que representa el tema del curso: tiempo, rutina y repetición" class="w-full h-auto rounded-xl border border-dark-600 mb-8" src="../assets/img/hero-trilha6.png"/>
+<div class="rounded-2xl border border-rose-500/30 bg-dark-900/40 p-3 sm:p-4 mb-2 overflow-hidden">
+<svg aria-label="Árbol de decisión: la pregunta «¿necesito esto ahora, en este proyecto o todas las semanas?» se divide en tres ramas. «Ahora» y «En este proyecto» llevan al camino del loop, que funciona durante algunos días y luego vence. «Todas las semanas» lleva al camino de la tarea programada, que se ejecuta sola para siempre en un horario fijo" class="w-full h-auto" role="img" viewbox="0 0 1000 320">
+<defs>
+<lineargradient id="t6hero-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fb7185"></stop><stop offset="1" stop-color="#e11d48"></stop></lineargradient>
+<filter height="180%" id="t6hero-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="t6hero-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#fb7185" opacity="0.12" r="1.3"></circle></pattern>
+<marker id="t6hero-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#fb7185"></path></marker>
+<marker id="t6hero-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#t6hero-grid)" height="320" width="1000" x="0" y="0"></rect>
+<text fill="#fda4af" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="500" y="26">"¿lo necesito ahora, en este proyecto o cada semana?"</text>
+<g font-family="Inter,sans-serif">
+<rect fill="#0e1622" filter="url(#t6hero-glow)" height="50" rx="14" stroke="url(#t6hero-grad)" stroke-width="2.5" width="260" x="370" y="46"></rect>
+<text fill="#fda4af" font-size="13" font-weight="700" text-anchor="middle" x="500" y="76">La pregunta</text>
+<path d="M470,96 C400,120 260,120 210,150" fill="none" marker-end="url(#t6hero-ah)" opacity="0.75" stroke="#fb7185" stroke-width="1.8"></path>
+<path d="M500,96 L500,150" fill="none" marker-end="url(#t6hero-ahc)" opacity="0.75" stroke="#38bdf8" stroke-width="1.8"></path>
+<path d="M530,96 C600,120 740,120 790,150" fill="none" marker-end="url(#t6hero-ah)" opacity="0.75" stroke="#fb7185" stroke-width="1.8"></path>
+<g class="wf-a">
+<rect fill="#1e293b" height="44" rx="10" stroke="#38bdf8" stroke-width="2" width="240" x="90" y="152"></rect>
+<text fill="#bfe6ff" font-size="12" text-anchor="middle" x="210" y="179">"Ahora" — solo lo pido directamente</text>
+</g>
+<g class="wf-a">
+<rect fill="#1e293b" height="44" rx="10" stroke="#38bdf8" stroke-width="2" width="240" x="380" y="152"></rect>
+<text fill="#bfe6ff" font-size="12" text-anchor="middle" x="500" y="179">"En este proyecto" — hacer seguimiento ahora</text>
+</g>
+<g class="wf-a">
+<rect fill="#1e293b" height="44" rx="10" stroke="#fb7185" stroke-width="2" width="240" x="670" y="152"></rect>
+<text fill="#fecdd3" font-size="12" text-anchor="middle" x="790" y="179">"Cada semana" — se convierte en rutina</text>
+</g>
+<path d="M210,196 L210,196" stroke="#38bdf8"></path>
+<path d="M300,196 C300,220 460,220 460,238" fill="none" marker-end="url(#t6hero-ahc)" opacity="0.6" stroke="#38bdf8" stroke-width="1.8"></path>
+<path d="M500,196 L500,238" fill="none" marker-end="url(#t6hero-ahc)" opacity="0.75" stroke="#38bdf8" stroke-width="1.8"></path>
+<path d="M790,196 L790,238" fill="none" marker-end="url(#t6hero-ah)" opacity="0.75" stroke="#fb7185" stroke-width="1.8"></path>
+<rect fill="#0e1622" height="60" rx="14" stroke="#38bdf8" stroke-width="2.5" width="340" x="330" y="240"></rect>
+<text fill="#7dd3fc" font-size="13" font-weight="700" text-anchor="middle" x="500" y="264">🔁 Bucle</text>
+<text fill="#bae6fd" font-size="10.5" text-anchor="middle" x="500" y="284">Mantiene el contexto en la sesión · vence en ~3 días</text>
+<rect fill="#0e1622" filter="url(#t6hero-glow)" height="60" rx="14" stroke="url(#t6hero-grad)" stroke-width="2.5" width="230" x="690" y="240"></rect>
+<text fill="#fda4af" font-size="13" font-weight="700" text-anchor="middle" x="805" y="264">📅 Tarea programada</text>
+<text fill="#fecdd3" font-size="10.5" text-anchor="middle" x="805" y="284">Sesión nueva siempre · duración indefinida</text>
+</g>
+</svg>
+</div>
+<p class="text-xs text-neutral-500 mt-2">Leyenda: la pregunta central se ramifica en tres respuestas. "Ahora" y "en este proyecto" van por el camino cian del <strong>loop</strong> — monitorea algo durante poco tiempo y luego vence. «Cada semana» va por el camino rosa de la <strong>tarea programada</strong> — se ejecuta sola, para siempre, en un horario fijo.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">7</div>
+<div class="text-xs text-neutral-400">Módulos</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">42</div>
+<div class="text-xs text-neutral-400">Temas</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">~3h40</div>
+<div class="text-xs text-neutral-400">Duración</div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600">
+<div class="text-xl font-bold text-rose-400">Intermedio</div>
+<div class="text-xs text-neutral-400">Nivel</div>
+</div>
+</div>
+<div aria-label="Progreso de la ruta 6" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="trilha:6" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1">
+<span data-inema-meter-frac="">0 de 42</span>
+<span data-inema-meter-pct="">0%</span>
+</div>
+<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+</div>
+</header>
+<!-- TABELA COMPARATIVA -->
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-4">La tabla que resuelve la duda</h2>
+<p class="text-neutral-400 text-sm mb-4 max-w-3xl">Antes de entrar en los módulos, guarda esta tabla: aparece en casi todos los temas de la ruta. Cada vez que te preguntes «¿esto debería ser una tarea programada o un bucle?», vuelve aquí.</p>
+<div class="overflow-x-auto rounded-xl border border-dark-600">
+<table class="t6-compare">
+<thead>
+<tr><th></th><th>Tarea programada</th><th>Loop</th></tr>
+</thead>
+<tbody class="divide-y divide-dark-600">
+<tr><th>Dónde se ejecuta</th><td>app de escritorio</td><td>cualquier lugar (terminal, VS Code, escritorio)</td></tr>
+<tr><th>Memoria</th><td>una sesión nueva en cada ejecución, sin memoria entre ejecuciones</td><td>mantiene el contexto en la misma sesión</td></tr>
+<tr><th>Duración</th><td>indefinida (diaria/semanal/mensual)</td><td>expira en ~3 días</td></tr>
+<tr><th>Si la PC permaneció apagada</th><td>recupera ejecuciones perdidas</td><td>el loop se detiene si se cierra la sesión</td></tr>
+<tr><th>Sirve para</th><td>rutina diaria/semanal</td><td>seguir algo ahora</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- MAPA DA TRILHA -->
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Mapa de la ruta</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-rose-500/30 p-5 transition-all" href="#modulo-6-1">
+<div class="flex items-center justify-between mb-2">
+<span class="text-rose-400 font-bold text-sm">6.1</span>
+<span class="text-xs text-neutral-500">~30 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-rose-400 transition-colors">❓ ¿Ahora, en este proyecto o todas las semanas?</h3>
+<p class="text-xs text-neutral-400">La pregunta que lo decide todo</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-rose-500/30 p-5 transition-all" href="#modulo-6-2">
+<div class="flex items-center justify-between mb-2">
+<span class="text-rose-400 font-bold text-sm">6.2</span>
+<span class="text-xs text-neutral-500">~35 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-rose-400 transition-colors">📅 Tareas programadas a fondo</h3>
+<p class="text-xs text-neutral-400">La rutina que se ejecuta sola para siempre</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-rose-500/30 p-5 transition-all" href="#modulo-6-3">
+<div class="flex items-center justify-between mb-2">
+<span class="text-rose-400 font-bold text-sm">6.3</span>
+<span class="text-xs text-neutral-500">~35 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-rose-400 transition-colors">🔁 Bucles a fondo</h3>
+<p class="text-xs text-neutral-400">Seguir algo durante unos días</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-rose-500/30 p-5 transition-all" href="#modulo-6-4">
+<div class="flex items-center justify-between mb-2">
+<span class="text-rose-400 font-bold text-sm">6.4</span>
+<span class="text-xs text-neutral-500">~30 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-rose-400 transition-colors">📈 La rutina que aprende</h3>
+<p class="text-xs text-neutral-400">Ajustando con tus comentarios</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-rose-500/30 p-5 transition-all" href="#modulo-6-5">
+<div class="flex items-center justify-between mb-2">
+<span class="text-rose-400 font-bold text-sm">6.5</span>
+<span class="text-xs text-neutral-500">~30 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-rose-400 transition-colors">🎯 Determinismo</h3>
+<p class="text-xs text-neutral-400">Por qué lo predecible es mejor que lo creativo</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-rose-500/30 p-5 transition-all" href="#modulo-6-6">
+<div class="flex items-center justify-between mb-2">
+<span class="text-rose-400 font-bold text-sm">6.6</span>
+<span class="text-xs text-neutral-500">~30 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-rose-400 transition-colors">🔔 Notificaciones y permisos restrictivos</h3>
+<p class="text-xs text-neutral-400">Qué nunca autorizar por su cuenta</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-rose-500/30 p-5 transition-all" href="#modulo-6-7">
+<div class="flex items-center justify-between mb-2">
+<span class="text-rose-400 font-bold text-sm">6.7</span>
+<span class="text-xs text-neutral-500">~40 min</span>
+</div>
+<h3 class="font-semibold mb-1 group-hover:text-rose-400 transition-colors">🌅 Build: rutina matutina</h3>
+<p class="text-xs text-neutral-400">Cómo crear tu primera rutina real</p>
+</a>
+</div>
+</section>
+<h2 class="text-2xl font-bold mb-6">Contenido detallado</h2>
+<!-- MODULO 6.1 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="6-1" data-inema-track="6" id="modulo-6-1">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-rose-400 font-bold">6.1</span>
+<span class="text-xs text-neutral-500">~30 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">❓ ¿Ahora, en este proyecto o todas las semanas?</h3>
+<p class="text-neutral-400 text-sm">La pregunta sencilla que decide si usas un loop, una tarea programada o ninguno de los dos.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-6-1-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🕐</span>
+<div><span class="font-medium">El problema del «me iba a acordar»</span><span class="text-neutral-500 text-sm ml-2">- por qué falla la rutina mental</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-1-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Muchas de las tareas repetitivas del día a día —revisar el correo electrónico, verificar un número, actualizar una hoja de cálculo— dependen solo de tu memoria y de que estés dispuesto a acordarte. Cuando el día se complica, desaparecen de la lista.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Reconocer este patrón es la señal para preguntarte «¿esto debería ejecutarse solo?»: la pregunta central de toda esta trilha.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Tarea repetitiva, carga mental, olvidos por sobrecarga.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-1-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">❓</span>
+<div><span class="font-medium">La pregunta que lo decide todo</span><span class="text-neutral-500 text-sm ml-2">- «¿ahora, en este proyecto o cada semana?»</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-1-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Cada vez que pienses en automatizar algo, hazte esta pregunta en tres partes: ¿necesito esto <strong>ahora</strong> (¿una sola vez)? Necesito <strong>en este proyecto</strong> (hacer seguimiento durante un tiempo breve)? ¿O necesito <strong>toda semana</strong> (para siempre, a un ritmo fijo)?</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es la brújula de toda la ruta. Cada respuesta apunta a un camino técnico diferente, y elegir mal cuesta tiempo o, peor aún, genera una automatización que funciona sin control.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Pregunta guía, alcance temporal, decisión antes de usar la herramienta.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-1-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">📌</span>
+<div><span class="font-medium">El camino «ahora»</span><span class="text-neutral-500 text-sm ml-2">- no hace falta programar nada</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-1-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Si la respuesta es «solo necesito esto una vez, hoy», lo correcto no es programar nada, sino pedírselo directamente a Claude Code en el momento, como ya vienes haciendo desde la Trilha 0.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Mucha gente automatiza demasiado pronto algo que solo iba a ocurrir una vez. Eso desperdicia esfuerzo de configuración en un trabajo que no se repetirá.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Tarea única, ejecución directa, sin automatización.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-1-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">📅</span>
+<div><span class="font-medium">El camino «todas las semanas»</span><span class="text-neutral-500 text-sm ml-2">- se convierte en una tarea programada</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-1-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm"><strong>Tarea programada</strong> — ¿nuevo por aquí? Es un pedido que configuras una sola vez, con un horario fijo (todos los días a las 8h, todos los lunes, todos los meses), y que se ejecuta solo, sin que vuelvas a abrir Claude Code. Si la respuesta a la pregunta guía es "todas las semanas" (o todos los días, o todos los meses), este es el camino.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Una rutina de verdad —la que se repite para siempre al mismo ritmo— es exactamente lo que resuelve una tarea programada. El módulo 6.2 detalla cómo funciona por dentro.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Tarea programada, horario fijo, repetición indefinida.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-1-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🔁</span>
+<div><span class="font-medium">El camino «en este proyecto»</span><span class="text-neutral-500 text-sm ml-2">- se convierte en un bucle</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-1-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm"><strong>Loop</strong> — ¿nuevo por aquí? Es hacer que Claude Code esté pendiente de algo y lo revise de vez en cuando, dentro de la misma conversación — pero solo durante un período corto, no para siempre. Si la respuesta es "solo mientras dure este proyecto" o "solo durante los próximos días", este es el camino.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Loop resuelve el punto medio: ni una sola ejecución ni una rutina eterna. Es para acompañar algo que sigue activo: un deploy, una respuesta que está tardando, un archivo que todavía llegará.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Loop, sesión activa, seguimiento temporal.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-1-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🧭</span>
+<div><span class="font-medium">La tabla que resuelve la duda</span><span class="text-neutral-500 text-sm ml-2">- referencia rápida para toda la ruta</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-1-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La ruta usa una tabla comparativa (ya la viste en la parte superior de esta página) que cruza dónde se ejecuta cada uno, si guarda memoria, cuánto dura, qué pasa si se apaga la PC y para qué sirve cada uno.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Tener esta tabla en mente evita el error más común de la ruta: configurar una tarea programada para algo que debería ser un bucle rápido, o viceversa.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Comparación estructurada, referencia para tomar decisiones, tabla de consulta rápida.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-6-1')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg transition-colors" href="modulo-6-1.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 6.2 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="6-2" data-inema-track="6" id="modulo-6-2">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-rose-400 font-bold">6.2</span>
+<span class="text-xs text-neutral-500">~35 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">📅 Tareas programadas a fondo</h3>
+<p class="text-neutral-400 text-sm">Cómo funciona por dentro la rutina que se ejecuta para siempre, y dónde está realmente.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-6-2-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🗓️</span>
+<div><span class="font-medium">Qué es una tarea programada, de verdad</span><span class="text-neutral-500 text-sm ml-2">- definición completa</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-2-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Es una solicitud configurada una sola vez —con instrucciones, horario y frecuencia— que la aplicación de escritorio de Claude Code ejecuta automáticamente, sin que tengas que abrir nada ni escribir nada en ese momento.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Entender la mecánica detrás (y no solo que «se ejecuta sola») ayuda a configurarla correctamente y a prever cuándo se activará (o no).</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Configuración única, activación automática, aplicación de escritorio.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-2-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🖥️</span>
+<div><span class="font-medium">Dónde vive</span><span class="text-neutral-500 text-sm ml-2">- app de escritorio, no terminal</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-2-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La tarea programada vive dentro de la aplicación de escritorio de Claude Code: no es algo que configures escribiendo un comando en la terminal, como en el módulo 0.2. Tiene una pantalla propia, con una lista de tareas y horarios.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Saber dónde buscar evita la frustración de intentar encontrar esta configuración en el lugar equivocado (la terminal, donde no existe).</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Aplicación de escritorio, interfaz propia, fuera de la terminal.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-2-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🔄</span>
+<div><span class="font-medium">Sesión nueva en cada ejecución</span><span class="text-neutral-500 text-sm ml-2">- sin memoria entre ejecuciones</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-2-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Cada vez que se inicia la tarea, es como si fuera la primera conversación: no recuerda lo que hizo ayer ni lo que conversaste con Claude Code en otro momento. Solo ejecuta la instrucción que dejaste configurada.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Este es el punto que más confunde a quienes vienen del loop (módulo 6.3): la tarea programada no acumula contexto. Si necesita «recordar» algo, eso tiene que estar escrito en un archivo que vuelva a leer cada vez.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Sesión aislada, sin memoria entre ejecuciones, instrucción autocontenida.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-2-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">⏳</span>
+<div><span class="font-medium">Duración indefinida</span><span class="text-neutral-500 text-sm ml-2">- diaria, semanal o mensual, sin fecha de vencimiento</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-2-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">A diferencia del ciclo, una tarea programada no vence por sí sola. Una vez configurada para ejecutarse todos los lunes a las 9h, sigue ejecutándose todos los lunes a las 9h hasta que tú mismo la pauses o la elimines.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Esto es exactamente lo que hace que la tarea programada sea adecuada para una rutina de verdad, pero también por eso requiere más cuidado al configurarla: un error allí se repite para siempre, no solo una vez.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Sin expiración automática, repetición perpetua y responsabilidad de desactivarla.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-2-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">💤</span>
+<div><span class="font-medium">Si la PC permaneció apagada</span><span class="text-neutral-500 text-sm ml-2">- recupera ejecuciones perdidas</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-2-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Si la computadora estaba apagada (o sin internet) a la hora programada, la app no simplemente omite esa ejecución: la recupera y la ejecuta en cuanto puede, cuando la computadora vuelve a estar disponible.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Esta es una diferencia práctica importante frente al loop, que simplemente se detiene si se cierra la sesión. La tarea programada resiste las interrupciones de tu computadora.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Recuperación de ejecuciones perdidas, resiliencia ante apagados, reprogramación automática.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-2-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🛠️</span>
+<div><span class="font-medium">Ejemplo práctico: crear tu primera tarea programada</span><span class="text-neutral-500 text-sm ml-2">- prompt listo para pegar</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-2-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm"><strong>Objetivo:</strong> configurar una tarea que se ejecute cada mañana a las 8h y resuma los elementos pendientes de un archivo de notas.<br/><strong>Pega en Claude Code (app de escritorio, pantalla de tareas programadas):</strong><br/><code class="block bg-dark-900 rounded p-2 mt-2 text-xs">Todo dia às 8h, leia o arquivo &lt;caminho do seu arquivo de notas&gt; e me mande um resumo em 3 linhas dos itens ainda não marcados como feitos.</code><br/><strong>Cómo verificar:</strong> espera el próximo horario configurado (o usa la opción «ejecutar ahora» si la app la tiene) y comprueba si llegó el resumen.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Ver el prompt real, con la hora y la acción escritas con todas las letras, quita el miedo a configurar la primera tarea por tu cuenta.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Prompt copiable, variable marcada, verificación del resultado.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-6-2')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg transition-colors" href="modulo-6-2.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 6.3 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="6-3" data-inema-track="6" id="modulo-6-3">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-rose-400 font-bold">6.3</span>
+<span class="text-xs text-neutral-500">~35 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🔁 Bucles a fondo</h3>
+<p class="text-neutral-400 text-sm">El seguimiento en tiempo real, dentro de la misma sesión, y por qué no dura para siempre.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-6-3-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🔁</span>
+<div><span class="font-medium">Qué es un bucle, de verdad</span><span class="text-neutral-500 text-sm ml-2">- definición completa</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-3-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un loop es Claude Code repitiendo una verificación cada cierto tiempo, dentro de la misma conversación en la que lo pediste — por ejemplo, «revisa este sitio cada 10 minutos hasta que baje el precio» — sin que tengas que volver a abrir nada.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es la herramienta adecuada para hacer seguimiento de algo que está «en marcha» ahora, sin convertirlo en una rutina permanente que luego tendrías que acordarte de desactivar.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Verificación periódica, misma sesión, seguimiento activo.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-3-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">💻</span>
+<div><span class="font-medium">Dónde se ejecuta</span><span class="text-neutral-500 text-sm ml-2">- terminal, VS Code o escritorio — cualquiera</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-3-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">A diferencia de la tarea programada (vinculada a la app de escritorio), el bucle funciona en cualquier lugar donde ya estés conversando con Claude Code: en la terminal, dentro de VS Code o en la propia app de escritorio.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Esto lo hace más flexible para el trabajo diario: inicias un loop en medio de una sesión de trabajo normal, sin cambiar de herramienta.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Multiplataforma, misma interfaz de conversación, sin una app aparte.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-3-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🧠</span>
+<div><span class="font-medium">Mantiene el contexto</span><span class="text-neutral-500 text-sm ml-2">- recuerda lo que ya se dijo en la misma sesión</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-3-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">A diferencia de la tarea programada, el ciclo continúa dentro de la misma sesión — así que recuerda lo que pediste y lo que ya revisó antes, y puede ajustar su comportamiento en función de eso, sin que tengas que repetirlo todo.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Esta memoria activa es lo que hace que el loop sea bueno para situaciones que evolucionan: «sigue intentando hasta que funcione», «avísame si cambia».</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Continuidad del contexto, una sola sesión, ajustes a lo largo del tiempo.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-3-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">⏰</span>
+<div><span class="font-medium">Expira en ~3 días</span><span class="text-neutral-500 text-sm ml-2">- no es una rutina permanente</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-3-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un loop tiene una fecha de vencimiento — alrededor de tres días. Después, se detiene solo, aunque todavía no se haya cumplido la condición que pediste.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Este límite existe a propósito: evita que un «mantente pendiente» configurado en un momento de apuro se convierta en una automatización olvidada que se ejecuta para siempre sin supervisión.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Expiración automática, plazo corto, prevención de automatizaciones huérfanas.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-3-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">⚠️</span>
+<div><span class="font-medium">Deja de funcionar si se cierra la sesión</span><span class="text-neutral-500 text-sm ml-2">- diferente de la tarea programada</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-3-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Si cierras la terminal, cierras VS Code o apagas la computadora antes de que termine el loop, simplemente se detiene y no se reanuda por sí solo como lo hace la tarea programada.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Conocer esta fragilidad evita usar un loop para algo crítico que debe sobrevivir a un apagado. Para eso, la opción correcta es la tarea programada (módulo 6.2).</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Interrupción definitiva, ausencia de recuperación, dependencia de la sesión abierta.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-3-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🛠️</span>
+<div><span class="font-medium">Ejemplo práctico: crear un ciclo de seguimiento</span><span class="text-neutral-500 text-sm ml-2">- prompt listo para pegar</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-3-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm"><strong>Objetivo:</strong> pedirle a Claude Code que supervise un archivo de log y te avise si aparece un error, sin que tengas que revisarlo manualmente.<br/><strong>Pega en Claude Code (terminal, VS Code o escritorio):</strong><br/><code class="block bg-dark-900 rounded p-2 mt-2 text-xs">Fica checando o arquivo &lt;caminho do log&gt; a cada 15 minutos pelos próximos 2 dias. Se aparecer a palavra "ERROR", me avisa na hora com a linha completa.</code><br/><strong>Cómo verificar:</strong> provoca un error de prueba en el archivo (o espera a que ocurra uno real) y comprueba si llegó el aviso dentro del intervalo de 15 minutos.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Un loop real, con un plazo explícito y una condición de activación clara, muestra cómo escribir una solicitud que Claude Code puede mantener por su cuenta.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Prompt copiable, condición de activación, ventana de tiempo explícita.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-6-3')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg transition-colors" href="modulo-6-3.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 6.4 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="6-4" data-inema-track="6" id="modulo-6-4">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-rose-400 font-bold">6.4</span>
+<span class="text-xs text-neutral-500">~30 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">📈 La rutina que aprende</h3>
+<p class="text-neutral-400 text-sm">Cómo mejora con el tiempo una tarea programada, sin convertirse en magia.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-6-4-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">📈</span>
+<div><span class="font-medium">Qué significa que una rutina «aprenda»</span><span class="text-neutral-500 text-sm ml-2">- ajuste, no magia</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-4-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">"Aprender", aquí, no significa que la IA se vuelva más inteligente por sí sola: significa que tú (o la propia rutina, siguiendo tus instrucciones) guardas lo que funcionó y lo que no en un archivo, para que la próxima ejecución lo lea y ajuste el comportamiento.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Esta aclaración evita expectativas poco realistas. La rutina mejora porque acumula información escrita, no porque te «entienda» con el tiempo.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ajustes guiados por datos, archivo de memoria, expectativas realistas.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-4-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">📝</span>
+<div><span class="font-medium">Guardar preferencias en un archivo</span><span class="text-neutral-500 text-sm ml-2">- la memoria que la tarea programada no tiene por sí sola</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-4-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Como vimos en el módulo 6.2, una tarea programada no recuerda nada entre ejecuciones, a menos que le des un archivo para leer y escribir. Ese archivo es el que se convierte en la «memoria» de la rutina.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Este es el truco que resuelve la mayor limitación de la tarea programada: darle un lugar fijo donde anotar lo que necesita recordar.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Archivo de preferencias, lectura y escritura persistentes, memoria externa.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-4-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🔂</span>
+<div><span class="font-medium">Ajustar según los comentarios</span><span class="text-neutral-500 text-sm ml-2">- tú corriges, la rutina aplica los cambios</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-4-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un ejemplo práctico: si cada vez que la rutina te avisa de algo respondes «ignora eso, no es importante», puedes pedirle que anote ese tipo de aviso en una lista de «no repetir» — y deje de molestarte con eso.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Este ciclo de corrección y aplicación hace que la rutina sea cada vez más útil (y menos molesta) sin que tengas que reconfigurarlo todo desde cero.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ciclo de feedback, lista de exclusión, refinamiento incremental.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-4-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🧩</span>
+<div><span class="font-medium">Rutina vs. script fijo</span><span class="text-neutral-500 text-sm ml-2">- la diferencia que compensa el esfuerzo extra</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-4-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un script de automatización tradicional (fuera de Claude Code) siempre hace exactamente lo mismo, de la misma manera y para siempre. Una rutina con memoria en un archivo puede cambiar su comportamiento sin que reescribas nada — solo editando el archivo o dejando que la propia rutina lo edite.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Entender esta diferencia ayuda a decidir cuándo vale la pena crear esta capa extra de memoria y cuándo basta con una solicitud sencilla y fija.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Comportamiento fijo × comportamiento ajustable, costo de configuración, ganancia de flexibilidad.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-4-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🚧</span>
+<div><span class="font-medium">Límites del aprendizaje</span><span class="text-neutral-500 text-sm ml-2">- esto no es una IA general que aprende sola</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-4-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Es importante dejarlo claro: la rutina no desarrolla por su cuenta un criterio propio ni toma decisiones fuera de lo que está escrito en la instrucción y en el archivo de memoria. Todo «aprendizaje» tiene un origen rastreable: un texto que alguien (tú) decidió guardar.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Este límite protege contra dos errores: confiar demasiado en una rutina y pensar que «entiende» un contexto que nunca se escribió, y temer que actúe fuera de lo acordado.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Comportamiento rastreable, ausencia de juicio autónomo, previsibilidad (ver módulo 6.5).</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-4-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🛠️</span>
+<div><span class="font-medium">Ejemplo práctico: rutina que registra comentarios</span><span class="text-neutral-500 text-sm ml-2">- prompt listo para pegar</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-4-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm"><strong>Objetivo:</strong> una tarea programada que, además de avisarte, guarda en un archivo si el aviso fue útil o no, para ajustarlo después.<br/><strong>Pega en Claude Code:</strong><br/><code class="block bg-dark-900 rounded p-2 mt-2 text-xs">Toda segunda às 8h, leia &lt;caminho do arquivo de preferências&gt;. Se ele tiver um item marcado "ignorar", não me avise mais sobre esse tipo de coisa. Depois de cada aviso, pergunte se foi útil e anote a resposta nesse mesmo arquivo.</code><br/><strong>Cómo verificar:</strong> responde "no fue útil, ignóralo" en una ejecución y confirma que la siguiente ejecución no repita ese tipo de aviso.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Pegar este prompt y ver cómo crece el archivo de preferencias con el tiempo es la prueba concreta de que aquí «aprender» significa escribir y leer, no es ningún misterio.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Prompt copiable, archivo de preferencias con nombre, verificación mediante repetición.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-6-4')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg transition-colors" href="modulo-6-4.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 6.5 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="6-5" data-inema-track="6" id="modulo-6-5">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-rose-400 font-bold">6.5</span>
+<span class="text-xs text-neutral-500">~30 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🎯 Determinismo</h3>
+<p class="text-neutral-400 text-sm">Por qué una rutina automática debe ser más predecible que una conversación.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-6-5-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🎲</span>
+<div><span class="font-medium">Qué es el determinismo</span><span class="text-neutral-500 text-sm ml-2">- definición directa</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-5-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm"><strong>Determinismo</strong> — ¿nuevo por aquí? Es la propiedad de un proceso de dar siempre el mismo resultado para la misma entrada. Lo contrario — cuando el resultado puede variar incluso con la misma entrada — se llama no determinismo.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Como toda la ruta gira en torno a una automatización que se ejecuta sin que la observes, entender este concepto es lo que distingue una rutina confiable de una que te toma por sorpresa.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Determinismo, no determinismo, resultado predecible.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-5-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🎯</span>
+<div><span class="font-medium">Por qué una rutina automática debe ser predecible</span><span class="text-neutral-500 text-sm ml-2">- el precio de la sorpresa es mayor sin supervisión</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-5-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">En una conversación en vivo, si Claude Code interpreta algo de una manera inesperada, lo corriges de inmediato. En una tarea programada o en un loop, nadie está mirando; entonces, una interpretación extraña puede repetirse (en la tarea programada) o pasar inadvertida (en el loop) hasta causar un problema mayor.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Esta es la razón por la que una instrucción vaga funciona bien en una conversación, pero es peligrosa en una rutina: el margen para la interpretación libre tiene que reducirse cuando nadie está revisando en tiempo real.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Falta de supervisión, amplificación del error, instrucción vaga frente a instrucción precisa.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-5-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🧪</span>
+<div><span class="font-medium">Probando antes de programar</span><span class="text-neutral-500 text-sm ml-2">- ejecutar manualmente primero, siempre</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-5-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Antes de dejar que una instrucción se ejecute sola —programada o en bucle—, pídele a Claude Code que la ejecute una vez en ese momento, mientras la observas. Solo después de comprobar que el resultado es correcto, configúrala para que se ejecute sin supervisión.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Este sencillo paso evita el error más costoso de la trilha: descubrir que la instrucción estaba mal escrita solo después de que ya se ejecutó sola varias veces.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ejecución de prueba, validación manual, antes de automatizar.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-5-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🪤</span>
+<div><span class="font-medium">Dónde puede variar la IA</span><span class="text-neutral-500 text-sm ml-2">- el modelo no es 100 % determinista por naturaleza</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-5-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Incluso con la misma instrucción, el modelo de IA detrás de Claude Code puede, ocasionalmente, formular la respuesta de una manera ligeramente diferente entre ejecuciones; no porque «haya cambiado de opinión», sino porque es parte de la naturaleza estadística de cómo el modelo genera texto.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Saber esto evita dos errores opuestos: confiar ciegamente en que siempre será idéntico y renunciar a la automatización por pensar que todo es demasiado aleatorio para confiar en ello.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Variación estadística del modelo, naturaleza probabilística, nivel aceptable de variación.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-5-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🔒</span>
+<div><span class="font-medium">Restricciones para reducir la variación</span><span class="text-neutral-500 text-sm ml-2">- cómo hacer que la rutina sea más predecible</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-5-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Las instrucciones específicas (formato exacto de salida, pasos numerados, ejemplos del resultado esperado) reducen el margen de interpretación. Pedir que siempre siga un modelo fijo de respuesta — en vez de "cuéntame qué te pareció" — es una medida sencilla y eficaz.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Estos bloqueos son la herramienta práctica que tienes a mano para hacer más confiable una rutina, aunque sepas que el determinismo del 100% no existe.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Instrucción específica, formato fijo, ejemplo del resultado esperado.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-5-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🛠️</span>
+<div><span class="font-medium">Ejemplo práctico: lista de verificación antes de programar</span><span class="text-neutral-500 text-sm ml-2">- prompt listo para pegar</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-5-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm"><strong>Objetivo:</strong> validar una instrucción manualmente antes de convertirla en una tarea programada o en un bucle.<br/><strong>Pega en Claude Code antes de programar cualquier cosa:</strong><br/><code class="block bg-dark-900 rounded p-2 mt-2 text-xs">Antes de eu agendar isso, roda a instrução agora, uma vez, exatamente como ela vai rodar sozinha depois: &lt;cole aqui a instrução que você quer automatizar&gt;. Me mostra o resultado exato que você geraria.</code><br/><strong>Cómo verificar:</strong> compara el resultado con lo que esperabas. Programa solo después de ejecutar esta prueba al menos dos veces y ver resultados consistentes.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Esta lista de verificación de pruebas manuales es el hábito práctico que sostiene todo lo que enseñaron los módulos 6.2 y 6.3 sobre configurar una tarea programada y un loop.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Prompt de validación, repetición de la prueba, consistencia antes de confiar.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-6-5')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg transition-colors" href="modulo-6-5.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 6.6 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="6-6" data-inema-track="6" id="modulo-6-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-rose-400 font-bold">6.6</span>
+<span class="text-xs text-neutral-500">~30 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🔔 Notificaciones y permisos restrictivos</h3>
+<p class="text-neutral-400 text-sm">Cómo saber que algo ocurrió por sí solo y qué nunca dejar ejecutándose sin supervisión.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-6-6-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🔔</span>
+<div><span class="font-medium">Qué son las notificaciones de una rutina</span><span class="text-neutral-500 text-sm ml-2">- el vínculo entre «se ejecutó solo» y «tú lo sabes»</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-6-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La notificación es el aviso que la tarea programada o el loop te envía cuando termina (o cuando encuentra algo relevante); sin ella, una rutina que funciona sola se convierte en una caja negra cuyo funcionamiento desconoces.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Toda automatización de esta ruta solo es útil si sabes qué hizo. La notificación es la pieza que cierra este ciclo de confianza.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Aviso de finalización, visibilidad del resultado, caja negra evitada.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-6-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🚫</span>
+<div><span class="font-medium">Por qué usar permisos restrictivos en la automatización</span><span class="text-neutral-500 text-sm ml-2">- el motivo para reforzar el control cuando nadie está mirando</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-6-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm"><strong>Permiso restrictivo</strong> — ¿nuevo por aquí? Es configurar Claude Code para que solo pueda hacer un conjunto limitado de cosas — por ejemplo, solo leer archivos, nunca borrar nada — especialmente cuando va a ejecutarse sin que lo supervises en tiempo real.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">En una conversación en vivo (Ruta 0.6), ves cada acción antes de que ocurra y puedes detenerla de inmediato. En una rutina automática, esa red de seguridad desaparece; por eso, los permisos deben ser más estrictos, no más flexibles.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Alcance del permiso, falta de supervisión en tiempo real, reducción del riesgo.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-6-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🛡️</span>
+<div><span class="font-medium">Qué nunca autorizar en una tarea programada o un ciclo</span><span class="text-neutral-500 text-sm ml-2">- la lista roja</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-6-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Nunca permitas que una rutina automática tenga permiso para borrar archivos en masa, cambiar la configuración del sistema, gastar dinero (compras, transferencias) o publicar algo en tu nombre sin que lo revises antes.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Esta lista existe porque el costo de un error sin supervisión es mucho mayor que el de un error en una conversación — y una rutina mal configurada puede repetir el mismo error varias veces antes de que alguien lo note.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Acciones irreversibles, eliminación masiva, publicación sin revisión.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-6-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">📬</span>
+<div><span class="font-medium">Canales de notificación</span><span class="text-neutral-500 text-sm ml-2">- correo electrónico, mensaje, archivo de log</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-6-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Las formas más comunes de aviso: un correo electrónico automático, un mensaje (en una app de chat que ya usas) o, como mínimo, un archivo de log que registra cada ejecución — para que puedas revisarlo después, incluso sin un aviso activo.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Tener al menos un canal configurado, aunque sea el más simple (el archivo de log), es el mínimo de responsabilidad al dejar algo funcionando por sí solo.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Canal de aviso, archivo de registro como constancia mínima y aviso redundante.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-6-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🧯</span>
+<div><span class="font-medium">Qué hacer cuando algo falla por sí solo</span><span class="text-neutral-500 text-sm ml-2">- el plan para cuando falla la rutina</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-6-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Si una tarea programada o un loop hace algo inesperado, el primer paso es pausar o eliminar esa rutina de inmediato (en la app de escritorio o cerrando la sesión del loop); después, revisa el log para entender qué pasó antes de volver a configurarla.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Tener este plan memorizado —pausar primero, investigar después— evita que un error pequeño se convierta en un error repetido, ya que las tareas programadas siguen ejecutándose hasta que intervengas.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Pausa inmediata, investigación mediante logs, reconfiguración solo después de entender.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-6-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🛠️</span>
+<div><span class="font-medium">Ejemplo práctico: configurar una notificación de error</span><span class="text-neutral-500 text-sm ml-2">- prompt listo para pegar</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-6-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm"><strong>Objetivo:</strong> garantizar que, si la rutina falla por cualquier motivo, recibas una notificación, no solo cuando funciona.<br/><strong>Pega en Claude Code, al configurar la tarea:</strong><br/><code class="block bg-dark-900 rounded p-2 mt-2 text-xs">Toda vez que essa rotina rodar, escreva uma linha em &lt;caminho do arquivo de log&gt; dizendo se deu certo ou se deu erro, com data e hora. Se der erro, me avise por e-mail imediatamente com o motivo. Você só tem permissão de leitura nos arquivos, nunca de exclusão.</code><br/><strong>Cómo verificar:</strong> provoca un error a propósito (indica un archivo que no existe) y comprueba si llegó el aviso de fallo.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Este prompt reúne las dos partes del módulo — notificación y permiso restrictivo — en un solo pedido listo para usar en cualquiera de tus rutinas.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Prompt copiable, permiso explícito en el texto, prueba de fallo intencional.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-6-6')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg transition-colors" href="modulo-6-6.html">Ver completo</a>
+</div>
+</article>
+<!-- MODULO 6.7 -->
+<article class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="6-7" data-inema-track="6" id="modulo-6-7">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2">
+<span class="text-rose-400 font-bold">6.7</span>
+<span class="text-xs text-neutral-500">~40 min</span>
+</div>
+<h3 class="text-2xl font-bold mb-2">🌅 Build: rutina matutina</h3>
+<p class="text-neutral-400 text-sm">Juntando todo lo de la ruta en una sola rutina de verdad, desde cero hasta que funcione sola.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button aria-controls="exp-6-7-1" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🎯</span>
+<div><span class="font-medium">El objetivo del build</span><span class="text-neutral-500 text-sm ml-2">- una rutina matutina real, no un ejercicio de juguete</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-7-1">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Este módulo final arma, paso a paso, una rutina matutina completa: algo que resume lo importante de tu día (agenda, pendientes, un número que sigues) y te lo entrega listo, sin que tengas que pedir nada.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es la prueba de que los seis módulos anteriores —pregunta guía, tarea programada, loop, memoria, determinismo y permisos— se combinan en un resultado práctico, no solo en teoría aislada.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Proyecto integrador, rutina de producción, aplicación de todos los conceptos de la ruta.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-7-2" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🧱</span>
+<div><span class="font-medium">Parte 1: el disparador</span><span class="text-neutral-500 text-sm ml-2">- ¿programar o usar un loop? Decide con la pregunta guía</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-7-2">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Al aplicar el módulo 6.1: una rutina matutina se ejecuta todos los días, siempre; entonces la respuesta es «toda la semana» (todos los días, en este caso), lo que apunta directamente a una <strong>tarea programada</strong>, no un bucle.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Este paso muestra la pregunta guía aplicada de verdad, no solo como ejemplo teórico — y refuerza por qué el loop (que vence en unos días) sería la opción equivocada aquí.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Aplicación de la pregunta guía, elección justificada, tarea programada como el disparador adecuado.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-7-3" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🧱</span>
+<div><span class="font-medium">Parte 2: qué hace la rutina</span><span class="text-neutral-500 text-sm ml-2">- escribir la instrucción pensando en el determinismo</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-7-3">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Al aplicar el módulo 6.5: la instrucción de la rutina debe pedir un formato fijo para el resultado (por ejemplo, siempre 3 temas: agenda, pendientes y un número específico), no «cuéntame cómo va mi día», que deja demasiado espacio para variar.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Ver la instrucción escrita con esta disciplina de formato es el ejemplo práctico más completo de determinismo aplicado de toda la ruta.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Instrucción con formato fijo, menos variación y resultados consistentes todos los días.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-7-4" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🧱</span>
+<div><span class="font-medium">Parte 3: dónde te avisa</span><span class="text-neutral-500 text-sm ml-2">- canal de notificación y permisos restrictivos</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-7-4">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Al aplicar el módulo 6.6: la rutina solo tiene permiso de lectura (nunca para borrar ni modificar nada) y el resultado llega por un canal fijo —correo electrónico o mensaje—, además de quedar registrado en un log para que puedas consultarlo cuando quieras.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Cerrar esta pieza garantiza que la rutina matutina, aunque se ejecute todos los días sin supervisión, siga siendo segura y visible.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Canal de entrega diario, solo permiso de lectura, registro de seguimiento.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-7-5" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🧪</span>
+<div><span class="font-medium">Probar antes de dejarlo funcionando por sí solo</span><span class="text-neutral-500 text-sm ml-2">- el checklist del módulo 6.5 en la práctica</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-7-5">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Antes de activar la programación de verdad, ejecuta la instrucción manualmente al menos dos veces, en horarios diferentes, y comprueba que el formato del resultado se haya mantenido igual en ambas ocasiones.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Este paso de prueba es lo que distingue una rutina matutina confiable de una que te dará un susto durante la primera semana.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Prueba manual repetida, verificación de consistencia, activación solo después de la validación.</p></div>
+</div>
+</div>
+</div>
+<div class="topic-item">
+<button aria-controls="exp-6-7-6" aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🚀</span>
+<div><span class="font-medium">Dejarlo funcionando y revisar después de una semana</span><span class="text-neutral-500 text-sm ml-2">- el hábito de supervisar sin microgestionar</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4" id="exp-6-7-6">
+<div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-rose-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Después de activarla, deja que la rutina funcione sola durante siete días sin tocarla, pero fija un momento (por ejemplo, el domingo) para abrir el registro y comprobar que todo haya salido como esperabas; ajusta la instrucción si hace falta corregir algo.</p></div>
+<div><span class="text-rose-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Este ritmo de «activar, confiar, revisar una vez por semana» es el comportamiento saludable con la automatización que enseñó toda la trilha — ni microgestionar ni olvidar que existe.</p></div>
+<div><span class="text-rose-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Confianza con checkpoint, revisión periódica y ajustes iterativos después de la activación.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-6-7')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-rose-600 hover:bg-rose-500 text-white rounded-lg transition-colors" href="modulo-6-7.html">Ver completo</a>
+</div>
+</article>
+<!-- NAVEGACAO -->
+<div class="flex flex-col sm:flex-row gap-4 mt-12">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../trilha5/index.html">← Ruta anterior: Interfaces</a>
+<a class="flex-1 text-center px-6 py-3 bg-rose-600 text-white rounded-lg font-semibold hover:bg-rose-500 transition-colors" href="../trilha7/index.html">Próxima ruta: Capstone →</a>
+</div>
+</main>
+<!-- MODAIS -->
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-6-1" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-rose-400 font-bold">6.1</span><span class="font-semibold">¿Ahora, en este proyecto, o todas las semanas?</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-6-1.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-6-2" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-rose-400 font-bold">6.2</span><span class="font-semibold">Tareas programadas a fondo</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-6-2.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-6-3" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-rose-400 font-bold">6.3</span><span class="font-semibold">Loops a fondo</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-6-3.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-6-4" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-rose-400 font-bold">6.4</span><span class="font-semibold">La rutina que aprende</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-6-4.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-6-5" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-rose-400 font-bold">6.5</span><span class="font-semibold">Determinismo</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-6-5.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-6-6" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-rose-400 font-bold">6.6</span><span class="font-semibold">Notificaciones y permisos restrictivos</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-6-6.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-6-7" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
+<div class="flex items-center space-x-3"><span class="text-rose-400 font-bold">6.7</span><span class="font-semibold">Build: rutina matutina</span></div>
+<button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+</div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-6-7.html"></iframe>
+</div>
+</div>
+<!-- FOOTER -->
+<footer class="border-t border-dark-600 py-8 mt-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>Tu Empleado Digital — INEMA.CLUB 2026</p>
+</div>
+</footer>
+<!-- SCRIPTS -->
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => {
+        if (exp !== explanation) { exp.classList.remove('active'); exp.previousElementSibling && exp.previousElementSibling.setAttribute && exp.previousElementSibling.setAttribute('aria-expanded','false'); }
+      });
+      explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', explanation.classList.contains('active') ? 'true' : 'false');
+    }
+
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && !htmlEl.classList.contains('dark'))) {
+      themeToggleDarkIcon.classList.remove('hidden');
+    } else {
+      themeToggleLightIcon.classList.remove('hidden');
+    }
+    themeToggle.addEventListener('click', () => {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+    }
+    function closeModal() {
+      document.querySelectorAll('.modal').forEach(modal => modal.classList.add('hidden'));
+      document.body.style.overflow = 'auto';
+    }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') {
+      window.INEMA.init({ autoResume: true });
+    }
+  </script>
+</body>
+</html>
