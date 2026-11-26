@@ -1,16 +1,16 @@
-# PADRÃO WAT7D — leia antes de criar/editar qualquer página
+# PADRêO WAT7D — leia antes de criar/editar qualquer página
 
 Curso: **"Seu Funcionário Digital"** (courseId `wat7d`) — formato `formato-curso-v2`.
 Fonte de verdade: `~/.claude/skills/formato-curso-v2/SKILL.md` + `references/*.md`. Este
-documento só fixa as decisões JÁ TOMADAS para este curso, para todo agente não reinventar.
+documento só fixa as decisões JÁ TOMADAS para este curso, para todo agente nêo reinventar.
 
-## 1. Paleta por trilha (fixa, não mudar)
+## 1. Paleta por trilha (fixa, nêo mudar)
 
 | Trilha | Nome | Cor | classes |
 |---|---|---|---|
-| T0 | Preparação: seu ambiente | Blue | `text-blue-400` `bg-blue-500/20` `border-blue-500/30` `from-blue-900/30` |
+| T0 | Preparaçêo: seu ambiente | Blue | `text-blue-400` `bg-blue-500/20` `border-blue-500/30` `from-blue-900/30` |
 | T1 | O framework WAT | Emerald | `text-emerald-400` `bg-emerald-500/20` `border-emerald-500/30` `from-emerald-900/30` |
-| T2 | MCP: dando mãos ao agente | Blue | `text-blue-400` `bg-blue-500/20` `border-blue-500/30` `from-blue-900/30` |
+| T2 | MCP: dando mêos ao agente | Blue | `text-blue-400` `bg-blue-500/20` `border-blue-500/30` `from-blue-900/30` |
 | T3 | Skills: ensinando um processo | Purple | `text-purple-400` `bg-purple-500/20` `border-purple-500/30` `from-purple-900/30` |
 | T4 | Deploy: sair do seu laptop | Amber | `text-amber-400` `bg-amber-500/20` `border-amber-500/30` `from-amber-900/30` |
 | T5 | Interfaces: o agente que enxerga | Teal | `text-teal-400` `bg-teal-500/20` `border-teal-500/30` `from-teal-900/30` |
@@ -53,7 +53,7 @@ Emoji do curso: 🤖 · Nome curto no nav: `WAT7D` · Nome completo: "Seu Funcio
         <a href="https://inema.pro" target="_blank" class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium">PRO</a>
       </div>
       <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
-        <a href="REL/curso/trilha0/index.html" class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparação</span></a>
+        <a href="REL/curso/trilha0/index.html" class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparaçêo</span></a>
         <a href="REL/curso/trilha1/index.html" class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">WAT</span></a>
         <a href="REL/curso/trilha2/index.html" class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">MCP</span></a>
         <a href="REL/curso/trilha3/index.html" class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Skills</span></a>
@@ -75,21 +75,21 @@ Emoji do curso: 🤖 · Nome curto no nav: `WAT7D` · Nome completo: "Seu Funcio
 ```
 
 **Nota deliberada:** o MASTER pede "4-6 botões de trilha" no nav (Sec. 1.6/#13), mas este curso tem
-8 trilhas (T0-T7) — todas ficam no nav com scroll horizontal (`overflow-x-auto`), decisão consciente
-para não esconder nenhuma trilha do roadmap. Não "corrigir" isso reduzindo trilhas numa revisão futura.
+8 trilhas (T0-T7) — todas ficam no nav com scroll horizontal (`overflow-x-auto`), decisêo consciente
+para nêo esconder nenhuma trilha do roadmap. Nêo "corrigir" isso reduzindo trilhas numa revisêo futura.
 
-**Nota sobre `topics` no MANIFESTO.json:** os valores atuais são 6 para todos os 51 módulos
+**Nota sobre `topics` no MANIFESTO.json:** os valores atuais sêo 6 para todos os 51 módulos
 (mínimo do erro #11). Somente a Trilha 0 foi escrita e verificada nesta tarefa — se algum módulo
 da Trilha 0 saiu com 7 ou 8 tópicos reais, o `MANIFESTO.json` E as 8 cópias inline (`index.html` +
 as 7 páginas de `curso/trilha0/`) precisam ser corrigidos para bater com a contagem real de
-`data-inema-topic` únicos daquele módulo — senão o progresso do curso fica errado (erro #28). Ao
+`data-inema-topic` únicos daquele módulo — senêo o progresso do curso fica errado (erro #28). Ao
 escrever as Trilhas 1-7, reconciliar os `topics` reais antes de fechar a tarefa.
 
 `REL` = caminho relativo: `.` na landing, `../..` nas páginas de `curso/trilhaN/`. Trilha ATIVA:
 trocar `text-neutral-400 hover:text-COR-400 hover:bg-COR-500/10` por `text-COR-400 bg-COR-500/10`
 no link daquela trilha.
 
-## 4. Bloco `<head>` padrão (ordem obrigatória)
+## 4. Bloco `<head>` padrêo (ordem obrigatória)
 
 1. `<meta charset>`, `<meta viewport>`, `<meta name="inema-course" content="wat7d">`.
 2. **Manifesto** — `<script type="application/json" data-inema-manifest>` com o JSON completo de
@@ -125,7 +125,7 @@ apressados, checar sempre: botões `justify-start` (#1); números em círculo, n
 seções por tópico (#3); INEMA.CLUB + PRO em toda página (#4/#4b); light-mode CSS completo (#5);
 título do módulo `text-2xl` (#6); nav completo idêntico em toda página (#13); mínimo 6 tópicos por
 módulo (#11/#10 "Ver Completo" em cada card); Mapa da trilha obrigatório no index (#12); módulo
-com 500–800 linhas e variedade de componentes, não template repetido (#14); manifesto presente em
+com 500–800 linhas e variedade de componentes, nêo template repetido (#14); manifesto presente em
 toda página (#28, ver `assets/MANIFESTO.json`); anti-FOUC primeiro no `<head>` (#18); todo termo
 técnico definido inline em módulos de fundamento, estilo "Novo aqui?" (#31); todo modulo prático
 com ≥1 bloco copy-run com objetivo + bloco + como verificar (#30); cada conceito-chave ilustrado
@@ -150,4 +150,4 @@ wat7d/
 
 Esta tarefa entrega apenas `assets/*`, `index.html` e o conteúdo completo de `curso/trilha0/`
 (index + os 6 módulos). As demais trilhas (1–7) ficam para tarefas seguintes, seguindo este mesmo
-padrão e o manifesto já fechado acima.
+padrêo e o manifesto já fechado acima.
