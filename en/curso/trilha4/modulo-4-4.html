@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>4.4 Secrets | Your Digital Employee</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'amber' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'amber' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'amber');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -186,8 +186,8 @@
       .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha4/modulo-4-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha4/modulo-4-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha4/modulo-4-4.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-4-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha4/modulo-4-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha4/modulo-4-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha4/modulo-4-4.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha4/modulo-4-4.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-4-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha4/modulo-4-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Skip to content</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -197,9 +197,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparation</span></a>
@@ -210,8 +210,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Time</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>My journey</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>My journey</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -241,37 +241,37 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">Intermediate</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">Practical</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Progress for module 4.4" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:4-4" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progress for module 4.4" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:4-4" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 of 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">6</span></p>
+<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Section <span class="ARCKHÉ-toc-pos">1</span> of <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-1">1. The notebook that stays home</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-2">2. .gitignore: the gatekeeper</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-3">3. Verifying in practice</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-4">4. Registering in the dashboard</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-5">5. Separate dev and production</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-6">6. If a key leaks</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-1">1. The notebook that stays home</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-2">2. .gitignore: the gatekeeper</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-3">3. Verifying in practice</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-4">4. Registering in the dashboard</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-5">5. Separate dev and production</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-6">6. If a key leaks</a></li>
 </ul>
 </nav>
-<article data-inema-module="4-4" data-inema-track="4" id="modulo-4-4">
+<article data-ARCKHÉ-module="4-4" data-ARCKHÉ-track="4" id="modulo-4-4">
 <!-- TÓPICO 1: Entender -->
-<section class="mb-16" data-inema-topic="modulo-4-4#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-4#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">📓 The password notebook that never leaves home</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-4-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-4-t1-p1">
 <strong class="text-amber-400">New here?</strong> A file <strong class="text-amber-400">.env</strong> (pronounced "dot env",
         short for "environment") is a plain text file that lives only on your machine and stores
         <strong class="text-amber-400">environment variables</strong> — name-value pairs that your automation reads when it runs,
         without those values being written directly into the code. This is where
         the passwords and access keys the automation needs are stored.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-4-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-4-t1-p2">
         Think of a paper password notebook, the kind you keep in a drawer at home. You write down the password
         for your bank, email, and Wi-Fi. Does it make sense to take this notebook with you to work? No—it stays
         at home, where only you (and the people who live with you) can access it. The <code>.env</code> it’s exactly this notebook: it
@@ -294,25 +294,25 @@
 <div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-amber-400 font-bold text-lg">Dashboard</div><div class="text-xs text-neutral-400 mt-1">Where it reappears in the cloud</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 2: Ver por dentro (SVG) -->
-<section class="mb-16" data-inema-topic="modulo-4-4#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-4#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🚪 .gitignore is the gatekeeper at the door</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-4-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-4-t2-p1">
 <strong class="text-amber-400">New here?</strong> O <strong class="text-amber-400">.gitignore</strong> is a text file inside your project that contains a list of file and folder names that the
         <strong class="text-amber-400">git</strong> (the program that controls what gets uploaded to the repository—module
         4.2) must ignore completely. If a file is on this list, git acts as if it doesn’t exist: it never
         appears for upload, even if you type the wrong command and try to upload everything at once.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-4-t2-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-4-t2-p2">
         This is the gatekeeper standing at your front door with a list of who isn’t allowed to leave. Even if you, distracted, try to take the password notebook along with your work bag, the gatekeeper stops you at the door. The <code>.env</code> should always be in this list — in practice, almost every new project already comes
         with this line ready, but it's worth checking.
       </p>
@@ -368,19 +368,19 @@
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 3: Construir — copy-run -->
-<section class="mb-16" data-inema-topic="modulo-4-4#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-4#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🧪 Verify in practice that .env is protected</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-4-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-4-t3-p1">
         You don’t have to trust it blindly—you can check in a few steps that your <code>.env</code> is
         actually off the send list. The goal here is simple: create a <code>.env</code> for example, confirm
         that it’s listed in the <code>.gitignore</code>, and use a git command to see with your own eyes
@@ -423,19 +423,19 @@ git status</code></pre>
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 4: Construir — timeline -->
-<section class="mb-16" data-inema-topic="modulo-4-4#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-4#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🗂️ Adding a new key in the dashboard</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-4-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-4-t4-p1">
 <strong class="text-amber-400">New here?</strong> O <strong class="text-amber-400">Trigger.dev</strong> it’s the
         execution platform we mentioned in module 4.2—the service that actually runs your automation in the
         cloud, 24 hours a day. When your automation needs to communicate with another service (send email, read a
@@ -473,19 +473,19 @@ git status</code></pre>
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 5: Consolidar — grid + tip -->
-<section class="mb-16" data-inema-topic="modulo-4-4#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-4#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🔀 Development and production have separate keys</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-4-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-4-t5-p1">
         Just as module 4.3 showed two separate “worlds” (dev and production) running the same automation,
         the keys follow that same separation: the Trigger.dev dashboard stores one environment variable per
         environment. This means the key used in your tests isn’t necessarily the same one used
@@ -514,19 +514,19 @@ git status</code></pre>
 <p class="text-neutral-300">Never paste a real API key into a message, a shared screenshot, a chat with a coding agent asking for help to “debug,” or any public example. If you suspect a real key appeared somewhere by mistake, the next topic explains what to do — and it’s quick.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 6: Consolidar — tip + check -->
-<section class="mb-16" data-inema-topic="modulo-4-4#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-4#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🚨 If a key leaks: the action plan</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-4-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-4-t6-p1">
         Leaks happen — what matters is responding quickly. If a real key ended up somewhere it shouldn’t
         (a commit by mistake, a message, a screenshot), the next step isn’t to "erase" the trace — in many cases,
         that isn’t enough because someone, or an automated system scanning the internet for keys, may already have copied it. The right step is to go to the service provider’s dashboard and
@@ -543,19 +543,19 @@ git status</code></pre>
 <p class="text-neutral-300 mb-6 leading-relaxed">
         With the secret protected, the next module (4.5) covers another kind of risk: what to do when an automation step fails midway—how to respond without duplicating anything.
       </p>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-4-4#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-4-4#q1">
 <p class="font-medium mb-4">Quick check (optional): where should a real API key used by your automation be stored?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Writing directly in the code, so it’s quick to find.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Configured in the execution platform’s dashboard, separately for each environment (dev/production).</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Sent along with the code to the repository to make it easier for the team to access.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Writing directly in the code, so it’s quick to find.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Configured in the execution platform’s dashboard, separately for each environment (dev/production).</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Sent along with the code to the repository to make it easier for the team to access.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-4-4#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-4-4#q1', {
               answer: 1,
               explain: { 0: 'Isso expõe a chave pra qualquer um que abrir o arquivo — releia o tópico 3 e 5.', 1: 'Isso mesmo: o painel guarda a chave fora do código, e separada por ambiente.', 2: 'O .gitignore existe exatamente pra impedir esse envio — releia o tópico 2.' }
             });
@@ -563,9 +563,9 @@ git status</code></pre>
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -592,7 +592,7 @@ git status</code></pre>
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -619,7 +619,7 @@ git status</code></pre>
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

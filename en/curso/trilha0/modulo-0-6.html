@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>0.6 Permissions and security | Your Digital Employee</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -182,8 +182,8 @@
       .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha0/modulo-0-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha0/modulo-0-6.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha0/modulo-0-6.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha0/modulo-0-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-0-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha0/modulo-0-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha0/modulo-0-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha0/modulo-0-6.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha0/modulo-0-6.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha0/modulo-0-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-0-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha0/modulo-0-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Skip to content</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -193,9 +193,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparation</span></a>
@@ -206,8 +206,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Time</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>My journey</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>My journey</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -235,32 +235,32 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Beginner</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Practice</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module 0.6 progress" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:0-6" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Module 0.6 progress" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:0-6" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 of 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">6</span></p>
+<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Section <span class="ARCKHÉ-toc-pos">1</span> of <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. Delete in bulk</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. Production without review</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. Publish without approval</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. Grid: do vs. avoid</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. Final exercise</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. On to Track 1</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. Delete in bulk</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. Production without review</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. Publish without approval</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. Grid: do vs. avoid</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. Final exercise</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. On to Track 1</a></li>
 </ul>
 </nav>
-<article data-inema-module="0-6" data-inema-track="0" id="modulo-0-6">
-<section class="mb-16" data-inema-topic="modulo-0-6#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="0-6" data-ARCKHÉ-track="0" id="modulo-0-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-6#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🚫 Never mass-delete without review</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-6-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-6-t1-p1">
         Commands that delete several folders or files at once always call for plan mode (module 0.5) and careful review before approval. This is the most costly and hardest-to-undo category of mistake in the entire course.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-6-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-6-t1-p2">
 <strong class="text-blue-400">New here?</strong> This module closes Track 0 by discussing <strong class="text-blue-400">permission</strong>
         — the permission you grant (or deny) before the agent runs something. So far, you’ve learned to install the
         <strong class="text-blue-400">terminal</strong> (the text window where you type <strong class="text-blue-400">commands</strong> —
@@ -300,7 +300,7 @@
 <h3 class="text-lg font-semibold text-neutral-100 mb-3 flex items-center"><span class="mr-2">🩹</span> Common error</h3>
 <p class="text-neutral-300">Approving a plan “out of fatigue,” just to move faster, without actually reading the lines that mention deleting things. If you feel that rush, close the terminal (the command window), take a breath, and come back later—the agent can wait; it has no deadline.</p>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-6-t1-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-6-t1-p3">
         Let’s reinforce why this category differs from the other two ("production" and "publishing"): deleting files
         is an action that happens only on your computer, without going through any external server — so it’s easy
         to think it’s "less serious." In practice, the opposite is true: if you don’t have a backup (a copy stored
@@ -308,18 +308,18 @@
         cheapest habit in the entire course compared with the damage it can prevent.
       </p>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-0-6#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-6#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🏭 Never change production without a review</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-6-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-6-t2-p1">
 <strong class="text-blue-400">New here?</strong> <strong class="text-blue-400">Production</strong> is the "live" environment, used by real people — unlike a test environment, which is isolated and has no real consequences. This topic is covered in more depth in Track 4, but the golden rule starts here: never change production without reviewing it first.
       </p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
@@ -330,7 +330,7 @@
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical Tip</h3>
 <p class="text-neutral-300">If you still can't tell test from production in your own project, treat everything as production until Track 4 explains the separation—that's the safest option.</p>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-6-t2-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-6-t2-p2">
 <strong class="text-blue-400">New here?</strong> One <strong class="text-blue-400">file</strong> is any document saved on the computer (text, image, a snippet of code); a <strong class="text-blue-400">folder</strong>
         is the "envelope" that organizes several files together. When the agent "works in production," it's changing files that are already live — not a test copy stored only on your computer.
       </p>
@@ -338,25 +338,25 @@
 <h3 class="text-lg font-semibold text-neutral-100 mb-3 flex items-center"><span class="mr-2">🔧</span> Common error</h3>
 <p class="text-neutral-300">Ask to "update the site" without saying which environment, and the agent assumes you mean the live site. Simple fix: always name the target — "update the test version, not the published one" — and check this rule in your CLAUDE.md.</p>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-6-t2-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-6-t2-p3">
         A practical way to never get this wrong: before asking for any change, ask the agent itself, "will
         what I'm asking change something that's already published, or will it stay in testing?" Having the agent answer that
         question out loud (in writing, in the conversation) forces it to check the context before acting—and forces
         you to read the answer before approving.
       </p>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-0-6#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-6#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">📢 Never publish without explicit approval</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-6-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-6-t3-p1">
         Make it clear in your CLAUDE.md that nothing goes live — site, post, email — without your explicit approval. A
         rule written in the file is read every session (module 0.4) and prevents accidental publication.
       </p>
@@ -365,12 +365,12 @@
 <div class="text-emerald-400">Never publish, send an email, or post anything without my explicit approval first.</div>
 </div>
 <p class="text-xs text-neutral-500 mb-6"><strong>Objective:</strong> prevent accidental publishing. <strong>How to verify:</strong> ask for a task that would "publish" something and confirm that the agent stops and asks before acting.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-6-t3-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-6-t3-p2">
         "Publish" here means any action that leaves your computer and becomes visible to other people: putting
         a page online, sending an email, posting on social media. The rule applies even when the agent has the technical access
         to do this on its own — having access isn't the same as having authorization.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-6-t3-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-6-t3-p3">
         This precaution becomes even more important when Tracks 4 and 6 teach you to have the agent work on its own, on a schedule, with no one watching at the time. An automation that runs overnight and publishes something wrong is much harder to fix than an error caught right away — so the rule written in CLAUDE.md still applies even when no one is monitoring it live.
       </p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -390,18 +390,18 @@
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-0-6#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-6#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">✅ Visual summary: authorize upfront × always review</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-6-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-6-t4-p1">
         Use this table as a quick reference when a question comes up in the middle of a task.
       </p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -442,18 +442,18 @@
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-0-6#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-6#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🏁 Track final exercise: create, write, verify</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-6-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-6-t5-p1">
         Wrap up Track 0 by putting it all together: create the project, write the CLAUDE.md, and ask the agent to summarize
         the project itself—the final proof that the environment is ready.
       </p>
@@ -475,18 +475,18 @@
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-0-6#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-6#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">➡️ On to Track 1: the WAT framework</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-6-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-6-t6-p1">
         With the terminal installed, the project organized, CLAUDE.md streamlined, plan mode mastered, and the security rules
         in place, the environment is ready. Track 1 introduces the framework <strong class="text-blue-400">WAT</strong>
         (Workflows, Agent, Tools) — the piece that turns loose requests into real automation.
@@ -507,19 +507,19 @@
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical Tip</h3>
 <p class="text-neutral-300">Save this security checklist — the three red lines (bulk deletion, production, publishing) apply to the entire course, not just this track. Revisit this module whenever a new track unlocks a new capability for the agent.</p>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-0-6#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-0-6#q1">
 <p class="font-medium mb-4">Quick check (optional): Which of these actions should NEVER run without explicit review?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Read a text file.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Publish something to production.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Create a new, isolated file.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Read a text file.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Publish something to production.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Create a new, isolated file.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-0-6#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-0-6#q1', {
               answer: 1,
               explain: { 0: 'Ler é uma açêo segura, sem efeito colateral.', 1: 'Isso mesmo: produçêo afeta gente de verdade — sempre revisar antes.', 2: 'Criar um arquivo isolado é de baixo risco.' }
             });
@@ -527,9 +527,9 @@
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -555,7 +555,7 @@
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -582,7 +582,7 @@
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

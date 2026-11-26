@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>4.1 Por qué lo local no basta | Tu Empleado Digital</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'amber' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'amber' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'amber');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -186,8 +186,8 @@
       .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha4/modulo-4-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha4/modulo-4-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha4/modulo-4-1.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha4/modulo-4-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-4-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha4/modulo-4-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha4/modulo-4-1.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha4/modulo-4-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha4/modulo-4-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-4-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -197,9 +197,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
@@ -210,8 +210,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>Mi recorrido</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -243,42 +243,42 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">Intermedio</div><div class="text-xs text-neutral-400">Nivel</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">Teoría</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progreso del módulo 4.1" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:4-1" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progreso del módulo 4.1" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:4-1" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 de 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="ARCKHÉ-toc-pos">1</span> de <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-1">1. La tarea pendiente</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-2">2. El empleado que duerme cuando tú duermes</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-3">3. Por dentro: qué cambia técnicamente</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-4">4. El camino del código a la nube</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-5">5. Ejecutando en local a propósito, por ahora</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-6">6. Consolidando el modelo mental</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-1">1. La tarea pendiente</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-2">2. El empleado que duerme cuando tú duermes</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-3">3. Por dentro: qué cambia técnicamente</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-4">4. El camino del código a la nube</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-5">5. Ejecutando en local a propósito, por ahora</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-6">6. Consolidando el modelo mental</a></li>
 </ul>
 </nav>
-<article data-inema-module="4-1" data-inema-track="4" id="modulo-4-1">
+<article data-ARCKHÉ-module="4-1" data-ARCKHÉ-track="4" id="modulo-4-1">
 <!-- TÓPICO 1 — Entender -->
-<section class="mb-16" data-inema-topic="modulo-4-1#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-1#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">📌 La tarea pendiente</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t1-p1">
         Hasta ahora hiciste que tu agente de código respondiera a solicitudes: abres la terminal (el cuadro de texto que
         le da órdenes directamente a la computadora), escribes lo que quieres, el agente lo ejecuta y tú ves el resultado. Esto funciona
         muy bien — pero hay una condición oculta: <strong class="text-amber-400">tienes que estar ahí</strong>.
         Computadora encendida, aplicación abierta, tú presente para presionar Enter.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t1-p2">
         Piensa en una tarea «pendiente»: es ese recordatorio que espera a que alguien llegue para ejecutarlo. Escribiste una nota adhesiva: «llamar al proveedor a las 9 a. m.» y la pegaste en la pantalla — pero la nota no llama por sí sola.
         Solo existe hasta que llegas, la ves y actúas. Una automatización que solo se ejecuta en tu terminal es exactamente
         eso: una nota adhesiva sofisticada. Sofisticada porque, cuando llegas y presionas el botón, hace todo el
         trabajo por sí sola. Pero todavía depende de que alguien llegue.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t1-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t1-p3">
         Esto cambia todo en la práctica: si la automatización debería ejecutarse todos los días a las 7 de la mañana, pero tu laptop estaba
         apagada (o cerrada, o sin internet, o estabas de vacaciones), simplemente no se ejecutó. Nadie
         te avisa. No existe un "lo intentó y falló": hay silencio total, porque no se activó nada.
@@ -296,26 +296,26 @@
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 2 — Entender -->
-<section class="mb-16" data-inema-topic="modulo-4-1#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-1#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🌙 El empleado que trabaja incluso mientras duermes</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t2-p1">
         Ahora cambia la imagen del post-it por la de un empleado de verdad. Un empleado presencial solo
         trabaja cuando está en la oficina, junto a ti; si cierras la oficina, se detiene. Un
         empleado remoto, contratado e instalado en otro lugar, sigue trabajando aunque TU
         edificio esté cerrado. Tiene su propio espacio, sus propias llaves y cumple el horario acordado,
         independientemente de dónde estés.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t2-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t2-p2">
 <strong class="text-amber-400">¿Eres nuevo aquí?</strong> <strong class="text-amber-400">Nube</strong> (cloud)
         es el nombre común para «una computadora de otra empresa que alquilas por internet, encendida las 24 horas del día,
         en un centro de datos, que nunca se apaga porque cerraste la laptop». Cuando decimos que una automatización
@@ -349,19 +349,19 @@
         </p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 3 — Ver por dentro -->
-<section class="mb-16" data-inema-topic="modulo-4-1#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-1#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🔍 Por dentro: qué cambia técnicamente</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t3-p1">
 <strong class="text-amber-400">¿Eres nuevo aquí?</strong> <strong class="text-amber-400">Código</strong> es el
         conjunto de instrucciones escritas que le dicen a la computadora exactamente qué hacer, paso a paso: es lo
         que tu agente escribe cuando le pides automatizar algo. Cuando este código se ejecuta localmente, solo
@@ -412,19 +412,19 @@
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 4 — Construir -->
-<section class="mb-16" data-inema-topic="modulo-4-1#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-1#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🚀 El camino del código a la nube, en orden</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t4-p1">
         Pasar del entorno local a la nube no es un solo paso: es una secuencia de estaciones, cada una entregando el
         trabajo a la siguiente. El Módulo 4.2 detalla cada estación a fondo; aquí ya ves el recorrido completo
         para entender por qué existe.
@@ -468,25 +468,25 @@
         </p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 5 — Construir (copy-run) -->
-<section class="mb-16" data-inema-topic="modulo-4-1#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-1#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🖥️ Siente la diferencia en la práctica: ejecutarla localmente una vez</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t5-p1">
         Antes de que nada pase a la nube, conviene experimentar qué significa «ejecutar en local»: ejecutas
         el comando, el proceso funciona mientras la terminal (la ventana de comandos) está abierta y desaparece cuando
         la cierras. No hay magia: eso es exactamente lo que los módulos 4.2 a 4.6 van a reemplazar por algo que
         siga funcionando sin ti.
       </p>
-<p class="text-neutral-300 mb-3" data-inema-block="m4-1-t5-obj"><strong class="text-amber-400">Objetivo:</strong> ejecutar un script (un archivo de instrucciones sencillo) localmente en tu terminal y observar que solo existe mientras lo mantienes abierto.</p>
+<p class="text-neutral-300 mb-3" data-ARCKHÉ-block="m4-1-t5-obj"><strong class="text-amber-400">Objetivo:</strong> ejecutar un script (un archivo de instrucciones sencillo) localmente en tu terminal y observar que solo existe mientras lo mantienes abierto.</p>
 <pre class="bg-dark-900 rounded-lg p-4 overflow-x-auto text-sm mb-4"><code>cd <isto troca="" voce="">minha-automacao</isto>
 node verificar-estoque.js
 
@@ -494,7 +494,7 @@ node verificar-estoque.js
 # [12:04:02] Verificando estoque...
 # [12:04:03] 3 produtos abaixo do mínimo. E-mail simulado enviado.
 # [12:04:03] Processo encerrado.</code></pre>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t5-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t5-p2">
 <strong class="text-amber-400">Cómo verificar:</strong> cierra la terminal (o desconecta el wifi, o
         apaga la laptop) y espera hasta la hora en que esta automatización "debería" volver a ejecutarse mañana por la mañana.
         No se ejecutará, porque no hay nada más que tu comando manual que la mantenga activa. Esa es la brecha
@@ -520,19 +520,19 @@ node verificar-estoque.js
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 6 — Consolidar -->
-<section class="mb-16" data-inema-topic="modulo-4-1#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-1#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🗺️ Consolidar el modelo mental</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t6-p1">
         Toda la Trilha 4 existe para cruzar este puente: código en tu computadora → repositorio →
         plataforma de ejecución en la nube. No te convertirás en programador: el agente escribe el
         <strong class="text-amber-400">TypeScript</strong>, lees, apruebas y supervisas desde el panel. Pero
@@ -554,19 +554,19 @@ node verificar-estoque.js
 <li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span>Salir del entorno local no es «demasiado avanzado»: es una secuencia de pasos pequeños, cada uno cubierto en un módulo de esta ruta.</span></li>
 </ul>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-4-1#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-4-1#q1">
 <p class="font-medium mb-4">Verificación rápida (opcional): ¿qué es lo que realmente separa "ejecutar en local" de una "automatización de verdad"?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">El código es más complejo cuando se ejecuta en la nube.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Ejecutar en la nube no depende de que tu computadora esté encendida ni de que estés presente.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">La automatización en la nube nunca falla.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">El código es más complejo cuando se ejecuta en la nube.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Ejecutar en la nube no depende de que tu computadora esté encendida ni de que estés presente.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">La automatización en la nube nunca falla.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-4-1#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-4-1#q1', {
               answer: 1,
               explain: { 0: 'Complexidade nêo é o critério — é independência de você estar presente.', 1: 'Exato: essa independência é o que separa local de automaçêo de verdade.', 2: 'Falhas ainda acontecem na nuvem — a diferença é que ela roda sem depender de você, e você acompanha pelo log (módulo 4.7).' }
             });
@@ -574,9 +574,9 @@ node verificar-estoque.js
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
@@ -603,7 +603,7 @@ node verificar-estoque.js
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -630,7 +630,7 @@ node verificar-estoque.js
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

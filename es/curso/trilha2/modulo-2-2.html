@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>2.2 Anatomía de un servidor MCP | Tu Empleado Digital</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -377,27 +377,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -405,7 +405,7 @@
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -477,8 +477,8 @@
     }
     
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha2/modulo-2-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha2/modulo-2-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha2/modulo-2-2.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha2/modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha2/modulo-2-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha2/modulo-2-2.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha2/modulo-2-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha2/modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -488,9 +488,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
@@ -501,8 +501,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../../curso/trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../../curso/trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>Mi recorrido</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -530,29 +530,29 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Principiante</div><div class="text-xs text-neutral-400">Nivel</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Concepto</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progreso del módulo 2.2" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:2-2" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progreso del módulo 2.2" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:2-2" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 de 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="ARCKHÉ-toc-pos">1</span> de <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. La herramienta (tool)</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. El parámetro</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. La autenticación</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. Las tres piezas juntas</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. Ver la lista de herramientas</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. Herramientas de lectura × escritura</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. La herramienta (tool)</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. El parámetro</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. La autenticación</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. Las tres piezas juntas</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. Ver la lista de herramientas</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. Herramientas de lectura × escritura</a></li>
 </ul>
 </nav>
-<article data-inema-module="2-2" data-inema-track="2" id="modulo-2-2">
-<section class="mb-16" data-inema-topic="modulo-2-2#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="2-2" data-ARCKHÉ-track="2" id="modulo-2-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-2#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🛠️ Herramienta: el verbo que el agente puede ejecutar</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t1-p1">
 <strong class="text-blue-400">¿Eres nuevo aquí?</strong> Uno <strong class="text-blue-400">protocolo</strong> es simplemente un conjunto de reglas acordadas de antemano para que dos partes puedan comunicarse sin malentenderse, como el «cambio y fuera» de la radio, pero entre programas de computadora. <strong class="text-blue-400">MCP</strong> (<em>Model Context Protocol</em>) es el protocolo que presentó el módulo anterior: el lenguaje común que permite que el agente converse con un <strong class="text-blue-400">servidor</strong> — un programita en ejecución (en tu computadora o en la nube de alguien) que sabe hacer algo específico y espera solicitudes. Un <strong class="text-blue-400">herramienta</strong> (en inglés, <em>tool</em>) es una acción concreta que ofrece ese servidor: un verbo. «Buscar el contenido de una página», «enviar un correo electrónico», «leer una fila de una hoja de cálculo». Cada servidor MCP declara su lista de herramientas junto con una breve descripción de cada una, y esa descripción es la que lee el agente para decidir cuál usar, sin que tengas que saber ningún nombre técnico.
       </p>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
@@ -584,56 +584,56 @@
 <p class="text-neutral-300">Lo que «viaja» entre el agente y el servidor es un mensaje estructurado: no es el texto suelto que escribiste, sino un paquete con el nombre de la herramienta elegida y los valores que necesita. El servidor lee ese paquete, ejecuta la acción en el servicio real (un sitio, una base de datos, una API —la «puerta» que otro programa abre para comunicarse contigo—) y devuelve el resultado en el mismo formato. Nunca ves este intercambio en bruto; el agente traduce el resultado de vuelta a un español normal.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-2-2#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-2#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🎛️ Parámetro: lo que la herramienta necesita saber antes de actuar</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t2-p1">
 <strong class="text-blue-400">¿Eres nuevo aquí?</strong> <strong class="text-blue-400">Parámetro</strong> es un dato adicional que la herramienta necesita para funcionar correctamente: la dirección del sitio, el formato del archivo de salida, el número máximo de páginas. No lo escribes a mano: el agente extrae estos valores de tu pedido en portugués y los completa por su cuenta.
       </p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
 <h4 class="font-bold text-emerald-400 mb-4">✓ Ejemplo de solicitud clara</h4>
-<p class="text-neutral-300 text-sm">"Extrae los precios de la página inema.club/planos, como máximo 5 páginas." — el agente ya tiene todo lo que necesita la herramienta: URL y límite.</p>
+<p class="text-neutral-300 text-sm">"Extrae los precios de la página ARCKHÉ AI/planos, como máximo 5 páginas." — el agente ya tiene todo lo que necesita la herramienta: URL y límite.</p>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
 <h4 class="font-bold text-red-400 mb-4">✗ Ejemplo de solicitud vaga</h4>
 <p class="text-neutral-300 text-sm">"Obtén los precios por ahí" — sin una dirección, el agente tendrá que volver a preguntar antes de poder completar los parámetros.</p>
 </div>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t2-p2"> Todo parámetro tiene un «formato esperado»: la herramienta puede exigir un número (límite de páginas), un texto (la URL) o una opción de una lista fija (formato de salida: <code>csv</code> o <code>json</code>, por ejemplo). Cuando el parámetro es opcional, el servidor MCP suele tener un valor predeterminado: si no dices cuántas páginas, asume por su cuenta un límite razonable, generalmente pequeño, para no perder tiempo ni hacer llamadas innecesarias.
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t2-p2"> Todo parámetro tiene un «formato esperado»: la herramienta puede exigir un número (límite de páginas), un texto (la URL) o una opción de una lista fija (formato de salida: <code>csv</code> o <code>json</code>, por ejemplo). Cuando el parámetro es opcional, el servidor MCP suele tener un valor predeterminado: si no dices cuántas páginas, asume por su cuenta un límite razonable, generalmente pequeño, para no perder tiempo ni hacer llamadas innecesarias.
       </p>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
 <p class="text-neutral-300">Cuando no tengas claro qué necesita una herramienta, basta con pedir: «¿qué parámetros acepta esta herramienta de búsqueda?»; el agente lee la descripción técnica y te la explica en portugués, sin que tengas que abrir ninguna documentación.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-2-2#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-2#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🔑 Autenticación: la clave que demuestra quién eres</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t3-p1">
 <strong class="text-blue-400">¿Eres nuevo aquí?</strong> <strong class="text-blue-400">Autenticación</strong> es la prueba de que tienes permiso para usar ese servicio; por lo general, es una «clave de API», un código secreto único que el servicio reconoce. Es como la tarjeta magnética que abre la puerta de un edificio: sin ella, nadie puede entrar, ni siquiera el agente.
       </p>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consejo práctico</h3>
 <p class="text-neutral-300">Guarda siempre esta clave en un archivo <code>.env</code> — nunca la escribas directamente en la conversación con el agente. El módulo 2.3 muestra el paso a paso completo.</p>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t3-p2"> La clave normalmente se obtiene al registrarte en el sitio del servicio: creas una cuenta, generas la clave en una página de configuración y la pegas en el archivo <code>.env</code> de tu proyecto. El servidor MCP lee este archivo por sí solo cada vez que necesita autenticarse; nunca aparece en la pantalla del chat ni se envía al agente como texto. Algunos servicios cobran por llamada o tienen un límite mensual de uso gratis: conviene comprobarlo antes de dejar que un agente se ejecute sin supervisión en un bucle.
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t3-p2"> La clave normalmente se obtiene al registrarte en el sitio del servicio: creas una cuenta, generas la clave en una página de configuración y la pegas en el archivo <code>.env</code> de tu proyecto. El servidor MCP lee este archivo por sí solo cada vez que necesita autenticarse; nunca aparece en la pantalla del chat ni se envía al agente como texto. Algunos servicios cobran por llamada o tienen un límite mensual de uso gratis: conviene comprobarlo antes de dejar que un agente se ejecute sin supervisión en un bucle.
       </p>
 <h4 class="text-sm font-semibold text-neutral-400 mb-3">Errores comunes en esta etapa</h4>
 <div class="space-y-3 mb-8">
@@ -641,13 +641,13 @@
 <div class="flex items-start gap-3 bg-dark-800 rounded-lg p-4 border border-dark-600"><span class="text-red-400 font-bold mt-0.5">✗</span><p class="text-neutral-300 text-sm"><strong class="text-white">Límite de uso excedido:</strong> los planes gratuitos suelen tener un límite mensual de llamadas. Cuando se supera, el servicio las rechaza hasta que empiece el mes siguiente o hagas un upgrade. Fix: pídele al agente que compruebe cuántas llamadas quedan antes de ejecutar tareas en masa.</p></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-2-2#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-2#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🧩 Las tres piezas juntas: un pedido real de principio a fin</h2>
@@ -666,7 +666,7 @@
 </svg>
 </div>
 <p class="text-xs text-neutral-500 mb-8">Leyenda: las tres piezas de cualquier servidor MCP: las herramientas disponibles, los parámetros que exige cada una y la clave de autenticación que garantiza que solo tú (o quien autorices) use ese servicio en tu nombre.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t4-p1"> Cuando pides «trae los precios de esta página», el agente: (1) elige la herramienta adecuada entre las disponibles, (2) prepara los parámetros —la URL que mencionaste, el formato de salida— y (3) el servidor MCP usa la clave de autenticación guardada para hacer la llamada real al servicio externo. Tú solo viste una frase en portugués; por debajo, las tres piezas trabajaron juntas.
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t4-p1"> Cuando pides «trae los precios de esta página», el agente: (1) elige la herramienta adecuada entre las disponibles, (2) prepara los parámetros —la URL que mencionaste, el formato de salida— y (3) el servidor MCP usa la clave de autenticación guardada para hacer la llamada real al servicio externo. Tú solo viste una frase en portugués; por debajo, las tres piezas trabajaron juntas.
       </p>
 <h4 class="text-sm font-semibold text-neutral-400 mb-4">Línea de tiempo de una solicitud, desde que presionas «enter» hasta la respuesta</h4>
 <div class="relative pl-8 mb-8 space-y-6 border-l-2 border-blue-500/30">
@@ -681,18 +681,18 @@
 <p class="text-neutral-300">Si falla el paso 4 —clave inválida, servicio fuera de línea, resultado vacío porque no encontró nada—, el servidor MCP no se bloquea: devuelve un mensaje de error estructurado, y el agente lo lee para decidir qué hacer después: volver a intentarlo, avisarte o sugerir otro camino. Un resultado vacío (la búsqueda no encontró nada) no es lo mismo que un error. Conviene pedirle al agente que distinga ambos casos antes de suponer que algo falló.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-2-2#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-2#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">📖 Dónde ver la lista de herramientas de un servidor</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t5-p1"> Todo servidor MCP publica su documentación; por lo general, es una página en el sitio del servicio que enumera cada herramienta, los parámetros esperados y ejemplos. Vale la pena echarle un vistazo antes de instalarlo, aunque nunca vayas a escribir esos nombres a mano: ayuda a entender qué podrá hacer el agente por ti.
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t5-p1"> Todo servidor MCP publica su documentación; por lo general, es una página en el sitio del servicio que enumera cada herramienta, los parámetros esperados y ejemplos. Vale la pena echarle un vistazo antes de instalarlo, aunque nunca vayas a escribir esos nombres a mano: ayuda a entender qué podrá hacer el agente por ti.
       </p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Por dentro</h3>
@@ -708,18 +708,18 @@
 <p class="text-neutral-400 text-sm"><strong class="text-blue-400">Cómo verificar:</strong> la lista debe mostrar cada servidor conectado con un estado — "connected", "needs auth" o algo parecido. Si un servidor que instalaste no aparece en la lista, el problema está en la instalación, no en la herramienta en sí (eso se trata en el módulo 2.3).</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-2-2#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-2#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">⚖️ No todas las herramientas son seguras de forma predeterminada</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t6-p1"> Algunas herramientas solo leen información (buscar, listar): bajo riesgo. Otras escriben o envían algo fuera (mandar un correo, publicar una entrada, borrar un registro): riesgo real, porque la acción ya se realizó cuando el agente termine. Claude Code te pide confirmación antes de ejecutar herramientas sensibles; no desactives esa confirmación sin pensarlo dos veces.
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t6-p1"> Algunas herramientas solo leen información (buscar, listar): bajo riesgo. Otras escriben o envían algo fuera (mandar un correo, publicar una entrada, borrar un registro): riesgo real, porque la acción ya se realizó cuando el agente termine. Claude Code te pide confirmación antes de ejecutar herramientas sensibles; no desactives esa confirmación sin pensarlo dos veces.
       </p>
 <div class="space-y-4 mb-6">
 <div class="flex items-start space-x-4">
@@ -737,7 +737,7 @@
 </div>
 </div>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t6-p2"> Una herramienta común de lectura es el <strong class="text-blue-400">scraping</strong> — la extracción automática de información de una página de internet sin pasar por una API oficial de ese sitio. Es útil, pero exige responsabilidad: los sitios tienen términos de uso que a veces prohíben el scraping; algunos bloquean por defecto las solicitudes automatizadas (y el servidor MCP simplemente devuelve un error o una página vacía), y los datos personales de terceros que encuentres nunca deben convertirse en una hoja de cálculo o una automatización sin cuidar la privacidad. Trata el scraping como visitar una tienda física fuera del horario de atención: que la puerta no esté cerrada con llave no significa que tengas permiso para entrar cuando quieras y en cualquier cantidad.
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t6-p2"> Una herramienta común de lectura es el <strong class="text-blue-400">scraping</strong> — la extracción automática de información de una página de internet sin pasar por una API oficial de ese sitio. Es útil, pero exige responsabilidad: los sitios tienen términos de uso que a veces prohíben el scraping; algunos bloquean por defecto las solicitudes automatizadas (y el servidor MCP simplemente devuelve un error o una página vacía), y los datos personales de terceros que encuentres nunca deben convertirse en una hoja de cálculo o una automatización sin cuidar la privacidad. Trata el scraping como visitar una tienda física fuera del horario de atención: que la puerta no esté cerrada con llave no significa que tengas permiso para entrar cuando quieras y en cualquier cantidad.
       </p>
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Las herramientas de lectura se ejecutan directamente sin pedir confirmación; las herramientas de escritura pasan por una instancia de confirmación antes de ejecutarse, porque la acción ya se realizó cuando el agente termina" class="w-full h-auto" role="img" viewbox="0 0 1000 220">
@@ -765,9 +765,9 @@
 <p class="text-neutral-300">Si el resultado de una herramienta de lectura está vacío, no supongas que «no existe»: puede que un sitio esté bloqueando el scraping automatizado. Pídele al agente que vuelva a intentarlo o que confirme si el sitio devolvió algún error antes de concluir que la información no está ahí.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
@@ -793,7 +793,7 @@
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -823,7 +823,7 @@
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

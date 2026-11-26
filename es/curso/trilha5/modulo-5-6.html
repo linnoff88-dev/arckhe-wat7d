@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>5.6 Carpeta de marca | Tu Empleado Digital</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'teal' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'teal' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'teal');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -189,8 +189,8 @@
       .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha5/modulo-5-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha5/modulo-5-6.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha5/modulo-5-6.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha5/modulo-5-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha5/modulo-5-6.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha5/modulo-5-6.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -200,9 +200,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
@@ -213,8 +213,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-teal-400 bg-teal-500/10" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>Mi recorrido</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -244,30 +244,30 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Intermedio</div><div class="text-xs text-neutral-400">Nivel</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Práctica</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progreso del módulo 5.6" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:5-6" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progreso del módulo 5.6" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:5-6" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 de 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="ARCKHÉ-toc-pos">1</span> de <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-1">1. El manual de marca, ahora digital</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-2">2. La carpeta que alimenta varios front-ends</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-3">3. La estructura interna de archivos</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-4">4. Creando la carpeta con el agente</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-5">5. Skill de diseño + carpeta de marca, juntas</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-6">6. Mantenerla actualizada (el error más común)</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-1">1. El manual de marca, ahora digital</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-2">2. La carpeta que alimenta varios front-ends</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-3">3. La estructura interna de archivos</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-4">4. Creando la carpeta con el agente</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-5">5. Skill de diseño + carpeta de marca, juntas</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-6">6. Mantenerla actualizada (el error más común)</a></li>
 </ul>
 </nav>
-<article data-inema-module="5-6" data-inema-track="5" id="modulo-5-6">
+<article data-ARCKHÉ-module="5-6" data-ARCKHÉ-track="5" id="modulo-5-6">
 <!-- TÓPICO 1 -->
-<section class="mb-16" data-inema-topic="modulo-5-6#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-6#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">📘 El manual de marca, ahora digital</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-6-t1-p1">
 <strong class="text-teal-400">¿Eres nuevo aquí?</strong> Una <strong class="text-teal-400">carpeta de marca</strong>
         (en inglés, <code class="text-xs bg-dark-800 px-1 py-0.5 rounded">brand_assets</code> — «activos de marca») es solo
         un <strong class="text-teal-400">directorio</strong> (una carpeta dentro del proyecto en tu computadora) donde
@@ -277,7 +277,7 @@
         la paleta con los códigos exactos de tinta y reglas de uso, para que nadie inventara un verde distinto en un
         folleto. La carpeta de marca es ese mismo cuaderno, pero en archivos y siempre a mano de tu agente.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-6-t1-p2">
         La diferencia que importa aquí: el manual físico se quedaba en un cajón, y alguien tenía que ir a buscarlo, hojearlo
         y copiarlo a mano. La carpeta de marca está dentro del proyecto — el mismo lugar donde Claude Code ya está
         trabajando. Cuando pides «crea una página de contacto nueva», el agente puede simplemente <em>abrir
@@ -299,26 +299,26 @@
 <div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">Tono de voz</div><div class="text-xs text-neutral-400 mt-1">Cómo habla la marca</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 2 -->
-<section class="mb-16" data-inema-topic="modulo-5-6#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-6#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🌐 Una fuente central, varios frontends alimentados</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-6-t2-p1">
 <strong class="text-teal-400">¿Eres nuevo aquí?</strong> <strong class="text-teal-400">Front-end</strong> es la parte
         de un sitio o una aplicación que aparece en pantalla: lo que el visitante ve y toca. Si construyes varias páginas a
         lo largo del tiempo (una landing, un dashboard interno, un menú digital), cada una es un front-end diferente,
         pero todas deberían <em>parecer de la misma marca</em>. Sin una única fuente, cada front-end termina usando el color
         de una forma, el logo de otra, y el resultado es una «familia» que no se parece en nada entre sí.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t2-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-6-t2-p2">
         La carpeta de marca resuelve eso al convertirse en la <strong class="text-teal-400">única fuente de verdad</strong>: cada
         vez que un agente va a crear un front-end nuevo, consulta esa misma carpeta antes de escribir cualquier
         CSS. El diagrama de abajo muestra esta relación: una carpeta central, varios proyectos que la consultan.
@@ -357,19 +357,19 @@
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 3 -->
-<section class="mb-16" data-inema-topic="modulo-5-6#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-6#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🗃️ La estructura de archivos por dentro</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-6-t3-p1">
         No existe una regla única y obligatoria para nombrar las carpetas: lo importante es la organización, no el nombre
         exacto. Pero una estructura sencilla y probada, que ayuda a que el agente entienda todo de inmediato, es este árbol
         de carpetas. Cada subcarpeta contiene UN tipo de recurso, y un archivo de texto (Markdown o JSON) documenta
@@ -395,7 +395,7 @@
 │   └── tom-de-voz.md             <span class="text-neutral-500"># exemplos de frases "no estilo da marca"</span>
 └── <span class="text-neutral-500">index.html, src/, etc. (o resto do projeto)</span></pre>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t3-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-6-t3-p2">
 <strong class="text-teal-400">¿Eres nuevo aquí?</strong> <strong class="text-teal-400">Hex</strong> es el código de
         seis caracteres que representa un color exacto (como <code class="text-xs bg-dark-800 px-1 py-0.5 rounded">#0d9488</code>) —
         sin él, «azul verdoso» puede convertirse en cinco tonos diferentes según quién lo mire. El archivo
@@ -422,19 +422,19 @@
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 4 -->
-<section class="mb-16" data-inema-topic="modulo-5-6#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-6#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🛠️ Crear la carpeta con el agente</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-6-t4-p1">
         No necesitas armar esta estructura a mano. Puedes pedirle al propio agente que cree la carpeta y documente
         las decisiones a partir de un logo que ya tienes (o de una referencia visual, como en el módulo
         5.5). El objetivo aquí es terminar este tema con una <code class="text-xs bg-dark-800 px-1 py-0.5 rounded">brand_assets/</code>
@@ -488,26 +488,26 @@ Faça o seguinte:
 <p class="text-neutral-300">Después de ejecutarse, abre la carpeta <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">brand_assets/</code> en el explorador de archivos: los 4 archivos del logo deben existir de verdad (no estar vacíos), y <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">cores.md</code> debería tener códigos hexadecimales reales (que empiecen con <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">#</code>), no descripciones vagas como «azul claro».</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 5 -->
-<section class="mb-16" data-inema-topic="modulo-5-6#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-6#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🔗 Skill de diseño + carpeta de marca, juntas</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-6-t5-p1">
         Vale la pena conectar esto con lo que ya viste en la ruta. En el módulo 5.2 creaste una <strong class="text-teal-400">skill</strong>
         de diseño global: un conjunto de instrucciones fijas que enseña al agente <em>cómo</em> construir una interfaz
         (el proceso: qué componentes usar, cómo estructurar el CSS). En 5.5, diste una referencia visual puntual
         para un rebranding específico. La carpeta de marca es diferente de las otras dos: es la <strong class="text-teal-400">material
         bruto y permanente</strong> — el "qué", no el "cómo".
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t5-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-6-t5-p2">
         Juntas, las tres cosas se complementan: la skill conoce el proceso, la carpeta de marca guarda los datos fijos de la
         identidad y una referencia puntual (5.5) resuelve un caso específico cuando es necesario. Cuando pides
         "construye una página nueva siguiendo nuestra skill de design", lo ideal es que esa skill ya sepa <em>mirar</em>
@@ -527,19 +527,19 @@ Faça o seguinte:
 <p class="text-neutral-300">En tu skill de diseño (del 5.2), agrega una línea sencilla: «antes de decidir los colores y las fuentes, lee <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">brand_assets/cores.md</code> e <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">tipografia.md</code> si existen». Esto conecta las dos piezas sin tener que reescribir nada cada vez.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 6 -->
-<section class="mb-16" data-inema-topic="modulo-5-6#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-6#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">⚠️ Mantener actualizada: el error más común</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-6-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-6-t6-p1">
         Una carpeta de marca solo vale lo que tiene de <em>actual</em>. El error más frecuente no es crear algo mal:
         es crearlo una vez, olvidarlo y dejar que la marca real evolucione sin actualizar los archivos. Seis meses después,
         cambiaste el color principal en un sitio nuevo, pero <code class="text-xs bg-dark-800 px-1 py-0.5 rounded">cores.md</code>
@@ -576,19 +576,19 @@ Faça o seguinte:
 <h3 class="text-lg font-semibold text-teal-400 mb-4 flex items-center"><span class="mr-2">📝</span> Ejercicio</h3>
 <p class="text-neutral-300">Si ya tienes algún logo o sitio publicado (aunque sea personal), crea ahora la carpeta <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">brand_assets/</code> en él usando el prompt del tema 4. Si todavía no tienes nada definido para la marca, elige un color y una fuente que te gustaría usar de aquí en adelante, y documéntalo del mismo modo: es más fácil mantener la coherencia desde el inicio que corregirla después.</p>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-5-6#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-5-6#q1">
 <p class="font-medium mb-4">Verificación rápida (opcional): ¿cuál es el papel principal de la carpeta de marca en comparación con la skill de diseño del módulo 5.2?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Reemplaza la skill de diseño: ya no necesitas las dos.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Guarda el material original y permanente (logo, colores, fuentes); la skill conoce el proceso para usarlo.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Solo sirve para guardar copias de seguridad de archivos, sin relación con el diseño.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Reemplaza la skill de diseño: ya no necesitas las dos.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Guarda el material original y permanente (logo, colores, fuentes); la skill conoce el proceso para usarlo.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Solo sirve para guardar copias de seguridad de archivos, sin relación con el diseño.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-5-6#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-5-6#q1', {
               answer: 1,
               explain: { 0: 'As duas continuam necessárias — elas resolvem coisas diferentes.', 1: 'Isso mesmo: dados fixos numa, processo na outra — se completam.', 2: 'Ela tem ligaçêo direta com o design: é o material que o design consulta.' }
             });
@@ -596,9 +596,9 @@ Faça o seguinte:
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
@@ -626,7 +626,7 @@ Faça o seguinte:
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -653,7 +653,7 @@ Faça o seguinte:
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

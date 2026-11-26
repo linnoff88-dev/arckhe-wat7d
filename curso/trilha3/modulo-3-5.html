@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>3.5 Projeto vs. global | Seu Funcionário Digital</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'purple' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'purple' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'purple');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -182,8 +182,8 @@
       .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha3/modulo-3-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha3/modulo-3-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha3/modulo-3-5.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha3/modulo-3-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha3/modulo-3-5.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha3/modulo-3-5.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Pular para o conteúdo</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -193,9 +193,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparaçêo</span></a>
@@ -206,8 +206,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tempo</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>Minha jornada</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>Minha jornada</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -239,36 +239,36 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Decisêo</div><div class="text-xs text-neutral-400">Nível</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Prático</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progresso do módulo 3.5" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:3-5" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progresso do módulo 3.5" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:3-5" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 de 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Seçêo <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Seçêo <span class="ARCKHÉ-toc-pos">1</span> de <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-purple-400" href="#topico-1">1. As duas pastas</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-purple-400" href="#topico-2">2. Quando usar projeto</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-purple-400" href="#topico-3">3. Quando usar global</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-purple-400" href="#topico-4">4. Manutençêo e portabilidade</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-purple-400" href="#topico-5">5. A caixa de ferramentas pessoal</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-purple-400" href="#topico-6">6. A pergunta que decide</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-purple-400" href="#topico-1">1. As duas pastas</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-purple-400" href="#topico-2">2. Quando usar projeto</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-purple-400" href="#topico-3">3. Quando usar global</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-purple-400" href="#topico-4">4. Manutençêo e portabilidade</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-purple-400" href="#topico-5">5. A caixa de ferramentas pessoal</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-purple-400" href="#topico-6">6. A pergunta que decide</a></li>
 </ul>
 </nav>
-<article data-inema-module="3-5" data-inema-track="3" id="modulo-3-5">
-<section class="mb-16" data-inema-topic="modulo-3-5#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="3-5" data-ARCKHÉ-track="3" id="modulo-3-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-5#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">📁 As duas pastas</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-5-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-5-t1-p1">
 <strong class="text-purple-400">Novo aqui?</strong> Uma skill mora numa pasta com o nome dela, contendo o
         `skill.md`. Essa pasta pode ficar em dois lugares: dentro de <code class="text-purple-400">.claude/skills/</code>
         DENTRO de um projeto específico — só existe pra quem abrir aquele projeto — ou dentro de
         <code class="text-purple-400">~/.claude/skills/</code>, a pasta pessoal do usuário (o `~` significa "sua pasta
         de usuário", igual a Documentos ou Downloads) — disponível em QUALQUER projeto que você abrir depois.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-5-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-5-t1-p2">
         Pense assim: a pasta de projeto é a gaveta da mesa daquele escritório específico — só quem trabalha ali
         vê o que tem dentro. A pasta pessoal é a mochila que você carrega pra todo lugar — o que está nela, está
         com você em qualquer escritório que você entrar.
@@ -305,18 +305,18 @@
 </div>
 <p class="text-xs text-neutral-500 -mt-3 mb-6">Legenda: à esquerda, a skill de projeto só ilumina o projeto onde mora (os outros ficam apagados). À direita, a skill global ilumina todos os projetos igualmente — ela vem junto onde quer que você abra o agente.</p>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-3-5#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-5#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🏢 Quando usar skill de projeto</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-5-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-5-t2-p1">
         Skill de projeto serve pra processo específico DAQUELE cliente ou repositório — coisa que nêo faz sentido
         fora dali. Exemplo: "como gerar o relatório mensal DESTE cliente" (com o formato de planilha, o layout de
         PDF e as regras de negócio exclusivas dele). Se você abrir outro projeto, essa skill nem aparece — e está
@@ -330,21 +330,21 @@
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-3-5#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-5#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🌍 Quando usar skill global</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-5-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-5-t3-p1">
         Skill global serve pra processo que se repete em QUALQUER contexto seu — nêo importa em qual projeto você
         está. Exemplo real deste próprio curso: a skill "formato-curso-v2", usada pra montar esta trilha inteira, é
-        global — ela serve pra qualquer curso INEMA, nêo só o wat7d. Outro exemplo: "como escrever um e-mail no meu
+        global — ela serve pra qualquer curso ARCKHÉ, nêo só o wat7d. Outro exemplo: "como escrever um e-mail no meu
         tom de voz" — seu tom de voz nêo muda de projeto pra projeto, entêo a skill nêo devia morar presa a nenhum.
       </p>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
@@ -352,18 +352,18 @@
 <p class="text-neutral-300">Regra de bolso: se você consegue imaginar usando essa mesma skill num projeto totalmente diferente do atual, sem trocar nada, ela é candidata a global. Se qualquer frase da skill cita algo único deste projeto, ela é de projeto.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-3-5#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-5#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">⚖️ Manutençêo e portabilidade: o trade-off</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-5-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-5-t4-p1">
         A escolha carrega três trade-offs reais. <strong class="text-purple-400">Manutençêo:</strong> skill global
         precisa ser genérica o bastante pra servir em vários lugares — se você a deixa específica demais (citando
         um arquivo ou regra de um só projeto), ela QUEBRA quando usada em outro. <strong class="text-purple-400">Portabilidade:</strong>
@@ -388,18 +388,18 @@
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-3-5#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-5#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🧰 A caixa de ferramentas pessoal</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-5-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-5-t5-p1">
         Com o tempo, sua pasta <code class="text-purple-400">~/.claude/skills/</code> vai acumulando skills globais —
         uma pra gerar guia de projeto, outra pro tom de e-mail, outra pra revisar código, outra pra criar vídeos.
         Isso é o esperado, e é bom: você está construindo uma caixa de ferramentas que atravessa todos os seus
@@ -425,18 +425,18 @@ meu-projeto-cliente-x/
       skill.md</code></pre>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-3-5#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-5#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🌳 A pergunta que decide</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-5-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-5-t6-p1">
         Toda a decisêo deste módulo se resume a uma pergunta, sempre a mesma, antes de criar uma skill nova:
         "esse processo é só deste projeto, ou vale pra qualquer um que eu abrir?" A resposta te leva direto pra
         pasta certa — sem achismo.
@@ -468,19 +468,19 @@ meu-projeto-cliente-x/
 <h3 class="text-lg font-semibold text-purple-400 mb-3 flex items-center"><span class="mr-2">✨</span> Dica Prática</h3>
 <p class="text-neutral-300">Na dúvida, comece de projeto — é mais fácil promover uma skill de projeto pra global depois (bastando generalizar o texto e mover a pasta) do que descobrir tarde que uma skill "global" só funcionava por acidente num projeto só.</p>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-3-5#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-3-5#q1">
 <p class="font-medium mb-4">Checagem rápida (opcional): qual pergunta decide se uma skill deve ser de projeto ou global?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Qual das duas pastas é mais fácil de escrever.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Se o processo é específico deste projeto ou se vale pra qualquer um que você abrir.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Quantas linhas o `skill.md` tem.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Qual das duas pastas é mais fácil de escrever.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Se o processo é específico deste projeto ou se vale pra qualquer um que você abrir.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Quantas linhas o `skill.md` tem.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-3-5#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-3-5#q1', {
               answer: 1,
               explain: { 0: 'Facilidade de escrita nêo é o critério — releia o tópico 6.', 1: 'Isso mesmo: alcance do processo é o que decide a pasta.', 2: 'Tamanho do arquivo nêo tem relaçêo com onde ele mora.' }
             });
@@ -488,9 +488,9 @@ meu-projeto-cliente-x/
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
@@ -522,7 +522,7 @@ meu-projeto-cliente-x/
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -549,7 +549,7 @@ meu-projeto-cliente-x/
   </script>
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

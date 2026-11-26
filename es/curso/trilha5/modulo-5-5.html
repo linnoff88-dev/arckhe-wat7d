@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>5.5 Referencia visual y rebranding | Tu Empleado Digital</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'teal' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'teal' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'teal');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -182,8 +182,8 @@
       .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha5/modulo-5-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha5/modulo-5-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha5/modulo-5-5.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha5/modulo-5-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha5/modulo-5-5.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha5/modulo-5-5.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -193,9 +193,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
@@ -206,8 +206,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-teal-400 bg-teal-500/10" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>Mi recorrido</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -239,29 +239,29 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Intermedio</div><div class="text-xs text-neutral-400">Nivel</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Práctica</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progreso del módulo 5.5" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:5-5" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progreso del módulo 5.5" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:5-5" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 de 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="ARCKHÉ-toc-pos">1</span> de <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-1">1. La revista de decoración</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-2">2. Inspirarse × clonar</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-3">3. Qué es un rebranding</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-4">4. Dando la referencia correcta</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-5">5. Instrucciones de marca</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-6">6. Errores y checklist final</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-1">1. La revista de decoración</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-2">2. Inspirarse × clonar</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-3">3. Qué es un rebranding</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-4">4. Dando la referencia correcta</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-5">5. Instrucciones de marca</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-6">6. Errores y checklist final</a></li>
 </ul>
 </nav>
-<article data-inema-module="5-5" data-inema-track="5" id="modulo-5-5">
-<section class="mb-16" data-inema-topic="modulo-5-5#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="5-5" data-ARCKHÉ-track="5" id="modulo-5-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-5#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">📖 La revista de decoración, no el plano de la casa del vecino</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-5-t1-p1">
 <strong class="text-teal-400">¿Eres nuevo aquí?</strong> <strong class="text-teal-400">Referencia visual</strong> es mostrarle
         al agente un sitio, un diseño o una imagen existente para que entienda el estilo que quieres: no el contenido,
         el <em>estilo</em>: dónde van los bloques, el tamaño de los títulos, el ambiente general (sobrio, colorido, denso, aireado).
@@ -269,7 +269,7 @@
         copiar la casa de la portada ladrillo por ladrillo; reúne ideas como "me gustó esta distribución de la sala", "me gustó este tipo de
         iluminación" y las usa para diseñar una casa nueva, tuya.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-5-t1-p2">
         El agente ve una referencia del mismo modo que ve cualquier cosa en esta ruta: por <strong class="text-teal-400">screenshot</strong>
         (la captura de pantalla — módulo 5.3) o mediante un enlace al que accede y analiza. La diferencia entre el módulo 5.5
         y el 5.3 es lo que haces con lo que aprendió: en el 5.3 comparaba su PROPIO trabajo con el diseño. Aquí
@@ -325,25 +325,25 @@
 <div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">ADN propio</div><div class="text-xs text-neutral-400 mt-1">Qué sale al final</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-5-5#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-5#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">⚖️ Inspirarse × clonar: la línea que no se cruza</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-5-t2-p1">
         Esta es la regla explícita de la Ruta 5, y es seria: la referencia es para <strong class="text-teal-400">aprender y después
         crear tu propio sitio con tu propia marca</strong> — nunca para copiar un sitio ajeno entero, con el diseño, los textos
         y las imágenes de otra empresa. Copiar la identidad visual de una marca real (sus colores exactos, el logo, los
         textos, las fotos) puede infringir derechos de propiedad intelectual y, en la práctica, engañar a quienes visiten tu sitio
         haciéndoles creer que se trata de otra empresa.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t2-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-5-t2-p2">
         La buena noticia: es fácil trazar la línea entre los dos cuando sabes qué observar. <strong class="text-teal-400">Diseño</strong>
         (disposición de las secciones: un hero grande, luego 3 tarjetas y después testimonios), <strong class="text-teal-400">tipo de composición</strong>
         (imagen a la izquierda / texto a la derecha) y <strong class="text-teal-400">estructura de navegación</strong> son patrones
@@ -377,24 +377,24 @@
 <p class="text-neutral-300">Si, al terminar el sitio, alguien que conoce la referencia dice «esto es una copia de tal empresa», cruzaste la línea, aunque no hayas copiado literalmente ningún texto ni imagen. La prueba es sencilla: el resultado debe tener una identidad propia, no parecer prestada.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-5-5#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-5#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🎨 Qué es el rebranding en la práctica del agente</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-5-t3-p1">
 <strong class="text-teal-400">¿Eres nuevo aquí?</strong> <strong class="text-teal-400">Cambio de marca</strong>, aquí, es el
         proceso de tomar un diseño de referencia y reemplazar sistemáticamente todo lo que identifica a la marca original por lo tuyo:
         colores, tipografía, logo y tono de voz. No es «hacer un arreglo rápido»: es un reemplazo completo y deliberado, punto por
         punto, hasta que no quede ningún rastro de una identidad ajena.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t3-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-5-t3-p2">
 <strong class="text-teal-400">¿Eres nuevo aquí?</strong> <strong class="text-teal-400">Paleta de colores</strong> es el
         conjunto de colores que representa tu marca (normalmente 1 color principal + 1-2 de apoyo + neutros). Cada color tiene
         un <strong class="text-teal-400">hex</strong> — un código de 6 caracteres como <code class="bg-dark-700 px-1.5 py-0.5 rounded text-teal-300">#0d9488</code>
@@ -432,18 +432,18 @@
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-5-5#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-5#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">📎 Dándole la referencia correcta al agente</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-5-t4-p1">
         La referencia llega al agente de dos formas: una <strong class="text-teal-400">enlace</strong> al que accede y
         analiza (usando las mismas herramientas de navegador del módulo 5.3), o una <strong class="text-teal-400">captura
         de pantalla</strong> que adjuntas directamente a la conversación. Una captura de pantalla es más confiable cuando el sitio de referencia tiene
@@ -481,24 +481,24 @@
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-5-5#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-5#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">📝 Instrucciones de marca: el prompt que hace funcionar el rebranding</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-5-t5-p1">
 <strong class="text-teal-400">¿Eres nuevo aquí?</strong> <strong class="text-teal-400">Tono de voz de la marca</strong> es
         la forma en que tu empresa «habla»: formal o informal, técnica o sencilla, seria o con humor. Así como
         la paleta necesita un valor hexadecimal exacto, el tono de voz necesita una descripción concreta («directo y sin jerga, como si se lo explicaras
         a un amigo» es mejor que «profesional»).
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t5-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-5-t5-p2">
         Un prompt de rebranding completo tiene 4 ingredientes: la referencia (con alcance), la paleta en hex, el nombre/logo de
         la marca y el tono de voz. Si falta uno, el agente llena el vacío con lo «genérico» del módulo 5.1 — o peor,
         con un rasgo de la referencia que debía cambiarse.
@@ -534,18 +534,18 @@ referência, apontando o que veio do layout e o que é 100% meu.</pre>
 <p class="text-neutral-300">Guarda este bloque de "paleta + nombre + tono": es el esqueleto de la "carpeta de marca" que formalizarás en el módulo 5.6, para no tener que volver a escribir todo esto en cada proyecto nuevo.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-5-5#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-5#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🚫 Errores comunes y checklist final</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-5-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-5-t6-p1">
         Los dos errores que más aparecen cuando alguien empieza a usar referencias: primero, <strong class="text-teal-400">dejar
         que el agente copie textos e imágenes</strong> — pedir solo "haz algo parecido a este sitio" sin decir explícitamente que
         los textos, las imágenes y el logo no deben copiarse, y el agente (que intenta seguir fielmente el pedido) reutiliza lo que
@@ -583,19 +583,19 @@ referência, apontando o que veio do layout e o que é 100% meu.</pre>
 <li>☐ Revisaste ambos lado a lado y confirmarías en voz alta: «esto es mío, está inspirado en, no es una copia».</li>
 </ul>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-5-5#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-5-5#q1">
 <p class="font-medium mb-4">Verificación rápida (opcional): ¿qué es seguro reutilizar de un sitio de referencia?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">El diseño y la disposición de las secciones.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Los colores exactos de marca de la empresa de referencia.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">El logo, adaptando ligeramente los colores.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">El diseño y la disposición de las secciones.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Los colores exactos de marca de la empresa de referencia.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">El logo, adaptando ligeramente los colores.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-5-5#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-5-5#q1', {
               answer: 0,
               explain: { 0: 'Isso mesmo: layout e disposiçêo sêo padrões de design, nêo propriedade exclusiva de ninguém.', 1: 'Cor de marca identifica aquela empresa especificamente — nêo se copia.', 2: '"Adaptar levemente" ainda é usar o logo alheio — nêo conta como próprio.' }
             });
@@ -603,9 +603,9 @@ referência, apontando o que veio do layout e o que é 100% meu.</pre>
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mt-8">
@@ -638,7 +638,7 @@ referência, apontando o que veio do layout e o que é 100% meu.</pre>
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -665,7 +665,7 @@ referência, apontando o que veio do layout e o que é 100% meu.</pre>
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>0.1 What a code agent is | Your Digital Employee</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -182,8 +182,8 @@
       .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha0/modulo-0-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha0/modulo-0-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha0/modulo-0-1.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha0/modulo-0-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-0-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha0/modulo-0-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha0/modulo-0-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha0/modulo-0-1.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha0/modulo-0-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha0/modulo-0-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-0-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha0/modulo-0-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Skip to content</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -193,9 +193,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparation</span></a>
@@ -206,8 +206,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Time</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>My journey</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>My journey</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -238,34 +238,34 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Beginner</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Theory</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module 0.1 progress" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:0-1" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Module 0.1 progress" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:0-1" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 of 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">6</span></p>
+<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Section <span class="ARCKHÉ-toc-pos">1</span> of <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. Chatbot: only answers</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. Agent: picks up the tool</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. The employee analogy</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. Claude Code, in practice</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. The cost of a session</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. The track map</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. Chatbot: only answers</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. Agent: picks up the tool</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. The employee analogy</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. Claude Code, in practice</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. The cost of a session</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. The track map</a></li>
 </ul>
 </nav>
-<article data-inema-module="0-1" data-inema-track="0" id="modulo-0-1">
-<section class="mb-16" data-inema-topic="modulo-0-1#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="0-1" data-ARCKHÉ-track="0" id="modulo-0-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-1#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">💬 The chatbot only responds</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-1-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-1-t1-p1">
 <strong class="text-blue-400">New here?</strong> One <strong class="text-blue-400">chatbot</strong> is a program that talks: you
         type a question, and it returns a text answer. That’s all. Think of an information desk—the attendant
         explains where the room is but won’t go open the door for you.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-1-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-1-t1-p2">
         Tools like ChatGPT in default mode work this way: great for explaining, summarizing, and translating—but the
         result stays <em>on the screen</em>. If you want something to actually happen on your computer (a file created,
         an email sent, a site published), a chatbot on its own can't do it.
@@ -286,7 +286,7 @@
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-lg font-semibold text-neutral-200 mb-3 flex items-center"><span class="mr-2">🔎</span> See inside</h3>
-<p class="text-neutral-300 text-sm leading-relaxed" data-inema-block="m0-1-t1-p3">
+<p class="text-neutral-300 text-sm leading-relaxed" data-ARCKHÉ-block="m0-1-t1-p3">
           When you chat with a pure chatbot, nothing changes on your computer: the text it generates lives only
           inside the chat window, on a remote server. No files are created in your folder, no
           commands are run, and no emails are sent. That's why, after a good answer, you still have to
@@ -295,18 +295,18 @@
         </p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-0-1#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-1#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🛠️ The agent picks up the tool and does the work</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-1-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-1-t2-p1">
         One <strong class="text-blue-400">coding agent</strong> it’s different: it has access to <strong class="text-blue-400">tools</strong> —
         things it does itself, such as opening a file, running a command in the terminal (the text box where you give
         the computer direct instructions—more on that in module 0.2), or looking up information online. It decides
@@ -355,7 +355,7 @@
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-lg font-semibold text-neutral-200 mb-3 flex items-center"><span class="mr-2">⚠️</span> Common beginner error</h3>
-<p class="text-neutral-300 text-sm leading-relaxed" data-inema-block="m0-1-t2-p2">
+<p class="text-neutral-300 text-sm leading-relaxed" data-ARCKHÉ-block="m0-1-t2-p2">
           The first time the agent asks permission to run a command or modify a file, many people get
           startled and cancel everything, thinking something broke. Nothing broke — that pause is the agent
           checking with you before acting, exactly the behavior we want (see module 0.6). The
@@ -364,18 +364,18 @@
         </p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-0-1#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-1#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🏢 The employee analogy</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-1-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-1-t3-p1">
         Think of Claude Code as a <strong class="text-blue-400">new employee</strong>, highly capable and very fast, but still
         unfamiliar with how things are done here. You give it a task (“organize these reports”), it decides how to do it
         (opens the folder, reads the files, creates the spreadsheet), does the work, and comes back to show you what it did. At first, you
@@ -421,18 +421,18 @@
 </ol>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-0-1#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-1#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🖥️ What Claude Code is, in concrete terms</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-1-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-1-t4-p1">
 <strong class="text-blue-400">New here?</strong> One <strong class="text-blue-400">AI model</strong> is the "brain" — the program trained to understand language and decide what to do (it's the same kind of technology behind ChatGPT). The <strong class="text-blue-400">Claude Code</strong> is a program that runs in your terminal and connects
         this brain to real tools on your computer: it reads and writes files, runs commands, and only does so
         inside the <strong class="text-blue-400">permission</strong> that you grant—it’s up to you how much it can do on its own.
@@ -489,7 +489,7 @@
 <p class="text-xs text-neutral-500 -mt-3 mb-6">Caption: the folder you open is the agent’s boundary. Web searches happen only if a specific search tool is used — and even then, only within what you allow.</p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🔎</span> Under the hood: what goes on the internet and what stays on your PC</h3>
-<p class="text-neutral-300 text-sm leading-relaxed" data-inema-block="m0-1-t4-p2">
+<p class="text-neutral-300 text-sm leading-relaxed" data-ARCKHÉ-block="m0-1-t4-p2">
           Your files stay on your computer — opening, reading, and writing in the project folder doesn’t send
           anything outside. What travels to the model provider’s servers is the <strong class="text-blue-400">conversation text</strong>:
           your instruction and the excerpts from files the agent needs to "look at" to respond. This is how the
@@ -498,18 +498,18 @@
         </p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-0-1#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-1#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">💰 The cost of a session in practice</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-1-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-1-t5-p1">
 <strong class="text-blue-400">New here?</strong> <strong class="text-blue-400">Token</strong> it’s the unit that measures
         “how much text” was processed—roughly, a piece of a word. Each message you send and each response from the
         agent uses tokens, and that determines the cost.
@@ -545,7 +545,7 @@
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-lg font-semibold text-neutral-200 mb-3 flex items-center"><span class="mr-2">⚠️</span> Common confusion: fixed plan × pay-per-use</h3>
-<p class="text-neutral-300 text-sm leading-relaxed" data-inema-block="m0-1-t5-p2">
+<p class="text-neutral-300 text-sm leading-relaxed" data-ARCKHÉ-block="m0-1-t5-p2">
           Many people mix up two different things: there are <strong class="text-blue-400">subscription plans</strong>
           (a fixed monthly amount, with a usage limit included) and there’s <strong class="text-blue-400">billing based on
           token usage</strong> (you pay only for what you use, with no monthly fee). The number shown above is
@@ -554,18 +554,18 @@
         </p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-0-1#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-1#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🗺️ The map of Track 0</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-1-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-1-t6-p1">
         With the mental model in place, the rest of the track is 100% hands-on: install without fear (0.2), understand the project folder (0.3), write your first CLAUDE.md (0.4), learn plan mode (0.5), and wrap up with the security rules that apply to the entire course (0.6).
       </p>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
@@ -577,7 +577,7 @@
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical Tip</h3>
-<p class="text-neutral-300 text-sm" data-inema-block="m0-1-t6-p2">
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m0-1-t6-p2">
           If you remember only one sentence from this module, remember this: a coding agent is an employee who
           <em>does</em>, not a chatbot that <em>explains</em>. Every design decision in the rest of the course —
           permissions, CLAUDE.md, plan mode — exists to make this "doing" safe and predictable. When a
@@ -585,19 +585,19 @@
           better, or more safely? Almost always, it's one of the two.
         </p>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-0-1#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-0-1#q1">
 <p class="font-medium mb-4">Quick check (optional): What is the key difference between a chatbot and a coding agent?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">The chatbot is faster at responding.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">The agent performs real actions; the chatbot only returns text.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">There’s no practical difference between the two.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">The chatbot is faster at responding.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">The agent performs real actions; the chatbot only returns text.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">There’s no practical difference between the two.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-0-1#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-0-1#q1', {
               answer: 1,
               explain: { 0: 'Velocidade nêo é o ponto — é a capacidade de agir.', 1: 'Isso mesmo: agir de verdade é a diferença.', 2: 'Há, sim, uma diferença prática grande — releia o tópico 1 e 2.' }
             });
@@ -605,9 +605,9 @@
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -634,7 +634,7 @@
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -661,7 +661,7 @@
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>0.3 Anatomy of a project | Your Digital Employee</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -182,8 +182,8 @@
       .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha0/modulo-0-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha0/modulo-0-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha0/modulo-0-3.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha0/modulo-0-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-0-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha0/modulo-0-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha0/modulo-0-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha0/modulo-0-3.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha0/modulo-0-3.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha0/modulo-0-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-0-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha0/modulo-0-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Skip to content</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -193,9 +193,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparation</span></a>
@@ -206,8 +206,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Time</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>My journey</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>My journey</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -235,29 +235,29 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Beginner</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Theory</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module 0.3 progress" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:0-3" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Module 0.3 progress" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:0-3" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 of 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">6</span></p>
+<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Section <span class="ARCKHÉ-toc-pos">1</span> of <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. Project folder</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. What a repository is</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. Typical structure</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. Local vs. cloud</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. Create the first project</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. Common organizational mistakes</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. Project folder</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. What a repository is</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. Typical structure</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. Local vs. cloud</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. Create the first project</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. Common organizational mistakes</a></li>
 </ul>
 </nav>
-<article data-inema-module="0-3" data-inema-track="0" id="modulo-0-3">
-<section class="mb-16" data-inema-topic="modulo-0-3#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="0-3" data-ARCKHÉ-track="0" id="modulo-0-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-3#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">📦 Project folder: each automation’s “home”</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-3-t1-p1">
 <strong class="text-blue-400">New here?</strong> <strong class="text-blue-400">Folder</strong> (also called a
         “directory”) is the space on your computer where files are stored together — the same yellow icon you
         already click in File Explorer or Finder. A <strong class="text-blue-400">project folder</strong> it’s
@@ -265,7 +265,7 @@
         inside the folder you opened with <code>claude</code>; mixing several projects in one folder confuses its
         context, because it starts reading files from different automations as if they were part of the same conversation.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-3-t1-p2">
         Think of the project folder as a physical file drawer: each drawer holds papers about one subject.
         If you toss contracts, recipes, and photos into the same drawer, even finding what you need becomes work—the same
         thing happens when the agent tries to understand a disorganized project. One automation per folder is the rule that prevents
@@ -284,18 +284,18 @@
 <p class="text-neutral-300">Choose a fixed place on your computer to store all the course project folders—for example, a folder called "projetos" in Documents. That way, you’ll never lose your way back.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-0-3#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-3#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🗄️ What a repository is</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-3-t2-p1">
 <strong class="text-blue-400">New here?</strong> One <strong class="text-blue-400">repository</strong> (or “repo”)
         is a project folder with a version history stored by a tool called <strong class="text-blue-400">git</strong>.
         Each significant change is recorded with a date and description — like an automatic "save as" that never
@@ -309,7 +309,7 @@
 <li><strong>Commit:</strong> a "save point" in the history.</li>
 </ul>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t2-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-3-t2-p2">
         You don’t need a repository from your very first project—many simple automations at the beginning of the course run in a regular folder, without git. But once the project becomes valuable (an automation you use every week, for example), it’s worth turning the folder into a repository: if a file breaks or a command accidentally deletes something, you can go back to an earlier version saved in the history.
       </p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
@@ -326,18 +326,18 @@
 <p class="text-neutral-300">It's this versioned history that will let you “publish” the automation to the cloud—a topic covered in detail in Track 4. Without a repository, there's nothing to publish: git packages the changes so you can send them.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-0-3#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-3#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🏗️ Typical structure of a Claude Code project</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-3-t3-p1">
         When working on a project, certain folder and file names come up all the time—recognizing them helps avoid confusion.
         <strong class="text-blue-400">New here?</strong> <strong class="text-blue-400">File</strong> is any individual document inside a folder (text, image, code); folders can contain other folders, forming a "tree." A name that starts with a dot, like <code>.claude</code> or
         <code>.git</code>, it’s a folder <strong class="text-blue-400">hidden</strong> — the operating system hides
@@ -367,24 +367,24 @@
 </svg>
 </div>
 <p class="text-xs text-neutral-500 -mt-3 mb-6">Caption: the project root folder contains CLAUDE.md, the `.claude/` folder with skills, and the code folders — each with a fixed role that repeats in every project in the course.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t3-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-3-t3-p2">
         This structure is repeated in nearly every project you’ll build in the course, so it’s worth memorizing the four names. CLAUDE.md is the only file the agent always reads at the start of every session (module 0.4 explains this in depth); the folder <code>.claude/</code> is where the "skills" live — processes taught to the agent, the topic of Track 3; and the code folders vary from project to project, but the name
         <code>src/</code> (from
         "source") is the most common.
       </p>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-0-3#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-3#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🖥️ What stays on your machine vs. what goes to the cloud</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-3-t4-p1">
         The project files stay on your computer the whole time. Only the conversation text — and file excerpts
         the agent needs to read to respond — travel to the cloud-based AI model to generate each response.
         Nothing gets “published” or made visible to other people just because you talked about it.
@@ -411,7 +411,7 @@
 </svg>
 </div>
 <p class="text-xs text-neutral-500 -mt-3 mb-6">Caption: files never leave your computer on their own — only the conversation text and the file excerpts needed to answer travel to the model with each question.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t4-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-3-t4-p2">
 <strong class="text-blue-400">See inside:</strong> when you ask it to read a file, Claude Code sends that file’s contents (or the relevant part) along with your message for the AI model to process—that’s how it “sees” what’s in the folder. This has a cost: the more text that gets sent, the more expensive usage becomes (if you’re on a pay-per-use plan) and the longer the response takes. That’s why organized projects, without huge or irrelevant files in the folder, make the agent faster and cheaper to use.
       </p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -435,18 +435,18 @@
 <p class="text-neutral-300">If a file contains sensitive data (password, API key, personal document), don’t leave it loose in the project folder unnecessarily—module 0.6 (Permissions and Security) teaches you how to protect it.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-0-3#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-3#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🆕 Create your first project, step by step</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-3-t5-p1">
         This is the ritual you’ll repeat for every new automation in the course: create the folder, go into it, open the agent.
         <strong class="text-blue-400">New here?</strong> <strong class="text-blue-400">Terminal</strong> it’s the text
         window where you type commands instead of clicking icons—on Windows, it’s usually called “Command
@@ -468,24 +468,24 @@
 <li class="flex items-start space-x-3"><span class="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold shrink-0 mt-0.5">3</span><div><strong class="text-neutral-100">claude</strong><span class="text-neutral-400"> — opens the agent with this folder already selected; from then on, everything it reads or writes stays inside it.</span></div></li>
 </ol>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t5-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-3-t5-p2">
         Notice that <code>mkdir</code> e <code>cd</code> need the exact folder name — if you enter a
         different name in the two commands, the <code>cd</code> it will fail. It’s okay to forget or make a mistake: the
         terminal displays a message when a command doesn’t work, and you can simply type it again.
       </p>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-0-3#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-0-3#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🧭 Common organization mistakes</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-3-t6-p1">
         Two errors show up at the start every time—and both have simple solutions.
       </p>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
@@ -495,7 +495,7 @@
 <li><strong>Open the agent in the wrong folder</strong> (e.g., in the users' root folder): grants access to files outside the scope. Check with <code>ls</code>/<code>dir</code> before running <code>claude</code>.</li>
 </ul>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m0-3-t6-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m0-3-t6-p2">
         Besides these two, a few specific stumbling blocks come up on the first day for anyone who’s never used a terminal—not one of them is serious, but they can stop you if you don’t know what’s going on.
       </p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -521,9 +521,9 @@
 <p class="text-neutral-300">Closing the terminal doesn't delete anything from the project—the files remain in the folder exactly as they were. The only thing you lose is that agent session's conversation; work saved to a file stays intact.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -549,7 +549,7 @@
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -576,7 +576,7 @@
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

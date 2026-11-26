@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>5.8 Reglas de publicación | Tu Empleado Digital</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'teal' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'teal' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'teal');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -182,8 +182,8 @@
       .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha5/modulo-5-8.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha5/modulo-5-8.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha5/modulo-5-8.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-8.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-8.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-8.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha5/modulo-5-8.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha5/modulo-5-8.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha5/modulo-5-8.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-8.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-8.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-8.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -193,9 +193,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
@@ -206,8 +206,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-teal-400 bg-teal-500/10" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>Mi recorrido</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -239,38 +239,38 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Intermedio</div><div class="text-xs text-neutral-400">Nivel</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Gobernanza</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progreso del módulo 5.8" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:5-8" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progreso del módulo 5.8" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:5-8" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 de 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="ARCKHÉ-toc-pos">1</span> de <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-1">1. El pasante y el botón de enviar</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-2">2. La regla de oro en CLAUDE.md</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-3">3. El pipeline git → deploy automático</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-4">4. Reglas buenas × reglas arriesgadas</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-5">5. Escribir y autorizar en la práctica</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-6">6. El 40% que completa la trilha</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-1">1. El pasante y el botón de enviar</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-2">2. La regla de oro en CLAUDE.md</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-3">3. El pipeline git → deploy automático</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-4">4. Reglas buenas × reglas arriesgadas</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-5">5. Escribir y autorizar en la práctica</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-6">6. El 40% que completa la trilha</a></li>
 </ul>
 </nav>
-<article data-inema-module="5-8" data-inema-track="5" id="modulo-5-8">
-<section class="mb-16" data-inema-topic="modulo-5-8#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="5-8" data-ARCKHÉ-track="5" id="modulo-5-8">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-8#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🧑‍💼 El pasante y el botón de enviar</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-8-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-8-t1-p1">
 <strong class="text-teal-400">¿Eres nuevo aquí?</strong> <strong class="text-teal-400">Publicar</strong> (también llamado
         <strong class="text-teal-400">deploy</strong>, «poner en línea») significa hacer que una versión de tu trabajo quede
         visible y accesible para otras personas en internet, en vez de ejecutarse solo en tu computadora. Es la diferencia
         entre un borrador en tu escritorio y una carta ya enviada por correo.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-8-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-8-t1-p2">
         Imagina a un pasante excelente y rápido que trabaja por su cuenta en el borrador de un informe para el cliente. Investiga, escribe y revisa el formato; hace todo eso por su cuenta, sin necesitar aprobación en cada frase. Pero hay una línea que nunca cruza por su cuenta: presionar "enviar" en el correo que va para el cliente. Esa decisión siempre le corresponde al gerente, aunque el pasante esté seguro de que el informe está listo.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-8-t1-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-8-t1-p3">
         El agente de código es exactamente ese pasante. Puede construir, probar, ajustar el diseño (módulos 5.1
         a 5.6) e incluso ejecutar el comando de publicación por su cuenta, si lo permites: tiene la capacidad técnica. La
         pregunta de este módulo no es "¿puede publicar por su cuenta?" (sí, puede). Es "¿debería?" Y la respuesta,
@@ -291,24 +291,24 @@
 <div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-teal-400 font-bold text-lg">Tú</div><div class="text-xs text-neutral-400 mt-1">Aprieta el gatillo</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-5-8#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-8#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">📜 La regla de oro en CLAUDE.md</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-8-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-8-t2-p1">
 <strong class="text-teal-400">¿Eres nuevo aquí?</strong> O <strong class="text-teal-400">CLAUDE.md</strong> es un archivo de
         texto simple que dejas dentro de la carpeta del proyecto (se explica a fondo en el módulo 0.4), con instrucciones fijas
         para el agente: este lo lee automáticamente cada vez que abre el proyecto. Es el lugar adecuado para
         registrar una regla que debe cumplirse siempre, en todas las sesiones, incluso con un agente nuevo o después de meses.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-8-t2-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-8-t2-p2">
         La regla de oro de este módulo es breve y debe escribirse, palabra por palabra, cerca del inicio de ese archivo:
         <strong class="text-teal-400">el agente nunca publica ni hace deploy por su cuenta: solo cuando la persona da una
         orden explícita para esa publicación específica.</strong> No vale eso de «ya publicó antes, así que puede
@@ -361,32 +361,32 @@
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-5-8#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-8#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">⚙️ El pipeline git → deploy automático</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-8-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-8-t3-p1">
 <strong class="text-teal-400">¿Eres nuevo aquí?</strong> Uno <strong class="text-teal-400">repositorio</strong> (o “repo”)
         es una carpeta de proyecto guardada con un historial completo de versiones, generalmente alojada en un servicio como
         GitHub. <strong class="text-teal-400">Commit</strong> es el comando que registra una «fotografía» de los cambios
         que hiciste, con un mensaje que explica qué cambió. <strong class="text-teal-400">Push</strong> es el
         comando que envía esos commits guardados en tu computadora al repositorio en la nube.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-8-t3-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-8-t3-p2">
         Este es el punto que confunde a mucha gente que está empezando: en la mayoría de los proyectos de este curso,
         «publicar» no es un botón especial de publicación. Es simplemente esto: <code class="text-teal-400 bg-dark-800 px-1.5 py-0.5 rounded text-sm">commit</code>
         + <code class="text-teal-400 bg-dark-800 px-1.5 py-0.5 rounded text-sm">push</code> al repositorio. Una
         herramienta externa — Vercel, GitHub Pages y otras parecidas — queda "pendiente" de ese repositorio y, apenas
         detecta un cambio nuevo, lo publica automáticamente, sin que tengas que hacer nada más.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-8-t3-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-8-t3-p3">
         Esto divide el trabajo en dos partes bien separadas: la parte que tú (o el agente, siguiendo tus instrucciones)
         controlas directamente — construir, probar y enviar el <code class="text-teal-400 bg-dark-800 px-1.5 py-0.5 rounded text-sm">push</code> —
         y la parte automática, que se ejecuta sola después de eso y queda fuera de tu control directo. No sirve de nada
@@ -423,18 +423,18 @@
 <p class="text-neutral-300">Si la herramienta de publicación bloquea o falla después del push, no es un problema que tengas que resolver en ese momento: es de la cuenta de la herramienta, y tú (la persona) lo resuelves cuando tenga sentido. Para el agente, «Concluido» significa que el push llegó al repositorio, no que el sitio ya esté en línea.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-5-8#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-8#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">⚖️ Reglas buenas × reglas riesgosas</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-8-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-8-t4-p1">
         No toda regla escrita en CLAUDE.md protege de verdad. Algunas parecen seguras, pero dejan una brecha; otras son lo bastante explícitas como para contener al agente incluso en un día en que «está seguro» de que todo está listo. Compara:
       </p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -467,18 +467,18 @@
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-5-8#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-8#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🛠️ Escribir y autorizar en la práctica</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-8-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-8-t5-p1">
         Tres pasos para que esto funcione de verdad en tu proyecto: escribir la regla, probar en localhost
         antes de publicar y solo entonces autorizar el push con una frase explícita. Vamos directo a lo que
         tienes que pegar.
@@ -530,18 +530,18 @@ git push</pre>
 <p class="text-neutral-300">"Puedes continuar" o "está bien" NO son órdenes de publicación: solo son la aprobación de un paso de trabajo. La frase de publicación debe ser inequívoca: "puedes publicar", "publícalo", "autorizo el deploy". Si hay dudas sobre si la frase de la persona cuenta como autorización, lo correcto es que el agente pregunte antes de ejecutar el push, en lugar de darlo por hecho.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-5-8#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-8#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🎯 El 40% que completa el recorrido</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-8-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-8-t6-p1">
         Desde el módulo 5.1, esta ruta repite una cifra: el agente entrega rápido alrededor del 60% de cualquier interfaz —
         genérica, funcional, pero sin alma— y el 40% final (la marca, el pulido, las decisiones precisas) depende de
         que tú aportes referencias, criterio y revisión. Este módulo muestra que el mismo principio se aplica a la
@@ -549,7 +549,7 @@ git push</pre>
         <strong class="text-teal-400">cuándo</strong> e <strong class="text-teal-400">si</strong> que algo se publique siempre es
         una decisión tuya; nunca se delega de forma predeterminada.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-8-t6-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-8-t6-p2">
         Esto no es burocracia ni falta de confianza en el agente. Es la misma disciplina que cualquier equipo serio aplica
         con cualquier persona nueva: libertad total para producir y una aprobación final que nunca es automática.
         Separar "construí y probé en local" de "autorice la publicación" en dos frases distintas es lo que garantiza
@@ -587,19 +587,19 @@ git push</pre>
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">✏️</span> Ejercicio</h3>
 <p class="text-neutral-300">Abre el CLAUDE.md de un proyecto real tuyo (o crea uno si todavía no tienes) y escribe tu propia versión de la regla de publicación: usa el bloque del tema 5 como punto de partida, pero adáptalo a tu caso: cuál es la dirección de localhost, qué cuenta como «publicar» en ese proyecto y qué frase usarás para autorizarlo. Después, la próxima vez que vayas a publicar algo con el agente, comprueba si respetó la regla antes de ejecutar el push.</p>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-5-8#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-5-8#q1">
 <p class="font-medium mb-4">Verificación rápida (opcional): ¿qué distingue "probar en localhost" de "publicar", según la regla de oro de este módulo?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Nada: si las pruebas locales pasaron, el agente ya puede publicar.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Probar en local es autónomo; publicar siempre requiere una orden explícita y específica de una persona.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Solo la primera publicación del proyecto necesita autorización; después, el agente ya puede seguir por su cuenta.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Nada: si las pruebas locales pasaron, el agente ya puede publicar.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Probar en local es autónomo; publicar siempre requiere una orden explícita y específica de una persona.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Solo la primera publicación del proyecto necesita autorización; después, el agente ya puede seguir por su cuenta.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-5-8#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-5-8#q1', {
               answer: 1,
               explain: { 0: 'Isso é exatamente a falsa sensaçêo de segurança do tópico 4 — testes nêo substituem a ordem explícita.', 1: 'Isso mesmo: a trava vale sempre, publicaçêo por publicaçêo.', 2: 'Errado — "publicado antes" nunca vira permissêo permanente. Releia o tópico 2.' }
             });
@@ -607,9 +607,9 @@ git push</pre>
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
@@ -636,7 +636,7 @@ git push</pre>
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -663,7 +663,7 @@ git push</pre>
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

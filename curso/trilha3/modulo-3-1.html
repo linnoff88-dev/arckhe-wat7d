@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>3.1 Anatomia de uma skill | Seu Funcionário Digital</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'purple' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'purple' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'purple');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -182,8 +182,8 @@
       .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha3/modulo-3-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha3/modulo-3-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha3/modulo-3-1.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha3/modulo-3-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha3/modulo-3-1.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha3/modulo-3-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Pular para o conteúdo</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -193,9 +193,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparaçêo</span></a>
@@ -206,8 +206,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tempo</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>Minha jornada</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>Minha jornada</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -239,29 +239,29 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Iniciante</div><div class="text-xs text-neutral-400">Nível</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Teoria</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progresso do módulo 3.1" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:3-1" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progresso do módulo 3.1" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:3-1" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 de 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Seçêo <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Seçêo <span class="ARCKHÉ-toc-pos">1</span> de <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-purple-400" href="#topico-1">1. Skill é o POP do agente</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-purple-400" href="#topico-2">2. A pasta por dentro</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-purple-400" href="#topico-3">3. O front matter</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-purple-400" href="#topico-4">4. O corpo: passo a passo</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-purple-400" href="#topico-5">5. Referências e scripts</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-purple-400" href="#topico-6">6. O que acontece quando é chamada</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-purple-400" href="#topico-1">1. Skill é o POP do agente</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-purple-400" href="#topico-2">2. A pasta por dentro</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-purple-400" href="#topico-3">3. O front matter</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-purple-400" href="#topico-4">4. O corpo: passo a passo</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-purple-400" href="#topico-5">5. Referências e scripts</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-purple-400" href="#topico-6">6. O que acontece quando é chamada</a></li>
 </ul>
 </nav>
-<article data-inema-module="3-1" data-inema-track="3" id="modulo-3-1">
-<section class="mb-16" data-inema-topic="modulo-3-1#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="3-1" data-ARCKHÉ-track="3" id="modulo-3-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-1#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">📋 Skill é o POP do seu agente</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t1-p1">
 <strong class="text-purple-400">Novo aqui?</strong> <strong class="text-purple-400">POP</strong> é a sigla
         de "procedimento operacional padrêo" — o passo a passo escrito que uma empresa usa pra garantir que uma
         tarefa seja feita sempre do mesmo jeito, nêo importa quem execute. Uma <strong class="text-purple-400">skill</strong>
@@ -269,7 +269,7 @@
         fazer um processo específico — desde "como escrever um post no padrêo da minha empresa" até "como gerar
         um relatório financeiro seguindo estas regras".
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t1-p2">
         A diferença para o que você já viu na Trilha 2 é o disparo. Uma ferramenta MCP (módulo 2.1) o agente escolhe
         na hora, olhando o que está disponível. Uma skill ele carrega quando <em>reconhece a tarefa</em> — seja porque
         você digitou um <strong class="text-purple-400">comando explícito</strong> (tipo <code class="text-purple-300 bg-dark-800 px-1.5 py-0.5 rounded text-sm">/relatorio-financeiro</code>),
@@ -289,18 +289,18 @@
 <p class="text-neutral-300">Você mesmo tem POPs mentais que nunca escreveu: "quando o cliente reclama de prazo, primeiro eu confirmo a data, depois ofereço duas opções". A skill é forçar você a escrever isso uma vez — e o agente passa a seguir esse mesmo roteiro toda vez, sem esquecer um passo.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-3-1#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-1#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">📁 A pasta por dentro</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t2-p1">
         Fisicamente, uma skill é uma <strong class="text-purple-400">pasta</strong> com o nome da skill.
         Dentro dela, um arquivo obrigatório chamado <code class="text-purple-300 bg-dark-800 px-1.5 py-0.5 rounded text-sm">skill.md</code>,
         e dois tipos de conteúdo opcional: uma pasta <code class="text-purple-300 bg-dark-800 px-1.5 py-0.5 rounded text-sm">references/</code>
@@ -352,24 +352,24 @@
 <div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-purple-400 font-bold text-lg">scripts/</div><div class="text-xs text-neutral-400 mt-1">opcional</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-3-1#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-1#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🏷️ O front matter: a etiqueta da skill</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t3-p1">
 <strong class="text-purple-400">Novo aqui?</strong> <strong class="text-purple-400">Front matter</strong> é
         um cabeçalho de metadados no topo de um arquivo markdown, delimitado por três traços (<code class="text-purple-300 bg-dark-800 px-1.5 py-0.5 rounded text-sm">---</code>)
         em cima e embaixo. Pense nele como a etiqueta colada na lombada de uma pasta de arquivo físico: antes de
         abrir e ler o conteúdo inteiro, você já sabe do que se trata só olhando a etiqueta.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t3-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t3-p2">
         O front matter de uma skill precisa de pelo menos dois campos: <code class="text-purple-300 bg-dark-800 px-1.5 py-0.5 rounded text-sm">name</code> (o
         nome curto da skill) e <code class="text-purple-300 bg-dark-800 px-1.5 py-0.5 rounded text-sm">description</code> (uma
         frase dizendo o que a skill faz e quando usar). É só isso que o agente lê o tempo todo — o corpo do arquivo
@@ -401,18 +401,18 @@ description: Gera o relatório financeiro mensal no padrêo da empresa,
 <p class="text-neutral-300">Escreva a <code class="text-primary bg-dark-800 px-1.5 py-0.5 rounded text-sm">description</code> pensando em como VOCÊ pediria a tarefa em voz alta, nêo em termos técnicos. É essa frase que o agente compara com o seu pedido pra decidir se aquela skill serve. O módulo 3.4 é inteiro sobre isso.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-3-1#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-1#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">📝 O corpo: o passo a passo de verdade</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t4-p1">
         Depois do front matter, o resto do <code class="text-purple-300 bg-dark-800 px-1.5 py-0.5 rounded text-sm">skill.md</code> é
         markdown normal — o mesmo formato de texto do CLAUDE.md (módulo 0.4). É aqui que fica o processo em si: os
         passos numerados, as regras a seguir, os exemplos, os avisos do que <em>nêo</em> fazer. Pense nisso como o
@@ -442,24 +442,24 @@ description: Gera o relatório financeiro mensal no padrêo da empresa,
 <p class="text-neutral-300">Nêo existe limite rígido de tamanho, mas a prática que funciona é manter o corpo curto — algo entre um parágrafo de contexto e uma lista de passos, geralmente cabendo numa página. Se o assunto exige muito mais detalhe, isso é sinal de que parte dele deveria virar um arquivo em <code>references/</code>, e nêo inchar o corpo principal.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-3-1#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-1#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">📚 Referências e scripts: os apêndices</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t5-p1">
         A pasta <code class="text-purple-300 bg-dark-800 px-1.5 py-0.5 rounded text-sm">references/</code> guarda
         documentos mais longos — uma tabela de categorias, um glossário de termos internos, um exemplo extenso —
         que o agente só abre se o passo a passo mandar explicitamente ("se precisar do detalhe X, leia o arquivo Y").
         É o apêndice técnico do manual: existe, está ali, mas ninguém carrega ele na cabeça o tempo todo.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t5-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t5-p2">
         A pasta <code class="text-purple-300 bg-dark-800 px-1.5 py-0.5 rounded text-sm">scripts/</code> guarda
         pequenos programas — um script Python que calcula um total, um shell script que renomeia arquivos em lote —
         que a skill pode rodar em vez de pedir para o agente reinventar aquela lógica toda vez do zero. Roda mais
@@ -478,18 +478,18 @@ description: Gera o relatório financeiro mensal no padrêo da empresa,
 <p class="text-neutral-300">Regra prática pra decidir onde algo vai: se você reler aquele trecho toda vez que executa a skill, ele fica no corpo do <code class="text-primary bg-dark-800 px-1.5 py-0.5 rounded text-sm">skill.md</code>. Se você só consulta de vez em quando ("qual é mesmo o código da categoria X?"), ele vai pra <code class="text-primary bg-dark-800 px-1.5 py-0.5 rounded text-sm">references/</code>.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-3-1#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-1#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">⏱️ O que acontece quando a skill é chamada</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t6-p1">
         Juntando tudo: quando você pede algo em linguagem natural, ou digita o comando, o agente percorre uma
         pequena sequência de decisões até a skill virar açêo. Veja a linha do tempo de uma chamada real.
       </p>
@@ -527,19 +527,19 @@ description: Gera o relatório financeiro mensal no padrêo da empresa,
 <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atençêo</h3>
 <p class="text-neutral-300">Se duas skills têm descriptions parecidas demais, o agente pode escolher a errada — ou hesitar. O módulo 3.4 mostra como escrever gatilhos que nêo colidem.</p>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-3-1#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-3-1#q1">
 <p class="font-medium mb-4">Checagem rápida (opcional): qual arquivo é o único obrigatório dentro da pasta de uma skill?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">references/modelo.md</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">skill.md</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">scripts/rodar.py</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">references/modelo.md</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">skill.md</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">scripts/rodar.py</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-3-1#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-3-1#q1', {
               answer: 1,
               explain: { 0: 'references/ é sempre opcional.', 1: 'Isso mesmo: skill.md é o único arquivo obrigatório da pasta.', 2: 'scripts/ é sempre opcional.' }
             });
@@ -547,9 +547,9 @@ description: Gera o relatório financeiro mensal no padrêo da empresa,
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
@@ -580,7 +580,7 @@ description: Gera o relatório financeiro mensal no padrêo da empresa,
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -607,7 +607,7 @@ description: Gera o relatório financeiro mensal no padrêo da empresa,
   </script>
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

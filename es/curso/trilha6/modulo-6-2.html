@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>6.2 Tareas programadas a fondo | Tu Empleado Digital</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -176,9 +176,9 @@
 
     html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 
-    .inema-code { background: #0b1220; border: 1px solid rgba(225,29,72,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.85rem; line-height: 1.65; color: #e2e8f0; white-space: pre-wrap; }
-    html:not(.dark) .inema-code { background: #f1f5f9; color: #1f2937; border-color: rgba(225,29,72,0.25); }
-    .inema-var { color: #38bdf8; font-weight: 600; }
+    .ARCKHÉ-code { background: #0b1220; border: 1px solid rgba(225,29,72,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.85rem; line-height: 1.65; color: #e2e8f0; white-space: pre-wrap; }
+    html:not(.dark) .ARCKHÉ-code { background: #f1f5f9; color: #1f2937; border-color: rgba(225,29,72,0.25); }
+    .ARCKHÉ-var { color: #38bdf8; font-weight: 600; }
 
     @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
     @media (prefers-reduced-motion: no-preference) {
@@ -186,8 +186,8 @@
       .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha6/modulo-6-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha6/modulo-6-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha6/modulo-6-2.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha6/modulo-6-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-6-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha6/modulo-6-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha6/modulo-6-2.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha6/modulo-6-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha6/modulo-6-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-6-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -197,9 +197,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
@@ -210,8 +210,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>Mi recorrido</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -243,46 +243,46 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">Principiante</div><div class="text-xs text-neutral-400">Nivel</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">Práctico</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progreso del módulo 6.2" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:6-2" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progreso del módulo 6.2" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:6-2" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 de 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="ARCKHÉ-toc-pos">1</span> de <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-1">1. Dónde se ejecuta</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-2">2. Diaria, semanal, mensual</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-3">3. Una sesión nueva cada vez</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-4">4. Ejecuciones perdidas</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-5">5. Tu primera tarea</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-6">6. Errores comunes y checklist</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-1">1. Dónde se ejecuta</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-2">2. Diaria, semanal, mensual</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-3">3. Una sesión nueva cada vez</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-4">4. Ejecuciones perdidas</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-5">5. Tu primera tarea</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-6">6. Errores comunes y checklist</a></li>
 </ul>
 </nav>
-<article data-inema-module="6-2" data-inema-track="6" id="modulo-6-2">
+<article data-ARCKHÉ-module="6-2" data-ARCKHÉ-track="6" id="modulo-6-2">
 <!-- ============ TÓPICO 1 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-2#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-2#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🖥️ Dónde se ejecuta la tarea programada</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t1-p1">
 <strong class="text-rose-400">¿Eres nuevo aquí?</strong> Una <strong class="text-rose-400">tarea programada</strong> es
         una instrucción que escribes una vez y que la computadora ejecuta automáticamente a una hora fija —todos los días a las 8 h, todos
         los viernes a las 18 h— sin que tengas que abrir ni hacer clic en nada. Y está en un lugar específico: el
         <strong class="text-rose-400">app de escritorio</strong>.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t1-p2">
 <strong class="text-rose-400">¿Eres nuevo aquí?</strong> <strong class="text-rose-400">App de escritorio</strong> quiere decir
         «aplicación de escritorio»: el programa con ventana, menús y botones que instalas en la computadora y abres con dos
         clics, como el navegador. Es el hermano de <strong class="text-rose-400">terminal</strong> — esa pantalla
         negra donde escribes comandos en vez de hacer clic; pero ambos se comunican con el mismo agente. Lo que cambia es la
         fachada, no el empleado.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t1-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t1-p3">
         ¿Por qué la tarea programada necesita la aplicación de escritorio? Porque alguien tiene que estar pendiente del reloj. La terminal solo existe mientras la ventana está abierta: la cierras, desaparece y ya no queda nadie que recuerde que a las 8 h tienes un compromiso. La aplicación de escritorio queda instalada y activa en segundo plano, y es la que inicia el trabajo a la hora indicada. Es la diferencia entre un ayudante que se va a las 18 h y un portero que duerme en el edificio.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t1-p4">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t1-p4">
         Crear una tarea es más sencillo de lo que su nombre sugiere: en la aplicación de escritorio hay un panel de tareas
         programadas. Abres ese panel, escribes en portugués lo que debe hacerse, eliges la frecuencia y el horario,
         y guardas. Listo: a partir de ahí, es responsabilidad de la máquina, no de tu memoria.
@@ -305,19 +305,19 @@
 <div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-rose-400 font-bold text-lg">∞</div><div class="text-xs text-neutral-400 mt-1">Veces que se ejecuta</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- ============ TÓPICO 2 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-2#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-2#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🗓️ Diaria, semanal, mensual: qué cabe en cada una</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t2-p1">
         A <strong class="text-rose-400">frecuencia</strong> es el corazón de la tarea programada, y son tres opciones que
         cubren casi todo lo que una persona necesita. La elección no es técnica: depende de tu ritmo de vida. Pregúntate con qué
         frecuencia el tema <em>cambia</em> — y con qué frecuencia tú <em>me gustaría</em> de mirarlo.
@@ -419,37 +419,37 @@
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- ============ TÓPICO 3 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-2#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-2#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🧠 Una sesión nueva en cada ejecución — y por qué eso importa</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t3-p1">
 <strong class="text-rose-400">¿Eres nuevo aquí?</strong> <strong class="text-rose-400">Sesión</strong> es una conversación
         con el agente, de principio a fin. Recuerda todo lo que se dijo dentro de ella; cuando la sesión se cierra, esa
         memoria desaparece. Y aquí está la característica más importante de la tarea programada: cada ejecución abre una
         sesión <em>nueva</em>. Ninguna ejecución sabe lo que hizo la anterior.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t3-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t3-p2">
         Piensa en un excelente empleado externo que trabaja para ti una hora al día — pero cada día es una persona
         diferente, y todas leen solo la nota que dejaste pegada en la puerta. Si la nota dice
         «haz lo de siempre», la persona de hoy no tiene idea de qué es «lo de siempre». La instrucción de la tarea programada es
         esa nota: debe ser <strong class="text-rose-400">autosuficiente</strong>, es decir, si se explica
         por completo por sí sola, sin depender de nada que se haya dicho antes.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t3-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t3-p3">
         Esto suena como una limitación molesta, y en parte lo es. Pero fíjate en el otro lado: una sesión limpia también significa que
         un error de ayer no contamina el día de hoy. Si la ejecución del martes se confundió con un archivo extraño, la del
         miércoles empieza desde cero, sin arrastrar esa confusión. Es una amnesia que también protege.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t3-p4">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t3-p4">
         Hay una salida elegante para cuando realmente necesitas continuidad, y es todo el tema del
         módulo 6.4. El truco, en una frase: si la memoria no sobrevive en la cabeza del agente, sobrevive en un
         archivo. La ejecución de hoy escribe lo que hizo en un archivo de estado; la de mañana comienza leyendo ese archivo.
@@ -497,31 +497,31 @@
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- ============ TÓPICO 4 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-2#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-2#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🔌 ¿Y si la computadora estaba apagada?</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t4-p1">
         Esta es la pregunta que todos hacen apenas entienden el concepto, y es una buena pregunta. Si la tarea está
         programada para las 8h y a esa hora la computadora estaba apagada, o viajando en la maleta, ¿qué pasa? La respuesta es
         tranquilizadora: no se pierde nada. La tarea queda marcada como <strong class="text-rose-400">ejecución
         perdida</strong> y se ejecuta en cuanto la máquina vuelve a encenderse.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t4-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t4-p2">
         La analogía es la correspondencia. Viajaste durante una semana; las cartas no dejaron de enviarse ni fueron
         devueltas: se quedaron en el buzón esperando. Llegas, abres el buzón y ahí está todo. La diferencia es que el
         contenido puede haber quedado desactualizado: un resumen de «los correos de hoy» generado con cuatro días de retraso resume un
         «hoy» que ya pasó.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t4-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t4-p3">
         Por eso la recuperación es una red de protección, no un pase libre. Te salva de los olvidos ocasionales: el día en que la máquina se reinició sola, la mañana en que saliste antes de encender la computadora. No reemplaza un servidor que permanece encendido las 24 horas, y esa es exactamente la diferencia que exploró la Ruta 4 al hablar de salir de tu laptop. Si la rutina es realmente crítica, no debería depender de que recuerdes encender nada.
       </p>
 <div class="rounded-2xl border border-rose-500/30 bg-dark-900/40 p-3 sm:p-4 mb-3 overflow-hidden">
@@ -565,19 +565,19 @@
         </p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- ============ TÓPICO 5 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-2#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-2#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">⌨️ Tu primera tarea programada (copia y ejecuta)</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t5-p1">
         Se acabó la teoría. Abajo tienes una solicitud completa, lista para pegar en la app de escritorio. Se redactó siguiendo
         todo lo que viste hasta aquí: se explica por sí sola, no depende de la memoria previa, indica dónde guardar y
         sigue siendo correcta aunque se ejecute con retraso.
@@ -590,31 +590,31 @@
           correo antes de decidir cómo será tu día.
         </p>
 <h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-2">Bloque para copiar</h4>
-<pre class="inema-code mb-2"><code>Crie uma tarefa agendada com estas configurações:
+<pre class="ARCKHÉ-code mb-2"><code>Crie uma tarefa agendada com estas configurações:
 
 FREQUÊNCIA: diária
 HORÁRIO: 08:00
 NOME: Resumo matinal da caixa de entrada
 
 INSTRUÇêO (execute exatamente isto a cada disparo):
-1. Abra minha caixa de entrada de e-mail em <span class="inema-var">&lt;seu endereco de e-mail&gt;</span>.
+1. Abra minha caixa de entrada de e-mail em <span class="ARCKHÉ-var">&lt;seu endereco de e-mail&gt;</span>.
 2. Olhe apenas as mensagens que chegaram desde a última vez
    que esta rotina rodou. Se nêo souber quando foi, use as
    últimas 24 horas.
 3. Escolha as 5 mais importantes. Considere importante:
    - cobrança de resposta com prazo
-   - mensagem de <span class="inema-var">&lt;pessoas ou empresas que voce nao pode ignorar&gt;</span>
+   - mensagem de <span class="ARCKHÉ-var">&lt;pessoas ou empresas que voce nao pode ignorar&gt;</span>
    - qualquer coisa com "urgente", "prazo" ou "vencimento"
 4. Para cada uma, escreva 2 linhas: quem mandou, e o que
    ela quer de mim.
 5. Salve o resultado no arquivo
-   <span class="inema-var">&lt;caminho da pasta onde voce quer o arquivo&gt;</span>/resumo-matinal.md
+   <span class="ARCKHÉ-var">&lt;caminho da pasta onde voce quer o arquivo&gt;</span>/resumo-matinal.md
    Sobrescreva o arquivo anterior.
 6. No fim do arquivo, escreva a data e a hora desta execuçêo.
 
 NêO faça nada além disso: nêo responda e-mails, nêo apague
 nada, nêo marque nada como lido.</code></pre>
-<p class="text-xs text-neutral-500 mb-6">Los fragmentos en <span class="inema-var">cian entre signos de menor y mayor</span> son los que reemplazas por tus datos antes de pegar.</p>
+<p class="text-xs text-neutral-500 mb-6">Los fragmentos en <span class="ARCKHÉ-var">cian entre signos de menor y mayor</span> son los que reemplazas por tus datos antes de pegar.</p>
 <h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-2">Cómo verificar que funcionó</h4>
 <ul class="space-y-2 text-neutral-300">
 <li class="flex items-start space-x-2"><span class="text-rose-400 mt-1">1.</span><span>Justo después de crearla, revisa en el panel de tareas si aparece en la lista con la frecuencia "diaria" y la hora 08:00.</span></li>
@@ -635,19 +635,19 @@ nada, nêo marque nada como lido.</code></pre>
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- ============ TÓPICO 6 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-2#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-2#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🧯 Errores comunes y checklist rápido</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t6-p1">
         Casi todos los problemas con tareas programadas encajan en una de estas categorías. Conviene leerlas antes de crear la tuya: cada elemento de
         aquí le costó a alguien una mañana perdida.
       </p>
@@ -699,19 +699,19 @@ nada, nêo marque nada como lido.</code></pre>
 <li><strong>Regla del límite:</strong> ¿está escrito lo que no puede hacer?</li>
 </ul>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-6-2#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-6-2#q1">
 <p class="font-medium mb-4">Verificación rápida (opcional): ¿por qué la instrucción de una tarea programada no puede decir "continúa desde donde te quedaste ayer"?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Porque las instrucciones largas están prohibidas.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Porque cada ejecución abre una sesión nueva, sin memoria de la anterior.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Porque las tareas programadas no pueden guardar archivos.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Porque las instrucciones largas están prohibidas.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Porque cada ejecución abre una sesión nueva, sin memoria de la anterior.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Porque las tareas programadas no pueden guardar archivos.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-6-2#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-6-2#q1', {
               answer: 1,
               explain: {
                 0: 'Tamanho nêo é o problema — instruções longas e detalhadas costumam funcionar melhor.',
@@ -723,9 +723,9 @@ nada, nêo marque nada como lido.</code></pre>
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
@@ -753,7 +753,7 @@ nada, nêo marque nada como lido.</code></pre>
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -780,7 +780,7 @@ nada, nêo marque nada como lido.</code></pre>
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

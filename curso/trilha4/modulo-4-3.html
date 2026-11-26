@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>4.3 Teste vs. produçêo | Seu Funcionário Digital</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'amber' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'amber' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -186,8 +186,8 @@
       .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha4/modulo-4-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha4/modulo-4-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha4/modulo-4-3.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-4-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha4/modulo-4-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha4/modulo-4-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha4/modulo-4-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha4/modulo-4-3.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha4/modulo-4-3.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-4-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha4/modulo-4-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha4/modulo-4-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Pular para o conteúdo</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -197,9 +197,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparaçêo</span></a>
@@ -210,8 +210,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tempo</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>Minha jornada</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>Minha jornada</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -243,40 +243,40 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">Intermediário</div><div class="text-xs text-neutral-400">Nível</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">Prático</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progresso do módulo 4.3" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:4-3" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progresso do módulo 4.3" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:4-3" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 de 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Seçêo <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Seçêo <span class="ARCKHÉ-toc-pos">1</span> de <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-1">1. A cozinha de testes</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-2">2. Por que nunca testar em produçêo</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-3">3. Os dois ambientes por dentro</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-4">4. O fluxo de uma mudança</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-5">5. Rodando a automaçêo apontada pra dev</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-6">6. O modo plano vale ouro aqui</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-1">1. A cozinha de testes</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-2">2. Por que nunca testar em produçêo</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-3">3. Os dois ambientes por dentro</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-4">4. O fluxo de uma mudança</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-5">5. Rodando a automaçêo apontada pra dev</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-6">6. O modo plano vale ouro aqui</a></li>
 </ul>
 </nav>
-<article data-inema-module="4-3" data-inema-track="4" id="modulo-4-3">
-<section class="mb-16" data-inema-topic="modulo-4-3#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="4-3" data-ARCKHÉ-track="4" id="modulo-4-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-3#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🍳 A cozinha de testes e a cozinha do restaurante aberto</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-3-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-3-t1-p1">
         Imagine um restaurante com duas cozinhas. Uma fica fechada pro público — é onde o chef testa um prato novo,
         erra a mêo no sal, joga fora e tenta de novo, sem pressa e sem ninguém esperando o prato na mesa. A outra é a
         cozinha que está aberta agora, com clientes sentados esperando a comida. Ninguém em sê consciência testa uma
         receita nova na cozinha que está servindo clientes de verdade.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-3-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-3-t1-p2">
 <strong class="text-amber-400">Novo aqui?</strong> <strong class="text-amber-400">Produçêo</strong> é o nome
         que se dá pro ambiente que está "no ar" de verdade — a automaçêo rodando pra valer, mexendo em dados reais,
         enviando e-mails reais, executando ações que ninguém pode desfazer com um "ctrl+Z". É a cozinha aberta.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-3-t1-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-3-t1-p3">
 <strong class="text-amber-400">Novo aqui?</strong> <strong class="text-amber-400">Staging</strong> (também
         chamado de ambiente de <strong class="text-amber-400">dev</strong>, de "desenvolvimento") é a cozinha fechada:
         uma cópia da automaçêo rodando separada, com dados de mentira ou dados de teste, onde você pode quebrar tudo
@@ -297,24 +297,24 @@
 <div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-amber-400 font-bold text-lg">Dados reais</div><div class="text-xs text-neutral-400 mt-1">Usados em produçêo</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-4-3#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-3#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">⚠️ Por que um bug em produçêo nêo é só feio</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-3-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-3-t2-p1">
         Se um site tem um errinho visual, você corrige e ninguém percebeu. Automaçêo é diferente: ela <em>age</em>.
         Um bug numa automaçêo rodando em produçêo pode mandar o mesmo e-mail duas vezes pra centenas de clientes
         reais, gravar o mesmo pedido duplicado no seu sistema, ou disparar uma cobrança que nêo deveria existir.
         Nêo dá pra "desfazer" um e-mail que já chegou na caixa de entrada de alguém.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-3-t2-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-3-t2-p2">
         Por isso a regra é simples e nêo tem exceçêo: toda mudança de código passa primeiro pelo ambiente de
         staging/dev, roda lá, é conferida, e só depois — com aprovaçêo — vai pra produçêo. Testar direto em
         produçêo é como o chef experimentar a receita nova servindo direto pro cliente da mesa 4.
@@ -342,18 +342,18 @@
 <p class="text-neutral-300">Um bug em produçêo nêo é vergonhoso — acontece com qualquer time. O problema é <em>nêo ter</em> um staging pra pegar esse bug antes dele chegar no cliente. É essa rede de segurança que este módulo constrói.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-4-3#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-3#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🔍 Os dois ambientes por dentro</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-3-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-3-t3-p1">
         Na prática, "dois ambientes" nêo significa dois computadores diferentes fisicamente. É a mesma plataforma de
         execuçêo na nuvem (o Trigger.dev do módulo 4.2) rodando o mesmo código duas vezes, cada uma com uma
         <strong class="text-amber-400">variável de ambiente</strong> diferente marcando qual é qual — uma espécie de
@@ -411,18 +411,18 @@
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-4-3#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-3#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🔁 O fluxo de uma mudança, do código à produçêo</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-3-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-3-t4-p1">
         Quando o agente (Claude Code) muda algo na sua automaçêo, esse código nêo pula direto pra produçêo. Ele
         passa por uma esteira com paradas — cada parada é uma chance de pegar erro antes que ele chegue no cliente.
       </p>
@@ -461,23 +461,23 @@
 <p class="text-neutral-300">Repare que "testado" e "aprovado" sêo dois passos separados: passar no teste nêo significa que já foi promovido. A promoçêo é sempre uma decisêo explícita sua.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-4-3#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-3#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🛠️ Construir: rodando a automaçêo apontada pra dev</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-3-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-3-t5-p1">
 <strong class="text-amber-400">Novo aqui?</strong> <strong class="text-amber-400">CLI</strong> é a sigla pra
         "interface de linha de comando" — o programa que você chama pelo terminal digitando um comando, em vez de
         clicar em botões numa tela. O Trigger.dev tem uma CLI própria pra rodar suas tarefas.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-3-t5-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-3-t5-p2">
 <strong>Objetivo desta tarefa:</strong> pedir ao agente pra rodar a automaçêo já apontada explicitamente pro
         ambiente de dev, nunca deixando isso "no automático". Peça algo como: <em>"rode a task da automaçêo de
         notificações apontando pro ambiente de dev, nêo pra produçêo"</em>. O comando por trás normalmente parece
@@ -495,24 +495,24 @@
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-4-3#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-3#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🧭 Consolidar: o modo plano vale mais aqui do que em qualquer trilha anterior</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-3-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-3-t6-p1">
         Você conheceu o <strong class="text-amber-400">modo plano</strong> lá no módulo 0.5: o agente mostra o que
         pretende fazer antes de agir, e você aprova ou ajusta. Em nenhuma trilha anterior isso importava tanto quanto
         aqui — porque agora o "fazer" pode significar mexer em produçêo, com dados de clientes reais, sem botêo de
         desfazer.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-3-t6-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-3-t6-p2">
         A regra prática pra fixar: sempre que pedir ao agente pra promover uma mudança pra produçêo, force o modo
         plano primeiro. Deixe ele te mostrar exatamente o que vai mudar, em qual ambiente, e só depois de ler
         você diz "pode ir".
@@ -524,19 +524,19 @@
 <li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span>Modo plano antes de qualquer promoçêo pra produçêo — sem exceçêo.</span></li>
 </ul>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-4-3#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-4-3#q1">
 <p class="font-medium mb-4">Checagem rápida (opcional): por que uma automaçêo testa primeiro em staging antes de ir pra produçêo?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Porque staging roda mais rápido que produçêo.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Pra pegar erros sem afetar dados e clientes reais, já que ações em produçêo nêo têm "desfazer".</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Porque staging é obrigatório por lei em qualquer automaçêo.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Porque staging roda mais rápido que produçêo.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Pra pegar erros sem afetar dados e clientes reais, já que ações em produçêo nêo têm "desfazer".</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Porque staging é obrigatório por lei em qualquer automaçêo.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-4-3#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-4-3#q1', {
               answer: 1,
               explain: { 0: 'Velocidade nêo é o motivo — segurança é.', 1: 'Isso mesmo: staging existe pra proteger dado e açêo real.', 2: 'Nêo é uma questêo legal — é prática, pra evitar estrago.' }
             });
@@ -544,9 +544,9 @@
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
@@ -573,7 +573,7 @@
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -600,7 +600,7 @@
   </script>
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

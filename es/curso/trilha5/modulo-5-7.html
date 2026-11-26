@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>5.7 Build: landing page publicada | Tu Empleado Digital</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'teal' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'teal' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'teal');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -189,8 +189,8 @@
       .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha5/modulo-5-7.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha5/modulo-5-7.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha5/modulo-5-7.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-7.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-7.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-7.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha5/modulo-5-7.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha5/modulo-5-7.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha5/modulo-5-7.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha5/modulo-5-7.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha5/modulo-5-7.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-5-7.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -200,9 +200,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
@@ -213,8 +213,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-teal-400 bg-teal-500/10" href="index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>Mi recorrido</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -246,30 +246,30 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Intermedio</div><div class="text-xs text-neutral-400">Nivel</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-teal-400">Build</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progreso del módulo 5.7" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:5-7" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progreso del módulo 5.7" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:5-7" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 de 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="ARCKHÉ-toc-pos">1</span> de <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-1">1. El embudo de la ruta, convergiendo</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-2">2. Anatomía de una landing que funciona</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-3">3. Etapas 1-3: objetivo, marca, prompt inicial</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-4">4. Etapas 4-5: el ciclo y la revisión manual</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-5">5. Etapas 6-7: localhost y publicación</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-teal-400" href="#topico-6">6. Errores comunes y checklist final</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-1">1. El embudo de la ruta, convergiendo</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-2">2. Anatomía de una landing que funciona</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-3">3. Etapas 1-3: objetivo, marca, prompt inicial</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-4">4. Etapas 4-5: el ciclo y la revisión manual</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-5">5. Etapas 6-7: localhost y publicación</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-teal-400" href="#topico-6">6. Errores comunes y checklist final</a></li>
 </ul>
 </nav>
-<article data-inema-module="5-7" data-inema-track="5" id="modulo-5-7">
+<article data-ARCKHÉ-module="5-7" data-ARCKHÉ-track="5" id="modulo-5-7">
 <!-- TÓPICO 1 -->
-<section class="mb-16" data-inema-topic="modulo-5-7#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-7#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🔀 El embudo del flujo, que converge en una única compilación</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-7-t1-p1">
         Vale la pena detenerse un segundo para ver el camino recorrido. En el módulo 5.1 viste el problema: pedir "haz un sitio bonito"
         sin contexto da un resultado genérico — una calidad de ~40%. Del 5.2 al 5.6 fuiste cerrando esa brecha
         pieza por pieza: una <strong class="text-teal-400">skill</strong> (conjunto de instrucciones fijas que le enseña al
@@ -278,7 +278,7 @@
         referencia), los límites de ese ciclo (lo que no puede ver por sí solo), cómo usar una referencia visual sin
         copiar la marca de terceros y una carpeta de marca permanente con colores, fuentes y logo documentados.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-7-t1-p2">
         Este módulo no enseña ninguna pieza nueva: es el momento de <strong class="text-teal-400">usar las seis
         juntas</strong>, en una landing page real, desde el primer prompt hasta el enlace en línea. Por eso es más
         largo y más práctico que los anteriores: la teoría ya está explicada, ahora toca construir.
@@ -322,19 +322,19 @@
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 2 -->
-<section class="mb-16" data-inema-topic="modulo-5-7#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-7#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🧩 Anatomía de una landing page que funciona</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-7-t2-p1">
 <strong class="text-teal-400">¿Eres nuevo aquí?</strong> Una <strong class="text-teal-400">landing page</strong> ("página
         de destino/aterrizaje") es una página web única, con un solo objetivo: lograr que el visitante entienda rápido qué
         ofreces y realice una acción: comprar, registrarse o ponerse en contacto. Es diferente de un sitio completo
@@ -382,19 +382,19 @@
 <p class="text-neutral-300">Usa esta lista de 4 secciones como checklist visual mientras revisas el resultado del agente: si puedes señalar rápidamente dónde están el hero, los beneficios, el CTA y el pie de página, la estructura está bien, aunque el acabado visual todavía necesite ajustes en el ciclo de capturas de pantalla (etapa 4, a continuación).</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 3 -->
-<section class="mb-16" data-inema-topic="modulo-5-7#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-7#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🎯 Etapas 1-3: objetivo, carpeta de marca y prompt inicial</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-7-t3-p1">
         La implementación completa tiene 7 etapas. Las tres primeras son de preparación: sin ellas, el agente parte de cero
         y el resultado vuelve a ser genérico, exactamente el problema del módulo 5.1.
       </p>
@@ -489,25 +489,25 @@ ajuste até bater com o padrêo da marca.</pre>
 <p class="text-neutral-300">La primera captura de pantalla ya debe usar los colores exactos de <code class="text-xs bg-dark-900 px-1 py-0.5 rounded">cores.md</code> (no una aproximación) y tener las 4 secciones presentes. Si falta alguna, es señal de que el agente se saltó parte del prompt: pídele que lo revise antes de pasar a la etapa 4.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 4 -->
-<section class="mb-16" data-inema-topic="modulo-5-7#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-7#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🔁 Etapas 4-5: el bucle de capturas de pantalla y la revisión manual</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-7-t4-p1">
 <strong class="text-teal-400">¿Eres nuevo aquí?</strong> O <strong class="text-teal-400">ciclo de capturas de pantalla</strong>
         (que se explica en detalle en el módulo 5.3) consiste en que el agente ejecute un ciclo: construir → tomar una captura de pantalla → comparar con lo
         que pediste (o con una referencia) → ajustar lo que no coincide → tomar otra captura → repetir. Es lo que
         convierte «supuse que quedó bien» en «vi que quedó bien».
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t4-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-7-t4-p2">
         Ejecuta este ciclo varias veces seguidas: normalmente, 2 a 4 rondas bastan para resolver la mayoría de los ajustes
         de espaciado, alineación y contraste. En cada ronda, pide algo específico: «el botón del hero está demasiado
         pequeño, auméntalo», «el espacio entre las tarjetas de beneficios está muy apretado». Las solicitudes vagas como
@@ -520,7 +520,7 @@ ajuste até bater com o padrêo da marca.</pre>
 <li><strong>Cuándo detenerse:</strong> cuando la captura coincide con lo que tenías en mente y las 4 secciones del tema 2 están presentes y claras.</li>
 </ul>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t4-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-7-t4-p3">
         Al llegar a la etapa 5, es hora de ser honestos: incluso después del bucle, hay cosas que él <strong class="text-teal-400">no
         lo obtiene por su cuenta</strong> — exactamente lo que advirtió el módulo 5.4. El ritmo de una animación (¿demasiado rápida? ¿demasiado
         lenta?), el gusto personal de "el espaciado aquí parece un poco grande, pero no sé decir por qué" y el acabado
@@ -532,26 +532,26 @@ ajuste até bater com o padrêo da marca.</pre>
 <p class="text-neutral-300">Sé realista con tus expectativas: si sigues todo el proceso, el resultado será mucho más sólido que el genérico del módulo 5.1: pasará de «~40%» a cerca de «~60%» de acabado profesional. Pero no llegará al 100%: el ajuste fino según tus gustos, el timing de la animación y el último pulido siguen siendo tarea tuya. No es una falla del proceso; es lo que queda para que tú decidas.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 5 -->
-<section class="mb-16" data-inema-topic="modulo-5-7#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-7#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🖥️ Etapas 6-7: probar en localhost antes de publicar</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-7-t5-p1">
 <strong class="text-teal-400">¿Eres nuevo aquí?</strong> <strong class="text-teal-400">Localhost</strong> ("host
         local") es ver la página funcionando en tu propia computadora, sin que todavía esté publicada en internet; generalmente
         en una dirección como <code class="text-xs bg-dark-800 px-1 py-0.5 rounded">http://localhost:3000</code> que solo
         tú (en tu máquina) puedes abrir. Es el ensayo antes del estreno: navegas, haces clic en los enlaces y pruebas en
         la pantalla del celular y de la computadora, todo sin que nadie de afuera lo vea todavía.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t5-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-7-t5-p2">
         Este paso no es opcional. Una captura siempre está un poco «congelada» — no muestra si se rompió un enlace, si
         el menú no se abre en el celular o si el CTA realmente se puede pulsar. Pídele al agente que ejecute la página localmente
         y ábrela tú mismo; prueba al menos que los enlaces funcionen, que el diseño no se rompa en una pantalla estrecha (celular)
@@ -591,7 +591,7 @@ publicaçêo) — vamos seguir isso no próximo módulo, com calma.</pre>
 <h3 class="text-lg font-semibold text-teal-400 mb-3 flex items-center"><span class="mr-2">✅</span> Cómo verificar</h3>
 <p class="text-neutral-300">Lograste abrir la dirección local en el navegador, ver la página completa (sin que aparezca una pantalla en blanco) y hacer clic en al menos 2 elementos interactivos (un enlace o un botón) para confirmar que responden.</p>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t5-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-7-t5-p3">
         Con la prueba local aprobada, el paso 7 es <strong class="text-teal-400">publicar</strong> ("deploy" — poner
         la página en línea, en una dirección accesible para cualquier persona en internet, no solo en tu computadora). Las reglas
         detalladas para hacerlo bien — qué nunca automatizar por tu cuenta, cuándo pedir confirmación, las
@@ -599,19 +599,19 @@ publicaçêo) — vamos seguir isso no próximo módulo, com calma.</pre>
         landing está lista y probada, esperando solo la etapa formal de publicación.
       </p>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 6 -->
-<section class="mb-16" data-inema-topic="modulo-5-7#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-5-7#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-teal-500/20 text-teal-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🧯 Errores comunes del build y checklist de publicación</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m5-7-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m5-7-t6-p1">
         Al cerrar la build, vale la pena hacer un repaso de los errores más comunes de quienes hacen este proceso por primera vez y de la lista de verificación que evita cada uno antes de que sigas al módulo 5.8.
       </p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -645,19 +645,19 @@ publicaçêo) — vamos seguir isso no próximo módulo, com calma.</pre>
 <li>☐ Eres honesto contigo: sabes que quedó ~60%, no 100% — y está bien</li>
 </ul>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-5-7#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-5-7#q1">
 <p class="font-medium mb-4">Verificación rápida (opcional): ¿por qué probar en localhost antes de publicar, si el ciclo de capturas de pantalla ya mostró la página funcionando?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">No hace falta: si la captura se ve bien, la página está lista.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Una captura de pantalla es una imagen fija — no muestra enlaces rotos, pantallas estrechas ni botones que realmente no responden.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Localhost es solo una formalidad sin función real.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">No hace falta: si la captura se ve bien, la página está lista.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Una captura de pantalla es una imagen fija — no muestra enlaces rotos, pantallas estrechas ni botones que realmente no responden.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Localhost es solo una formalidad sin función real.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-5-7#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-5-7#q1', {
               answer: 1,
               explain: { 0: 'O print esconde justamente o que o teste real revela — releia o tópico 5.', 1: 'Isso mesmo: interaçêo real só se confirma abrindo a página de verdade.', 2: 'Tem funçêo real: pegar quebras que o print nêo mostra.' }
             });
@@ -669,9 +669,9 @@ publicaçêo) — vamos seguir isso no próximo módulo, com calma.</pre>
 <p class="text-neutral-300">Publica tu propia landing page: elige un objetivo real (puede ser ficticio, como un producto imaginario; lo importante es practicar todo el proceso), sigue las 7 etapas de este módulo de principio a fin y llega hasta la prueba aprobada en localhost. Guarda el enlace del repositorio o la carpeta del proyecto: lo usarás directamente en el módulo 5.8 para completar la publicación.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-500/20 border border-teal-500/30 text-teal-400 hover:bg-teal-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
@@ -698,7 +698,7 @@ publicaçêo) — vamos seguir isso no próximo módulo, com calma.</pre>
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -725,7 +725,7 @@ publicaçêo) — vamos seguir isso no próximo módulo, com calma.</pre>
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

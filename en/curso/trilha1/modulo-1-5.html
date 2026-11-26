@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>1.5 Build: newsletter automation | Your Digital Employee</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -185,8 +185,8 @@
       .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha1/modulo-1-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha1/modulo-1-5.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha1/modulo-1-5.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/modulo-1-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha1/modulo-1-5.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha1/modulo-1-5.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha1/modulo-1-5.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-5.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-5.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/modulo-1-5.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Skip to content</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -196,9 +196,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparation</span></a>
@@ -209,8 +209,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../../curso/trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../../curso/trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Time</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>My journey</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>My journey</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -240,35 +240,35 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Practical</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Build</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module 1-5 progress" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:1-5" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Module 1-5 progress" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:1-5" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 of 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">6</span></p>
+<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Section <span class="ARCKHÉ-toc-pos">1</span> of <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. The goal</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. Designing the workflow</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. Copy-run: the prompt</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Testing and reviewing</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. Common errors</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. Publish/schedule</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. The goal</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. Designing the workflow</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. Copy-run: the prompt</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Testing and reviewing</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. Common errors</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. Publish/schedule</a></li>
 </ul>
 </nav>
-<article data-inema-module="1-5" data-inema-track="1" id="modulo-1-5">
-<section class="mb-16" data-inema-topic="modulo-1-5#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="1-5" data-ARCKHÉ-track="1" id="modulo-1-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-5#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🎯 The goal: research → writing → sending</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t1-p1">
         It’s time to apply the previous four modules in an end-to-end build: an automation for
         <strong class="text-emerald-400">newsletter</strong> (a periodic email with updates on a topic) that
         researches a subject, drafts a message, and prepares it to send. It’s a small enough example to fit
         in one session, yet complete enough to practice workflow, agent, and tools together.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t1-p2">
 <strong class="text-emerald-400">New here?</strong> <strong class="text-emerald-400">Draft</strong> it’s the
         working version of a text—not the final product, but material that someone (you) will still review
         before considering it ready. In this build, the agent never delivers a “final” email: it always delivers
@@ -295,18 +295,18 @@
         </p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-1-5#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-5#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">📋 Designing the workflow (the recipe)</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t2-p1">
         Before asking the agent to do anything, write the recipe—even as a simple draft. This prevents
         exactly the first common mistake in module 1.4 (a vague recipe). A good workflow for this build:
       </p>
@@ -332,18 +332,18 @@
 <p class="text-neutral-300">Write the workflow in an actual file (e.g., <code class="text-emerald-300">newsletter/workflow.md</code>) instead of just pasting it into the chat. That way it survives across sessions, and you can point the agent to it (“follow workflow.md”) without rewriting everything.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-1-5#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-5#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">▶️ Copy-run: the prompt ready for Claude Code</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t3-p1">
         With the workflow written, the next step is to paste a request into Claude Code that references this recipe.
         Below is a complete prompt, ready to copy, paste, and run—adjust only the marked parts.
       </p>
@@ -383,18 +383,18 @@ Ao terminar, me diga quais fontes você usou para cada novidade.</isto></isto></
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-1-5#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-5#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🔁 Testing and reviewing the result</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t4-p1">
         Run the prompt from the previous section and read the generated draft carefully — this is the module 1.3
         build phase, where it’s worth having the agent try again until it gets it right. If the tone isn’t right, or something new
         seems made up (this can happen — always check sources), it’s time to apply self-correction guided by
@@ -407,7 +407,7 @@ confiável. Reescreva só o item 2: tom mais direto, e busque uma fonte
 diferente e mais recente. Mantenha os outros itens como estêo.</code></pre>
 </div>
 <p class="text-xs text-neutral-500 mt-2 mb-6"><strong>How to verify:</strong> reopen the file and confirm that only item 2 changed, the tone is consistent with the others, and the new source can be verified.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t4-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t4-p2">
         Notice that this cycle—run, read, fix one specific point, run again—is exactly the sequence this entire build follows, from scratch to the final draft. It helps to picture the steps you just went through (and may go through again if you review more than once):
       </p>
 <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-2 overflow-hidden">
@@ -438,18 +438,18 @@ diferente e mais recente. Mantenha os outros itens como estêo.</code></pre>
 </div>
 <p class="text-xs text-neutral-500 -mt-3 mb-6">Caption: steps 3 and 4 form a loop — you return to them as many times as needed before considering the draft ready. There is no right number of rounds; the standard is “good enough for me to approve.”</p>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-1-5#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-5#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">⚠️ Common errors in this build</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t5-p1">
         This specific build tends to stumble over the same three points as module 1.4 — worth reviewing before you try.
       </p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -474,18 +474,18 @@ diferente e mais recente. Mantenha os outros itens como estêo.</code></pre>
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-1-5#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-5#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🚀 Publish / schedule: what comes next</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t6-p1">
         What you built here runs inside Claude Code, under your supervision — the module’s build phase
         1.3. To turn it into a newsletter that goes out automatically every week, without you opening Claude Code manually, two
         pieces are missing, and this course covers them in the next tracks: giving the agent a real email-sending tool
@@ -517,7 +517,7 @@ diferente e mais recente. Mantenha os outros itens como estêo.</code></pre>
 </svg>
 </div>
 <p class="text-xs text-neutral-500 -mt-3 mb-6">Caption: today’s manual draft is the first step — the next tracks add the real sending tool and the scheduling that gets you out of the critical path.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-5-t6-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-5-t6-p2">
 <strong class="text-emerald-400">New here?</strong> <strong class="text-emerald-400">Scheduling</strong>
         means configuring the computer (or a server) to run this automation on its own at a set time,
         without anyone opening Claude Code manually — like an alarm clock for tasks. Until then, today’s build is already
@@ -538,19 +538,19 @@ diferente e mais recente. Mantenha os outros itens como estêo.</code></pre>
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical Tip</h3>
 <p class="text-neutral-300">Save the workflow you wrote in this module — you can reuse it almost unchanged when it’s time to publish in Track 4.</p>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-1-5#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-1-5#q1">
 <p class="font-medium mb-4">Quick check (optional): Why is step 5 of the workflow ("don’t send without review") a good practice?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Because the agent doesn’t know how to send emails.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Because it’s a safety brake that lets you review before anything is actually sent, especially in a new build.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Because sending email is always prohibited in Claude Code.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Because the agent doesn’t know how to send emails.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Because it’s a safety brake that lets you review before anything is actually sent, especially in a new build.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Because sending email is always prohibited in Claude Code.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-1-5#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-1-5#q1', {
               answer: 1,
               explain: { 0: 'Nêo é sobre capacidade — é sobre prudência num build novo.', 1: 'Exato: revisar antes de agir de verdade é a prática mais segura em automações novas.', 2: 'Envio de e-mail é possível com a ferramenta certa (Trilha 2) — o freio aqui é só prudência.' }
             });
@@ -558,9 +558,9 @@ diferente e mais recente. Mantenha os outros itens como estêo.</code></pre>
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -587,7 +587,7 @@ diferente e mais recente. Mantenha os outros itens como estêo.</code></pre>
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -617,7 +617,7 @@ diferente e mais recente. Mantenha os outros itens como estêo.</code></pre>
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

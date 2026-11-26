@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>6.2 Scheduled Tasks in Depth | Your Digital Employee</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -176,9 +176,9 @@
 
     html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 
-    .inema-code { background: #0b1220; border: 1px solid rgba(225,29,72,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.85rem; line-height: 1.65; color: #e2e8f0; white-space: pre-wrap; }
-    html:not(.dark) .inema-code { background: #f1f5f9; color: #1f2937; border-color: rgba(225,29,72,0.25); }
-    .inema-var { color: #38bdf8; font-weight: 600; }
+    .ARCKHÉ-code { background: #0b1220; border: 1px solid rgba(225,29,72,0.3); border-radius: 0.75rem; padding: 1rem 1.25rem; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.85rem; line-height: 1.65; color: #e2e8f0; white-space: pre-wrap; }
+    html:not(.dark) .ARCKHÉ-code { background: #f1f5f9; color: #1f2937; border-color: rgba(225,29,72,0.25); }
+    .ARCKHÉ-var { color: #38bdf8; font-weight: 600; }
 
     @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
     @media (prefers-reduced-motion: no-preference) {
@@ -186,8 +186,8 @@
       .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha6/modulo-6-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha6/modulo-6-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha6/modulo-6-2.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-6-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha6/modulo-6-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha6/modulo-6-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha6/modulo-6-2.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha6/modulo-6-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-6-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha6/modulo-6-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Skip to content</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -197,9 +197,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparation</span></a>
@@ -210,8 +210,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Time</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>My journey</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>My journey</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -241,46 +241,46 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">Beginner</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">Practical</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Progress for module 6.2" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:6-2" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progress for module 6.2" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:6-2" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 of 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">6</span></p>
+<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Section <span class="ARCKHÉ-toc-pos">1</span> of <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-1">1. Where it runs</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-2">2. Daily, weekly, monthly</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-3">3. A new session every time</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-4">4. Missed runs</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-5">5. Your first task</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-6">6. Common mistakes and checklist</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-1">1. Where it runs</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-2">2. Daily, weekly, monthly</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-3">3. A new session every time</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-4">4. Missed runs</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-5">5. Your first task</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-6">6. Common mistakes and checklist</a></li>
 </ul>
 </nav>
-<article data-inema-module="6-2" data-inema-track="6" id="modulo-6-2">
+<article data-ARCKHÉ-module="6-2" data-ARCKHÉ-track="6" id="modulo-6-2">
 <!-- ============ TÓPICO 1 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-2#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-2#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🖥️ Where the scheduled task runs</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t1-p1">
 <strong class="text-rose-400">New here?</strong> One <strong class="text-rose-400">scheduled task</strong> it’s
         an instruction you write once and the computer runs on its own at a set time—every day at 8 a.m., every
         Friday at 6 p.m.—without you opening or clicking anything. And it lives in a specific place: the
         <strong class="text-rose-400">desktop app</strong>.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t1-p2">
 <strong class="text-rose-400">New here?</strong> <strong class="text-rose-400">Desktop app</strong> means “desktop application”: a program with a window, menus, and buttons that you install on your computer and open with two clicks, like a browser. It’s the counterpart of the <strong class="text-rose-400">terminal</strong> — that black
         screen where you type commands instead of clicking—but both connect to the same agent. What changes is the
         storefront, not the employee.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t1-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t1-p3">
         Why does a scheduled task need the desktop app? Because someone has to keep an eye on the clock. The terminal
         exists only while the window is open: you close it, it disappears, and no one is left to remember that you have
         an appointment at 8 a.m. The desktop app stays installed and active in the background, and it’s what starts the work at the right time. It’s the difference between a helper who leaves at 6 p.m. and a doorman who sleeps in the building.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t1-p4">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t1-p4">
         Creating a task is simpler than the name suggests: the desktop app has a scheduled tasks panel. You open the panel, write in Portuguese what needs to be done, choose the frequency and time, and save. That’s it — from then on, it’s the machine’s responsibility, not yours to remember.
       </p>
 <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
@@ -301,19 +301,19 @@
 <div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-rose-400 font-bold text-lg">∞</div><div class="text-xs text-neutral-400 mt-1">Number of runs</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- ============ TÓPICO 2 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-2#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-2#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🗓️ Daily, weekly, monthly — and what fits into each</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t2-p1">
         A <strong class="text-rose-400">frequency</strong> is the heart of the scheduled task, and there are three options that cover almost everything a person needs. The choice isn't technical: it's about your lifestyle. Ask yourself how often the topic <em>changes</em> — and not how often you <em>would like</em> of looking at it.
       </p>
 <div class="space-y-6 mb-6">
@@ -413,36 +413,36 @@
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- ============ TÓPICO 3 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-2#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-2#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🧠 A new session for every run — and why that matters</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t3-p1">
 <strong class="text-rose-400">New here?</strong> <strong class="text-rose-400">Session</strong> is a conversation
         with the agent, from beginning to end. It remembers everything said during it; when the session closes, that
         memory goes away. And here’s the most important feature of the scheduled task: each run opens a
         session <em>new</em>. No run knows what the previous one did.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t3-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t3-p2">
         Think of an excellent contractor who works for you one hour a day—but it’s a different person every day, and they all read only the note you left taped to the door. If the note says
         “do the usual,” today’s person has no idea what “the usual” is. The scheduled task instruction is
         that note: it needs to be <strong class="text-rose-400">self-sufficient</strong>, in other words, whether it explains
         everything on its own, without relying on anything said before.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t3-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t3-p3">
         This sounds like an annoying limitation, and in part it is. But consider the other side: a clean session also means
         that yesterday's error won't contaminate today. If Tuesday's run got confused by a strange file, Wednesday's
         starts from scratch without carrying that confusion forward. That amnesia also offers protection.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t3-p4">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t3-p4">
         There is a graceful way to handle when you really need continuity — and it’s the entire subject of
         module 6.4. The trick, in one sentence: if the agent can’t keep the memory in its head, it can keep it in a
         file. Today’s run writes what it did to a status file; tomorrow’s run starts by reading that file.
@@ -490,31 +490,31 @@
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- ============ TÓPICO 4 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-2#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-2#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🔌 What if the computer was turned off?</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t4-p1">
         This is the question everyone asks as soon as they understand the concept — and it’s a good one. If the task is
         scheduled for 8 a.m. and the computer was off at 8 a.m., packed in a suitcase for a trip, what happens? The answer is
         reassuring: nothing is lost. The task stays marked as <strong class="text-rose-400">lost
         execution</strong> and runs as soon as the machine turns back on.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t4-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t4-p2">
         The analogy is mail. You’ve been away for a week; the letters weren’t left unsent or returned—they
         stayed in the mailbox waiting. You get home, open the mailbox, and everything is there. The difference is that the
         content may be stale: a summary of “today’s emails” generated four days late summarizes a
         “today” that’s already passed.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t4-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t4-p3">
         That’s why recovery is a safety net, not a free pass. It saves you from the occasional lapse —
         the day the machine restarted on its own, the morning you left before turning on the computer. It doesn’t replace
         a server that stays on 24 hours a day, and that’s exactly the difference Trail 4 explored when discussing
@@ -561,19 +561,19 @@
         </p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- ============ TÓPICO 5 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-2#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-2#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">⌨️ Your first scheduled task (copy and run)</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t5-p1">
         Enough theory. Below is a complete request, ready to paste into the desktop app. It was written following
         everything you’ve learned so far: it explains itself, doesn’t depend on previous memory, says where to save it, and
         stays correct even if it runs late.
@@ -584,31 +584,31 @@
           Create a daily routine that, at 8 a.m., checks your inbox, picks the 5 most important emails, and leaves a short summary in a file — ready for you to open with your coffee, without needing to check your email before deciding what to do that day.
         </p>
 <h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-2">Block to copy</h4>
-<pre class="inema-code mb-2"><code>Crie uma tarefa agendada com estas configurações:
+<pre class="ARCKHÉ-code mb-2"><code>Crie uma tarefa agendada com estas configurações:
 
 FREQUÊNCIA: diária
 HORÁRIO: 08:00
 NOME: Resumo matinal da caixa de entrada
 
 INSTRUÇêO (execute exatamente isto a cada disparo):
-1. Abra minha caixa de entrada de e-mail em <span class="inema-var">&lt;seu endereco de e-mail&gt;</span>.
+1. Abra minha caixa de entrada de e-mail em <span class="ARCKHÉ-var">&lt;seu endereco de e-mail&gt;</span>.
 2. Olhe apenas as mensagens que chegaram desde a última vez
    que esta rotina rodou. Se nêo souber quando foi, use as
    últimas 24 horas.
 3. Escolha as 5 mais importantes. Considere importante:
    - cobrança de resposta com prazo
-   - mensagem de <span class="inema-var">&lt;pessoas ou empresas que voce nao pode ignorar&gt;</span>
+   - mensagem de <span class="ARCKHÉ-var">&lt;pessoas ou empresas que voce nao pode ignorar&gt;</span>
    - qualquer coisa com "urgente", "prazo" ou "vencimento"
 4. Para cada uma, escreva 2 linhas: quem mandou, e o que
    ela quer de mim.
 5. Salve o resultado no arquivo
-   <span class="inema-var">&lt;caminho da pasta onde voce quer o arquivo&gt;</span>/resumo-matinal.md
+   <span class="ARCKHÉ-var">&lt;caminho da pasta onde voce quer o arquivo&gt;</span>/resumo-matinal.md
    Sobrescreva o arquivo anterior.
 6. No fim do arquivo, escreva a data e a hora desta execuçêo.
 
 NêO faça nada além disso: nêo responda e-mails, nêo apague
 nada, nêo marque nada como lido.</code></pre>
-<p class="text-xs text-neutral-500 mb-6">The excerpts in <span class="inema-var">cyan between angle brackets</span> are the ones you replace with your data before pasting.</p>
+<p class="text-xs text-neutral-500 mb-6">The excerpts in <span class="ARCKHÉ-var">cyan between angle brackets</span> are the ones you replace with your data before pasting.</p>
 <h4 class="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-2">How to verify that it worked</h4>
 <ul class="space-y-2 text-neutral-300">
 <li class="flex items-start space-x-2"><span class="text-rose-400 mt-1">1.</span><span>Right after creating it, check the task dashboard to see if it appears in the list with the frequency set to “daily” and the time set to 08:00.</span></li>
@@ -629,19 +629,19 @@ nada, nêo marque nada como lido.</code></pre>
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- ============ TÓPICO 6 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-2#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-2#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🧯 Common errors and quick checklist</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-2-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-2-t6-p1">
         Almost every scheduled task problem falls into one of these categories. It’s worth reading this before creating yours—each item here cost someone a wasted morning.
       </p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -692,19 +692,19 @@ nada, nêo marque nada como lido.</code></pre>
 <li><strong>Limit rule:</strong> is it written down what it can’t do?</li>
 </ul>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-6-2#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-6-2#q1">
 <p class="font-medium mb-4">Quick check (optional): why can’t a scheduled task’s instructions say “continue where you left off yesterday”?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Because long instructions are prohibited.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Because each run starts a new session with no memory of the previous one.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Because scheduled tasks can’t write files.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Because long instructions are prohibited.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Because each run starts a new session with no memory of the previous one.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Because scheduled tasks can’t write files.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-6-2#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-6-2#q1', {
               answer: 1,
               explain: {
                 0: 'Tamanho nêo é o problema — instruções longas e detalhadas costumam funcionar melhor.',
@@ -716,9 +716,9 @@ nada, nêo marque nada como lido.</code></pre>
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -746,7 +746,7 @@ nada, nêo marque nada como lido.</code></pre>
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -773,7 +773,7 @@ nada, nêo marque nada como lido.</code></pre>
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

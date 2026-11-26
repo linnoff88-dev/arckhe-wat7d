@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>2.2 Anatomy of an MCP Server | Your Digital Employee</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -377,27 +377,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -405,7 +405,7 @@
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -477,8 +477,8 @@
     }
     
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha2/modulo-2-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha2/modulo-2-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha2/modulo-2-2.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha2/modulo-2-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha2/modulo-2-2.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha2/modulo-2-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Skip to content</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -488,9 +488,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparation</span></a>
@@ -501,8 +501,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../../curso/trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../../curso/trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Time</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>My journey</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>My journey</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -530,29 +530,29 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Beginner</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Concept</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module 2.2 progress" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:2-2" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Module 2.2 progress" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:2-2" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 of 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">6</span></p>
+<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Section <span class="ARCKHÉ-toc-pos">1</span> of <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. The tool</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. The parameter</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. Authentication</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. The three pieces together</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. View the list of tools</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. Reading × writing tools</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. The tool</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. The parameter</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. Authentication</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. The three pieces together</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. View the list of tools</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. Reading × writing tools</a></li>
 </ul>
 </nav>
-<article data-inema-module="2-2" data-inema-track="2" id="modulo-2-2">
-<section class="mb-16" data-inema-topic="modulo-2-2#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="2-2" data-ARCKHÉ-track="2" id="modulo-2-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-2#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🛠️ Tool: the verb an agent can execute</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t1-p1">
 <strong class="text-blue-400">New here?</strong> One <strong class="text-blue-400">protocol</strong> it’s simply a set of rules agreed on in advance so two parties can communicate without misunderstanding each other—like saying “over and out” on a radio, but between computer programs. <strong class="text-blue-400">MCP</strong> (<em>Model Context Protocol</em>) is the protocol introduced in the previous module: the shared language that lets the agent communicate with a <strong class="text-blue-400">server</strong> — a small program running (on your computer or in someone else's cloud) that knows how to do one specific thing and waits for requests. A <strong class="text-blue-400">tool</strong> (in English, <em>tool</em>) is a concrete action that server provides—a verb. “Fetch the content of a page,” “send an email,” “read a row from a spreadsheet.” Each MCP server lists its tools along with a short description of each one, and the agent reads those descriptions to decide which tool to use—without you needing to know any technical names.
       </p>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
@@ -584,56 +584,56 @@
 <p class="text-neutral-300">What “travels” between the agent and the server is a structured message—it’s not the plain text you typed, but a package with the name of the chosen tool and the values it needs. The server reads this package, runs the action in the actual service (a website, a database, an API—the “door” another program opens to communicate with yours), and returns the result in the same format. You never see this raw exchange; the agent translates the result back into plain Portuguese.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-2-2#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-2#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🎛️ Parameter: what the tool needs to know before it acts</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t2-p1">
 <strong class="text-blue-400">New here?</strong> <strong class="text-blue-400">Parameter</strong> is extra information the tool needs to work properly—the website address, the output file format, the maximum number of pages. You don’t type this in yourself: the agent extracts these values from your request in Portuguese and fills them in automatically.
       </p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
 <h4 class="font-bold text-emerald-400 mb-4">✓ Example of a clear request</h4>
-<p class="text-neutral-300 text-sm">"Extract the prices from the inema.club/planos page, no more than 5 pages." — the agent already has everything the tool needs: a URL and a limit.</p>
+<p class="text-neutral-300 text-sm">"Extract the prices from the ARCKHÉ AI/planos page, no more than 5 pages." — the agent already has everything the tool needs: a URL and a limit.</p>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
 <h4 class="font-bold text-red-400 mb-4">✗ Example of a vague request</h4>
 <p class="text-neutral-300 text-sm">"Get the prices from around there" — without an address, the agent will have to ask before it can fill in the parameters.</p>
 </div>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t2-p2"> Every parameter has an “expected format” — the tool may require a number (page limit), text (the URL), or an option from a fixed list (output format: <code>csv</code> or <code>json</code>, for example). When a parameter is optional, the MCP server usually has a default value — if you don’t say how many pages, it assumes a reasonable limit on its own, usually a small one, so it doesn’t waste time or calls.
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t2-p2"> Every parameter has an “expected format” — the tool may require a number (page limit), text (the URL), or an option from a fixed list (output format: <code>csv</code> or <code>json</code>, for example). When a parameter is optional, the MCP server usually has a default value — if you don’t say how many pages, it assumes a reasonable limit on its own, usually a small one, so it doesn’t waste time or calls.
       </p>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical Tip</h3>
 <p class="text-neutral-300">When you're unsure what a tool needs, just ask: "what parameters does this search tool accept?" — the agent reads the technical description and translates it into Portuguese for you, so you don't have to open any documentation.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-2-2#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-2#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🔑 Authentication: the key that proves who you are</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t3-p1">
 <strong class="text-blue-400">New here?</strong> <strong class="text-blue-400">Authentication</strong> it’s proof that you have permission to use that service—usually an “API key,” a unique secret code the service recognizes. It’s like the key card that opens a building’s door: without it, no one gets in, including the agent.
       </p>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical Tip</h3>
 <p class="text-neutral-300">Always save this key in a file <code>.env</code> — never type it directly into the conversation with the agent. Module 2.3 walks you through the full process.</p>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t3-p2"> The key usually comes from signing up on the service’s website—you create an account, generate the key on a settings page, and paste it into the file <code>.env</code> from your project. The MCP server reads this file on its own whenever it needs to authenticate; it never appears in the chat window or gets sent to the agent as text. Some services charge per call or have a monthly free usage limit — it's worth checking this before letting an agent run unsupervised in a loop.
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t3-p2"> The key usually comes from signing up on the service’s website—you create an account, generate the key on a settings page, and paste it into the file <code>.env</code> from your project. The MCP server reads this file on its own whenever it needs to authenticate; it never appears in the chat window or gets sent to the agent as text. Some services charge per call or have a monthly free usage limit — it's worth checking this before letting an agent run unsupervised in a loop.
       </p>
 <h4 class="text-sm font-semibold text-neutral-400 mb-3">Common errors at this stage</h4>
 <div class="space-y-3 mb-8">
@@ -641,13 +641,13 @@
 <div class="flex items-start gap-3 bg-dark-800 rounded-lg p-4 border border-dark-600"><span class="text-red-400 font-bold mt-0.5">✗</span><p class="text-neutral-300 text-sm"><strong class="text-white">Usage limit exceeded:</strong> free plans often have a monthly call limit. Once you exceed it, the service rejects requests until the month rolls over or you upgrade. Fix: ask the agent to check how many calls are left before running tasks in bulk.</p></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-2-2#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-2#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🧩 The three pieces together: a real request from start to finish</h2>
@@ -666,7 +666,7 @@
 </svg>
 </div>
 <p class="text-xs text-neutral-500 mb-8">Caption: the three parts of any MCP server — the available tools, the parameters each one requires, and the authentication key that ensures only you (or someone you authorize) can use that service on your behalf.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t4-p1"> When you ask "get the prices from this page," the agent: (1) chooses the right tool from the available options, (2) assembles the parameters — the URL you mentioned and the output format — and (3) the MCP server uses the stored authentication key to make the actual call to the external service. You saw only one sentence in Portuguese; behind the scenes, all three pieces worked together.
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t4-p1"> When you ask "get the prices from this page," the agent: (1) chooses the right tool from the available options, (2) assembles the parameters — the URL you mentioned and the output format — and (3) the MCP server uses the stored authentication key to make the actual call to the external service. You saw only one sentence in Portuguese; behind the scenes, all three pieces worked together.
       </p>
 <h4 class="text-sm font-semibold text-neutral-400 mb-4">Timeline of a request, from “enter” to response</h4>
 <div class="relative pl-8 mb-8 space-y-6 border-l-2 border-blue-500/30">
@@ -681,18 +681,18 @@
 <p class="text-neutral-300">If step 4 fails—invalid key, service down, empty result because nothing was found—the MCP server won’t freeze. It returns a structured error message, which the agent reads to decide what to do next: try again, let you know, or suggest another approach. An empty result (the search found nothing) isn’t the same as an error—it’s worth asking the agent to distinguish between the two before assuming something broke.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-2-2#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-2#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">📖 Where to see a server’s list of tools</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t5-p1"> Every MCP server publishes its documentation — usually a page on the service’s website listing each tool, its expected parameters, and examples. It’s worth skimming before you install, even if you’ll never type those names yourself: it helps you understand what the agent will be able to do for you.
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t5-p1"> Every MCP server publishes its documentation — usually a page on the service’s website listing each tool, its expected parameters, and examples. It’s worth skimming before you install, even if you’ll never type those names yourself: it helps you understand what the agent will be able to do for you.
       </p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Inside</h3>
@@ -708,18 +708,18 @@
 <p class="text-neutral-400 text-sm"><strong class="text-blue-400">How to verify:</strong> the list should show each connected server with a status — “connected,” “needs auth,” or something similar. If a server you installed doesn’t appear in the list, the problem is with the installation, not the tool itself (that’s covered in module 2.3).</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-2-2#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-2#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">⚖️ Not every tool is safe by default</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t6-p1"> Some tools only read information (search, list)—low risk. Others write or send something externally (send an email, publish a post, delete a record)—real risk, because the action has already happened by the time the agent finishes. Claude Code asks you to confirm before running sensitive tools; think twice before disabling that confirmation.
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t6-p1"> Some tools only read information (search, list)—low risk. Others write or send something externally (send an email, publish a post, delete a record)—real risk, because the action has already happened by the time the agent finishes. Claude Code asks you to confirm before running sensitive tools; think twice before disabling that confirmation.
       </p>
 <div class="space-y-4 mb-6">
 <div class="flex items-start space-x-4">
@@ -737,7 +737,7 @@
 </div>
 </div>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t6-p2"> A common reading tool is <strong class="text-blue-400">scraping</strong> — automatically extracting information from a web page without using that site’s official API. It’s useful, but it requires care: sites have terms of use that sometimes prohibit scraping, some block automated requests by default (and the MCP server simply returns an error or an empty page), and personal data about others that you find should never be put into a spreadsheet or automation without considering privacy. Treat scraping like visiting a physical store after business hours: just because the door isn’t locked doesn’t mean you have permission to go in whenever you want, in any volume.
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-2-t6-p2"> A common reading tool is <strong class="text-blue-400">scraping</strong> — automatically extracting information from a web page without using that site’s official API. It’s useful, but it requires care: sites have terms of use that sometimes prohibit scraping, some block automated requests by default (and the MCP server simply returns an error or an empty page), and personal data about others that you find should never be put into a spreadsheet or automation without considering privacy. Treat scraping like visiting a physical store after business hours: just because the door isn’t locked doesn’t mean you have permission to go in whenever you want, in any volume.
       </p>
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Reading tools run directly without asking for confirmation; writing tools go through a confirmation gate before executing, because the action has already happened by the time the agent finishes" class="w-full h-auto" role="img" viewbox="0 0 1000 220">
@@ -765,9 +765,9 @@
 <p class="text-neutral-300">If a reading tool returns an empty result, don’t assume that “it doesn’t exist”—a site may be blocking automated scraping. Ask the agent to try again or confirm whether the site returned an error before concluding the information isn’t there.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -793,7 +793,7 @@
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -823,7 +823,7 @@
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

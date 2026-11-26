@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>4.6 Build: automatización programada | Tu Empleado Digital</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'amber' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'amber' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -186,8 +186,8 @@
       .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha4/modulo-4-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha4/modulo-4-6.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha4/modulo-4-6.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha4/modulo-4-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-4-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha4/modulo-4-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha4/modulo-4-6.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha4/modulo-4-6.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha4/modulo-4-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-4-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -197,9 +197,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
@@ -210,8 +210,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>Mi recorrido</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -243,35 +243,35 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">Intermedio</div><div class="text-xs text-neutral-400">Nivel</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">Práctico</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progreso del módulo 4.6" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:4-6" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progreso del módulo 4.6" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:4-6" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 de 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="ARCKHÉ-toc-pos">1</span> de <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-1">1. Qué vas a construir</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-2">2. Escribir la task con Claude Code</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-3">3. Probar en dev</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-4">4. Registrar los secretos</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-5">5. Deploy y programación</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-amber-400" href="#topico-6">6. Verificar que se ejecutó</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-1">1. Qué vas a construir</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-2">2. Escribir la task con Claude Code</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-3">3. Probar en dev</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-4">4. Registrar los secretos</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-5">5. Deploy y programación</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-amber-400" href="#topico-6">6. Verificar que se ejecutó</a></li>
 </ul>
 </nav>
-<article data-inema-module="4-6" data-inema-track="4" id="modulo-4-6">
-<section class="mb-16" data-inema-topic="modulo-4-6#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="4-6" data-ARCKHÉ-track="4" id="modulo-4-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-6#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🎯 Qué vas a construir</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-6-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-6-t1-p1">
         Vamos a publicar una automatización sencilla, pero real: todos los días a las 8 de la mañana, busca alguna información (por
         ejemplo, un resumen de noticias, el clima del día o pedidos pendientes de un sistema) y te avisa — por
         correo electrónico o con un mensaje. El objetivo aquí no es la automatización en sí, sino todo el proceso de publicación, que
         sirve para cualquier automatización futura tuya.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-6-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-6-t1-p2">
         No vas a escribir código a mano. Claude Code lo escribe; tú lees lo que propone (¿recuerdas el modo plan,
         módulo 4.5?), apruebas, pruebas y publicas. Tu trabajo es orientar y revisar, exactamente como un gerente
         aprueba el trabajo de un empleado antes de que salga a la calle.
@@ -311,24 +311,24 @@
 <p class="text-neutral-300">Estos 4 pasos son el mismo pipeline del módulo 4.2 (código → repositorio → nube), solo que ahora los llevarás a la práctica. Una vez que lo hagas, cualquier automatización futura seguirá el mismo camino.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-4-6#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-6#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">✍️ Escribir la task con Claude Code</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-6-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-6-t2-p1">
 <strong class="text-amber-400">¿Eres nuevo aquí?</strong> <strong class="text-amber-400">Trigger.dev</strong> es la
         plataforma de ejecución que usa este curso: tú (o, mejor dicho, el agente) escribes el código de la task, se lo entregas
         mediante un repositorio y la plataforma se encarga de ejecutarla en el momento adecuado, con reintentos y una cola integrados (módulo 4.5).
         No necesitas saber cómo funciona Trigger.dev por dentro; solo tienes que saber pedir la task adecuada y leer lo que devuelve.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-6-t2-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-6-t2-p2">
         Abre la terminal en la carpeta de tu proyecto (módulo 0.3) y usa el modo de planificación antes de pedir la task de verdad:
         así revisas el diseño (buscar por separado de guardar, como en el módulo 4.5) antes de que se escriba el código.
       </p>
@@ -354,24 +354,24 @@ ficam as variáveis de ambiente (chaves de API) que vou precisar cadastrar.</ist
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-4-6#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-6#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🧪 Probar en dev antes de modificar producción</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-6-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-6-t3-p1">
 <strong class="text-amber-400">¿Eres nuevo aquí?</strong> <strong class="text-amber-400">Dev</strong> (de
         «desarrollo») es el entorno de prueba: una copia de la automatización que se ejecuta por separado de la versión real de la que
         dependen los usuarios (o tú en el día a día), llamada <strong class="text-amber-400">producción</strong>.
         Es el tema del módulo 4.3: dos «mundos» para que puedas romper cosas sin miedo en el de prueba.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-6-t3-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-6-t3-p2">
         Después de que Claude Code termine de escribir la task, ejecútala localmente en el modo de desarrollo de
         Trigger.dev, que ejecuta la task de inmediato, sin esperar la hora programada; así ves el resultado (o el
         error) en segundos, no al día siguiente.
@@ -402,24 +402,24 @@ npx trigger.dev@latest test <isto nome-da-task="" troca:="" voce=""></isto></cod
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-4-6#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-6#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🔐 Registrar los secretos en el panel</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-6-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-6-t4-p1">
 <strong class="text-amber-400">¿Eres nuevo aquí?</strong> Una <strong class="text-amber-400">variable de
         entorno</strong> es un valor secreto (una clave de API, una contraseña) que la automatización usa, pero que nunca queda
         escrito dentro del código. Como explicó el módulo 4.4, el archivo local con esos valores nunca se sube al
         repositorio. En su lugar, escribes esos valores manualmente en el panel de la plataforma.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-6-t4-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-6-t4-p2">
         Observa que registras las claves dos veces: una vez en el entorno de desarrollo (solo para pruebas) y otra en
         producción — son espacios separados. Así se evita que una clave de prueba (más débil y más barata) termine
         usándose por accidente en el entorno real.
@@ -463,25 +463,25 @@ npx trigger.dev@latest test <isto nome-da-task="" troca:="" voce=""></isto></cod
 <p class="text-neutral-300">Nunca pegues una clave de API real en una conversación con el agente para pedirle que la «guarde en un archivo de ejemplo» o algo parecido: usa siempre marcadores de posición (<code class="bg-dark-700 px-1.5 py-0.5 rounded text-amber-300">SUA_CHAVE_AQUI</code>) en cualquier texto, prompt o documentación. Las claves reales solo se ingresan manualmente en el panel de la plataforma.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-4-6#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-6#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🚀 Deploy y programación</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-6-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-6-t5-p1">
 <strong class="text-amber-400">¿Eres nuevo aquí?</strong> <strong class="text-amber-400">Deploy</strong> es el acto de
         publicar: tomar el código que ya probaste en dev y ponerlo a funcionar de verdad en producción, disponible las 24 horas
         del día. <strong class="text-amber-400">Cron</strong> es la forma estándar de escribir «a qué hora repetir»:
         un formato compacto como «todos los días a las 8 h», traducido en símbolos, que Claude Code escribe por ti
         a partir de lo que le pidas en portugués.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-6-t5-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-6-t5-p2">
         El deploy lleva el código de tu repositorio a la plataforma, que pasa a ejecutarlo por su cuenta, según el horario
         definido, sin que tu laptop tenga que estar encendida (el tema del módulo 4.1).
       </p>
@@ -500,24 +500,24 @@ npx trigger.dev@latest deploy --env production</code></pre>
 <p class="text-neutral-300">Si el comando de deploy te pide iniciar sesión o ingresar un token, es normal la primera vez: Claude Code te guía durante ese paso. Una vez configurado, los siguientes deploys solo requieren el comando de arriba.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-4-6#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-6#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">👀 Verificar que se ejecutó de verdad</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-6-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-6-t6-p1">
         El deploy publicado no es el final: es el comienzo de una rutina de verificación. Al día siguiente (o algunas horas
         después, según el horario programado), vuelve al <strong class="text-amber-400">panel</strong> (también
         llamado de <strong class="text-amber-400">dashboard</strong> — la pantalla donde la plataforma muestra todo lo que
         se ejecutó) y confirma que la ejecución aparezca con estado de éxito.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-6-t6-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-6-t6-p2">
         Este hábito de revisar — sin necesidad de entender el código que hay detrás — es exactamente el tema del próximo
         módulo, el último de esta trilha: leer el panel de ejecuciones y, cuando algo falle, encontrar el motivo leyendo el
         log, no el código.
@@ -547,19 +547,19 @@ npx trigger.dev@latest deploy --env production</code></pre>
 <li class="flex items-start space-x-2"><span class="text-amber-400 mt-1">•</span><span>Publicar no es el final: es el comienzo del hábito de revisar el panel.</span></li>
 </ul>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-4-6#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-4-6#q1">
 <p class="font-medium mb-4">Verificación rápida (opcional): ¿por qué probar la task en dev antes de publicar en producción?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Porque la plataforma cobra menos en dev.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Porque permite encontrar errores en un entorno separado, sin afectar a usuarios reales.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">No hace falta probarlo: el deploy ya lo valida todo por sí solo.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Porque la plataforma cobra menos en dev.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Porque permite encontrar errores en un entorno separado, sin afectar a usuarios reales.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">No hace falta probarlo: el deploy ya lo valida todo por sí solo.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-4-6#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-4-6#q1', {
               answer: 1,
               explain: { 0: 'Custo nêo é o motivo principal aqui — é isolar o risco.', 1: 'Isso mesmo: dev existe para você errar sem custo real.', 2: 'O deploy nêo valida o comportamento da task — só publica o código.' }
             });
@@ -567,9 +567,9 @@ npx trigger.dev@latest deploy --env production</code></pre>
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
@@ -596,7 +596,7 @@ npx trigger.dev@latest deploy --env production</code></pre>
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -623,7 +623,7 @@ npx trigger.dev@latest deploy --env production</code></pre>
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

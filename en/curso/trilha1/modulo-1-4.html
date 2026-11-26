@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>1.4 Where WAT fails | Your Digital Employee</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -185,8 +185,8 @@
       .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha1/modulo-1-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha1/modulo-1-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha1/modulo-1-4.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/modulo-1-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha1/modulo-1-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha1/modulo-1-4.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha1/modulo-1-4.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/modulo-1-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Skip to content</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -196,9 +196,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparation</span></a>
@@ -209,8 +209,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../../curso/trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../../curso/trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Time</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>My journey</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>My journey</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -240,33 +240,33 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Beginner</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Theory</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module 1-4 progress" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:1-4" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Module 1-4 progress" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:1-4" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 of 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">6</span></p>
+<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Section <span class="ARCKHÉ-toc-pos">1</span> of <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. Vague recipe</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. Tool without a key</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. Missing context</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Ambiguous workflow</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. Warning signs</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. Checklist</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. Vague recipe</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. Tool without a key</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. Missing context</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Ambiguous workflow</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. Warning signs</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. Checklist</a></li>
 </ul>
 </nav>
-<article data-inema-module="1-4" data-inema-track="1" id="modulo-1-4">
-<section class="mb-16" data-inema-topic="modulo-1-4#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="1-4" data-ARCKHÉ-track="1" id="modulo-1-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-4#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🌫️ Vague recipe</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t1-p1">
 <strong class="text-emerald-400">New here?</strong> A workflow (the recipe) is <strong class="text-emerald-400">vague</strong>
         when it doesn’t say enough for the agent to decide without guessing—for example, “organize the files” without saying why to organize them, what criteria to use, or where to save the result. A vague recipe is the most common cause of WAT failures: it’s not that the agent “didn’t understand”; the recipe didn’t say enough.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t1-p2">
         A day-to-day example: you ask, "make a summary of this month's sales so I can send it to the store's WhatsApp
         group." It seems clear, but it's full of gaps—what exactly should the summary include (total, by product, by
         salesperson)? Where does the data come from (yesterday's spreadsheet, today's, a system)? How many lines can
@@ -310,25 +310,25 @@
 <p class="text-neutral-300">Before writing the recipe, ask yourself: “If I gave this text to a new intern who had never seen my business, would they know exactly what to do?” If the answer is “only if they guessed,” the recipe is still too vague.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-1-4#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-4#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🔑 Tool without a key or permission</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t2-p1">
 <strong class="text-emerald-400">New here?</strong> Many tools require a <strong class="text-emerald-400">API
         key</strong> (a specific password that authorizes the use of a service, such as sending email or posting on a
         site) to work. If the key hasn’t been configured, or the agent doesn’t have permission to use that
         tool (Track 0 already covered permissions), the workflow step that depends on it simply can’t
         run — no matter how clear the rest of the instructions are.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t2-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t2-p2">
         This is an easy mistake to confuse with "the agent doesn’t know how to do this": in reality, it knows exactly what to do; it just doesn’t have the key to the door. The solution is never to rewrite the workflow — it’s to configure the missing credential (covered in depth in Track 4’s Secrets module).
       </p>
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6">
@@ -338,7 +338,7 @@
 <li><strong>Permission:</strong> the limit you set yourself on what the agent can do on its own.</li>
 </ul>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t2-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t2-p3">
         Real example: you ask, “send the customer an email letting them know the order has shipped.” If the email tool
         (for example, a Gmail MCP server—the subject of Track 2) has never received the access key to
         your account, the agent gets to the sending step and stops there—the message is already written, but it won’t go out. That’s
@@ -350,18 +350,18 @@
 <p class="text-neutral-300 text-sm">A dangerous variation of the lack of access is <strong class="text-emerald-400">hallucination</strong> — when the agent, unable to find the right file, folder, or command, <strong class="text-emerald-400">makes up</strong> a similar path instead of saying "I couldn't find it." Example: you ask it to run "the cash closing script," and there isn't a file with that exact name—instead of stopping and asking, a poorly guided agent might assume that <code class="text-neutral-400">fechamento.py</code> is the wrong file (it isn't) and run it anyway, producing a result that looks right but isn't what you asked for.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-1-4#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-4#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🧩 An agent without enough context</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t3-p1">
         Sometimes the workflow is clear and the tool has permission, but the agent still gets it wrong because it lacks
         <strong class="text-emerald-400">context</strong> — background information it would need to make the
         right decision. Example: asking it to "write a summary in the company's tone" without ever having shown it examples of that
@@ -374,7 +374,7 @@
 <div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Names</div><div class="text-xs text-neutral-400 mt-1">The right files and folders</div></div>
 <div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">CLAUDE.md</div><div class="text-xs text-neutral-400 mt-1">Where all of this lives</div></div>
 </div>
-<p class="text-neutral-300 my-6 leading-relaxed" data-inema-block="m1-4-t3-p2">
+<p class="text-neutral-300 my-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t3-p2">
         Lack of context also shows up in a more costly way: when the agent enters a
         <strong class="text-emerald-400">loop</strong> — a cycle that repeats without ever reaching the end — because
         there's not enough information to know when to stop. Imagine a workflow that says "revise this text until it's
@@ -389,24 +389,24 @@
 <p class="text-neutral-300">Every workflow that says “repeat until...” needs an objective stopping criterion (a number of rounds, a verifiable condition), not a subjective goal like “until it’s good.” Without one, you could end up paying for a loop that would never stop on its own.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-1-4#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-4#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">❓ Ambiguous workflow</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t4-p1">
         Unlike "vague" (which lacks detail), a workflow <strong class="text-emerald-400">ambiguous</strong> there's
         too much conflicting detail, or it allows more than one reasonable interpretation. Example: "send the report to
         the client by Friday, prioritizing quality" and, three lines later, "don't spend more than 10 minutes reviewing"
         — the two instructions compete with each other, and the agent could choose either one.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t4-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t4-p2">
         The practical difference between vague and ambiguous matters because the fixes are opposite. A vague recipe is fixed
         <strong class="text-emerald-400"> adding</strong> detail. An ambiguous workflow is resolved
         <strong class="text-emerald-400"> removing</strong> the contradiction — deciding which of the competing instructions takes precedence, and writing it down instead of leaving it implicit.
@@ -457,22 +457,22 @@
 </div>
 <p class="text-xs text-neutral-500 -mt-3 mb-6">Caption: the four most common WAT failure points, side by side with the specific fix for each — none of them is fixed the same way.</p>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-1-4#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-4#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🚨 How to tell: warning signs</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t5-p1">
         Each type of failure leaves a different clue in the agent’s behavior. Learning to read these clues helps you avoid
         "fighting" with the agent without understanding why it isn’t getting things right.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t5-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t5-p2">
         Thinking about the WAT cycle (covered in module 1.2: the agent reads the workflow, decides what to do next, uses a
         tool, and repeats), the failure almost always enters right at the start of that cycle—in the workflow reading or the decision—
         and only shows up for you at the very end, as a wrong result, high cost, or wasted time. The diagram
@@ -543,18 +543,18 @@
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-1-4#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-4#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">✅ Fix checklist</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t6-p1">
         When a result doesn't turn out as expected, go through this checklist before blaming the agent—in
         most cases, the fix is in one of these four lines.
       </p>
@@ -581,25 +581,25 @@
 [ ] Nêo há duas instruções competindo (prazo vs. qualidade, rapidez vs. cuidado)
 [ ] Se existe "repita até...", há um critério de parada objetivo (nêo subjetivo)</code></pre>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-4-t6-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-4-t6-p2">
 <strong class="text-emerald-400">How to verify:</strong> run the workflow once on a small, low-cost case
         before trusting it at scale. If the result matches what you expected without needing adjustments, the
         seven items above are probably covered. If it doesn’t, go back to the checklist and find which line is
         unchecked—that’s where the defect is, not in the agent’s "capability."
       </p>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-1-4#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-1-4#q1">
 <p class="font-medium mb-4">Quick check (optional): the agent stops and asks for a specific service password. What’s the most likely cause?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Vague recipe.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Tool without a configured key/permission.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Ambiguous workflow.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Vague recipe.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Tool without a configured key/permission.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Ambiguous workflow.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-1-4#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-1-4#q1', {
               answer: 1,
               explain: { 0: 'Receita vaga costuma gerar uma suposiçêo errada, nêo um pedido de senha.', 1: 'Correto: pedir credencial é o sinal claro de tool sem chave.', 2: 'Ambiguidade costuma gerar oscilaçêo de comportamento, nêo pedido de senha.' }
             });
@@ -607,9 +607,9 @@
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -636,7 +636,7 @@
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -666,7 +666,7 @@
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

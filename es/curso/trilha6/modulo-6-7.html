@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>6.7 Build: rutina matutina | Tu Empleado Digital</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'rose' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'rose' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'rose');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -183,8 +183,8 @@
       .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha6/modulo-6-7.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha6/modulo-6-7.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha6/modulo-6-7.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-7.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha6/modulo-6-7.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-6-7.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha6/modulo-6-7.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha6/modulo-6-7.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha6/modulo-6-7.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-7.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha6/modulo-6-7.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-6-7.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Saltar al contenido</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -194,9 +194,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparación</span></a>
@@ -207,8 +207,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tiempo</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>Mi recorrido</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>Mi recorrido</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -241,37 +241,37 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">Intermedio</div><div class="text-xs text-neutral-400">Nivel</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">Build</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progreso del módulo 6.7" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:6-7" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progreso del módulo 6.7" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:6-7" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 de 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<nav aria-label="Índice de la página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Sección <span class="ARCKHÉ-toc-pos">1</span> de <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-1">1. Qué vamos a construir</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-2">2. El archivo de estado</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-3">3. Crear la tarea programada</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-4">4. Notificación y permisos</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-5">5. Primera ejecución</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-6">6. Hacer que aprenda + checklist</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-1">1. Qué vamos a construir</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-2">2. El archivo de estado</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-3">3. Crear la tarea programada</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-4">4. Notificación y permisos</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-5">5. Primera ejecución</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-6">6. Hacer que aprenda + checklist</a></li>
 </ul>
 </nav>
-<article data-inema-module="6-7" data-inema-track="6" id="modulo-6-7">
+<article data-ARCKHÉ-module="6-7" data-ARCKHÉ-track="6" id="modulo-6-7">
 <!-- TÓPICO 1 -->
-<section class="mb-16" data-inema-topic="modulo-6-7#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-7#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🎯 Qué vamos a construir</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-7-t1-p1">
         La rutina matutina es una <strong class="text-rose-400">tarea programada</strong> (la que se activa sola
         a una hora fija, sin que tengas que abrir nada —que se estudia a fondo en el módulo 6.2—) y se ejecuta cada mañana,
         por ejemplo a las <strong class="text-rose-400">7h</strong>. Cuando se activa, el agente revisa lo que te interesa ese día:
         correos importantes, compromisos de la agenda o un resumen de noticias/datos de tu interés, y deja un <strong class="text-rose-400">resumen listo</strong> para que lo leas apenas despiertes, sin tener que
         buscar información en tres lugares diferentes.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-7-t1-p2">
         La parte interesante no es solo «ejecutarse cada mañana» — eso lo hace cualquier despertador. Lo que convierte esta rutina en un <strong class="text-rose-400">Build de verdad</strong> es que ella <strong class="text-rose-400">mejora
         por su cuenta</strong>: usa el archivo de estado (el mismo patrón del módulo 6.4, "la rutina que aprende") para recordar
         lo que ya mostró ayer y no repetirlo, y para ajustar sus prioridades según lo que te pareció útil.
@@ -327,26 +327,26 @@
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 2 -->
-<section class="mb-16" data-inema-topic="modulo-6-7#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-7#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">📄 Diseñar el archivo de estado de la rutina</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-7-t2-p1">
 <strong class="text-rose-400">¿Eres nuevo aquí?</strong> O <strong class="text-rose-400">archivo de estado</strong>
         es un archivo de texto simple (formato <strong class="text-rose-400">JSON</strong> — una forma organizada de
         guardar información en pares "clave: valor", fácil de leer tanto para ti como para el agente) que guarda lo que
         pasó en las últimas ejecuciones. Es la "memoria a corto plazo" de la rutina: sin ella, cada mañana sería
         la primera mañana de nuevo.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t2-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-7-t2-p2">
         Tres cosas que este archivo debe guardar: <strong class="text-rose-400">última ejecución</strong> (fecha y
         hora, para saber cuánto tiempo pasó), <strong class="text-rose-400">lo que ya se mostró</strong> (para no
         repetir lo mismo ni el mismo correo electrónico dos días seguidos), y <strong class="text-rose-400">preferencias
@@ -383,19 +383,19 @@ Depois de criar, me explique em 2 frases o que cada campo vai guardar.</isto></i
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 3 -->
-<section class="mb-16" data-inema-topic="modulo-6-7#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-7#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">⏰ Paso a paso: crear la tarea programada</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-7-t3-p1">
         Con el archivo de estado listo, el siguiente paso es el disparador: la <strong class="text-rose-400">tarea
         programada</strong> propiamente dicha. Necesita un horario (p. ej., 7h), una frecuencia (todos los días o solo
         los días hábiles) y una instrucción clara sobre qué hacer cuando se active, incluido el pedido explícito de leer y
@@ -446,26 +446,26 @@ Antes de salvar a tarefa agendada, me mostre o texto final da instruçêo pra eu
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 4 -->
-<section class="mb-16" data-inema-topic="modulo-6-7#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-7#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🔔 Paso a paso: notificación y permisos restrictivos</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-7-t4-p1">
 <strong class="text-rose-400">¿Eres nuevo aquí?</strong> <strong class="text-rose-400">Permiso restrictivo</strong>
         (que se explica a fondo en el módulo 6.6) significa darle al agente solo el acceso necesario para la tarea —en este caso, leer
         correos y agenda, y escribir en el archivo de resumen, pero <strong class="text-rose-400">nunca borrar nada</strong>.
         Una rutina que se ejecuta sola todos los días necesita este seguro: si un día «entiende mal» qué debe hacer, el
         peor escenario es un resumen malo; nunca un archivo perdido.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t4-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-7-t4-p2">
         A <strong class="text-rose-400">notificación</strong> es la forma de saber que la rutina se ejecutó sin
         tener que abrir la terminal cada mañana. Puede ser un correo electrónico, un mensaje en el celular o simplemente el
         archivo <code class="text-rose-400">resumo-do-dia.md</code> esperándote en la carpeta: lo importante es que el
@@ -512,19 +512,19 @@ Se nêo houver nada relevante, envie mesmo assim avisando "sem novidades hoje".<
 <p class="text-neutral-300">Empieza con una notificación sencilla (un archivo local) antes de conectar canales externos como el correo electrónico o el celular —así validas el contenido del resumen antes de «publicarlo» en otro lugar.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 5 -->
-<section class="mb-16" data-inema-topic="modulo-6-7#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-7#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">✅ Ejecutar la primera vez y verificar</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-7-t5-p1">
         No esperes hasta mañana por la mañana para descubrir si funcionó. Pídele al agente que <strong class="text-rose-400">
         ejecutar la tarea ahora, una vez, manualmente</strong> — la mayoría de las herramientas de programación tiene una opción
         «ejecutar ahora» para probar sin esperar a la hora prevista. Eso vale más que cualquier teoría: ves el resultado
@@ -577,19 +577,19 @@ Se nêo houver nada relevante, envie mesmo assim avisando "sem novidades hoje".<
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- TÓPICO 6 -->
-<section class="mb-16" data-inema-topic="modulo-6-7#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-7#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🧠 Hacer que la rutina aprenda + errores comunes + ejercicio final</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-7-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-7-t6-p1">
         «Aprender» aquí no es magia: es el mismo ciclo del módulo 6.4. En cada ejecución, además de verificar las fuentes,
         el agente también observa si reaccionaste a lo que te mostró ayer (por ejemplo: nunca abres la sección de noticias, pero
         siempre lees la de agenda). Con base en eso, actualiza <code class="text-rose-400">preferencias_aprendidas</code>
@@ -639,19 +639,19 @@ mostre-a primeiro. Sempre registre essa decisêo em "mostrado_recentemente" com 
 <h3 class="text-lg font-semibold text-rose-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Ejercicio final</h3>
 <p class="text-neutral-300">Agrega una fuente de información más a tu rutina matutina (p. ej.: el pronóstico del tiempo, la cotización de algo que sigues o un segundo correo electrónico). Pídele al agente que actualice la instrucción de la tarea y el campo "fontes" del archivo de estado — y vuelve a ejecutarla manualmente para comprobar que la nueva fuente aparezca en el resumen sin alterar el resto.</p>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-6-7#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-6-7#q1">
 <p class="font-medium mb-4">Verificación rápida (opcional): ¿qué hace que esta rutina "mejore sola" con el paso de los días?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">El modelo de IA se vuelve más inteligente con el tiempo.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">El archivo de estado acumula lo que usas e ignoras, y la instrucción usa eso para ajustar la prioridad.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">No mejora: solo se ejecuta igual todos los días.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">El modelo de IA se vuelve más inteligente con el tiempo.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">El archivo de estado acumula lo que usas e ignoras, y la instrucción usa eso para ajustar la prioridad.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">No mejora: solo se ejecuta igual todos los días.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-6-7#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-6-7#q1', {
               answer: 1,
               explain: { 0: 'O modelo em si nêo muda — o que muda é o dado guardado no arquivo de status.', 1: 'Isso mesmo: memória de status + instruçêo que lê essa memória é o que gera a melhora.', 2: 'Ela melhora sim, mas só porque o status guarda sinal — releia o tópico 6.' }
             });
@@ -659,9 +659,9 @@ mostre-a primeiro. Sempre registre essa decisêo em "mostrado_recentemente" com 
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span><span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </div>
 </section>
@@ -689,7 +689,7 @@ mostre-a primeiro. Sempre registre essa decisêo em "mostrado_recentemente" com 
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Tu Empleado Digital — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -716,7 +716,7 @@ mostre-a primeiro. Sempre registre essa decisêo em "mostrado_recentemente" com 
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

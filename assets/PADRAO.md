@@ -48,9 +48,9 @@ Emoji do curso: 🤖 · Nome curto no nav: `WAT7D` · Nome completo: "Seu Funcio
           <span class="font-bold text-lg hidden sm:inline">WAT7D</span>
         </a>
         <span class="text-neutral-600">|</span>
-        <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        <a href="https://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">ARCKHÉ AI</a>
         <span class="text-neutral-600">-</span>
-        <a href="https://inema.pro" target="_blank" class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium">PRO</a>
+        <a href="https://ARCKHÉ.pro" target="_blank" class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium">PRO</a>
       </div>
       <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
         <a href="REL/curso/trilha0/index.html" class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparaçêo</span></a>
@@ -61,8 +61,8 @@ Emoji do curso: 🤖 · Nome curto no nav: `WAT7D` · Nome completo: "Seu Funcio
         <a href="REL/curso/trilha5/index.html" class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
         <a href="REL/curso/trilha6/index.html" class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tempo</span></a>
         <a href="REL/curso/trilha7/index.html" class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-        <button type="button" data-inema-journey-open class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1">
-          <span>Minha jornada</span><span class="inema-journey-badge" data-inema-journey-badge data-count="0"></span>
+        <button type="button" data-ARCKHÉ-journey-open class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1">
+          <span>Minha jornada</span><span class="ARCKHÉ-journey-badge" data-ARCKHÉ-journey-badge data-count="0"></span>
         </button>
         <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1">
           <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -82,7 +82,7 @@ para nêo esconder nenhuma trilha do roadmap. Nêo "corrigir" isso reduzindo tri
 (mínimo do erro #11). Somente a Trilha 0 foi escrita e verificada nesta tarefa — se algum módulo
 da Trilha 0 saiu com 7 ou 8 tópicos reais, o `MANIFESTO.json` E as 8 cópias inline (`index.html` +
 as 7 páginas de `curso/trilha0/`) precisam ser corrigidos para bater com a contagem real de
-`data-inema-topic` únicos daquele módulo — senêo o progresso do curso fica errado (erro #28). Ao
+`data-ARCKHÉ-topic` únicos daquele módulo — senêo o progresso do curso fica errado (erro #28). Ao
 escrever as Trilhas 1-7, reconciliar os `topics` reais antes de fechar a tarefa.
 
 `REL` = caminho relativo: `.` na landing, `../..` nas páginas de `curso/trilhaN/`. Trilha ATIVA:
@@ -91,10 +91,10 @@ no link daquela trilha.
 
 ## 4. Bloco `<head>` padrêo (ordem obrigatória)
 
-1. `<meta charset>`, `<meta viewport>`, `<meta name="inema-course" content="wat7d">`.
-2. **Manifesto** — `<script type="application/json" data-inema-manifest>` com o JSON completo de
+1. `<meta charset>`, `<meta viewport>`, `<meta name="ARCKHÉ-course" content="wat7d">`.
+2. **Manifesto** — `<script type="application/json" data-ARCKHÉ-manifest>` com o JSON completo de
    `assets/MANIFESTO.json` (colar o conteúdo, ajustando nada — é o mesmo em TODA página).
-3. **Anti-FOUC** (bloqueante, ver `~/.claude/skills/formato-curso-v2/assets/inema-head-snippet.html`)
+3. **Anti-FOUC** (bloqueante, ver `~/.claude/skills/formato-curso-v2/assets/ARCKHÉ-head-snippet.html`)
    — cola o `<script>` inline, ANTES do Tailwind.
 4. `<script src="https://cdn.tailwindcss.com"></script>` + config de cores `dark-900/800/700/600`.
 5. `<link rel="stylesheet" href="REL/assets/learn.css">` (REL = `.` na landing, `../..` nos módulos).
@@ -106,7 +106,7 @@ no link daquela trilha.
 ```html
 <script src="REL/assets/learn.js"></script>
 <script>
-  if (window.INEMA && typeof window.INEMA.init === 'function') INEMA.init({ autoResume: true });
+  if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') ARCKHÉ.init({ autoResume: true });
 </script>
 ```
 
@@ -114,15 +114,15 @@ Antes disso: as 3 funções-núcleo do v1 (`toggleTopic`, theme toggle listener,
 
 ## 6. IDs/data-* estáveis
 
-- `data-inema-module="X-Y"` `data-inema-track="N"` no `<article id="modulo-X-Y">` do módulo.
-- `data-inema-topic="modulo-X-Y#topico-N"` em cada `<section id="topico-N">`.
-- `data-inema-block="mX-Y-tN-pM"` em cada parágrafo anotável.
+- `data-ARCKHÉ-module="X-Y"` `data-ARCKHÉ-track="N"` no `<article id="modulo-X-Y">` do módulo.
+- `data-ARCKHÉ-topic="modulo-X-Y#topico-N"` em cada `<section id="topico-N">`.
+- `data-ARCKHÉ-block="mX-Y-tN-pM"` em cada parágrafo anotável.
 
 ## 7. Erros críticos #1–#31 — resumo operacional
 
 Ver lista completa no `SKILL.md` (já carregada). Os que mais quebram páginas geradas por agentes
 apressados, checar sempre: botões `justify-start` (#1); números em círculo, nunca seta (#2); 3
-seções por tópico (#3); INEMA.CLUB + PRO em toda página (#4/#4b); light-mode CSS completo (#5);
+seções por tópico (#3); ARCKHÉ AI + PRO em toda página (#4/#4b); light-mode CSS completo (#5);
 título do módulo `text-2xl` (#6); nav completo idêntico em toda página (#13); mínimo 6 tópicos por
 módulo (#11/#10 "Ver Completo" em cada card); Mapa da trilha obrigatório no index (#12); módulo
 com 500–800 linhas e variedade de componentes, nêo template repetido (#14); manifesto presente em

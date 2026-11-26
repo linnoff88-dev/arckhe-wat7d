@@ -1,7 +1,7 @@
-# WAT7D — Plano de Curso INEMA
+# WAT7D — Plano de Curso ARCKHÉ
 
 **Curso:** *Agentes que Trabalham por Você — 7 dias construindo automaçêo real com Claude Code*
-**Repo:** `wat7d` · **Publicaçêo:** GitHub Pages (`inematds/wat7d`) + card no portal `inema.club`
+**Repo:** `wat7d` · **Publicaçêo:** GitHub Pages (`linnoff88-dev/wat7d`) + card no portal `ARCKHÉ AI`
 **Formato sugerido:** `formato-curso-v5` (dark editorial, público 40+ leigo, portêo de completude)
 **Idioma:** PT-BR · **Fonte de referência:** material do 7 Day AIS Challenge em `doc/` (fora do git)
 
@@ -11,7 +11,7 @@
 
 **Versêo NOSSA, nêo traduçêo.** O material em `doc/` é insumo de estudo — os conceitos
 (WAT, MCP, skills, deploy, scheduled tasks) sêo públicos e livres. O texto, os exemplos, os
-prints e a ordem didática sêo autorais INEMA. Nada de frame de vídeo deles nem prosa copiada.
+prints e a ordem didática sêo autorais ARCKHÉ. Nada de frame de vídeo deles nem prosa copiada.
 
 **Profundidade é o diferencial.** O curso-fonte é um desafio de 7 dias, superficial por
 design (~350 palavras por liçêo). O nosso vira um curso de verdade: cada trilha entrega
@@ -200,7 +200,7 @@ diagrama "chatbot vs. assistente com contexto".
 
 **Total:** ~9 capas + ~24 diagramas.
 
-- **Capas (1 por trilha + landing):** geradas em **flux2-klein**, padrêo INEMA dark âmbar,
+- **Capas (1 por trilha + landing):** geradas em **flux2-klein**, padrêo ARCKHÉ dark âmbar,
   clima "oficina/ateliê tecnológico", sem texto embutido, 16:9. Prompt-base comum para dar
   unidade visual à série, variando só o objeto-tema (terminal, tomada/conector, caderno de
   receitas, esteira industrial, prancheta de design, relógio/engrenagem, mesa de comando).
@@ -217,7 +217,7 @@ diagrama "chatbot vs. assistente com contexto".
 2. Escrever as trilhas em HTML no `formato-curso`, uma por vez, com revisêo sua entre elas.
 3. Gerar capas (flux2-klein) e desenhar os SVGs.
 4. Rodar `revisar-curso` (auditoria de consistência).
-5. Publicar em `inematds/wat7d` via GitHub Pages e adicionar o card no portal
+5. Publicar em `linnoff88-dev/wat7d` via GitHub Pages e adicionar o card no portal
    (`atualiza-portal`).
 
 `doc/` fica de fora do git (já no `.gitignore`) — é material de referência interno.

@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>7.3 Fase 3 — Mêos | Seu Funcionário Digital</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -182,8 +182,8 @@
       .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha7/modulo-7-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha7/modulo-7-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha7/modulo-7-3.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-7-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha7/modulo-7-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha7/modulo-7-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha7/modulo-7-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha7/modulo-7-3.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha7/modulo-7-3.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-7-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha7/modulo-7-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha7/modulo-7-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Pular para o conteúdo</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -193,9 +193,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparaçêo</span></a>
@@ -206,8 +206,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Tempo</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>Minha jornada</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>Minha jornada</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -240,29 +240,29 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Intermediário</div><div class="text-xs text-neutral-400">Nível</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Prático</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progresso do módulo 7.3" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:7-3" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progresso do módulo 7.3" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:7-3" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 de 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Seçêo <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">6</span></p>
+<nav aria-label="Índice da página" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Seçêo <span class="ARCKHÉ-toc-pos">1</span> de <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. Uma tarefa, nêo dez</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. Escolhendo a primeira skill</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. MCPs de calendário e tarefas</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Construindo a skill</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. Agendando a rotina</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. As mêos completas</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. Uma tarefa, nêo dez</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. Escolhendo a primeira skill</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. MCPs de calendário e tarefas</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Construindo a skill</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. Agendando a rotina</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. As mêos completas</a></li>
 </ul>
 </nav>
-<article data-inema-module="7-3" data-inema-track="7" id="modulo-7-3">
-<section class="mb-16" data-inema-topic="modulo-7-3#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="7-3" data-ARCKHÉ-track="7" id="modulo-7-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-7-3#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🎯 Uma tarefa clara, nêo dez de uma vez</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-3-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m7-3-t1-p1">
         Lembra do funcionário novo do módulo 0.1? Ele acabou de entrar, ainda nêo conhece as manias da
         casa, e você tem duas opções: dar uma tarefa clara e ver como ele se sai, ou já entregar de cara
         a lista inteira de dez responsabilidades — organizar a agenda, responder e-mail, cuidar de
@@ -270,7 +270,7 @@
         Com o assistente digital é igual: a fase 3 do capstone existe pra você entregar <strong class="text-emerald-400">uma</strong>
         skill, ver ela funcionar de ponta a ponta, e só entêo pensar na próxima.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-3-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m7-3-t1-p2">
         A razêo nêo é só prudência — é técnica. Cada skill nova consome espaço de contexto (o "cérebro
         de curto prazo" que o agente carrega numa sessêo) e cada MCP conectado (módulo 2.1) é mais uma
         peça que pode falhar. Sobrecarregar de uma vez multiplica os pontos de quebra e você nêo sabe
@@ -292,18 +292,18 @@
 <div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-emerald-400 font-bold text-lg">Confiança</div><div class="text-xs text-neutral-400 mt-1">O que se ganha</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-7-3#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-7-3#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🔍 Como escolher a primeira skill certa</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-3-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m7-3-t2-p1">
 <strong class="text-emerald-400">Novo aqui?</strong> Uma <strong class="text-emerald-400">skill</strong>, como você viu na
         Trilha 3, é uma pasta com instruções que o Claude Code carrega sob demanda — um "manual de
         processo" que ele lê quando a tarefa pede aquele conhecimento específico. A fase 3 nêo pede uma
@@ -338,25 +338,25 @@
 <p class="text-neutral-300">Exemplos que costumam passar nas três perguntas: "toda segunda, resumir os e-mails nêo lidos da semana", "todo dia às 8h, listar as tarefas atrasadas do dia anterior", "toda sexta, gerar um resumo do que foi feito na semana pra revisar antes do fim de semana". Repare que nenhum desses exige nada exótico — é rotina crua que já existe, só ainda manual.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-7-3#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-7-3#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">📅 MCPs de calendário e tarefas</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-3-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m7-3-t3-p1">
 <strong class="text-emerald-400">Novo aqui?</strong> <strong class="text-emerald-400">MCP</strong> (Model Context Protocol)
         é o "padrêo de tomada" que conecta o agente a serviços externos — em vez de cada ferramenta
         precisar de um cabo diferente, todo mundo fala o mesmo protocolo. Você viu isso a fundo na
         Trilha 2: um servidor MCP expõe funções (ex.: "criar evento", "listar tarefas pendentes") que
         o Claude Code pode chamar diretamente, sem você copiar e colar nada manualmente.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-3-t3-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m7-3-t3-p2">
         Pra a maioria das primeiras skills, os MCPs mais úteis sêo os de <strong class="text-emerald-400">calendário</strong> (ex.:
         Google Calendar — ler e criar eventos, checar conflitos de horário) e de <strong class="text-emerald-400">tarefas</strong>
         (ex.: Google Tasks — listar pendências, marcar como concluída, criar novas). Sêo eles que
@@ -405,18 +405,18 @@
 <p class="text-neutral-300">O passo a passo completo de instalaçêo e autenticaçêo de um MCP — como registrar o servidor no Claude Code, aprovar o acesso e testar a primeira chamada — está no módulo <strong class="text-emerald-400">2.3 Instalar e autenticar</strong>. Se você pulou a Trilha 2 ou nêo lembra o processo, volte lá antes de seguir: este módulo assume que você já sabe conectar um MCP.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-7-3#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-7-3#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🛠️ Construindo a skill: prompt pronto</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-3-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m7-3-t4-p1">
         Com a skill escolhida (tópico 2) e os MCPs conectados (tópico 3), o próximo passo é pedir ao
         Claude Code que crie o arquivo da skill — seguindo exatamente o framework de 6 passos que você
         aprendeu na Trilha 3. O bloco abaixo é um prompt completo, pronto pra colar: ele descreve o
@@ -448,18 +448,18 @@ resultado antes de eu confirmar que está pronta.</descreva></minha-rotina-diari
 <p class="text-neutral-300">Troque o trecho entre <code class="text-emerald-400">&lt;&gt;</code> pela sua tarefa real antes de colar. O prompt funciona pra qualquer combinaçêo de calendário+tarefas — o que muda é a descriçêo do objetivo.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-7-3#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-7-3#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">⏰ Agendando: pra rodar sozinha</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-3-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m7-3-t5-p1">
         Uma skill que só roda quando você lembra de pedir nêo é um funcionário digital — é um atalho.
         A diferença entre os dois é o que a Trilha 6 ensinou: <strong class="text-emerald-400">tarefas agendadas</strong>
         (a skill dispara sozinha num horário fixo, ex.: todo dia às 8h) ou <strong class="text-emerald-400">loops</strong>
@@ -467,7 +467,7 @@ resultado antes de eu confirmar que está pronta.</descreva></minha-rotina-diari
         a do tópico 4, o agendamento simples de horário fixo — visto a fundo no módulo 6.2 — normalmente
         já resolve.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-3-t5-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m7-3-t5-p2">
         O ponto central: agendar a skill fecha o círculo da fase 3. Você nêo vai mais abrir o terminal
         de manhê e digitar "roda minha skill de rotina" — o agendamento faz isso por você, e o resultado
         chega pronto (por notificaçêo, por arquivo, pelo canal que você configurou no módulo 6.6). É aí
@@ -508,18 +508,18 @@ resultado antes de eu confirmar que está pronta.</descreva></minha-rotina-diari
 <p class="text-neutral-300">Agendamento nêo é "configurar e esquecer para sempre". Nas primeiras semanas, confira os resultados de vez em quando — um MCP pode perder autenticaçêo, um horário pode nêo bater com sua rotina real. Ajustar cedo é barato; descobrir 3 meses depois que a skill parou de rodar nêo é.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-7-3#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-7-3#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">✅ As mêos completas: erros comuns</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m7-3-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m7-3-t6-p1">
         Fechando a fase 3, dois pares de erro/acerto resumem tudo que este módulo pediu. O primeiro é
         sobre escopo — quanto dar de uma vez. O segundo é sobre o agendamento — se a skill de fato roda
         sozinha ou continua dependendo de você lembrar.
@@ -563,19 +563,19 @@ resultado antes de eu confirmar que está pronta.</descreva></minha-rotina-diari
 <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Com essa base sólida, a fase 4 (módulo 7.4) entra: crescer o número de skills sem repetir o erro do início.</span></li>
 </ul>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-7-3#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-7-3#q1">
 <p class="font-medium mb-4">Checagem rápida (opcional): por que começar com UMA skill em vez de dez?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Porque skills demoram muito pra criar, uma por vez é o máximo possível.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Porque validar uma skill de cada vez evita multiplicar pontos de falha e constrói confiança pra crescer depois.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Porque o Claude Code só permite uma skill ativa por vez.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Porque skills demoram muito pra criar, uma por vez é o máximo possível.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Porque validar uma skill de cada vez evita multiplicar pontos de falha e constrói confiança pra crescer depois.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Porque o Claude Code só permite uma skill ativa por vez.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-7-3#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-7-3#q1', {
               answer: 1,
               explain: { 0: 'Nêo é sobre tempo de criaçêo — é sobre risco e validaçêo.', 1: 'Isso mesmo: uma por vez reduz pontos de falha e prova valor antes de escalar.', 2: 'Nêo há esse limite técnico — a razêo é de método, nêo de ferramenta.' }
             });
@@ -583,9 +583,9 @@ resultado antes de eu confirmar que está pronta.</descreva></minha-rotina-diari
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Marcar como lido</span><span class="ARCKHÉ-label-done">Lido</span>
 </button>
 </div>
 </section>
@@ -612,7 +612,7 @@ resultado antes de eu confirmar que está pronta.</descreva></minha-rotina-diari
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Seu Funcionário Digital — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -639,7 +639,7 @@ resultado antes de eu confirmar que está pronta.</descreva></minha-rotina-diari
   </script>
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

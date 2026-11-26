@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>6.1 Now, for This Project, or Every Week? | Your Digital Employee</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -176,9 +176,9 @@
 
     html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 
-    table.inema-table { border-collapse: collapse; width: 100%; }
-    table.inema-table th, table.inema-table td { border: 1px solid #374151; padding: 0.75rem 1rem; text-align: left; vertical-align: top; font-size: 0.9rem; }
-    html:not(.dark) table.inema-table th, html:not(.dark) table.inema-table td { border-color: #d1d5db; }
+    table.ARCKHÉ-table { border-collapse: collapse; width: 100%; }
+    table.ARCKHÉ-table th, table.ARCKHÉ-table td { border: 1px solid #374151; padding: 0.75rem 1rem; text-align: left; vertical-align: top; font-size: 0.9rem; }
+    html:not(.dark) table.ARCKHÉ-table th, html:not(.dark) table.ARCKHÉ-table td { border-color: #d1d5db; }
 
     @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
     @media (prefers-reduced-motion: no-preference) {
@@ -186,8 +186,8 @@
       .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha6/modulo-6-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha6/modulo-6-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha6/modulo-6-1.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-6-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha6/modulo-6-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha6/modulo-6-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha6/modulo-6-1.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha6/modulo-6-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha6/modulo-6-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-6-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha6/modulo-6-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Skip to content</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -197,9 +197,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparation</span></a>
@@ -210,8 +210,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-rose-400 bg-rose-500/10" href="index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Time</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>My journey</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>My journey</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -243,42 +243,42 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">Beginner</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-rose-400">Foundation</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Progress for module 6.1" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:6-1" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progress for module 6.1" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:6-1" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 of 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">6</span></p>
+<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Section <span class="ARCKHÉ-toc-pos">1</span> of <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-1">1. Two similar tools</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-2">2. What a scheduled task is</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-3">3. What a loop is</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-4">4. The table that decides</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-5">5. The decision tree</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-rose-400" href="#topico-6">6. The Track 6 map</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-1">1. Two similar tools</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-2">2. What a scheduled task is</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-3">3. What a loop is</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-4">4. The table that decides</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-5">5. The decision tree</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-rose-400" href="#topico-6">6. The Track 6 map</a></li>
 </ul>
 </nav>
-<article data-inema-module="6-1" data-inema-track="6" id="modulo-6-1">
+<article data-ARCKHÉ-module="6-1" data-ARCKHÉ-track="6" id="modulo-6-1">
 <!-- ============ TÓPICO 1 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-1#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-1#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🎯 Two similar tools, very different results</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-1-t1-p1">
         In the previous tracks, everything started with you. You opened the program, wrote the request, waited, looked at the
         result. We call this kind of work <strong class="text-rose-400">on demand</strong>: it happens because someone
         asks for it, when they ask. It works very well — until the day the same task needs to happen every
         morning, without fail, including the morning you forgot.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t1-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-1-t1-p2">
         That's where the axis that gives this track its name comes in: the <strong class="text-rose-400">time</strong>. The question is no longer
         just "what do I want it to do?" but also "<em>when</em> e <em>how often</em> should this
         run on its own?” There are two possible answers, and they have names: <strong class="text-rose-400">scheduled
         task</strong> e <strong class="text-rose-400">loop</strong>.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t1-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-1-t1-p3">
         Here’s the module’s trap. Both do the same kind of thing—repeat work without you asking again—which is why many people choose the wrong one and then think “the automation doesn’t work.” It’s not the automation; it’s the choice. One was built for routines that span months; the other, to keep track of something that’s happening <em>now</em> and wraps up in a few days.
       </p>
 <div class="bg-gradient-to-br from-rose-900/30 to-dark-800 rounded-xl border border-rose-500/30 p-6 mb-6">
@@ -299,28 +299,28 @@
 <div class="bg-dark-700/50 rounded-lg p-4 text-center"><div class="text-rose-400 font-bold text-lg">1</div><div class="text-xs text-neutral-400 mt-1">Decisive question</div></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- ============ TÓPICO 2 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-1#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-1#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">📅 What is a scheduled task</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-1-t2-p1">
 <strong class="text-rose-400">New here?</strong> One <strong class="text-rose-400">scheduled task</strong>
         (in English, <em>scheduled task</em>) is an instruction you write once, and the computer runs it on its own at a time and frequency you choose—every day at 8 a.m., every Friday at 6 p.m., or on the first of every month. You don’t open anything, click anything, or remember anything. When the time comes, it runs.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t2-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-1-t2-p2">
         The most honest analogy is an alarm clock. You set it once, put the device in the drawer in your head, and
         it rings every day at the scheduled time—including on the days you swore you’d wake up on your own. The scheduled task
         is your digital employee’s alarm clock: it doesn’t ask if today works; it just runs.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t2-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-1-t2-p3">
         Two characteristics matter from the start, and both come back strongly in module 6.2. First: each run
         starts from scratch, as if it's the first time—the task doesn't remember what it did yesterday. Second: it has no
         expiration date. Once configured, it stays there, running week after week until you turn it off.
@@ -387,31 +387,31 @@
 </div>
 <p class="text-xs text-neutral-500 mb-6">Caption: notice that the pink circles are identical—each day is a new, independent run with no connection to the previous one. The only different point is Saturday, shown with a dashed line: the computer was off, and the cyan arrow shows the run being recovered later. That detail is covered in module 6.2.</p>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- ============ TÓPICO 3 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-1#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-1#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🔁 What a loop is</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-1-t3-p1">
 <strong class="text-rose-400">New here?</strong> One <strong class="text-rose-400">loop</strong> (pronounced "loop",
         the English word for "laço") is a <strong class="text-rose-400">session</strong> — an open conversation with the
         agent — one that repeats from time to time while it remains active. Each time around, the agent does what you
         asked again: checks whether anything changed, tries again, adjusts. And unlike the scheduled task, it <em>remembers</em> everything
         it has already seen in previous rounds, because it never left the same conversation.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t3-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-1-t3-p2">
         The analogy here is a night watchman. He doesn’t leave and come back tomorrow: he stays in the building all night, making
         the same rounds every half hour. By the third round, he already knows that the back door creaked on the first one—
         that accumulated knowledge is the advantage of the loop. When his shift ends, he goes home and takes the night’s memory with him.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t3-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-1-t3-p3">
         And the turn really ends. A loop isn't meant to last forever: it expires in a few days—in practice,
         about three. If the session closes before then (you close the window or the program is shut down), the loop simply
         dies there, without trying to come back later. This isn't a defect: it's how the tool is designed. A loop exists to track
@@ -445,24 +445,24 @@
         </p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- ============ TÓPICO 4 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-1#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-1#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">📊 The table that decides</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-1-t4-p1">
         This is the central piece of the entire track. There are five comparison points — and each one, on its own, can already
         decide the choice for you. If you remember just one thing from this module, remember this table.
       </p>
 <div class="overflow-x-auto rounded-xl border border-rose-500/30 mb-4">
-<table class="inema-table">
+<table class="ARCKHÉ-table">
 <caption class="sr-only">Comparison between a scheduled task and a loop across five criteria</caption>
 <thead>
 <tr class="bg-rose-500/20">
@@ -501,29 +501,29 @@
 </table>
 </div>
 <p class="text-xs text-neutral-500 mb-6">Caption: read from top to bottom, not from left to right. Each row is a question you ask about your situation — and the column with the best answer wins.</p>
-<p class="text-neutral-300 mb-4 leading-relaxed" data-inema-block="m6-1-t4-p2">
+<p class="text-neutral-300 mb-4 leading-relaxed" data-ARCKHÉ-block="m6-1-t4-p2">
 <strong class="text-rose-400">Where it runs.</strong> <strong class="text-rose-400">New here?</strong> O
         <strong class="text-rose-400">desktop app</strong> is a program with windows, icons, and buttons that you install and open with two clicks — like your browser or text editor. It's different from the
         <strong class="text-rose-400">terminal</strong>, that black screen where you type commands instead of clicking. The scheduled task lives in the desktop app because that’s what keeps an eye on the clock. The loop doesn’t have that requirement:
         it runs wherever the session is open.
       </p>
-<p class="text-neutral-300 mb-4 leading-relaxed" data-inema-block="m6-1-t4-p3">
+<p class="text-neutral-300 mb-4 leading-relaxed" data-ARCKHÉ-block="m6-1-t4-p3">
 <strong class="text-rose-400">Memory.</strong> This is the line that causes the most frustration for people who choose wrong.
         The scheduled task wakes up amnesiac every day: it only knows what’s written in the instruction you left
         ready for it. The loop carries everything forward — on the fifth cycle, it still knows what it saw on the first. If your situation depends on
         “compare with what you saw yesterday,” a scheduled task alone can’t handle it (and module 6.4 shows the trick
         that solves this).
       </p>
-<p class="text-neutral-300 mb-4 leading-relaxed" data-inema-block="m6-1-t4-p4">
+<p class="text-neutral-300 mb-4 leading-relaxed" data-ARCKHÉ-block="m6-1-t4-p4">
 <strong class="text-rose-400">Duration.</strong> One is a marathon, the other a 100-meter sprint. The scheduled
         task has no finish line: you configure it and it runs until you tell it to stop. The loop has a short, known timeframe
         — about three days — and that's a safeguard, not an annoying limit: it prevents a forgotten session from
         consuming resources for months.
       </p>
-<p class="text-neutral-300 mb-4 leading-relaxed" data-inema-block="m6-1-t4-p5">
+<p class="text-neutral-300 mb-4 leading-relaxed" data-ARCKHÉ-block="m6-1-t4-p5">
 <strong class="text-rose-400">If the PC stayed off.</strong> Here the difference is dramatic. The scheduled task notices it missed its scheduled time and runs as soon as the machine comes back online—nothing is lost, it’s just delayed. The loop has no such safety net: session closed means loop ended, period. No one will resume it for you.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t4-p6">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-1-t4-p6">
 <strong class="text-rose-400">Serves to.</strong> This is a summary of the four lines above. A routine that spans the calendar: scheduled. Monitoring something that’s live right now: a loop.
       </p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -545,19 +545,19 @@
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- ============ TÓPICO 5 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-1#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-1#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🌳 The decision tree</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-1-t5-p1">
         Five rows in a table are a lot to remember at seven in the morning. That’s why the course condenses everything into a single
         question, and that question gives the module its name: <strong class="text-rose-400">"do I need this now, in this
         project, or every week?"</strong>. Three possible answers, three different paths.
@@ -622,19 +622,19 @@
         </p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- ============ TÓPICO 6 ============ -->
-<section class="mb-16" data-inema-topic="modulo-6-1#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-6-1#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🗺️ The map of Track 6</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m6-1-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m6-1-t6-p1">
         With the mental model in place, the rest of the track goes into the details of each tool and then brings everything together into a routine you’ll actually use every day.
       </p>
 <div class="space-y-6 mb-6">
@@ -689,19 +689,19 @@
 <li><strong>6.6 e 6.7</strong> close securely, along with the build you take with you for life.</li>
 </ul>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-6-1#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-6-1#q1">
 <p class="font-medium mb-4">Quick check (optional): You want a summary of your appointments every morning, indefinitely. Which tool?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">A loop, because it repeats on its own.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">A daily scheduled task.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">A direct request, written every morning.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">A loop, because it repeats on its own.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">A daily scheduled task.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">A direct request, written every morning.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-6-1#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-6-1#q1', {
               answer: 1,
               explain: {
                 0: 'O loop também se repete, mas expira em ~3 dias — "indefinidamente" elimina essa opçêo.',
@@ -713,9 +713,9 @@
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -742,7 +742,7 @@
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -769,7 +769,7 @@
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

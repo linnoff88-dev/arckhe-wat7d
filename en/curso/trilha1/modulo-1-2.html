@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>1.2 The real execution cycle | Your Digital Employee</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -85,27 +85,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -113,7 +113,7 @@
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -185,8 +185,8 @@
       .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha1/modulo-1-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha1/modulo-1-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha1/modulo-1-2.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/modulo-1-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha1/modulo-1-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha1/modulo-1-2.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha1/modulo-1-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/modulo-1-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Skip to content</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -196,9 +196,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparation</span></a>
@@ -209,8 +209,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../../curso/trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../../curso/trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Time</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>My journey</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>My journey</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -240,43 +240,43 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Beginner</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Theory</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module 1-2 progress" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:1-2" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Module 1-2 progress" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:1-2" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 of 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">6</span></p>
+<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Section <span class="ARCKHÉ-toc-pos">1</span> of <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. The 5-step cycle</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. Read the workflow</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. Choose the tool</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Run/observe</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. The loop continues</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. When it ends</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-1">1. The 5-step cycle</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-2">2. Read the workflow</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-3">3. Choose the tool</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-4">4. Run/observe</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-5">5. The loop continues</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-emerald-400" href="#topico-6">6. When it ends</a></li>
 </ul>
 </nav>
-<article data-inema-module="1-2" data-inema-track="1" id="modulo-1-2">
-<section class="mb-16" data-inema-topic="modulo-1-2#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="1-2" data-ARCKHÉ-track="1" id="modulo-1-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-2#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🔄 The 5-step cycle</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t1-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t1-p1">
 <strong class="text-emerald-400">New here?</strong> O <strong class="text-emerald-400">execution cycle</strong> it’s the
         sequence the agent repeats several times within a session: read the workflow step, choose a
         tool, run it, review the result, and decide what to do next. It isn’t a single step—it’s a
         <strong class="text-emerald-400">loop</strong> (loop, repetition: the same sequence running over and over)
         that continues until the task is complete.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t1-p1b">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t1-p1b">
         In module 1.1, you saw the kitchen analogy: recipe (workflow), cook (agent), utensils (tools).
         It was static there, like a photo of the finished dish. This module is the movie — the cook reading the next
         step, picking up the right knife, cutting, tasting the result, and only then turning the page. It’s this
         “read → decide → act → taste → repeat” that turns a static recipe into real work —
         a finished report, a sent newsletter, an organized batch of invoices.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t1-p1c">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t1-p1c">
         Each complete loop iteration is called a <strong class="text-emerald-400">iteration</strong>. A simple task takes 3 or 4; organizing a month's worth of receipts can take dozens — the agent decides on each
         pass whether it's done.
       </p>
@@ -347,21 +347,21 @@
 </div>
 <p class="text-xs text-neutral-500 mb-6">Caption: this timeline shows ONE iteration of the loop — one complete cycle. Step 5 points back to step 1 (not shown here) because the cycle starts over until the workflow is finished.</p>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-1-2#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-2#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">📖 Reading the workflow: where the agent “is”</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t2-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t2-p1">
         Each time the cycle starts over, the agent needs to know "where I am in the recipe." In a Claude Code session, this usually happens within a single conversation: the conversation history acts as short-term memory, remembering what has already been done. In a workflow saved to a file (which we’ll practice in module 1.5), the current step can be explicit in the text itself or inferred from what’s already on disk — for example, if the file "relatorio-semana.md" already exists, step 4 is complete.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t2-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t2-p2">
 <strong class="text-emerald-400">New here?</strong> <strong class="text-emerald-400">Context</strong> it’s
         everything the agent “sees” when making a decision: the conversation so far, the files it has already read, CLAUDE.md, and the
         results of tools it has already run. Think of context as the cook’s worktable—only what’s
@@ -370,7 +370,7 @@
         <strong class="text-emerald-400">tokens</strong> — chunks of text the model processes each turn.
         The more stuff "on the table," the more tokens are spent just looking at everything before deciding.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t2-p4">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t2-p4">
         Example: in a “reply to customer emails” workflow, the agent reads the next email at each iteration
         (the “where am I”), decides whether to reply with a template or escalate to a human, executes, and observes whether the
         email was sent successfully. The “state” is simply how many emails have been processed.
@@ -389,24 +389,24 @@
 <p class="text-neutral-300">Task too slow or expensive? Look at what goes into the context on each run — it’s common for the agent to reread the same huge file every iteration when it only needed to read it once.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-1-2#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-2#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🧭 Decide which tool to call</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t3-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t3-p1">
         This is the "smartest" part of the cycle: given the current step and the list of available tools, the agent chooses the one that best solves it. If the step is "sum by category," it may choose to run a calculation script instead of trying to add everything manually. If the step is "publish on the site," it chooses the deploy tool (covered in Track 4), not an email tool.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t3-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t3-p2">
         This choice depends directly on which tools have been made available to the agent — that’s why Tracks 2 (MCP) and 3 (Skills) in this course teach you how to add and connect tools: the clearer the menu of options, the better the choice.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t3-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t3-p3">
         Another example: in a “weekly sales report,” the step “add up revenue by salesperson” has two
         candidate tools — a script that adds it up, or manual formulas. A well-configured agent chooses the
         script, which is faster and deterministic — if it’s available. If not, it adapts, which brings us to the most common mistake.
@@ -442,18 +442,18 @@
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-1-2#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-2#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">👀 Run it and observe the result</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t4-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t4-p1">
         After running it, the agent doesn’t blindly move on to the next step — it <em>reads</em> what the tool
         returned. A command can return an error, an empty file, a number outside the expected range, or exactly
         what it should. Reading the result triggers self-correction, covered in more depth in module 1.3.
@@ -490,13 +490,13 @@
 </svg>
 </div>
 <p class="text-xs text-neutral-500 -mt-3 mb-6">Caption: the loop runs from left to right at each workflow step; the dotted return arrow shows self-correction — the agent repeating a step that didn’t go as expected.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t4-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t4-p2">
         "Observing" isn't optional or automatic — it's an active decision to stop and read what came back before continuing.
         In the newsletter example (module 1.5), after "send email" the agent checks whether it got "success" or an
         error code. With invoices, after moving a file it checks whether the file is actually in the folder —
         it doesn't assume it worked just because the command "ran without crashing".
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t4-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t4-p3">
         This check has three possible outcomes: (1) it matches expectations, so move on; (2) there’s a clear error, so the agent tries to fix it or lets you know; or (3) the result is ambiguous — neither right nor clearly wrong — and that’s where the deeper judgment covered in module 1.3 on self-correction comes in.
       </p>
 <div class="rounded-xl border border-emerald-500/30 bg-dark-800/60 p-6 mb-6">
@@ -511,28 +511,28 @@
 <p class="text-neutral-300 text-sm mb-2"><strong>How to verify:</strong> open <code class="text-neutral-400">resumo.md</code> afterward. If each line matches a real file and its correct count, all 5 steps ran correctly for each file processed.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-1-2#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-2#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🔁 The loop continues until it finishes (or gets stuck)</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t5-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t5-p1">
         The cycle repeats step by step until the workflow is finished. On each pass, the agent also decides whether it needs
 to repeat the current step (for example, if a command failed for a temporary reason) or stop and ask
 you for help (for example, if a password only you have is missing). This second case—stopping and letting you know—is
 just as important as execution: a good agent knows when not to proceed on its own.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t5-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t5-p2">
 <strong class="text-emerald-400">New here?</strong> This decision point — deciding whether to continue, repeat, or stop based on the observed result — is what we call <strong class="text-emerald-400">reasoning</strong>
         of the agent. Without it, the cycle would just be a blind sequence of commands, unable to react to surprises.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t5-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t5-p3">
         In the email example: a healthy loop retries “send” only if the failure is temporary, and stops after 2-3
         attempts, escalating to you. A stuck loop repeats the same error dozens of times without getting a new result.
       </p>
@@ -555,29 +555,29 @@ just as important as execution: a good agent knows when not to proceed on its ow
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-1-2#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-2#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🏁 When the cycle truly ends</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t6-p1">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t6-p1">
         The cycle ends in one of three ways: (1) the workflow reached the last step and everything checked out—success; (2) the agent
 identified that something only you can provide is missing and stopped to ask; or (3) it got stuck repeating and it’s time
 for you to step in. Recognizing which of the three is happening is the central topic of module 1.4.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t6-p2">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t6-p2">
         Let’s reinforce the difference between endings 2 and 3 — they look similar at first, and both end without the
         finished result. In ending 2 (pause for a decision), the agent knows what’s missing and asks a specific question,
         such as "I need the Gmail API key — where can I find it?" In ending 3 (stuck), it doesn’t know what else to try
         and repeats something that has already proven not to work — the solution is for you to adjust the workflow, not answer.
       </p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t6-p3">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-t6-p3">
         In the invoice example: success means all invoices are in the right folders with a summary by category; pausing for a decision means the agent finds an invoice with no clear category and asks where it belongs; getting stuck means repeatedly trying to open a corrupted PDF without success — time for you to inspect the file manually.
       </p>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
@@ -592,19 +592,19 @@ for you to step in. Recognizing which of the three is happening is the central t
 <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1">•</span><span>Stuck: repeats without making progress — time to review the workflow.</span></li>
 </ul>
 </div>
-<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-1-2#q1">
+<div class="ARCKHÉ-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-ARCKHÉ-check="modulo-1-2#q1">
 <p class="font-medium mb-4">Quick check (optional): what does the agent do after running a tool?</p>
-<div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Moves straight to the next step without checking anything.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Observe the result and decide on the next step based on it.</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Ends the session automatically.</button>
+<div class="ARCKHÉ-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="0" type="button">Moves straight to the next step without checking anything.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="1" type="button">Observe the result and decide on the next step based on it.</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-check-option="2" type="button">Ends the session automatically.</button>
 </div>
-<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+<div aria-live="polite" class="mt-4 text-sm" data-ARCKHÉ-check-feedback="" role="status"></div>
 </div>
 <script>
         window.addEventListener('DOMContentLoaded', function () {
-          if (window.INEMA && INEMA.registerCheck) {
-            INEMA.registerCheck('modulo-1-2#q1', {
+          if (window.ARCKHÉ && ARCKHÉ.registerCheck) {
+            ARCKHÉ.registerCheck('modulo-1-2#q1', {
               answer: 1,
               explain: { 0: 'Sem observar o resultado nêo haveria auto-correçêo — releia o tópico 4.', 1: 'Exato: observar o resultado é o que guia o próximo passo.', 2: 'A sessêo só encerra quando o workflow termina ou trava.' }
             });
@@ -612,9 +612,9 @@ for you to step in. Recognizing which of the three is happening is the central t
         });
       </script>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -641,7 +641,7 @@ for you to step in. Recognizing which of the three is happening is the central t
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -671,7 +671,7 @@ for you to step in. Recognizing which of the three is happening is the central t
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>

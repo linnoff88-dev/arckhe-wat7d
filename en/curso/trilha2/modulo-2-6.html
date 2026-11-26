@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="wat7d" name="inema-course"/>
+<meta content="wat7d" name="ARCKHÉ-course"/>
 <title>2.6 Multiple agents in parallel | Your Digital Employee</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
   "course": "wat7d",
   "tracks": [
@@ -377,27 +377,27 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) {
           var parsed = JSON.parse(raw);
           if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; }
         } else {
           var legacy = localStorage.getItem('theme');
-          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark';
+          if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark';
         }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark: true,  attr: null,        cs: 'dark'  },
+        'ARCKHÉ-dark': { dark: true,  attr: null,        cs: 'dark'  },
         'claro':      { dark: false, attr: null,        cs: 'light' },
         'sepia':      { dark: false, attr: 'sepia',     cs: 'light' },
         'foco':       { dark: null,  attr: 'foco',      cs: null    },
         'contraste':  { dark: true,  attr: 'contraste', cs: 'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
@@ -405,7 +405,7 @@
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style;
       var scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale / 100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -444,8 +444,8 @@
       .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s} .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
     }
   </style>
-<link href="https://inematds.github.io/wat7d/curso/trilha2/modulo-2-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/wat7d/en/curso/trilha2/modulo-2-6.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/wat7d/es/curso/trilha2/modulo-2-6.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha2/modulo-2-6.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha2/modulo-2-6.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha2/modulo-2-6.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-6.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-6.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-6.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="skip sr-only focus:not-sr-only" href="#conteudo">Skip to content</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -455,9 +455,9 @@
 <span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">WAT7D</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600">-</span>
-<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 hover:text-amber-600 dark:text-slate-300 dark:hover:text-slate-200 text-sm font-medium" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto">
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../../curso/trilha0/index.html"><span class="sm:hidden">T0</span><span class="hidden sm:inline">Preparation</span></a>
@@ -468,8 +468,8 @@
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors" href="../../curso/trilha5/index.html"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Interfaces</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-rose-400 hover:bg-rose-500/10 transition-colors" href="../../curso/trilha6/index.html"><span class="sm:hidden">T6</span><span class="hidden sm:inline">Time</span></a>
 <a class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha7/index.html"><span class="sm:hidden">T7</span><span class="hidden sm:inline">Capstone</span></a>
-<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-inema-journey-open="" type="button">
-<span>My journey</span><span class="inema-journey-badge" data-count="0" data-inema-journey-badge=""></span>
+<button class="px-2.5 py-1.5 rounded-lg text-sm font-semibold text-primary hover:bg-primary/10 transition-colors flex items-center gap-1" data-ARCKHÉ-journey-open="" type="button">
+<span>My journey</span><span class="ARCKHÉ-journey-badge" data-count="0" data-ARCKHÉ-journey-badge=""></span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -497,30 +497,30 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Beginner</div><div class="text-xs text-neutral-400">Level</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Practice</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Progress for module 2.6" aria-valuemax="100" aria-valuemin="0" class="inema-meter mt-6 max-w-md" data-inema-meter="modulo:2-6" role="progressbar">
-<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill=""></div></div>
+<div aria-label="Progress for module 2.6" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter mt-6 max-w-md" data-ARCKHÉ-meter="modulo:2-6" role="progressbar">
+<div class="flex items-center justify-between text-xs text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 of 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar"><div class="ARCKHÉ-bar__fill" data-ARCKHÉ-meter-fill=""></div></div>
 </div>
 </header>
-<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-inema-toc="">
-<p class="text-xs text-neutral-500 mb-2">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">6</span></p>
+<nav aria-label="Page index" class="hidden lg:block float-right w-56 ml-8 mb-8 sticky top-24 self-start bg-dark-800/60 border border-dark-600 rounded-xl p-4" data-ARCKHÉ-toc="">
+<p class="text-xs text-neutral-500 mb-2">Section <span class="ARCKHÉ-toc-pos">1</span> of <span class="ARCKHÉ-toc-total">6</span></p>
 <ul class="space-y-1 text-sm">
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. Why split it up</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. One folder per agent</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. The risk: same file</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. Splitting the build into three</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. The cost of parallel work</a></li>
-<li><a class="inema-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. Bringing the results together</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-1">1. Why split it up</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-2">2. One folder per agent</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-3">3. The risk: same file</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-4">4. Splitting the build into three</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-5">5. The cost of parallel work</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-300 hover:text-blue-400" href="#topico-6">6. Bringing the results together</a></li>
 </ul>
 </nav>
-<article data-inema-module="2-6" data-inema-track="2" id="modulo-2-6">
-<section class="mb-16" data-inema-topic="modulo-2-6#topico-1" id="topico-1">
+<article data-ARCKHÉ-module="2-6" data-ARCKHÉ-track="2" id="modulo-2-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-6#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🍕 Why split the work among multiple agents</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t1-p1"><strong class="text-blue-400">New here?</strong> Run multiple agents <strong class="text-blue-400">in parallel</strong> means running more than one Claude Code session at the same time, each working on a different part of the task. Instead of asking it to “scrape the 3 sites, one at a time” and waiting for each one to finish, you ask it to do all three at once, in three windows — the total time drops to roughly the time taken by the slowest one, rather than the sum of all three.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t1-p2">Let’s distinguish two ways of working that have already come up in previous modules. <strong class="text-blue-400">Sequential</strong> It’s one request after another in the same session: the agent finishes task A, then starts task B. <strong class="text-blue-400">Parallel</strong> it’s opening separate sessions that work at the same time, each on its own task. Neither approach is “better” in general—the right question is whether the tasks depend on each other. If task B needs the result of task A, they have to run sequentially by definition—you can’t parallelize something that depends on something that doesn’t exist yet.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-6-t1-p1"><strong class="text-blue-400">New here?</strong> Run multiple agents <strong class="text-blue-400">in parallel</strong> means running more than one Claude Code session at the same time, each working on a different part of the task. Instead of asking it to “scrape the 3 sites, one at a time” and waiting for each one to finish, you ask it to do all three at once, in three windows — the total time drops to roughly the time taken by the slowest one, rather than the sum of all three.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-6-t1-p2">Let’s distinguish two ways of working that have already come up in previous modules. <strong class="text-blue-400">Sequential</strong> It’s one request after another in the same session: the agent finishes task A, then starts task B. <strong class="text-blue-400">Parallel</strong> it’s opening separate sessions that work at the same time, each on its own task. Neither approach is “better” in general—the right question is whether the tasks depend on each other. If task B needs the result of task A, they have to run sequentially by definition—you can’t parallelize something that depends on something that doesn’t exist yet.</p>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">💡</span> Main Concept</h3>
 <p class="text-neutral-300">It's the same idea as splitting a big cleanup among three people instead of one—each takes care of a room, and the house gets done faster. But if one room depends on another being clean first (for example, dusting before mopping), you can't parallelize that part—someone has to wait.</p>
@@ -544,13 +544,13 @@
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-2-6#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-6#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🗂️ One folder (or tab) per agent</h2>
@@ -572,27 +572,27 @@
 </svg>
 </div>
 <p class="text-xs text-neutral-500 mb-8">Caption: a large request can become three independent tasks running at the same time, each in its own folder or terminal tab—the results come together when they’re all done, instead of waiting for one at a time.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t2-p1"><strong class="text-blue-400">New here?</strong> One <strong class="text-blue-400">session</strong> is a conversation open with Claude Code—each time you type <code>claude</code> in a terminal, a new session starts, with its own memory of what was requested inside it. Each Claude Code session runs in isolation within a project folder or terminal tab. To run in parallel without one agent interfering with another, open separate terminal tabs (or separate folders, if each task modifies different files) and start a <code>claude</code> in each one.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t2-p2">This matters because separate sessions don't "talk" to each other—the Agent 1 discovered doesn't automatically appear to Agent 2. If a step depends on information another agent generated, that information needs to become a file (the CSV, a text file) that the other agent can read later. That's why, when building module 2.5, each tab saves its own output file instead of trying to "notify" the other session.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-6-t2-p1"><strong class="text-blue-400">New here?</strong> One <strong class="text-blue-400">session</strong> is a conversation open with Claude Code—each time you type <code>claude</code> in a terminal, a new session starts, with its own memory of what was requested inside it. Each Claude Code session runs in isolation within a project folder or terminal tab. To run in parallel without one agent interfering with another, open separate terminal tabs (or separate folders, if each task modifies different files) and start a <code>claude</code> in each one.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-6-t2-p2">This matters because separate sessions don't "talk" to each other—the Agent 1 discovered doesn't automatically appear to Agent 2. If a step depends on information another agent generated, that information needs to become a file (the CSV, a text file) that the other agent can read later. That's why, when building module 2.5, each tab saves its own output file instead of trying to "notify" the other session.</p>
 <div class="bg-primary/10 rounded-xl border border-primary/40 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical tip</h3>
 <p class="text-neutral-300">Name your terminal tabs after the site or task (most terminals let you rename a tab by double-clicking its title). With three tabs open at once, it’s easy to forget which one is doing what — a clear name saves you from clicking around to find out.</p>
 </div>
 <p class="text-xs text-neutral-500 mb-6"><strong>Objective:</strong> three independent sessions actually running at the same time. <strong>How to verify:</strong> open your terminal’s tab manager and confirm that there are 3 active tabs, each with a different conversation in progress.</p>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-2-6#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-6#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">⚠️ The risk: two agents writing to the same file</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t3-p1">The biggest concern with parallelism is avoiding two agents editing the <strong class="text-blue-400">same file</strong> at the same time — one can overwrite the other's work without warning. Divide the task so each agent has its own output file (e.g., <code>produtos-site-a.csv</code>, <code>produtos-site-b.csv</code>) and only then combine the results.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t3-p2"><strong class="text-blue-400">See inside:</strong> there is no automatic mechanism to prevent two agents from writing to the same file — each session simply rewrites the entire file when it finishes, as if it were the only one in the world. If both sessions write <code>produtos.csv</code> overlapping one another, whoever saves last "wins," and the other session's work disappears without any error notice. This isn't a Claude Code bug — that's how any program that rewrites a file behaves. The protection is always up to you: use different file names for each agent.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-6-t3-p1">The biggest concern with parallelism is avoiding two agents editing the <strong class="text-blue-400">same file</strong> at the same time — one can overwrite the other's work without warning. Divide the task so each agent has its own output file (e.g., <code>produtos-site-a.csv</code>, <code>produtos-site-b.csv</code>) and only then combine the results.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-6-t3-p2"><strong class="text-blue-400">See inside:</strong> there is no automatic mechanism to prevent two agents from writing to the same file — each session simply rewrites the entire file when it finishes, as if it were the only one in the world. If both sessions write <code>produtos.csv</code> overlapping one another, whoever saves last "wins," and the other session's work disappears without any error notice. This isn't a Claude Code bug — that's how any program that rewrites a file behaves. The protection is always up to you: use different file names for each agent.</p>
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Two agents writing to the same produtos.csv file at the same time: the second one to finish overwrites the first one's work, which is lost without warning" class="w-full h-auto" role="img" viewbox="0 0 1000 220">
 <defs><filter height="180%" id="m26t3-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter><pattern height="32" id="m26t3-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#60a5fa" opacity="0.12" r="1.3"></circle></pattern><marker id="m26t3-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#f87171"></path></marker></defs>
@@ -625,18 +625,18 @@
 </div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-2-6#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-6#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🧩 Splitting the scraping build into three parts</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t4-p1">Looking at the build for module 2.5: if you need prices from three different websites, that’s the perfect split for parallel work—each site is completely independent of the others.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-6-t4-p1">Looking at the build for module 2.5: if you need prices from three different websites, that’s the perfect split for parallel work—each site is completely independent of the others.</p>
 <div class="bg-dark-900 rounded-xl border border-dark-600 p-5 mb-2 font-mono text-sm overflow-x-auto">
 <div class="text-neutral-500 mb-2"># Tab 1:</div>
 <div class="text-emerald-400">Extract the name and price of products from <span class="text-amber-300">&lt;site-a.com&gt;</span> in produtos-a.csv</div>
@@ -646,7 +646,7 @@
 <div class="text-emerald-400">Extract the name and price of products from <span class="text-amber-300">&lt;site-c.com&gt;</span> in produtos-c.csv</div>
 </div>
 <p class="text-xs text-neutral-500 mb-6"><strong>Objective:</strong> three CSVs ready at the same time, instead of one after another. <strong>How to verify:</strong> all three files exist and each has real data rows — then just combine them (or ask the agent to combine them) into a final CSV.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t4-p2">Running three scrapes at the same time doesn’t change each one’s responsibilities: continue respecting the site’s terms of use, avoid overloading the server with too many requests, and avoid collecting personal data unnecessarily — the same rules as module 2.5, now applying to all three tabs at once. Running in parallel increases the chance that a site will notice unusual traffic and block you, so it’s even more important not to overdo it.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-6-t4-p2">Running three scrapes at the same time doesn’t change each one’s responsibilities: continue respecting the site’s terms of use, avoid overloading the server with too many requests, and avoid collecting personal data unnecessarily — the same rules as module 2.5, now applying to all three tabs at once. Running in parallel increases the chance that a site will notice unusual traffic and block you, so it’s even more important not to overdo it.</p>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
 <h3 class="text-lg font-semibold text-neutral-200 mb-4 flex items-center"><span class="mr-2">🛠️</span> Common errors when running in parallel</h3>
 <ul class="space-y-3 text-neutral-300 text-sm">
@@ -656,18 +656,18 @@
 </ul>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-2-6#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-6#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">💰 The cost of running in parallel</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t5-p1"><strong class="text-blue-400">New here?</strong> <strong class="text-blue-400">Token</strong> it’s the unit that measures how much the agent “read and wrote” in a conversation—each word or part of a word processed counts as tokens, and that’s what creates the cost. Each parallel session uses tokens independently—three agents running at the same time cost roughly the sum of what each would cost on its own (it isn’t “free” just because it runs in parallel). The benefit is <strong class="text-blue-400">time</strong>, at an added cost. It’s worth it when the urgency justifies it, not all the time.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-6-t5-p1"><strong class="text-blue-400">New here?</strong> <strong class="text-blue-400">Token</strong> it’s the unit that measures how much the agent “read and wrote” in a conversation—each word or part of a word processed counts as tokens, and that’s what creates the cost. Each parallel session uses tokens independently—three agents running at the same time cost roughly the sum of what each would cost on its own (it isn’t “free” just because it runs in parallel). The benefit is <strong class="text-blue-400">time</strong>, at an added cost. It’s worth it when the urgency justifies it, not all the time.</p>
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Cost comparison: running 1 agent alone, 3 agents in sequence, and 3 agents in parallel all use the same total number of tokens, but the time spent is very different" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
 <defs><pattern height="32" id="m26t5-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#60a5fa" opacity="0.12" r="1.3"></circle></pattern><filter height="180%" id="m26t5-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter></defs>
@@ -693,18 +693,18 @@
 <p class="text-neutral-300">If your plan has some kind of usage limit (for example, a daily or monthly message cap), opening several sessions at once uses that limit faster. Before splitting a large task across sessions, check how much of your limit you’ve already used that day—it helps you avoid running out of agent time in the middle of important work.</p>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
-<section class="mb-16" data-inema-topic="modulo-2-6#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-6#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🔗 Bringing the results together at the end</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t6-p1">After the three agents finish, one final request—in a single session—combines the separate files into a final result. It's the same principle of “fetching” separately from “writing” that Track 4 (Deployment) will explore in more depth: each part runs in isolation, and everything is combined in a single step that's easy to repeat if something fails along the way.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-6-t6-p1">After the three agents finish, one final request—in a single session—combines the separate files into a final result. It's the same principle of “fetching” separately from “writing” that Track 4 (Deployment) will explore in more depth: each part runs in isolation, and everything is combined in a single step that's easy to repeat if something fails along the way.</p>
 <div class="mb-8">
 <h3 class="text-sm font-semibold text-neutral-400 mb-4 uppercase tracking-wide">Timeline of a parallel build</h3>
 <div class="space-y-4">
@@ -720,11 +720,11 @@
 <div class="text-emerald-400">arquivo produtos-final.csv, keeping the name and price columns.</div>
 </div>
 <p class="text-xs text-neutral-500 mb-6"><strong>Objective:</strong> a single consolidated final CSV. <strong>How to verify:</strong> the number of lines of <code>produtos-final.csv</code> matches the sum of the lines in the three original files.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-6-t6-p2">This wraps up Track 2. You’ve gone from “what is an MCP server” (2.1) to running multiple agents that search real data in parallel and combine everything into a final CSV (2.6)—including installing and authenticating real servers (2.3), saving commands in a cheat sheet so you don’t have to relearn them from scratch (2.4), and building a working scraper (2.5). The thread connecting all six modules is always the same: give the agent an external tool—whether an MCP server or the browser itself—and treat errors, keys, and usage limits as a normal part of the work, not an exception. In Track 3, the next step is to teach the agent to repeat an entire process, from beginning to end, without you having to explain each step again: this is a <em>skill</em>.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-6-t6-p2">This wraps up Track 2. You’ve gone from “what is an MCP server” (2.1) to running multiple agents that search real data in parallel and combine everything into a final CSV (2.6)—including installing and authenticating real servers (2.3), saving commands in a cheat sheet so you don’t have to relearn them from scratch (2.4), and building a working scraper (2.5). The thread connecting all six modules is always the same: give the agent an external tool—whether an MCP server or the browser itself—and treat errors, keys, and usage limits as a normal part of the work, not an exception. In Track 3, the next step is to teach the agent to repeat an entire process, from beginning to end, without you having to explain each step again: this is a <em>skill</em>.</p>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">○</span><span aria-hidden="true" class="ARCKHÉ-ico-done">●</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span><span class="ARCKHÉ-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -750,7 +750,7 @@
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-16">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — INEMA.CLUB 2026</p></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Your Digital Employee — ARCKHÉ AI 2026</p></div>
 </footer>
 <script>
     function toggleTopic(button) {
@@ -780,7 +780,7 @@
   </script>
 <script src="../../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init({ autoResume: true }); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init({ autoResume: true }); }
   </script>
 </body>
 </html>
